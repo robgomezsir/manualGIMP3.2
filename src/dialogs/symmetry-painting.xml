@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                "http://www.docbook.org/xml/4.5/docbookx.dtd">
+
+<sect2 id="gimp-symmetry-dialog">
+  <title>Symmetry Painting Dialog</title>
+
+  <indexterm>
+    <primary>Dialog</primary>
+    <secondary>Symmetry Painting</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Symmetry Painting</primary>
+  </indexterm>
+
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/symmetry.png"
+          format="PNG" />
+      </imageobject>
+    </mediaobject>
+
+    <para>
+    Symmetry Painting is supported by
+    brush-based tools (Pencil, Paintbrush, Eraser, Airbrush, MyPaint brush,
+    Clone, Smudge, Dodge) as well the Ink tool. There are several kinds of
+    symmetry, all configurable.
+  </para>
+
+  <sect3>
+    <title>Activating the Dialog</title>
+
+    <para>
+      You can access this dialog from the main menu through:
+      <menuchoice>
+        <guimenu>Windows</guimenu>
+        <guisubmenu>Dockable Dialogs</guisubmenu>
+        <guimenuitem>Symmetry Painting</guimenuitem>
+      </menuchoice>.
+    </para>
+
+    <para>
+      The dialog <quote>Symmetry Painting</quote>
+      is dockable. Read <xref linkend="gimp-concepts-docks" /> to learn more
+      about the concept of dockability.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Using the Symmetry Painting dialog</title>
+    <figure>
+      <title>Symmetry Painting dialog</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/dialogs/symmetry-painting.png"
+            format="PNG" />
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      This dialog is very simple. You only have a <guilabel>Symmetry</guilabel>
+      item with a drop-down list that offers four options. As soon as you check
+      a symmetry type, symmetry axes appear as dotted green lines in the image
+      window and you can start painting with the brush you have chosen.
+    </para>
+
+    <variablelist>
+      <title>Options</title>
+      <varlistentry>
+        <term>Symmetry</term>
+        <listitem>
+          <para>
+            This setting determines the type of symmetry painting.
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>None</term>
+              <listitem>
+                <para>
+                  This is the default. It disables symmetry painting.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Mirror</term>
+              <listitem>
+                <figure>
+                  <title>The Symmetry Mirror dialog</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/dialogs/symmetry-mirror.png"
+                        format="PNG" />
+                    </imageobject>
+                  </mediaobject>
+                </figure>
+                <para>
+                  This type of symmetry will reflect all strokes like in a
+                  mirror. There are several types of mirroring. More than
+                  one type can be selected.
+                </para>
+                <variablelist>
+                  <title>Mirror Options</title>
+                  <varlistentry>
+                    <term>Horizontal symmetry</term>
+                    <listitem>
+                      <para>
+                        Brush strokes will be mirrored across a horizontal
+                        axis.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Vertical symmetry</term>
+                    <listitem>
+                      <para>
+                        Brush strokes will be mirrored across a vertical
+                        axis.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Central symmetry</term>
+                    <listitem>
+                      <para>
+                        Brush strokes will be inverted through a central point.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry id="symmetry-brush-transform">
+                    <term>Disable brush transform</term>
+                    <listitem>
+                      <para>
+                        When you transform the drawing, the brush itself will
+                        end up transformed as well. For instance, in a mirror
+                        transform, not only will your drawing on the right side
+                        of the canvas be mirrored on the left, but the brush
+                        itself is also <quote>flipped</quote> on the left.
+                      </para>
+                      <para>
+                        If you want the drawn lines to be mirrored (or other
+                        transformation), but not the brush outline itself,
+                        enable this setting.
+                        Obviously, you will only notice the effect of this
+                        setting when you use a brush that is not symmetrical.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Vertical axis position</term>
+                    <term>Horizontal axis position</term>
+                    <listitem>
+                      <para>
+                        The default position for symmetry axes is the center of
+                        the image. These sliders allow you to change the
+                        position used to mirror your brush strokes.
+                      </para>
+                      <para>
+                        By clicking the lock icon next to the sliders, you can
+                        choose whether you want to keep both sliders
+                        synchronized or not.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                </variablelist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Tiling</term>
+              <listitem>
+                <para>
+                  <quote>Tiling</quote> is a translational symmetry, which can
+                  be finite (with a maximum of strokes) or infinite.
+                  In the latter case, it is the perfect tool to create patterns
+                  or seamless tiles.
+                </para>
+                <figure>
+                  <title>The Symmetry Tiling Dialog</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/dialogs/symmetry-tiling.png"
+                        format="PNG" />
+                    </imageobject>
+                  </mediaobject>
+                </figure>
+                <para>
+                  This mode covers the image with strokes at regular
+                  distances on the X and Y axis.
+                </para>
+                <variablelist>
+                  <title>Tiling Options</title>
+                  <varlistentry>
+                    <term>Interval X</term>
+                    <term>Interval Y</term>
+                    <listitem>
+                      <para>
+                        These are the intervals on the X and Y axis, in pixels,
+                        between the centers of each stroke.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Shift</term>
+                    <listitem>
+                      <para>
+                        This determines the amount of shift between lines on
+                        the X axis, in pixels.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Max strokes X</term>
+                    <term>Max strokes Y</term>
+                    <listitem>
+                      <para>
+                        These are the maximum number of brush strokes on the X
+                        and Y axis that will be painted on the image.
+                        The default is 0, which means there is no limit.
+                      </para>
+                      <para>
+                        By clicking the lock icon next to the sliders, you can
+                        choose whether you want to keep both sliders
+                        synchronized or not.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                </variablelist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Mandala</term>
+              <listitem>
+                <figure>
+                  <title>The Symmetry Mandala Dialog</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/dialogs/symmetry-mandala.png"
+                        format="PNG" />
+                    </imageobject>
+                  </mediaobject>
+                </figure>
+                <para>
+                  Strokes are drawn around the center determined by the options
+                  below.
+                </para>
+                <variablelist>
+                  <title>Mandala Options</title>
+                  <varlistentry>
+                    <term>Center abscissa</term>
+                    <term>Center ordinate</term>
+                    <listitem>
+                      <para>
+                        These coordinates determine the center around which
+                        the mandala strokes will be painted.
+                      </para>
+                      <para>
+                        By clicking the lock icon next to the sliders, you can
+                        choose whether you want to keep both sliders
+                        synchronized or not.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Number of points</term>
+                    <listitem>
+                      <para>
+                        This determines the amount of strokes that will be
+                        performed each time you use a brush.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Disable brush transform</term>
+                    <listitem>
+                      <para>
+                        See the same setting for
+                        <link linkend="symmetry-brush-transform">Mirror</link>
+                        symmetry.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Kaleidoscope</term>
+                    <listitem>
+                      <para>
+                        When enabled, it mirrors consecutive strokes.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                </variablelist>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Examples</title>
+    <para>
+      Pepper brush is selected. Pencil is used.
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Example for Mirror</term>
+        <listitem>
+          <figure>
+            <title>Vertical Symmetry</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/symmetry-mirror-ex1.png"
+                  format="PNG" />
+              </imageobject>
+              <caption>
+                <para>
+                  A single click
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/symmetry-mirror-ex2.png"
+                  format="PNG" />
+              </imageobject>
+              <caption>
+                <para>
+                  A stroke
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Example for Tiling</term>
+        <listitem>
+          <figure>
+            <title></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/symmetry-tiling-ex1.png"
+                  format="PNG" />
+              </imageobject>
+              <caption>
+                <para>
+                  A single click. Shift = 20.
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/symmetry-tiling-ex2.png"
+                  format="PNG" />
+              </imageobject>
+              <caption>
+                <para>
+                  A stroke
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Example for Mandala</term>
+        <listitem>
+          <figure>
+            <title></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/symmetry-mandala-ex1.png"
+                  format="PNG" />
+              </imageobject>
+              <caption>
+                <para>
+                  A single click
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/symmetry-mandala-ex2.png"
+                  format="PNG" />
+              </imageobject>
+              <caption>
+                <para>
+                  A stroke
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

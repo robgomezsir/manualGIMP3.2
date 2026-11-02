@@ -1,0 +1,476 @@
+project('gimp-help',
+    version: '3.2.1',
+    meson_version: '>= 1.10.0',
+)
+
+# FIXME: Update release info to mention to update version and last release tag here too
+gimp_help_version = meson.project_version()
+
+# used for creating the ChangeLog
+LAST_RELEASE_TAG = 'GIMP_HELP_3_2_0'
+
+warnings = []
+
+################################################################################
+# Host system detection
+
+host_os = host_machine.system().to_lower()
+
+platform_linux = (
+    host_os.contains('linux')
+)
+
+platform_windows = (
+    host_os.contains('mingw') or
+    host_os.contains('cygwin') or
+    host_os.contains('windows')
+)
+
+platform_osx = (
+    host_os.contains('machten') or
+    host_os.contains('rhapsody') or
+    host_os.contains('darwin')
+)
+
+################################################################################
+# Get Meson modules
+
+pythonmod = import('python')
+fs        = import('fs')
+
+###############################################################################
+# Check for python...
+
+python3_minver = '>=3.6'
+
+python = pythonmod.find_installation('python3', required: true)
+message('Found Python @0@'.format(python.language_version()))
+
+python_found = (
+    python.found() and
+    python.language_version().version_compare(python3_minver)
+)
+if not python_found
+    python_warning = '''
+    Python @0@ was not found or version was too old.
+    '''.format(python3_minver)
+    warning(python_warning)
+    warnings += python_warning
+endif
+
+########################################################################
+####            External programs                                   ####
+########################################################################
+
+# Check for XML tools
+if platform_windows
+    # The /usr/bin/ version usually has less issues on Windows because it
+    # uses the Linux paths IIRC. MAYBE can be worked around setting XSLTPROC path?
+    # mintty should always be available, it's a basic part of msys64
+    # FIXME: Check if this works with CYGWIN
+    mintty = find_program('mintty')
+    if mintty.found()
+        msys_path = fs.parent(mintty.full_path()) + '/'
+    else
+        msys_warning = 'Cannot find location of MSYS2. The version of xsltproc found may not work!'
+        warning(msys_warning)
+        warnings += msys_warning
+        msys_path = ''
+    endif
+    xmllint  = find_program('xmllint', required: false, dirs: [msys_path])
+    xsltproc = find_program('xsltproc', dirs: [msys_path])
+else
+    xmllint  = find_program('xmllint', required: false)
+    xsltproc = find_program('xsltproc')
+endif
+
+# Check for gettext tools
+#FIXME For now width is hardcoded in our tools
+#MSGWIDTH      = 79
+
+MSGUNIQ    = find_program('msguniq')
+
+MSGCAT     = find_program('msgcat')
+
+MSGFMT     = find_program('msgfmt')
+
+MSGINIT    = find_program('msginit')
+
+MSGMERGE   = find_program('msgmerge')
+
+# intltool is used for updating the Windows installer language files
+INTLTOOL_UPDATE  = find_program('intltool-update')
+INTLTOOL_EXTRACT = find_program('intltool-extract')
+INTLTOOL_MERGE   = find_program('intltool-merge')
+
+# Check other external tools
+perl       = find_program('perl')   # image handling
+
+# Shell tools
+# FIXME: Don't depend on sh, use Python?
+cp         = find_program('cp')
+ln         = find_program('ln')
+sed        = find_program('sed')
+
+################################################################################
+# Internal tools
+
+# Define xml2po related stuff
+xml2po     = find_program(meson.project_source_root() / 'tools' / 'xml2po.py')
+xml2pot    = find_program(meson.project_source_root() / 'tools' / 'xml2pot.sh')
+updatepo   = find_program(meson.project_source_root() / 'tools' / 'update_po.py')
+
+# Image handling, needs perl until we are able to convert it
+copy_images      = find_program(meson.project_source_root() / 'tools' / 'copy_images.sh')
+MAKE_IMAGE_LINKS = find_program(meson.project_source_root() / 'build' / 'meson' / 'make_image_links.pl')
+MAKE_IMAGE_LINKS_FLAGS = '-v'
+
+if platform_windows
+    MAKE_IMAGE_LINKS_FLAGS += '-m=hardlink,copy'
+else
+    # FIXME: Until we figure out the issue with symbolic links
+    #        on Linux, just do a plain copy...
+    MAKE_IMAGE_LINKS_FLAGS += '-m=hardlink,copy'
+endif
+
+# Validation
+validate_references = find_program(meson.project_source_root() / 'tools' / 'validate_references.py')
+
+################################################################################
+# Define authors and maintainers sources
+
+# list of authors and contributors (no DocBook)
+AUTHORS_DATA_XML = ['stylesheets/authors.xml']
+
+# automatically generated authors section (DocBook)
+##AUTHORS_DOCBOOK_XML = 'src/preface/authors.xml'
+AUTHORS_DOCBOOK_XML = 'authors.xml'
+#AUTHORS_DOCBOOK_DIRNAME = $(dir $(AUTHORS_DOCBOOK_XML))
+#AUTHORS_DOCBOOK_FILENAME = $(notdir $(AUTHORS_DOCBOOK_XML))
+
+#FIXME: Below stylesheet definition should go into /stylesheets/meson.build
+
+# Stylesheets generating AUTHORS
+AUTHORS_TEXT_STYLESHEETS = [
+    'stylesheets/authors_text.xsl',
+    'stylesheets/authors_common.xsl',
+]
+
+# Stylesheets generating src/preface/authors.xml
+AUTHORS_DOCBOOK_STYLESHEETS = [
+    'stylesheets/authors_docbook.xsl',
+    'stylesheets/authors_common.xsl',
+]
+
+# Stylesheet generating MAINTAINERS
+DOAP_STYLESHEET = ['stylesheets/doap2text.xsl']
+
+AUTHORS_TEXT    = AUTHORS_TEXT_STYLESHEETS + AUTHORS_DATA_XML
+AUTHORS_DOCBOOK = AUTHORS_DOCBOOK_STYLESHEETS + AUTHORS_DATA_XML
+
+# Maintainers doap
+MAINTAINERS_DOAP = ['gimp-help.doap']
+
+MAINTAINERS_TEXT = DOAP_STYLESHEET + MAINTAINERS_DOAP
+
+
+###############################################################################
+# Configuration
+
+if get_option('quickreference')
+    qr_enabled = true
+else
+    qr_enabled = false
+endif
+
+if get_option('maintainer')
+    if not qr_enabled
+        warning('When maintainer is enabled, quickreference needs to be enabled too. Setting qr_enabled to true.')
+        qr_enabled = true
+    endif
+    maintainer_enabled = true
+    message('Maintainer is enabled. Extra targets will be selected and po files for all languages will be built.')
+else
+    maintainer_enabled = false
+endif
+
+if get_option('language-menu')
+    lang_menu_enabled = '1'
+else
+    lang_menu_enabled = '0'
+endif
+
+if get_option('windows-installer')
+    installer_enabled = true
+else
+    installer_enabled = false
+endif
+
+########################################################################
+####            The GIMP manual languages                           ####
+########################################################################
+
+# FIXME update readme regarding adding translations after merging meson...
+
+LINGUAS      = ['en']
+LINGUAS_file = fs.read('./po/LINGUAS').strip().split('\n')
+
+# Remove comments
+foreach lang : LINGUAS_file
+    if not lang.startswith('#')
+        LINGUAS += lang
+    endif
+endforeach
+message('Available languages: ', LINGUAS)
+
+selected_languages = get_option('languages')
+
+if selected_languages.startswith('all')
+    MY_LINGUAS = LINGUAS
+elif selected_languages.startswith('none') or selected_languages == ''
+    MY_LINGUAS = 'en'
+else
+    MY_LINGUAS = selected_languages.strip().split(' ')
+endif
+
+message('Selected languages: ', MY_LINGUAS)
+
+# ALL_LINGUAS is required in /stylesheets/, which is why we handle reading LINGUAS here
+target_linguas = []
+ALL_LINGUAS = ''
+foreach lang : MY_LINGUAS
+    if not (lang in LINGUAS)
+        lang_warning = 'Language "@0@" not found in LINGUAS! Translated manual for @0@ will not be built.'.format(lang)
+        warning(lang_warning)
+        warnings += lang_warning
+    else
+        target_linguas += lang
+        ALL_LINGUAS += lang + ' '
+    endif
+endforeach
+
+if maintainer_enabled
+    # For the website we need stats of all languages we support, which we
+    # get from the po files. So we need po files updated for ALL languages.
+    po_target_linguas = []
+    foreach lang : LINGUAS
+        if not lang.startswith('#')
+            po_target_linguas += lang
+        endif
+    endforeach
+else
+    po_target_linguas = target_linguas
+endif
+
+if ALL_LINGUAS == ''
+    error('No languages selected or error in configuration')
+endif
+
+
+#### Build/copy stylesheets ####
+
+# Stylesheets needs to be done first: it is required to generate authors and
+# maintainers files.
+subdir('stylesheets')
+
+########################################################################
+####            Make AUTHORS and MAINTAINERS file                   ####
+########################################################################
+
+ss_path = meson.project_build_root()  + '/stylesheets/'
+
+authors_file = custom_target('AUTHORS',
+    #input : [authors_text_ss.full_path(), authors_data.full_path()],
+    depend_files: [authors_text_ss, authors_data],
+    output: 'AUTHORS',
+    command: [
+        xsltproc,
+        '--verbose',
+        '-o', '@OUTPUT@',
+        ss_path + AUTHORS_TEXT_STYLESHEETS,
+        ss_path + AUTHORS_DATA_XML
+    ],
+    build_by_default: true,
+)
+
+# We have a circular dependency: src/preface/authors.xml needs to be created
+# and moved to src first, so we need to be in /src first. However, before
+# we can make translated xml (based on the files in /src), we need pot files
+# created first, for which /pot needs to be entered first.
+# So, we have no other choice than generating authors.xml first without
+# going to /src/preface first.
+
+authors_file_xml = 'authors.xml'
+authors_subdir   = '/src/preface/'
+
+preface_authors_xml = custom_target('preface-authors-xml',
+    #depends: [authors_file],
+    input: [authors_docbook_ss, authors_data],
+    output: authors_file_xml,
+    command: [
+        xsltproc,
+        '-o', meson.current_build_dir() + '/authors.xml',
+        '@INPUT@',
+    ],
+)
+
+# Can't use fs.copyfile here because we need a dependency on preface_authors_xml
+copy_authors_to_src = custom_target('copy-to-src-authors',
+    input: preface_authors_xml,
+    output: ['authors-copy-to-source.xml'],
+    command: [
+        'cp',
+        # Special case here since authors.xml is only available
+        # in the build dir!
+        meson.project_build_root()  + '/' + authors_file_xml,
+        meson.project_source_root() + authors_subdir + authors_file_xml,
+    ],
+    build_by_default: true,
+)
+
+
+# Maintainers doap resides in the root
+MAINTAINERS_DOAP       = ['gimp-help.doap']
+MAINTAINERS_STYLESHEET = ['stylesheets/doap2text.xsl']
+
+MAINTAINERS_TEXT = MAINTAINERS_STYLESHEET + MAINTAINERS_DOAP
+
+maintainers_file = custom_target('MAINTAINERS',
+  input : MAINTAINERS_TEXT,
+  output: 'MAINTAINERS',
+  command: [
+      xsltproc,
+      '-o', '@OUTPUT@',
+      '@INPUT@',
+  ],
+  build_by_default: true,
+)
+
+
+########################################################################
+
+#xml2po_env = environment()
+#xml2po_env.append('XML2PO',  XML2PO.full_path())
+#xml2po_env.append('MSGUNIQ', MSGUNIQ.full_path())
+
+
+# Documentation source files
+subdir('src')
+
+# Generate pot files, which needs generated authors.xml in src/preface, generated above
+subdir('pot')
+
+# Generate updated po files in build dir
+subdir('po')
+
+subdir('po-windows-installer')
+
+if installer_enabled
+    generate_isl = find_program(meson.project_source_root() / 'tools' / 'generate_isl.py')
+    create_installers = find_program(meson.project_source_root() / 'build' / 'windows' / 'installer' / 'create_installers.py')
+
+    version_file = 'gimp-help.version'
+
+    set_ver_script = 'import sys; f=open("@0@", "w", encoding="utf-8");f.write("@1@");f.close()'.format(version_file, meson.project_version())
+
+    gimp_help_version_file = custom_target('set-gimp-version',
+        output: 'gimp-help.version',
+        command: [python, '-c',
+            set_ver_script,
+        ],
+        build_always_stale: true,
+    )
+
+    subdir('build/windows/installer')
+endif
+
+# Define English images
+subdir('images')
+
+# Copy images; generate translated xml files; then generate html etc...
+subdir('html')
+
+
+###############################################################################
+### Quickreference ###
+
+if qr_enabled
+    SVG2PDF = find_program('rsvg-convert')
+
+    subdir('quickreference')
+endif
+
+
+###############################################################################
+### Website ###
+
+if maintainer_enabled
+    PCTPROC = find_program(meson.project_source_root() / 'tools' / 'translated_percentage.py')
+
+    subdir('web')
+endif
+
+
+###############################################################################
+# Validation / Testing
+
+if xmllint.found()
+    # Validate the generated authors.xml. Is this really needed?
+    # We already validate the entire generated xml per language.
+    test('validate-authors',
+        xmllint,
+        args: [
+            '--noout',
+            '--valid',
+            meson.project_build_root() / 'authors.xml',
+        ],
+        suite: 'validate-xml',
+        depends: [preface_authors_xml],
+    )
+endif
+
+test('validate-image-references',
+    validate_references,
+    args: [
+        '--verbose',
+        '--broken',
+        '--orphaned',
+        '-r', meson.project_source_root(),
+        target_linguas,
+    ],
+    suite: 'validate-images',
+    depends: [copy_authors_to_src],
+)
+
+###############################################################################
+# Windows installer creation
+
+if installer_enabled and get_option('create-installers')
+    # Use install script because we need html/images from installed location
+    # for the creation of the Windows installer
+    meson.add_install_script(create_installers,
+        '--lang=' + ALL_LINGUAS,
+        '--ver='  + meson.project_version(),
+        # installed html dir:
+        get_option('prefix'),
+    )
+endif
+
+###############################################################################
+#custom_target('Changelog',
+#  input : [ ],
+#  output: [ 'Changelog', ],
+#  command: [
+#    generate_changelog,
+#    meson.project_source_root(),
+#    '@OUTPUT@'
+#  ],
+#  build_by_default: false,
+#)
+
+if warnings.length() > 0
+  warning('Warnings occurred during configuration')
+  foreach warning : warnings
+    warning(warning)
+  endforeach
+endif

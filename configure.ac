@@ -6,7 +6,7 @@ AC_PREREQ(2.54)
 
 m4_define([help_major_version], [3])
 m4_define([help_minor_version], [2])
-m4_define([help_micro_version], [0])
+m4_define([help_micro_version], [1])
 
 m4_define([help_version], [help_major_version.help_minor_version.help_micro_version])
 
@@ -58,7 +58,7 @@ AC_PROG_SED
 #
 
 if test "x$ALL_LINGUAS" = "x"; then
-	ALL_LINGUAS="bg ca cs da de el en en_GB eo es fa fi fr hr hu it ja ko lt nl nn pl pt pt_BR ro ru sk sl sr sv tr uk zh_CN"
+	ALL_LINGUAS="bg ca cs da de el en en_GB eo es fa fi fr hr hu it ja kk ko lt nb nl nn pl pt pt_BR ro ru sk sl sr sv tr uk zh_CN"
 else
   ALL_LINGUAS=`echo "$ALL_LINGUAS" | $SED -e 's/[,] */ /g'`
 fi

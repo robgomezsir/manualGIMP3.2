@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                       "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-01-10 j.h: reviewed for v2.6
+  2006-08-14 New section added by sally
+  2005-06-02 created by julien hardelin
+-->
+<sect2 id="gimp-selection-dialog">
+  <title>Selection Editor</title>
+
+  <indexterm>
+    <primary>Selection</primary>
+    <secondary>Editor</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Editor</primary>
+  </indexterm>
+
+  <para>
+    The <guimenuitem>Selection Editor</guimenuitem> command displays the
+    <quote>Selection Editor</quote> dialog window. This dialog window
+    displays the active selection in the current image and gives you easy
+    access to the selection-related commands. It is not really intended for
+    editing selections directly, but if you are working on a selection, it
+    is handy to have the selection commands all together, since it is easier
+    to click on a button than to search for commands in the command tree of
+    the menubar. The <quote>Selection Editor</quote> also offers some
+    advanced options for the <quote>Select to Path</quote> command.
+  </para>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Select</guimenu>
+        <guimenuitem>Selection Editor</guimenuitem>
+      </menuchoice>.
+    </para>
+   </sect3>
+
+  <sect3>
+    <title>
+      Description of the <quote>Selection Editor</quote> dialog window
+    </title>
+    <figure>
+      <title>The <quote>Selection Editor</quote> dialog window</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/select/editor.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>The Buttons</term>
+        <listitem>
+          <para>
+            The <quote>Selection Editor</quote> dialog window has several
+            buttons which you can use to easily access selection commands:
+          </para>
+          <itemizedlist>
+            <listitem>
+              <para>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata
+                        fileref="images/stock-icons/gimp-selection-all.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                The <link linkend="gimp-selection-all">Select All</link>
+                button.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                    <imagedata
+                      fileref="images/stock-icons/gimp-selection-none.svg" contentwidth="16px" />
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                The <link linkend="gimp-selection-none">Select None</link>
+                button.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                    <imagedata
+                      fileref="images/stock-icons/gimp-invert.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                The <link linkend="gimp-selection-invert">Select Invert</link>
+                button.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                    <imagedata
+                      fileref="images/stock-icons/gimp-selection-to-channel.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                The <link linkend="gimp-selection-to-channel">Save to
+                Channel</link> button.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                    <imagedata
+                      fileref="images/stock-icons/gimp-selection-to-path.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                The <link linkend="selection-to-path">To Path</link>
+                button. If you hold the <keycap>Shift</keycap> key while
+                clicking on this button, the
+                <link linkend="advanced-settings-for-selection-to-path">Advanced
+                Settings</link> dialog is displayed. Please see the next section
+                for details about these options.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata
+                        fileref="images/stock-icons/gimp-selection-stroke.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                The <link linkend="gimp-selection-stroke">Stroke
+                Selection</link> button.
+              </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>The display window</term>
+        <listitem>
+          <para>
+            In the display window, selected areas of the image are white,
+            non-selected areas are black, and partially selected areas are
+            in shades of gray. Clicking in this window acts like
+            <link linkend="gimp-selection-by_color">Select by Color</link>.
+            See the example below.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <figure>
+      <title>
+        Example of clicking in the <quote>Selection Editor</quote> display
+        window
+      </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG"
+            fileref="images/menus/select/selection-editor-click-example-1.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            Selection Editor window after clicking.
+          </para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG"
+            fileref="images/menus/select/selection-editor-click-example-2.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            Image with the resulting selection applied.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+
+  <sect3 id="advanced-settings-for-selection-to-path">
+    <title>
+      The <quote>Selection to Path Advanced Settings</quote> dialog
+    </title>
+    <anchor id="plug-in-sel2path"/>
+    <indexterm>
+      <primary>Selection</primary>
+      <secondary>Selection to Path</secondary>
+      <tertiary>Advanced options</tertiary>
+    </indexterm>
+    <figure>
+      <title>The <quote>Advanced Settings</quote> dialog window</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG"
+            fileref="images/menus/select/selection-to-path-adv.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      The <quote>Selection to Path Advanced Settings</quote> dialog, that
+      you get by <keycap>Shift</keycap> clicking on the <guibutton>Selection
+      to Path</guibutton> button, contains a number of options,
+      most of which you can set with a slider bar. There is also one check
+      box. These options are mostly used by advanced users. They are:
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Align Threshold</term>
+        <listitem>
+          <para>
+            If two endpoints are closer than this value, they are made to be
+            equal.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Corner Always Threshold</term>
+        <listitem>
+          <para>
+            If the angle defined by a point and its predecessors
+            and successors is smaller than this, it is a corner,
+            even if it is within <guilabel>Corner Surround</guilabel>
+            pixels of a point with a smaller angle.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Corner Surround</term>
+        <listitem>
+          <para>
+            Number of points to consider when determining if a
+            point is a corner or not.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Corner Threshold</term>
+        <listitem>
+          <para>
+            If a point, its predecessors, and its successors
+            define an angle smaller than this, it is a corner.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Error Threshold</term>
+        <listitem>
+          <para>
+            Amount of error at which a fitted spline<footnote><para>
+              <quote>Spline</quote> is a mathematical term for a
+              function which defines a curve by using a series of control
+              points, such as a Bézier curve.
+              <mediaobject>
+                <imageobject>
+                  <imagedata format="PNG"
+                    fileref="images/menus/select/250px-Bezier.png"/>
+                </imageobject>
+              </mediaobject>
+              See <ulink url="https://en.wikipedia.org/wiki/Spline_(mathematics)">Wikipedia</ulink>
+              for more information.
+            </para></footnote>
+            is unacceptable. If any pixel is further away than this from the
+            fitted curve, the algorithm tries again.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Filter Alternative Surround</term>
+        <listitem>
+          <para>
+            A second number of adjacent points to consider
+            when filtering.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Filter Epsilon</term>
+        <listitem>
+          <para>
+            If the angles between the vectors produced by
+            <guilabel>Filter Surround</guilabel> and
+            <guilabel>Filter Alternative Surround</guilabel>
+            points differ by more than this, use the one from
+            <guilabel>Filter Alternative Surround</guilabel>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Filter Iteration Count</term>
+        <listitem>
+          <para>
+            The number of times to smooth the original data points.
+            Increasing this number dramatically, to 50 or
+            so, can produce vastly better results.  But if
+            any points that <quote>should</quote> be corners aren't found,
+            the curve goes wild around that point.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Filter Percent</term>
+        <listitem>
+          <para>
+            To produce the new point,
+            use the old point plus this times the neighbors.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Filter Secondary Surround</term>
+        <listitem>
+          <para>
+            Number of adjacent points to consider if
+            <guilabel>Filter Surround</guilabel> points defines a
+            straight line.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Filter Surround</term>
+        <listitem>
+          <para>
+            Number of adjacent points to consider when filtering.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Keep Knees</term>
+        <listitem>
+          <para>
+            This check box says whether or not to remove <quote>knee</quote>
+            points after finding the outline.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Line Reversion Threshold</term>
+        <listitem>
+          <para>
+            If a spline is closer to a straight line than this value,
+            it remains a straight line, even if it would otherwise
+            be changed back to a curve. This is weighted by the
+            square of the curve length, to make shorter curves
+            more likely to be reverted.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Line Threshold</term>
+        <listitem>
+          <para>
+            How many pixels (on the average) a spline can
+            diverge from the line determined by its endpoints
+            before it is changed to a straight line.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Reparametrize Improvement</term>
+        <listitem>
+          <para>
+            If reparameterization doesn't improve the fit by this
+            much percent, the algorithm stops doing it.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Reparametrize Threshold</term>
+        <listitem>
+          <para>
+            Amount of error at which it is pointless to reparameterize.
+            This happens, for example, when the algorithm is trying to fit the
+            outline of the outside of an <quote>O</quote> with a single spline.
+            The initial fit is not good enough for the Newton-Raphson
+            iteration to improve it.  It may be that it would be better
+            to detect the cases where the algorithm didn't find any corners.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Subdivide Search</term>
+        <listitem>
+          <para>
+            Percentage of the curve away from the worst point
+            to look for a better place to subdivide.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Subdivide Surround</term>
+        <listitem>
+          <para>
+            Number of points to consider when deciding whether
+            a given point is a better place to subdivide.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Subdivide Threshold</term>
+        <listitem>
+          <para>
+            How many pixels a point can diverge from a straight
+            line and still be considered a better place to
+            subdivide.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tangent Surround</term>
+        <listitem>
+          <para>
+            Number of points to look at on either side of a
+            point when computing the approximation to the
+            tangent at that point.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

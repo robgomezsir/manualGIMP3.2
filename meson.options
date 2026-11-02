@@ -1,0 +1,32 @@
+# What to build
+
+# All languages can take a long time to build and is not recommended for general use.
+# It accepts a list of language codes separated by a space;
+# Other values accepted are "all" for all supported languages;
+# "none" or "" (empty) will build English only
+option('languages', type : 'string', value : 'en', description : 'Select the language codes separated by a space; or "all" for all languages')
+
+# Add a language slector menu at the top of each page.
+# Useful when building multiple languages to make it easier to switch.
+option('language-menu', type : 'boolean', value : false)
+
+# Build quickreference PDF files
+option('quickreference', type : 'boolean', value : false)
+
+# Build Windows installer files
+# Note that the po(t) files are built even when this is false.
+# This is done to make it easier for i18n updates.
+option('windows-installer', type : 'boolean', value : false)
+
+# Create InnoSetup installers
+# Only valid if "windows-installer" is true
+# Mainly intended for use in ci to create all installers
+# in one go while related files are built per language
+# in separate jobs. In that case set to false.
+option('create-installers', type : 'boolean', value : true)
+
+# Build website and maintainer related targets
+# Note: enabling this will force enable quickreference and
+# will also build po files for all supported languages.
+# This is needed to collect the translation stats shown on the website.
+option('maintainer', type : 'boolean', value : false)

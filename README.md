@@ -11,14 +11,11 @@ on the `master` branch. We accept and will review MR's targeting 3.2.
 - The manual for version 3.0 of GIMP is available in a branch named
 `gimp-help-3-0` and it is doubtful whether there will be new updates.
 
-The manual for GIMP 2.10 is not being maintained anymore, but translations are
-still accepted. It is available in a separate branch
-called `gimp-help-2-10`.
 
 ## Contents
 
 1. [Online manuals](#online-manuals)
-2. [Tips for contribution](#tips-for-contribution)  
+2. [Tips for contributing](#tips-for-contributing)  
   2.1 [Translating](#how-to-help-translating-the-manual)  
   2.2 [Manual writing](#how-to-help-writing-the-manual)
 3. [Documentation issues](#documentation-issues)
@@ -31,8 +28,8 @@ called `gimp-help-2-10`.
 
 The online, daily updated, manuals for all supported languages are available at:
 
-- [GIMP 3.2 manuals](https://docs.gimp.org/index.html#gimp-online)
-- [GIMP 3.2 manuals](https://testing.docs.gimp.org/index.html#gimp-online)
+- [GIMP 3.2 manuals](https://docs.gimp.org/index.html#gimp-online) (Autotools build)
+- [GIMP 3.2 manuals](https://testing.docs.gimp.org/index.html#gimp-online) (_Experimental meson build)
 
 (This is not a typo.)
 
@@ -42,7 +39,7 @@ Manuals for older versions of GIMP are still available:
 
 The offline manuals are available for download from our [Releases page](https://docs.gimp.org/download.html).
 
-## Tips for contribution
+## Tips for contributing
 
 ### How to help translating the manual
 
@@ -59,16 +56,27 @@ Your language team will be able to give you more details on this procedure.
 **Note:** If your language does not have any po files listed there, your
 language first needs to be added to our repository. In that case, please open
 [an issue](https://gitlab.gnome.org/GNOME/gimp-help/issues) stating which
-language and languagecode you would like to have added.
+language and iso languagecode you would like to have added. Please also give
+us the native localized name for your language to be used on our website.
 
 #### How to test your translation
 
 If you have set up a build environment for gimp-help you can test the
-translation by running `make html-LANG`, where LANG is your two/four-letter
-language code. This will generate an HTML version of the user manual,
-e.g. `make html-nl` to make the HTML for the Dutch language.
-When that is successful, you can find the index.html file in the `/html/LANG/`
-folder under your gimp-help build folder.
+translation:
+- When using meson (preferred):
+  + Set up your meson build if you haven't done that yet, see [Experimental meson build instructions](#Experimental meson build instructions).
+  + Run `ninja && ninja install`. If you set things up correctly it
+  should find your updated html when opening help from GIMP.
+  + Alternatively only run `ninja`, browse to gimp-help's build folder
+  and open `html/LANG/index.html`, where `LANG` should be replaced by
+  the iso language code of your language.
+- Wen using autotools:
+  + Assuming your autotools build is alread set up, run `make html-LANG`,
+  where LANG is your iso language code. This will generate an HTML version
+  of the user manual. For example use `make html-nl` to make the HTML for
+  the Dutch language.
+  + When that is successful, you can find the index.html file in the
+  `/html/LANG/` folder under your gimp-help build folder.
 
 #### How to add localized screenshots
 
@@ -82,14 +90,15 @@ the changes are vetted and reviewed by your team.
 
 All images are stored in the top-level 'images' folder. Original
 screenshots in English are in the 'C' subfolder. Localized screenshots
-are in 'LANG' folders, where LANG is your two/four-letter language code.
+are in 'LANG' folders, where LANG is your iso language code.
 
 It is important to preserve both paths and names when saving localized
 versions of the screenshots. Otherwise documentation won't build properly,
 or the localized images will not be used.
 
 More in general, also follow the relevant [guidelines](documentation-guidelines.md)
-regarding image handling.
+regarding image handling. In general you should use the same theme and icon theme
+ as the English image.
 
 ### How to help writing the manual
 
@@ -109,11 +118,37 @@ usually during European evening hours.
 If some of the instructions below are unclear, don't hesitate
 to ask in one of the places mentioned above.
 
+#### Experimental meson build instructions
+The autotools Makefiles are being phased out and will be replaced
+by meson, which is currently in an experimental stage. You are
+encouraged to use that for building the manual. This should
+be faster than building with autotools.
+For required packages see below, in addition you will also need
+the `meson` package.
+
+To build with meson:
+- Start a terminal.
+- cd to your build directory (create if needed)
+- Setup env vars for `$HELP_PREFIX` and `$SRCDIR` or replace
+with actual values below. Replace "en nl" with the language(s)
+you want to build.
+- `meson setup -Dprefix=$HELP_PREFIX $SRCDIR -Dlanguages="en nl"`
+- Alternatively you can start meson from the source and specify
+the build dir. See the meson manual for details.
+- Next run: `ninja`. When building multiple languages (say more
+than 4), you can specify a max load, e.g. `ninja -l 4.5`.
+- If you want to, you can install the languages so that GIMP can
+find the local manual. Run: `ninja install --no-rebuild`.
+- Optionally test if everything is ok with the build by
+running `ninja test`.
+
+*Continuing with the regular instructions*
 To get started, here is a checklist of things you should do:
-- If you don't have a Gnome GitLab account yet then create one
-  (you can use GitHub credentials to login), see:
-  https://gitlab.gnome.org/
-- Next go to https://gitlab.gnome.org/GNOME/gimp-help and
+- If you don't have a [Gnome GitLab](https://gitlab.gnome.org/)
+  account yet, create one (you can use GitHub credentials to login).
+- Make sure you set up set up an [SSH](https://handbook.gnome.org/infrastructure/ssh-keys.html)
+  key or you won't be able to fork projects.
+- Go to https://gitlab.gnome.org/GNOME/gimp-help and
   create your own fork by clicking on "Fork" on the top
   right of the page.
 - Go to your fork at https://gitlab.gnome.org/YOUR_USERNAME/gimp-help
@@ -157,18 +192,19 @@ To get started, here is a checklist of things you should do:
   + In case you are on Windows, it is strongly advised to
     set up a MSYS2 environment, so that you can build and
     test the gimp-help repository. MSYS2 includes multiple environments, each
-    of which is accessed through its own executable. It is advised that you use
+    of which is accessed through its own executable. We advise that you use
     UCRT64 or CLANG64. For more information, refer to
     [Environments](https://www.msys2.org/docs/environments/) in the MSYS2
     documentation.
   + TODO: Other OS's may need some setting up too. Add
     details here as needed.
   + You need the following packages to build the documentation:
-    + Minimum: autotools, libxslt, python, libxml2,
-      docbook-xml, and docbook-xsl. With these packages, you can build the
-      English html help.
+    + Minimum: autotools or meson [at least version 1.10], libxslt, python,
+      perl, libxml2, python3-libxml2 (on MSYS2 this is included in libxml2),
+      docbook-xml, and docbook-xsl.
+      With these packages, you can build the English html help.
     + Version control: git.
-    + To build quick start PDFs: librsvg2-2. For some laguages, you may also
+    + To build quick start PDFs: librsvg2-2. For some languages, you may also
       need to install the appropriate [Noto fonts](https://fonts.google.com/noto). 
       For more information, refer to
       [#410](https://gitlab.gnome.org/GNOME/gimp-help/-/issues/410)
@@ -181,15 +217,17 @@ To get started, here is a checklist of things you should do:
       To install polib, use a package manager (e.g., pacman) to install pip,
       and then use pip to install polib. gettext may already be installed in
       an MSYS2 environment.
-    + To build the installers: intltool and innosetup.
+    + To build the Windows installers: intltool and innosetup. When using meson
+      InnoSetup will be automatically downloaded and installed when needed.
     + To create an architecture diagram of the build process: dot, which is
-      part of graphviz. For MSYS2, refer to
+      part of graphviz. Not yet available for our meson build. For MSYS2, refer to
       [Base Package: mingw-w64-graphviz](https://packages.msys2.org/base/mingw-w64-graphviz)
       for information about what package to install. To generate the diagram,
       use `make dot`.
-    + To build PDF versions of the help: dblatex. Note that PDF versions of
-      help are no longer being created because dblatex doesn't seem to be
-      compatible with more recent versions of Python. Refer to
+    + To build PDF versions of the help: dblatex (does not work at this time).
+      There currently is no plan to port this to meson. Note that PDF versions
+      of gimp-help are no longer being created because dblatex doesn't seem
+      to be compatible with more recent versions of Python. Refer to
       [#138](https://gitlab.gnome.org/GNOME/gimp-help/-/issues/138) for more
       information. When everything is set up correctly, use `make pdf-xx` to
       build a PDF for a single language or `make pdf-local` to build PDFs for
@@ -428,13 +466,40 @@ Before you create a release you'll need:
 ## Updating supported languages
 
 When adding a new language for translation, several files need to be
-updated. It's the intention to simplify this, but for now the list
-of languages needs to be updated in the following files:
+updated. After the meson build is declared stable, the autotools related
+files will be removed. These are marked *autotools only*.
 
-  - [configure.ac](configure.ac)
+A Python script is available to automate updating all files. This script
+should be used instead of updating manually:
+  - From the `gimp-help` source folder start `../tools/add_lang.py` with
+  the following command line parameters in this order:
+    + iso language code
+    + US English name for the language
+    + Native localized name of the language
+    + Location of the build folder (only needed for the second run)
+  - Pay attention to possible warnings in the terminal and if necessary
+  act on them.
+  - Run the `meson` command shown at the end followed by `ninja` which
+    will create necessary po files that need to be added to our
+    meson.build files.
+  - Run the `add_lang.py` script again with the same parameters.
+  - Unless errors or warnings show up in your terminal you can now
+    create an MR with all changed files.
+
+In case there are issues with the script here is the list of files
+that need to be updated:
+
+  - [configure.ac](configure.ac); *autotools only*
     - Update ALL_LINGUAS
-  - [Makefile.GNU](Makefile.GNU)
+  - [Makefile.GNU](Makefile.GNU); *autotools only*
     - Update ALL_LINGUAS
+  - [po/LINGUAS](po/LINGUAS) *meson only*
+    - Add language code on a separate line in the correct
+    alphabetical position.
+  - [quickreference/po/meson.build](quickreference/po/meson.build) *meson only*
+    Add new po file to `qr_po_files`.
+  - [po-windows-installer/meson.build](po-windows-installer/meson.build) *meson only*
+    Add new po file to `installer_po_files`.
   - [stylesheets/languageVocab.xml](stylesheets/languageVocab.xml)
     - Update vocab
   - [stylesheets/authors_common.xsl](stylesheets/authors_common.xsl)
@@ -444,12 +509,12 @@ of languages needs to be updated in the following files:
   - [web/website.xml](web/website.xml)
     - Update list of online user manuals and quickreference PDF's
   - [.gitlab-ci.yml](.gitlab-ci.yml)
-    - Update LINGUAS in the relevant build-debian-[number].
-    - Update LINGUAS in the relevant distcheck-[number].
+    - Add language code to the relevant `MAKE_LANGS_` [number]. *autotools only*
+    - Add language code to the relevant `MESON_LANGS_` [number]. *meson only*
     - Note: after committing make sure that the build job doesn't take too
       long. When it takes more than 50 minutes, it might be time to split
       the build job because we don't want time-outs.
-  - [build/windows/installer/installer-gimp-help-msys2.sh](build/windows/installer/installer-gimp-help-msys2.sh)
+  - [build/windows/installer/installer-gimp-help-msys2.sh](build/windows/installer/installer-gimp-help-msys2.sh) *autotools only* **TODO** Not touched by `add_lang.py`!
     - Check if the language is part of the official languages installed
       together with Inno Setup. An up-to-date list can be found at
       [github](https://github.com/jrsoftware/issrc/tree/main/Files/Languages).
@@ -457,9 +522,17 @@ of languages needs to be updated in the following files:
       [here](https://github.com/jrsoftware/issrc/tree/main/Files/Languages/Unofficial).
     - If there is, then add it to the download_lang commands.
     - If no translation is available, `Default.isl` can be used.
-  - [build/windows/installer/gimp-help.iss](build/windows/installer/gimp-help.iss)
+  - [build/windows/installer/languages.isi](build/windows/installer/languages.isi)
+    - All languages with InnoSetup translations are already added. You only
+    need to update this when InnoSetup adds a new language or when the
+    language you are adding does not have an InnoSetup translation. In which
+    case you have to rename a copy of `Default.isl` and update the language
+    name and code. Then:
     - Add an if LANG test and define LANGFILE for your language.
+  - `po/new langcode` needs `meson.build` files copied from another language
+    to all folders. *meson only*
 
+*autotools only*
 Note: If your build directory is not a child of the source directory, then
 `msginit` will not fill in PACKAGE_VERSION in the header of the po files.
 Since msginit tries to find `configure`, copying that to your build directory

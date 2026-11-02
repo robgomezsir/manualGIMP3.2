@@ -1,0 +1,21 @@
+keys_xml_files = [
+    'gimp-keys.xml'
+]
+keys_xml = files(keys_xml_files)
+
+
+subdir('stylesheets')
+subdir('templates')
+subdir('po')
+
+# Generate translated xml files
+subdir('xml')
+# Convert to svg
+subdir('svg')
+# Convert to pdf
+subdir('pdf')
+
+#FIXME: the Makefile.am also has a target to convert to docbook.xml
+#       Since that is currently never used, we will leave that for
+#       another time. Maybe when we fugure out how to integrate this
+#       with the rest of the manual.
