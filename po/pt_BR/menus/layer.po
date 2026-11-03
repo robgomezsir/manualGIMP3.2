@@ -1249,23 +1249,14 @@ msgid "Resize current layer but not its content"
 msgstr "Redimensiona a camada mas não o conteúdo"
 
 #: src/menus/layer/resize.xml:20(para)
-#, fuzzy
 msgid ""
 "In <acronym>GIMP</acronym>, a layer is not always the same size as the "
 "others. This command changes the dimensions of a layer, but it does not "
 "<link linkend=\"gimp-layer-scale\">scale</link> its contents."
 msgstr ""
-"No <acronym>GIMP</acronym>, uma camada não é sempre do mesmo tamanho da "
-"imagem a que pertence. Ele pode ser menor ou pode ser maior, e nesse caso  "
-"algumas partes do mesma estarão ocultas fora da área da imagem. O comando "
-"<guimenuitem>Tamanho dos limites da camada</guimenuitem> exibe uma caixa de "
-"diálogo na qual você pode definir as dimensões para a camada ativa. Esse "
-"comando altera as <link linkend=\"gimp-layer-scale\">dimensões</link> da "
-"camada,  mas não  altera o tamanho ou a posição do conteúdo. Claro que se "
-"você usar esse comando para reduzir a camada, terá que escolher que partes "
-"serão cortadas. Você também pode alterar o tamanho da camada com a "
-"ferramenta de Cortar, com as opções de <quote>Somente na camada atual</"
-"quote> e <quote>Permitir crescimento</quote>."
+"No <acronym>GIMP</acronym>, uma camada nem sempre tem o mesmo tamanho que as "
+"demais. Este comando altera as dimensões de uma camada, mas não "
+"<link linkend=\"gimp-layer-scale\">redimensiona</link> seu conteúdo."
 
 #: src/menus/layer/resize.xml:28(para)
 msgid ""
@@ -1322,6 +1313,13 @@ msgid ""
 "reduce <guilabel>Width</guilabel> and <guilabel>Height </guilabel>, the "
 "frame of the resized layer appears in the preview."
 msgstr ""
+"Essas coordenadas são relativas à camada, não à imagem. Elas servem para "
+"mover um quadro que determina qual parte do conteúdo da camada será "
+"selecionada para a camada redimensionada. No nosso exemplo, a camada e o "
+"conteúdo têm as mesmas dimensões e, naturalmente, não há nenhum quadro para "
+"mover. Se você reduzir <guilabel>Largura</guilabel> e "
+"<guilabel>Altura</guilabel>, o quadro da camada redimensionada aparecerá na "
+"pré-visualização."
 
 #: src/menus/layer/resize.xml:89(para)
 msgid ""
@@ -1330,31 +1328,32 @@ msgid ""
 "dragging the cross-shaped moving pointer that appears when the mouse pointer "
 "overflies the layer area."
 msgstr ""
+"Abaixo das coordenadas, uma pré-visualização mostra a camada com o quadro "
+"da camada redimensionada. Você pode mover esse quadro usando os "
+"deslocamentos X e Y ou arrastando o ponteiro em forma de cruz que aparece "
+"quando o ponteiro do mouse passa sobre a área da camada."
 
 #: src/menus/layer/resize.xml:98(term)
 msgid "The Center button"
-msgstr ""
+msgstr "O botão Centralizar"
 
 #: src/menus/layer/resize.xml:100(para)
-#, fuzzy
 msgid "This button allows you to place the frame at the center of the layer."
-msgstr ""
-"Este diálogo permite várias opções para o conteúdo inicial da máscara da "
-"camada:"
+msgstr "Este botão permite posicionar o quadro no centro da camada."
 
 #: src/menus/layer/resize.xml:110(title)
-#, fuzzy
 msgid "Resizing Layer"
-msgstr "Subir camada"
+msgstr "Redimensionar camada"
 
 #: src/menus/layer/resize.xml:113(term)
-#, fuzzy
 msgid "Resizing a layer larger"
-msgstr "Reverter a ordem das camadas"
+msgstr "Aumentar o tamanho de uma camada"
 
 #: src/menus/layer/resize.xml:115(para)
 msgid "You can't resize a layer to bigger dimensions than that of the image."
 msgstr ""
+"Não é possível redimensionar uma camada para dimensões maiores que as da "
+"imagem."
 
 #: src/menus/layer/resize.xml:119(para)
 msgid ""
@@ -1364,44 +1363,55 @@ msgid ""
 "in that case, it's better to use <link linkend=\"gimp-layer-resize-to-image"
 "\">Layer to Image Size</link>."
 msgstr ""
+"Se a camada for menor que a imagem, você pode aumentar "
+"<guilabel>Largura</guilabel> e/ou <guilabel>Altura</guilabel>. Não há um "
+"bom motivo para fazer isso, exceto se você quiser ampliar a camada até o "
+"tamanho da imagem; nesse caso, é melhor usar <link "
+"linkend=\"gimp-layer-resize-to-image\">Camada para o tamanho da "
+"imagem</link>."
 
 #: src/menus/layer/resize.xml:131(term)
 msgid "Resizing a layer smaller"
-msgstr ""
+msgstr "Reduzir o tamanho de uma camada"
 
 #: src/menus/layer/resize.xml:133(para)
 msgid ""
 "You can resize the layer to a smaller dimension to eliminate unwanted parts."
 msgstr ""
+"Você pode reduzir as dimensões da camada para eliminar partes "
+"indesejadas."
 
 #: src/menus/layer/resize.xml:146(para)
 msgid "Original image with 2 layers"
-msgstr ""
+msgstr "Imagem original com duas camadas"
 
 #: src/menus/layer/resize.xml:157(para)
-#, fuzzy
 msgid "The two layers"
-msgstr "Próxima camada"
+msgstr "As duas camadas"
 
 #: src/menus/layer/resize.xml:172(para)
 msgid "The selected layer for resizing"
-msgstr ""
+msgstr "A camada selecionada para redimensionamento"
 
 #: src/menus/layer/resize.xml:183(para)
 msgid ""
 "The frame representing the new layer size. It has been placed at the center "
 "of the layer using the <guibutton> Center</guibutton> button."
 msgstr ""
+"O quadro que representa o novo tamanho da camada. Ele foi posicionado no "
+"centro da camada usando o botão <guibutton>Centralizar</guibutton>."
 
 #: src/menus/layer/resize.xml:193(title)
 msgid "Result"
-msgstr ""
+msgstr "Resultado"
 
 #: src/menus/layer/resize.xml:202(para)
 msgid ""
 "If the image has only one layer, it's better to use the <link linkend=\"gimp-"
 "tool-crop\">Crop tool</link>."
 msgstr ""
+"Se a imagem tiver apenas uma camada, é melhor usar a <link "
+"linkend=\"gimp-tool-crop\">Ferramenta de Cortar</link>."
 
 #: src/menus/layer/raise-to-top.xml:10(title)
 msgid "Layer to Top"
