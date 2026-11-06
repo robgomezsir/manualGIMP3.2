@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-03-11 j.h: revised for v2.6. Added Presets
+  2008-01-13 j.h: updated to v2.4
+  2007-06-06 kost: added 'no' (Norwegian)
+  2007-04-15 Added Spanish translation by AntI
+  2006-02-05 en;fr revised by j.h
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-12-01 informalfigure replaced by figure by lexa
+  050808 de reviewed and restructured by axel.wernicke
+ -->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-color-balance">
+  <title>Color Balance</title>
+  <indexterm>
+    <primary>Color</primary>
+    <secondary>Color Balance</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Color Balance</primary>
+  </indexterm>
+  <para>
+    The color balance tool modifies the color balance of the active selection
+    or layer. Changes are not drastic. This tool is suitable to correct
+    predominant colors in digital photos.
+  </para>
+  <note>
+    <para>
+      This command does not work on Grayscale images. If the image is Grayscale,
+      the menu entry is disabled.
+    </para>
+  </note>
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guimenuitem>Color Balance…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Options</title>
+    <figure>
+      <title>Color Balance options</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/colors/color-balance-dialog.png" 
+format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Select Range to Adjust</term>
+        <listitem>
+          <para>
+            Selecting one of these options restricts the range of colors
+            which are changed with the sliders or input boxes for
+            <guilabel>Shadows</guilabel> (darkest pixels),
+            <guilabel>Midtones</guilabel> (medium pixels) and
+            <guilabel>Highlights</guilabel> (brightest pixels).
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Adjust Color Levels</term>
+        <listitem>
+          <para>
+            Sliders and range from the three RGB colors to their
+            complementary colors (CMY). The zero position corresponds to
+            the current level value of pixels in the original image. You can
+            change the pixel color either towards
+            <guilabel>Red</guilabel> or <guilabel>Cyan</guilabel>,
+            <guilabel>Green</guilabel> or <guilabel>Magenta</guilabel>,
+            <guilabel>Blue</guilabel> or <guilabel>Yellow</guilabel>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Reset Range</term>
+        <listitem>
+          <para>
+             This button sets color levels of the selected range back to
+             the zero position (original values).
+           </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Preserve luminosity</term>
+        <listitem>
+          <para>
+             This option ensures that brightness of the active layer or
+             selection is maintained. The Value of brightest pixels is not
+             changed.
+           </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

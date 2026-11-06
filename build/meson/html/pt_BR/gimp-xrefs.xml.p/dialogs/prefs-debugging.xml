@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="gimp-prefs-debugging">
+  <title>Rotulando</title>
+  <indexterm>
+    <primary>Usando</primary>
+    <secondary>Preferências</secondary>
+    <tertiary>Rotulando</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Rotulando</primary>
+  </indexterm>
+
+  <note>
+    <para>Esta página de configurações não está disponível no Windows.</para>
+  </note>
+
+  <figure>
+    <title>Debugging Preferences</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/preferences/prefs-debugging.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>
+      The preferences dialog can be accessed from the main menu, through
+      <menuchoice>
+       <guimenu>Edit</guimenu>
+       <guimenuitem>Preferences</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <variablelist>
+      <title>Política de Depuração</title>
+      <para>A Política de Depuração diz ao GIMP o que você quer fazer se o GIMP encontrar um problema. Você tem quatro opções:</para>
+      <varlistentry>
+        <term>Depurar avisos, erros críticos e falhas</term>
+        <listitem>
+          <para>Esta é a opção mais intrusiva. Geralmente usada apenas quando tentando encontrar um bug específico. Isso inicia o depurador para qualquer tipo de falha, erro ou aviso.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Depurar erros críticos e falhas</term>
+        <listitem>
+          <para>Iniciar depuração quando o GIMP encontrar uma falha ou um erro crítico.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Depurar apenas falhas</term>
+        <listitem>
+          <para>Iniciar depuração apenas quando o GIMP encontrar uma falha.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Nunca depurar o GIMP</term>
+        <listitem>
+          <para>Não importa o que aconteça, o depurador nunca será iniciado.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>Depuração eficaz só é possível se você tiver o gdb ou lldb instalado.</para>
+
+  </sect3>
+</sect2>

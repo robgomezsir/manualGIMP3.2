@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--This command is the same as gimp-layer-color-to-alpha.
+    The F1 context help only refers to plug-in-color-to-alpha-->
+<!-- section history:
+  2019-10-04 j.h: update to v2.10 (threshold explanations from Elle Stone)
+  2007-10-21 ude: moved here from filters/color/colortoalpha.xml ('en','de')
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-color-to-alpha">
+  <title>Cor para Alfa…</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Cor para Alfa</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Cor para Alfa</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <para>O comando Cor para Alfa deixa transparentes todos os pixels da camada ativa que possuem a cor selecionada. Ele tenta preservar a informação de antisserrilhamento usando um algoritmo parcialmente inteligente que substitui informação de cor fraca com informação de alfa fraca. Dessa forma, áreas que contêm um elemento da cor selecionada mantêm uma aparência misturada aos pixels do entorno.</para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guimenuitem>Color to Alpha…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Diálogo do filtro <quote>Cor para Alfa</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/colortoalpha.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term>Opções de Mistura</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor</term>
+        <listitem>
+          <para>Clicar na amostra de cor providencia um diálogo de seleção de cor para que você escolha uma. Você também pode selecionar uma cor usando o conta-gotas à direita.</para>
+          <para>
+            <quote>Color to alpha</quote> comes with a GEGL option dialog
+            under Toolbox. When the <guilabel>Sample average</guilabel> option
+            is unchecked, color picker picks only one pixel color. When the
+            option is checked, mouse pointer goes with a square limiting a
+            pixel sample that determines a merged sample <quote>color</quote>.
+            You can fix the square size directly in the slider, or using the
+            <guilabel>+</guilabel> and <guilabel>-</guilabel> buttons, or the
+            <keycap>Up</keycap> and <keycap>Down</keycap> keyboard keys.
+          </para>
+          <para>Clicar com o botão direito na amostra de cor exibe um menu onde você pode selecionar as cores Frente e Fundo, Branco ou Preto.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Transparency threshold</term>
+        <term>Opacity threshold</term>
+        <listitem>
+          <itemizedlist>
+            <listitem>
+              <para><guilabel>Transparência</guilabel>: o limite abaixo do qual cores se tornam transparentes.</para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Opacidade</guilabel>: o limite acima do qual as cores se tornam opacas.</para>
+            </listitem>
+          </itemizedlist>
+          <para>Cor para Alfa modifica a transparência (e cor) dos pixels baseado na sua distância da cor de fundo selecionada (a opção <quote>Cor</quote>) &mdash; quanto mais próximos estiverem da cor de fundo, mais transparentes ficarão, com a cor de fundo se tornando totalmente transparente.</para>
+          <para>Os limiares de transparência e opacidade controlam o quão próximas as cores devem estar da cor de fundo antes de se tornarem totalmente transparentes, e quão distantes elas devem estar da cor de fundo antes de permanecerem totalmente opacas, respectivamente. Com os valores padrão de 0 e 1, apenas a cor de fundo se torna totalmente transparente, e somente as cores mais distantes dela permanecem totalmente opacas.</para>
+          <para>Por exemplo, enquanto os valores padrão funcionam bem para remover um fundo branco de um objeto preto, se o objeto em vez disso for cinza [fig. 1], ele se tornará semi-transparente [fig. 2], uma vez que cinza é o meio-termo entre branco e preto. Baixar o limiar de opacidade para 0,5 corrige isso, mantendo todos os pixels que forem cinza ou mais escuros (todos os pixels cuja distância do branco for de 0,5 ou mais, numa escala [0,1]) totalmente opacos [fig. 3].</para>
+          <para>O limiar de transparência funciona de forma similar: aumentá-lo faz com que mais cores na vizinhança da cor de fundo se tornem totalmente transparentes. Isto é mais útil em imagens com muito ruído, nas quais o plano de fundo não é totalmente sólido. No entanto, diferentemente de outros casos, quando o limiar de transparência é maior que zero, recompor o resultado contra a cor de fundo não reproduzirá mais exatamente a mesma imagem.</para>
+          <para>Correndo o risco de ser um pouco técnico, isto pode ser visualizado pensando-se no cubo RGB. A cor de fundo é um ponto dentro do cubo, e os limiares de transparência e opacidade são dois sub-cubos centrados ao redor da cor de fundo. Tudo dentro do cubo do limiar de tranparência se torna totalmente transparente, tudo fora do cubo do limiar de opacidade permanece totalmente opaco, e tudo entre eles gradualmente transita de transparente para opaco. Na imagem [fig. 4] você pode ver a face Vermelho-Verde do cubo RGB. (1) é a cor de fundo (Vermelho = 0,5, Verde = 0,5, Azul = 0,0),(2) é o limiar de transparência (definido como 0,1) e (3) é o limiar de opacidade (definido como 0,4).</para>
+          <figure>
+            <title>Exemplos de Limiares de Cor para Alfa</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/colors/ColorToAlpha-ex1.png"/>
+              </imageobject>
+              <caption>
+                <para>fig. 1</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/colors/ColorToAlpha-ex2.png"/>
+              </imageobject>
+              <caption>
+                <para>fig. 2</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <figure>
+            <title>Exemplos de Limiares de Cor para Alfa</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/colors/ColorToAlpha-ex3.png"/>
+              </imageobject>
+              <caption>
+                <para>fig. 3</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/colors/ColorToAlpha-ex4.png"/>
+              </imageobject>
+              <caption>
+                <para>fig. 4</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Usando Cor para Alfa</title>
+    <orderedlist>
+      <listitem>
+        <para>Adicione um canal alfa à sua imagem se necessário pelo menu da janela de imagem em <menuchoice><guimenu>Camada</guimenu><guisubmenu>Transparência</guisubmenu><guimenuitem>Adicionar Canal Alfa</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Abra Cor para alfa.</para>
+        <figure>
+          <title>Cor para alfa aberto com a opções padrão</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/menus/colors/ColorToAlpha-ex5.png"/>
+            </imageobject>
+            <caption>
+              <para>Imagem original com canal alfa</para>
+            </caption>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/menus/colors/ColorToAlpha-ex6.png"/>
+            </imageobject>
+            <caption>
+              <para>Imagem original com um canal alfa. Cor para alfa com opções padrão: <quote>Cor</quote> é branco. Limiar de opacidade = 1,00 é o máximo, e então apenas as cores mais longes da <quote>Cor</quote> permanecem totalmente opacas. Limiar de transparência = 0 e então a <quote>Cor</quote> é totalmente transparente.</para>
+            </caption>
+          </mediaobject>
+        </figure>
+      </listitem>
+      <listitem>
+        <para>Desmarque a opção Pré-visualização.</para>
+      </listitem>
+      <listitem>
+        <para>Escolha a cor, aqui o céu.</para>
+      </listitem>
+      <listitem>
+        <para>Remarque a opção Pré-visualização.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/colors/ColorToAlpha-ex7.png"/>
+          </imageobject>
+          <caption>
+            <para>
+              <quote>Color</quote> from the sky. Default thresholds.
+            </para>
+          </caption>
+        </mediaobject>
+      </listitem>
+      <listitem>
+        <para>Adapte os limiares Transparência e Opacidade por meio de tentativa e erro.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/colors/ColorToAlpha-ex8-example.png"/>
+          </imageobject>
+          <caption>
+            <para>
+              Only the sky is transparent.
+            </para>
+          </caption>
+        </mediaobject>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/colors/ColorToAlpha-ex8-dialog.png"/>
+          </imageobject>
+          <caption>
+            <para>
+              Opacity threshold was decreased to make
+              farthest colors (monument, trees and road) fully opaque.
+              Transparency threshold was increased to make <quote>Color</quote>
+              fully transparent and delete some imperfections in the sky.
+            </para>
+          </caption>
+        </mediaobject>
+      </listitem>
+    </orderedlist>
+  </sect3>
+</sect2>

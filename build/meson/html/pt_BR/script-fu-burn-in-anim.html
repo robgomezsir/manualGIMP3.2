@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>16.3. Queimar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-animation.html" title="16. Filtros de animação" />
+    <link rel="prev" href="script-fu-blend-anim.html" title="16.2. Transição" />
+    <link rel="next" href="plug-in-optimize.html" title="16.4. Otimizar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>16.3. Queimar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-blend-anim.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>16. Filtros de animação</span>
+        <nav> <a accesskey="n" href="plug-in-optimize.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-burn-in-anim"></a>16.3. Queimar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id62429" class="indexterm"></a>
+      <a id="id62433" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5147"></a>16.3.1. Visão Geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5148"></a>
+          <p class="title">
+            <strong>Figura 17.435. Exemplo para o filtro <span class="quote">“<span class="quote">Queimar</span>”</span>: imagem original</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/animation/burn-in-orig.png" alt="Exemplo para o filtro “Queimar”: imagem original" />
+              <div class="caption">
+                <p>Camada com fundo opaco e camada em primeiro plano com transparência</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id5149"></a>
+          <p class="title">
+            <strong>Figura 17.436. Exemplo para o filtro <span class="quote">“<span class="quote">Queimar</span>”</span>: filtro aplicado</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/animation/burn-in-applied.png" alt="Exemplo para o filtro “Queimar”: filtro aplicado" />
+              <div class="caption">
+                <p>Imagem resultante com 8 quadros (a depender do tamanho e velocidade)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        It is available if your image holds an Alpha channel
+        (see <a class="xref" href="gimp-layer-alpha-add.html" title="7.36. Adicionar canal alfa">Seção 7.36, “Adicionar canal alfa”</a>).
+        Otherwise, it is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5150"></a>16.3.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Animation</span> → <span class="guimenuitem">Burn-In…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5151"></a>16.3.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5152"></a>
+          <p class="title">
+            <strong>Figura 17.437. Opções de <span class="quote">“<span class="quote">Queimar</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/animation/burn-in.png" alt="Opções de “Queimar”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Cor do brilho</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Esvanecer</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Largura para esvanecer</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Largura da Corona </span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Pós brilho</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Adicionar brilho</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Preparar para GIF</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Velocidade (pixels/quadro)</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-blend-anim.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-animation.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-optimize.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-blend-anim.html">16.2. Transição</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-optimize.html">16.4. Otimizar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

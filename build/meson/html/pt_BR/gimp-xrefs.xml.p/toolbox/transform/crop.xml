@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-05-05 j.h: add Highlight opacity cursor
+  -->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-crop">
+  <title>Cortar</title>
+
+  <indexterm>
+    <primary>Cortar</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Cortar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Imagem</primary>
+    <secondary>Cortar</secondary>
+    <tertiary>Ferramenta</tertiary>
+  </indexterm>
+
+  <para>A ferramenta de Cortar (guilhotinar)  é usada para cortar ou aparar uma imagem. Ela afeta todas as camadas da imagem, visíveis ou não (opcionalmente pode se restringir a uma camada). Esta ferramenta pode ser usada para refazer o enquadramento de uma fotografia,  removendo bordas, eliminando áreas indesejadas e provendo uma imagem com mais foco nos assuntos principais. Também é útil se você precisa de um tamanho específico de imagem que não é o mesmo que as suas dimensões originais.</para>
+  <para>
+    To define the crop area click and drag with the mouse. A highlighted area
+    will appear that shows the crop boundaries. To move the whole crop area,
+    click in the middle and drag the rectangle. Resizing can be done by moving
+    close to the borders. The mouse cursor will change and you can drag either
+    one side, if you are in the middle, or two sides, if you are in a corner.
+    While you are changing the drag area, the size of the cropped area and
+    the aspect ratio will be shown in the status bar.
+  </para>
+  <para>Quando o mouse estiver dentro do retângulo,  você poderá usar as teclas seta para modificar o retângulo: se estiver sobre as alças, elas serão movidas, senão o retângulo todo será movido. Se você segurar a tecla <keycap>Shift</keycap> pressionada o movimento acontece em incrementos de 25 pixels.</para>
+  <para>
+    To finalize cropping, click inside the crop rectangle or press the
+    <keycap>Enter</keycap> key.
+  </para>
+  <note>
+    <para>
+      By default the image canvas size
+      isn't changed after cropping. The Tool Options of the Crop Tool have a
+      setting <guilabel>Delete cropped pixels</guilabel> that can be checked
+      to make sure the canvas size is also adjusted to the cropped area.
+    </para>
+  </note>
+  <tip>
+    <para>Você pode usar as Guias para ajudar a posicionar a área de corte. Certifique-se de que a opção <menuchoice><guimenu>Visualizar</guimenu><guimenuitem>Atrair para as guias</guimenuitem></menuchoice> está ligada.</para>
+  </tip>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagens, em:<menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de transformação</guisubmenu><guimenuitem>Cortar</guimenuitem></menuchoice>,</para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-crop.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>Usando o atalho de teclado  <keycombo><keycap>Shift</keycap><keycap>P</keycap></keycombo></para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Teclas modificadoras (Padrões)</title>
+    <para>Quando você mantém o botão do mouse apertado sobre o retângulo, as alças desaparecem e</para>
+    <itemizedlist>
+      <listitem>
+        <para>se você mantiver <keycap>Ctrl</keycap> pressionado, é ligada a opção de <guilabel>Expandir a partir do centro</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Se você mantiver a tecla <keycap>Shift</keycap> pressionada, a opção  <guilabel>Fixa</guilabel> é ligada, que mantém algumas dimensões fixas (por padrão, a proporção do retângulo).</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/tool-options-crop.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Selected layers only</term>
+        <listitem>
+          <para>Esta opção fará a ferramenta de corte atuar somente na camada, ou grupo de camadas, ativo.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Delete cropped pixels</term>
+        <listitem>
+          <para>
+            When checked, the canvas size is adjusted to the cropped area. By
+            default this is not checked, which means that after cropping the
+            layers have been adjusted, but the canvas size is still the same.
+            This is to make sure you don't remove anything by accident.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Permitir crescimento</term>
+        <listitem>
+          <para>Esta opção permite que você estenda o retângulo até além dos limites da imagem, camadas, e mesmo da tela de pintura. Dessa forma, você pode dar o tamanho que desejar à imagem resultante. As áreas além dos limites da imagem serão transparentes. Se você estiver atuando numa camada, o tamanho da camada muda e é preenchido com transparência. Usar a ferramenta de cortar para aumentar tamanho de camadas desta forma pode ser  melhor do que usar o comando de Camada-&gt;Tamanho dos limites da camada, já que esta ferramenta atua direto na imagem.</para>
+          <figure>
+            <title>Exemplo para <quote>Permitir crescimento</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/crop-grow-1.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>Uma imagem numa tela grande</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/crop-grow-2.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>A opção está ligada. O retângulo de corte se estende para além da tela de pintura.</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/crop-grow-3.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>A imagem resultante.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Expandir a partir do centro</term>
+        <listitem>
+          <para>Quando esta opção está ligada, o retângulo de corte cresce simetricamente para todos os lados. O ponto onde você clicou para iniciar o retângulo de corte é usado como centro. Essa opção pode ser liga e desligada dinamicamente, bastando segurar a tecla <keycap>Ctrl</keycap> pressionada enquanto se modifica o retângulo.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fixa</term>
+        <listitem>
+          <para>Você também pode acessar esta opção mantendo a tecla <keycap>Shift</keycap> pressionada enquanto está desenhando o retângulo de corte. Isto oferece algumas opções para fazer com que o crescimento do retângulo de corte respeite algumas dimensões fixas, ou sua proporção:</para>
+          <itemizedlist>
+            <listitem>
+              <para><guilabel>Proporção</guilabel>: Essa é a configuração padrão. A largura e a altura do retângulo são mantidas com a mesma proporção que tem na imagem original.</para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Largura/Altura</guilabel>: Somente a largura ou a altura são mantidas fixas. O valor da dimensão que foi fixada pode ser digitado na caixa de texto abaixo; O valor padrão é 100 pixels.</para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Tamanho</guilabel>: A largura e a altura são mantidas fixas. Seus valores podem ser digitados na caixa de texto abaixo, na forma <quote>&lt;largura&gt;X&lt;altura&gt;</quote> (por exemplo: 150x100). O retângulo de corte vai assumir esse tamanho assim que você clicar na imagem. A direita, dois botões permitem que você troque rapidamente esses valores, deixando a área fixa no formato de <guibutton>Paisagem</guibutton> ou <guibutton>Retrato</guibutton>. Esta opção é muito útil quando você tem que exportar várias imagens com um tamanho exato, em geral para alimentar um site ou um aplicativo.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Posicionada</term>
+        <listitem>
+          <para>
+            These two text fields contain the current horizontal and vertical
+            coordinates of the upper left corner of the selection. You can use
+            these fields to adjust the selection position precisely.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho</term>
+        <listitem>
+          <para>
+            These two text fields contain the current width and height of
+            the selection. You can use these fields to adjust the selection
+            size precisely.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Destaque</term>
+        <listitem>
+          <para>
+            If you enable this option, the selected area is emphasized by a
+            surrounding mask to make visual selection much easier.
+          </para>
+          <para>
+            The dark area opacity can be set using the <guilabel>Highlight 
+            opacity</guilabel> cursor.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Guias</term>
+        <listitem>
+          <para>
+            With this menu you can select the type of guides that is shown
+            within the selection to make the creation of a selection easier,
+            respecting <emphasis>Photo composition rules</emphasis>.
+          </para>
+          <para>
+            Six options are available:
+            <itemizedlist>
+              <listitem>
+                <para>Nehuma guia</para>
+              </listitem>
+              <listitem>
+                <para>Linhas centrais</para>
+              </listitem>
+              <listitem>
+                <para>Regra dos terços</para>
+              </listitem>
+              <listitem>
+                <para>Regra dos quintos</para>
+              </listitem>
+              <listitem>
+                <para>Seções áureas</para>
+              </listitem>
+              <listitem>
+                <para>Linhas diagonais</para>
+              </listitem>
+            </itemizedlist>
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Encolher automaticamente</term>
+        <listitem>
+          <para>O botão de auto encolher vai tentar localizar uma borda, na camada ativa, a partir da qual ele vai estabelecer as dimensões do retângulo de corte. Esta opção só funciona bem para objetos isolados com alto contraste com o fundo.</para>
+          <figure>
+            <title>Exemplo de inclinar</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/autoshrink-1.png"/>
+              </imageobject>
+              <caption>
+                <para>Uma imagem com um limite bem nítido e um retângulo de corte.</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/autoshrink-2.png"/>
+              </imageobject>
+              <caption>
+                <para>Depois de clicar no botão de Encolher automaticamente, o retângulo foi encolhido de forma a conter somente os objetos bem definidos na imagem.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Amostragem combinada</term>
+        <listitem>
+          <para>Esta opção altera o comportamento do botão de Encolher automaticamente. Estando ativada, a ação leva em conta os pixels de todas as camadas <emphasis>visíveis</emphasis> para determinar os objetos, não só os da camada ativa.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

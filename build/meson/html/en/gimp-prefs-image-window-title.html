@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.23. Image Title and Statusbar Format</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-prefs-dialog.html" title="6. Preferences Dialog" />
+    <link rel="prev" href="gimp-prefs-image-window-appearance.html" title="6.22. Image Window Appearance" />
+    <link rel="next" href="gimp-prefs-input-devices.html" title="6.24. Input Devices" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.23. Image Title and Statusbar Format</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-prefs-image-window-appearance.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>6. Preferences Dialog</span>
+        <nav> <a accesskey="n" href="gimp-prefs-input-devices.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-prefs-image-window-title"></a>6.23. Image Title and Statusbar Format</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id29837" class="indexterm"></a>
+      <a id="id29841" class="indexterm"></a>
+      <a id="id29844" class="indexterm"></a>
+      <div class="figure">
+        <a id="id2171"></a>
+        <p class="title">
+          <strong>Figure 15.123. Image Title and Statusbar Format Preferences</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/preferences/prefs-image-window-title.png" alt="Image Title and Statusbar Format Preferences" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    This page lets you customize the text that appears in two
+    places: the title bar of an image, and the status bar.  The
+    title bar should appear above the image; however this depends
+    on cooperation from the window manager, so it is not
+    guaranteed to work in all cases.  The statusbar appears
+    underneath the image.  See the <a class="link" href="gimp-image-window.html" title="2.2. Image Window">Image Window</a>
+    section for more information.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2172"></a>6.23.1. Activating the Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The preferences dialog can be accessed from the main menu, through
+      <span class="guimenu">Edit</span> → <span class="guimenuitem">Preferences</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2173"></a>6.23.2. Choosing a Format</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can choose among several predesigned formats, or you can
+      create one of your own, by writing a <span class="emphasis"><em>format
+      string</em></span> in the entry area.  Here is how to understand
+      a format string:  anything you type is shown exactly as you type
+      it, with the exception of <span class="emphasis"><em>variables</em></span>, whose
+      names all begin with <span class="quote">“<span class="quote">%</span>”</span>.  Here is a list of the variables
+      you can use:
+    </p>
+        <div class="segmentedlist">
+          <table border="0">
+            <thead>
+              <tr class="segtitle">
+                <th>Variable</th>
+                <th>Meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="seglistitem">
+                <td class="seg">%f</td>
+                <td class="seg">Bare filename of the image, or <span class="quote">“<span class="quote">Untitled</span>”</span></td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%F</td>
+                <td class="seg">Full path to file, or <span class="quote">“<span class="quote">Untitled</span>”</span></td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%p</td>
+                <td class="seg">Image id number (this is unique)</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%i</td>
+                <td class="seg">
+          View number, if an image has more than one display
+        </td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%t</td>
+                <td class="seg">Image type (RGB, grayscale, indexed)</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%z</td>
+                <td class="seg">Zoom factor as a percentage</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%s</td>
+                <td class="seg">Source scale factor (zoom level = %d/%s)</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%d</td>
+                <td class="seg">Destination scale factor (zoom level = %d/%s)</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%Dx</td>
+                <td class="seg">
+          Expands to x if the image is dirty, nothing otherwise
+        </td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%Cx</td>
+                <td class="seg">
+          Expands to x if the image is clean, nothing otherwise
+        </td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%l</td>
+                <td class="seg">The number of layers</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%L</td>
+                <td class="seg">Number of layers (long form)</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%m</td>
+                <td class="seg">Memory used by the image</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%n</td>
+                <td class="seg">Name of the active layer/channel</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%o</td>
+                <td class="seg">Name of the color profile</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%P</td>
+                <td class="seg">id of the active layer/channel</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%w</td>
+                <td class="seg">Image width in pixels</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%W</td>
+                <td class="seg">Image width in real-world units</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%h</td>
+                <td class="seg">Image height in pixels</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%H</td>
+                <td class="seg">Image height in real-world units</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%u</td>
+                <td class="seg">Unit symbol (eg. px for Pixel)</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%U</td>
+                <td class="seg">Unit abbreviation</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%x</td>
+                <td class="seg">Active layer width in pixels</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%X</td>
+                <td class="seg">Active layer width in real-world units</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%y</td>
+                <td class="seg">Active layer height in pixels</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%Y</td>
+                <td class="seg">Active layer height in real-world units</td>
+              </tr>
+              <tr class="seglistitem">
+                <td class="seg">%%</td>
+                <td class="seg">A literal <span class="quote">“<span class="quote">%</span>”</span> symbol</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-prefs-image-window-appearance.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-prefs-dialog.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-prefs-input-devices.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-prefs-image-window-appearance.html">6.22. Image Window Appearance</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-prefs-input-devices.html">6.24. Input Devices</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

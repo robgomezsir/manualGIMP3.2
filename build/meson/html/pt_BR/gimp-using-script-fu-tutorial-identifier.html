@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.2. Varáveis e funções</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-using-script-fu-tutorial.html" title="3. Um tutorial de Script-Fu" />
+    <link rel="prev" href="gimp-using-script-fu-tutorial.html" title="3. Um tutorial de Script-Fu" />
+    <link rel="next" href="gimp-using-script-fu-tutorial-lists.html" title="3.3. Listas, Listas e mais Listas!" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.2. Varáveis e funções</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-script-fu-tutorial.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Um tutorial de Script-Fu</span>
+        <nav> <a accesskey="n" href="gimp-using-script-fu-tutorial-lists.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-using-script-fu-tutorial-identifier"></a>3.2. Varáveis e funções</h3>
+          </div>
+        </div>
+      </div>
+      <p>Agora que você sabe que todo comando de Scheme está entre parênteses, e que o nome da função ou operador vem listado primeiro, nós precisamos saber como criar e usar variáveis, e como criar e usar novas funções. Vamos começar pelas variáveis.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2827"></a>3.2.1. Declarando variáveis</h4>
+            </div>
+          </div>
+        </div>
+        <p>Embora haja alguns métodos diferentes de declarar variáveis, o método preferido é usando a construção <span class="command"><strong>let*</strong></span>. Se você estiver familiarizado com outras linguagens de programação, esta construção é equivalente a definir uma lista de variáveis locais no escopo em que as mesmas estão ativas. Como um exemplo de como você pode declarar duas variáveis, "a" e "b", inicializadas para 1 e 2 respectivamente, você pode escrever:</p>
+        <pre class="programlisting">
+        (let*
+           (
+              (a 1)
+              (b 2)
+           )
+           (+ a b)
+        )
+      </pre>
+        <p>ou, em uma linha só:</p>
+        <pre class="programlisting">(let* ( (a 1) (b 2) ) (+ a b) )</pre>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Você terá que por tudo isso na mesma linha se você está usando a janela de terminal. Em geral, no entanto, é melhor você adotar uma prática de identação (recuos), similar a que você usa em outras linguagens, para manter seus scripts mais legíveis.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>Isso declara duas variáveis locais, "a" e "b", as inicializa, e então imprime a soma das duas variáveis.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2828"></a>3.2.2. O que é uma Variável Local?</h4>
+            </div>
+          </div>
+        </div>
+        <p>Você notará que nós escrevemos a soma <code class="code">(+ a b)</code> dentro dos parênteses do código da expressão <code class="code">let*</code>, e não depois de fecha-los.</p>
+        <p>Isso ocorre por que o comando <code class="code">let*</code> define uma área no seu script em que as variáveis declaradas são usáveis. Se você digitar a expressão <strong class="userinput"><code>(+ a b)</code></strong> depois de digitar a expressão anterior, você verá um erro - por que as variáveis declaradas só eram válidas no contexto do comando <code class="code">let*</code>; Elas são o que os programadores chamam de variáveis locais.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2829"></a>3.2.3. A sintaxe geral do comando <code class="code">let*</code></h4>
+            </div>
+          </div>
+        </div>
+        <p>A forma geral de um comando <code class="code">let*</code> é: </p>
+        <pre class="programlisting">
+        (let* ( <em class="replaceable"><code>variáveis</code></em> )
+          <em class="replaceable"><code>expressões</code></em> )
+      </pre>
+        <p>Onde as variáveis são definidas dentro de parênteses, por exemplo <strong class="userinput"><code>(a 2)</code></strong>, e expressões são quaisquer expressões válidas em Scheme. Lembre-se de que as variáveis declaradas aqui só são válidas dentro do código do <code class="code">let*</code>: elas são variáveis locais.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2830"></a>3.2.4. Espaços em branco</h4>
+            </div>
+          </div>
+        </div>
+        <p>Previamente, mencionamos o fato de que provavelmente você vai querer usar identação para ajudar a clarear e organizar seus scripts. Isso é uma boa poĺítica, e não é um problema em Scheme — espaços em branco a mais (incluindo caracteres de tabulação e nova linha) são ignorados pelo interpretador de Scheme, e então podem ser usados liberalmente para tornar o script mais legível. Entretanto, se você está trabalhando na janela interativa do Script-fu, você terá que colocar sempre uma expressão inteira em uma única linha — isso é,  a abertura e o fechamento dos parenteses mais externos da expressão tem que estar na mesma linha.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2831"></a>3.2.5. Atribuindo um novo valor a uma variável</h4>
+            </div>
+          </div>
+        </div>
+        <p>Uma vez que você tenha inicializado uma variável, você pode precisar mudar seu valor mais tarde, dentro do script. Use o comando  <code class="code">set!</code>  para mudar o valor da variável:</p>
+        <pre class="programlisting">
+        (let* ( (theNum 10) ) (set! theNum (+ theNum theNum)) )
+      </pre>
+        <p>Tente adivinhar o que o comando acima vai fazer, e então, vá em frente e digite-o na janela do terminal do Script-Fu</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2832"></a>3.2.6. Funções</h4>
+            </div>
+          </div>
+        </div>
+        <p>Agora que você entendeu como funcionam as variáveis, vamos trabalhar com algumas funções. Você declara uma função com a seguinte sintaxe: </p>
+        <pre class="programlisting">
+        (define
+           (
+              <em class="replaceable"><code>nome</code></em>
+              <em class="replaceable"><code>lista-de-parâmetros</code></em>
+           )
+           <em class="replaceable"><code>expressões</code></em>
+        )
+      </pre>
+        <p>Onde <em class="replaceable"><code>nome</code></em> é o nome que você está dando a esta função,  <em class="replaceable"><code>lista-de-parâmetros</code></em> é uma lista separada por espaços com os nomes dos parâmetros, e <em class="replaceable"><code>expressões</code></em> é uma série de expressões que a função executa quando é chamada. Por exemplo:</p>
+        <pre class="programlisting">(define (Add X Y) (+ X Y) )</pre>
+        <p><code class="varname">Add</code> é o nome da função e <code class="varname">X</code> e <code class="varname">Y</code> são as variáveis. Esta função toma dois parâmetros e os soma.</p>
+        <p>Se você já programou em linguagens de tipagem estática (como C/C++, java) você deve notar que algumas coisas estão ausentes nessa declaração de função em comparação com aquelas.</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>Primeiro, note que os parâmetros não tem <span class="quote">“<span class="quote">tipos</span>”</span> (isso é, nós não os declaramos como strings, inteiros, etc...). Scheme é uma linguagem sem tipos. Isso é prático e permite a criação de scripts de forma mais rápida.</p>
+            </li>
+            <li class="listitem">
+              <p>Segundo, perceba que nós não precisamos nos preocupar em <span class="quote">“<span class="quote">retornar</span>”</span> o resultado de nossa função — a última expressão será o valor <span class="quote">“<span class="quote">retornado</span>”</span> quando essa função for chamada. Digite a função no terminal, e então tente algo como:</p>
+              <pre class="programlisting">(Add (Add 5 6) 4)</pre>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-script-fu-tutorial.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-using-script-fu-tutorial.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-script-fu-tutorial-lists.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-script-fu-tutorial.html">3. Um tutorial de Script-Fu</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-script-fu-tutorial-lists.html">3.3. Listas, Listas e mais Listas!</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

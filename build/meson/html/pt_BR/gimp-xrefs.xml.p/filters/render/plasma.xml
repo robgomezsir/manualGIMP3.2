@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-11-02 AntI: Added "es"
+  2007-05-18 KoSt: added 'no'
+  2005-12-08 <simplesect> replaced by <sect3> by lexa
+  2005/09/21 de added by axel.wernicke
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-plasma">
+  <title>Plasma</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Plasma</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Plasma</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de um plasma criado</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-taj-plasma.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Todas as cores produzidas por Plasma são completamente saturadas. Às vezes, as cores fortes podem ser uma distração, e uma superfície mais interessante irá aparecer quando você dessaturar a imagem usando <menuchoice> <guimenu>Cores</guimenu><guimenuitem>Dessaturar</guimenuitem> </menuchoice>.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guisubmenu>Noise</guisubmenu>
+        <guimenuitem>Plasma…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Plasma</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/plasma-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Turbulência</term>
+        <listitem>
+          <para>
+            This parameter controls the complexity of the plasma.
+            High values give a hard feeling to the cloud (like an
+            abstract oil painting or mineral grains), low values
+            produce a softer cloud (like steam, mist or smoke).  The
+            range is 0.0 to 7.0.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Semente aleatória</term>
+        <term>Nova semente</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

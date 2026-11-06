@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-02-04 kost: added 'no'
+  2007-12-29 MikaS : added 'fr'
+  2007-10-06 ude: created 'en','de'
+-->
+<sect2 id="script-fu-perspective-shadow">
+  <title>Perspectiva</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Luz e sombra</secondary>
+    <tertiary>Perspectiva</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Perspectiva</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro de <quote>Perspectiva</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/perspective-shadow-orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/perspective-shadow-applied.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Esse filtro adiciona uma sombra em perspectiva para região selecionada ou canal alfa. A sombra é criada  como uma camada abaixo da camada ativa. Você pode selecionar a cor, o comprimento e a direção da sombra, bem como a distância do horizonte.</para>
+    <para>Se necessário, o filtro pode redimensionar a imagem. Mas isso não vai acrescentar um fundo para tornar a sombra visível.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Light and Shadow</guisubmenu>
+        <guimenuitem>Perspective…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções para <quote>Perspectiva</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/light-and-shadow/perspective-shadow.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Ângulo</term>
+        <listitem>
+          <para>O ângulo determina a direção da sombra ou a fonte de luz imaginária, respectivamente. Os valores variam de 0° a 180 , onde 90° representa uma fonte de luz bem de frente  para a seleção ou camada. Para ângulos inferiores a 90°, a sombra fica a direita, de modo que a fonte de luz estaria do lado esquerdo. Para ângulos superiores a 90°, ocorre o contrário. Dica: image o controle deslizante do ângulo como se fosse a posição da fonte de luz.</para>
+          <figure>
+            <title>Exemplo de <quote>ângulo</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-angle15.png"/>
+              </imageobject>
+              <caption>
+                <para>Ângulo de 15°</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-default.png"/>
+              </imageobject>
+              <caption>
+                <para>Ângulo de 45° (padrão)</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-angle105.png"/>
+              </imageobject>
+              <caption>
+                <para>Ângulo de 105° (90° + 15°)</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Distância relativa do horizonte</term>
+        <listitem>
+          <para>Esta opção determina o quanto longe o horizonte imaginário está. A <guilabel>Distância relativa</guilabel> é a distância entre a linha de base da seleção ou camada, a <quote>unidade</quote> de medida é a altura da seleção ou camada.</para>
+          <para>A faixa de valores varia entre 0,1 e 24,1, onde 24,1 significa (quase) <quote>infinito</quote>. Note-se que o <guilabel>Comprimento relativo da sombra</guilabel> não deve exceder a distância do horizonte.</para>
+          <figure>
+            <title>Exemplo para <quote>Distância do horizonte</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-distance.png"/>
+              </imageobject>
+              <caption>
+                <para>Ângulo = 45°. Distância = 2,4. Comprimento = 1,8.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>No exemplo acima, a área em amarelo é a seleção ao qual o filtro é aplicado. A linha azul no topo representa o horizonte imaginário. O ângulo entre a linha de base da seleção e a linha vermelha é de 45°. O comprimento da linha vermelha é de 1,8 vezes a altura da seleção em amarelo. Prolongado até o horizonte, o comprimento é de 2,4 vezes a altura da seleção.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Comprimento relativo da sombra</term>
+        <listitem>
+          <para>Com esta opção você pode definir o comprimento da sombra em relação à altura da seleção ou camada. No exemplo acima, a linha vermelha representa o comprimento da sombra, o seu comprimento é de 1,8 vezes à altura da seleção, em amarelo.</para>
+          <para>A faixa de valores varia entre 0,1 e 24,1, embora o comprimento da sombra não deva exceder a <guilabel>Distância relativa do horizonte</guilabel> - você não pode ir além do horizonte.</para>
+          <figure>
+            <title>exemplo para <quote>Comprimento da sombra</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-default.png"/>
+              </imageobject>
+              <caption>
+                <para>Comprimento = 1,0 (padrão)</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-length15.png"/>
+              </imageobject>
+              <caption>
+                <para>Comprimento = 1,5</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio do desfocamento</term>
+        <listitem>
+          <para>Depois de criar a sombra, uma <link linkend="plug-in-gauss">Desfocagem gaussiana</link> com o raio especificado é aplicada à camada de sombra, resultando na aparência realista da sombra.</para>
+          <figure>
+            <title>Exemplo de desfoque</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-default.png"/>
+              </imageobject>
+              <caption>
+                <para>Raio de desfoque = 3 (padrão)</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-noblur.png"/>
+              </imageobject>
+              <caption>
+                <para>Sem desfoque (Raio do desfoc. = 0)</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor</term>
+        <listitem>
+          <para>É claro que a cor padrão da sombra é preto. Mas um clique no botão abre o seletor de cores, onde você pode escolher qualquer outra cor.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Opacidade</term>
+        <listitem>
+          <para>
+            The shadow's opacity is the opacity of the new layer containing
+            the shadow (see <xref linkend="gimp-layer-properties"/>). It
+            defaults to 80%, but you may select any other value from 0 (full
+            transparency) to 100 (full opacity) here. After applying the
+            filter to an image you can change the opacity in the
+            <link linkend="gimp-layer-dialog">Layers Dialog</link>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Interpolação</term>
+        <listitem>
+          <para>Esta lista flutuante permite que você escolha o método de  <link linkend="glossary-interpolation">interpolação</link> usado quando a camada de sombra é transformada, por exemplo, quando é giradapelo ângulo especificado. Usar <guilabel>Nenhum</guilabel> normalmente resultarão em serrilhado, e qualquer outro método de interpolação pode mudar a cor da sombra, ligeiramente em algumas áreas. <guilabel>Linear</guilabel> é uma boa escolha.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Permitir redimensionamento</term>
+        <listitem>
+          <para>Se ativado, o filtro irá redimensionar a imagem, se isso fornecessário para dar lugar à sombra.</para>
+          <para>No exemplo abaixo, a área amarela é a seleção ativa, o fundo é azul claro. A área branca foi adicionada após o redimensionamento para tornar a sombra visível.</para>
+          <figure>
+            <title>Exemplo de <quote>Permitir redimensionamento</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-resize.png"/>
+              </imageobject>
+              <caption>
+                <para>Permitir redimensionamento</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/perspective-shadow-noresize.png"/>
+              </imageobject>
+              <caption>
+                <para>Não permitindo o redimensionamento</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

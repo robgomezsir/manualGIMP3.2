@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="import-file-formats">
+  <title>Exportar arquivo</title>
+
+  <indexterm>
+    <primary>Exportar arquivo</primary>
+  </indexterm>
+
+  <para>Ao abrir uma imagem não XCF, alguns formatos de arquivo têm opções adicionais que podem ser definidas para determinar como o GIMP abrirá a imagem. Se esse for o caso, uma nova caixa de diálogo será aberta. Esta seção documentará as caixas de diálogo para todos os formatos de arquivo que possuem tal caixa de diálogo de opções de importação.</para>
+
+  <sect3 id="file-pdf-load">
+    <title>Importar vetor</title>
+
+    <indexterm>
+      <primary>PDF</primary>
+    </indexterm>
+    <indexterm>
+      <primary>.pdf</primary>
+    </indexterm>
+    <indexterm>
+      <primary>Import PDF Image</primary>
+    </indexterm>
+    <indexterm>
+      <primary>Formatos</primary>
+      <secondary>PDF</secondary>
+    </indexterm>
+
+    <figure>
+      <title>The PDF Import dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/import-pdf-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>
+      If you open a PDF file in <acronym>GIMP</acronym>, a dialog opens where
+      you can set how the PDF should be loaded.
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Abrir textura como imagem</term>
+        <listitem>
+          <para>Se isso estiver definido como <guilabel>Imagens</guilabel>, o GIMP abrirá cada uma das páginas selecionadas como uma imagem separada. Se estiver definido como <guilabel>Camadas</guilabel>, o GIMP criará uma imagem com cada uma das páginas selecionadas em sua própria camada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Select range</term>
+        <listitem>
+          <para>Você pode selecionar páginas digitando um ou mais números de página ou intervalos, separados por vírgulas. Por exemplo, <userinput>4-7,9</userinput> seleciona as páginas 4, 5, 6, 7 e 9 do documento. O padrão é selecionar todas as páginas do documento.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Seleção</term>
+        <listitem>
+          <para>
+            Use this button to select all pages in the document.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Width</term>
+        <term>Height</term>
+        <term>Resolution</term>
+        <listitem>
+          <para>
+            The size of the image created is controlled by the
+            <guilabel>Width</guilabel>, <guilabel>Height</guilabel>,
+            and <guilabel>Resolution</guilabel> settings. Each document
+            contains information about its width and height in units
+            of physical length so it is meaningful to set the width or
+            height of the image in pixels or its resolution in pixels
+            per physical unit of length: as you set any of these three
+            parameters, the other two will automatically adjust to match.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Load in reverse order</term>
+        <listitem>
+          <para>
+            By default the first page is loaded first, meaning it will become
+            the bottom layer. If you check this option, the first page will
+            be loaded last and become the top-most layer.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Use Anti-aliasing</term>
+        <listitem>
+          <para>
+            Check this box to apply
+            <link linkend="glossary-antialiasing">anti-aliasing</link>
+            to text in the image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fill transparent areas with white</term>
+        <listitem>
+          <para>
+            When checked, all transparent areas in PDF pages will be filled
+            with white. When unchecked, transparent areas will stay transparent.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3 id="file-ps-load">
+    <title>Importar do PostScript</title>
+
+    <indexterm>
+      <primary>Postscript</primary>
+    </indexterm>
+    <indexterm>
+      <primary>.ps</primary>
+    </indexterm>
+    <indexterm>
+      <primary>.eps</primary>
+    </indexterm>
+    <indexterm>
+      <primary>Import Postscript Image</primary>
+    </indexterm>
+    <indexterm>
+      <primary>Formatos</primary>
+      <secondary>PS</secondary>
+    </indexterm>
+    <indexterm>
+      <primary>Formatos</primary>
+      <secondary>EPS</secondary>
+    </indexterm>
+
+    <figure>
+      <title>The Postscript Import dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/import-ps-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>
+      If you open a PostScript file in <acronym>GIMP</acronym>, a dialog opens
+      where you can set how the file should be loaded. Note: the page selection
+      settings only appear when there are at least two pages in the document.
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Abrir textura como imagem</term>
+        <listitem>
+          <para>Se isso estiver definido como <guilabel>Imagens</guilabel>, o GIMP abrirá cada uma das páginas selecionadas como uma imagem separada. Se estiver definido como <guilabel>Camadas</guilabel>, o GIMP criará uma imagem com cada uma das páginas selecionadas em sua própria camada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Select range</term>
+        <listitem>
+          <para>Você pode selecionar páginas digitando um ou mais números de página ou intervalos, separados por vírgulas. Por exemplo, <userinput>4-7,9</userinput> seleciona as páginas 4, 5, 6, 7 e 9 do documento. O padrão é selecionar todas as páginas do documento.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Seleção</term>
+        <listitem>
+          <para>
+            Use this button to select all pages in the document.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Width</term>
+        <term>Height</term>
+        <term>Resolution</term>
+        <listitem>
+          <para>
+            The size of the image created is controlled by the
+            <guilabel>Width</guilabel>, <guilabel>Height</guilabel>,
+            and <guilabel>Resolution</guilabel> settings. Each
+            document contains information about its width and height in
+            units of physical length so it is meaningful to set the width
+            or height of the image in pixels or its resolution in pixels
+            per physical unit of length: as you set any of these three
+            parameters, the other two will automatically adjust to match.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Retângulo de Contorno da Seleção</term>
+        <listitem>
+          <para>Se isto estiver marcado, o GIMP usará as informações de caixa delimitadora no arquivo PostScript para determinar quanto da página usar: efetivamente, isso equivale a cortar espaços em branco das bordas da imagem. É possível que um arquivo PostScript não contenha informações de caixa delimitadora, caso em que esta opção será ignorada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor</term>
+        <listitem>
+          <para>Selecione <guilabel>P/B</guilabel> para que o GIMP crie a imagem como uma imagem indexada de 2 cores, <guilabel>Escala de Cinza</guilabel> para uma imagem em tons de cinza, ou <guilabel>Cor</guilabel> para uma imagem RGB (veja <xref linkend="gimp-concepts-image-types"/> para uma explicação completa desses diferentes modos de imagem). Se você selecionar <guilabel>Automático</guilabel>, o GIMP tentará determinar o modo mais adequado com base no conteúdo do arquivo.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Text anti-aliasing</term>
+        <term>Graphic anti-aliasing</term>
+        <listitem>
+          <para>
+            You can choose to have GIMP apply
+            <link linkend="glossary-antialiasing">anti-aliasing</link>
+            separately for text and for graphics in the imported image. Choices
+            are <guilabel>None</guilabel>, <guilabel>Weak</guilabel> and
+            <guilabel>Strong</guilabel>. It determines how much anti-aliasing
+            is applied: usually you should select <guilabel>Strong</guilabel>.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

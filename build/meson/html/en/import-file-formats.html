@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.2. Import File Formats</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="next" href="gimp-save-dialog.html" title="5.3. Save File" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.2. Import File Formats</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-dialogs-file.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="gimp-save-dialog.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="import-file-formats"></a>5.2. Import File Formats</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id25441" class="indexterm"></a>
+      <p>
+    When opening a non-XCF image, some file formats have additional options that
+    can be set to determine how GIMP will open the image. If that is the case,
+    then a new dialog will open. This section will document the dialogs for all
+    file formats that have such an import options dialog.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="file-pdf-load"></a>5.2.1. Import from PDF</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id25446" class="indexterm"></a>
+        <a id="id25448" class="indexterm"></a>
+        <a id="id25450" class="indexterm"></a>
+        <a id="id25452" class="indexterm"></a>
+        <div class="figure">
+          <a id="id1973"></a>
+          <p class="title">
+            <strong>Figure 15.58. The PDF Import dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/import-pdf-dialog.png" alt="The PDF Import dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      If you open a PDF file in <acronym class="acronym">GIMP</acronym>, a dialog opens where
+      you can set how the PDF should be loaded.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Open pages as</span>
+            </dt>
+            <dd>
+              <p>
+            If this is set to <span class="guilabel">Images</span>, then GIMP will open
+            each of the selected pages as a separate image. If it is set to
+            <span class="guilabel">Layers</span>, then GIMP will create one image with
+            each of the selected pages in its own layer.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Select range</span>
+            </dt>
+            <dd>
+              <p>
+            You can select pages by typing one or more page numbers or
+            ranges, separated by commas. For example, <strong class="userinput"><code>4-7,9</code></strong>
+            selects pages 4, 5, 6, 7, and 9 of the document. The default is to
+            select all of the pages in the document.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Select All</span>
+            </dt>
+            <dd>
+              <p>
+            Use this button to select all pages in the document.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Width, </span>
+              <span class="term">Height, </span>
+              <span class="term">Resolution</span>
+            </dt>
+            <dd>
+              <p>
+            The size of the image created is controlled by the
+            <span class="guilabel">Width</span>, <span class="guilabel">Height</span>,
+            and <span class="guilabel">Resolution</span> settings. Each document
+            contains information about its width and height in units
+            of physical length so it is meaningful to set the width or
+            height of the image in pixels or its resolution in pixels
+            per physical unit of length: as you set any of these three
+            parameters, the other two will automatically adjust to match.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Load in reverse order</span>
+            </dt>
+            <dd>
+              <p>
+            By default the first page is loaded first, meaning it will become
+            the bottom layer. If you check this option, the first page will
+            be loaded last and become the top-most layer.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Use Anti-aliasing</span>
+            </dt>
+            <dd>
+              <p>
+            Check this box to apply
+            <a class="link" href="glossary.html#glossary-antialiasing" title="Anti-aliasing">anti-aliasing</a>
+            to text in the image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Fill transparent areas with white</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, all transparent areas in PDF pages will be filled
+            with white. When unchecked, transparent areas will stay transparent.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="file-ps-load"></a>5.2.2. Import from PostScript</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id25501" class="indexterm"></a>
+        <a id="id25503" class="indexterm"></a>
+        <a id="id25505" class="indexterm"></a>
+        <a id="id25507" class="indexterm"></a>
+        <a id="id25509" class="indexterm"></a>
+        <a id="id25512" class="indexterm"></a>
+        <div class="figure">
+          <a id="id1974"></a>
+          <p class="title">
+            <strong>Figure 15.59. The Postscript Import dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/import-ps-dialog.png" alt="The Postscript Import dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      If you open a PostScript file in <acronym class="acronym">GIMP</acronym>, a dialog opens
+      where you can set how the file should be loaded. Note: the page selection
+      settings only appear when there are at least two pages in the document.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Open pages as</span>
+            </dt>
+            <dd>
+              <p>
+            If this is set to <span class="guilabel">Images</span>, then GIMP will open
+            each of the selected pages as a separate image. If it is set to
+            <span class="guilabel">Layers</span>, then GIMP will create one image with
+            each of the selected pages in its own layer.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Select range</span>
+            </dt>
+            <dd>
+              <p>
+            You can select pages by typing one or more page numbers or
+            ranges, separated by commas. For example, <strong class="userinput"><code>4-7,9</code></strong>
+            selects pages 4, 5, 6, 7, and 9 of the document. The default is to
+            select all of the pages in the document.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Select All</span>
+            </dt>
+            <dd>
+              <p>
+            Use this button to select all pages in the document.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Width, </span>
+              <span class="term">Height, </span>
+              <span class="term">Resolution</span>
+            </dt>
+            <dd>
+              <p>
+            The size of the image created is controlled by the
+            <span class="guilabel">Width</span>, <span class="guilabel">Height</span>,
+            and <span class="guilabel">Resolution</span> settings. Each
+            document contains information about its width and height in
+            units of physical length so it is meaningful to set the width
+            or height of the image in pixels or its resolution in pixels
+            per physical unit of length: as you set any of these three
+            parameters, the other two will automatically adjust to match.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Try Bounding Box</span>
+            </dt>
+            <dd>
+              <p>
+            If this is checked, GIMP will use the bounding box information
+            in the PostScript file to determine how much of the page to use:
+            effectively, this is equivalent to cropping whitespace from the
+            edges of the image. It is possible for a PostScript file to contain
+            no bounding box information, in which case this option will be
+            ignored.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Coloring</span>
+            </dt>
+            <dd>
+              <p>
+            Select <span class="guilabel">B/W</span> to have GIMP create the image
+            as a 2-color indexed image, <span class="guilabel">Gray</span> for a
+            grayscale image, or <span class="guilabel">Color</span> for an RGB image
+            (see <a class="xref" href="gimp-images-in.html#gimp-concepts-image-types" title="1. Image Types">Section 1, “Image Types”</a>
+            for a full explanation of these different image modes).
+            If you select <span class="guilabel">Automatic</span> then GIMP will try
+            to determine the most suitable mode from the contents of the
+            file.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Text anti-aliasing, </span>
+              <span class="term">Graphic anti-aliasing</span>
+            </dt>
+            <dd>
+              <p>
+            You can choose to have GIMP apply
+            <a class="link" href="glossary.html#glossary-antialiasing" title="Anti-aliasing">anti-aliasing</a>
+            separately for text and for graphics in the imported image. Choices
+            are <span class="guilabel">None</span>, <span class="guilabel">Weak</span> and
+            <span class="guilabel">Strong</span>. It determines how much anti-aliasing
+            is applied: usually you should select <span class="guilabel">Strong</span>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-dialogs-file.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-save-dialog.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-dialogs-file.html">5. File related Dialogs</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-save-dialog.html">5.3. Save File</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

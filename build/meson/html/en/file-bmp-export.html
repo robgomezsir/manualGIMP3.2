@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.9. Export Image as BMP</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="file-heif-av1-export.html" title="5.8. Export Image as AVIF" />
+    <link rel="next" href="file-cel-export.html" title="5.10. Export Image as KiSS CEL" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.9. Export Image as BMP</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-heif-av1-export.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="file-cel-export.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-bmp-export"></a>5.9. Export Image as BMP</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id25918" class="indexterm"></a>
+      <a id="id25920" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1990"></a>5.9.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1991"></a>
+          <p class="title">
+            <strong>Figure 15.65. The BMP Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-bmp-dialog.png" alt="The BMP Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The <a class="ulink" href="https://en.wikipedia.org/wiki/BMP_file_format" target="_top">BMP</a>
+      file format is a raster image format. It is most often used on Windows.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1992"></a>5.9.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Run-Length Encoded</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, run-length encoding will be used to compress the
+            image data. This setting is only available for 4- and 8-bit
+            indexed and grayscale images. For other formats it is disabled.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Write color space information</span>
+            </dt>
+            <dd>
+              <p>
+            By default, <acronym class="acronym">GIMP</acronym> writes color space information,
+            but not all programs can read BMP images that have this data
+            included. This setting allows you to disable writing the color
+            space information.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">RGB format</span>
+            </dt>
+            <dd>
+              <p>
+            This setting determines the export format for RGB images. It is
+            disabled for indexed and grayscale images.
+            The following choices are available:
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">
+                16 bit (R5 G6 B5)
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Pixels are written using 16 bits: 5 red bits, 6 green bits
+                  and 5 blue bits.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                16 bit (A1 R5 G5 B5)
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Pixels are written using 16 bits: 1 alpha bit, 5 red bits,
+                  5 green bits and 5 blue bits.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                16 bit (X1 R5 G5 B5)
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Pixels are written using 16 bits: 1 undefined bit, 5 red bits,
+                  5 green bits and 5 blue bits.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                24 bit (R8 G8 B8)
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Pixels are written using 24 bits: 8 red bits, 8 green bits
+                  and 8 blue bits.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                32 bit (A8 R8 G8 B8)
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Pixels are written using 32 bits: 8 alpha bits, 8 red bits,
+                  8 green bits and 8 blue bits.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                32 bit (X8 R8 G8 B8)
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Pixels are written using 32 bits: 8 undefined bits, 8 red bits,
+                  8 green bits and 8 blue bits.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-heif-av1-export.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-cel-export.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-heif-av1-export.html">5.8. Export Image as AVIF</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-cel-export.html">5.10. Export Image as KiSS CEL</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

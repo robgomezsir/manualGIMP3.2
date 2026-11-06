@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-02-03 j.h: rewrite explanations
+  2019-07-08 j.h: 
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-free-select">
+  <title>Seleção Livre (Laço)</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Seleção Livre</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Seleção Livre</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Seleção Poligonal</secondary>
+  </indexterm>
+  <indexterm><primary>Seleção Poligonal</primary></indexterm>
+  <indexterm><primary>Laço</primary></indexterm>
+
+  <para>A ferramenta Seleção Livre é muito mais fácil de usar com um tablet do que com um mouse.</para>
+  <para>
+    You can use this tool in two ways. First create the
+    <emphasis>starting point</emphasis> by clicking on your image. Then:
+    <itemizedlist>
+      <listitem>
+        <para>
+          Keep the mouse button pressed (i.e click-and-drag), drag to draw a
+          freehand selection. When the end point is on top of the starting
+          point, release the mouse button to close the selection.
+        </para>
+        <para>
+          If you click on the end point, it turns accompanied by a moving cross.
+          Then, dragging enlarges the shape.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Or release the mouse button and drag to draw a polygonal selection.
+          When the end point is on top of the starting point, click to close
+          the selection.
+        </para>
+        <para>
+          Press the <keycap>Ctrl</keycap> key and click on the end point: moving
+          the mouse pointer forces moving angles to 15°; so, you can draw
+          horizontal or vertical lines easily.
+        </para>
+      </listitem>
+    </itemizedlist>
+    In both cases, double clicking on the end point closes the selection with a 
+    straight line.
+  </para>
+  <para>
+    In polygonal mode, this selection is a <emphasis>preliminary 
+    selection</emphasis>; <link linkend="glossary-marching-ants">ants are
+    marching</link>, but the small yellow circle is
+    still present: you can copy the selection and, pressing the 
+    <keycap>Backspace</keycap> key, you return to the previous selection step 
+    (re-open the shape), and you can edit the selection.
+  </para>
+  <para>
+    Press <keycap>Enter</keycap> or double click inside the shape to 
+    <emphasis>validate the selection</emphasis>.
+  </para>
+  <para>
+    Pressing and releasing the mouse pointer allows you to mix free hand 
+    <emphasis>segments</emphasis> and polygonal segments. You can go outside
+    the edge of the image display and come back in if you want to.
+  </para>
+  <para>
+    Free Select is often a good tool to use for <quote>roughing in</quote> a
+    selection; it is not so  good for precise definition. Experienced users
+    find that it is often convenient to begin with the Free Select tool, but then
+    switch to <link linkend="gimp-quick-mask">Quick Mask</link> mode for detail work.
+  </para>
+
+  <para>Para obter informações sobre as seleções e como elas são usadas no GIMP veja <link linkend="gimp-concepts-selection">Seleções</link>. Para obter informações sobre as características comuns a todas as ferramentas de seleção veja <link linkend="gimp-tool-select">Ferramentas de seleção</link>.</para>
+  <note>
+    <para>A ferramenta Seleção Livre é muito mais fácil de usar com um tablet do que com um mouse.</para>
+  </note>
+
+  <figure>
+    <title>Misturando segmentos a mão livre e segmentos poligonais</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/using/new-free-select-tool.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <sect3>
+    <title>Ativando a Ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir da barra de menu <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de Seleção</guisubmenu><guimenuitem>Seleção Livre</guimenuitem></menuchoice>,</para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-free-select.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas,</para>
+      </listitem>
+      <listitem>
+        <para>
+          By pressing the <keycap>F</keycap> keyboard shortcut.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Teclas Modificadoras</title>
+    <para>A ferramenta Seleção Livre não possui modificadores de teclas especiais, apenas os que afetam todas as ferramentas de seleção da mesma forma. Veja <link linkend="gimp-tool-select">Ferramentas de Seleção</link>para obter mais ajuda.</para>
+    <para>
+      <keycap>Backspace</keycap> returns to previous selection step (removes 
+      last selection segment), <keycap>Escape</keycap> cancels all selection 
+      segments.
+    </para>
+    
+  </sect3>
+
+  <sect3>
+    <title>Manuseando a ferramenta</title>
+    <para>Para mover a seleção, consulte <link linkend="gimp-using-selections-moving">Movendo seleções</link>.</para>
+    <figure>
+      <title>Seleção grosseira com a ferramenta seleção livre.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/free-selection.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/tool-options-free-select.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Anti-serrilhamento</term>
+        <term>Enevoar bordas</term>
+        <listitem>
+          <xi:include href="about-common-select-options.xml"/>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>
+      <link linkend="glossary-marching-ants">Marching ants</link>
+      come with a continuous line, meaning that the selection is not validated 
+      yet and that you can still change the selection shape (mouse pointer 
+      comes with the Move icon). But you can't use (holding it pressed)
+      <keycap>Shift</keycap>, <keycap>Ctrl</keycap> yet. 
+      You have to hit the <keycap>Enter</keycap> key. Then you can use
+      (holding them pressed) <keycap>Shift</keycap> to add a selection,
+      <keycap>Ctrl</keycap> to subtract a selection, <keycap>Shift</keycap> 
+      + <keycap>Ctrl</keycap> to intersect two selections.
+      When you are satisfied with your changes, hit <keycap>Enter</keycap>
+      key to validate the selection.
+    </para>
+  </sect3>
+</sect2>

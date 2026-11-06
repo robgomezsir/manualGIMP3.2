@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- Revision history:
+  2012-05-25 j.h: no change for 2.8
+  2007-09-03 Reviewed for v2.4. New button and shortcut added.
+  2006-04-29 lexa: minor changes to reach docbook compliance
+  2006-02-29 Added Activate Dialog by j.h
+-->
+<sect2 id="gimp-document-dialog">
+  <title>Diálogo do histórico de documentos</title>
+
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Histórico de documentos</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Histórico de documentos</primary>
+  </indexterm>
+
+  <figure>
+    <title>Diálogo do histórico de documentos</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/history.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>O diálogo de histórico mostra a lista de documentos (imagens) que você abriu no GIMP, tanto nessa sessão, quanto nos usos anteriores. É mais completo que a lista que você vê no submenu de <quote>Abrir recente</quote>.</para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Do menu da janela de imagens em <menuchoice><guimenu>Janelas</guimenu><guisubmenu>Diálogos de encaixe</guisubmenu><guimenuitem>Histórico de documentos</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>
+          From the Tab menu in any dockable dialog by clicking on
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Document History</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>Do menu da janela de imagens em <menuchoice><guimenu>Janelas</guimenu><guisubmenu>Diálogos de encaixe</guisubmenu><guimenuitem>Histórico de documentos</guimenuitem></menuchoice>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Usando o diálogo de Histórico de documentos</title>
+    <para>A barra de rolagem permite que você navegue por todas as imagens que você já abriu antes.</para>
+    <para>No menu de Guia para o diálogo de <quote>Histórico de documentos</quote>, você pode escolher entre <guimenuitem>Ver como grade</guimenuitem>e <guimenuitem>Ver como lista</guimenuitem>. No modo de grade, você ve ícones ou miniaturas das imagens já abertas em um arranjo regularde miniaturas. Apenas o nome do arquivo da imagem selecionada é exibido. No modo de Lista, elas são alinhadas uma abaixo da outra,e o nome de cada arquivo, bem como suas dimensões em pixels, são exibidos.</para>
+    <tip>
+      <para><keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo> abre uma caixa para pesquisas por nome. Para maiores informações sobre o modo de lista, veja <xref linkend="gimp-dock-view-as-list"/>.</para>
+    </tip>
+    <anchor id="gimp-document-open"/>
+    <para>
+      Use the <emphasis>Open the selected entry</emphasis>
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/document-open.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      button or <guimenuitem>Open Image</guimenuitem> command of the dialog's
+      context menu, to open the image you have selected. With the
+      <keycap>Shift</keycap> key pressed, it raises an image hidden behind
+      others. With the <keycap>Ctrl</keycap> key pressed, it opens the Open
+      Image dialog.
+    </para>
+    <anchor id="gimp-document-remove"/>
+    <para>
+      Use the <emphasis>Remove the selected entry</emphasis>
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/list-remove.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      button or <guimenuitem>Remove Entry</guimenuitem> command of the dialog's
+      context menu, to remove an image from the History dialog. The image
+      is removed from the recently open images list also. But the image itself
+      is not deleted.
+    </para>
+    <anchor id="gimp-document-clear"/>
+    <para>
+      Use the <emphasis>Clear the entire file history</emphasis>
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/gimp-shred.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      button or <guimenuitem>Clear History</guimenuitem> command of the
+      dialog's context menu, to remove all the files from the history.
+    </para>
+    <anchor id="gimp-document-refresh"/>
+    <para>
+      Use the <emphasis>Recreate Preview</emphasis>
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/view-refresh.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      button or <guimenuitem>Recreate Preview</guimenuitem> command of the
+      dialog's context menu, to update preview in case of change.
+      With <keycap>Shift</keycap> key pressed, it acts on all previews.
+      With <keycap>Ctrl</keycap> key pressed, previews that
+      correspond to files that can't be found out, are deleted.
+    </para>
+
+    <sect4 id="gimp-document-history-menu">
+      <title>Histórico de documentos</title>
+
+      <indexterm>
+        <primary>Histórico de documentos</primary>
+        <secondary>Menu</secondary>
+      </indexterm>
+
+      <figure>
+        <title>Histórico de documentos</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/dialogs/document-history-context-menu.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Visão geral</term>
+          <listitem>
+            <para>
+              You can get the document history context menu by right clicking
+              on a file in the document history dialog, or by clicking the
+              <link linkend="tab-menus">tab menu button</link>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon> and opening the
+              <guisubmenu>Documents Menu</guisubmenu> submenu.
+              Several of the operations are also available through buttons at
+              the bottom of the dialog. Those operations are documented above.
+              The remaining ones are listed below.
+            </para>
+            <variablelist>
+              <varlistentry>
+                <term>Copiar localização da paleta</term>
+                <listitem>
+                  <anchor id="gimp-document-copy-location"/>
+                  <para><guilabel>Copiar localização da definição de ferramenta</guilabel>: este comando copia o caminho completo do arquivo de definição de ferramenta ativo para a área de transferência.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Mostrar no Gerenciador de Arquivos</term>
+                <listitem>
+                  <anchor id="gimp-document-show-in-file-manager"/>
+                  <para><guilabel>Média</guilabel>: O valor da médio do intervalo, no canal selecionado.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+</sect2>

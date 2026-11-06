@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.16. Borrar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+    <link rel="prev" href="gimp-tool-convolve.html" title="3.15. Desfocar/Deixar nítido" />
+    <link rel="next" href="gimp-tool-dodge-burn.html" title="3.17. Sub/Super-exposição" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.16. Borrar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-convolve.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Ferramentas de pintura</span>
+        <nav> <a accesskey="n" href="gimp-tool-dodge-burn.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-smudge"></a>3.16. Borrar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id18264" class="indexterm"></a>
+      <a id="id18267" class="indexterm"></a>
+      <p>A ferramenta Dedinho lembra a pintura com os dedos. Com o GIMP-2.10, ela funciona de duas maneiras: </p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p>A ferramenta de borrar usa o pincel ativo para borrar as cores na camada ativa ou seleção. Ela pega as cores por onde passa e as usa para misturar a cores próximas, numa distancia que você pode determinar.</p>
+          </li>
+          <li class="listitem">
+            <p>Quando a opção <span class="guilabel">Fluxo</span> for maior que 0,00, a ferramenta Dedinho funciona como um pincel usando a cor de primeiro plano da caixa de ferramentas e misturando com a cor subjacente.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3015"></a>3.16.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>Existem várias formas para ativar a ferramenta:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagem: <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de pintura</span> → <span class="guimenuitem">Degradê</span>.</p>
+            </li>
+            <li class="listitem">
+              <p>Ícone da ferramenta de clonagem na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>Ao pressionar o atalho de teclado <span class="keycap"><strong>C</strong></span>.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3016"></a>3.16.2. Modificadores de tecla</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+          
+          <span class="keycap"><strong>Shift</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>A tecla <span class="keycap"><strong>Shift</strong></span> coloca a ferramenta de borrar no modo de linha reta. Pressionar a tecla <span class="keycap"><strong>Shift</strong></span> enquanto clica no <span class="mousebutton">Botão 1</span> faz com que o borrão seja feito em linha reta. Clicar consecutivamente fará com que continue a borrar em linhas retas a partir do fim da linha anterior.</p>
+              <div class="figure">
+                <a id="id3017"></a>
+                <p class="title">
+                  <strong>Figura 14.82. Ferramenta de borrar</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/smudge-ex-line.png" alt="Ferramenta de borrar" />
+                    <div class="caption">
+                      <p>Clique com Shift e arraste para criar uma linha</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>Pressionar <span class="keycap"><strong>Ctrl</strong></span> com o <span class="keycap"><strong>Shift</strong></span>, faz com que o ângulo entre duas linhas sucessivas variem em etapas de 15°.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3018"></a>3.16.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3019"></a>
+          <p class="title">
+            <strong>Figura 14.83. Opções da ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-smudge.png" alt="Opções da ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Opacidade, </span>
+              <span class="term">Pincel, </span>
+              <span class="term">Tamanho, </span>
+              <span class="term">Proporção, </span>
+              <span class="term">Ângulo, </span>
+              <span class="term">Espaçamento, </span>
+              <span class="term">Dureza, </span>
+              <span class="term">Força, </span>
+              <span class="term">Dinâmicas, </span>
+              <span class="term">Opções de dinâmicas, </span>
+              <span class="term">Aplicar espalhamento, </span>
+              <span class="term">Pincelada suave, </span>
+              <span class="term">O tamanho do pincel - curva de esmaecimento, </span>
+              <span class="term">Expand Layers</span>
+            </dt>
+            <dd>Veja <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-options" title="3.1.2. Opções">Opções em comum das ferramentas de pintura</a> para uma descrição das opções da ferramenta que são aplicáveis a todas as ferramentas de pintura.</dd>
+            <dt>
+              <span class="term">Borda dura</span>
+            </dt>
+            <dd>
+              <p><span class="guilabel">Pressão</span>: Pressione com mais força para tornar o pincel maior.</p>
+            </dd>
+            <dt>
+              <span class="term">Sem efeito de apagamento</span>
+            </dt>
+            <dd>
+              <p>Se a dedação diminuir o alfa de alguns pixels; este alfa não diminui se esta opção estiver marcada, e os pixels não são apagados. Isso é útil para preencher uma lacuna entre duas áreas de cor.</p>
+              <div class="figure">
+                <a id="id3020"></a>
+                <p class="title">
+                  <strong>Figura 14.84. Um exemplo de "Sem apagamento" do programador</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/smudge-ex-noerasing-without-effect.jpg" alt="Um exemplo de &quot;Sem apagamento&quot; do programador" />
+                    <div class="caption">
+                      <p>Sem efeito de apagamento</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/toolbox/smudge-ex-noerasing-with-effect.jpg" alt="Um exemplo de &quot;Sem apagamento&quot; do programador" />
+                    <div class="caption">
+                      <p>Sem efeito de apagamento</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Usar amostra combinada</span>
+            </dt>
+            <dd>
+              <p>Se você ativar essa opção, a recuperação não é calculada apenas a partir de valores da camada ativa, mas de todas as camadas visíveis.</p>
+              <p>O reticulado é completamente explicado no <a class="link" href="glossary.html#glossary-dithering" title="Reticulado">Glossário</a></p>
+            </dd>
+            <dt>
+              <span class="term">Taxa</span>
+            </dt>
+            <dd>
+              <p>Esta opção poderia ser chamada de "Comprimento do Dedinho" pois define o comprimento do efeito de dedinho em um traço.</p>
+              <div class="figure">
+                <a id="id3021"></a>
+                <p class="title">
+                  <strong>Figura 14.85. Exemplo de pintura</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/smudge-ex-rate.png" alt="Exemplo de pintura" />
+                    <div class="caption">
+                      <p>1: Taxa=20 2: Taxa=60 3: Taxa=90</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Fluxo</span>
+            </dt>
+            <dd>
+              <p>Já vimos o comportamento diferente da opção <span class="quote">“<span class="quote">Fluxo</span>”</span> quando definida como 0,00 (funciona como a ferramenta Dedinho original) e definida como mais que 0,00 (usa a cor de primeiro plano para dedar).</p>
+            </dd>
+          </dl>
+        </div>
+        <p><span class="quote">“<span class="quote">Sem efeito de apagamento</span>”</span> e <span class="quote">“<span class="quote">Fluxo</span>”</span> são novas opções no GIMP-2.10. Aqui estão comentários e exemplos do programador dessas opções em <a class="ulink" href="https://www.gimp-forum.net/Thread-Customized-smudge-tool-Smudge-with-painting" target="_top">gimp-forum.net</a>:</p>
+        <div class="mediaobject">
+          <img src="images/toolbox/smudge-simpletest.jpg" />
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-convolve.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-paint.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-dodge-burn.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-convolve.html">3.15. Desfocar/Deixar nítido</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-dodge-burn.html">3.17. Sub/Super-exposição</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

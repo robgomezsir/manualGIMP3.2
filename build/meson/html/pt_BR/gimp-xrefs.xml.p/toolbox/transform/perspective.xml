@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-04-30 j.h: v2.10.10 new options
+  2018-10-24 j.h: fix issue #65 (view preview in gimp-2.10)
+
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-perspective">
+  <title>Perspectiva</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Perspectiva</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Perspectiva</primary>
+  </indexterm>
+
+  <para>A ferramenta de Perspectiva é usada para mudar a <quote>Perspectiva</quote> do conteúdo da camada ativa (ou da seleção, ou vetor). Ao clicar na imagem, de acordo com o tipo de pré-visualização selecionado, uma moldura retangular ou uma grade aparece em torno da seleção (ou em torno de toda a camada se não houver seleção). Essa moldura tem uma alça em cada um dos quatro cantos. Ao mover essas alças clicando e arrastando, você pode modificar a perspectiva. Ao mesmo tempo, uma janela de <quote>informação da Transformação</quote> aparece, com dados geométricos sobre a transformação e um botão de confirmação. No centro do elemento, aparece um círculo que permite que você reposicione todo o elemento (basta arrastar o círculo).</para>
+
+  <note>
+    <para>Esta ferramenta não é estritamente uma ferramenta de perspectiva, uma vez que ela não impõe regras de perspectiva ao elemento transformado. Ela seria melhor descrita como uma ferramenta de distorção.</para>
+  </note>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagens, em:<menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de transformação</guisubmenu><guimenuitem>Mover</guimenuitem></menuchoice></para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-perspective.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>Usando o atalho de teclado  <keycombo><keycap>Shift</keycap><keycap>P</keycap></keycombo></para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-perspective.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Transformar</term>
+        <term>Direção</term>
+        <term>Interpolação</term>
+        <term>Cortar</term>
+        <term>Show image preview</term>
+        <term>Guias</term>
+        <listitem>
+          <xi:include href="about-common-transform-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Constrain handles (Shift)</term>
+        <listitem>
+          <para>
+            Constrain handles to move along edges and diagonal.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Around center (Ctrl)</term>
+        <listitem>
+          <para>Direção da transformação</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>The Perspective adjustment dialog</title>
+    <figure>
+      <title>
+        The Perspective adjustment dialog
+      </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/perspective-adjust.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+       When you click on the image window, the adjustment dialog appears. 
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Transformar</term>
+        <listitem>
+          <para>A janela de informação mostra uma representação matemática da transformação de perspectiva. Você pode encontrar mais informações sobre matrizes de transformação na <ulink url="http://en.wikipedia.org/wiki/Transformation_Matrices">Wikipedia</ulink></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Readjust button</term>
+        <listitem>
+          <para>
+            With this button
+            you can reset the transform handles back to the original square
+            shape, while keeping the current transformation and zoom level.
+            This enables you to create more complex transformations by making
+            the transformation in several steps.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

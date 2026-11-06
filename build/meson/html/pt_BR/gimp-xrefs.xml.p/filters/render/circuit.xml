@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2010-04-30 liangtai: created initial version
+-->
+<sect2 id="script-fu-circuit">
+  <title>Circuito</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Circuito</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Circuito</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de circuito</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-circuit.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O comando <guimenuitem>Circuito</guimenuitem> é um script que preenche a região selecionada (ou alfa) com traços como aqueles na parte de trás de uma placa de circuito antiga. Pode ficar ainda melhor se for feito um mapeamento com degradê, com um degradê apropriado.</para>
+    <tip>
+      <para>O efeito parece funcionar melhor em seleções de forma estranha por conta de algumas limitações no tratamento de seleções no código de labirinto.</para>
+    </tip>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+    <note>
+      <para>
+        This filter creates a gray level image in <acronym>RGB</acronym> mode.
+      </para>
+      <para>A imagem resultante não depende da imagem original.</para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guimenuitem>Circuit…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opões para o filtro <quote>Circuito</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/circuit.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Tamanho da máscara de Pintura a óleo</term>
+        <listitem>
+          <para>
+            With this option you can set the option value of the
+            <link linkend="gimp-filter-oilify">Oilify</link> filter in pixels
+            (range 3 to 50).  Larger values make lines more fuzzy.
+            17 is the default value.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Semente do circuito</term>
+        <listitem>
+          <para>Você pode especificar um valor para a semente de números aleatórios - um mesmo valor de  semente, com o mesmo tamanho de seleção, vai produzir um circuito idêntico. Os valores vão de 1 até 3 milhões, e o padrão é 3.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Sem fundo (apenas para camada separada)</term>
+        <listitem>
+          <para>Se esta opção estiver ativada, o que seriam os pixels escuros do circuito ficam  transparentes para que a imagem abaixo seja mostrada através dos buracos. Esta opção vem desmarcada por padrão. Para que ela funcione, é necessário marcar a opção de <guilabel>Camada separada</guilabel>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Manter seleção</term>
+        <listitem>
+          <para>
+            If an active selection exists when this script is called,
+            you can keep the selection and its
+            <link linkend="glossary-marching-ants">marching ants</link>
+            with this option. This option is enabled in default settings.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Separar camada</term>
+        <listitem>
+          <para>Se esta opção não estiver marcada, a textura gerada é desenhada na camada ativa. Quando esta opção é ativada (o padrão), este script adiciona uma nova camada para desenhar o circuito.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Criando o efeito Circuito</title>
+    <para>O efeito de Circuito pode ser obtido por meio das seguintes etapas:</para>
+      <procedure>
+        <step>
+          <para>
+            First, <link linkend="gimp-filter-maze">draw maze</link> with 5 pixels
+            width pathways and walls with the <quote>Depth First</quote>
+            algorithm.  The pattern of maze is set by <guilabel>Circuit
+            seed</guilabel>.
+          </para>
+        </step>
+        <step>
+          <para>
+            <link linkend="gimp-filter-oilify">Oilify</link> this maze with a
+            brush of <guilabel>Oilify mask size</guilabel>.
+          </para>
+        </step>
+        <step>
+          <para>
+            Then apply the <link linkend="gimp-filter-edge-sobel">extract edge</link>
+            filter with Sobel algorithm, Smear option and Amount to 2.0, to
+            the oilified maze image. This crowds high contrast winding curves
+            like as a circuit map.
+          </para>
+        </step>
+        <step>
+          <para>
+            Finally, <link linkend="gimp-filter-desaturate">Desaturate</link>
+            the map with gray color in <acronym>RGB</acronym> mode.
+          </para>
+        </step>
+      </procedure>
+  </sect3>
+</sect2>

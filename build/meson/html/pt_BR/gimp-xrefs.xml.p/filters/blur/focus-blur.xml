@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-focus-blur">
+  <title>Borrão de Foco</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Desfocar</secondary>
+    <tertiary>Borrão de Foco</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Borrão de Foco</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>O filtro Borrão de Foco</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/taj_orig.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/blur-taj-focus.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Borrão de foco cria um borrão em todas as direções ao redor de um ponto focal. O ponto focal padrão é o centro da camada ou seleção. Você pode mudar este ponto focal arrastando o ponto central. Todos os outros pontos e linhas também podem ser arrastados para ajustar o formato e a área de foco da imagem.</para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Blur</guisubmenu>
+        <guimenuitem>Focus Blur…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do diálogo do filtro Borrão de Foco com Opções de Geometria expandidas</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/blur/focus-blur-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Forma</term>
+        <listitem>
+          <para>Aqui, você pode selecionar a forma usada para criar o borrão de foco. As opções são <guilabel>Círculo</guilabel>, <guilabel>Quadrado</guilabel>, <guilabel>Losango</guilabel>, <guilabel>Horizontal</guilabel> e <guilabel>Vertical</guilabel>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Tipo de desfoque</term>
+        <listitem>
+          <para>
+            The type of blur to use. The choices are
+            <link linkend="gimp-filter-gaussian-blur">Gaussian Blur</link> and
+            <link linkend="gimp-filter-lens-blur">Lens Blur</link>. It will use
+            the filters of the same name to do the actual blurring.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Raio de desfoque</term>
+        <listitem>
+          <para>O tamanho do raio da área livre de desfoque.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Alta qualidade</term>
+        <listitem>
+          <para>Gera saída mais precisa e consistente. É mais lento.</para>
+          <para>
+            Only available when <guilabel>Blur Type</guilabel> is Gaussian Blur.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Fator de tons claros</term>
+        <listitem>
+          <para>Intensidade relativa de tons claros.</para>
+          <para>
+            Only available when <guilabel>Blur Type</guilabel> is Lens Blur.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Limiar de tons claros</term>
+        <listitem>
+          <para>Aqui, você pode definir os valores mínimo e máximo para tons claros. Ele pode ser definido ou pelo arraste dos triângulos pretos e brancos, ou pelo fornecimento dos valores exatos nos campos de entrada de números.</para>
+          <para>
+            Only available when <guilabel>Blur Type</guilabel> is Lens Blur.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Opções de Geometria</term>
+        <listitem>
+          <para>Todas estas opções relacionadas a geometria podem ser mudadas pelo uso dos controles visuais diretamente sobre a tela. Caso você necessite de controle mais refinado, eles podem ser definidos manualmente aqui.</para>
+          <variablelist>
+            <varlistentry>
+            <term>X do centro</term>
+            <term>Y do centro</term>
+            <listitem>
+              <para>Especifica a posição X e Y do centro do borrão de foco.</para>
+            </listitem>
+            </varlistentry>
+            <varlistentry>
+            <term>Raio</term>
+            <listitem>
+              <para>O raio da região de foco externa. Visualmente, a linha contínua externa.</para>
+            </listitem>
+            </varlistentry>
+            <varlistentry>
+            <term>Nitidez</term>
+            <listitem>
+              <para>O raio da região de foco interna. Visualmente, a linha contínua interna.</para>
+            </listitem>
+            </varlistentry>
+            <varlistentry>
+            <term>Ponto médio</term>
+            <listitem>
+              <para>O ponto médio da transição de foco. Representado pela linha tracejada. A área da linha interna (nitidez) até o ponto médio é onde a área de foco se transforma na área desfocada.</para>
+            </listitem>
+            </varlistentry>
+            <varlistentry>
+            <term>Proporção</term>
+            <listitem>
+              <para>Isto controla a proporção de tamanho.</para>
+            </listitem>
+            </varlistentry>
+            <varlistentry>
+            <term>Rotação</term>
+            <listitem>
+              <para>Isto controla a rotação em graus. Você pode tanto usar o controle circular quanto digitar números.</para>
+            </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Controles direto na tela de pintura</term>
+        <listitem>
+          <para>Esta opção (padrão) permite que você modifique configurações de desfoque diretamente na tela, para um ajuste visual mais fácil das configurações de desfoque. Ela exibe linhas no formato selecionado com pontos nelas. As linhas e pontos podem ser arrastados com um mouse para mudar o centro do foco, a área desfocada e outras configurações que também estão disponíveis nas <guilabel>Opções de Geometria</guilabel>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

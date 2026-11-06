@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4. Image Management Related Dialogs</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="dialogs.html" title="Chapter 15. Dialogs" />
+    <link rel="prev" href="gimp-font-dialog.html" title="3.8. Fonts Dialog" />
+    <link rel="next" href="gimp-image-dialog.html" title="4.2. Images Dialog" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4. Image Management Related Dialogs</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-font-dialog.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>Chapter 15. Dialogs</span>
+        <nav> <a accesskey="n" href="gimp-image-dialog.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-dialogs-management"></a>4. Image Management Related Dialogs</h2>
+          </div>
+        </div>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-buffer-dialog"></a>4.1. Buffers Dialog</h3>
+            </div>
+          </div>
+        </div>
+        <a id="id24563" class="indexterm"></a>
+        <a id="id24566" class="indexterm"></a>
+        <a id="id24569" class="indexterm"></a>
+        <a id="id24572" class="indexterm"></a>
+        <a id="id24575" class="indexterm"></a>
+        <a id="id24578" class="indexterm"></a>
+        <a id="id24580" class="indexterm"></a>
+        <a id="id24582" class="indexterm"></a>
+        <div class="figure">
+          <a id="id1952"></a>
+          <p class="title">
+            <strong>Figure 15.47. The Buffers dialog (as a list)</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/buffers-dialog.png" alt="The Buffers dialog (as a list)" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Buffers are a kind of temporary storage for image data, created when
+    you cut or copy part of a drawable (a layer, layer mask, etc.).
+    The following commands are available from the <span class="guimenu">Edit</span> menu
+    to save an image to a buffer:
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Cut Named…</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="guimenu">Edit</span> → <span class="guisubmenu">Buffer</span> → <span class="guimenuitem">Cut Named…</span>
+            This command cuts the selected part from the current drawable
+            (usually a layer) and places it in a buffer. If there is no
+            selection the whole drawable will be used. You will be asked to
+            give the buffer a name. The image will be removed from the
+            selection after this is done.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Copy Named…</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="guimenu">Edit</span> → <span class="guisubmenu">Buffer</span> → <span class="guimenuitem">Copy Named…</span>
+            This command copies the selected part from the current drawable
+            (usually a layer) and places it in a buffer. If there is no
+            selection the whole drawable will be used. You will be asked to
+            give the buffer a name.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Copy Visible Named…</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="guimenu">Edit</span> → <span class="guisubmenu">Buffer</span> → <span class="guimenuitem">Copy Visible Named…</span>
+            This command copies the selected part from all the visible
+            drawables and places it in a buffer. If there is no selection the
+            whole image will be used. You will be asked to give the buffer
+            a name.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Paste Named…</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="guimenu">Edit</span> → <span class="guisubmenu">Buffer</span> → <span class="guimenuitem">Paste Named…</span>
+            This menu command opens the <span class="guilabel">Buffers Dialog</span>.
+            To actually paste a buffer, choose one of the buttons from this
+            dialog, or the context menu. Both of which will be explained below.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+  </p>
+        <p>
+    The <span class="quote">“<span class="quote">Buffers</span>”</span> dialog shows you the contents of all existing
+    named buffers, and allows you to operate on them in several ways. It
+    also shows you, at the top, the contents of the Global Buffer (the contents
+    of the clipboard). This Global Buffer is merely a display: you can't do
+    anything with it.
+    There is no hard limit on the number of named buffers you can create,
+    except that it will consume a share of your available computer memory.
+  </p>
+        <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Caution">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Caution]" src="images/caution.png" />
+              </td>
+              <th align="left">Caution</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+      Named buffers are not saved across sessions: they will be gone when you
+      close GIMP. The only way to save their contents is to paste them into
+      images.
+    </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="gimp-buffer-dialog-activate"></a>4.1.1. Activating the Dialog</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+      This dialog is a dockable dialog; see the
+      section <a class="xref" href="gimp-concepts-docks.html" title="2.3. Dialogs and Docking">Section 2.3, “Dialogs and Docking”</a> for help on manipulating
+      it.
+    </p>
+          <p>
+      You can access it:
+    </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>
+          from the main menu:
+          <span class="guimenu">Edit</span> → <span class="guisubmenu">Buffer</span> → <span class="guimenuitem">Paste Named…</span>;
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          from the main menu:
+          <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Dialogs</span> → <span class="guimenuitem">Buffers</span>;
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          from the Tab menu in any dockable dialog by clicking the
+          <a class="link" href="menus.html#tab-menus" title="1.3. Tab menus">tab menu button</a>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+          </span> and selecting
+          <span class="guimenu">Add Tab</span> → <span class="guimenuitem">Buffers</span>.
+        </p>
+              </li>
+            </ul>
+          </div>
+          <p>
+      In the <span class="guimenu">Windows</span> menu, there is a list of
+      <a class="link" href="gimp-concepts-docks.html#gimp-dockable-menu" title="2.3.2. Tab Menu">detached windows</a> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <span class="quote">“<span class="quote">Buffers</span>”</span> dialog from the main menu:
+      <span class="guimenu">Windows</span> → <span class="guimenuitem">Buffers</span>.
+    </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="gimp-buffer-dialog-using"></a>4.1.2. Using the Buffers dialog</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+      Clicking on a buffer in the display area makes it the active buffer,
+      i.e., the one that will be used for paste commands executed from the
+      Buffers context menu, or the buttons at the bottom of the dialog.
+      Double-clicking on a buffer causes its contents to be pasted to the
+      active image as a floating selection; this is a quick way of executing
+      the <span class="quote">“<span class="quote">Paste Buffer</span>”</span> command.
+    </p>
+          <p>
+      At the bottom of the dialog are five buttons. The operations they
+      perform can also be accessed from the Buffers Menu that you get by right
+      clicking on the active buffer.
+    </p>
+          <div class="figure">
+            <a id="id1953"></a>
+            <p class="title">
+              <strong>Figure 15.48. The Buffers dialog (Grid View)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/dialogs/buffers-dialog-grid.png" alt="The Buffers dialog (Grid View)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>
+      In the Tab menu for the <span class="quote">“<span class="quote">Buffers</span>”</span> dialog, you can choose
+      between  <span class="guimenuitem">View as Grid</span> and
+      <span class="guimenuitem">View as List</span>.
+      In Grid mode, the buffers are laid out in a rectangular array.
+      In List mode, they are lined up vertically, with each row showing
+      a thumbnail of the contents of the buffer, its name, and its pixel
+      dimensions.
+    </p>
+          <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Tip">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Tip]" src="images/tip.png" />
+                </td>
+                <th align="left">Tip</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>F</strong></span>
+        opens a search field.
+        See <a class="xref" href="gimp-concepts-docks.html#gimp-dock-view-as-list">View as List</a>
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>
+      You can change the size of the buffer previews in the dialog using
+      the <span class="quote">“<span class="quote">Preview Size</span>”</span> submenu of the dialog's Tab menu.
+    </p>
+          <div class="sect4">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h5 class="title"><a id="gimp-buffer-dialog-buttons"></a>4.1.2.1. Buttons at the bottom</h5>
+                </div>
+              </div>
+            </div>
+            <p>
+        The button bar at the bottom offers the following functionality:
+      </p>
+            <div class="variablelist">
+              <dl class="variablelist">
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/edit-paste-symbolic.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Paste Buffer</span>
+          , </span>
+                  <span class="term">
+            <span class="phrase">Paste Buffer In Place</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-paste"></a>
+                  <p>
+              This command pastes the contents of the selected buffer into the
+              active image, as a floating selection. The only difference
+              between this and the ordinary
+              <a class="link" href="gimp-edit-paste.html" title="3.8. Paste">Paste</a>
+              command is that it uses the selected buffer rather than the
+              global clipboard buffer.
+            </p>
+                  <a id="gimp-buffer-paste-in-place"></a>
+                  <p>
+              With the <span class="keycap"><strong>Shift</strong></span> key pressed, it pastes the buffer
+              at its original location.
+            </p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-paste-into-symbolic.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Paste Buffer Into The Selection</span>
+          , </span>
+                  <span class="term">
+            <span class="phrase">Paste Buffer Into The Selection In Place</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-paste-into"></a>
+                  <p>
+              This command pastes the contents of the selected buffer into
+              the active image's selection, as a floating selection. The
+              only difference between this and the ordinary
+              <a class="link" href="gimp-edit-paste-as.html#gimp-edit-paste-into" title="3.10.6. Paste as Floating Data Into Selection">Paste Into
+              Selection</a> command is that it uses the selected buffer
+              rather than the global clipboard buffer.
+            </p>
+                  <a id="gimp-buffer-paste-into-in-place"></a>
+                  <p>
+              With the <span class="keycap"><strong>Shift</strong></span> key pressed, it pastes the buffer
+              into the active selection at its original location.
+            </p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-paste-as-new-symbolic.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Paste Buffer as New Layer</span>
+          , </span>
+                  <span class="term">
+            
+            <span class="phrase">Paste Buffer as New Layer in Place</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-paste-as-new-layer"></a>
+                  <p>
+              This command creates a new layer in the active image out of the
+              contents of the selected buffer. The only difference between
+              this and the ordinary
+              <a class="link" href="gimp-edit-paste-as.html#gimp-edit-paste-as-new-image" title="3.10.3. Paste as New Image">Paste as New
+              Image</a> command is that it uses the selected buffer rather
+              than the content of the global clipboard buffer.
+            </p>
+                  <a id="gimp-buffer-paste-as-new-layer-in-place"></a>
+                  <p>
+              With the <span class="keycap"><strong>Shift</strong></span> key pressed, it creates the
+              layer at the original location of the buffer.
+            </p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-paste-as-new-symbolic.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Paste Buffer as New Image</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-paste-as-new-image"></a>
+                  <p>
+              This command creates a new single-layer image out of the
+              contents of the selected buffer. The only difference between
+              this and the ordinary
+              <a class="link" href="gimp-edit-paste-as.html#gimp-edit-paste-as-new-image" title="3.10.3. Paste as New Image">Paste as New
+              Image</a> command is that it uses the selected buffer rather
+              than the content of the global clipboard buffer.
+            </p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Delete Buffer</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-delete"></a>
+                  <p>
+              This command deletes the selected named buffer, no questions
+              asked. You cannot delete the Global Buffer.
+            </p>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="sect4">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h5 class="title"><a id="gimp-buffer-dialog-menu"></a>4.1.2.2. Buffers Dialog Context menu</h5>
+                </div>
+              </div>
+            </div>
+            <p>
+        These commands are the same as available through the buttons at the
+        bottom of the dialog and are explained there.
+      </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-font-dialog.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="dialogs.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-image-dialog.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-font-dialog.html">3.8. Fonts Dialog</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-image-dialog.html">4.2. Images Dialog</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

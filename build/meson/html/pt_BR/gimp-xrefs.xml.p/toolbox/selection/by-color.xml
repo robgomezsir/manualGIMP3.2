@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2017-05-04 j.h: add Draw mask option
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-by-color-select">
+  <title>Seleção Por Cor</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Seleção por cor</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Seleção por cor</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Cor</primary>
+    <secondary>Seleção por cor</secondary>
+  </indexterm>
+
+  <para>A ferramenta de seleção por Cor é usada para selecionar áreas de uma imagem com base na semelhança de cores. Ele funciona de forma muito parecida com a ferramenta de Seleção Contígua (<quote>Varinha Mágica</quote>). A principal diferença entre elas é que a Varinha Mágica seleciona regiões <emphasis>contíguas</emphasis>, com todas as partes ligadas ao ponto de partida por caminhos que não contenham grandes lacunas; enquanto a ferramenta Seleção por Cor seleciona todos os pixels que são suficientemente similares em cor ao pixel que você clica, independentemente de onde eles estão localizados.</para>
+
+  <sect3>
+    <title>Ativando a Ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>Do barra de menu da janela de imagem em <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Seleção de ferramentas</guisubmenu><guimenuitem>Seleção por Cor</guimenuitem></menuchoice>,</para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-by-color-select.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas,</para>
+      </listitem>
+      <listitem>
+        <para>usando o atalho de teclado <keycombo><keycap>Shift </keycap><keycap>O</keycap></keycombo>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Teclas Modificadoras</title>
+    <para>A escolha da ferramenta de selecionar por cor não tem nenhum modificador de teclas especiais, apenas os que afetam todas as ferramentas de seleção da mesma forma. Veja <link linkend="gimp-tool-select">Ferramentas de seleção</link> para obter ajuda.</para>
+  </sect3>
+
+  <sect3>
+    <title>Manuseando a ferramenta</title>
+    <figure>
+      <title>Usando a ferramenta de Seleção por Cor: pixels selecionados não são apenas os contíguos</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/by-color-selection.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Tal como acontece com a ferramenta de Seleção Contígua, a seleção começa assim que você clicar e a referência é o primeiro pixel clicado. Se você clicar e arrastar, você pode alterar o limite da mesma forma.</para>
+    <para>
+      You can move the selection outline with the arrow keys, not with the
+      mouse.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/tool-options-select-by-color.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Anti-serrilhamento</term>
+        <term>Enevoar bordas</term>
+        <listitem>
+          <xi:include href="about-common-select-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Seleciona  áreas transparentes</term>
+        <term>Usar amostra combinada</term>
+        <term>Limiar</term>
+        <term>Selecionar por</term>
+        <term>Draw mask</term>
+        <listitem>
+          <para>Todas essas opções funcionam exatamente da mesma maneira, elas foram descritas para a ferramenta de Seleção Contígua. Veja <xref linkend="tool-fuzzy-select-options"/> para mais detalhes.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

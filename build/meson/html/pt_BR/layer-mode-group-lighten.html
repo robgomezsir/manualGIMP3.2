@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.2. Modos de Camada</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-concepts-layer-modes.html" title="2. Modos de Camada" />
+    <link rel="prev" href="gimp-concepts-layer-modes.html" title="2. Modos de Camada" />
+    <link rel="next" href="layer-mode-group-darken.html" title="2.3. Modos de Camada" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.2. Modos de Camada</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-concepts-layer-modes.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>2. Modos de Camada</span>
+        <nav> <a accesskey="n" href="layer-mode-group-darken.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="layer-mode-group-lighten"></a>2.2. Modos de Camada</h3>
+          </div>
+        </div>
+      </div>
+      <p>O grupo <span class="quote">“<span class="quote">Clarear</span>”</span> contém modos de camada que deixam o resultado mais claro.</p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <a id="layer-mode-lighten-only"></a>
+            <span class="term">Somente clarear</span>
+          </dt>
+          <dd>
+            <a id="id10634" class="indexterm"></a>
+            <a id="id10637" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2701"></a>
+              <p class="title">
+                <strong>Figura 8.14. Exemplo para modo de camadas <span class="quote">“<span class="quote">Somente clarear</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-lighten-only.jpg" alt="Exemplo para modo de camadas “Somente clarear”" />
+                  <div class="caption">
+                    <p>Exemplo para modo de camadas <span class="quote">“<span class="quote">Somente clarear</span>”</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guimenuitem">Somente clarear</span> compara cada componente de cada pixel na camada superior com o correspondente na camada inferior e utiliza o valor maior na imagem resultante. Camadas completamente pretas não têm efeito sobre a imagem final e camadas completamente brancas resultam em uma imagem branca.</p>
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-luma-luminance-lighten-only"></a>
+            <span class="term">Somente clarear</span>
+          </dt>
+          <dd>
+            <a id="id10653" class="indexterm"></a>
+            <a id="id10656" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2702"></a>
+              <p class="title">
+                <strong>Figura 8.15. Exemplo para modo de camadas <span class="quote">“<span class="quote">Somente clarear</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-luma-lighten-only.jpg" alt="Exemplo para modo de camadas “Somente clarear”" />
+                  <div class="caption">
+                    <p>Camada superior em 100% de opacidade usando o modo <span class="quote">“<span class="quote">Apenas Clarear Luma/Luminância</span>”</span>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guimenuitem">Somente clarear</span> compara cada componente de cada pixel na camada superior com o correspondente na camada inferior e utiliza o valor maior na imagem resultante. Camadas completamente pretas não têm efeito sobre a imagem final e camadas completamente brancas resultam em uma imagem branca.</p>
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-screen"></a>
+            <span class="term">Esconder</span>
+          </dt>
+          <dd>
+            <a id="id10672" class="indexterm"></a>
+            <a id="id10675" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2703"></a>
+              <p class="title">
+                <strong>Figura 8.16. Exemplo para o modo de camada <span class="quote">“<span class="quote">Esconder</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-screen.jpg" alt="Exemplo para o modo de camada “Esconder”" />
+                  <div class="caption">
+                    <p>Exemplo para o modo de camada <span class="quote">“<span class="quote">Esconder</span>”</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Esconder</span> inverte os valores de cada um dos pixels visíveis nas duas camadas da imagem. (Isto é, ela subtrai cada componente deles de 255). Em seguida, ele os multiplica entre si, divide por 255 e inverte este valor novamente. A imagem resultante é geralmente mais brilhante, e às vezes de aparência <span class="quote">“<span class="quote">lavada</span>”</span>. As exceções a isto são as camadas em preto, o que não altera a outra camada, e uma camada em branco, o que resulta em uma imagem branca. Cores mais escuras na imagem aparentam ser transparentes.</p>
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-dodge"></a>
+            <span class="term">Sub-exposição</span>
+          </dt>
+          <dd>
+            <a id="id10692" class="indexterm"></a>
+            <a id="id10695" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2704"></a>
+              <p class="title">
+                <strong>Figura 8.17. Exemplo para o modo de camada <span class="quote">“<span class="quote">Sub-exposição</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-dodge.jpg" alt="Exemplo para o modo de camada “Sub-exposição”" />
+                  <div class="caption">
+                    <p>Camada superior em 100% de opacidade usando o modo <span class="quote">“<span class="quote">Dodging</span>”</span>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Sub-exposição</span> multiplica o valor do pixel da camada inferior por 256, que então divide pelo inverso do valor do pixel da camada superior. A imagem resultante é geralmente mais clara, mas algumas cores podem ser invertidas.</p>
+            <p>Na fotografia, a sub-exposição é uma técnica usada em uma câmara escura para diminuir a exposição em áreas específicas da imagem. Isso traz a tona detalhes as sombras. Quando utilizado para este fim, o modo Sub-exposição pode trabalhar melhor em imagens em tons de cinza e com uma ferramenta de pintura, em vez de um modo de camada.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-addition"></a>
+            <span class="term">Adição</span>
+          </dt>
+          <dd>
+            <a id="id10711" class="indexterm"></a>
+            <a id="id10714" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2705"></a>
+              <p class="title">
+                <strong>Figura 8.18. Exemplo para o modo de camada <span class="quote">“<span class="quote">Adicionar</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-addition.jpg" alt="Exemplo para o modo de camada “Adicionar”" />
+                  <div class="caption">
+                    <p>Exemplo para o modo de camada <span class="quote">“<span class="quote">Adicionar</span>”</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Adicionar</span> é muito simples. Os valores de pixel da camadas superior e inferior são adicionados uns aos outros. A imagem resultante é geralmente mais clara. A equação pode resultar em valores de cores maiores que 255, portanto, algumas das cores claras podem ser ajustadas para o valor máximo de 255.</p>
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-concepts-layer-modes.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-concepts-layer-modes.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="layer-mode-group-darken.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-concepts-layer-modes.html">2. Modos de Camada</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="layer-mode-group-darken.html">2.3. Modos de Camada</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

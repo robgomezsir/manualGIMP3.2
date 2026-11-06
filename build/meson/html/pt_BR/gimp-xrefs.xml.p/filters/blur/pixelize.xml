@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2017-10-14 j.h: Some updates
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-pixelize">
+  <title>Pixelizar</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Desfocar</secondary>
+    <tertiary>Pixelizar</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Pixelizar</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Pixelizar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/blur-taj-pixelise.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O filtro Pixelizar renderiza a imagem usando grande blocos de cor. É muito similar ao efeito visto na televisão quando escondem um criminoso durante um julgamento. Esse filtro é usado para criar o <quote>efeito Abraham Lincoln</quote>: veja <xref linkend="bibliography-online-bach"/>.</para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>Você pode encontrar este filtro no menu principal em <menuchoice><guimenu>Filtros</guimenu><guisubmenu>Desfocar</guisubmenu><guimenuitem>Pixelizar...</guimenuitem></menuchoice>.</para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Pixelizar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/blur/pixelize-options.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Forma</term>
+        <listitem>
+          <para>Há três tipos de Forma: <guilabel>Losango</guilabel>, <guilabel>Círculo</guilabel> e <guilabel>Quadrado</guilabel> (o padrão). As formas Losango e Círculo só serão visíveis quando você baixar a <guilabel>Proporção de Tamanho X/Y</guilabel> para cerca de 0,6 (losango) ou 0,5 (círculo).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Largura do bloco</term>
+        <term>Altura do bloco</term>
+        <listitem>
+          <para>Aqui, você pode definir a largura e altura desejadas para os blocos, em pixels.</para>
+          <para>
+            By default, width and height are linked, indicated by the
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-vchain.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            chain symbol next to the input boxes. If you want to set width and
+            height separately, click on that chain symbol to unlink them.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Deslocamento X</term>
+        <term>Deslocamento Y</term>
+        <listitem>
+          <para>Deslocamento horizontal/vertical das formas em pixels dentro de um bloco.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Proporção de tamanho X</term>
+        <term>Proporção de tamanho Y</term>
+        <listitem>
+          <para>Proporção de tamanho horizontal/vertical (0,000-1,000) de um pixel dentro de um bloco. O valor padrão é 1,000. O número de blocos permanece o mesmo; então, se você mudar a proporção, o tamanho do bloco muda, e os pixels faltantes são substituídos pela cor de fundo.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor de fundo</term>
+        <listitem>
+          <para>A cor de fundo padrão é a que estiver na caixa de ferramentas. Você pode alterá-la clicando na referência de cor, que abrirá um <link linkend="gimp-color-dialog">diálogo de seleção de cor</link>, ou escolher uma cor usando o <link linkend="gimp-tool-color-picker">seletor de cores</link> à direita.</para>
+          <para>Observe que você pode alterar a cor de fundo para ser parcial ou totalmente transparente pela redução do valor de alfa no diálogo de seleção de cor. Isto pode levar a efeitos interessantes desde que a camada em que você esteja trabalhando possua um canal alfa.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+  </sect3>
+</sect2>

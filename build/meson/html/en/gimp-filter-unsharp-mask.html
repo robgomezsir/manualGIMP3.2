@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.8. Sharpen (Unsharp Mask)</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-enhance.html" title="4. Enhance Filters" />
+    <link rel="prev" href="gimp-filter-snn-mean.html" title="4.7. Symmetric Nearest Neighbor" />
+    <link rel="next" href="plug-in-despeckle.html" title="4.9. Despeckle" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.8. Sharpen (Unsharp Mask)</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-snn-mean.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>4. Enhance Filters</span>
+        <nav> <a accesskey="n" href="plug-in-despeckle.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-unsharp-mask"></a>4.8. Sharpen (Unsharp Mask)</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id47666" class="indexterm"></a>
+      <a id="id47670" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3057"></a>4.8.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3058"></a>
+          <p class="title">
+            <strong>Figure 17.48. Applying example for the Sharpen filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Applying example for the Sharpen filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/enhance-taj-unsharp-mask.jpg" alt="Applying example for the Sharpen filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      Out-of-focus photographs and most digitized images often need a
+      sharpness correction. This is due to the digitizing process that has
+      to divide a color continuum in points with slightly different colors.
+      Elements smaller than the sampling frequency will be averaged into a
+      uniform color. So sharp borders will be rendered a little blurred. The
+      same phenomenon appears when printing color dots on paper.
+    </p>
+        <p>
+      The Sharpen filter (previously called Unsharp Mask) sharpens edges of the
+      elements without increasing noise or blemish.
+    </p>
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Tip]" src="images/tip.png" />
+              </td>
+              <th align="left">Tip</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        Some imaging devices like digital cameras or scanners offer to sharpen
+        the created images for you. We strongly recommend you disable this
+        means of sharpening and use <acronym class="acronym">GIMP</acronym> filters instead.
+        This way you regain the full control over the sharpening of your images.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+      To prevent color distortion while sharpening, you can
+      <a class="link" href="plug-in-decompose.html" title="8.26. Decompose">Decompose</a> your image to
+      <span class="guilabel">HSV</span> and work only on <span class="guilabel">Value</span>.
+      Go to
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Components</span> → <span class="guimenuitem">Decompose…</span>.
+      Make sure the <span class="guilabel">Decompose to layers</span>
+      box is checked. Choose HSV and click OK. You will get a new gray-level
+      image with three layers, one for Hue, one for Saturation, and one for
+      Value. (Close the original image so you won't get confused). Select
+      the Value layer and apply your sharpening to it. When you are done,
+      with that same layer selected, reverse the process by using
+      <a class="link" href="plug-in-compose.html" title="8.25. Compose">Compose</a>.
+      Go to
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Components</span> → <span class="guimenuitem">Compose…</span>.
+      Again choose HSV and click OK. You will get back your original image
+      except that it will have been sharpened in the Value component.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3059"></a>4.8.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Enhance</span> → <span class="guimenuitem">Sharpen (Unsharp Mask)…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3060"></a>4.8.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3061"></a>
+          <p class="title">
+            <strong>Figure 17.49. <span class="quote">“<span class="quote">Sharpen</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/enhance/sharpen-dialog.png" alt="“Sharpen” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-filters-common.html" title="2. Common Features">Section 2, “Common Features”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Radius</span>
+            </dt>
+            <dd>
+              <p>
+            The slider and input boxes (0.0-1500.0) allow you to set how many
+            pixels on either side of an edge will be affected by sharpening.
+            It is better to always sharpen an image at its final resolution.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Amount</span>
+            </dt>
+            <dd>
+              <p>
+            This slider and input boxes (0.0-300.0) allow you to set the
+            strength of sharpening.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Threshold</span>
+            </dt>
+            <dd>
+              <p>
+            This slider and input boxes (0.0-1.0) allow you to set the minimum
+            difference in pixel values that indicates an edge where sharpen
+            must be applied. So you can protect areas of smooth tonal
+            transition from sharpening, and avoid creation of blemishes in
+            face, sky or water surface.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3062"></a>4.8.4. How does an unsharp mask work?</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Using an unsharp mask to sharpen an image can seem rather weird. Here is
+      the explanation:
+    </p>
+        <p>
+      Think of an image with a contrast in some place. The intensity curve of
+      the pixels on a line going through this contrast will show an abrupt
+      increase of intensity: like a stair if contrast is perfectly sharp (blue),
+      like an S if there is some blur (yellow).
+    </p>
+        <div class="mediaobject">
+          <img src="images/filters/examples/unsharp-mask-1.png" />
+        </div>
+        <p>
+      Now, we have an original image with some blur (black curve) we want to
+      sharpen. We apply some more blur: the intensity variation will be
+      more gradual (green curve).
+    </p>
+        <p>
+      Let us subtract the difference between blurredness intensity (green
+      curve) and the intensity of the original image (black curve) to the
+      intensity of the original image (black curve). We get the red
+      curve, which is more abrupt: contrast and sharpness are increased. QED.
+    </p>
+        <div class="mediaobject">
+          <img src="images/filters/examples/unsharp-mask-2.png" />
+        </div>
+        <p>
+      Unsharp mask was first used in silver photography. The photographer
+      first creates a copy of the original negative by contact, on a film,
+      placing a thin glass plate between both; that will produce a blurred
+      copy because of light diffusion. Then both films are placed in a photo
+      enlarger, to reproduce them on paper. The dark areas of the positive
+      blurred film, opposed to the clear areas of the original negative will
+      prevent light to go through and so will be subtracted from the light
+      going through the original film.
+    </p>
+        <div class="procedure">
+          <p>
+        In digital photography, with GIMP, you will go through the following
+        steps:
+      </p>
+          <ol class="procedure" type="1">
+            <li class="step">
+              <p>
+          Open your image and duplicate it
+          <span class="guimenu">Image</span> → <span class="guimenuitem">Duplicate</span>
+        </p>
+            </li>
+            <li class="step">
+              <p>
+          In the copy, duplicate the layer
+          <span class="guimenu">Layer</span> → <span class="guimenuitem">Duplicate layers</span>, then from the Filters menu apply
+          <span class="guimenu">Blur</span> → <span class="guimenuitem">Gaussian Blur</span>
+          to the duplicated layer with the default IIR option and radius 5.
+        </p>
+            </li>
+            <li class="step">
+              <p>
+          In the Layers dialog of the duplicated image, change Mode to
+          <span class="quote">“<span class="quote">Subtract</span>”</span>, and in the right-click menu, select
+          <span class="quote">“<span class="quote">Merge down</span>”</span>.
+        </p>
+            </li>
+            <li class="step">
+              <p>
+          Click and drag the only layer you got into the original image, where
+          it appears as a new layer.
+        </p>
+            </li>
+            <li class="step">
+              <p>
+          Change the Mode in this Layers dialog to <span class="quote">“<span class="quote">Addition</span>”</span>.
+        </p>
+            </li>
+          </ol>
+        </div>
+        <p>
+      Voilà. The <span class="quote">“<span class="quote">Sharpen (Unsharp Mask)</span>”</span> filter does the same
+      for you.
+    </p>
+        <p>
+      At the beginning of the curve, you can see a dip. If blurring is
+      important, this dip is very deep; the result of the subtraction can be
+      negative, and a complementary color stripe will appear along the
+      contrast, or a black halo around a star on the light background of a
+      nebula (black eye effect).
+    </p>
+        <div class="figure">
+          <a id="id3063"></a>
+          <p class="title">
+            <strong>Figure 17.50. Black eye effect</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/unsharp-mask-3.png" alt="Black eye effect" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-snn-mean.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-enhance.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-despeckle.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-snn-mean.html">4.7. Symmetric Nearest Neighbor</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-despeckle.html">4.9. Despeckle</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

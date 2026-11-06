@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.4. Contrast Layer Modes</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-concepts-layer-modes.html" title="2. Layer Modes" />
+    <link rel="prev" href="layer-mode-group-darken.html" title="2.3. Darken Layer Modes" />
+    <link rel="next" href="layer-mode-group-inversion.html" title="2.5. Inversion Layer Modes" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.4. Contrast Layer Modes</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="layer-mode-group-darken.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>2. Layer Modes</span>
+        <nav> <a accesskey="n" href="layer-mode-group-inversion.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="layer-mode-group-contrast"></a>2.4. Contrast Layer Modes</h3>
+          </div>
+        </div>
+      </div>
+      <p>
+      The <span class="quote">“<span class="quote">Contrast</span>”</span> group contains layer modes that enhance
+      contrast.
+    </p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <a id="layer-mode-overlay"></a>
+            <span class="term">Overlay</span>
+          </dt>
+          <dd>
+            <a id="id9549" class="indexterm"></a>
+            <a id="id9552" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1450"></a>
+              <p class="title">
+                <strong>Figure 8.24. Example for layer mode <span class="quote">“<span class="quote">Overlay</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-overlay.jpg" alt="Example for layer mode “Overlay”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Overlay</span>”</span> mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Overlay</span>
+            mode multiplies the upper layer with two times the lower layer when
+            the component value of the lower layer is less than 0.5.
+            When the component value is greater than or equal to 0.5, it
+            inverts the components of the lower and upper layer, multiplies
+            those values, then multiplies with 2.0, and then inverts the result.
+            It darkens the image, but not as much as with
+            <span class="quote">“<span class="quote">Multiply</span>”</span> mode.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-soft-light"></a>
+            <span class="term">Soft light</span>
+          </dt>
+          <dd>
+            <a id="id9568" class="indexterm"></a>
+            <a id="id9571" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1451"></a>
+              <p class="title">
+                <strong>Figure 8.25. Example for layer mode <span class="quote">“<span class="quote">Soft light</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-soft-light.jpg" alt="Example for layer mode “Soft light”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Soft Light</span>”</span>
+                  mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Soft light</span> is not related to
+            <span class="quote">“<span class="quote">Hard light</span>”</span> in anything but the name, but it
+            does tend to make the edges softer and the colors not so
+            bright. It is similar to <span class="quote">“<span class="quote">Overlay</span>”</span> mode.
+            <span class="guilabel">Soft light</span> has a more complicated formula. It
+            uses the result of <span class="guilabel">Multiply</span> mode, then
+            multiplies that with the inverse of the lower layer; then adds to
+            that the multiplication of the result of <span class="guilabel">Screen</span>
+            mode with the lower layer.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-hard-light"></a>
+            <span class="term">Hard light</span>
+          </dt>
+          <dd>
+            <a id="id9591" class="indexterm"></a>
+            <a id="id9594" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1452"></a>
+              <p class="title">
+                <strong>Figure 8.26. Example for layer mode <span class="quote">“<span class="quote">Hard light</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-hard-light.jpg" alt="Example for layer mode “Hard light”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Hard Light</span>”</span>
+                  mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Hard light</span>
+            mode is rather complicated because the equation consists of two
+            parts, one for darker color components and one for lighter ones. If
+            the color component of the upper layer is greater than 0.5, the
+            inverse of the lower layer is multiplied with the inverse of: the
+            upper layer minus 0.5 times 2.0. Then the result of this is compared
+            with the inverse of this result and the lower value of both is used.
+            If the color component of the upper layer is less than or equal to
+            0.5, the lower layer is multiplied with 2 times the upper layer. The
+            result of that is compared with 1.0 and the lower value of that is
+            used. You might use this mode to combine two photographs and obtain
+            bright colors and sharp edges.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-vivid-light"></a>
+            <span class="term">Vivid light</span>
+          </dt>
+          <dd>
+            <a id="id9609" class="indexterm"></a>
+            <a id="id9612" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1453"></a>
+              <p class="title">
+                <strong>Figure 8.27. Example for layer mode <span class="quote">“<span class="quote">Vivid light</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-vivid-light.jpg" alt="Example for layer mode “Vivid light”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Vivid Light</span>”</span>
+                  mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Vivid light</span>
+            mode, increases contrast very strongly, especially in highlights and
+            shadows. The effect is a combination of Burn (in the shadows) and
+            Dodge (in the highlights), apart from the doublings in the
+            denominators.
+            This mode also consists of two parts depending on the color
+            component value, where 0.5 is the limit, the same as with Hard
+            light.
+            If the upper layer value is smaller than or equal to 0.5: divide the
+            inverse of the lower layer by 2 times the upper layer and invert
+            the result. If the result is less than zero, return zero.
+            If the upper layer value is greater than 0.5: divide the lower layer
+            by two times the inverse of the upper layer. If the result is larger
+            than 1.0, return 1.0.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-pin-light"></a>
+            <span class="term">Pin light</span>
+          </dt>
+          <dd>
+            <a id="id9627" class="indexterm"></a>
+            <a id="id9630" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1454"></a>
+              <p class="title">
+                <strong>Figure 8.28. Example for layer mode <span class="quote">“<span class="quote">Pin light</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-pin-light.jpg" alt="Example for layer mode “Pin light”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Pin Light</span>”</span> mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Pin light</span>
+            mode is a combination of the Darken and Lighten modes. Mid-tone
+            regions remain almost uninfluenced.
+            If the component value of the upper layer is greater than 0.5:
+            subtract 0.5 from the upper layer and multiply by 2.0. Then the
+            result is the maximum from this value and the value of the lower
+            layer.
+            If the component value is less than or equal to 0.5: take the
+            minimum value of the lower layer and two times the upper layer.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-linear-light"></a>
+            <span class="term">Linear light</span>
+          </dt>
+          <dd>
+            <a id="id9645" class="indexterm"></a>
+            <a id="id9648" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1455"></a>
+              <p class="title">
+                <strong>Figure 8.29. Example for layer mode <span class="quote">“<span class="quote">Linear light</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-linear-light.jpg" alt="Example for layer mode “Linear light”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Linear Light</span>”</span>
+                  mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Linear light</span>
+            mode increases contrast slightly less than vivid light. It resembles
+            Burn, but with twice the impact on the foreground's tonal values.
+            If the component value is less than or equal to 0.5: the result is
+            the lower layer plus two times the upper layer minus 1.0.
+            If the component value is greater than 0.5: subtract 0.5 from the
+            upper layer and multiply by 2.0, then add the lower layer.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-hard-mix"></a>
+            <span class="term">Hard mix</span>
+          </dt>
+          <dd>
+            <a id="id9663" class="indexterm"></a>
+            <a id="id9666" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1456"></a>
+              <p class="title">
+                <strong>Figure 8.30. Example for layer mode <span class="quote">“<span class="quote">Hard mix</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-hard-mix.jpg" alt="Example for layer mode “Hard mix”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Hard Mix</span>”</span> mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Hard mix</span>
+            mode only contains the six primary colors, black and white.
+            The upper and lower layer components are added together. Any
+            component which is more than or equal to 1.0 is set to 1. Anything
+            else is set to 0.
+          </p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="layer-mode-group-darken.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-concepts-layer-modes.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="layer-mode-group-inversion.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="layer-mode-group-darken.html">2.3. Darken Layer Modes</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="layer-mode-group-inversion.html">2.5. Inversion Layer Modes</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

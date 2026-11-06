@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-01 j.h: create
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-long-shadow">
+  <title>Sombra projetada</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Sombra projetada</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Sombra projetada</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <para>
+      This GEGL-based filter
+      simplifies creating long shadows in several visual styles.
+    </para>
+    <note>
+      <para>
+        It is available if the selected layer holds an Alpha channel
+        (see <xref linkend="gimp-layer-alpha-add"/>).
+        Otherwise, it is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Light and Shadow</guisubmenu>
+        <guimenuitem>Long Shadow…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Sombra projetada</quote></title>
+      <mediaobject>
+        <imageobject>
+    <imagedata fileref="images/filters/light-and-shadow/long-shadow-dialog.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term><quote>Tipo de entrada</quote></term>
+        <term>Recorte</term>
+        <term>Opções de mesclagem</term>
+        <term>Pré-visualização</term>
+        <term>Mesclar filtro</term>
+        <term>Visualização dividida</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Estilo</term>
+        <listitem>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-orig-example.png"/>
+            </imageobject>
+            <caption>
+              Original image.
+            </caption>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-orig-dialog.png"/>
+            </imageobject>
+            <caption>
+              The layers of the image. The text layer was created via
+              the "Layers to Image Size" function in the "Layer" menu.
+            </caption>
+          </mediaobject>
+          <para>
+            <guilabel>Finite</guilabel> is the default style. Other available
+            styles are <guilabel>Infinite</guilabel>,
+            <guilabel>Fading</guilabel>,
+            and <guilabel>Fading (fixed length)</guilabel>.
+          </para>
+          <figure>
+            <title>Exemplo de <quote>ângulo</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-default.png"/>
+              </imageobject>
+              <caption>Ângulo de 45° (padrão)</caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-infinite.png"/>
+              </imageobject>
+              <caption>Infinito</caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-fading.png"/>
+              </imageobject>
+              <caption>Avançando</caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-fixlength.png"/>
+              </imageobject>
+              <caption>Avançando (comprimento fixo); comprimento = 30</caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ângulo</term>
+        <listitem>
+          <para>Ângulo da sombra, em graus.</para>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-angle.png"/>
+            </imageobject>
+            <caption>Ângulo de 15°</caption>
+          </mediaobject>
+          </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Comprimento = 1,5</term>
+        <listitem>
+          <para>
+            Shadow length, in pixels. Only available when
+            <guilabel>Style</guilabel> is set to
+            <guilabel>Finite</guilabel> or
+            <guilabel>Fading (fixed length)</guilabel>.
+           </para>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-length.png"/>
+            </imageobject>
+            <caption>Comprimento = 1,5</caption>
+          </mediaobject>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Midpoint</term>
+        <listitem>
+          <para>
+            Shadow fade midpoint. Only available when
+            <guilabel>Style</guilabel> is set to
+            <guilabel>Fading</guilabel> or
+            <guilabel>Fading (fixed length)</guilabel>.
+           </para>
+         </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor</term>
+        <listitem>
+          <para>
+            You can choose the color of the shadow here. Just click on the
+            color swatch, and select a color when the color selector pops up,
+            or use the eye-dropper to pick a color from the image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mostrar posição</term>
+        <listitem>
+          <para>
+            The <quote>Output composition</quote> selects how the output of
+            this filter will be determined. There are three choices:
+          </para>
+          <itemizedlist>
+            <listitem>
+              <para>
+                <guilabel>Shadow plus image</guilabel> will output both the
+                input image and the created shadow. This is the default.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <guilabel>Shadow only</guilabel> will output only the created
+                shadow.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <guilabel>Shadow minus image</guilabel> will output the
+                created shadow but subtracts the area hidden by the image.
+              </para>
+            </listitem>
+          </itemizedlist>
+          <figure>
+            <title>Exemplo de <quote>Permitir redimensionamento</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-shadonly.png"/>
+              </imageobject>
+              <caption>
+                <para>Sombra apenas</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/light-and-shadow/long-shadow-ex-shadminus.png"/>
+              </imageobject>
+              <caption>
+                <para>Sombra menos imagem</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

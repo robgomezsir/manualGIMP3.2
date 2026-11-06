@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-08-13 Added Spanish translation by AntI
+  2007-04-24 KoSt: added 'no'
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-09-09 de added by axel.wernicke
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-newsprint">
+  <title>Retícula</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Retícula</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Retícula</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro retícula</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-newsprint.jpg"/>
+        </imageobject>
+        <caption>
+          <para>
+            Filter <quote>Newsprint</quote> applied using RGB color mode,
+            PSSquare pattern for all channels, red period 6, green period 8,
+            blue period 10, angle 15 for all channels.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter performs digital halftoning with optional modulations.
+      Halftoning is the process of rendering an image with multiple levels of
+      gray or color (i.e. a continuous tone image) on a device with fewer tones;
+      often a bi-level device such as a printer or typesetter.
+      Be aware that Newsprint is not a filter for generating half-tone screens
+      for print, but for simulating the appearance of printing with them.
+    </para>
+    <para>A premissa básica é uma troca de resolução por uma profundidade de cores aparente, em que cada tom é composto de vários pontos dispersos (isso é conhecido como pontilhado espacial)</para>
+    <para>Há várias formas de fazer isso, sendo a mais simples jogar fora os bits de mais baixa ordem com a informação sobre tonalidades diferentes - isso é o que o filtro <quote>Posterizar</quote> faz. Os resultados não ficam bons, entretanto, nenhuma resolução espacial é perdida.</para>
+    <para>
+      Imagine a grid super-imposed on the original image. The image is
+      divided into cells by the grid - each cell will ultimately hold a single
+      spot made up of multiple output pixels in order to approximate the
+      darkness of the original image in that cell. Obviously, a large cell
+      size results in a heavy loss in resolution!
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Newsprint…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Retícula</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/newsprint.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Channels</term>
+        <listitem>
+          <para>
+            This group controls the channels to use and the settings for each
+            channel.
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>Color Model</term>
+              <listitem>
+                <para>
+                  Select which color inks to use:
+                  <guilabel>White on Black</guilabel>,
+                  <guilabel>Black on White</guilabel>,
+                  <guilabel>RGB</guilabel>, or
+                  <guilabel>CMYK</guilabel>.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>For each color ink or channel</term>
+              <listitem>
+                <para>
+                  Settings that can be changed for each color ink or channel
+                  are listed here.
+                </para>
+                <variablelist>
+                  <varlistentry>
+                    <term>Pattern</term>
+                    <listitem>
+                      <para>
+                        Select the halftoning pattern to use. Choices are
+                        <guilabel>Line</guilabel>, <guilabel>Circle</guilabel>,
+                        <guilabel>Diamond,</guilabel>,
+                        <guilabel>PSSquare (or Euclidean) dot</guilabel>,
+                        <guilabel>Crossing Lines</guilabel>.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Período</term>
+                    <listitem>
+                      <para>
+                        The number of pixels across one repetition of a base
+                        pattern at base resolution.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Ângulo</term>
+                    <listitem>
+                      <para>
+                        The grid angle that should be used. This angle can be
+                        adjusted with the slider, number entry, or using the
+                        angle control by moving the arrow in the circle.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Black pullout</term>
+                    <listitem>
+                      <para>
+                        This setting is only available when
+                        <guilabel>CMYK</guilabel> was chosen as Color Model and
+                        the selected channel is <guilabel>Black</guilabel>.
+                        It regulates how much of common gray to pull out of
+                        CMY.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                </variablelist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Lock patterns</term>
+              <term>Lock periods</term>
+              <term>Lock angles</term>
+              <listitem>
+                <para>
+                  These three check boxes, if enabled, lock the settings
+                  mentioned above to be the same for all channels. If
+                  disabled, then these settings can be set individually for
+                  each channel.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Quality</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Anti-alias oversampling factor</term>
+              <listitem>
+                <para>
+                  This sets the number of samples that are averaged for
+                  anti-aliasing the result.
+                </para>
+                <para>
+                  Proper halftoning does not need anti-aliasing: the aim is to
+                  reduce the color depth after all! However, since this
+                  filter is mainly for special effects, the results are
+                  displayed on screen instead of on a printer.
+                  So it is often useful to apply a little anti-aliasing to
+                  simulate ink smearing on paper. If you do want to print the
+                  resulting image then set the anti-aliasing to 1 (i.e., off).
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Effects</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Turbulence</term>
+              <listitem>
+                <para>
+                  Color saturation dependent compression of period.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Blocksize</term>
+              <listitem>
+                <para>
+                  Number of periods per tile. This tiling avoids high
+                  frequency anomalies that angle boost causes.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Angle Boost</term>
+              <listitem>
+                <para>
+                  Multiplication factor for the desired rotation of the local
+                  space for the texture. The way this is computed makes it weak
+                  for desaturated colors and possibly stronger where there is
+                  color.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+</sect2>

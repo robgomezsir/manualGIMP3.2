@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.5. Inversion Layer Modes</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-concepts-layer-modes.html" title="2. Layer Modes" />
+    <link rel="prev" href="layer-mode-group-contrast.html" title="2.4. Contrast Layer Modes" />
+    <link rel="next" href="layer-mode-group-hsv.html" title="2.6. HSV Components Layer Modes" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.5. Inversion Layer Modes</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="layer-mode-group-contrast.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>2. Layer Modes</span>
+        <nav> <a accesskey="n" href="layer-mode-group-hsv.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="layer-mode-group-inversion"></a>2.5. Inversion Layer Modes</h3>
+          </div>
+        </div>
+      </div>
+      <p>
+      The <span class="quote">“<span class="quote">Inversion</span>”</span> group contains layer modes that invert the
+      colors in one way or another.
+    </p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <a id="layer-mode-difference"></a>
+            <span class="term">Difference</span>
+          </dt>
+          <dd>
+            <a id="id9686" class="indexterm"></a>
+            <a id="id9689" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1457"></a>
+              <p class="title">
+                <strong>Figure 8.31. Example for layer mode <span class="quote">“<span class="quote">Difference</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-difference.jpg" alt="Example for layer mode “Difference”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Difference</span>”</span>
+                  mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Difference</span>
+            mode subtracts the pixel value of the upper layer from that of the
+            lower layer and then takes the absolute value of the result. This
+            mode can be used to compare two layers. If they are identical the
+            difference is zero (black), otherwise the result shows the variance
+            of the tonal values in each pixel. A white foreground inverts the
+            background whereas a white background inverts the foreground.
+          </p>
+            <p>
+            The mode is commutative; the order of the two layers doesn't matter.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-exclusion"></a>
+            <span class="term">Exclusion</span>
+          </dt>
+          <dd>
+            <a id="id9705" class="indexterm"></a>
+            <a id="id9708" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1458"></a>
+              <p class="title">
+                <strong>Figure 8.32. Example for layer mode <span class="quote">“<span class="quote">Exclusion</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-exclusion.jpg" alt="Example for layer mode “Exclusion”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Exclusion</span>”</span> mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Exclusion</span>
+            mode causes inversion to the other layer for bright regions, very
+            dark regions change nothing at all. In this way this mode resembles
+            Difference mode. However, medium gray values greatly decrease
+            contrast of the respective other layer, in extreme cases up to zero.
+          </p>
+            <p>
+            The mode is commutative; the order of the two layers doesn't matter.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-subtract"></a>
+            <span class="term">Subtract</span>
+          </dt>
+          <dd>
+            <a id="id9724" class="indexterm"></a>
+            <a id="id9727" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1459"></a>
+              <p class="title">
+                <strong>Figure 8.33. Example for layer mode <span class="quote">“<span class="quote">Subtract</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-subtract.jpg" alt="Example for layer mode “Subtract”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Subtract</span>”</span> mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Subtract</span>
+            mode subtracts the pixel values of the upper layer from the pixel
+            values of the lower layer. The resulting image is normally darker.
+            You might get a lot of black or near-black in the resulting image.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-grain-extract"></a>
+            <span class="term">Grain extract</span>
+          </dt>
+          <dd>
+            <a id="id9742" class="indexterm"></a>
+            <a id="id9745" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1460"></a>
+              <p class="title">
+                <strong>Figure 8.34. Example for layer mode <span class="quote">“<span class="quote">Grain extract</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-grain-extract.jpg" alt="Example for layer mode “Grain extract”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Grain Extract</span>”</span>
+                  mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Grain extract</span>
+            mode is supposed to extract the <span class="quote">“<span class="quote">film grain</span>”</span>
+            from a layer to produce a new layer that is pure grain, but it can
+            also be useful for giving images an embossed appearance. It
+            subtracts the pixel value of the upper layer from that of the lower
+            layer and adds 0.5.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-grain-merge"></a>
+            <span class="term">Grain merge</span>
+          </dt>
+          <dd>
+            <a id="id9761" class="indexterm"></a>
+            <a id="id9764" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1461"></a>
+              <p class="title">
+                <strong>Figure 8.35. Example for layer mode <span class="quote">“<span class="quote">Grain merge</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-grain-merge.jpg" alt="Example for layer mode “Grain merge”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Grain Merge</span>”</span>
+                  mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Grain merge</span> mode merges a grain layer
+            (possibly one created from the <span class="quote">“<span class="quote">Grain extract</span>”</span>
+            mode) into the current layer, leaving a grainy version of the
+            original layer. It does just the opposite of
+            <span class="quote">“<span class="quote">Grain extract</span>”</span>. It adds the pixel values of the
+            upper and lower layers together and subtracts 0.5.
+          </p>
+          </dd>
+          <dt>
+            <a id="layer-mode-divide"></a>
+            <span class="term">Divide</span>
+          </dt>
+          <dd>
+            <a id="id9781" class="indexterm"></a>
+            <a id="id9784" class="indexterm"></a>
+            <div class="figure">
+              <a id="id1462"></a>
+              <p class="title">
+                <strong>Figure 8.36. Example for layer mode <span class="quote">“<span class="quote">Divide</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-divide.jpg" alt="Example for layer mode “Divide”" />
+                  <div class="caption">
+                    <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Divide</span>”</span> mode.
+                </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+            <span class="guilabel">Divide</span>
+            mode divides each pixel value in the lower layer by the
+            corresponding pixel value of the upper layer (while avoiding
+            dividing by zero).
+            The resulting image is often lighter, and sometimes looks
+            <span class="quote">“<span class="quote">burned out</span>”</span>.
+          </p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="layer-mode-group-contrast.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-concepts-layer-modes.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="layer-mode-group-hsv.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="layer-mode-group-contrast.html">2.4. Contrast Layer Modes</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="layer-mode-group-hsv.html">2.6. HSV Components Layer Modes</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

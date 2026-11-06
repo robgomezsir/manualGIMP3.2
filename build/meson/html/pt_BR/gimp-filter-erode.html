@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>9.6. Erodir</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-generic.html" title="9. Filtros genéricos" />
+    <link rel="prev" href="gimp-filter-dilate.html" title="9.5. Dilatar" />
+    <link rel="next" href="gimp-filter-gegl-graph.html" title="9.7. GEGL Graph" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>9.6. Erodir</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-dilate.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>9. Filtros genéricos</span>
+        <nav> <a accesskey="n" href="gimp-filter-gegl-graph.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-erode"></a>9.6. Erodir</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id54381" class="indexterm"></a>
+      <a id="id54385" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4641"></a>9.6.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4642"></a>
+          <p class="title">
+            <strong>Figura 17.197. Applying example for the Erode filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Applying example for the Erode filter" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/generic-taj-erode.jpg" alt="Applying example for the Erode filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Este filtro amplia e realça as áreas escuras de uma camada ativa ou seleção.</p>
+        <p>
+      For every image pixel, it brings the pixel Value (luminosity) into line
+      with the lowest Value (the darkest) of the 8 neighboring pixels (3×3
+      matrix). So, a dark pixel is added around dark areas. An isolated pixel
+      on a brighter background will be changed to a big <span class="quote">“<span class="quote">pixel</span>”</span>,
+      composed of 9 pixels, and that will create some noise in the image.
+    </p>
+        <div class="mediaobject">
+          <img src="images/filters/generic/erode-pixel.png" />
+        </div>
+        <p>
+      In this image, the studied pixel has a red border and the studied 3×3
+      matrix has a green border. Thus when the pixel marked with <span class="quote">“<span class="quote">I</span>”</span>
+      is inside the green border, the studied pixel turns to black.
+    </p>
+        <p>
+      A larger dark area will expand by one pixel in all directions:
+    </p>
+        <div class="mediaobject">
+          <img src="images/filters/generic/erode-zone.png" />
+        </div>
+        <p>O filtro foi aplicado 3 vezes.</p>
+        <p>
+      On more complex images, dark areas are widened and enhanced the same,
+      and somewhat pixelated. Here, the filter was applied 3 times:
+    </p>
+        <div class="mediaobject">
+          <img src="images/filters/generic/erode-milord.png" />
+        </div>
+        <p>Obviamente, se o fundo for mais escuro que a imagem da frente, então a imagem inteira será coberta.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4643"></a>9.6.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Generic</span> → <span class="guimenuitem">Erode</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4644"></a>9.6.3. Exemplos</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4645"></a>
+          <p class="title">
+            <strong>Figura 17.198. Erode text</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/erode-text.png" alt="Erode text" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-dilate.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-generic.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-gegl-graph.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-dilate.html">9.5. Dilatar</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-gegl-graph.html">9.7. GEGL Graph</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

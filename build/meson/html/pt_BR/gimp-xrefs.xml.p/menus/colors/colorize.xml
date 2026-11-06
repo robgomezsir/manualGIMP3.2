@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-03-11 j.h: revised for v2.6. Added Presets
+  2008-01-16 j.h: updated to v2.4
+  2007-06-06 kost: added 'no'
+  2007-04-15 Added Spanish translation by AntI
+  2006-02-05 en;fr revised by j.h
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-12-01 informalfigure replaced by figure by lexa
+  2005-08-07 de restructured and reviewed by axel.wernicke
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-colorize">
+  <title>Colorizar</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Colorizar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Colorizar</primary>
+  </indexterm>
+
+  <para>
+    The Colorize filter renders the active layer or selection into a grayscale
+    image as seen through a colored glass. You can use it to apply a
+    <quote>Sepia</quote> effect to your image, for example.
+  </para>
+  <tip>
+    <para>
+      This filter uses the HSL <link linkend="glossary-colormodel">color model</link>.
+      Previous versions of GIMP included a similar filter, <quote>Colorify</quote>,
+      which used the <link linkend="glossary-hsv">HSV model</link> instead.
+      That effect can still be reproduced using specific parameters (such as
+      Saturation=1.0 and Lightness=-0.5), or by specifying Saturation=0.0
+      and applying the color tint as a separate step.
+    </para>
+  </tip>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guimenuitem>Colorize…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Diálogo do filtro Colorizar</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/colors/colorize-dialog.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term>Opções de Mistura</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Matiz</term>
+        <listitem>
+          <para>
+            Which tint to apply to the image. Note that while Hue is normally
+            shown in degrees (from 0 to 360), here it is shown from 0.0 to 1.0.
+            A Hue of 36° would be input as 0.1, for example.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Saturação</term>
+        <listitem>
+          <para>
+            The intensity of the color tint, if any. This is also expressed in
+            a range of 0.0 to 1.0, with 0.0 yielding a grayscale conversion only,
+            and 1.0 applying a pure RGB color tint (of the selected Hue).
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Brilho</term>
+        <listitem>
+          <para>
+            The brightness of the result. This is expressed in HSL terms, along
+            a range of -1.0 (black) to 0.0 (normal) to +1.0 (white).
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor</term>
+        <listitem>
+          <para>
+            Using the color button (or the color picker) you can quickly select
+            the color used to colorize your image: selecting a color here
+            will adjust the sliders above to match.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  <note>
+    <para>
+      See <xref linkend="glossary-hsl"/> for more information about Hue,
+      Saturation, and Lightness generally.
+    </para>
+  </note>
+  </sect3>
+</sect2>

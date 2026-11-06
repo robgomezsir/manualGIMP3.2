@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-03-11 j.h: Added Presets
+  2008-01-14 j.h: Overlap option added
+  -->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-hue-saturation">
+  <title>Matiz-Saturação</title>
+
+  <indexterm>
+    <primary>Matiz-Saturação</primary>
+  </indexterm>
+
+  <para>
+    The Hue-Saturation command is used to adjust
+    <link linkend="glossary-hsl">hue, saturation and lightness</link>
+    levels on a range of color weights for the selected area or active layer.
+  </para>
+  <note>
+    <para>Este comando não funciona em imagens em Tons de Cinza. Se a imagem estiver em Tons de Cinza, a entrada do menu é desativada.</para>
+  </note>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guimenuitem>Hue-Saturation…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de Matiz-Saturação</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/colors/hue-saturation-dialog.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term>Opções de Mistura</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Selecione a Cor Primária para Ajustar</term>
+        <listitem>
+          <para>
+            You can choose to adjust any of six colors: the three primary colors (Red,
+            Green and Blue) and the three complementary colors (Cyan,
+            Magenta and Yellow). They are
+            arranged according to the color wheel. When hue increases, hue
+            goes counter-clockwise. When it decreases, it goes clockwise. If
+            you click the <guilabel>Master</guilabel> button, changes you make
+            affect all colors. <acronym>GIMP</acronym> default is to set Red as 0.
+            Note that these colors refer to color ranges and not to color
+            channels.
+          </para>
+          <para>Mudanças de matiz são mostradas em amostras de cor e o resultado é visível na imagem se a opção <guilabel>Pré-visualização</guilabel> estiver habilitada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Sobreposição</term>
+        <listitem>
+          <para>Este controle deslizante deixa você definir o quanto os intervalos de cor se sobrepõem. Este efeito é muito sutil e funciona somente em cores intimamente relacionadas:</para>
+          <figure>
+            <title>Exemplo para a opção <guilabel>Sobreposição</guilabel></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/hue-sat-overlap-1.png"/>
+              </imageobject>
+              <caption>
+                <para><emphasis>Imagem original</emphasis>. Da esquerda para a direita: um amarelo avermelhado (255;240;0); um amarelo puro (255;255;0); um amarelo esverdeado (240;255;0).</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/hue-sat-overlap-2.png"/>
+              </imageobject>
+              <caption>
+                <para><emphasis>Sobreposição = 0</emphasis>. Matiz = 15. As cores se tornam (186;255;1), (168;255;1), (156;255;1).</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/hue-sat-overlap-3.png"/>
+              </imageobject>
+              <caption>
+                <para><emphasis>Sobreposição = 100</emphasis>. Matiz = 15. As cores se tornam (192;255;1), (168;255;1), (162;255;1). Por causa da sobreposição, o esverdeado é menos verde e o avermelhado é menos vermelho.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ajustar Cor Selecionada</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Matiz</term>
+              <listitem>
+                <para>
+                  The slider and the input box allow you to select a hue in
+                  the color wheel (-180, 180).
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Saturação</term>
+              <listitem>
+                <para>
+                  The slider and the input box allow you to select a
+                  saturation: -100, 100.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Brilho</term>
+              <listitem>
+                <para>
+                  The slider and the input box allow you to select a value
+                  (luminosity): -100, 100.
+                </para>
+                <note>
+                  <para>Aqui, mudanças de luminosidade se referem a um intervalo de cor, enquanto elas se referem a tons de cor nas ferramentas Curvas e Níveis, que trabalham com canais de cor. Se você mudar a luminosidade do Amarelo com Matiz-Saturação, todos os pixels amarelos serão alterados, enquanto que somente pixels com baixa, alta ou média luminosidade serão alterados com as ferramentas Curvas ou Níveis.</para>
+                </note>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Reset Color</term>
+              <listitem>
+                <para>
+                  This button resets the changes you made to the hue,
+                  lightness and saturation of the selected color.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

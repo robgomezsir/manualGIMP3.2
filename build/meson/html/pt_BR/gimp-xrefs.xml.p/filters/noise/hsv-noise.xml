@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-12 j.h: update to v2.10
+  2010-06-17 ude: renamed to "HSV Noise" (was: "Scatter HSV")
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-noise-hsv">
+  <title>Ruído HSV</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Ruído</secondary>
+    <tertiary>Ruído HSV</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Ruído HSV</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro <quote>Ruído HSV</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/noise/taj-hsv-noise.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O filtro de ruído HSV cria ruído na camada ou seleção ativa usando o modelo de cores de Matiz, Saturação e Luminosidade (HSV).</para>
+    <note>
+      <para>
+        If the image is in grayscale mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Noise</guisubmenu>
+        <guimenuitem>HSV Noise…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Ruído HSV</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/noise/hsv-noise-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Dulling</term>
+        <listitem>
+          <para>
+            This slider (1 - 8) controls how much the new pixel color value is
+            allowed to be applied compared to the existing color. A low
+            dulling will give an important hue variation. A high dulling
+            will give a weak variation.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Matiz</term>
+        <listitem>
+          <para>
+            This slider changes the hue of the pixels in a random pattern.
+            A higher value will increase the average change from the original
+            pixel color.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Saturação</term>
+        <listitem>
+          <para>Este marcador altera o nível de saturação de pixels espalhados.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Valor</term>
+        <listitem>
+          <para>Este marcador altera o brilho de pixels espalhados.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Semente aleatória</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

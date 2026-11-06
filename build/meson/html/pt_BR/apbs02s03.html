@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.3. Imagens</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="apbs02.html" title="2. Fluxo de trabalho" />
+    <link rel="prev" href="apbs02s02.html" title="2.2. Validação" />
+    <link rel="next" href="apbs02s04.html" title="2.4. Criar arquivos HTML" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.3. Imagens</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="apbs02s02.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>2. Fluxo de trabalho</span>
+        <nav> <a accesskey="n" href="apbs02s04.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="id65447"></a>2.3. Imagens</h3>
+          </div>
+        </div>
+      </div>
+      <p>Você também deve gerenciar as capturas de tela. Aqui estão algumas dicas para fazer boas capturas de tela: </p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p>reduza a área de captura de tela o máximo possível cortando as bordas do gerenciador de janelas e desabilitando o botão de ajuda (você pode fazer isso na caixa de diálogo de preferências),</p>
+          </li>
+          <li class="listitem">
+            <p>defina o modo de imagem para Indexado com 255 cores <span class="guimenu">Imagem</span> → <span class="guisubmenu">Modo</span> → <span class="guimenuitem">Indexado</span></p>
+            <p>Isso não é necessário para ícones e se sua imagem tiver apenas algumas cores. Nestes casos, as imagens indexadas são maiores do que as não indexadas.</p>
+          </li>
+          <li class="listitem">
+            <p>defina a resolução de impressão para 144 ppp (não para imagens pequenas como ícones). Você pode fazer isso facilmente com o GIMP em <span class="guimenu">Imagem</span> → <span class="guisubmenu">Tamanho de impressão</span></p>
+          </li>
+          <li class="listitem">
+            <p>Exporte imagens no formato PNG.</p>
+          </li>
+        </ul>
+      </div>
+      <p>Não inclua texto em inglês nas imagens. Os tradutores não podem traduzi-lo e muitos usuários não gostam disso. Em vez disso, use legendas em XML ou forneça um arquivo .xcf na pasta <span class="guimenu">Docs</span> → <span class="guisubmenu">xcf images</span>, indicando isso com um comentário no arquivo XML: <span class="markup">&lt;!--TO TRANSLATORS: Corresponding .xcf file is in https://gitlab.gnome.org/GNOME/gimp-help/tree/master/docs/xcf%20images --&gt;</span></p>
+      <p>Os ícones do GIMP estão em <code class="filename">/usr/share/gimp/3.0/icons/</code>. Os ícones do GTK estão em <code class="filename">/usr/share/icons/</code>.</p>
+      <p>Para incluir um ícone no texto: <span class="markup"> &lt;guiicon&gt; &lt;inlinemediaobject&gt; &lt;imageobject&gt; &lt;imagedata fileref="path-to-icon"/&gt; &lt;/imageobject&gt; &lt;/inlinemediaobject&gt; &lt;/guiicon&gt; </span></p>
+      <p>Três comandos para gerenciar suas imagens: </p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p><span class="command"><strong>make check-image-resolutions-en</strong></span>: fornece as referências de imagens cuja resolução não é 144 ppp.</p>
+          </li>
+          <li class="listitem">
+            <p><span class="command"><strong>make check-images-en</strong></span>: dá referências de imagens perdidas ou órfãs.</p>
+          </li>
+          <li class="listitem">
+            <p><span class="command"><strong>mogrify units PixelsPerTrack -density 144x144 *.png</strong></span> para definir a resolução de impressão de todas as imagens PNG.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="apbs02s02.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="apbs02.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="apbs02s04.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="apbs02s02.html">2.2. Validação</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="apbs02s04.html">2.4. Criar arquivos HTML</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

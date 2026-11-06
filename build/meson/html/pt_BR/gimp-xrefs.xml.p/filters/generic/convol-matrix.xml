@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-14 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-convolution-matrix">
+  <title>Matriz de convolução</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Genéricos</secondary>
+    <tertiary>Matriz de convolução</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Matriz de convolução</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <para>Este é um domínio dos matemáticos. Um grande número de filtros usa a matriz de convolução internamente - como os de desfocagem, nitidez, mapa de relevo, dentre outros. Com o filtro de matriz de convolução, se tiver imaginação para tal, você poderá criar um filtro personalizado.</para>
+    <para>O que é uma matriz de convolução? É possível ter uma ideia melhor disso sem precisar usar ferramentas matemáticas usadas por poucas pessoas. Convolução é o tratamento de uma matriz por outra chamada <quote>núcleo</quote> (kernel).</para>
+    <para>O filtro de Matriz de Convolução usa uma matriz primária, que é a imagem a ser tratada. Essa imagem é tratada como uma coleção bi-dimensional de pixels em coordenadas retangulares. O núcleo a ser usado vai depender do efeito desejado.</para>
+    <para>
+      GIMP uses 5×5 or 3×3 matrices. We will consider only 3×3 matrices, they
+      are the most used and they are enough for all effects you want. If all
+      border values of a kernel are set to zero, then system will consider it
+      as a 3×3 matrix.
+    </para>
+    <para>O filtro analisa cada pixel da imagem sucessivamente. Para cada um deles, que nós vamos chamar de <quote>pixel inicial</quote>, o valor desse pixel será multiplicado pelo valor dos 8 pixels ao redor do mesmo pelo valor correspondente na matriz núcleo. Esses nove valores são adicionados e se tornam o valor final daquele pixel. Esta operação é feita em cada um dos canais de cor, no caso  de uma imagem RGB(A).</para>
+    <para>Um exemplo simples:</para>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/filters/examples/convolution-calculate.png"/>
+      </imageobject>
+    </mediaobject>
+    <para>Na imagem da esquerda está a imagem matriz: cada pixel com seu valor próprio. O pixel inicial está entre as bordas vermelhas. O núcleo atua na área com bordas verdes. Na imagem do meio está o núcleo, e a direita é o resultado da convolução.</para>
+    <para>Isso é o que acontece: o filtro lê sucessivamente, da esquerda para a direita e de cima para baixo, todos os pixels da área de ação do núcleo. Ele multiplica o valor de cada um deles pelo valor correspondente do núcleo e depois soma os resultados. O pixel inicial se tornou um 42: (40*0)+(42*1)+(46*0) + (46*0)+(50*0)+(55*0) + (52*0)+(56*0)+(58*0) = 42. (o filtro não trabalha diretamente sobre a imagem, mas sim em uma cópia). Para o resultado ser visível, o pixel inicial foi movido para baixo do pixel resultante.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Generic</guisubmenu>
+        <guimenuitem>Convolution Matrix…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da <quote>Matriz de convolução</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/generic/convolution.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Matriz</term>
+        <listitem>
+          <para>
+            This is the 5×5 kernel matrix: you enter wanted values directly
+            into boxes.
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>Divisor</term>
+              <listitem>
+                <para>
+                  The result of previous calculation will be divided by this
+                  divisor. You will hardly use anything else than 1, which
+                  leaves results unchanged, and 9 or 25 according to matrix size,
+                  which gives the average of pixel values. The divisor can only
+                  be changed when Normalize is unchecked.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Deslocamento</term>
+              <listitem>
+                <para>
+                  This value is added to the division result. This is useful
+                  if result may be negative. This offset may be negative. It
+                  can only be changed when Normalize is unchecked.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Canais</term>
+        <listitem>
+          <para>
+            Here you can select which channels the filter should change.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Normalize</term>
+        <listitem>
+          <para>Se esta opção estiver marcada, o Divisor pegará o valor resultante da convolução. Se o resultado for zero (não é possível dividir por zero), então um valor de deslocamento de 128 será aplicado. Se ele for negativo (um valor de cor negativo não existe), então um valor de deslocamento de 255 será aplicado (o resultado será invertido).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Considerar pesos do canal alfa</term>
+        <listitem>
+          <para>Se esta opção não estiver marcada, então o filtro não levará em conta os valores do canal de transparência, o que pode criar alguns artefatos durante o processamento.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Borda</term>
+        <listitem>
+          <para>
+            When the initial pixel is on a border, a part of the kernel is
+            outside the image. You have to decide what the filter should do:
+          </para>
+
+          <figure>
+            <title>Border examples</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/generic/convolution-milord.png"/>
+              </imageobject>
+              <caption>
+              <para>
+                Source image
+              </para>
+            </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/generic/convolution-extend.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  <guilabel>Clamp</guilabel> border
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/generic/convolution-crop.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  <guilabel>None</guilabel> border
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/generic/convolution-wrap.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  <guilabel>Loop</guilabel> border
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <variablelist>
+            <varlistentry>
+              <term>None</term>
+              <listitem>
+                <para>This part of the kernel is not taken into account.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Clamp</term>
+              <listitem>
+                <para>Os pixels das bordas não serão modificados, mas sim recortados.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Loop</term>
+              <listitem>
+                <para>
+                  This part of the kernel will be affected by pixels of the
+                  opposite border, so pixels disappearing from one side
+                  reappear on the other side.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Black</term>
+              <listitem>
+                <para>
+                  Pixels on borders are changed to black.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>White</term>
+              <listitem>
+                <para>
+                  Pixels on borders are changed to white.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Exemplos</title>
+    <para>A criação de núcleos é baseada em conhecimentos matemáticos, ou de ciência da computação, de alto nível. Você pode encontrar núcleos prontos na internet (procure pela expressão em inglês: <quote>Convolution kernel</quote>). Veja alguns exemplos:</para>
+    <figure>
+      <title>Aguçar</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/convolution-sharpen.png"/>
+        </imageobject>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/generic-taj-convmatrix-sharpen.jpg"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Desfocar</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/convolution-blur.png"/>
+        </imageobject>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/generic-taj-convmatrix-blur.jpg"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Realçar bordas</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/convolution-edge.png"/>
+        </imageobject>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/generic-taj-convmatrix-edge-enhance.jpg"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Detectar bordas</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/convolution-edge-detect1.png"/>
+        </imageobject>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/generic-taj-convmatrix-edge-detect.jpg"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Destacar relevo</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/convolution-emboss.png"/>
+        </imageobject>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/generic-taj-convmatrix-emboss.jpg"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="script-fu-sota-chrome-it">
+  <title>Estêncil de cromagem</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Decoração</secondary>
+    <tertiary>Estêncil de cromagem</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Estêncil de cromagem</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure id="script-fu-sota-chrome-it-example">
+      <title>Exemplo do filtro <quote>Estêncil de cromagem</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_grayscale.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/decor/taj-chrome-it.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter provides a chrome effect. The source image must be an image
+      containing a single layer. This layer is used as mask (<quote>stencil</quote>) for
+      the chrome effect.
+    </para>
+    <para>
+      The filter creates a new image with the chrome effect applied to the
+      source image or, if a selection exists, to the selection of the source
+      image (a nice background is added too). If no environment map image is
+      specified, a copy of the source image will be used.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Decor</guisubmenu>
+        <guimenuitem>Stencil Chrome…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de  <quote>Estêncil de cromagem</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/decor/chrome-it.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Saturação de cromo</term>
+        <term>Luminosidade de cromo</term>
+        <listitem>
+          <!-- TRANSLATORS: <quote>d "Chrome", "Highlight" and
+"Drop Shadow" are the layer names set by the script. -->
+          <para>Use esta opção para controlar como a <link linkend="gimp-tool-hue-saturation">saturação e a luminosidade </link> da camada <quote>Cromar</quote> são ajustadas. Valores negativos diminuem a saturação e a luminosidade respectivamente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fator de cromo</term>
+        <listitem>
+          <para>Este fator permite que você ajuste deslocamentos, raio de desfocagem e tamanho do pincel usados para construir as camadas de <quote>Cromar</quote> e <quote>Cor de destaque</quote> (e também da camada de <quote>Sombra projetada</quote>)</para>
+          <para>Mude com cautela, diminuir este valor pode tornar o efeito de cromagem pior. O valor padrão de 0,75 parece ser uma boa escolha.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mapa de ambiente</term>
+        <listitem>
+          <para>
+            The environment map is an image that is added as some kind of
+            <quote>noise</quote> to the source. If no image is selected here,
+            the source image will be used.
+          </para>
+          <para>
+            The effect is best to see if you use a simple map with some obvious
+            shapes:
+          </para>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/decor/chrome-it-env-example.png"/>
+            </imageobject>
+            <caption>
+              <para>Usando um mapa de ambiente simples</para>
+            </caption>
+          </mediaobject>
+          <para>
+            The size of the environment map image doesn't matter, it is scaled
+            to the size of the source image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Equilíbrio de reflexos</term>
+        <listitem>
+          <para>Esta cor é usada para modificar o <link linkend="gimp-tool-color-balance">balanço de cor</link> da camada <quote>Cor de destaque</quote>: a quantidade de vermelho, verde e azul é aumentada de acordo com os valores correspondentes da cor escolhida aqui.</para>
+          <!--cf. bug #624761-->
+          <para>Evite cores com valores de vermelho, verde ou azul &gt; 230.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Equilíbrio de cromo</term>
+        <listitem>
+          <para>O mesmo que acima, mas modifica o <link linkend="gimp-tool-color-balance">equilíbrio de cores</link> da camada <quote>Cromar</quote>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cromar áreas em branco</term>
+        <listitem>
+          <para>Se habilitado (isso é o padrão), a imagem de origem é usada como máscara. Caso contrário, o negativo da imagem de origem será usado.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Como criar o efeito de cromo</title>
+    <para>A seção seguinte prove uma descrição breve e simplificada de como o script (esse filtro é criado como um script-fu) cria o efeito de cromo.</para>
+    <para>
+      If you apply the filter to your source images and then look at the
+      <link linkend="gimp-layer-dialog">Layers Dialog</link> of the resulting
+      image, you will see that there are two main layers which make up the
+      chrome effect: the <quote>Chrome</quote> layer and the
+      <quote>Highlight</quote> layer. These layers are created as follows:
+    </para>
+    <procedure>
+      <step>
+        <para>O script constrói uma camada simplificada e desfocada a partir da imagem de origem (ou da imagem invertida se <guilabel>Cromar áreas em branco</guilabel> estiver desligado).</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/decor/chrome-it-step1.png"/>
+          </imageobject>
+        </mediaobject>
+        <para>O <guilabel>Fator de cromo</guilabel> controla a aparência desta camada.</para>
+      </step>
+      <step>
+        <para>O mapa de ambiente (redimensionado) é desfocado e mesclado com a imagem acima, com opacidade de 50%. (Você consegue ver o gato no <link linkend="script-fu-sota-chrome-it-example">exemplo da introdução</link>?)</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/decor/chrome-it-step2.png"/>
+          </imageobject>
+          <caption>
+            <para>Mesclando o mapa de ambiente</para>
+          </caption>
+        </mediaobject>
+      </step>
+      <step>
+        <para>O brilho (valor) da camada é baseado de acordo com uma curva spline de intensidades.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/decor/chrome-it-step3.png"/>
+          </imageobject>
+          <caption>
+            <para>Modificando a curva de intensidade</para>
+          </caption>
+        </mediaobject>
+      </step>
+      <step>
+        <para>Uma máscara de camada é adicionada, e inicializada com a imagem de origem (o <quote>Estêncil de cromagem</quote>). Essa é a camada <quote>Cromar </quote>antes do passo final.</para>
+        <para>A camada <quote>Cor de destaque</quote> é uma cópia da camada <quote>Cromar</quote> onde a máscara de camada é contornada com um pincel branco.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/decor/chrome-it-step4.png"/>
+          </imageobject>
+          <caption>
+            <para>Base para Cromar e Cor de destaque</para>
+          </caption>
+        </mediaobject>
+      </step>
+      <step>
+        <para>Para ambas as camadas, o balanço de cor é modificado (de acordo com o <guilabel>Equilíbrio de reflexo</guilabel> e o <guilabel>Equilíbrio de cromo</guilabel>), aumentando a quantidade de vermelho, verde e azul com ênfase nas partes claras.</para>
+        <para>Adicionalmente, a saturação e a luminosidade da camada <quote>Cromar</quote> são modificados (controlados pelos ajustes <guilabel>Saturação do cromo</guilabel> e <guilabel>Luminosidade do cromo</guilabel>).</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/decor/chrome-it-step5.png"/>
+          </imageobject>
+          <caption>
+            <para>Camadas Cromar e Cor de destaque</para>
+          </caption>
+        </mediaobject>
+      </step>
+    </procedure>
+    <para>Agora, adicione uma sombra projetada e uma camada de fundo, e você obterá a <link linkend="script-fu-sota-chrome-it-example">Imagem de exemplo</link> para o filtro <quote>Estêncil de cromagem</quote>.</para>
+  </sect3>
+</sect2>

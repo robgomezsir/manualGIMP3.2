@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-03-11 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-sinus">
+  <title>Seno</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Texturas senoidais</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Seno</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro Seno</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-taj-sinus.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <para>O filtro seno permite fazer texturas baseadas em variações senoidais que parecem um pouco como seda molhada ou com uma chapa de compensado. Este plug-in funciona usando duas cores diferentes que você pode definir na guia Cores. Essas duas cores, em seguida, criarão padrões de ondas com base em uma função seno.</para>
+    <para>Você pode definir as escalas X e Y, que determinam o quanto a textura vai ser esticada ou compactada. Você também pode definir a complexidade da função: um valor elevado cria mais interferência ou repetição do padrão. Um exemplo é mostrado abaixo.</para>
+    <para>
+      Results don't depend on the image you opened.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guisubmenu>Pattern</guisubmenu>
+        <guimenuitem>Sinus…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções para o filtro <quote>Seno</quote> (Configurações)</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/sinus-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Escala X</term>
+        <term>Escala Y</term>
+        <listitem>
+          <para>Um valor baixo de X ou de  Y irá maximizar o esticamento horizontal  ou vertical da textura, enquanto que um valor elevado vai comprimi-la.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Complexidade</term>
+        <listitem>
+          <para>Este valor controla como as duas cores interagem entre si (a quantidade de interação ou repetição).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Semente aleatória</term>
+        <term>Nova semente</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Force tiling</term>
+        <listitem>
+          <para>Se você marcar esta opção, será gerado um padrão que pode ser usado como uma textura encaixável. . Por exemplo, você pode usá-lo como plano de fundo em uma página HTML, e as bordas do padrão não serão visíveis quando a imagem fizer fronteira com ela mesma.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Deformado</term>
+        <listitem>
+          <para>
+            This options give additional control of the interaction between
+            the two colors.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Color 1</term>
+        <term>Color 2</term>
+        <listitem>
+          <para>
+            Here, you set the two colors that make up your texture. Default 
+            colors are yellow and blue. 
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Blend Mode</term>
+        <listitem>
+          <para>Você pode escolher entre três funções para definir as formas das ondas que são produzidas: Linear, Bilinear e Sinusoidal.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Expoente</term>
+        <listitem>
+          <para>O expoente controla qual das duas cores é dominante, e quanto dominante ela é. Se você definir o expoente para -7.5, a cor esquerda vai dominar totalmente, e se você configurá-lo para 7,5 será o contrário. O valor zero é neutro.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.4. Seu primeiro Script de Script-Fu</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-using-script-fu-tutorial.html" title="3. Um tutorial de Script-Fu" />
+    <link rel="prev" href="gimp-using-script-fu-tutorial-lists.html" title="3.3. Listas, Listas e mais Listas!" />
+    <link rel="next" href="gimp-using-script-fu-tutorial-script.html" title="3.5. Adicionando Funcionalidade Adicional" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.4. Seu primeiro Script de Script-Fu</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-script-fu-tutorial-lists.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Um tutorial de Script-Fu</span>
+        <nav> <a accesskey="n" href="gimp-using-script-fu-tutorial-script.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-using-script-fu-tutorial-first-script"></a>3.4. Seu primeiro Script de Script-Fu</h3>
+          </div>
+        </div>
+      </div>
+      <p>Você precisa parar e recuperar o fôlego? Não? Bem, então vamos proceder a quarta lição — seu primeiro Script em Script-Fu.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2841"></a>3.4.1. Criando um Script para uma caixa de texto</h4>
+            </div>
+          </div>
+        </div>
+        <p>Uma das coisas mais comuns a se fazer no <acronym class="acronym">GIMP</acronym> é criar uma caixa com algum texto para uma página web, um logotipo, ou para qualquer outra coisa. Entretanto, você nunca sabe de que tamanho criar a imagem inicial quando você começa o trabalho. Você não sabe quanto espaço o texto vai usar com a fonte e tamanho de fonte que você quer usar.</p>
+        <p>O Mestre de Script-Fu (e o aprendiz) podem reconhecer rapidamente que esse problema pode ser resolvido facilmente e automatizado por meio do Script-Fu</p>
+        <p>Nós iremos, portanto, criar um script chamado Caixa de Texto, que cria uma imagem do tamanho correto para conter uma linha de texto digitada pelo usuário. Também deixaremos o usuário escolher a fonte, tamanho da fonte e cor do texto.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2842"></a>3.4.2. Editando e guardando seus scripts</h4>
+            </div>
+          </div>
+        </div>
+        <p>Até agora, temos trabalhado no Console Script-Fu. Agora, no entanto, vamos mudar para editar arquivos de script. Os arquivos de script devem ser arquivos de texto simples que você pode editar em um editor de texto ou código. O nome que você dá não é tão importante, exceto para poder reconhecer o script. Você deve dar ao seu arquivo de script a extensão <span class="quote">“<span class="quote">.scm</span>”</span>.</p>
+        <p>Onde você coloca seus scripts é uma questão de preferência. Nas <a class="link" href="gimp-prefs-folders-data.html#gimp-prefs-folders-scripts">preferências de pastas</a> do GIMP você pode ver em quais pastas o GIMP procura por scripts. Também é possível adicionar uma nova pasta lá. A pasta onde o GIMP armazena seus próprios scripts geralmente não é a melhor escolha para seus scripts, mas para o resto, sinta-se à vontade para escolher o que lhe convier melhor.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2843"></a>3.4.3. O básico essencial</h4>
+            </div>
+          </div>
+        </div>
+        <p>Todo Script-fu define pelo menos uma função, que é a função principal do Script. É ai que você faz o trabalho.</p>
+        <p>Todo script também precisa se registrar com a base de dados procedural, de forma que ele possa ser acessado de dentro do <acronym class="acronym">GIMP</acronym>.</p>
+        <p>Primeiro vamos definir nossa função principal:</p>
+        <pre class="programlisting">
+        (define (script-fu-text-box inText inFont inFontSize inTextColor))
+      </pre>
+        <p>Aqui, nós colocamos o cabeçalho que define uma função chamada <code class="function">script-fu-text-box</code> que recebe 4 parâmetros, que mais tarde irão corresponder a um texto, uma fonte, um tamanho de fonte e uma cor de texto. Exceto a palavra chave <span class="quote">“<span class="quote">define</span>”</span> os outros nomes foram criados nesse momento, pelo programa. O corpo da função por enquanto não foi criado. Por enquanto tudo bem, nada demais.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2844"></a>3.4.4. Convenções para os nomes</h4>
+            </div>
+          </div>
+        </div>
+        <p>A convenção de nomes do Scheme prefere nomes em caixa baixa separados por hífen, o que eu segui no nome da função. No entanto, eu não uso a convenção para criar os nomes dos parâmetros. Eu gosto de nomes mais descritivos para os meus parâmetros e variáveis, e portanto eu coloquei o prefixo "in" nos nomes dos parâmetros, de forma que eu possa perceber rapidamente que eles são valores passados ao script, em vez de criados lá dentro. Eu uso o prefixo "the" para variáveis definidas dentro do script.</p>
+        <p>E é uma convenção do <acronym class="acronym">GIMP</acronym> que sua função de script tenha um nome do tipo <code class="function">script-fu-abc</code>, por que quando elas são listadas na base de dados procedural, elas também aparecem sob <span class="quote">“<span class="quote">script-fu</span>”</span> quando você está listando as funções. Isso ajuda a distinguir as mesmas de plug-ins.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2845"></a>3.4.5. Registrando a função</h4>
+            </div>
+          </div>
+        </div>
+        <p>Agora, vamos registrar a função no <acronym class="acronym">GIMP</acronym>. Isso é feito chamando-se a função <code class="function">script-fu-register</code>. Quando o GIMP lê um script, ele executa esta função, que registra o script com a base de dados procedural. Você pode colocar essa chamada de função onde desejar no seu script, mas eu normalmente a coloco no final, depois de todo o meu código.</p>
+        <p>Aqui está a listagem para registrar esta função (eu vou explicar todos esses parâmetros em um minuto):</p>
+        <pre class="programlisting">
+  (script-fu-register
+    "script-fu-text-box"                        ;function name
+    "Text Box"                                  ;menu label
+    "Creates a simple text box, sized to fit\
+      around the user's choice of text,\
+      font, font size, and color."              ;description
+    "Michael Terry"                             ;author
+    "copyright 1997, Michael Terry;\
+      2009, the GIMP Documentation Team"        ;copyright notice
+    "October 27, 1997"                          ;date created
+    ""                                      ;image type that the script works on
+    SF-STRING      "Text"          "Text Box"   ;a string variable
+    SF-FONT        "Font"          "Charter"    ;a font variable
+    SF-ADJUSTMENT  "Font size"     '(50 1 1000 1 10 0 1)
+                                                ;a spin-button
+    SF-COLOR       "Color"         '(0 0 0)     ;color variable
+  )
+  (script-fu-menu-register "script-fu-text-box" "&lt;Image&gt;/Filters/Tutorial")
+      </pre>
+        <p>
+        Save these functions in a text file with a
+        <code class="filename">.scm</code> suffix in a subdirectory
+        of your script directory, with the same name as your script file, then
+        restart <acronym class="acronym">GIMP</acronym>.
+        The new script will appear as
+        <span class="guimenu">Filters</span> → <span class="guisubmenu">Tutorial</span> → <span class="guimenuitem">Text Box</span>.
+      </p>
+        <p>Se você invocar esse novo script, ele não vai fazer nada, claro, mas você já pode ver as entradas que ele cria ao registrar o script. (Em seguida mais informações sobre o que foi que fizemos)</p>
+        <p>Finalmente, se você invocar o navegador de procedimentos,  (<span class="guimenu">Ajuda</span> → <span class="guimenuitem">Navegador de procedimentos</span>), você notará que nosso script aparece no banco de dados.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2846"></a>3.4.6. Passos para registrar o script</h4>
+            </div>
+          </div>
+        </div>
+        <p>Para registrar nosso script com o <acronym class="acronym">GIMP</acronym>,  nós chamamos a função <code class="function">script-fu-register</code>, preenchemos os sete parâmetros necessários e adicionamos os parâmetros de nosso próprio script, junto com uma descrição e um valor padrão para cada parâmetro.</p>
+        <div class="itemizedlist">
+          <p class="title">
+            <strong>Os parâmetros necessários</strong>
+          </p>
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>O <span class="emphasis"><em>nome</em></span> (func name) da função que nós definimos. Essa é a função que será chamada quando nosso script for invocado (o ponto de entrada de nosso script). Isso é necessário por que nós podemos definir funções adicionais no mesmo arquivo, e o <acronym class="acronym">GIMP</acronym> precisa saber qual chamar. No nosso exemplo, nós definimos apenas uma função, script-fu-text-box, que nós registramos.</p>
+            </li>
+            <li class="listitem">
+              <p>
+            The <span class="emphasis"><em>menu label</em></span> is the name that will be
+            shown in the menu. To specify the location, see
+            <a class="xref" href="gimp-using-script-fu-tutorial-first-script.html#script-fu-adding-menu-location" title="3.4.9. Registrando a função">Seção 3.4.9, “Registrando a função”</a>.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>Voltando aos parâmetros da chamada de  <span class="quote">“<span class="quote">script-fu-register</span>”</span>: você passa uma descrição (description) do seu script, que será mostrada no navegador de procedimentos.</p>
+            </li>
+            <li class="listitem">
+              <p><span class="emphasis"><em>Seu nome</em></span>  -  o quarto parâmetro recebe o nome do autor do script. (Michael Terry no exemplo)</p>
+            </li>
+            <li class="listitem">
+              <p>O quinto parâmetro contém informações de <span class="emphasis"><em>Copyright</em></span> (direto de autor). </p>
+            </li>
+            <li class="listitem">
+              <p>O sexto parâmetro é a <span class="emphasis"><em>data</em></span> em que o script foi feito, ou a data da última revisão.</p>
+            </li>
+            <li class="listitem">
+              <p>O sétimo parâmetro. de <span class="emphasis"><em>tipos</em></span> sé é necessário para scripts que vão trabalhar em imagens já existentes. Ele deve ser um desses:  RGB, RGBA, GRAY, GRAYA, INDEXED, INDEXEDA. Ou pode ficar em branco no nosso caso, já que estaremos criando uma imagem nova. Se o seu script aceitar qualquer tipo de imagem, você pode por um <code class="code">"*"</code> aqui.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2847"></a>3.4.7. Registrando os parâmetros do script</h4>
+            </div>
+          </div>
+        </div>
+        <p>Uma vez que nós tenhamos listado os parâmetros necessários, então precisamos listar os parâmetros que correspondem ao que o nosso script precisa. Quando listamos esses parâmetros, nós damos dicas de qual tipo cada um deve ser. Com isso, o GIMP constrói um diálogo automaticamente quando o usuário executar nosso script. Nós também damos um valor padrão para cada parâmetro.</p>
+        <p>A seção de registro de parâmetros tem o seguinte formato:</p>
+        <div class="informaltable">
+          <table class="informaltable" border="1">
+            <colgroup>
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+                <p>Tipo de parâmetro</p>
+              </th>
+                <th>
+                <p>Descrição</p>
+              </th>
+                <th>
+                <p>Exemplo</p>
+              </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                <p><code class="constant">SF-IMAGE</code></p>
+              </td>
+                <td>
+                <p>Se o seu script vai trabalhar numa imagem que já está aberta, esse deve ser o primeiro parâmetro, depois dos parâmetros requeridos. O <acronym class="acronym">GIMP</acronym> irá passar uma referência para a imagem neste parâmetro.</p>
+              </td>
+                <td>
+                <p>3</p>
+              </td>
+              </tr>
+              <tr>
+                <td>
+                <p><code class="constant">SF-DRAWABLE</code></p>
+              </td>
+                <td>
+                <p>Se o seu script vai trabalhar numa imagem que já está aberta, esse deve ser o segundo parâmetro, logo depois do parâmetro <code class="constant">SF-IMAGE</code>. Ele se refere à camada ou outro objeto desenhável ativo (canal, máscara de camada, etc...). O <acronym class="acronym">GIMP</acronym> passa uma referência à camada ativa neste parâmetro.</p>
+              </td>
+                <td>
+                <p>17 </p>
+              </td>
+              </tr>
+              <tr>
+                <td>
+                <p><code class="constant">SF-STRING</code></p>
+              </td>
+                <td>
+                <p>Aceita strings (texto)</p>
+              </td>
+                <td>
+                <p>"Algum texto"</p>
+              </td>
+              </tr>
+              <tr>
+                <td>
+                <p><code class="constant">SF-COLOR</code></p>
+              </td>
+                <td>
+                <p>Indica que uma cor é requerida neste parâmetro</p>
+              </td>
+                <td>
+                <p>'(0 102 255)</p>
+              </td>
+              </tr>
+              <tr>
+                <td>
+                <p><code class="constant">SF-TOGGLE</code></p>
+              </td>
+                <td>
+                <p>É exibido um controle que devolve um valor  Booleano </p>
+              </td>
+                <td>
+                <p>TRUE ou FALSE</p>
+              </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-using-script-fu-api"></a>3.4.8. A API de parâmetros do Script-fu</h4>
+            </div>
+          </div>
+        </div>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+      Beside the above parameter types there are more types for the
+      interactive mode, each of them will create a widget in the control
+      dialog. You will find a list of these parameters with descriptions and
+      examples in the test script
+      <code class="filename">plug-ins/script-fu/scripts/test-sphere-v3.scm</code>
+      shipped with the <acronym class="acronym">GIMP</acronym> source code.
+    </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="informaltable">
+          <table class="informaltable" border="1">
+            <colgroup>
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>
+            <p>Tipo de parâmetro</p>
+          </th>
+                <th>
+            <p>Descrição</p>
+          </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+            <p><code class="constant">SF-ADJUSTMENT</code></p>
+          </td>
+                <td>
+            <p>Cria um controle de ajuste no diálogo</p>
+            <p>SF-ADJUSTMENT "rótulo" '(value lower upper step_inc page_inc digits type)</p>
+            <div class="segmentedlist"><div class="title"><strong><span class="title">Lista de argumentos do controle</span></strong></div><table border="0"><thead><tr class="segtitle"><th>Elemento</th><th>Descrição</th></tr></thead><tbody><tr class="seglistitem"><td class="seg">"rótulo"</td><td class="seg">O texto impresso antes do controle</td></tr><tr class="seglistitem"><td class="seg">value (valor)</td><td class="seg">O valor a ser colocado por padrão</td></tr><tr class="seglistitem"><td class="seg">lower / upper (limite_inferior / limite_superior)</td><td class="seg">Os valores para os limites inferior e superior (faixa de escolha)</td></tr><tr class="seglistitem"><td class="seg">step_inc (passo_de_incremento)</td><td class="seg">Valor de incremento/decremento</td></tr><tr class="seglistitem"><td class="seg">page_inc (incremento_de_pagina)</td><td class="seg">valor de incremento/decremento ao usar <span class="keycap"><strong>PageUp</strong></span> e <span class="keycap"><strong>PageDown</strong></span></td></tr><tr class="seglistitem"><td class="seg">digits (dígitos)</td><td class="seg">Número de dígitos após a vírgula (parte decimal)</td></tr><tr class="seglistitem"><td class="seg">type (tipo)</td><td class="seg">Um dentre:  SF-SLIDER or 0, SF-SPINNER or 1 (muda o tipo de widget apresentado)</td></tr></tbody></table></div>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-COLOR</code></p>
+          </td>
+                <td>
+            <p>Cria um botão de seleção de cor no diálogo.</p>
+            <p>SF-COLOR "rótulo" '(red green blue)</p>
+            <p>ou</p>
+            <p>SF-COLOR "rótulo" "color"</p>
+            <div class="segmentedlist"><div class="title"><strong><span class="title">Lista de argumentos do controle</span></strong></div><table border="0"><thead><tr class="segtitle"><th>Elemento</th><th>Descrição</th></tr></thead><tbody><tr class="seglistitem"><td class="seg">"rótulo"</td><td class="seg">O texto impresso antes do controle</td></tr><tr class="seglistitem"><td class="seg">'(red green blue)</td><td class="seg">Lista de três valores para os componentes vermelho, verde e azul</td></tr><tr class="seglistitem"><td class="seg">"color" (cor)</td><td class="seg">Nome da cor na notação usada em CSS</td></tr></tbody></table></div>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-FONT</code></p>
+          </td>
+                <td>
+            <p>Cria um widget de seleção de fontes no diálogo. Ele retorna um nome de fonte como uma string. Existem dois novos procedimentos de gimp-text para usar com esse parâmetro retornado:</p>
+            <p>(gimp-text-fontname image drawable x-pos y-pos text border antialias size unit font)</p>
+            <p>(gimp-text-get-extents-fontname text size unit font)</p>
+            <p>onde <span class="quote">“<span class="quote">font</span>”</span> é o nome da fonte que você recebe. O tamanho especificado no nome da fonte é ignorado silenciosamente - ele só é usado no seletor de fontes. Então é pedido a você que escolher um bom valor - para o parâmetro <span class="quote">“<span class="quote">size</span>”</span> (tamanho) (24 pixels é uma boa escolha)</p>
+            <p>SF-FONT "rótulo" "fontname"</p>
+            <div class="segmentedlist"><div class="title"><strong><span class="title">Lista de argumentos do controle</span></strong></div><table border="0"><thead><tr class="segtitle"><th>Elemento</th><th>Descrição</th></tr></thead><tbody><tr class="seglistitem"><td class="seg">"rótulo"</td><td class="seg">O texto impresso antes do controle</td></tr><tr class="seglistitem"><td class="seg">"fontname" (nome da fonte)</td><td class="seg">Nome da fonte que será mostrada como padrão.</td></tr></tbody></table></div>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-BRUSH</code></p>
+          </td>
+                <td>
+            <p>Irá criar um widget no diálogo de controle do script - este widget consiste numa área de pré-visualização (que quando clicada fará aparecer uma pré-visualização flutuante) e um botão com o rótulo "...". O botão fará aparecer um diálogo onde o usuário pode escolher pincéis e cada uma das características do pincel pode ser modificada.</p>
+            <p>SF-BRUSH "Brush" '("Circle (03)" 100 44 0)</p>
+            <p>Nesse caso, o diálogo de pincéis será aberto com um pincel padrão de "Circle (03)" (esse é o nome do pincel), opacidade 100, espaçamento 44, e modo de pintura Normal (valor 0)</p>
+            <p>Se esta seleção não for modificada, o valor passado para a função como parâmetro será '("Circle (03)" 100 44 0).</p>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-PATTERN</code></p>
+          </td>
+                <td>
+            <p>Irá criar um widget no diálogo de controle do script - este widget consiste numa área de pré-visualização (que quando clicada fará aparecer uma pré-visualização flutuante) e um botão com o rótulo "...". O botão fará aparecer um diálogo onde o usuário pode escolher umatexturas entre as disponíveis para o GIMP</p>
+            <p>SF-PATTERN "Textura" "Maple Leaves"</p>
+            <p>O valor de retorno quando o script for chamado é uma string contendo o nome da textura. Se a seleção acima não for alterada, essa string iria conter "Maple Leaves". (o nome da textura como existe por padrão no GIMP)</p>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-GRADIENT</code></p>
+          </td>
+                <td>
+            <p>Irá criar um widget no diálogo do script. Este widget consiste em um botão contendo uma pré-visualização do degradê selecionado</p>
+            <p>Se o botão for pressionado, uma seleção de degradês aparecerá num diálogo separado.</p>
+            <p>SF-GRADIENT "Degradê" "Deep Sea"</p>
+            <p>O valor de retorno quando o script for chamado é uma string contendo o nome do Degradê. Se a seleção acima não for alterada, essa string iria conter "Deep Sea". (o nome do degradê como existe por padrão no GIMP)</p>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-PALETTE</code></p>
+          </td>
+                <td>
+            <p>Irá criar um widget no diálogo do script. Este widget consiste em um botão contendo o nome da paleta selecionada.</p>
+            <p>Se o botão for pressionado, surgirá um diálogo de seleção de paletas.</p>
+            <p>SF-PALETTE "Palette" "Named Colors"</p>
+            <p>O valor retornado quando o script é chamado é uma string com o nome da paleta. Se a seleção  acima não for alterada, isso será uma string contendo "Named Colors".</p>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-FILENAME</code></p>
+          </td>
+                <td>
+            <p>Irá criar um widget no diálogo do script. Este widget consiste em um botão contendo um nome de arquivo.</p>
+            <p>Se o botão for pressionado, surgirá um diálogo de seleção de arquivos.</p>
+            <p>SF-FILENAME "label" (string-append "" gimp-data-directory "/scripts/beavis.jpg")</p>
+            <p>O valor retornado quando o script é chamado é uma string com o nome do arquivo.</p>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-DIRNAME</code></p>
+          </td>
+                <td>
+            <p>Só é útil no modo interativo.Muito parecido com SF-FILENAME, mas o widget criado só permite a escolha de uma pasta, em vez de um arquivo.</p>
+            <p>SF-DIRNAME "label" "/var/tmp/images"</p>
+            <p>O valor retornado quando o script é chamado é uma string com o caminho para a pasta.</p>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-OPTION</code></p>
+          </td>
+                <td>
+            <p> Irá criar um widget no diálogo do script. Este widget consiste em uma caixa de escolhas mostrando as opções passadas como uma lista.</p>
+            <p>A primeira opção é a escolha selecionada por padrão.</p>
+            <p>SF-OPTION "rótulo" '("option1" "option2")</p>
+            <p>O valor retornado quando o script é chamado é o número da opção escolhida, onde a primeira opção tem é considerada como estando na posição "0".</p>
+          </td>
+              </tr>
+              <tr>
+                <td>
+            <p><code class="constant">SF-ENUM</code></p>
+          </td>
+                <td>
+            <p> Irá criar um widget no diálogo do script. este widget é uma caixa de opções mostrando todos os valores de enumeração para o tipo de enumeração dado. O parâmetro tem que ser o nome de uma enumeração registrada, sem o prefixo "GIMP". O segundo parâmetro especifica o valor padrão, usando o apelido dado na enumeração.</p>
+            <p>SF-ENUM "Interpolação" '("InterpolationType" "linear")</p>
+            <p>O valor retornado quando o script é invocado corresponde ao valor numérico do item de enumeração escolhido·</p>
+          </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="script-fu-adding-menu-location"></a>3.4.9. Registrando a função</h4>
+            </div>
+          </div>
+        </div>
+        <p>Depois de registrar nosso script, precisamos dizer ao GIMP onde ele deve ser encontrado no menu.</p>
+        <p>A melhor localização de menu do seu script depende de sua função. A maioria dos scripts é encontrada nos menus <span class="guimenu">Filtros</span> e <span class="guimenu">Cores</span>.</p>
+        <p>
+        For the current script, which creates a new image, we choose a submenu
+        of
+        <span class="guimenu">Filters</span> → <span class="guisubmenu">Tutorial</span>.
+        This is what the line with the <code class="code">script-fu-menu-register</code>
+        function does.
+        Thus, we registered our Text Box script here:
+        <span class="guimenu">Filters</span> → <span class="guisubmenu">Tutorial</span> → <span class="guimenuitem">Text Box</span>.
+      </p>
+        <p>
+        Any submenu that you specify in your script that doesn't exist yet
+        will be automatically created by <acronym class="acronym">GIMP</acronym>.
+      </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-script-fu-tutorial-lists.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-using-script-fu-tutorial.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-script-fu-tutorial-script.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-script-fu-tutorial-lists.html">3.3. Listas, Listas e mais Listas!</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-script-fu-tutorial-script.html">3.5. Adicionando Funcionalidade Adicional</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

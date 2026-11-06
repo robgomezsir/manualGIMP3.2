@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2020-07-17 j.h: update to 2.10.20
+  2019-01-06 j.h: create
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-vignette">
+  <title>Vinheta</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Vinheta</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Vinheta</primary>
+  </indexterm>
+  
+  <sect3>
+    <title>Visão geral</title>
+    <para>Na fotografia, <emphasis>vinhetagem</emphasis> é a redução do brilho da imagem em direção às bordas. Muitas vezes, é um efeito indesejado causado pelas configurações da câmera ou pelas limitações da lente. Porém, também é usado intencionalmente para chamar a atenção para o centro da imagem. O filtro <quote>Vinheta</quote> pode produzir esse efeito.</para>
+        
+    <figure>
+      <title>Imagens originais usadas nos exemplos</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/light-and-shadow/vignette-ex-orig.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/light-and-shadow/vignette-ex-default.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para id="on-canvas-controls">O GIMP inclui controles na tela de pintura (padrão): dois limites com alças brancas que ficam laranjas e são ativadas quando o ponteiro do mouse passa sobre elas. A área preta (padrão) é a <emphasis>vinheta</emphasis>. O <emphasis>limite externo</emphasis> marca o limite da vinheta. O <emphasis>limite interno</emphasis> marca o limite da <emphasis>área suave</emphasis>, que não é alterada. Entre os limites externo e interno fica a <emphasis>área de transição</emphasis>, onde a vinheta aparece progressivamente; uma linha pontilhada marca a <emphasis>linha do ponto médio</emphasis>. <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/light-and-shadow/vignette-ex-oncanvas.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Vinheta com as opções padrão e controles na tela de pintura</para>
+        </caption>
+      </mediaobject></para>
+    <para>A ação de clicar e arrastar é diferente nas linhas e nas alças: <itemizedlist>
+        <listitem>
+          <para>Clique em uma linha de limite e arraste-a para mover o limite e o ponto médio (Raio e Suavidade).</para>
+        </listitem>
+        <listitem>
+          <para>Clique em uma alça e arraste-a para mover os dois limites (Raio e Compressão).</para>
+        </listitem>
+        <listitem>
+          <para>Clique na linha do ponto médio e arraste-a para movê-la.</para>
+        </listitem>
+        <listitem>
+          <para>Nos três casos, pressionar <keycap>Shift</keycap> altera somente o Raio.</para>
+        </listitem>
+      </itemizedlist></para>
+  </sect3>
+  
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>Este filtro está disponível no menu principal em <menuchoice><guimenu>Filtros</guimenu><guisubmenu>Luz e sombra</guisubmenu><guimenuitem>Vinheta…</guimenuitem></menuchoice>.</para>
+  </sect3>
+  
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Vinheta</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/light-and-shadow/vignette-dialog.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term><quote>Tipo de entrada</quote></term>
+        <term>Recorte</term>
+        <term>Opções de mesclagem</term>
+        <term>Pré-visualização</term>
+        <term>Mesclar filtro</term>
+        <term>Visualização dividida</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Forma da vinheta</term>
+        <listitem>
+          <para>As seguintes formas estão disponíveis: <guilabel>Círculo</guilabel>, <guilabel>Quadrado</guilabel>, <guilabel>Losango</guilabel>, <guilabel>Horizontal</guilabel> e <guilabel>Vertical</guilabel>.</para>
+          <para><guilabel>Horizontal</guilabel>, <guilabel>Vertical</guilabel>: os limites e a linha são horizontais ou verticais.</para>
+          <para>A forma da vinheta (por exemplo, elipse ou círculo) depende da configuração <guilabel>Proporção</guilabel>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio</term>
+        <listitem>
+          <para>Tamanho da vinheta: até onde a vinhetagem se estende, em relação à metade da diagonal da imagem.</para>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/filters/examples/light-and-shadow/vignette-ex-radius.jpg" format="JPG"/>
+            </imageobject>
+            <caption>
+              <para>Raio = 0,700</para>
+            </caption>
+          </mediaobject>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Suavidade</term>
+        <listitem>
+          <para>Tamanho da área suave (inalterada).</para>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/filters/examples/light-and-shadow/vignette-ex-softness.jpg" format="JPG"/>
+            </imageobject>
+            <caption>
+              <para>Suavidade = 0,100</para>
+            </caption>
+          </mediaobject>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Gama</term>
+        <listitem>
+          <para>A linearidade do decaimento controla a curva de transição do centro para as bordas: define a rapidez com que o brilho diminui em direção às bordas da vinheta (o tamanho da área de transição).</para>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/filters/examples/light-and-shadow/vignette-ex-gamma.jpg" format="JPG"/>
+            </imageobject>
+            <caption>
+              <para>Gama = 1,00</para>
+            </caption>
+          </mediaobject>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Proporção</term>
+        <listitem>
+          <para>A proporção tem um comportamento especial: com o valor padrão (máximo), 1,00, a vinheta é circular em uma imagem quadrada e elíptica em uma imagem retangular. Ao reduzir a proporção, essa elipse tende a se tornar um círculo.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Compressão</term>
+        <listitem>
+          <para>Proporção a usar: <itemizedlist>
+              <listitem>
+                <para>0,0 = 1:1</para>
+              </listitem>
+              <listitem>
+                <para>0,5 = 2:1</para>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/filters/examples/light-and-shadow/vignette-ex-squeeze05.jpg" format="JPG"/>
+                  </imageobject>
+                  <caption>
+                    <para>Forma de losango, proporção = 0,0 e compressão = 0,5</para>
+                  </caption>
+                </mediaobject>
+              </listitem>
+              <listitem>
+                <para>1,0 = totalmente comprimida na vertical</para>
+              </listitem>
+              <listitem>
+                <para>-0,5 = 1:2</para>
+              </listitem>
+              <listitem>
+                <para>-1,0 = totalmente comprimida na horizontal</para>
+              </listitem>
+            </itemizedlist></para>
+          <note>
+            <para>Para usar diretamente o fator de compressão como proporção, defina Proporção como 0,0.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Centro X</term>
+        <term>Centro Y</term>
+        <listitem>
+          <para>Coordenadas do centro da vinheta. A origem fica no canto superior esquerdo da imagem. 1,00 corresponde à borda direita da imagem. O centro pode ser posicionado fora da imagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Rotação</term>
+        <listitem>
+          <para>Rotação da vinheta. A vinheta mantém sua forma.</para>
+          <para>Você também pode clicar fora do limite externo e arrastar para girar a vinheta.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Controles na tela de pintura</term>
+        <listitem>
+          <para>Desmarque esta opção para remover os controles da tela de pintura.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

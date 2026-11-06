@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-06-27 Added Spanish translation by AntI
+  2007-04-30 KoSt: added 'no'
+  2007-01-18 it added by alessandro falappa
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-09-12 de added by axel.wernicke
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="plug-in-gimpressionist">
+  <title>GIMPressionista</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Artísticos</secondary>
+    <tertiary>GIMPressionista</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>GIMPressionista</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>GIMPressionista</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/artistic-taj-gimpressionist.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter can do what <link linkend="gimp-filter-cubism">Cubism</link>
+      and <link linkend="gimp-filter-apply-canvas">Apply Canvas</link> do and
+      much more. It gives your image the look of a painting. All is going as if
+      your image was painted again on a paper and with a brush you'd have
+      chosen. It works on the active layer or selection.
+    </para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Artistic</guisubmenu>
+        <guimenuitem>GIMPressionist…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <!-- Parameter Settings -->
+    <title>Opções</title>
+    <figure>
+      <title>Opções do GIMPressionisa</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist1.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>A janela de diálogo consiste de uma pequena área de pré-visualização na esquerda, que está sempre visível, e uma grande quantidade de opções do GIMPressionista organizadas em guias.</para>
+
+    <sect4>
+      <title>Pré-visuação</title>
+      <para>Todas as suas configurações de mudanças irão aparecer na pré-visualização sem afetar a imagem de fato até que você clique em <guibutton>OK</guibutton>. O botão <guibutton>Atualizar</guibutton> atualiza a janela de pré-visualização (isso não é automático, o GIMPressionista tem muito trabalho a fazer!), e o botão <guibutton>Restaurar</guibutton> reverte para a imagem original.</para>
+    </sect4>
+
+    <sect4>
+      <title>Guia de valores de fábrica</title>
+      <figure>
+        <title>Opções da guia <quote>valores de fábrica</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist1.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>
+        GIMPressionist has a lot of parameters. When combined, they
+        give an astronomical number of possibilities. So, it is important,
+        when an interesting preset has been found, to save it and also to
+        send it to the plug-in author if exceptional. Per contra, the
+        intricacy of all these parameters makes difficult understanding
+        and foreseeing how each one works.
+      </para>
+      <variablelist>
+        <title>Opções de valores de fábrica</title>
+        <varlistentry>
+          <term>Salvar atual</term>
+          <listitem>
+            <para>
+              Save current parameters.
+              You can give a name in the input box on the left and a short
+              description in the dialog that appears.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Aplicar</term>
+          <listitem>
+            <para>Carrega os parâmetros do valor de fábrica selecionado na lista.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Excluir</term>
+          <listitem>
+            <para>Exclui o valor de fábrica selecionado. Você pode excluir apenas os valores de fábrica que você criou.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Atualizar</term>
+          <listitem>
+            <para>Atualiza a lista de valores de fábrica.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Guia papel</title>
+      <figure>
+        <title>Opções da guia <quote>papel</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist2.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Essa guia trata da textura da tela na qual a sua imagem será pintada. Você tem uma lista de textura e uma <guilabel>pré-visualização</guilabel> para a textura selecionada. Uma descrição é exibida a direita para cada textura selecionada.</para>
+      <variablelist>
+        <title>Opções de papel</title>
+        <varlistentry>
+          <term>Inverter</term>
+          <listitem>
+            <para>Inverte a textura de papel: aonde existe uma depressão se torna em algo elevado e vice-versa.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Superposição</term>
+          <listitem>
+            <para>
+              Apply the paper as it, without embossing it. It looks like
+              if a transparent paper has been overlaid on the image.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Escala</term>
+          <listitem>
+            <para>Especifica a escala da textura (em % do arquivo original): controla o ruído da textura.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Relevo</term>
+          <listitem>
+            <para>Específica a quantidade de relevo a ser aplicado (3-150).</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Guia pincel</title>
+      <figure>
+        <title>Opções da guia <quote>pincel</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist3.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para><quote>Pincel</quote> é um termo genérico para qualquer material usado para pintar. Uma lista de pincéis está disponível com uma <guilabel>pré-visualização</guilabel> para o pincel selecionado.</para>
+      <variablelist>
+        <title>Opções de pincel</title>
+        <varlistentry>
+          <term>Gama</term>
+          <listitem>
+            <para>Altera a gama (luminosidade) do pincel selecionado. O gama corrige o brilho ou escuridão dos tons médios.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Selecione</term>
+          <listitem>
+            <para>Você também pode usar uma textura de pincel que você tenha criado ao selecionar a sua imagem (botão de seta na linha de selecionar). Essa imagem precisa estar aberta no GIMP antes de você iniciar o filtro para que seja exibida. Obviamente, você não usar imagens grandes.</para>
+            <para>Se a sua imagem possui diversas camadas, elas também serão exibidas na lista de selecionar e podem ser usadas como um pincel. Quando selecionada, a camada aparecerá na pré-visualização de pincel e o pincel normal será des-selecionado.</para>
+            <para>O botão <guibutton>Salvar como</guibutton> permite salvar o pincel selecionado.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Proporção</term>
+          <listitem>
+            <para>Específica as proporções do pincel, altura (0-1) e largura (0 +1).</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Relevo</term>
+          <listitem>
+            <para>Especifica a quantidade de tinta usada em cada pincelada. Isso pode permitir pintar com uma textura de faca.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4 id="gimpressionist-orientation-options">
+      <title>Guia orientação</title>
+      <figure>
+        <title>Opções da guia <quote>orientação</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist4.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Esta guia permite selecionar a orientação das pinceladas. Um pintor não é obrigado a seguir um mesmo ângulo de pincelada. Para produzir os mesmo efeitos, ele pode variar a sua orientação.</para>
+      <variablelist>
+        <title>Opções de orientação</title>
+        <varlistentry>
+          <term>Direções</term>
+          <listitem>
+            <para>Com essa opção, você pode definir quantas direções diferentes o pincel terá, podendo criar vários efeitos interessantes com poucas direções, 2, por exemplo, e todas as pinceladas serão só da direita pra esquerda e da direita pra esquerda. Muitas direções (ex. 30), não restringirão a angulação das pinceladas.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Ângulo de início</term>
+          <listitem>
+            <para>Específica a direção geral das pinceladas, o ângulo a partir do qual a série de ângulos terá inicio. As direções são escolhidas para dar um certo movimento à imagem.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Alcance do ângulo</term>
+          <listitem>
+            <para>Específica o ângulo, o setor, da <quote>rotação</quote> das pinceladas.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Orientação</term>
+          <listitem>
+            <para>Específica a direção das pinceladas.</para>
+            <variablelist>
+              <varlistentry>
+                <term>Valor</term>
+                <listitem>
+                  <para>Faz com que o valor (luminosidade) da região determine a direção da pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Raio</term>
+                <listitem>
+                  <para>A distância a partir do centro da imagem determina a direção da pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Randômico</term>
+                <listitem>
+                  <para>Seleciona uma direção randômica para cada pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Radial</term>
+                <listitem>
+                  <para>Faz com que a direção a partir do centro determine a direção da pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Fluindo</term>
+                <listitem>
+                  <para>Não é uma questão de direção aqui: as pinceladas seguem uma textura <quote>fluída</quote></para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Matiz</term>
+                <listitem>
+                  <para>Faz com que o matiz da região determinar a direção da pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Adaptativo</term>
+                <listitem>
+                  <para>A direção do pincel que melhor corresponder a imagem original é selecionada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Manual</term>
+                <listitem>
+                  <para>O botão <guilabel>Editar</guilabel> abre o <link linkend="gimpressionist-orient-map-editor">Diálogo editor de mapa de orientação</link> que  permite definir as direções manualmente.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist> <!--end of "brush stroke Orientation"-->
+          </listitem>
+        </varlistentry>
+      </variablelist> <!--end of "Orientation options"-->
+    </sect4>
+
+    <sect4 id="gimpressionist-size-options">
+      <title>Guia tamanho</title>
+      <figure>
+        <title>Opções da guia <quote>tamanho</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist5.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Essa guia permite definir o número de tamanhos de pincel que serão usados na pintura, os limites de variação desses tamanhos e o critério usado para determina-los.</para>
+      <variablelist>
+        <title>Opções de tamanho</title>
+        <para>Você pode especificar quantos tamanhos de pincel serão usados e seus tamanhos.</para>
+        <varlistentry>
+          <term>Size variants</term>
+          <listitem>
+            <para>O número de tamanhos de pincel a serem usados.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Tamanho minimo</term>
+          <term>Tamanho máximo</term>
+          <listitem>
+            <para>Os tamanhos de pincel são definidos entre esses dois valores. Quanto maior o tamanho, maior é o comprimento e largura da pincelada.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Size depends on</term>
+          <listitem>
+            <para>Você tem essas opções para especificar como o tamanho dos pincéis serão determinados.</para>
+            <variablelist>
+              <varlistentry>
+                <term>Valor</term>
+                <listitem>
+                  <para>Faz com que o valor (luminosidade) da região determine o tamanho da pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Raio</term>
+                <listitem>
+                  <para>A distância a partir do centro da imagem determina o tamanho da pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Randômico</term>
+                <listitem>
+                  <para>Seleciona um tamanho aleatório para cada pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Radial</term>
+                <listitem>
+                  <para>Faz com que a direção a partir do centro determine o tamanho da pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Fluindo</term>
+                <listitem>
+                  <para>Não é uma questão de comprimento aqui: as pinceladas seguem uma textura da <quote>fluída</quote>.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Matiz</term>
+                <listitem>
+                  <para>Faz com que o matiz da região determine o tamanho da pincelada.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Adaptativo</term>
+                <listitem>
+                  <para>O tamanho do pincel que melhor corresponder a imagem original é selecionado.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Manual</term>
+                <listitem>
+                  <para>O botão <guilabel>editar</guilabel> abre o <link linkend="gimpressionist-size-map-editor">editor do mapa de tamanho</link>. Que permite especificar o tamanho das pinceladas manualmente.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist> <!--end of "brush stroke Size"-->
+          </listitem>
+        </varlistentry>
+      </variablelist> <!--end of "Size options"-->
+    </sect4>
+
+    <sect4>
+      <title>Guia colocação</title>
+      <figure>
+        <title>Opções da guia <quote>colocação</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist6.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Nessa aba você pode definir como as pinceladas serão distribuídas.</para>
+      <variablelist>
+        <title>Opções de colocação</title>
+        <varlistentry>
+          <term>Colocação</term>
+          <listitem>
+            <para>Na pré-visualização do editor de orientação de mapa, todas as pequenas setas parecem fluir em volta dos objetos. Dentro desta fluidez, as pinceladas podem ser posicionadas duas formas diferentes:</para>
+            <variablelist>
+              <varlistentry>
+                <term>Aleatória</term>
+                <listitem>
+                  <para>Pinceladas posicionadas aleatoriamente. Isso produz uma pintura mais realista.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Igualmente distribuída</term>
+                <listitem>
+                  <para>As pinceladas são distribuídas de forma igualmente espaçada através da imagem.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Centralizadas</term>
+          <listitem>
+            <para>Focaliza as pinceladas em volta do centro.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Densidade da pincelada</term>
+          <listitem>
+            <para>Quanto maior a densidade mais próximas são as pinceladas. Com uma baixa densidade, o papel ou o fundo pode se tornar visível em áreas não pinceladas.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Guia cor</title>
+      <figure>
+        <title>Opções da guia <quote>cor</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist7.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Nessa guia, você pode definir qual será a cor da pincelada.</para>
+      <variablelist>
+        <title>Opções de cor</title>
+        <varlistentry>
+          <term>Cor</term>
+          <listitem>
+            <para>Você pode definir a cor da pincelada de duas formas:</para>
+            <variablelist>
+              <varlistentry>
+                <term>Média sob o pincel</term>
+                <listitem>
+                  <para>A cor da pincelada é computada a partir da média de todos os pixels abaixo do pincel.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Centro do pincel</term>
+                <listitem>
+                  <para>Exemplos da cor a partir do pixel no centro do pincel.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Ruído de cor</term>
+          <listitem>
+            <para>Esse seletor, e sua caixa de entrada, permitem adicionar ruído na cor dapincelada, o que fará com que pareça menos homogênea.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Guia geral</title>
+      <figure>
+        <title>Opções da guia <quote>geral</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist8.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Nessa aba você pode definir qual será o fundo e o relevo das pinceladas.</para>
+      <variablelist>
+        <title>Opções gerais</title>
+        <varlistentry>
+          <term>Fundo</term>
+          <listitem>
+            <variablelist>
+              <varlistentry>
+                <term>Manter original</term>
+                <listitem>
+                  <para>A imagem original será usada como fundo.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>A partir do papel</term>
+                <listitem>
+                  <para>Copia a textura do papel selecionado como fundo.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Sólida</term>
+                <listitem>
+                  <para>
+                    By clicking on the color button you can select a solid
+                    colored background.
+                  </para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Transparente</term>
+                <listitem>
+                  <para>Usa um fundo transparente. Apenas as pinceladas pintadas serão visíveis. Essa opção está disponível apenas se a sua imagem possuir um canal alfa.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Pintar bordas</term>
+          <listitem>
+            <para>Caso estiver ativada, uma fina borda será pintada em volta da borda exterior da imagem.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Encaixável</term>
+          <listitem>
+            <para>Caso selecionado, a imagem resultante será perfeitamente ladrilhável. O lado direito irá corresponder ao lado esquerdo e a parte superior irá corresponder à parte inferior. Isso é interessante caso você queira usar sua imagem final como um fundo de página na Internet, ou mesmo uma textura do GIMP.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Sombra projetada</term>
+          <listitem>
+            <para>Adiciona um efeito de sombra para cada pincelada.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Escurecer borda</term>
+          <listitem>
+            <para>O quanto para escurecer as bordas de cada pincelada. Isso aumenta o relevo ou espessurada pintura.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Escurecer sombra</term>
+          <listitem>
+            <para>O quanto para escurecer a sombra do pincel.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Profundidade da sombra</term>
+          <listitem>
+            <para>O quão longe do objeto a sombra da tinta deve estar.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Desfocagem da sombra</term>
+          <listitem>
+            <para>O quanto para desfocar a sombra da tinta.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Limiar de desvio</term>
+          <listitem>
+            <para>Um valor de limiar para as seleções adaptativas do tamanho do pincel.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+
+  <!-- GIMPressionist Orientation Map Editor
+       (id=gimpressionist-orientation-map-editor) -->
+  <xi:include href="GIMPressionist-orientmap.xml"/>
+
+  <!-- GIMPressionist Size Map Editor (id=gimpressionist-size-map-editor) -->
+  <xi:include href="GIMPressionist-sizemap.xml"/>
+
+</sect2>

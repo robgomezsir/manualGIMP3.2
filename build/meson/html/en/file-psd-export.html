@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.44. Export Image as Photoshop image</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="file-ps-export.html" title="5.43. Export Image as PostScript" />
+    <link rel="next" href="file-qoi-export.html" title="5.45. Export Image as Qoi" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.44. Export Image as Photoshop image</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-ps-export.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="file-qoi-export.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-psd-export"></a>5.44. Export Image as Photoshop image</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id27832" class="indexterm"></a>
+      <a id="id27834" class="indexterm"></a>
+      <a id="id27836" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2070"></a>5.44.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Photoshop is a well known image editor. This export dialog allows you
+      to export in Photoshop's native PSD format.
+    </p>
+        <p>
+      You can export your image in this format when you choose the
+      <span class="quote">“<span class="quote">.psd</span>”</span> extension, or explicitly choose <span class="quote">“<span class="quote">Photoshop
+      image</span>”</span> as file type in the export dialog.
+    </p>
+        <p>
+      Some considerations when exporting to a PSD. Not all blending modes can
+      be converted to an exact equivalent between <acronym class="acronym">GIMP</acronym> and
+      Photoshop. For many blending modes, the
+      <a class="link" href="gimp-concepts-layer-modes-legacy.html" title="3. Legacy Layer Modes">legacy layer
+      modes</a> are closer to Photoshop's equivalents. However, legacy
+      layer modes do not support setting the
+      <a class="link" href="gimp-layer-new.html#gimp-layer-composite-mode">composite mode</a>.
+      Photoshop often uses the equivalent of our
+      <span class="guilabel">Clip to Backdrop</span> composite mode. There it is called
+      <span class="quote">“<span class="quote">Blend Clipped Layers as Group</span>”</span>. If you want to support
+      that, you should not use legacy layer modes.
+    </p>
+        <div class="figure">
+          <a id="id2071"></a>
+          <p class="title">
+            <strong>Figure 15.88. The Photoshop image Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-psd-dialog.png" alt="The Photoshop image Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2072"></a>5.44.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Export as CMYK</span>
+            </dt>
+            <dd>
+              <p>
+      If you have a <a class="link" href="glossary.html#glossary-cmyk" title="CMY, CMYK">CMYK</a> profile
+      assigned to your image as soft-proofing profile, this setting can
+      be checked to have your image exported using that CMYK profile.
+      This is sometimes required when you have your image professionally
+      printed. Your printing company will tell you if this is needed.
+    </p>
+              <p>
+      If this setting is disabled, you don't have a soft-proofing profile
+      set for this image yet. See assigning a
+      <a class="link" href="gimp-image-soft-proof-profile-assign.html" title="6.14. Soft-Proof Profile">Soft-Proof
+      Profile</a>.
+    </p>
+              <p>
+      The name of the CMYK profile that is assigned to this image will
+      be shown below this setting.
+    </p>
+            </dd>
+            <dt>
+              <span class="term">Metadata (edit)</span>
+            </dt>
+            <dd>
+              <p>
+        You can click the <span class="quote">“<span class="quote">(edit)</span>”</span> link to open the
+        <a class="link" href="plug-in-metadata-editor.html" title="6.39. Metadata Editor">metadata editor</a>
+        to change or add any metadata that you want to be
+        included in the image. Note: you will also still need to
+        enable the relevant metadata saving options listed below.
+      </p>
+              <p>
+        The metadata settings in the export dialog override the default values
+        set in your <a class="link" href="gimp-prefs-import-export.html#gimp-metadata-export-policies" title="Export Policies">Metadata
+        Export Preferences</a>.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save Exif data</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, EXIF metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save IPTC data</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, IPTC metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save XMP data</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, XMP metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save color profile</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, the color profile will be saved in
+        the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save thumbnail</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled a thumbnail will be saved
+        in the exported image as part of the EXIF metadata. This will also cause
+        certain EXIF tags to be saved, even if you have disabled saving
+        EXIF metadata.
+      </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-ps-export.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-qoi-export.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-ps-export.html">5.43. Export Image as PostScript</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-qoi-export.html">5.45. Export Image as Qoi</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

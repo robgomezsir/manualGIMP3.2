@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.54. Diálogo de exportar imagem</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-tim-export.html" title="5.53. Export Image as Playstation TIM" />
+    <link rel="next" href="file-xbm-export.html" title="5.55. Export Image as X BitMap" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.54. Diálogo de exportar imagem</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-tim-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-xbm-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-webp-export"></a>5.54. Diálogo de exportar imagem</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id29463" class="indexterm"></a>
+      <a id="id29465" class="indexterm"></a>
+      <a id="id29467" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3355"></a>5.54.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3356"></a>
+          <p class="title">
+            <strong>Figura 15.95. O diálogo de Exportar imagem</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-webp-dialog.png" alt="O diálogo de Exportar imagem" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3357"></a>5.54.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Tipo de origem</span>
+            </dt>
+            <dd>
+              <p>Isso seleciona o tipo de imagem que você está tentando exportar. Presumivelmente isso ajudará a decidir a melhor maneira de comprimir a imagem.</p>
+              <p>As opções são: <span class="guilabel">Padrão</span>, <span class="guilabel">Imagem</span> para fotos digitais, como retratos ou fotos internas, <span class="guilabel">Foto</span> para fotografia ao ar livre com iluminação natural, <span class="guilabel">Desenho</span> para desenho à mão ou linha, com detalhes de alto contraste, <span class="guilabel">Ícone</span> para imagens coloridas de tamanho pequeno, e <span class="guilabel">Texto</span> para imagens que contêm principalmente texto.</p>
+            </dd>
+            <dt>
+              <span class="term">Sem perda</span>
+            </dt>
+            <dd>
+              <p>Quando marcado, a imagem será salva de forma a manter a qualidade original. Isso desabilita as configurações <span class="guilabel">Qualidade da imagem</span> e <span class="guilabel">Qualidade do alfa</span>. Quando desmarcado, a imagem será salva com base nas configurações de qualidade abaixo, o que pode causar alguma perda de qualidade, mas em uma melhor taxa de compressão. Este é o padrão.</p>
+            </dd>
+            <dt>
+              <span class="term">Image quality, </span>
+              <span class="term">Alpha quality</span>
+            </dt>
+            <dd>
+              <p>Estas configurações determinam em que qualidade a imagem será salva. Uma qualidade de imagem mais alta geralmente significa um tamanho de arquivo maior. Quando o tamanho do arquivo é importante, você pode verificar se uma qualidade menor ainda é suficiente para seus propósitos.</p>
+            </dd>
+            <dt>
+              <span class="term">Use Sharp YUV</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, a sharper and more accurate RGB to YUV conversion
+            method is used to export the image. This can better preserve fine
+            details like thin lines in the final image. Setting this option
+            can increase the export time for an image, and it is only
+            available when <span class="guilabel">Lossless</span> is not checked.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save animation</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, an animation will be created, where each layer is a
+            separate frame in the animation.
+          </p>
+              <p>
+            When working on an animation, the name of the layer can be used
+            to specify certain parameters. For more details see
+            <a class="link" href="export-file-formats.html#gimp-exporting-animations" title="5.5.1. Exporting Animations">exporting animations</a>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Metadados (editar)</span>
+            </dt>
+            <dd>
+              <p>
+        You can click the <span class="quote">“<span class="quote">(edit)</span>”</span> link to open the
+        <a class="link" href="plug-in-metadata-editor.html" title="6.39. Metadata Editor">metadata editor</a>
+        to change or add any metadata that you want to be
+        included in the image. Note: you will also still need to
+        enable the relevant metadata saving options listed below.
+      </p>
+              <p>
+        The metadata settings in the export dialog override the default values
+        set in your <a class="link" href="gimp-prefs-import-export.html#gimp-metadata-export-policies" title="Export Policies">Metadata
+        Export Preferences</a>.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar dados de EXIF</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, EXIF metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar dados XMP</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, IPTC metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar dados XMP</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, XMP metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Conta gotas</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, the color profile will be saved in
+        the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Miniatura da camada</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled a thumbnail will be saved
+        in the exported image as part of the EXIF metadata. This will also cause
+        certain EXIF tags to be saved, even if you have disabled saving
+        EXIF metadata.
+      </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-tim-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-xbm-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-tim-export.html">5.53. Export Image as Playstation TIM</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-xbm-export.html">5.55. Export Image as X BitMap</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.4. Export File</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="gimp-save-dialog.html" title="5.3. Save File" />
+    <link rel="next" href="export-file-formats.html" title="5.5. Export File Formats" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.4. Export File</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-save-dialog.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="export-file-formats.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-export-dialog"></a>5.4. Export File</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id25617" class="indexterm"></a>
+      <p>
+    <acronym class="acronym">GIMP</acronym> uses the Save command only for saving images in
+    its native XCF format. When you need your image in a different file format,
+    you can use the Export command.
+  </p>
+      <div class="figure">
+        <a id="id1978"></a>
+        <p class="title">
+          <strong>Figure 15.61. Export Image Dialog</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/dialogs/export-image-dialog.png" alt="Export Image Dialog" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1979"></a>5.4.1. Activating the Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command in the main menu through
+          <span class="guimenu">File</span> → <span class="guimenuitem">Export As…</span>,
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          or from the keyboard by using the shortcut
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>E</strong></span>.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1980"></a>5.4.2. The Export Image Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      In the file browser, you can edit filename and extension directly in the
+      <span class="guilabel">Name</span> field (default is <span class="quote">“<span class="quote">Untitled.png</span>”</span>)
+      or by selecting an existing file to override in name list. Navigate the
+      folders if you prefer a different image destination. You can also create
+      a new folder if necessary.
+    </p>
+        <p><strong>Select File Type. </strong>
+        If you expand this option, you can select the file format and related
+        file extension for your file in the list.
+      </p>
+        <p>
+      File formats dialogs are described in
+        <a class="xref" href="gimp-images-out.html#gimp-using-fileformats" title="1. Files">Section 1, “Files”</a>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="exporting-image"></a>5.4.3. Exporting</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      When file name and destination are set, click on
+      <span class="guibutton">Export</span>. This opens the export dialog for the
+      specified file format.
+    </p>
+        <a id="gimp-export-confirm-dialog"></a>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the name you entered already existed, you will be asked if you
+        want to overwrite that file or not. If a layer mask or channel is
+        selected instead of a layer, and the export format does not support
+        this, you will be asked for confirmation.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+      If you have loaded a non-XCF file, the
+      <span class="guimenu">File</span> → <span class="guimenuitem">Overwrite</span>
+      command (followed by the file name) allows you to overwrite the
+      original file, keeping its file format.
+    </p>
+        <p>
+      If you modify an image that you already have exported before, the
+      <span class="guimenu">File</span> → <span class="guimenuitem">Export to</span>
+      command (followed by the file name) allows you to export the file
+      again in the same file format.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-save-dialog.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="export-file-formats.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-save-dialog.html">5.3. Save File</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="export-file-formats.html">5.5. Export File Formats</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

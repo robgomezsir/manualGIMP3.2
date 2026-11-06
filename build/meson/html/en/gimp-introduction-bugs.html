@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Appendix A. Reporting Bugs and Requesting Enhancements</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="prev" href="bibliography.html" title="Bibliography" />
+    <link rel="next" href="gimp-bug-report.html" title="2. Reporting the Bug" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Appendix A. Reporting Bugs and Requesting Enhancements</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="bibliography.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span> </span>
+        <nav> <a accesskey="n" href="gimp-bug-report.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="appendix">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h1 class="title"><a id="gimp-introduction-bugs"></a>Appendix A. Reporting Bugs and Requesting Enhancements</h1>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Table of Contents</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-introduction-bugs.html#gimp-bug-confirm">1. Making sure it's a Bug</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-bug-report.html">2. Reporting the Bug</a>
+            </span>
+          </dt>
+        </dl>
+      </div>
+      <a id="id64034" class="indexterm"></a>
+      <a id="id64037" class="indexterm"></a>
+      <p>
+    Sad to say, no version of <acronym class="acronym">GIMP</acronym>
+    has yet been absolutely perfect. Even sadder, it is likely that no version
+    ever will be. In spite of all efforts to make everything work, a program
+    as complicated as <acronym class="acronym">GIMP</acronym>
+    is bound to screw things up occasionally, or even crash.
+  </p>
+      <p>
+    But the fact that bugs are unavoidable does not mean that they should be
+    passively accepted. If you find a bug in <acronym class="acronym">GIMP</acronym>, the
+    developers would like to know about it so they can at least try to fix it.
+  </p>
+      <p>
+    Suppose, then, that you have found a bug, or at least think you have: you
+    try to do something, and the results are not what you expect. What should
+    you do? How should you report it?
+  </p>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Tip]" src="images/tip.png" />
+            </td>
+            <th align="left">Tip</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      The procedure for making an <span class="emphasis"><em>enhancement
+      request</em></span>—that is, for asking the developers to add a
+      missing feature—is the same as the procedure for reporting
+      a bug.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>
+    In common with many other free software projects,
+    <acronym class="acronym">GIMP</acronym> uses a bug-reporting mechanism called
+    <span class="emphasis"><em>GitLab</em></span>.
+    This is a very powerful web-based system, capable of managing thousands
+    of bug reports without losing track. In fact, <acronym class="acronym">GIMP</acronym>
+    shares its GitLab database with the entire Gnome project.
+  </p>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-bug-confirm"></a>1. Making sure it's a Bug</h2>
+            </div>
+          </div>
+        </div>
+        <p>
+      The first thing you should do, before reporting a bug, is to make
+      an effort to verify that what you are seeing really
+      <span class="emphasis"><em>is</em></span> a bug.  It is hard to give a method for
+      doing this that applies to all situations, but reading the
+      documentation will often be useful, and discussing the question on
+      IRC or on Discourse may also be quite helpful.  If you are
+      seeing a <span class="emphasis"><em>crash</em></span>, as opposed to mere
+      misbehavior, the odds that it is a true bug are pretty high: well
+      written software programs are not designed to crash under
+      <span class="emphasis"><em>any</em></span> circumstances.  In any case, if you have
+      made a conscious effort to decide whether it is really a bug,
+      and at the end still aren't sure, then please go ahead and report
+      it:  the worst that can happen is that you will waste a bit of
+      time for the development team.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        Actually there are a few things that are known to cause
+        <acronym class="acronym">GIMP</acronym> to crash but have turned out to be too
+        inconvenient to be worth fixing.  One of them is asking
+        <acronym class="acronym">GIMP</acronym> to do something that requires vast amounts of
+        memory, such as creating an image one million pixels on a side.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+      You should also make sure that you are using an up-to-date version
+      of <acronym class="acronym">GIMP</acronym>: reporting bugs that have already been
+      fixed is just a waste of everybody's time.  (<acronym class="acronym">GIMP</acronym> 1
+      is no longer maintained, so if you use it and find bugs, either
+      upgrade to <acronym class="acronym">GIMP</acronym> 2 or live with
+      them.)  Particularly if you are using the development version of
+      <acronym class="acronym">GIMP</acronym>, make sure that you can see the bug in the
+      latest release before filing a report.
+    </p>
+        <p>
+      If after due consideration you still think you have a legitimate
+      bug report or enhancement request, the next step is to go to
+      <acronym class="acronym">GIMP</acronym>'s list of issues
+      (<a class="ulink" href="https://gitlab.gnome.org/GNOME/gimp/issues/" target="_top">https://gitlab.gnome.org/GNOME/gimp/issues/</a>),
+      and try to see whether somebody else has already reported the same
+      thing.
+    </p>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="bugzilla-find-specific-bug"></a>Find a Specific Bug</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+        Enter some (space separated) search terms, e.g.
+        </p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <p>
+          <strong class="userinput"><code>filter crash</code></strong>
+          </p>
+            </blockquote>
+          </div>
+          <p>
+        in the "Search or filter results..." text box and press Enter. By
+        default you only see open reports; you can change this by clicking "All"
+        above the search field.
+      </p>
+          <p>
+        The result is either a list of bug reports – hopefully not too
+        long – or a message saying <span class="quote">“<span class="quote">Sorry, your filter produced no
+        results</span>”</span>. If you
+        don't find a related bug report by doing this, it may be worth trying
+        another search with different terms. If in spite of your best efforts,
+        you file a bug report and it ends up being closed as a
+        duplicate, don't be too upset: it has happened
+        repeatedly to the author of this documentation.
+      </p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="bibliography.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-bug-report.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="bibliography.html">Bibliography</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-bug-report.html">2. Reporting the Bug</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

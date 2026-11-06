@@ -1,0 +1,1149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--Section History
+  2007-07-14 bug fixed in Color Erase
+  2007-01-19 lexA: moved en over from the glossary
+  2007-01-13 lexA: relocated from the layer dialog and added
+                   examples and equations
+  2006-09-06 scb: thorough review and/or rewrite of English
+-->
+<sect1 id="gimp-concepts-layer-modes">
+  <title>Modos de Camada</title>
+
+  <indexterm>
+    <primary>Camada</primary>
+    <secondary>Modos</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Modos de Camada</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Camada</primary>
+    <secondary>Combinando modos de camadas</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Combinando modos de camadas</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Modos das Camadas</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Cor</primary>
+    <secondary>Combinando modos de camadas</secondary>
+  </indexterm>
+
+  <para>
+    <acronym>GIMP</acronym> has a wide variety of layer modes, split up in seven
+    groups: <link linkend="layer-mode-group-normal">Normal</link>,
+    <link linkend="layer-mode-group-lighten">Lighten</link>,
+    <link linkend="layer-mode-group-darken">Darken</link>,
+    <link linkend="layer-mode-group-contrast">Contrast</link>,
+    <link linkend="layer-mode-group-inversion">Inversion</link>,
+    <link linkend="layer-mode-group-hsv">HSV components</link>, and
+    <link linkend="layer-mode-group-lch">LCh components</link>.
+    In addition to these layer modes, there are also the so-called
+    <link linkend="gimp-concepts-layer-modes-legacy">legacy layer modes</link>,
+    which were used before <acronym>GIMP</acronym> 2.10.
+  </para>
+  <para>
+    These legacy layer modes are still available, both for backwards
+    compatibility with saved images from older GIMP versions, and also for
+    specific effects, or for compatibility with other image formats, e.g.
+    Photoshop PSD. In general, they are not used when creating new images.
+  </para>
+  <para>O <acronym>GIMP</acronym> possui 21 modos de camada. Modos de camada também são chamados de <quote>modos de mistura</quote>. Selecionar um modo de camada vai alterar a aparência da camada ou da imagem, com base no que está visível abaixo dessa camada . Se existe apenas uma camada, o modo de camada em geral não tem nenhum efeito (exceto para o modo <quote>Dissolver</quote>). Portanto, deve haver pelo menos duas camadas, para que a imagem seja capaz de utilizar modos de camada.</para>
+  <para>
+    In addition to the generic layer modes, there is one more layer mode called
+    <quote>Pass through</quote>, which is only available for
+    <link linkend="gimp-layer-groups">group layers</link>.
+  </para>
+  <para>
+    <guilabel>Pass through</guilabel> mode, is less a blending mode in and of
+    itself than an instruction for the group as a whole: it indicates that
+    layers inside the group are to be rendered in combination with other layers
+    below the group, instead of being rendered separately from them.
+  </para>
+  <para>
+    For more details about <guilabel>Pass through</guilabel>, see
+    <xref linkend="glossary-pass-through"/> in the Glossary.
+  </para>
+
+  <para>Você pode definir o modo de camada no menu de <guilabel>Modo</guilabel> no diálogo de Camadas. O <acronym>GIMP</acronym> utiliza o modo de camada para determinar como combinar cada pixel na camada superior com o elemento de imagem no mesmo local na camada inferior.</para>
+  <note>
+    <para>Há uma lista flutuante no diálogo de <quote>opções de ferramentas</quote> que contém os modos que afetam as ferramentas de pintura de forma semelhante aos modos de camada. Você pode usar os mesmos modos de pintura que estão disponíveis para as camadas, e ainda há dois modos adicionais apenas para as ferramentas de pintura. Veja <xref linkend="gimp-tools-brush"/>.</para>
+  </note>
+  <para>Modos de camada permitem mudanças de cor complexas na imagem. Muitas vezes eles são usados com uma nova camada que atua como um tipo de máscara. Por exemplo, se você colocar uma camada branca sólida sobre uma imagem e definir o modo de camada dessa nova camada para <quote>Saturação</quote>, as camadas subjacentes visíveis aparecerão em tons de cinza.</para>
+
+  <figure>
+    <title>Imagens (máscaras) para exemplos de modos de camada</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/using/duck_orig.png" format="PNG"/>
+      </imageobject>
+      <caption>
+        <para>Camada de Fundo</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/using/original-layer-modes-mask.png"/>
+      </imageobject>
+      <caption>
+        <para>Modos das Camadas</para>
+      </caption>
+    </mediaobject>
+  </figure>
+
+  <para>Os exemplos abaixo mostram os efeitos de cada um dos modos.</para>
+  <para>Uma vez que os resultados de cada modo variam muito, dependendo das cores das camadas, essas imagens só podem dar uma idéia geral de como funcionam os modos. Você é encorajado a experimentá-los. Você pode começar com duas camadas similares, onde uma é cópia da outra, mas modificando-a ligeiramente (deixe a desfocada, movida, girada, redimensionada, inverta a cor, etc) e veja o que acontece em vários dos modos de camada.</para>
+
+  <sect2 id="layer-mode-group-normal">
+    <title>Modos de Camada</title>
+    <para>O grupo <quote>Normal</quote> é um tanto improprio. A maioria dos modos, exceto <quote>Normal</quote>, são modos de <emphasis>cancelamento</emphasis>.</para>
+    <variablelist>
+      <varlistentry id="layer-mode-normal">
+        <term>Normal</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Normal</secondary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Normal</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-normal-50.jpg"/>
+              </imageobject>
+              <caption>
+                <para>A camada superior está com 50% de Opacidade.</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-normal-100.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Com 100% de opacidade apenas a camada superior é mostrada quando a combinação é feita no modo <quote>Normal</quote>. </para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Normal</guilabel> é o modo da camada padrão. A camada em cima cobre as camadas abaixo dela. Se você quer ver qualquer coisa abaixo da camada superior quando você usar este modo, a camada deve ter algumas áreas transparentes.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-dissolve">
+        <term>Dissolver</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Dissolver</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Dissolver</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Dissolver</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-dissolve-50.jpg"/>
+              </imageobject>
+              <caption>
+                <para>A camada superior está com 50% de Opacidade. O efeito de <quote>Dissolver</quote> é visível em todos os lugares, exceto em áreas completamente transparentes.</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-dissolve-100.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Com 100% de opacidade apenas a camada superior é mostrada quando se está usando o modo <quote>dissolver</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Dissolver</guilabel> dissolve a camada superior na camada abaixo dela pelo desenho de um padrão aleatório de pixels em áreas de transparência parcial. É útil como um modo de camada, mas geralmente também é útil como um modo de pintura.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-color-erase">
+        <term>Pincéis coloridos</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Pincéis coloridos</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Pincéis coloridos</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Cor</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/using/default-layer-mode-color-erase.png"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Apagar Cor</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Apagar Cor</guilabel> apaga as cores da camada superior da camada inferior. Pixels pretos na camada superior tornam essas partes na camada inferior transparentes, enquanto pixels brancos não têm efeito. Tudo o que está entre eles remove essas cores específicas da camada inferior, deixando os outros componentes de cor intactos.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-erase">
+        <term>Apagar</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Apagar</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Apagar</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>valor</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/using/default-layer-mode-erase.png"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Apagar</quote>. As partes brancas aqui são transparentes.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Cor</guilabel> usa o matiz e a saturação da camada superior e o valor da camada inferior para formar a imagem resultante.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-merge">
+        <term>Mesclar</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Mesclar</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Mesclar</primary>
+          </indexterm>
+            <figure>
+            <title>Exemplo para o modo de camada <quote>Sub-exposição</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-merge.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Mesclar</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>
+            <guilabel>Merge</guilabel>
+            mode sums opacity values during blending and can yield 100% opacity
+            in cases where Normal does not, like when blending cut-and-pasted
+            content with soft edges whose opacities are mutually exclusive from
+            each other.
+          </para>
+          <para>
+            This mode is commutative if (but <emphasis>only if</emphasis>)
+            the total opacity between both layers is 100% or less.
+            Otherwise, especially for content that already has 100% opacity,
+            Merge yields the same result as Normal.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-split">
+        <term>Dividir</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Dividir</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Dividir</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Luz suave</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/using/default-layer-mode-split.png"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Dividir</quote>. As partes brancas aqui são transparentes.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>
+            <guilabel>Split</guilabel>
+            mode is the inverse of Merge: it subtracts the top layer's opacity
+            from the bottom layer. This can yield full transparency in cases
+            where Erase does not, like if erasing a value of 50% opacity from
+            a layer containing 50% opacity.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="layer-mode-group-lighten">
+    <title>Modos de Camada</title>
+    <para>O grupo <quote>Clarear</quote> contém modos de camada que deixam o resultado mais claro.</para>
+    <variablelist>
+      <varlistentry id="layer-mode-lighten-only">
+        <term>Somente clarear</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Somente clarear</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Somente clarear</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camadas <quote>Somente clarear</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-lighten-only.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para modo de camadas <quote>Somente clarear</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guimenuitem>Somente clarear</guimenuitem> compara cada componente de cada pixel na camada superior com o correspondente na camada inferior e utiliza o valor maior na imagem resultante. Camadas completamente pretas não têm efeito sobre a imagem final e camadas completamente brancas resultam em uma imagem branca.</para>
+          <para>Este modo é comutativo; não importa a ordem das duas camadas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-luma-luminance-lighten-only">
+        <term>Somente clarear</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Somente clarear</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Somente clarear</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camadas <quote>Somente clarear</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-luma-lighten-only.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Apenas Clarear Luma/Luminância</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guimenuitem>Somente clarear</guimenuitem> compara cada componente de cada pixel na camada superior com o correspondente na camada inferior e utiliza o valor maior na imagem resultante. Camadas completamente pretas não têm efeito sobre a imagem final e camadas completamente brancas resultam em uma imagem branca.</para>
+          <para>Este modo é comutativo; não importa a ordem das duas camadas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-screen">
+        <term>Esconder</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Esconder</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Esconder</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Esconder</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-screen.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Esconder</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Esconder</guilabel> inverte os valores de cada um dos pixels visíveis nas duas camadas da imagem. (Isto é, ela subtrai cada componente deles de 255). Em seguida, ele os multiplica entre si, divide por 255 e inverte este valor novamente. A imagem resultante é geralmente mais brilhante, e às vezes de aparência <quote>lavada</quote>. As exceções a isto são as camadas em preto, o que não altera a outra camada, e uma camada em branco, o que resulta em uma imagem branca. Cores mais escuras na imagem aparentam ser transparentes.</para>
+          <para>Este modo é comutativo; não importa a ordem das duas camadas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-dodge">
+        <term>Sub-exposição</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Sub-exposição</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Sub-exposição</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Sub-exposição</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-dodge.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Dodging</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Sub-exposição</guilabel> multiplica o valor do pixel da camada inferior por 256, que então divide pelo inverso do valor do pixel da camada superior. A imagem resultante é geralmente mais clara, mas algumas cores podem ser invertidas.</para>
+          <para>Na fotografia, a sub-exposição é uma técnica usada em uma câmara escura para diminuir a exposição em áreas específicas da imagem. Isso traz a tona detalhes as sombras. Quando utilizado para este fim, o modo Sub-exposição pode trabalhar melhor em imagens em tons de cinza e com uma ferramenta de pintura, em vez de um modo de camada.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-addition">
+        <term>Adição</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Adição</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Adição</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Adicionar</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-addition.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Adicionar</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Adicionar</guilabel> é muito simples. Os valores de pixel da camadas superior e inferior são adicionados uns aos outros. A imagem resultante é geralmente mais clara. A equação pode resultar em valores de cores maiores que 255, portanto, algumas das cores claras podem ser ajustadas para o valor máximo de 255.</para>
+          <para>Este modo é comutativo; não importa a ordem das duas camadas.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="layer-mode-group-darken">
+    <title>Modos de Camada</title>
+    <para>O grupo <quote>Escurecer</quote> contém modos de camada que deixam o resultado mais escuro.</para>
+    <variablelist>
+      <varlistentry id="layer-mode-darken-only">
+        <term>Somente escurecer</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Somente escurecer</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Somente escurecer</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camadas <quote>Somente escurecer</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-darken-only.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camadas <quote>Somente escurecer</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guimenuitem>Somente escurecer</guimenuitem> compara cada componente de cada pixel na camada superior com o correspondente na camada inferior e usa o menor valor na imagem resultante. Camadas completamente brancas não têm efeito sobre a imagem final e camadas completamente pretas resultam em uma imagem preta. </para>
+          <para>Este modo é comutativo; não importa a ordem das duas camadas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-luma-luminance-darken-only">
+        <term>Apenas Escurecer Luma/Luminância</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Apenas Escurecer Luma/Luminância</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Apenas Escurecer Luma/Luminância</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camadas <quote>Somente escurecer</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-luma-luminance-darken-only.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Apenas Escurecer Luma/Luminância</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guimenuitem>Somente escurecer</guimenuitem> compara cada componente de cada pixel na camada superior com o correspondente na camada inferior e usa o menor valor na imagem resultante. Camadas completamente brancas não têm efeito sobre a imagem final e camadas completamente pretas resultam em uma imagem preta. </para>
+          <para>Este modo é comutativo; não importa a ordem das duas camadas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-multiply">
+        <term>Multiplicar</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Multiplicar</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Multiplicar</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Multiplicar</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-multiply.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Multiplicar</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Multiplicar</guilabel> multiplica os valores dos componentes dos pixels da camada superior com os da camada inferior e então divide o resultado por 255. O resultado é geralmente uma imagem mais escura. Se qualquer camada é branca, a imagem resultante é o mesma que a outra camada (1 * I = I). Se qualquer camada é preto, a imagem resultante é completamente preta (0 * I = 0).</para>
+          <para>Este modo é comutativo; não importa a ordem das duas camadas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-burn">
+        <term>Super-exposição</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Super-exposição</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Super-exposição</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Super-exposição</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-burn.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Queimar</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Super-exposição</guilabel> inverte o valor do pixel da camada inferior, multiplica-o por 256, divide por um mais o valor do pixel da camada superior e, em seguida inverte o resultado. Ele tende a tornar a imagem mais escura, um pouco semelhante ao modo <quote>Multiplicação</quote>.</para>
+          <para>Na fotografia, a Super-exposição é uma técnica usada em uma câmara escura para aumentar a exposição em áreas específicas da imagem. Isso torna visíveis mais detalhes nas partes claras. Quando utilizado para este fim, a Super-exposição pode funcionar melhor em imagens em tons de cinza e como uma ferramenta de pintura, em vez de um modo de camada.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-linear-burn">
+        <term>Queima Linear</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Queima Linear</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Queima Linear</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Super-exposição</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-linear-burn.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Queima Linear</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Super-exposição</guilabel> inverte o valor do pixel da camada inferior, multiplica-o por 256, divide por um mais o valor do pixel da camada superior e, em seguida inverte o resultado. Ele tende a tornar a imagem mais escura, um pouco semelhante ao modo <quote>Multiplicação</quote>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="layer-mode-group-contrast">
+    <title>Modos de Camada</title>
+    <para>O grupo <quote>Contraste</quote> contém modos de camada que aumentam o contraste.</para>
+    <variablelist>
+      <varlistentry id="layer-mode-overlay">
+        <term>Sobrepor</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Sobrepor</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Sobrepor</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Sobrepor</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-overlay.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Sobrepor</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Sobrepor</guilabel> inverte o valor do pixel da camada inferior, multiplica-o por duas vezes o valor do pixel da camada superior, adiciona isso ao valor original do pixel da camada inferior, divide por 255, e depois multiplica pelo valor do pixel da camada original inferior e divide por 255 novamente. O efeito geral é que ele escurece, a imagem, mas não tanto quanto com o modo <quote>Multiplicar</quote>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-soft-light">
+        <term>Luz suave</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Luz suave</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Luz suave</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Luz suave</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-soft-light.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Luz suave</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O Modo <guilabel>luz suave</guilabel> não está relacionado a <quote>luz dura</quote> em nada, além do nome, mas ele tende a fazer as bordas mais suaves e as cores não tão brilhantes. É semelhante ao modo <quote>Sobrepor</quote>. Em algumas versões do <acronym>GIMP</acronym>, o modo <quote>Sobrepor</quote> e o modo <quote>Luz suave</quote> são idênticos.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-hard-light">
+        <term>Luz dura</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Luz dura</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Luz dura</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camada <quote>Luz dura</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-hard-light.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para modo de camada <quote>Luz dura</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Luz dura</guilabel> é bastante complicado porque a equação é composta por duas partes, uma para cores mais escuras e outra para cores mais claras. Se a cor do pixel da camada superior é maior do que 128, as camadas são combinadas de acordo com a primeira fórmula mostrada abaixo. Caso contrário, os valores de pixel da camadas superior e inferior são multiplicados e multiplicado por dois, e divididos por 256. Você pode usar este modo de combinar duas fotografias e obter cores brilhantes e bordas nítidas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-vivid-light">
+        <term>Luz dura</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Luz dura</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Luz dura</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camada <quote>Luz dura</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-vivid-light.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Luz Viva</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Luz Viva</guilabel> aumenta o contraste muito fortemente, especialmente em realces e sombras. O efeito é uma combinação de Queimar (nas sombras) e Clarar (nos realces), além dos dobros nos denominadores. Este modo também consiste de duas partes, dependendo do valor do componente de cor, onde 0,5 é o limite, o mesmo que com Luz Firme. Se o valor da camada superior for menor ou igual a 0,5: divida o inverso da camada inferior por 2 vezes a camada superior e inverta o resultado. Se o resultado for menor que zero, retorne zero. Se o valor da camada superior for maior que 0,5: divida a camada inferior por duas vezes o inverso da camada superior. Se o resultado for maior que 1,0, retorne 1,0.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-pin-light">
+        <term>Luz dura</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Luz dura</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Luz dura</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Luz suave</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-pin-light.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Luz de Alfinete</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>
+            <guilabel>Pin light</guilabel>
+            mode is a combination of the Darken and Lighten modes. Mid-tone
+            regions remain almost uninfluenced.
+            If the component value of the upper layer is greater than 0.5:
+            subtract 0.5 from the upper layer and multiply by 2.0. Then the
+            result is the maximum from this value and the value of the lower
+            layer.
+            If the component value is less than or equal to 0.5: take the
+            minimum value of the lower layer and two times the upper layer.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-linear-light">
+        <term>Luz dura</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Luz dura</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Luz dura</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camada <quote>Luz dura</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-linear-light.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Luz Linear</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Luz Linear</guilabel> aumenta o contraste ligeiramente menos que a Luz Viva. Ele se assemelha a Queimar, mas com o dobro do impacto nos valores tonais do primeiro plano. Se o valor do componente for menor ou igual a 0,5: o resultado é a camada inferior mais duas vezes a camada superior menos 1,0. Se o valor do componente for maior que 0,5: subtraia 0,5 da camada superior e multiplique por 2,0, então adicione a camada inferior.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-hard-mix">
+        <term>Luz dura</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Luz dura</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Luz dura</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camada <quote>Luz dura</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-hard-mix.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Mistura Firme</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Mistura Firme</guilabel> contém apenas as seis cores primárias, preto e branco. Os componentes da camada superior e inferior são somados. Qualquer componente maior ou igual a 1,0 é definido como 1. Qualquer outra coisa é definida como 0.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="layer-mode-group-inversion">
+    <title>Combinando modos de camadas</title>
+    <para>O grupo <quote>Inversão</quote> contém modos de camada que invertem as cores de uma forma ou de outra.</para>
+    <variablelist>
+      <varlistentry id="layer-mode-difference">
+        <term>Diferença</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Diferença</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Diferença</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Diferença</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-difference.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Diferença</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Diferença</guilabel>subtrai o valor do pixel da camada superior da camada inferior e, em seguida, toma o valor absoluto do resultado. Não importa a aparência das duas primeiras camadas, o resultado pode parecer bastante estranho. Você pode usá-lo para inverter os elementos de uma imagem, criando uma camada completamente branca no modo <quote>Diferença</quote> por cima, por exemplo.</para>
+          <para>Este modo é comutativo; não importa a ordem das duas camadas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-exclusion">
+        <term>Exclusão</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Exclusão</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Exclusão</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Super-exposição</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-exclusion.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Exclusão</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Exclusão</guilabel> causa inversão na outra camada para regiões claras, regiões muito escuras não alteram nada. Desta forma, este modo se assemelha ao modo Diferença. No entanto, valores de cinza médio diminuem muito o contraste da outra camada respectiva, em casos extremos até zero.</para>
+          <para>Este modo é comutativo; não importa a ordem das duas camadas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-subtract">
+        <term>Subtrair</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Subtrair</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Subtrair</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Subtrair</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-subtract.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Subtrair</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Subtrair</guilabel> subtrai os valores de pixel da camada superior dos valores de pixel da camada inferior. A imagem resultante é, normalmente, mais escura. Você pode ter um monte de preto ou uma imagem resultante quase preta. A equação pode resultar em valores negativos para as cores mais escuras, portanto, elas serão ajustadas para o valor mínimo de 0.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-grain-extract">
+        <term>Extrair grãos</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Extrair grãos</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Extrair grãos</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para a camada de modo <quote>Extrair grãos</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-grain-extract.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para a camada de modo <quote>Extrair grãos</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O Modo <guilabel>Extrair grãos</guilabel> poderia extrair os <quote>grãos do filme</quote> de uma camada para a criação de uma nova camada que é composta só de grãos, mas também pode ser útil para dar as imagens uma aparência de relevo. Ele subtrai o valor do pixel da camada superior do pixel na camada inferior e adiciona 128.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-grain-merge">
+        <term>Mesclar grãos</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Mesclar grãos</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Mesclar grãos</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Mesclar grãos</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-grain-merge.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Mesclar grãos</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Mesclar grãos</guilabel> combina uma camada de grãos (possivelmente criada a partir do Modo <quote>Extrair grãos</quote> ) na camada atual, deixando uma versão granulada da camada original. Ele faz exatamente o oposto de <quote>Extrair de grãos</quote>. Ele adiciona os valores de pixels das camadas superior e inferior e subtrai 128.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="layer-mode-divide">
+        <term>Dividir</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Dividir</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Dividir</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Dividir</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-divide.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Dividir</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Dividir</guilabel> multiplica cada valor de pixel na camada inferior por 256 e depois divide pelo valor do pixel correspondente da camada superior mais um. (Ao adicionar um ao denominador evita-se a divisão por zero.) A imagem resultante é muitas vezes mais clara, e às vezes parece <quote>queimada</quote>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="layer-mode-group-hsv">
+    <title>Modos de Camada de Componentes HSV</title>
+    <para>
+      This group contains layer modes that blend layers using
+      properties of the <link linkend="glossary-hsv">HSV</link>
+      or <link linkend="glossary-hsl">HSL</link> color models.
+    </para>
+    <variablelist>
+      <varlistentry id="layer-mode-hsv-hue">
+        <term>Matiz HSV</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Matiz HSV</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Matiz HSV</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camadas <quote>Matiz</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-hsv-hue.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Matiz HSV</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Matiz</guilabel> utiliza o matiz da camada superior e a saturação e o valor da camada inferior para formar a imagem resultante. No entanto, se a saturação da camada superior é igual for zero, a tonalidade é retirada da camada inferior, também.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-hsv-saturation">
+        <term>Saturação</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Saturação</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Saturação</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Saturação</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-hsv-saturation.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Exemplo para o modo de camada <quote>Saturação</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Saturação</guilabel> utiliza a saturação da camada superior e o matiz e o valor da camada inferior para formar a imagem resultante.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-hsl-color">
+        <term>Cor</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Cor</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Cor</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Cor</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-hsl-color.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Cor HSL</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Cor</guilabel> usa o matiz e a saturação da camada superior e o valor da camada inferior para formar a imagem resultante.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-hsv-value">
+        <term>Valor</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Valor</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Valor</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>valor</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-hsv-value.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Valor HSV</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Valor</guilabel> utiliza o valor da camada superior e asaturação e o matiz da camada inferior para formar a imagem resultante. Você pode usar este modo para revelar detalhes em áreas escuras e claras de uma imagem sem alterar a saturação e as cores em geral.</para>
+      </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="layer-mode-group-lch">
+    <title>Modos de Camada de Componentes LCh</title>
+    <variablelist>
+      <para>O grupo <quote>LCh</quote> contém modos de camada que fazem uso do modelo de cor LCh. <quote>LCh</quote> significa Clareza, Croma, Matiz. É derivado matematicamente do espaço de cor de referência CIELAB. Veja também <ulink url="https://en.wikipedia.org/wiki/LCHab#CIEHLC_cylindrical_model">CIELCh</ulink>.</para>
+      <varlistentry id="layer-mode-lch-hue">
+        <term>Matiz LCh</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Matiz LCh</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Matiz LCh</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camadas <quote>Matiz</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-lch-hue.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Matiz LCh</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Matiz LCh</guilabel> corresponde ao Matiz HSV, mas é baseado em diferentes fórmulas matemáticas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-lch-chroma">
+        <term>Croma LCh</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Croma LCh</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Croma LCh</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Normal</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-lch-chroma.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Croma LCh</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Croma LCh</guilabel> corresponde à Saturação HSV, mas é baseado em diferentes fórmulas matemáticas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-lch-color">
+        <term>Cor</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Cor</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Cor</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para o modo de camada <quote>Cor</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-lch-color.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Cor LCh</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>
+            <guilabel>LCh Color</guilabel>
+            mode is a combination of LCh Chroma and LCh Hue, and corresponds to
+            HSV Color, but is based on different mathematical formulas.
+            See <ulink url="https://ninedegreesbelow.com/photography/gimp-lch-blend-modes.html">A tutorial on GIMP's very awesome LCH
+            Blend Modes</ulink> for information on using this layer mode.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-lch-lightness">
+        <term>Clareza LCh</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Clareza LCh</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Clareza LCh</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camadas <quote>Somente clarear</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-lch-lightness.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Clareza LCh</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>
+            <guilabel>LCh Lightness</guilabel>
+            mode corresponds to HSV Value, but is based on different
+            mathematical formulas. See <ulink url="https://ninedegreesbelow.com/photography/gimp-lch-blend-modes.html">A tutorial on GIMP's very
+            awesome LCH Blend Modes</ulink> for information on using this layer
+            mode.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="layer-mode-luminance">
+        <term>Luminância</term>
+        <listitem>
+          <indexterm>
+            <primary>Modos de Camada</primary>
+            <secondary>Luminância</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Luminância</primary>
+          </indexterm>
+          <figure>
+            <title>Exemplo para modo de camadas <quote>Matiz</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/using/default-layer-mode-luminance.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Camada superior em 100% de opacidade usando o modo <quote>Luminância</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>O modo <guilabel>Luminância</guilabel> é semelhante à luminância CIE, mas não altera a saturação. Ele divide a luminância da camada superior pela luminância da camada inferior; então usa esse resultado para multiplicar com o componente da camada inferior.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+</sect1>

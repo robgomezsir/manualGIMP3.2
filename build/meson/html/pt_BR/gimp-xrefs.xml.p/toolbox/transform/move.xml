@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-move">
+  <title>Mover</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Mover</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Mover</primary>
+  </indexterm>
+
+  <para>A ferramenta de Mover é usada para mover camadas, seleções, vetores guias e outros itens na imagem. Ela também funciona em textos.</para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagens, em:<menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de transformação</guisubmenu><guimenuitem>Mover</guimenuitem></menuchoice></para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-move.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>Ou usando o atalho de teclado <keycap>Q</keycap>.</para>
+      </listitem>
+      <listitem>
+        <para>A ferramenta de Mover é ativada automaticamente quando você cria uma guia.</para>
+        <note>
+          <indexterm>
+            <primary>Barra de espaço</primary>
+          </indexterm>
+          <para>
+            If the function of the <keycap>Space</keycap> bar is set to
+            <guilabel>Activate the Move tool</guilabel> (which is not the
+            default, but can be changed in your Preferences, see below), then
+            holding down the <keycap>Space</keycap> bar temporarily changes the
+            active tool to Move. The Move tool remains active as long as
+            the space bar is held down. The original tool is reactivated
+            after releasing the space bar.
+          </para>
+          <para>Pressionar a barra de  <keycap>espaço</keycap> muda  temporariamente a ferramenta ativa para a ferramenta de mover, voltando à ferramenta anterior em seguida. Para isso, em <menuchoice><guimenu>Editar</guimenu><guisubmenu>Preferências</guisubmenu><guisubmenu>Janelas de imagem</guisubmenu></menuchoice>a opção de <quote>Enquanto a barra de espaço estiver pressionada</quote> tem que estar configurada para <quote>Mudar para a ferramenta de Mover</quote>.</para>
+        </note>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/tool-options-move.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Mover</term>
+        <listitem>
+          <xi:include href="about-common-transform-options.xml"/>
+          <para>Tenham em mente que essas opções continuam valendo se você sai da ferramenta de Mover.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Modo da ferramenta (Shift)</term>
+        <listitem>
+          <variablelist>
+            <title>
+              <!--
+                Using a <phrase> prevents the <guiicon> from being included
+                in the "msgid" of the po file. So remove the <phrase> tags
+                only if necessary for translating.
+              -->
+              <phrase>Se a opção Mover está em <quote>Camada</quote></phrase>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-layer.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+            </title>
+            <varlistentry>
+              <term>Pegue uma camada ou guia</term>
+              <listitem>
+                <para>Em uma imagem com várias camadas, o ponteiro do mouse vira uma cruz quando ele passa sobre um elemento pertencente à camada ativa. Nesse ponto você pode clicar e arrastá-la. Se o ponteiro do mouse tem o formato de uma mão (mostrando que você <emphasis>não</emphasis> vai pegar um elemento da camada ativa), você irá mover uma outra camada, em vez da que está ativa. (Ela se torna a camada ativa enquanto estiver sendo movida).</para>
+                <para>Se existe uma guia na sua imagem, ela se tornará vermelha quando o ponteiro do mouse passar por cima dela. Nesse momento ela está ativa, e você poderá move-la.</para>
+                <para>
+                  At the point of intersection of two guides, you can 
+                  click-and-drag to move them together. This is useful when the 
+                  guides are used to mark a point, rather than a pair of lines 
+                  (e.g, as is the case for the mandala symmetry guides, which 
+                  mark the symmetry point of origin).
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Mover a camada atual</term>
+              <listitem>
+                <para>Somente a camada atual (a que está ativa) será movida. Isso é útil quando você quer mover uma camada com áreas transparentes, (por exemplo com texto), em que seria fácil clicar em uma camada errada. Também é a forma de se mover um grupo de camadas -  o outro modo da ferramenta move camadas individualmente, dentro do grupo.</para>
+                <note>
+                  <para>Você pode configurar o método padrão de interpolação na guia de <link linkend="gimp-prefs-tool-options">Opções de Ferramentas</link> do diálogo de Preferências.</para>
+                </note>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+          <variablelist>
+            <title>
+              <!-- see above -->
+              <phrase>Se a opção de Mover está em <quote>Seleção</quote></phrase>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-selection.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+            </title>
+            <para>A linha pontilhada da seleção será movida (veja <xref linkend="gimp-using-selections-moving"/>).</para>
+            <varlistentry>
+              <term/>
+              <listitem><para/></listitem>
+            </varlistentry>
+          </variablelist>
+          <variablelist>
+            <title>
+              <!-- see above -->
+              <phrase>Se a opção mover estiver em <quote>Vetor</quote></phrase>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-path.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+            </title>
+            <varlistentry>
+              <term>Pegar um vetor</term>
+              <listitem>
+                <para>Esta é a opção padrão. O ponteiro do mouse se torna uma pequena mão quando ele está sobre um <link linkend="gimp-path-dialog-using">vetor visível</link>. Então você pode move-lo clicando e arrastando o mesmo na imagem (ele será o vetor ativo enquanto estiver sendo movido)</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Mover o vetor ativo</term>
+              <listitem>
+                <para>Somente o vetor ativo será movido, mesmo que ele não seja visível. Você pode escolher o vetor ativo no <link linkend="gimp-path-dialog">Diálogo de vetores</link></para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Sumário das ações da ferramenta Mover</title>
+    <variablelist>
+      <varlistentry>
+        <term>Movendo uma seleção</term>
+        <listitem>
+          <para>A ferramenta de mover permite que você mova apenas o contorno da seleção (internamente, todos os valores representando a máscara de seleção). Se o modo de Mover estiver em <quote>Camada</quote>, você deve manter as teclas <keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap></keycombo> pressionadas.</para>
+          <para>Se o modo de Mover for Seleção, você pode clicar e arrastar em qualquer ponto na tela de pintura para mover a seleção. Você também poderá usar as teclas seta para mover a seleção com precisão. E então, se mantiver a tecla <keycap>Shift</keycap> pressionada, o movimento ocorre em incrementos de 25 pixels.</para>
+          <para>Quando você move uma seleção com a ferramenta Mover, o centro da seleção é marcado com uma pequena cruz. Tanto essa cruz quanto as bordas da seleção são atraídas para guias ou linhas da grade, se as opções de <menuchoice><guimenu>Visualizar</guimenu><guimenuitem>Atrair para as guias (ou grade)</guimenuitem></menuchoice> estiverem ligadas. Isso faz com que alinhar seleções seja mais fácil.</para>
+          <para>Consulte <link linkend="gimp-using-selections-moving">Movendo seleções</link> para outras possibilidades.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Movendo uma camada</term>
+        <listitem>
+          <indexterm>
+            <primary>Camada</primary>
+            <secondary>Mover</secondary>
+          </indexterm>
+          <para>O modo de Mover deve estar em <quote>Camada</quote>. Então você pode escolher entre <guilabel>Mover a camada ativa</guilabel> e, se você tiver mais de uma camada <guilabel>Pegue uma camada ou guia</guilabel></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Movendo camadas vinculadas</term>
+        <listitem>
+          <para>Se as camadas estiverem vinculadas (com o ícone de corrente, não em um mesmo grupo de camadas), todas serão movidas, não importando qual é a camada ativa. Para camadas no mesmo grupo, o grupo deve estar ativo no diálogo de camadas, e a ferramenta de Mover deve usar o modo de <quote>Mover a camada atual</quote></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Movendo uma guia</term>
+        <listitem>
+          <indexterm>
+            <primary>Guia</primary>
+            <secondary>Mover</secondary>
+          </indexterm>
+          <para>Quando você puxa uma guia de uma régua, a ferramenta de Mover é ativada automaticamente (se você não desejar esse efeito, por estar pintando próximo das bordas da janela com outra ferramenta, a solução é desligar temporariamente a visualização das réguas no menu <quote>Visualizar</quote>). Se a guia já existe na imagem, para move-la, você deve ativar a ferramenta de mover você mesmo. Quando o ponteiro do mouse passa sobre uma guia, ela fica vermelha, então você pode clicar e arrastar para posicionar a guia na imagem, ou remove-la (bastando move-la para fora da área da tela de pintura).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Movendo um vetor</term>
+        <listitem>
+          <indexterm>
+            <primary>Vetor</primary>
+            <secondary>Mover</secondary>
+          </indexterm>
+          <para>O diálogo da ferramenta de vetores tem sua própria funcionalidade de mover: veja  <xref linkend="gimp-tool-path"/>. Mas você também pode usar a ferramenta de Mover. O modo de Mover deve estar marcado como <quote>Vetor</quote>. Note que se você estava editando um vetor, ele fica invisível: torne o visível no Diálogo de vetores. Você pode escolher o vetor a ser movido, ou mover o vetor ativo.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Movendo texto</term>
+        <listitem>
+          <indexterm>
+            <primary>Texto</primary>
+            <secondary>Mover</secondary>
+          </indexterm>
+          <para>Todo texto criado no GIMP fica em sua própria camada, e pode ser movido como uma camada. Consulte <xref linkend="gimp-tool-text"/>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

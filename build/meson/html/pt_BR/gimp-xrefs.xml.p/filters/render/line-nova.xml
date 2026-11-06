@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="script-fu-line-nova">
+  <title>Explosão de linhas</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Explosão de linhas</tertiary>
+  </indexterm>
+  <indexterm><primary>Explosão de linhas</primary></indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+
+    <figure>
+      <title>Exemplo para a filtro <quote>Explosão de linhas</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render/taj-line-nova.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <para>O filtro de Explosão de linhas preenche uma camada com raios emanando para fora do centro da camada usando a cor de primeiro plano mostrada na Caixa de ferramentas. Os raios começam com um pixel de largura e se alargam na direção das bordas da camada.</para>
+    <tip>
+      <para>Este filtro não fornece nenhuma opção que permita definir o ponto central das linhas. Se você precisar  ajustar o lugar das linhas radiais onde quiser, crie uma outra imagem transparente e aplique esse filtro na mesma, em seguida, copie a camada com as linhas para a imagem desejada . Defina um tamanho grande para a nova imagem para não quebrar linhas dentro da sua imagem, se quiser que elas se estendam até as bordas.</para>
+    </tip>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guimenuitem>Line Nova…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções para o filtro <quote>Explosão de linhas</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/line-nova.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <variablelist>
+      <varlistentry>
+        <term>Número de linhas</term>
+        <listitem>
+          <para>Ao usar esta opção, você pode definir o número de linhas entre 40 e 1000. O padrão é 200.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ângulo das pontas</term>
+        <listitem>
+          <para>Esse controle determina o quanto os raios vão ser ampliados na direção das bordas: cada raio é um triângulo com esse ângulo na ponta mais fina. A escala vai de 0,0 até 10,0. Se for definido como 0.0, nada será desenhado. Se for deixado como 10,0, a maior parte da área perto das extremidades será pintada.</para>
+          <figure>
+            <title>Opção de Ângulo das pontas de <quote>Explosão de linhas</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/render/line-nova-sharp.png"/>
+                </imageobject>
+                <caption>
+                  <para>Da esquerda para a direita: ângulo = 1; ângulo = 5; ângulo = 10</para>
+                </caption>
+              </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio de deslocamento</term>
+        <listitem>
+          <para>Aqui você escolhe a distância, em pixels, do centro ao ponto de de início dos raios. Se for definido como 0,0 os raios começam a partir do centro. Qualquer outro valor fará com que os pontos de partida sejam em um círculo na distância selecionada a partir do centro. A distância máxima é de 2000 pixels. O valor padrão é 100 pixels.</para>
+           <figure>
+             <title><quote>Explosão de linhas</quote>, opção de Raio de deslocamento</title>
+             <mediaobject>
+               <imageobject>
+                 <imagedata format="PNG" fileref="images/filters/examples/render/line-nova-radius.png"/>
+                 </imageobject>
+               <caption>
+                 <para>Da esquerda para a direita: Raio de deslocamento = 0; Raio de deslocamento = 50</para>
+               </caption>
+             </mediaobject>
+           </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fator aleatório</term>
+        <listitem>
+          <para>Se esse controle é ajustado para um valor maior que 1, o ponto de partida para cada raio varia, aleatoriamente,  do ponto médio inicial definido como o raio do deslocamento, acima. Com o valor definido como 1, todos os raios começarão exatamente no círculo determinado pelo raio  do deslocamento. O valor máximo é de 2000. O valor padrão é 30.</para>
+          <figure>
+            <title>Opção Fator aleatório de <quote>Explosão de linhas</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/render/line-nova-rand.png"/>
+              </imageobject>
+              <caption>
+                <para>Da esquerda para a direita: Fator aleatório = 1; Fato aleatório = 50</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

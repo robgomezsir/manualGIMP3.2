@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-09-30 j.h : updated en ;fr to v2.4. Channel option added
+  2007-06-10 Added Spanish translation by AntI
+  2007-03-12 Kolbjørn: added no translation
+  2005-11-11 split of from layer-mask.xml by axel.wernicke
+-->
+<sect2 id="gimp-layer-mask-add">
+  <title>Add Layer Masks</title>
+
+  <indexterm>
+    <primary>Camada</primary>
+    <secondary>Gerenciando a máscara</secondary>
+    <tertiary>Adicionar uma máscara</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Máscara</primary>
+    <secondary>Máscara da camada</secondary>
+    <tertiary>Adicionar</tertiary>
+  </indexterm>
+
+  <para>
+    The <guimenuitem>Add Layer Masks…</guimenuitem> command adds layer masks
+    to the selected layers. It displays a dialog in which you can set the
+    initial properties of the masks. If the layers already have a layer mask,
+    this menu entry is disabled.
+  </para>
+  <para>
+    A layer mask lets you define which parts of the layer are opaque,
+    semi-transparent or transparent.
+  </para>
+  <para>
+    See the <link linkend="gimp-layer-mask">Layer Masks</link> section for
+    more information.
+  </para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          You can access this command from the main menu through
+          <menuchoice>
+            <guimenu>Layer</guimenu>
+            <guisubmenu>Mask</guisubmenu>
+            <guimenuitem>Add Layer Masks…</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          From the
+          <link linkend="gimp-layer-dialog">Layers Dialog</link>, you
+          can access it through the <guimenuitem>Add Layer Masks…</guimenuitem>
+          command of its context menu, or by clicking on the
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-layer-mask.svg" contentwidth="16px"/>
+              </imageobject>
+              <textobject>
+                <phrase>Add Layer Masks…</phrase>
+              </textobject>
+            </inlinemediaobject>
+          </guiicon>
+          icon button on the bottom of that dialog.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Description of the <quote>Add Layer Masks…</quote> Dialog</title>
+    <figure>
+      <title>The <quote>Add Layer Masks…</quote> dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/dialogs/layer-mask-add.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Inicializar máscara da camada para:</term>
+        <listitem>
+          <para>Este diálogo permite várias opções para o conteúdo inicial da máscara da camada:</para>
+          <variablelist>
+            <varlistentry>
+              <term>Branca (opacidade total)</term>
+              <listitem>
+                <para>Com esta opção, a máscara  da camada vai tornar toda a camada totalmente opaca. Isso significa que você não vai notar nenhuma diferença na aparência da camada até você pintar sobre a máscara criada.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Preta (transparência total)</term>
+              <listitem>
+                <para>Com esta opção, a máscara da camada vai tornar toda a camada totalmente transparente. Isto é representado na imagem por um padrão de xadrez, e você vai precisar ativar a máscara e  pintar ou preenche-la com alguma coisa para tornar alguma parte da camada visível.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Canal alfa da camada</term>
+              <listitem>
+                <para>Com esta opção, o conteúdo do canal alfa é utilizado para preencher a máscara da camada. O próprio canal alfa não é alterado, de modo que a transparência das áreas parcialmente visíveis é incrementada, tornando a uma camada mais transparente.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Transfere o canal alfa da camada</term>
+              <listitem>
+                <para>Esta opção define a máscara de camada como a opção anterior, mas depois redefine o canal alfa da camada para opacidade total. O efeito é o de transferir a informação de transparência do canal alfa para a máscara da camada, deixando a camada com a mesma aparência que antes. A visibilidade da camada é agora determinada somente pela máscara e não pelo canal alfa da camada. Em caso de dúvida, selecione essa opção em vez do <quote>Canal alfa da camada</quote>, porque ela vai deixar a aparência inalterada.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Seleção</term>
+              <listitem>
+                <para>
+                  This option converts the current selection into a layer
+                  mask, so that selected areas are opaque, and unselected
+                  areas are transparent. If any areas are partially
+                  selected, you can click on the
+                  <link linkend="gimp-image-window-quick-mask-button">Quick Mask
+                  button</link> to help you predict what the effects will be.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Cópia em tons de cinza da camada</term>
+              <listitem>
+                <para>Esta opção converte a própria camada em uma máscara de camada: as áreas pretas ficam transparentes e brancas ficam opacas. É particularmente útil quando você planeja adicionar novos conteúdos à camada mais tarde.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Canal</term>
+              <listitem>
+                <para>
+                  With this option the layer mask is initialized with a
+                  selection mask you have created before, stored in the
+                  Channels dialog. Note: that the normal RGBA channels
+                  are not part of this list, it only lists the extra
+                  channels you have created.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Inverter máscara</term>
+        <listitem>
+          <para>
+            If you check the <guilabel>Invert mask</guilabel> box at the
+            bottom of the dialog, the resulting mask is inverted, so that
+            transparent areas become opaque and vice versa.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>
+      When you click on the <guibutton>Add</guibutton> button, a thumbnail
+      of the layer mask appears to the right of the thumbnail of the layer
+      in the Layers Dialog.
+    </para>
+  </sect3>
+</sect2>

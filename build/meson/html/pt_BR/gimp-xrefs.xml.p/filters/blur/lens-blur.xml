@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-lens-blur">
+  <title>Desfoque de lente</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Desfocar</secondary>
+    <tertiary>Desfoque de lente</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Desfoque de lente</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>O filtro Desfoque de Lente</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/taj_orig.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/blur-taj-lens.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O desfoque de lente simula uma foto de uma câmera fora de foco.</para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Blur</guisubmenu>
+        <guimenuitem>Lens Blur…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do diálogo do filtro Desfoque de Lente</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/blur/lens-blur-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Aux</term>
+        <listitem>
+          <para>
+            This allows you to select an additional input layer or channel,
+            that will be used to compute the lens blur. Clicking on the
+            square picture allows you to select from a list of available
+            layers and channels. The <guilabel>Aux</guilabel> will
+            only be used if this setting is enabled.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Raio</term>
+        <listitem>
+          <para>O tamanho do raio do desfoque.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Fator de tons claros</term>
+        <listitem>
+          <para>Intensidade relativa de tons claros.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Limiar de tons claros</term>
+        <listitem>
+          <para>Aqui, você pode definir os valores mínimo e máximo para tons claros. Ele pode ser definido ou pelo arraste dos triângulos pretos e brancos, ou pelo fornecimento dos valores exatos nos campos de entrada de números.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Cortar para a extensão da entrada</term>
+        <listitem>
+          <para>Se habilitado, limita a saída às dimensões da entrada.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Máscara linear</term>
+        <listitem>
+          <para>Se habilitado, usar valores de máscara lineares.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

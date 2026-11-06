@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-reinhard-2005">
+  <title>Reinhard 2005</title>
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Reinhard 2005</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Reinhard 2005</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Mapeamento de Tons</primary>
+    <secondary>Reinhard 2005</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de mapeamento de tons <quote>Reinhard 2005</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/colors-retinex1.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/tone-mapping-reinhard.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado com configurações padrão, após alteração da precisão da imagem no GIMP para ponto flutuante de 32 bit por luz linear.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro pode ser usado para adaptar uma imagem, que pode ter um alto intervalo dinâmico (HDR), para apresentação usando um baixo intervalo dinâmico. Este é um operador global eficiente derivado de simples observações fisiológicas, produzindo luminância contida no intervalo 0,0-1,0.</para>
+    <para>Esta abordagem de mapeamento de tons foi originalmente apresentada por Reinhard, E. e Devlin, K. (2005). <quote>Dynamic range reduction inspired by photoreceptor physiology.</quote> In: IEEE Transactions on Visualization and Computer Graphics, 11(1) (2005), pp. 13–24.</para>
+    <note>
+      <para>Embora não tão lento quanto os filtros Fattal e Mantiuk, o filtro Reinhard não é muito rápido em imagens maiores. Para encontrar as melhores configurações para sua imagem, você poderia fazer uma pequena seleção relevante primeiro e salvá-la como uma pré-configuração antes de usá-la para a imagem completa.</para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Tone Mapping</guisubmenu>
+        <guimenuitem>Reinhard 2005…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>O diálogo para o filtro <quote>Reinhard 2005</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/tone-mapping/reinhard-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Pré-configurações</term>
+        <term>Input Type</term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Brilho</term>
+        <listitem>
+          <para>Brilho geral da imagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Adaptação cromática</term>
+        <listitem>
+          <para>Adaptação à variação de cor ao longo da imagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Adaptação à luz</term>
+        <listitem>
+          <para>Adaptação à variação de luz ao longo da imagem.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+</sect2>

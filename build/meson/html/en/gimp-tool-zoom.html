@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.6. Zoom</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-tools-other.html" title="5. Other Tools" />
+    <link rel="prev" href="gimp-tool-measure.html" title="5.5. Measure" />
+    <link rel="next" href="gimp-tool-gegl.html" title="5.7. GEGL Operation" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.6. Zoom</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-measure.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. Other Tools</span>
+        <nav> <a accesskey="n" href="gimp-tool-gegl.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-zoom"></a>5.6. Zoom</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id20233" class="indexterm"></a>
+      <a id="id20236" class="indexterm"></a>
+      <p>
+    The Zoom Tool is used to change the zoom level of your current image.
+    If you click on the image, the zoom is applied to the whole image.
+    Holding <span class="keycap"><strong>Ctrl</strong></span> while doing this reverses the direction
+    of the zoom.
+    You can also click-and-drag the mouse to create a zoom rectangle, to fit
+    that rectangle to the size of your image window.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1875"></a>5.6.1. Activating the Tool</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the main menu:
+          <span class="guimenu">Tools</span> → <span class="guisubmenu">Zoom</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By clicking the tool icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-zoom.svg" width="16" /></span>
+          </span>
+          in the Toolbox.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1876"></a>5.6.2. Key modifiers</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+                <span class="keycap">
+                  <strong>Ctrl</strong>
+                </span>
+              </span>
+            </dt>
+            <dd>
+              <p>
+            Holding <span class="keycap"><strong>Ctrl</strong></span> when clicking on a point of your
+            image will change the zoom direction from zooming in to zooming
+            out or vice versa, depending on the direction you have set in
+            the Zoom tool options (see below).
+          </p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Mouse wheel</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>
+            Spinning the mouse wheel, while pressing <span class="keycap"><strong>Ctrl</strong></span>,
+            varies the zoom level.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1877"></a>5.6.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1878"></a>
+          <p class="title">
+            <strong>Figure 14.144. Tool Options Dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-zoom.png" alt="Tool Options Dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Auto-resize window</span>
+            </dt>
+            <dd>
+              <p>
+            This setting only affects
+            <a class="link" href="gimp-concepts-main-windows.html#multi-window-mode">Multi-window mode</a>.
+          </p>
+              <p>
+            This setting is known to not work correctly at the moment. Use
+            the <span class="guilabel">Resize window on zoom</span> setting in the
+            <a class="link" href="gimp-prefs-image-window.html#gimp-prefs-zoom-resize" title="Zoom and Resize Behavior">Image Windows
+            Preferences</a> instead.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Direction (Ctrl)</span>
+            </dt>
+            <dd>
+              <p>
+            The two available tool toggles are used for changing the zoom
+            direction between zooming in and zooming out.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1879"></a>5.6.4. Zoom menu</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Using the Zoom tool is not the only way to zoom an image.
+      The <a class="link" href="gimp-view-zoom.html" title="5.5. Zoom">Zoom menu</a> provides
+      access to several functions for changing the image magnification
+      level. For example, you can easily choose an exact magnification
+      level from this menu.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-measure.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-other.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-gegl.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-measure.html">5.5. Measure</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-gegl.html">5.7. GEGL Operation</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

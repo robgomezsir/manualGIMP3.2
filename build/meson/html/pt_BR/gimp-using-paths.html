@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4. Vetores</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-painting.html" title="Capítulo 7. Pintando com o GIMP" />
+    <link rel="prev" href="gimp-using-quickmask.html" title="3.3. Using Quick Mask Mode" />
+    <link rel="next" href="gimp-using-paths-properties.html" title="4.2. Propriedades de vetores" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4. 
+    
+    <span class="phrase">Vetores</span>
+  </div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-quickmask.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 7. Pintando com o GIMP</span>
+        <nav> <a accesskey="n" href="gimp-using-paths-properties.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-using-paths"></a>4. 
+    <a id="gimp-concepts-paths"></a>
+    <span class="phrase">Vetores</span>
+  </h2>
+          </div>
+        </div>
+      </div>
+      <a id="id8810" class="indexterm"></a>
+      <a id="id8813" class="indexterm"></a>
+      <p>Vetores e curvas (conhecidas como curvas de Bézier). Vetores e caminhos são fáceis de aprender e usar no <acronym class="acronym">GIMP</acronym>. Para entender seus conceitos e mecanismos, veja no glossário em  <a class="link" href="glossary.html#glossary-bezier-curve" title="Curva de Bézier">Bézier-curve</a>, ou na Wikipedia  <a class="xref" href="bibliography.html#bibliography-online-wkpd-bezier" title="Wikipedia - Curva de Bézier">[<abbr class="abbrev">WKPD-BEZIER</abbr>]</a>. A ferramenta de vetores é bastante poderosa, permitindo que você desenhe formas sofisticadas. Para usar a ferramenta de vetores em uma imagem do <acronym class="acronym">GIMP</acronym>, você precisa primeiro criar um vetor, e depois contornar o esse vetor.</p>
+      <p>No <acronym class="acronym">GIMP</acronym>, o termo <span class="quote">“<span class="quote">Contornar vetor</span>”</span> significa aplicar um estilo específico ao vetor (cor, largura, textura, ...)</p>
+      <p>Um caminho pode ser usado de várias maneiras:</p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p>Você pode converter um vetor fechado em uma seleção.</p>
+          </li>
+          <li class="listitem">
+            <p>Qualquer vetor, aberto ou fechado, pode ser <span class="emphasis"><em>contornado</em></span>: isso é, pintado na imagem de várias formas diferentes.</p>
+          </li>
+          <li class="listitem">
+            <p>Um caminho pode ser <span class="emphasis"><em>preenchido</em></span> com uma cor ou padrão. Se o caminho não estiver fechado, ele tentará descobrir a forma e então preenchê-la. No entanto, isso não funcionará se o caminho for uma linha reta.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="figure">
+        <a id="id2662"></a>
+        <p class="title">
+          <strong>Figura 7.10. Ilustração de quatro diferentes formas de criação de vetor</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/path-examples.png" alt="Ilustração de quatro diferentes formas de criação de vetor" />
+            <div class="caption">
+              <p>Quatro exemplos de vetores do GIMP: um fechado e poligonal; um aberto e poligonal; um fechado e curvo; e um que é uma mistura de segmentos em curvas e retos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-using-paths-creating"></a>4.1. Criação de vetores</h3>
+            </div>
+          </div>
+        </div>
+        <p>Comece desenhando uma linha de esboço para seu vetor; esse esboço poderá ser alterado depois (veja ferramenta de <a class="link" href="gimp-tool-path.html" title="5.2. Vetores">Vetores</a>). Para começar, selecione a ferramenta de Vetores usando um dos métodos a seguir:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>Use <span class="guimenu">Ferramentas</span> → <span class="guimenuitem">Vetores</span> a partir do menu da janela de imagens.</p>
+            </li>
+            <li class="listitem">
+              <p>
+          Use the relevant icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-path.svg" width="16" /></span>
+          </span> in toolbox.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>Use the <span class="keycap"><strong>B</strong></span> keyboard shortcut.</p>
+            </li>
+          </ul>
+        </div>
+        <p>
+      When the Paths tool is selected, the mouse cursor changes into a
+      crosshair with a curve by default. The actual shape depends on your
+      <a class="link" href="gimp-prefs-input-devices.html" title="6.24. Dispositivos de entrada">mouse pointer mode setting</a>.
+      Make sure that the Paths <span class="guilabel">Edit Mode</span> in
+      <a class="link" href="gimp-tool-path.html" title="5.2. Vetores">Tool Options</a> is set to
+      <span class="guilabel">Design</span>.
+    </p>
+        <p>Clique com o botão esquerdo na imagem para criar o primeiro ponto do caminho. Mova o mouse para um novo ponto e clique com o botão esquerdo para criar outro ponto vinculado ao ponto anterior. Embora você possa criar quantos pontos desejar, você só precisa de dois pontos para aprender sobre Caminhos.</p>
+        <p>Ao adicionar pontos, o cursor do mouse tem um pequeno <span class="quote">“<span class="quote">+</span>”</span> ao lado da curva, o que indica que clicar adicionará um novo ponto.</p>
+        <p>Quando o cursor do mouse está perto de um dos pontos do caminho, o <span class="quote">“<span class="quote">+</span>”</span> se torna uma cruz com setas; como a ferramenta Mover. Você pode então mover o ponto do caminho existente.</p>
+        <p>
+      To close your path, go with the mouse on top of the point you want to
+      connect to, and then click that point. When you are done designing
+      your path, you can press <span class="keycode">Enter</span>. This will turn the
+      path into a Selection. You can also keep adding more points, or start
+      changing the curves of the path.
+    </p>
+        <p>Mova o cursor do mouse próximo a um segmento de linha, clicando com o botão da esquerda e arrastando a linha. Dois eventos ocorrem.</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>O segmento de linha se dobra e fica curvado, conforme ele é puxado.</p>
+            </li>
+            <li class="listitem">
+              <p>Cada segmento de linha tem um ponto de início e um ponto de fim que são claramente marcados. Agora, uma <span class="quote">“<span class="quote">linha de direção</span>”</span> se projeta de cada ponto nas extremidades do segmento que foi movido.</p>
+            </li>
+          </ul>
+        </div>
+        <p>O segmento de linha curvo sai do ponto da extremidade na mesma direção que a <span class="quote">“<span class="quote">linha de direção</span>”</span>. O comprimento da <span class="quote">“<span class="quote">linha de direção</span>”</span> controla quanto longe o segmento de linha segue na mesma direção, antes de se curvar na direção da outra extremidade. Cada <span class="quote">“<span class="quote">linha de direção</span>”</span> tem um quadradinho vazio (chamado de <span class="quote">“<span class="quote">alça</span>”</span>) em uma ponta. Clique e arraste uma alça para mudar a direção e o comprimento de uma <span class="quote">“<span class="quote">linha de direção</span>”</span>.</p>
+        <p>A alça na extremidade de cada <span class="quote">“<span class="quote">linha de direção</span>”</span> pode ser arrastada para alterar a direção e o comprimento da curva. As alças na outra extremidade, onde se conectam ao caminho, podem ser usadas para mover a posição daquele ponto do caminho.</p>
+        <div class="figure">
+          <a id="id2663"></a>
+          <p class="title">
+            <strong>Figura 7.11. Aparência do vetor enquanto ele é manipulado</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/using/path-with-anchors.png" alt="Aparência do vetor enquanto ele é manipulado" />
+              <div class="caption">
+                <p>Aparência de um vetor enquanto ele é manipulado usando-se a ferramenta de Vetores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>O vetor acima é formado por dois componentes, com segmentos retos e curvos misturados. Os quadrados pretos são os pontos de âncora, o círculo aberto indica que se trata da âncora selecionada e os dois quadrados abertos indicam as alças associadas à esta âncora.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-quickmask.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-painting.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-paths-properties.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-quickmask.html">3.3. Using Quick Mask Mode</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-paths-properties.html">4.2. Propriedades de vetores</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

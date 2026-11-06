@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.10. Colar como</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-edit-menu.html" title="3. O menu “Editar”" />
+    <link rel="prev" href="gimp-edit-paste-in-place.html" title="3.9. Colar na posição original" />
+    <link rel="next" href="gimp-edit-buffer-dialog.html" title="3.11. Buffer" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.10. Colar como</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-edit-paste-in-place.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. O menu <span class="quote">“<span class="quote">Editar</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-edit-buffer-dialog.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-edit-paste-as"></a>3.10. Colar como</h3>
+          </div>
+        </div>
+      </div>
+      <p>
+    This command pastes the clipboard contents. Of course, you must use
+    the <span class="quote">“<span class="quote">Copy</span>”</span> command before, so that you have something in the
+    clipboard.
+  </p>
+      <p>
+    There is no way to empty the clipboard.
+  </p>
+      <p>
+    The submenu offers several ways to paste the clipboard contents:
+  </p>
+      <p>
+    </p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p>
+              <a class="xref" href="gimp-edit-paste-as.html#gimp-edit-paste-as-new-layer" title="3.10.1. Paste as Single Layer">Seção 3.10.1, “Paste as Single Layer”</a>
+            </p>
+          </li>
+          <li class="listitem">
+            <p>
+              <a class="xref" href="gimp-edit-paste-as.html#gimp-edit-paste-as-new-layer-in-place" title="3.10.2. Paste As Single Layer In Place">Seção 3.10.2, “Paste As Single Layer In Place”</a>
+            </p>
+          </li>
+          <li class="listitem">
+            <p>
+              <a class="xref" href="gimp-edit-paste-as.html#gimp-edit-paste-as-new-image" title="3.10.3. Colar como Nova imagem">Seção 3.10.3, “Colar como Nova imagem”</a>
+            </p>
+          </li>
+          <li class="listitem">
+            <p>
+              <a class="xref" href="gimp-edit-paste-as.html#gimp-edit-paste-float" title="3.10.4. Paste as Floating Data">Seção 3.10.4, “Paste as Floating Data”</a>
+            </p>
+          </li>
+          <li class="listitem">
+            <p>
+              <a class="xref" href="gimp-edit-paste-as.html#gimp-edit-paste-float-in-place" title="3.10.5. Paste as Floating Data In Place">Seção 3.10.5, “Paste as Floating Data In Place”</a>
+            </p>
+          </li>
+          <li class="listitem">
+            <p>
+              <a class="xref" href="gimp-edit-paste-as.html#gimp-edit-paste-into" title="3.10.6. Paste as Floating Data Into Selection">Seção 3.10.6, “Paste as Floating Data Into Selection”</a>
+            </p>
+          </li>
+          <li class="listitem">
+            <p>
+              <a class="xref" href="gimp-edit-paste-as.html#gimp-edit-paste-into-in-place" title="3.10.7. Paste as Floating Data Into Selection In Place">Seção 3.10.7, “Paste as Floating Data Into Selection In Place”</a>
+            </p>
+          </li>
+          <li class="listitem">
+            <p>
+              <a class="xref" href="gimp-edit-paste-as.html#script-fu-paste-as-brush" title="3.10.8. Colar como Novo pincel">Seção 3.10.8, “Colar como Novo pincel”</a>
+            </p>
+          </li>
+          <li class="listitem">
+            <p>
+              <a class="xref" href="gimp-edit-paste-as.html#script-fu-paste-as-pattern" title="3.10.9. Colar como Nova textura">Seção 3.10.9, “Colar como Nova textura”</a>
+            </p>
+          </li>
+        </ul>
+      </div>
+      <p>
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-edit-paste-as-new-layer"></a>3.10.1. Paste as Single Layer</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id33849" class="indexterm"></a>
+        <a id="id33852" class="indexterm"></a>
+        <a id="id33855" class="indexterm"></a>
+        <p>
+    The <span class="guimenuitem">Paste as Single Layer</span> command creates a new
+    layer in the active image and pastes the clipboard contents into it.
+  </p>
+        <p>
+    If the data are not rectangular or square in shape, any regions
+    that do not extend to the edge of the canvas are left transparent (an
+    Alpha channel is automatically created). Of course, you have to copy your
+    selection before you use this command.
+  </p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3531"></a>3.10.1.1. Ativando o comando</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as Single Layer</span>.
+    </p>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-edit-paste-as-new-layer-in-place"></a>3.10.2. Paste As Single Layer In Place</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id33868" class="indexterm"></a>
+        <a id="id33871" class="indexterm"></a>
+        <a id="id33874" class="indexterm"></a>
+        <p>
+    The <span class="guimenuitem">Paste as Single Layer In Place</span> command
+    creates a new layer in the active image and pastes the clipboard contents
+    at the exact coordinates the contents was originally copied from.
+  </p>
+        <p>Esse recurso está disponível tanto para a área de transferência comum quanto para buffers nomeados.</p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3532"></a>3.10.2.1. Ativando o comando</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as Single Layer In Place</span>.
+    </p>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-edit-paste-as-new-image"></a>3.10.3. Colar como Nova imagem</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id33887" class="indexterm"></a>
+        <a id="id33890" class="indexterm"></a>
+        <p>O comando <span class="guimenuitem">Colar como nova imagem</span> cria uma nova imagem e cola o conteúdo da área de transferência na mesma. Se o conteúdo não tiver forma retangular ou quadrada, as áreas faltantes são deixadas como transparentes (o canal alfa é criado automaticamente). A nova imagem tem o mesmo tamanho que a seleção.</p>
+        <p>Este comando tem exatamente a mesma ação que o comando <span class="guimenu">Arquivo</span> → <span class="guisubmenu">Criar</span> → <span class="guimenuitem">Da área de transferência</span>.</p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3533"></a>3.10.3.1. Ativando o comando</h5>
+              </div>
+            </div>
+          </div>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as New Image</span>.
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          You can also use the keyboard shortcut
+          <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>V</strong></span>.
+        </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-edit-paste-float"></a>3.10.4. Paste as Floating Data</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id33916" class="indexterm"></a>
+        <a id="id33919" class="indexterm"></a>
+        <p>
+    The <span class="guimenuitem">Paste as Floating Data</span> command creates a
+    floating selection in the active image and pastes the clipboard contents
+    into it.
+  </p>
+        <p>
+    If the data are not rectangular or square in shape, any regions
+    that do not extend to the edge of the canvas are left transparent (an
+    Alpha channel is automatically created). Of course, you have to copy your
+    selection before you use this command.
+  </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Você só pode ter <span class="emphasis"><em>uma</em></span> seleção flutuante ativa de cada vez. Você não pode realizar alterações em outras camadas se houver uma seleção flutuante; você <span class="emphasis"><em>precisa</em></span> ancorar, descartar ou transformar a seleção flutuante em uma nova camada antes de continuar trabalhando no restante da imagem.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3534"></a>3.10.4.1. Ativando o comando</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as Floating Data</span>.
+    </p>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-edit-paste-float-in-place"></a>3.10.5. Paste as Floating Data In Place</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id33936" class="indexterm"></a>
+        <a id="id33939" class="indexterm"></a>
+        <p>
+    The <span class="guimenuitem">Paste as Floating Data In Place</span> command creates a
+    floating selection in the active image and pastes the clipboard contents
+    into it at the exact coordinates the contents was originally copied from.
+  </p>
+        <p>
+    If the data are not rectangular or square in shape, any regions
+    that do not extend to the edge of the canvas are left transparent (an
+    Alpha channel is automatically created). Of course, you have to copy your
+    selection before you use this command.
+  </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Você só pode ter <span class="emphasis"><em>uma</em></span> seleção flutuante ativa de cada vez. Você não pode realizar alterações em outras camadas se houver uma seleção flutuante; você <span class="emphasis"><em>precisa</em></span> ancorar, descartar ou transformar a seleção flutuante em uma nova camada antes de continuar trabalhando no restante da imagem.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3535"></a>3.10.5.1. Ativando o comando</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as Floating Data In Place</span>.
+    </p>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-edit-paste-into"></a>3.10.6. Paste as Floating Data Into Selection</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id33956" class="indexterm"></a>
+        <a id="id33959" class="indexterm"></a>
+        <p>
+    The <span class="guimenuitem">Paste as Floating Data Into Selection</span> command
+    replaces the contents of the current selection with the contents of the
+    clipboard and turns it into a floating selection.
+  </p>
+        <p>
+    The clipboard data is clipped by the selection, but the image data in it
+    can still be moved if it extends outside the selection.
+  </p>
+        <p>
+    If no selection exists, the <span class="quote">“<span class="quote">Paste as Floating Data Into Selection</span>”</span>
+    command places the data from the clipboard into the center of the canvas,
+    as the <span class="quote">“<span class="quote">Paste</span>”</span> command does.
+  </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Você só pode ter <span class="emphasis"><em>uma</em></span> seleção flutuante ativa de cada vez. Você não pode realizar alterações em outras camadas se houver uma seleção flutuante; você <span class="emphasis"><em>precisa</em></span> ancorar, descartar ou transformar a seleção flutuante em uma nova camada antes de continuar trabalhando no restante da imagem.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3536"></a>3.10.6.1. Ativando o comando</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as Floating Data Into Selection</span>.
+      </p>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-edit-paste-into-in-place"></a>3.10.7. Paste as Floating Data Into Selection In Place</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id33979" class="indexterm"></a>
+        <a id="id33982" class="indexterm"></a>
+        <p>
+    The <span class="guimenuitem">Paste as Floating Data Into Selection In Place</span>
+    command replaces the contents of the current selection with the contents of
+    the clipboard, at the exact coordinates the contents was originally copied
+    from, and turns it into a floating selection.
+  </p>
+        <p>
+    The clipboard data is clipped by the selection, but the image data in it
+    can still be moved if it extends outside the selection.
+  </p>
+        <p>
+    If no selection exists, the <span class="quote">“<span class="quote">Paste as Floating Data Into Selection
+    In Place</span>”</span> command places the data from the clipboard into the center
+    of the canvas, as the <span class="quote">“<span class="quote">Paste</span>”</span> command does.
+  </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Você só pode ter <span class="emphasis"><em>uma</em></span> seleção flutuante ativa de cada vez. Você não pode realizar alterações em outras camadas se houver uma seleção flutuante; você <span class="emphasis"><em>precisa</em></span> ancorar, descartar ou transformar a seleção flutuante em uma nova camada antes de continuar trabalhando no restante da imagem.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3537"></a>3.10.7.1. Ativando o comando</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as Floating Data Into Selection In Place</span>.
+      </p>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="script-fu-paste-as-brush"></a>3.10.8. Colar como Novo pincel</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id34002" class="indexterm"></a>
+        <a id="id34005" class="indexterm"></a>
+        <a id="id34008" class="indexterm"></a>
+        <p>Este comando abre uma janela de diálogo que permite que você dê um nome ao seu novo pincel. O pincel aparece no <a class="link" href="gimp-brush-dialog.html" title="3.2. Diálogo de pincéis">Diálogo de pincéis</a>. Se a imagem de onde você copiou o conteúdo for em Tons de cinza, o novo pincel usará a cor ativa na Caixa de ferramentas quando você o usar.</p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3538"></a>3.10.8.1. Opções</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id3539"></a>
+            <p class="title">
+              <strong>Figura 16.8. The <span class="quote">“<span class="quote">New Brush</span>”</span> dialog</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/menus/edit/paste-new-brush.png" alt="The “New Brush” dialog" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Nome do pincel</span>
+              </dt>
+              <dd>
+                <p>
+            <span class="guilabel">Brush name</span> is the name that will be shown in
+            the <span class="quote">“<span class="quote">Brushes</span>”</span> Dialog.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">Nome do arquivo</span>
+              </dt>
+              <dd>
+                <p>O novo pincel é salvo com o nome digitado em  <span class="guilabel">Nome do arquivo</span> (com a extensão <code class="filename">.gbr</code>) na sua pasta pessoal de pincéis do GIMP (<code class="filename">brushes</code>)</p>
+              </dd>
+              <dt>
+                <span class="term">Espaçamento</span>
+              </dt>
+              <dd>
+                <p><span class="guilabel">Espaçamento</span>: Quando o pincel desenha uma linha, na verdade ele é <span class="quote">“<span class="quote">carimbado</span>”</span> repetidas vezes na imagem. Se as imagens do pincel carimbadas dessa forma estiverem muito próximas uma das outras, você terá a impressão de uma linha contínua.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3540"></a>3.10.8.2. Ativando o comando</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as New Brush…</span>.
+    </p>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="script-fu-paste-as-pattern"></a>3.10.9. Colar como Nova textura</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id34046" class="indexterm"></a>
+        <a id="id34049" class="indexterm"></a>
+        <a id="id34052" class="indexterm"></a>
+        <p>Este comando abre uma janela de diálogo que permite que você de um nome para a sua nova textura. A textura aparece no <a class="link" href="gimp-pattern-dialog.html" title="3.4. Diálogo de texturas">Diálogo de texturas</a>.</p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3541"></a>3.10.9.1. Opções</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id3542"></a>
+            <p class="title">
+              <strong>Figura 16.9. The <span class="quote">“<span class="quote">New Pattern</span>”</span> dialog</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/menus/edit/paste-new-pattern.png" alt="The “New Pattern” dialog" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Nome da textura</span>
+              </dt>
+              <dd>
+                <p>
+            <span class="guilabel">Pattern name</span> is the name that will be shown
+            in the <span class="quote">“<span class="quote">Patterns</span>”</span> Dialog.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">Nome do arquivo</span>
+              </dt>
+              <dd>
+                <p>A nova textura é salva como <span class="guilabel">Nome do arquivo</span> (com a extensão <code class="filename">.pat</code>) na sua pasta pessoal de texturas do GIMP (<code class="filename">patterns</code>)</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3543"></a>3.10.9.2. Ativando o comando</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as New Pattern…</span>.
+    </p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-edit-paste-in-place.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-edit-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-edit-buffer-dialog.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-edit-paste-in-place.html">3.9. Colar na posição original</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-edit-buffer-dialog.html">3.11. Buffer</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

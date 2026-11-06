@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-stress">
+  <title>Stress</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Stress</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Stress</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Mapeamento de Tons</primary>
+    <secondary>Stress</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de mapeamento de tons por <quote>Stress</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/colors-retinex1.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/tone-mapping-stress.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado com configurações padrão, após alteração da precisão da imagem no GIMP para ponto flutuante de 32 bit por luz linear.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/tone-mapping-stress-2.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado com Amostras em 15 e Iterações em 20.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro usa um Envelope Espaço-Temporal tipo Retinex com Amostragem Estocástica (STRESS). Os algoritmos funcionam pelo recálculo de cada pixel usando envelopes para os limites superior e inferior locais na imagem. Os envelopes são obtidos por amostragem dos pixels vizinhos e podem ser interpretados como máximo e mínimo de referência local. Este método pode ser usado para esticamento de contraste local, correção automática de cor, renderização de imagem com alto intervalo dinâmico, mapeamento espacial de gama de cor, e conversão de cor para tons de cinza com bons resultados.</para>
+    <para>
+      Based on Ø. Kolås, I. Farup, and A. Rizzi, <quote>Spatio-temporal
+      retinex-inspired envelope with stochastic sampling: A framework for spatial
+      color algorithms</quote>, Journal of Imaging Science and Technology,
+      vol. 55, no. 4, pp. 1–10, 2011.
+    </para>
+    <note>
+      <para>Este filtro é lento em imagens grandes. Para encontrar as melhores configurações para sua imagem, você poderia fazer uma pequena seleção relevante primeiro e salvá-la como pré-configuração antes de usá-la para a imagem completa.</para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Tone Mapping</guisubmenu>
+        <guimenuitem>Stress…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>O diálogo do filtro <quote>Stress</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/tone-mapping/stress-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Pré-configurações</term>
+        <term>Input Type</term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio</term>
+        <listitem>
+          <para>Vizinhança a ser considerada. Para aprimoramento, os valores ideais são próximos ao maior lado da imagem (pode ser tanto a largura quanto a altura). Aumentar este valor torna o filtro mais lento.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Amostras</term>
+        <listitem>
+          <para>Número de amostras a realizar por iteração buscando o intervalo de cores.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Iterações</term>
+        <listitem>
+          <para>Número de iterações: um número maior de iterações gera uma renderização com menos ruído, mas torna o filtro mais lento.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Melhorar sombras</term>
+        <listitem>
+          <para>Quando ativado, regiões de sombra também são melhoradas; quando desativado, um resultado mais natural é obtido.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+</sect2>

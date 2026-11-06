@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.30. Align Visible Layers…</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-image-menu.html" title="6. The “Image” Menu" />
+    <link rel="prev" href="gimp-image-flatten.html" title="6.29. Flatten Image" />
+    <link rel="next" href="gimp-image-guides.html" title="6.31. “Guides” Submenu" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.30. Align Visible Layers…</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-image-flatten.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>6. The <span class="quote">“<span class="quote">Image</span>”</span> Menu</span>
+        <nav> <a accesskey="n" href="gimp-image-guides.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-align-layers"></a>6.30. Align Visible Layers…</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id37356" class="indexterm"></a>
+      <a id="id37360" class="indexterm"></a>
+      <p>
+    With the <span class="guimenuitem">Align Visible Layers</span> command,
+    you can very precisely position the visible layers (those marked with
+    the <span class="quote">“<span class="quote">eye</span>”</span> icon). This degree of precision is especially
+    useful when you are working on animations, which typically have many
+    small layers. Clicking on <span class="guimenuitem">Align Visible
+      Layers</span> displays a dialog which allows you to choose
+    how the layers should be aligned.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2499"></a>6.30.1. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Image</span> → <span class="guimenuitem">Align Visible Layers…</span>.
+          There is no default keyboard shortcut.
+        </p>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+            If the image holds a single layer only, you get a message from
+            <acronym class="acronym">GIMP</acronym> telling that there must be more than one
+            layer in the image to execute the command.
+          </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2500"></a>6.30.2. Example Image for Layer Alignment</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The examples in the <a class="link" href="plug-in-align-layers.html#align-layers-dialog" title="6.30.3.  Description of the “Align Visible Layers” dialog">Description of
+      the “Align Visible Layers” dialog</a> section all use the same
+      starting image. The image contains four layers. The order of those
+      layers from top to bottom is as follows:
+      </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+            Green, vertical rectangle (top layer)
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            Yellow, horizontal rectangle
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            Red, small square
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            Blue, larger square (bottom layer)
+          </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+    </p>
+        <div class="figure">
+          <a id="id2501"></a>
+          <p class="title">
+            <strong>Figure 16.71. Example Image for Layer Alignment</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/image/align-demo.png" alt="Example Image for Layer Alignment" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The <span class="guimenuitem">Align Visible Layers</span> command aligns layers
+      based on their boundaries. In the example image, each layer's boundary is
+      adjusted to match the perimeter of the shape in that layer. For
+      information about how to adjust a layer's boundary, see
+      <a class="link" href="gimp-layer-resize.html" title="7.53. Layer Boundary Size">Layer Boundary Size</a>. You can
+      also use a command such as <a class="link" href="gimp-layer-crop-to-content.html" title="7.57. Crop Layers to Content">
+      Crop Layers to Content</a> to automatically adjust a layer's boundary.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        In the examples, the <span class="guilabel">Ignore the bottom layer even if visible
+        </span> checkbox is left checked. The bottom layer, which is the
+        larger blue square, is then not affected by any of the alignment
+        operations.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="align-layers-dialog"></a>6.30.3. 
+      Description of the <span class="quote">“<span class="quote">Align Visible Layers</span>”</span> dialog
+    </h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2502"></a>
+          <p class="title">
+            <strong>Figure 16.72. The <span class="quote">“<span class="quote">Align Visible Layers</span>”</span> dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/image/align-layers.png" alt="The “Align Visible Layers” dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Horizontal style, </span>
+              <span class="term">Vertical style</span>
+            </dt>
+            <dd>
+              <p>
+            These options control how the layers should be moved in
+            relationship to each other. You can choose:
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">None</span>:
+                There will be no change in the horizontal or the vertical
+                position, respectively.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Collect</span>:
+                The visible layers will be aligned on the canvas, in the
+                way that is determined by the <span class="guilabel">Horizontal
+                base</span> and <span class="guilabel">Vertical base</span>
+                options. If you select a <span class="guilabel">Horizontal
+                base</span> of <span class="guilabel">Right edge</span>, layers
+                may disappear from the canvas. You can recover them by
+                enlarging the canvas. If you check the
+                <span class="guilabel">Use the (invisible) bottom layer as the
+                base</span> option, the layers will be aligned on the
+                top left corner of the bottom layer.
+              </p>
+                    <div class="figure">
+                      <a id="id2503"></a>
+                      <p class="title">
+                        <strong>Figure 16.73. 
+                  Example Use of Collect: Layers Aligned to Left Edge of the
+                  Canvas
+                </strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/menus/image/align-demo-example.png" alt="Example Use of Collect: Layers Aligned to Left Edge of the Canvas" />
+                          <div class="caption">
+                            <p>Original image</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/menus/image/alignHCLB-.png" alt="Example Use of Collect: Layers Aligned to Left Edge of the Canvas" />
+                          <div class="caption">
+                            <p>
+                      <span class="guilabel">Horizontal style</span>: <span class="guilabel">Collect
+                      </span>, <span class="guilabel">Horizontal base</span>: 
+                      <span class="guilabel">Left edge</span>.
+                    </p>
+                            <p>
+                      The layers have been moved horizontally so that their
+                      left edges are aligned with the left edge of the
+                      canvas.
+                    </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                    <div class="figure">
+                      <a id="id2504"></a>
+                      <p class="title">
+                        <strong>Figure 16.74. 
+                  Example Use of Collect: Layers Aligned to Left Edge of the
+                  Bottom Layer
+                </strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/menus/image/align-demo-example.png" alt="Example Use of Collect: Layers Aligned to Left Edge of the Bottom Layer" />
+                          <div class="caption">
+                            <p>Original image</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/menus/image/alignHCLB+.png" alt="Example Use of Collect: Layers Aligned to Left Edge of the Bottom Layer" />
+                          <div class="caption">
+                            <p>
+                      Same parameters as the previous example, but with the
+                      <span class="guilabel">Use the (invisible) bottom layer as the base
+                      </span> checkbox checked.
+                    </p>
+                            <p>
+                      The layers have been moved horizontally so that their
+                      left edges align with the left edge of the bottom
+                      layer.
+                    </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Fill (left to right)</span>;
+                <span class="guilabel">Fill (top to bottom)</span>:
+                The visible layers will be arranged left to right (or top to
+                bottom) on the canvas according to their order in the layer
+                stack. 
+              </p>
+                    <p>
+                 The top layer in the stack will be aligned with the layer
+                 that currently has the leftmost (or uppermost) position on the
+                 canvas. The bottom layer in the stack will be aligned with the
+                 layer that currently has the rightmost (or bottommost)
+                 position on the canvas. All other visible layers will be
+                 evenly distributed between those two positions according to
+                 their order in the layer stack.
+              </p>
+                    <p>
+                Your choice of <span class="guilabel">Horizontal base</span> (or
+                <span class="guilabel">Vertical base</span>) determines how the top and
+                bottom layers are aligned with their respective target layers.
+                For example, if you choose <span class="guilabel">Right edge</span> as
+                the <span class="guilabel">Horizontal base</span>, the right edge of the
+                top and bottom layers will be aligned with the right edge of
+                their target layers.
+              </p>
+                    <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Note">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Note]" src="images/note.png" />
+                          </td>
+                          <th align="left">Note</th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>
+                  If the <span class="guilabel">Use the (invisible) bottom layer as the base
+                  </span> checkbox is checked, the top layer in the stack
+                  will be aligned with the current position of the bottom layer
+                  in the stack, instead of the leftmost (or uppermost) layer on
+                  the canvas.
+                </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="figure">
+                      <a id="id2505"></a>
+                      <p class="title">
+                        <strong>Figure 16.75. 
+                  Example Use of Fill: Layers Filled Left to Right
+                </strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/menus/image/align-demo-example.png" alt="Example Use of Fill: Layers Filled Left to Right" />
+                          <div class="caption">
+                            <p>Original image</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/menus/image/alignHFLB-.png" alt="Example Use of Fill: Layers Filled Left to Right" />
+                          <div class="caption">
+                            <p>
+                      <span class="guilabel">Horizontal style</span>: <span class="guilabel">Fill 
+                      (left to right)</span>, <span class="guilabel">Horizontal base
+                      </span>: <span class="guilabel">Left edge</span>.
+                    </p>
+                            <p>
+                      The top layer in the stack, the green one, was aligned
+                      with the layer that had the leftmost position on the
+                      canvas. The bottom layer in the stack, the red one, was
+                      aligned with the layer that had the rightmost position on
+                      the canvas. The yellow layer is placed between the other
+                      two.
+                    </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                    <div class="figure">
+                      <a id="id2506"></a>
+                      <p class="title">
+                        <strong>Figure 16.76. 
+                  Example Use of Fill: Layers Filled Left to Right With the
+                  Bottom Layer as the Base
+                </strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/menus/image/align-demo-example.png" alt="Example Use of Fill: Layers Filled Left to Right With the Bottom Layer as the Base" />
+                          <div class="caption">
+                            <p>Original image</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/menus/image/alignHFLB+.png" alt="Example Use of Fill: Layers Filled Left to Right With the Bottom Layer as the Base" />
+                          <div class="caption">
+                            <p>
+                      Same parameters as the previous example, but with the
+                      <span class="guilabel">Use the (invisible) bottom layer as the base
+                      </span> checkbox checked.
+                    </p>
+                            <p>
+                      The top layer in the stack, the green one, is aligned
+                      with the left edge of the base layer. The bottom layer in
+                      the stack, the red one, was aligned with the layer that
+                      had the rightmost position on the canvas. The yellow
+                      layer is placed between the other two.
+                    </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Fill (right to left)</span>;
+                <span class="guilabel">Fill (bottom to top)</span>:
+                These settings work similarly to the ones described above,
+                but the filling occurs in the opposite direction.
+              </p>
+                    <div class="figure">
+                      <a id="id2507"></a>
+                      <p class="title">
+                        <strong>Figure 16.77. 
+                  Example Use of Fill: Layers Filled Bottom to Top With the
+                  Bottom Layer as the Base
+                </strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/menus/image/align-demo-example.png" alt="Example Use of Fill: Layers Filled Bottom to Top With the Bottom Layer as the Base" />
+                          <div class="caption">
+                            <p>Original image</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/menus/image/alignVFBB+.png" alt="Example Use of Fill: Layers Filled Bottom to Top With the Bottom Layer as the Base" />
+                          <div class="caption">
+                            <p>
+                      <span class="guilabel">Vertical style</span>: <span class="guilabel">Fill
+                      (bottom to top)</span>, <span class="guilabel">Vertical base
+                      </span>: <span class="guilabel">Top edge</span>, <span class="guilabel">Use
+                      the (invisible) bottom layer as the base</span>:
+                      checked.
+                    </p>
+                            <p>
+                      The bottom layer in the stack, the red one, is aligned
+                      with the top edge of the base layer. The top layer in the
+                      stack, the green one, was aligned with the top edge of
+                      the of the layer that had the lowest position on the
+                      canvas. The yellow layer is placed between the other two.
+                    </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                    <p>
+                There must be at least three visible layers in the image to
+                use the <span class="quote">“<span class="quote">Fill</span>”</span> options.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Snap to grid</span>:
+                  The visible layers will be aligned with a grid. Use the
+                  <span class="guilabel">Grid</span> setting to define the spacing of
+                  the grid. The base that you select will be aligned with its
+                  closest grid line. For example, if you select <span class="guilabel">Left
+                  edge</span> from the <span class="guilabel">Horizontal base</span>
+                  list, the left edge of each layer will be aligned with the
+                  grid line that is closest to the layer's left edge.
+              </p>
+                    <p>
+                In the following example, the image
+                <a class="link" href="gimp-pimping.html#gimp-concepts-image-grid" title="1.1. The Image Grid">grid</a> is turned
+                on and its spacing set to the same value as the
+                <span class="guilabel">Grid</span> setting. This is only to help
+                demonstrate the effect of the <span class="guilabel">Snap to grid</span>
+                option. You don't need to turn on the image grid and none of
+                its settings are used when you align layers.
+              </p>
+                    <div class="figure">
+                      <a id="id2508"></a>
+                      <p class="title">
+                        <strong>Figure 16.78. 
+                  Example Use of Snap to Grid: Layers Aligned to Top Left
+                  Corner of Grid Squares
+                </strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/menus/image/align-demo-grid.png" alt="Example Use of Snap to Grid: Layers Aligned to Top Left Corner of Grid Squares" />
+                          <div class="caption">
+                            <p>Original image with an added 30 pixel image grid
+                    </p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/menus/image/aligngrid.png" alt="Example Use of Snap to Grid: Layers Aligned to Top Left Corner of Grid Squares" />
+                          <div class="caption">
+                            <p>
+                      <span class="guilabel">Horizontal style</span>: <span class="guilabel">Snap to
+                      grid</span>, <span class="guilabel">Horizontal base</span>:
+                      <span class="guilabel">Left edge</span>, <span class="guilabel">Vertical style
+                      </span>: <span class="guilabel">Snap to grid</span>,
+                      <span class="guilabel">Vertical base</span>: <span class="guilabel">Top edge
+                      </span>, <span class="guilabel">Grid</span>: <span class="guilabel">30
+                      </span>
+                    </p>
+                            <p>
+                      Each layer other than the base is aligned with the top
+                      left corner of a 30 by 30 pixel grid square.
+                    </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Grid</span>
+            </dt>
+            <dd>
+              <p>
+            If you choose the <span class="guilabel">Snap to grid</span> option from
+            either the <span class="guilabel">Horizontal style</span> or <span class="guilabel">
+            Vertical style</span> lists, the <span class="guilabel">Grid</span>
+            setting defines the spacing of the grid to which layers are
+            aligned.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-image-flatten.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-menu.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-image-guides.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-image-flatten.html">6.29. Flatten Image</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-image-guides.html">6.31. <span class="quote">“<span class="quote">Guides</span>”</span> Submenu</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

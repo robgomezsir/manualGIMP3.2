@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2017-10-14 j.h: some updates
+-->
+<sect2 id="script-fu-tile-blur">
+  <title>Desfoque de Mosaico</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Desfocar</secondary>
+    <tertiary>Desfoque de Mosaico</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Desfoque de Mosaico</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Desfoque de Mosaico</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/blur-taj-tblur.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O Desfoque de Mosaico na verdade é reproduzido por um script de Script-Fu que invoca o plug-in de desfocagem gaussiana.</para>
+    <para>Este filtro é utilizado para suavizar as emendas em imagens usadas para compor planos de fundo em mosaico. Isto é feito pela mistura e desfoque dos limites entre as imagens que estarão vizinhas após a composição do mosaico.</para>
+    <tip>
+      <para>Se você deseja tratar apenas bordas das imagens, então você não pode aplicar o filtro em toda a imagem. A solução para obter o efeito desejado é a seguinte:</para>
+      <procedure>
+        <step>
+          <para>
+            Duplicate layer
+            (<menuchoice>
+              <guimenu>Layer</guimenu>
+              <guimenuitem>Duplicate Layers</guimenuitem>
+            </menuchoice>)
+            and select it to work on it.
+          </para>
+        </step>
+        <step>
+          <para>Aplique o filtro <quote>Desfoque de Mosaico</quote> com um raio de 20 pixels a essa camada.</para>
+        </step>
+        <step>
+          <para>Selecione tudo (<keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>) e reduza a seleção (<menuchoice><guimenu>Seleção</guimenu><guimenuitem>Encolher</guimenuitem></menuchoice>) para criar uma borda com a largura desejada.</para>
+        </step>
+        <step>
+          <para>Dê uma borda enevoada à seleção usando <menuchoice><guimenu>Seleção</guimenu><guimenuitem>Enevoar</guimenuitem></menuchoice>.</para>
+        </step>
+        <step>
+          <para>Delete a seleção com <keycombo><keycap>Ctrl</keycap><keycap>K</keycap></keycombo>.</para>
+        </step>
+        <step>
+          <para>Combine as camadas com <menuchoice><guimenu>Camada</guimenu><guimenuitem>Combinar abaixo</guimenuitem></menuchoice>.</para>
+        </step>
+      </procedure>
+    </tip>
+    <note>
+      <para>
+        If the image is in grayscale mode or indexed mode, this menu entry
+        is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Blur</guisubmenu>
+        <guimenuitem>Tileable Blur…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Desfoque de Mosaico</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/blur/tileable-options.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Raio</term>
+        <listitem>
+          <para>Quanto maior o raio, mais forte é o desfoque. Selecionando <guilabel>Horizontal</guilabel> e <guilabel>Vertical</guilabel>, você pode escolher quais bordas se tornarão encaixáveis.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Desfocar verticalmente</term>
+        <term>Desfocar horizontalmente</term>
+        <listitem>
+          <para>Essas opções são auto-explicativas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tipo de desfoque</term>
+        <listitem>
+          <note>
+            <para>This setting is ignored.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

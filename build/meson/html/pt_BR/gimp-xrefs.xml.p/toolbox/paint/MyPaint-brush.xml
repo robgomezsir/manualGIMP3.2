@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-mypaint-brush">
+  <title>Pincel</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Pincel</secondary>
+  </indexterm>
+  <indexterm><primary>Pincel</primary></indexterm>
+
+  <para><acronym>MyPaint</acronym> é um programa de pintura gratuito que vem com muitos pincéis específicos. Libmypaint foi modificado em 2016 de forma a poder ser usado por outros programas. <acronym>GIMP-2.10</acronym> pode usar esses pincéis.</para>
+
+  <para>Você pode encontrar muitas coleções de pincéis MyPaint pela Web, em formato comprimido, frequentemente em um arquivo .zip. Descompacte este arquivo em uma pasta temporária.</para>
+
+  <sect3>
+    <title>Instalando pincéis MyPaint</title>
+    <para>através do menu na janela de imagem <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de pintura</guisubmenu><guimenuitem>Borrar.</guimenuitem></menuchoice> </para>
+    <para>Ative a ferramenta como abaixo: você deve ter um ícone de pincel MyPaint na caixa de diálogo de opções da ferramenta. Clique neste ícone para exibir todos os pincéis MyPaint.</para>
+  </sect3>
+  
+  <sect3>
+    <title>Ativando a ferramenta</title>
+
+    <para>Existem várias formas para ativar a ferramenta:</para>
+
+    <itemizedlist>
+      <listitem>
+        <para>Através do menu da janela de imagem: <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de pintura</guisubmenu><guimenuitem>Restaurar</guimenuitem></menuchoice>,</para>
+      </listitem>
+
+      <listitem>
+        <para>Ícone da ferramenta de clonagem na caixa de ferramentas</para>
+      </listitem>
+
+      <listitem>
+        <para>Ao pressionar o atalho de teclado <keycap>C</keycap>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+        <imagedata format="PNG" fileref="images/toolbox/tool-options-mypaint-brush.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <para>As opções podem agir de forma um pouco diferente de acordo com o pincel MyPaint que você usar.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>Opacidade</term>
+        <listitem>
+          <para>Para definir a opacidade do pincel (0,0 - 100,0). A opacidade depende de uma base: veja abaixo.</para>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Pincel</term>
+        <listitem>
+          <para>O ícone do pincel ativo é exibido. Se você clicar nele, a lista de pincéis MyPaint é exibida e você pode selecionar outro pincel</para>
+          <figure>
+            <title>Uma coleção de pincéis MyPaint</title>
+            <mediaobject>
+              <imageobject>
+              <imagedata format="PNG" fileref="images/dialogs/mypaint-brushes-dialog-simple.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          <para>Na barra inferior da caixa de diálogo, você tem botões para ícones menores ou maiores, e visualização como lista ou grade.</para>
+        </listitem>
+      </varlistentry>
+    
+      <varlistentry>
+        <term>Radial</term>
+        <listitem>
+          <para>Para definir o raio do pincel.</para>
+        </listitem>
+      </varlistentry>
+    
+      <varlistentry>
+        <term>Opacidade do pincel</term>
+        <listitem>
+          <para>Estes valores (0,00 - 2,00) são fatores multiplicativos: se, por exemplo, você definir esta opção para 0,50, a opacidade máxima se torna 100 * 0,50 = 50, embora ainda seja 100,0 na opção Opacidade.</para>
+          <table frame="all">
+            <title>Exemplo de pintura</title>
+            <tgroup cols="4" align="center" colsep="1" rowsep="1">
+              <colspec colname="c1"/>
+              <colspec colname="c2"/>
+              <colspec colname="c3"/>
+              <colspec colnum="4" colname="c4"/>
+              <thead>
+                <row>
+                  <entry morerows="1" valign="top"><para>Opacidade do pincel</para></entry>
+                  <entry namest="c2" nameend="c4" align="center">Opacidade</entry>
+                </row>
+                <row>
+                  <entry>100</entry>
+                  <entry>50</entry>
+                  <entry>25</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry valign="middle">1.00</entry>
+                  <entry>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-ex-base-opacity-1000.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>=100</para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-ex-base-opacity-500.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>=50</para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-ex-base-opacity-250.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>=25</para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                </row>
+                <row>
+                  <entry valign="middle">0.50</entry>
+                  <entry>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-ex-base-opacity-500.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>=50</para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-ex-base-opacity-250.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>=25</para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-ex-base-opacity-125.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>=12.5</para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                </row>
+                <row>
+                  <entry valign="middle">2.00</entry>
+                  <entry>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-ex-base-opacity-1000.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>=100</para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-ex-base-opacity-1000.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>=100</para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-ex-base-opacity-500.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>=50</para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+          <para>A opacidade base pode exceder 1,00 até 2,00. Claro, a opacidade não pode exceder 100. No exemplo, você pode ver que uma opção de opacidade acima de 50 (100 * 2,00 = 200) é na verdade uma opacidade em 100, e 25 * 200 = 50 é equivalente a 50 * 1,00 = 50. Mas essa possibilidade é útil quando seu pincel Mypaint tem uma opacidade padrão menor que 100.</para>
+        </listitem>
+      </varlistentry>
+    
+      <varlistentry>
+        <term>Dureza</term>
+        <listitem>
+          <para>Quanto mais firme o pincel, mais nítido o pincel. Quando você reduz a firmeza, o pincel Mypaint pode não funcionar se o tamanho do pincel for muito pequeno.</para>
+          <figure>
+            <title>Dureza</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-hardness-example-100.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  1.00
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-hardness-example-090.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  0.90
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-hardness-example-080.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  0.80
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/MyPaint-brush-hardness-example-070.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  0.70
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Gain</term>
+        <listitem>
+          <para>
+            This setting changes the pressure gain of pressing down
+            on the canvas with a brush. 
+          </para>
+          <para>
+            If you are using a tablet, then you can adjust this setting
+            to make your brush strokes softer or harder. If you are using
+            a mouse, then you can simulate the effects of pressure when
+            painting.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Pincelada suave</term>
+        <listitem>
+          <para>Se esta opção estiver marcada, os traços ficam mais suaves. Duas opções estão disponíveis:</para>
+          <itemizedlist>
+            <listitem>
+              <para><guilabel>Rodinha</guilabel>: O tamanho do pincel depende da posição da rodinha.</para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Rodinha</guilabel>: O tamanho do pincel depende da posição da rodinha.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Apagar com este pincel</term>
+        <listitem>
+          <para>Se esta opção estiver marcada, o pincel funciona como borracha. Como na ferramenta Borracha, as áreas apagadas são transparentes se houver um canal alfa, têm a cor de fundo se não houver canal alfa.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Sem efeito de apagamento</term>
+        <listitem>
+          <para>
+            If this option is checked, the brush will not decrease the alpha of
+            pixels. For example, if you blur an edge between opaque and
+            transparent pixels, the alpha of the transparent pixels will
+            increase but the alpha of the opaque pixels will not decrease.
+          </para>
+          <figure>
+            <title>Um exemplo de "Sem apagamento" do programador</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/mypaint-brush-ex-noerasing-without.jpg" format="JPG"/>
+              </imageobject>
+              <caption>
+                <para>Sem efeito de apagamento</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/mypaint-brush-ex-noerasing-with.jpg" format="JPG"/>
+              </imageobject>
+              <caption>
+                <para>Sem efeito de apagamento</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Expand Layers</term>
+        <listitem>
+          <xi:include href="about-common-paint-options.xml"/>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+ </sect3>
+</sect2>

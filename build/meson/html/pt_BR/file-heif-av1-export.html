@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.8. Export Image as AVIF</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-ani-export.html" title="5.7. Export Image as Microsoft Windows animated cursor" />
+    <link rel="next" href="file-bmp-export.html" title="5.9. Export Image as BMP" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.8. Export Image as AVIF</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-ani-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-bmp-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-heif-av1-export"></a>5.8. Export Image as AVIF</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id27043" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3247"></a>5.8.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      AVIF stands for AV1 Image File Format. It is an image file format
+      specification for storing images or image sequences compressed with AV1
+      in the HEIF container format.
+    </p>
+        <p>
+      According to tests, AVIF showed better compression efficiency than JPEG
+      as well as better detail preservation, fewer blocking artifacts and less
+      color bleeding around hard edges in composites of natural images, text,
+      and graphics.
+      Most browsers support AVIF natively.
+    </p>
+        <p>
+      More information on <a class="ulink" href="https://en.wikipedia.org/wiki/AVIF" target="_top">Wikipedia</a>.
+    </p>
+        <div class="figure">
+          <a id="id3248"></a>
+          <p class="title">
+            <strong>Figura 15.64. The AVIF Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-avif-dialog.png" alt="The AVIF Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3249"></a>5.8.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Sem perda</span>
+            </dt>
+            <dd>
+              <p>Quando marcado, a imagem será exportada com compressão sem perda. Isso criará uma imagem de maior qualidade em troca de um tamanho de arquivo maior.</p>
+            </dd>
+            <dt>
+              <span class="term">Qualidade</span>
+            </dt>
+            <dd>
+              <p>Se <span class="guilabel">Sem perda</span> não estiver marcado, este valor determina a qualidade da compressão da imagem. 100 fornece a melhor qualidade de imagem e menor compressão, enquanto 0 fornece a maior compressão e pior qualidade de imagem.</p>
+            </dd>
+            <dt>
+              <span class="term">Formatos de arquivo</span>
+            </dt>
+            <dd>
+              <p>Define qual formato de pixel a imagem exportada deve usar para sub-amostragem de cor. Existem três opções:</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">YUV420</span>
+                  </dt>
+                  <dd>
+                    <p>
+                Suitable for photographs with lossy compression. This format is
+                most compatible with other software that uses HEIF and AVIF.
+              </p>
+                  </dd>
+                  <dt>
+                    <span class="term">YUV444</span>
+                  </dt>
+                  <dd>
+                    <p>
+                When used with a high <span class="guilabel">Quality</span> setting, this
+                format exports a visually lossless image.
+              </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RGB</span>
+                  </dt>
+                  <dd>
+                    <p>
+                Useful when exporting images with true lossless quality.
+              </p>
+                    <p>
+                <span class="guilabel">RGB</span> is not available when exporting
+                as HEJ2.
+              </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Profundidade de bits</span>
+            </dt>
+            <dd>
+              <p>Determina se os dados de pixel devem ser armazenados usando 8 bits, 10 bits ou 12 bits por canal de cor.</p>
+            </dd>
+            <dt>
+              <span class="term">Encoder speed</span>
+            </dt>
+            <dd>
+              <p>
+          The tradeoff between speed and compression. <span class="guilabel">Slow</span>
+          will provide a smaller filesize but takes longer to encode.
+        </p>
+            </dd>
+            <dt>
+              <span class="term">Conta gotas</span>
+            </dt>
+            <dd>
+              <p>Se marcado, o perfil de cor é incorporado na imagem exportada.</p>
+            </dd>
+            <dt>
+              <span class="term">Salvar arquivo</span>
+            </dt>
+            <dd>
+              <p>Se marcado, os metadados Exif são incorporados na imagem exportada.</p>
+            </dd>
+            <dt>
+              <span class="term">Salvar</span>
+            </dt>
+            <dd>
+              <p>Se marcado, os metadados XMP são incorporados na imagem exportada.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-ani-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-bmp-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-ani-export.html">5.7. Export Image as Microsoft Windows animated cursor</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-bmp-export.html">5.9. Export Image as BMP</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

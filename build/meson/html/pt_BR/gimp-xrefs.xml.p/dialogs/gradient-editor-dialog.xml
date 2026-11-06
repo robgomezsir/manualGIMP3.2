@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect3 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-04-04 j.h: fixed bug #577170
+  2006-04-30 lexa: made almost docbook compliant
+  2005-11-28 replaced informalfigures by figures by lexa
+-->
+<sect3 id="gimp-gradient-editor-dialog">
+  <title>O Editor de degradês</title>
+  <anchor id="gimp-gradient-edit"/>
+
+  <indexterm>
+    <primary>Degradê</primary>
+    <secondary>Editor</secondary>
+  </indexterm>
+
+  <figure>
+    <title>O editor de degradês</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/gradient-editor-dialog.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>O editor de degradês permite que você edite as cores de um degradê. Ele só pode ser usado em degradês que você tenha criado, ou em cópias dos degradês que vem com o GIMP, uma vez que aqueles são imutáveis. Ele é uma ferramenta sofisticada que pode demorar um pouco para entender. O conceito por trás do editor de degradês, é que os degradês são compostos de uma série de <emphasis>segmentos</emphasis> adjacentes, com cada segmento consistindo de uma transição suave de uma cor no canto esquerdo para uma cor no canto direito. O editor de degradês permite que você manipule qualquer número de segmentos, com quaisquer cores que quiser para os lados esquerdo e direito de cada segmento, com vária opções para a forma da transição da esquerda para a direita.</para>
+
+  <sect4 id="gimp-gradient-editor-dialog-activate">
+    <title>Como ativar o Editor de degradês</title>
+    <para>Você pode ativar o editor de degradês de várias formas:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Com um clique-duplo sobre um degradê no diálogo de degradês.</para>
+      </listitem>
+      <listitem>
+        <para>Do menu de contexto do diálogo de degradês, que você obtém clicando com o botão da direita sobre um degradê.</para>
+      </listitem>
+      <listitem>
+        <para>
+          by clicking on the
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gtk-edit.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <guibutton>Edit gradient</guibutton> button in the Gradient Dialog,
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Gradient Menu you get by clicking on
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          in the Gradient Dialog.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect4>
+
+  <sect4 id="gimp-gradient-editor-dialog-using">
+    <title>Exibição</title>
+    <variablelist>
+      <varlistentry>
+        <term>Nome</term>
+        <listitem>
+          <para>É aqui que você pode mudar o nome sob o qual o gradiente aparece na lista de gradientes.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>A janela de pré-visualização de degradê</term>
+        <listitem>
+          <para>Abaixo do nome, você vê o resultado atual do seu trabalho. Se você mover o ponteiro do mouse nesta exibição, funciona um pouco como um seletor de cores. Informações sobre o pixel sob o mouse são mostradas abaixo da área de pré-visualização e slider.</para>
+          <para><emphasis>Posição</emphasis> é um número entre 0.000 na esquerda e 1.000 no lado direito do gradiente. Abaixo disso, os valores de cor nos modos <emphasis>RGB</emphasis> e <emphasis>HSV</emphasis> são mostrados, seguidos pelos valores de <emphasis>Luminância</emphasis> e <emphasis>Opacidade</emphasis>.</para>
+          <para>Se você clicar e arrastar na visualização, então são exibidos apenas os dados de posição e valores RGB. Mas eles são colocados como cor de Frente do GIMP na caixa de cores (e nos primeiro quadro degradês da lista, que usam essa cor de frente). Se você pressionar <keycap>Ctrl</keycap> ao fazer isso, a cor configurada é a cor de fundo.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Controles de seleção de faixa e seleção</term>
+        <listitem>
+          <para>
+            Below the gradient display, you see a set of black and white
+            triangles lined up in row which allow you to adjust endpoints
+            and midpoints in the gradient preview. A
+            <emphasis>segment</emphasis> is the space between two consecutive
+            <emphasis>black</emphasis> triangles. Inside each segment is a
+            white triangle, which is used to <quote>warp</quote> the colors
+            in the segment, in the same way that the middle slider
+            in the Levels tool warps the colors there. You can select a
+            segment by clicking between the two black triangles that define
+            it. It turns from white to blue. You can select a range of
+            segments by <keycap>Shift</keycap>-clicking on them.
+            The selected range always consists of a set of
+            <emphasis>consecutive</emphasis> segments, so if you
+            skip over any when <keycap>Shift</keycap>-clicking, they will
+            be included automatically. If <quote>Instant update</quote>
+            is checked, the display is updated immediately after any slider
+            movement; if it is unchecked, updates only occur when you release
+            the mouse button.
+          </para>
+          <para>Você pode mover triângulos, segmentos e seleções. Se você simplesmente <emphasis>clicar e arrastar um triângulo</emphasis>, você move a transição correspondente de lugar. Se você <emphasis>clicar e arrastar um segmento</emphasis>, ou uma seleção de vários segmentos, você muda o segmento todo de lugar, comprimindo ou expandindo os segmentos adjacentes.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Barra de rolagem</term>
+        <listitem>
+          <para>Abaixo desses controles, há uma barra de rolagem. Ela só é ativada se você ampliar o fator de zoom da visualização do degradê, ou com os botões da parte de baixo, ou com Ctrl + rodinha do mouse.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Área de parâmetros</term>
+        <listitem>
+          <para>Abaixo, um controle de cor mostra a cor apontada pelo cursor do mouse. As informações sobre essa cor, e dicas interessantes, ou mensagens de ajuda podem aparecer aqui. </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Botões</term>
+        <listitem>
+          <para>
+            The button bar at the bottom offers the following functionality:
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/zoom-out.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase condition="tag-is-required">Diminuir visualização</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-gradient-editor-zoom-out"/>
+                <para>Clicar neste botão diminui o fator de zoom horizontal da visualização do degradê.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/zoom-in.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase condition="tag-is-required">Aumentar visualização</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-gradient-editor-zoom-in"/>
+                <para>Clicar neste botão aumenta o fator de zoom horizontal da visualização do degradê.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/zoom-fit-best.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase condition="tag-is-required">Tamanho normal</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-gradient-editor-zoom-all"/>
+                <para>Clicar nesse botão redimensiona o fator de zoom, de forma que o degradê caiba todo na largura da janela do editor.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect4>
+
+  <sect4 id="gimp-gradient-editor-dialog-menu">
+    <title>O menu de contexto do editor de Degradês.</title>
+    <para>Você pode acessar o menu do editor de degradês ou clicando com o botão direito sobre um degradê na pré-visualização do degradê, ou escolhendo o item de cima no menu de guias para esta janela. O menu permite que você configure as cores das extremidades do segmento selecionado (veja as cores da esquerda e da direita para cada segmento), misture cores, selecione um modelo de cores e edite segmentos.</para>
+    <para>Os seguintes comandos existem nesse menu:</para>
+    <variablelist>
+      <title>Edição de cor de uma extremidade</title>
+      <varlistentry>
+        <term>Tipo de cor da Esquerda/Direita</term>
+        <listitem>
+          <para>Este submenu permite que você selecione uma cor de extremidade a partir das cores configuradas como cor de Frente ou de Fundo da caixa de Ferramentas do GIMP. Ao mudar aquelas cores, essas cores mudam automaticamente dentro do degradê. Se você não quiser isso, use o tipo de cor <guimenuitem>Fixa</guimenuitem></para>
+          <para>Os seguintes comandos existem nesse menu:</para>
+          <variablelist>
+            <varlistentry>
+              <term>Fixed</term>
+              <listitem>
+                <para>
+                  Fixed
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Foreground Color</term>
+              <listitem>
+                <para>
+                  Foreground Color
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Foreground Color (Transparent)</term>
+              <listitem>
+                <para>
+                  Foreground Color (Transparent)
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Background Color</term>
+              <listitem>
+                <para>
+                  Background Color
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Background Color (Transparent)</term>
+              <listitem>
+                <para>
+                  Background Color (Transparent)
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor do canto esquerdo [direito]</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-left-color"/>
+          <anchor id="gimp-gradient-editor-right-color"/>
+          <para>Essas opções permitem que você escolha uma cor para o canto respectivo usando um Editor de cores.</para>
+          <note>
+            <para>Este comando é relacionado ao anterior, e se torna inativo se for selecionado qualquer valor que não seja tipo de cor <guimenuitem>Fixa</guimenuitem> para a extremidade correspondente.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Carregar cor da esquerda [direita] de</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-left-load"/>
+          <anchor id="gimp-gradient-editor-right-load"/>
+          <para>Essas opções lhe dão várias formas diferentes de atribuir cores às extremidades dos segmentos. Deste submenu, você pode escolher (assumindo que estamos lidando com o canto esquerdo):</para>
+          <variablelist>
+            <varlistentry>
+              <term>Canto direito do vizinho a esquerda</term>
+              <listitem>
+                <para>Esta opção vai fazer a cor do final do segmento adjacente ser atribuída também ao segmento selecionado, de forma quena mudança de segmento exista uma continuidade das cores.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Canto direito</term>
+              <listitem>
+                <para>Copia a cor do canto oposto do segmento. Isso torna o segmento em uma úncia cor continua - a não ser que esteja se editando uma seleção de vários segmentos.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Cor de Frente/Fundo</term>
+              <listitem>
+                <para>Esta opção faz com que a cor de frente ou de fundo atual do GIMP, como exibida na caixa de ferramentas, seja atribuída ao canto correspondente do segmento. Selecionar a opção por aqui deixa a cor fixa no degradê: ela não será alterada quando a cor de frente/fundo do GIMP mudar.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Opções fixas RGBA</term>
+              <listitem>
+                <para>Na parte de baixo do menu existem 10 <quote>posições de memória</quote>. Você pode atribuir cores aos mesmos usando a opção <quote>Salvar</quote> do menu, descrita abaixo. Se você escolher uma dessas posições de memória, a cor da mesma será atribuída àquele canto do segmento.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Salvar cor esquerda [direita] para</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-left-save"/>
+          <anchor id="gimp-gradient-editor-right-save"/>
+          <para>Essas opões fazem com que a cor da extremidade em questão seja atribuída a uma <quote>posição de memória</quote>, escolhida de um submenu.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry> <!-- 2013-03-29 -->
+        <term>Clicar e arrastar cores</term>
+        <listitem>
+          <para>Você também pode arrastar e soltar uma cor da caixa de ferramentas ou de uma paleta <itemizedlist>
+              <listitem>
+                <para>Para uma extremidade (um triângulo preto), para configurar as cores direita e esquerda do mesmo.</para>
+              </listitem>
+              <listitem>
+                <para>para a área de visualização do degradê, para dividir um segmento em dois e adicionar um ponto de extremidade naquele ponto, com a cor arrastada dos dois lados.</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Funções de mescla e de cor para o segmento</title>
+      <varlistentry>
+        <term>Função de mescla para o segmento</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-blending"/>
+          <para>Esta opção determina o modo de transição de uma extremidade para a outra do segmento (ou seleção de segmentos), fazendo valer um tipo específico de curva para os extremos e para o meio da faixa.</para>
+          <variablelist>
+            <varlistentry>
+              <term>Linear</term>
+              <listitem>
+                <para>Opção padrão. As cores variam linearmente de um ponto da faixa até o outro. É importante notar que se você for exportar o degradê do GIMP para uso na web ou em outro lugar, esta é a única opção aceita na maior parte dos formatos de arquivo de degradê (em geral nem mesmo o ponto central dos segmentos é levado em conta, e o degradê gerado comporta-se como se ele estivesse no meio do segmento)</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Curvo</term>
+              <listitem>
+                <para>O Degradê varia mais rapidamente nas pontas do segmento do que no meio.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Senoidal</term>
+              <listitem>
+                <para>O oposto do tipo curvo: o degradê varia mais rapidamente no centro do que nas pontas</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Esférico (aumentando)</term>
+              <listitem>
+                <para>O Degradê varia mais rapidamente na extremidade esquerda do que do lado direito.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Esférico (diminuindo)</term>
+              <listitem>
+                <para>O Degradê varia mais rapidamente na extremidade direita do que do lado esquerdo.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Passo</term>
+              <listitem>
+                <para>O gradiente muda do valor da esquerda para o valor da direita em um passo sem cores intermediárias.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Modelo de cor para o Segmento</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-coloring"/>
+          <para>Esta opção lhe dá controle adicional sobre o tipo de transição de uma extremidade para outra: como uma linha ou no espaço RGB, ou no espaço HSV.</para>
+          <para>Os seguintes comandos existem nesse menu:</para>
+          <variablelist>
+            <varlistentry>
+              <term>RGB</term>
+              <listitem>
+                <para>RGB</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>HSV (counter-clockwise hue)</term>
+              <listitem>
+                <para>
+                  HSV (counter-clockwise hue)
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>HSV (clockwise hue)</term>
+              <listitem>
+                <para>
+                  HSV (clockwise hue)
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Modificando segmentos</title>
+      <varlistentry>
+        <term>Espelhar segmento</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-flip"/>
+          <para>Esta opção faz um espelhamento da direita para esquerda da faixa de segmentos selecionada (que pode ser um único segmento), invertendo todas as cores e localizações dos pontos de extremidade.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Replicar segmento</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-replicate"/>
+          <para>Esta opção divide a faixa selecionada (segmento ou seleção) em duas partes, cada uma delas sendo uma cópia exata, e comprimida, da faixa original.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Dividir o segmento ao meio</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-split-midpoint"/>
+          <para>Esta opção divide cada segmento na seleção em dois segmentos, dividindo-os na posição do retângulo branco. O ponto de extremidade criado mantém a cor visível no degradê do lado esquerdo e direito.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Dividir o segmento uniformemente</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-split-uniform"/>
+          <para>Esta opção é similar a opção acima, mas divide cada segmento em vários pedaços do mesmo tamanho. (Caso sejam selecionados dois pedaços, o segmento é dividido no meio, não na posição do triângulo branco)</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Remover segmento</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-delete"/>
+          <para>Esta opção remove todos os segmentos na faixa selecionada, substituindo-os por um único triângulo preto no centro, e aumentando os segmentos dos dois lados para preencher o espaço vazio.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Re-centralizar o ponto  médio do segmento</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-recenter"/>
+          <para>Esta opção move o triângulo branco de cada segmento da faixa selecionada para o ponto central entre os dois triângulos pretos. (a posição inicial do triângulo branco)</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Re-distribuir pontos de manuseio na seleção</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-redistribute"/>
+          <para>Esta opção faz com que o espaço entre todos os triângulos da faixa selecionada seja mudado para ser igual entre todos eles. </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Mesclando cores</title>
+      <para>Essas opções só estão disponíveis se mais de um segmento estiver selecionado</para>
+      <varlistentry>
+        <term>Mesclar cores dos segmentos selecionados</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-blend-color"/>
+          <para>Esta opção faz com que as cores dos pontos de extremidade no interior da seleção tenham suas cores igualadas à média, de forma que a transição de um segmento para outro seja sempre suave.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mesclar opacidade dos segmentos selecionados</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-blend-opacity"/>
+          <para>Esta opção faz o mesmo que a opção anterior, mas só afeta a opacidade em vez da cor.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Editar degradê</term>
+        <listitem>
+          <anchor id="gimp-gradient-editor-edit-active"/>
+          <para>Quando habilitado, o editor de gradiente carregará automaticamente o gradiente atualmente ativo. Se estiver desabilitado, o editor de gradiente não mudará quando o gradiente ativo mudar.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <caution>
+      <para>Não há ação de <quote>Desfazer</quote> no Editor de degradês, então, seja cuidadoso.</para>
+    </caution>
+  </sect4>
+
+  <sect4>
+    <title>Exemplo de uso do Editor de degradês</title>
+    <indexterm>
+      <primary>Tutoriais</primary>
+      <secondary>Novo degradê</secondary>
+    </indexterm>
+    <indexterm>
+      <primary>Degradê</primary>
+      <secondary>Novo degradê</secondary>
+    </indexterm>
+    <para>Todas essas opções podem parecer muito chatas. Aqui temos um exemplo para clarear as idéias:</para>
+    <orderedlist>
+      <listitem>
+        <para>
+          Open the Gradient Dialog. Click
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <guibutton>New Gradient</guibutton>.
+          The Gradient Editor is opened
+          and shows a gradient from black to white.
+        </para>
+        <figure>
+          <title>Novo degradê</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/dialogs/examples/new-gradient-1.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </listitem>
+      <listitem>
+        <para>
+          Right click in this new gradient and select
+          <guilabel>Split Segment Uniformly</guilabel>.
+          If wanted, adjust the number of segments.
+        </para>
+        <figure>
+          <title>Degradê com três segmentos</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/dialogs/examples/new-gradient-2.png"/>
+            </imageobject>
+            <caption>
+              <para>Todo segmento é limitado por dois controles triangulares pretos. Clique na área entre os triângulos para ativar o segmento correspondente. Ao pressionar <keycap>Shift</keycap> enquanto clica, você poderá selecionar segmentos contíguos.</para>
+            </caption>
+          </mediaobject>
+        </figure>
+      </listitem>
+      <listitem>
+        <para>No menu de contexto que você obtém ao clicar com o botão direito no degradê, escolha a <guilabel>Cor do canto esquerdo</guilabel> e <guilabel>Cor do canto direito</guilabel></para>
+        <figure>
+          <title>Primeiro segmento colorido</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/dialogs/examples/new-gradient-3.png"/>
+            </imageobject>
+            <caption>
+              <para>O vermelho foi escolhido para o ponto do canto esquerdo, e amarelo para o ponto do cando direito.</para>
+            </caption>
+          </mediaobject>
+        </figure>
+      </listitem>
+      <listitem>
+        <para>Repita a operação para os outros segmentos. Use as funções de mescla para o segmento para ver efeitos variados.</para>
+      </listitem>
+    </orderedlist>
+  </sect4>
+</sect3>

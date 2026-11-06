@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="file-jpegxl-export">
+  <title>Export Image as JPEG XL</title>
+
+  <indexterm>
+    <primary>JPEG XL</primary>
+  </indexterm>
+  <indexterm>
+    <primary>.jxl</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Export Image as JPEG XL</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Formatos</primary>
+    <secondary>JPEG XL</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <para>
+      <ulink url="https://en.wikipedia.org/wiki/JPEG_XL">JPEG XL</ulink>
+      is an image format that supports both lossy and lossless compression.
+      The lossy compression is similar to that of JPEG, but significantly
+      improved. Besides that there is a <quote>modular</quote> mode, that can
+      be used for lossless compression similar to PNG, and also as an
+      alternate lossy compression mode.
+    </para>
+    <para>
+      You can export your image in this format when you choose the
+      <quote>.jxl</quote> extension, or explicitly choose <quote>JPEG XL</quote>
+      as file type in the export dialog.
+    </para>
+
+    <figure>
+      <title>The JPEG XL Export dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/export-jpegxl-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <variablelist>
+      <varlistentry>
+        <term>Sem perda</term>
+        <listitem>
+          <para>Quando marcado, a imagem será exportada com compressão sem perda. Isso criará uma imagem de maior qualidade em troca de um tamanho de arquivo maior.</para>
+          <para>
+            When unchecked, the image will use a lossy compression technique
+            that can reduce the file size more.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Compression/maxError</term>
+        <listitem>
+          <para>
+            When <guilabel>Lossless</guilabel> is unchecked, this setting
+            influences the amount of compression. Lower values give higher
+            quality. At the minimum value of 1.0 it is visually almost
+            the same as lossless.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Effort/Speed</term>
+        <listitem>
+          <para>
+            This setting determines how much effort the encoder will put into
+            reaching the desired quality, influenced by the
+            <guilabel>Compression/maxError</guilabel> parameter.
+          </para>
+          <para>
+            A higher effort may create more accurate results, but sometimes
+            higher file size in lossy compression mode. A higher effort also
+            consumes more memory too. Usually there is no reason to change
+            the default value (<guilabel>squirrel</guilabel>).
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Profundidade de bits</term>
+        <listitem>
+          <para>
+            Determines if the pixel data should be stored using 8 bits or
+            16 bits per color channel.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <xi:include href="common-export-as-cmyk-setting.xml"/>
+
+      <varlistentry>
+        <term>Salvar arquivo</term>
+        <listitem>
+          <para>Se marcado, os metadados Exif são incorporados na imagem exportada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Salvar</term>
+        <listitem>
+          <para>Se marcado, os metadados XMP são incorporados na imagem exportada.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-10-01 KoSt: Added 'no'
+  2007-09-02 AntI: Added 'es'
+  2007-09-02 j.h: translated to fr
+  2007-08-25 alex falappa: added it
+  2007-08-16 ude: created en, de
+-->
+<sect2 id="script-fu-add-bevel">
+  <title>Adicionar chanfro</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Adicionar chanfro</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Adicionar chanfro</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Adicionar chanfro</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/decor-add-bevel20.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original, o retângulo colorido está selecionado</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/decor-add-bevel21.png"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter adds a slight bevel to an image using a
+      <link linkend="gimp-filter-bump-map">bump map</link> (see below). If there is a
+      selection, it is bevelled, otherwise the filter has no effect.
+    </para>
+    <figure>
+      <title>Outro exemplo de <quote>Adicionar chanfro</quote>, com mapa de relevo</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/decor-add-bevel10.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/decor-add-bevel12.png"/>
+        </imageobject>
+        <caption>
+          <para>Mapa de relevo</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/decor-add-bevel11.png"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <note>
+      <para>
+        If the image is in grayscale mode or indexed mode, this menu entry
+        is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Decor</guisubmenu>
+        <guimenuitem>Add Bevel…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de <quote>Adicionar chanfro</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/decor/add-bevel.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Espessura</term>
+        <listitem>
+          <para>Você pode especificar a espessura do chanfro, em pixels. A espessura máxima é 30 pixels.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Trabalhar em uma cópia</term>
+        <listitem>
+          <para>Se selecionada, o filtro criará uma nova janela contendo uma cópia da imagem com o filtro aplicado. A imagem original permanece inalterada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Manter camada de relevo</term>
+        <listitem>
+          <para>
+            When checked, you will keep the generated bumpmap as a new, not
+            visible layer:
+          </para>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/decor-add-bevel23.png"/>
+            </imageobject>
+            <caption>
+              <para>
+              <link linkend="gimp-layer-dialog">Layers Dialog</link> with
+              <quote>Keep bump layer</quote> enabled
+              </para>
+            </caption>
+          </mediaobject>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

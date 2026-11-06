@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  
+-->
+<sect2 id="plug-in-decompose">
+  <title>Decompor</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Componentes</secondary>
+    <tertiary>Decompor</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Decompor</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Panorama</title>
+    <figure>
+      <title>Decomposição para imagens (RGB)</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/taj_orig_2.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Imagem Original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/components/decompose-ex1.png"/>
+        </imageobject>
+        <caption>
+          <para>Comando <quote>Decompor</quote> aplicado (decomposição RGB) com <guilabel>Decompor para camadas</guilabel> desmarcado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Decomposição para camadas (RGB)</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/taj_orig_2.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Original image.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/components/decompose-ex2-example.png"/>
+        </imageobject>
+        <caption>
+          <para>Resulting image.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/components/decompose-ex2-dialog.png"/>
+        </imageobject>
+        <caption>
+          <para>Comando <quote>Decompor</quote> aplicado (decomposição RGB) com <guilabel>Decompor para camadas</guilabel> marcado.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This command separates the channels (RGB, HSV, CMYK, etc.) of an image
+      into separated images or layers.
+    </para>
+    <note>
+      <para>
+        This command only works on RGB images. If the image is Grayscale or
+        Indexed, the menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Components</guisubmenu>
+        <guimenuitem>Decompose…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do comando<quote>Decompor</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/components/decompose.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <title>Extrair canais</title>
+      <para>As seguintes opções são descritas com o controle  <link linkend="plug-in-decompose-to-layers">Decompor para camadas</link> ativado</para>
+      <varlistentry>
+        <term>modelos de cor</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>RGB</term>
+              <listitem>
+                <para>
+                  If the RGB option is chosen, a gray level image is created
+                  with three layers (Red, Green and Blue), and two channels
+                  (Gray and Alpha).
+                </para>
+                <para>
+                  This function is interesting when using the Threshold tool.
+                  You can also perform operations like cutting, pasting or
+                  moving selections in a single RGB channel. You can use an
+                  extracted grayscale layer as a selection or mask by saving it
+                  in a channel (select the whole or a part of the layer, then
+                  <menuchoice>
+                    <guimenu>Select</guimenu>
+                    <guimenuitem>Save to a channel</guimenuitem>
+                  </menuchoice>
+                  ).
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>RGBA</term>
+              <listitem>
+                <para>
+                  If the RGBA option is chosen, an image is created
+                  similar to the RGB Decomposing with an additional Alpha
+                  layer filled with the transparency values of the source
+                  image. Fully transparent pixels are black and fully
+                  opaque pixels are white.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Alfa</term>
+              <listitem>
+                <para>
+                  This option extracts the image transparency stored in the
+                  Alpha channel in the
+                  <link linkend="gimp-channel-dialog">Channels Dialog</link>
+                  in a separate image. The fully transparent pixels are Black
+                  the fully opaque pixels are white. The graytones are smooth
+                  transitions of the transparency in the source image.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>HSV</term>
+              <listitem>
+                <para>
+                  This option decomposes image into three grayscale layers,
+                  one for Hue, one for Saturation and another for Value.
+                </para>
+                <para>
+                  Although <guilabel>Hue</guilabel> is grayscale, it does
+                  represent hues. In the color wheel, white and black are
+                  starting and arrival points and are superimposed. They
+                  represent Red color at top of the wheel. Gray intermediate
+                  levels are corresponding to intermediate hues on the wheel:
+                  dark gray to orange, mid gray to green and light gray to
+                  magenta.
+                </para>
+                <para><guilabel>Saturação</guilabel> e <guilabel>Luminosidade</guilabel>: Branco representa Saturação máxima (cor pura) e luminosidade máxima (muito brilho). Preto é saturação mínima (preto e branco) e luminosidade mínima (preto).</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>HSL</term>
+              <listitem>
+                <para>Esta opção é similar ao <guilabel>HSV</guilabel>.Ao invés de <emphasis>V</emphasis>alor, a terceira camada contem o componente<emphasis>L</emphasis>uminosidade (que é calculado de uma forma diferente do valor).</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>CMYK</term>
+              <listitem>
+                <para>
+                  This option decomposes an image into four grayscale layers,
+                  one for Yellow, one for Magenta, one for Cyan, and one for
+                  Black.
+                </para>
+                <para>
+                  This option can be useful to transfer an image into printing
+                  software with CMYK capabilities.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>LAB</term>
+              <listitem>
+                <para>
+                  This option decomposes image into three grayscale layers,
+                  layer <quote>L</quote> for Luminance, layer
+                  <quote>A</quote> for colors between green and red, layer
+                  <quote>B</quote> for colors between blue and yellow.
+                </para>
+                <para>A decomposição pelo modelo de cor LAB é um modelo da família Luminosidade- Cor. Um canal é usado pra a Luminosidade enquanto outros dois canais são usados para Cores. O modelo LAB é usado pelo Photoshop.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>LCH</term>
+              <listitem>
+                <para>
+                  This option decomposes image into three grayscale layers,
+                  layer <quote>L</quote> for Luminance, layer <quote>C</quote>
+                  for Chroma, and layer <quote>H</quote> for Hue.
+                </para>
+                <para>
+                  The LCH Decomposing is a color model of the Luminance-Color
+                  family.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>YCbCr ITU R470</term>
+              <term>YCbCr ITU R709</term>
+              <term>YCbCr ITU R470 256</term>
+              <term>YCbCr ITU R709 256</term>
+              <listitem>
+                <para>
+                  In <acronym>GIMP</acronym> there are four YCbCr
+                  decompositions with different values.
+                  Each option decomposes an image in three grayscale layers, a
+                  layer for Luminance and the other two layers for blueness
+                  and redness.
+                </para>
+                <para>
+                  The YCbCr color model, also called YUV, is now used for
+                  digital video (initially for PAL analog video). It's based
+                  on the idea that the human eye is most sensitive to
+                  luminosity, next to colors. The YCbCr Decomposing uses a
+                  transformation matrix and the different options are
+                  different values recommended by ITU (International
+                  Telecommunication Union) applied to the matrix.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <varlistentry id="plug-in-decompose-to-layers">
+        <term>Decompose to layers</term>
+        <listitem>
+          <para>
+            If this option is checked, a new grayscale image is created,
+            with each layer representing one of the channels of the selected
+            mode. If this option is unchecked, every channel is represented
+            in its own image and clearly named in the name bar.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor de frente como cor de registro</term>
+        <listitem>
+          <example>
+            <title>Marcas de corte</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/colors/components/regcolor.png"/>
+              </imageobject>
+              <caption>
+                <para>Imagem de origem</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/colors/components/regcolor-cyan.png"/>
+              </imageobject>
+              <caption>
+                <para>Componente Ciano</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/colors/components/regcolor-black.png"/>
+              </imageobject>
+              <caption>
+                <para>Componente Preto</para>
+              </caption>
+            </mediaobject>
+            <para>(Componentes Magenta e Amarelo omitidos.)</para>
+          </example>
+          <para>Esta opção é para especialistas. Está relacionada com a impressão em CMYK, com o uso de chapas separadas. Quando selecionada, cada pixel da cor de frente atual será preto em cada componente das imagens ou camadas decompostas. Isto permite que você faça as marcas de corte e registro serem visíveis em todos os canais, proporcionando assim uma referência útil para o alinhamento. Uma fina cruz impressa em preto, também pode ser usada para verificar se as pranchas de impressão estão alinhadas.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

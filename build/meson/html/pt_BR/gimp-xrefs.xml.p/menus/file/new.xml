@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-31 j.h: minor changes
+  2008-12-29 j.h: link to File-references to be fixed
+  2007-10-17 j.h: updated to v2.4 (comment)
+  2006-09-19 lexa: minor change (link enabled)
+  2006-07-03 changed the note by j.h
+  2006-06-17 added a para for default image size by j.h
+-->
+<sect2 id="gimp-file-new">
+  <title>Nova…</title>
+
+  <indexterm>
+    <primary>Imagem</primary>
+    <secondary>Novo</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Novo</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Nova Imagem</primary>
+  </indexterm>
+
+
+  <para>Usando o diálogo <guimenuitem>Nova Imagem</guimenuitem>, você pode criar uma nova imagem vazia e definir suas propriedades. A imagem é exibida em uma nova janela de imagem. Você pode ter mais de uma imagem na tela ao mesmo tempo.</para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          You can access this command from the main menu through
+          <menuchoice>
+            <guimenu>File</guimenu>
+            <guimenuitem>New…</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          You can also use the keyboard shortcut
+          <keycombo>
+            <keycap>Ctrl</keycap>
+            <keycap>N</keycap>
+          </keycombo>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Options</title>
+    <figure>
+      <title>O diálogo de <quote>Nova Imagem</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/file/new/advanced-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <indexterm>
+        <primary>Modelo</primary>
+        <secondary>Menu</secondary>
+      </indexterm>
+      <indexterm>
+        <primary>Imagem</primary>
+        <secondary>Tamanho da imagem</secondary>
+        <tertiary>Ao criar</tertiary>
+      </indexterm>
+      <indexterm>
+        <primary>Tamanho da imagem</primary>
+      </indexterm>
+      <varlistentry>
+        <term>Modelo</term>
+        <listitem>
+          <para>Em vez de digitar todos os valores à mão, você pode selecionar alguns valores pré-definidos para a sua imagem a partir de um menu de modelos, que representam os tipos de imagens que são geralmente mais úteis. Os modelos definem valores para o tamanho, resolução, comentários, etc Se houver um tamanho de imagem em particular que você use com frequência e ele não aparece na lista, você pode criar um novo modelo, usando o  diálogo de <link linkend="gimp-template-dialog">Modelos</link>. </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho da imagem</term>
+        <listitem>
+          <para>Aqui você definir a <guilabel>Largura</guilabel> e a <guilabel>Altura</guilabel> da nova imagem. As unidades padrão são pixels, mas você pode escolher uma unidade diferente, se preferir, utilizando o menu ao lado. Se você fizer isso, note que o tamanho em pixels resultante é determinado pela resolução X e Y (que você pode mudar nos <guilabel>Opções Avançadas</guilabel>), e definindo <quote>Um ponto por pixel</quote> no menu <guimenu>Visualizar</guimenu>.</para>
+          <para>Se nenhuma imagem está aberta, a <quote>Nova</quote> imagem  é aberta na janela de imagem vazia, com o tamanho que você determinou. Se você abrir a nova imagem enquanto outra estiver aberta, então ela será aberta em outra janela, ou outra guia no modo de janela única, com o mesmo tamanho da primeira imagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Botões Retrato/Paisagem</term>
+        <listitem>
+          <indexterm>
+            <primary>Modo de retrato/paisagem</primary>
+          </indexterm>
+          <para>
+            These buttons toggle between Portrait and Landscape mode.
+            Their effect is to exchange the values for <guilabel>Width</guilabel>
+            and <guilabel>Height</guilabel>. If the X and Y resolutions are
+            different (in Advanced Options), then these values are also
+            exchanged. On the right, image size, image resolution and
+            color space are displayed.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <sect4>
+      <title>Opções avançadas</title>
+      <indexterm>
+        <primary>Precisão</primary>
+      </indexterm>
+      <indexterm>
+        <primary>8 bits, 16 bits, 32 bits</primary>
+      </indexterm>
+      <para>
+        The <guilabel>Advanced Options</guilabel>
+        are mostly of interest to more advanced <acronym>GIMP</acronym>
+        users. You can display these options by clicking on the small triangle
+        on the lower edge of the dialog window. Note that you will need to scroll
+        down to see all the available options.
+      </para>
+      <variablelist>
+        <indexterm>
+          <primary>Imagem</primary>
+          <secondary>Resolução</secondary>
+          <tertiary>Definir ao criar</tertiary>
+        </indexterm>
+        <indexterm>
+          <primary>Resolução</primary>
+          <secondary>Definir ao criar</secondary>
+        </indexterm>
+        <varlistentry>
+          <term>Resolução X e Y</term>
+          <listitem>
+            <para>Os valores na resolução X <guilabel/> e <guilabel>resolução Y</guilabel> campos referem-se principalmente à impressão: elas não afetam o tamanho da imagem em pixels, mas podem determinar o seu tamanho físico, quando se é impresso. Os valores de resolução X e Y pode determinar como os pixels são traduzidos para outras unidades de medida, como milímetros ou polegadas.</para>
+            <tip>
+              <para>
+                If you want to display the image on the screen at the
+                correct dimensions, select
+                <menuchoice>
+                  <guimenu>View</guimenu>
+                  <guimenuitem>Dot for Dot</guimenuitem>
+                </menuchoice>.
+                Set the zoom factor to 100% to see the image at its true
+                screen size. The calibration of the screen size is normally
+                done when <acronym>GIMP</acronym> is installed,
+                but if the image does not display at the correct size,
+                you may have to adjust the screen parameters in
+                <acronym>GIMP</acronym>. You can do this in
+                the <link linkend="gimp-prefs-display">Preferences</link>
+                dialog.
+              </para>
+            </tip>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Espaço de cor</term>
+          <listitem>
+            <para>Você pode criar a nova imagem em diferentes<link linkend="gimp-image-mode">modos de cor</link>, seja uma imagem <link linkend="glossary-rgb"> RGB</link> ou uma imagem em Tons de cinza.</para>
+            <variablelist>
+              <varlistentry>
+                <term>Cor RGB</term>
+                <listitem>
+                  <para>A imagem é criada no sistema  Vermelho, Verde, e Azul, que é a usada pelo monitor ou tela da televisão.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Tons de cinza</term>
+                <listitem>
+                  <para>A imagem é criada em preto e branco, com vários tons de cinza. Além de seus interesses artísticos, este tipo de imagem pode ser necessária para alguns plug-ins. No entanto, o <acronym>GIMP</acronym> permite <link linkend="gimp-image-convert-grayscale">alterar uma imagem RGB para tons de cinza</link> depois de criada, se você quiser.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+            <para>Você não pode criar uma imagem indexada diretamente deste diálogo, mas é claro que você sempre pode converter a imagem para o modo indexado após ela ter sido criada. Para isso, use o comando <menuchoice><guimenu>Imagem</guimenu><guisubmenu>Modo</guisubmenu><guimenuitem>Indexado</guimenuitem></menuchoice></para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Precisão</term>
+          <!--From www.gimpusers.com/tutorials/whats-new-in gimp-2-10-->
+          <listitem>
+            <para>
+              This setting lets you define the encoding used to store pixel
+              information. For more details, please see the
+              <link linkend="gimp-image-choosing-precision-encoding">
+              Image Encoding</link> section.
+            </para>
+            <para>Há cinco opções disponíveis: <itemizedlist>
+                <listitem>
+                  <para>Inteiro de 8 bits</para>
+                </listitem>
+                <listitem>
+                  <para>Inteiro de 16 bits</para>
+                </listitem>
+                <listitem>
+                  <para>Inteiro de 32 bits</para>
+                </listitem>
+                <listitem>
+                  <para>Ponto flutuante de 16 bits</para>
+                </listitem>
+                <listitem>
+                  <para>Ponto flutuante de 32 bits</para>
+                </listitem>
+              </itemizedlist></para>
+            <para>
+              If you wonder what the difference is between integer and floating
+              point (in the graphics area): If you have an image with 16-bit
+              integer precision per channel, then you have 65,536 shades of
+              different red, green and blue color tones – all of them equally
+              stepped to each other (equal color distance). If you have it in
+              floating point, then there are no equal-wide steps – so you can
+              distribute the possible color values over selected ranges. For
+              example: if you know that you have a very dark image with many
+              shades of dark red color tones then you would benefit from floating
+              point because you can decrease the importance of the brighter color
+              tones and get most color detail out of only the darker reds.
+            </para>
+            <figure>
+              <title>Exemplo de precisão</title>
+              <mediaobject>
+                <imageobject>
+                  <imagedata format="PNG" fileref="images/menus/file/new/precision.png"/>
+                </imageobject>
+                <caption>
+                  <para>A imagem à esquerda tem 8 bits, e a da direita, 32 bits. É possível ver que há muito mais cores disponíveis entre as transições de cor na imagem à direita.</para>
+                </caption>
+              </mediaobject>
+            </figure>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Gama</term>
+          <listitem>
+            <para>Aqui você pode escolher a <link linkend="glossary-channel-encoding">codificação de canal</link> da imagem. As opções são <guilabel>Não linear</guilabel> e <guilabel>Luz linear</guilabel>. Para a precisão de inteiro de 8 bits, o padrão é Não linear; para a precisão de ponto flutuante de 32 bits, é Luz linear. Para mais informações, consulte <link linkend="gimp-image-choosing-precision-encoding">quais opções de precisão você deve escolher</link>.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Espaço de cor</term>
+          <listitem>
+            <para>Aqui você pode escolher um perfil de cor para a imagem. O padrão é o perfil de cor padrão do GIMP, baseado em <guilabel>Espaço de cor</guilabel>, <guilabel>Precisão</guilabel> e <guilabel>Gama</guilabel>. Se preferir usar outro perfil de cor, você pode selecionar no computador um arquivo de perfil de cor ICC escolhendo <guilabel>Selecionar perfil de cor do disco…</guilabel>.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Soft-proofing color profile</term>
+          <listitem>
+            <para>
+              You can attach a CMYK color profile to the image with this option.
+              This profile will be used to create a soft-proofed display of the
+              image when the <guilabel>Proof Colors</guilabel> option is enabled
+              in the <guilabel>View</guilabel> menu.
+              As with the <guilabel>Color Profile</guilabel>, if you prefer to use
+              a different color profile you can select an ICC color profile file
+              from a location on your computer by choosing
+              <guilabel>Select color profile from disk…</guilabel>.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Soft-proofing rendering intent</term>
+          <listitem>
+            <para>
+              This option lets you select the rendering intent that will be used
+              to convert the colors from the soft-proofed image to your display
+              device when
+              <menuchoice>
+                <guimenu>View</guimenu>
+                <guisubmenu>Color Management</guisubmenu>
+                <guimenuitem>Proof Colors</guimenuitem>
+              </menuchoice>
+              is enabled. The four intents are <quote>Perceptual</quote>,
+              <quote>Relative colorimetric</quote>, <quote>Saturation</quote>
+              and <quote>Absolute colorimetric</quote>.
+              See <xref linkend="gimp-prefs-color-management"/> and
+              <xref linkend="gimp-image-color-management"/> for more information.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Use Black Point Compensation</term>
+          <listitem>
+            <para>
+              When enabled, the BPC algorithm attempts to adjust the display of
+              darker areas in the image when the <guilabel>Proof Colors</guilabel>
+              option is enabled in the <guilabel>View</guilabel> menu.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Preencher</term>
+          <listitem>
+            <para>
+              Here, you specify the background color that is used for your new
+              image. It is certainly possible to change the background of an
+              image later, too. You can find more information about doing that
+              in the <link linkend="gimp-layer-dialog">Layers Dialog</link>.
+            </para>
+            <itemizedlist>
+              <para>Existem várias opções:</para>
+              <listitem>
+                <para>Preencha a imagem com a <guilabel>Cor de frente</guilabel> atual, como mostrada na Caixa de ferramentas.</para>
+                <para>Note que você pode mudar a cor de Frente enquanto o diálogo de <quote>Nova Imagem</quote> está aberto, antes de clicar em <guilabel>OK</guilabel>.</para>
+              </listitem>
+              <listitem>
+                <para>Preenche a imagem com a <guilabel>Cor de fundo</guilabel> atual, como mostrada na caixa de ferramentas. (Você pode alterar a cor de fundo também, enquanto a janela de diálogo está aberta).</para>
+              </listitem>
+              <listitem>
+                <para>
+                  Fill the image with <guilabel>Middle Gray (CIELAB)</guilabel>.
+                  This will create a layer with a gray color that is 50% of perceptual
+                  lightness in the selected <link linkend="gimp-image-mode">color mode</link>.
+                </para>
+              </listitem>
+              <listitem>
+                <para>Preencha a imagem com <guilabel>Branco</guilabel>.</para>
+              </listitem>
+              <listitem>
+                <para>Preencher a imagem com <guilabel>Transparência</guilabel>. Se você escolher esta opção, a imagem é criada com um <link linkend="glossary-alpha-channel"> canal alfa</link> e o fundo é transparente. As partes transparentes da imagem da imagem são exibidos com um padrão xadrez para indicar a transparência.</para>
+              </listitem>
+              <listitem>
+                <para>Preenche a imagem com uma <guilabel>Textura</guilabel>. Se você escolher esta opção, a imagem será preenchida com a textura ativa no momento (que pode ser alterada enquanto esta janela estiver aberta).</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Comentário</term>
+          <listitem>
+            <indexterm>
+              <primary>Imagem</primary>
+              <secondary>Comentário</secondary>
+            </indexterm>
+            <indexterm>
+              <primary>Comentário</primary>
+            </indexterm>
+            <para>Você pode escrever um comentário descritivo aqui. O texto é anexado à imagem como um <link linkend="glossary-parasite">parasita</link>, e é exportado junto com a imagem em alguns formatos de arquivo (PNG, JPEG, GIF).</para>
+            <note>
+              <para>Você pode visualizar e editar este comentário no diálogo de  <link linkend="gimp-image-properties">Propriedades da Imagem</link>.</para>
+            </note>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+</sect2>

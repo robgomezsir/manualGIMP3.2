@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-09-05 AntI: added 'es'
+  2007-05-07 KoSt: added 'no'
+  2005-11-15: created by julien hardelin
+-->
+<sect2 id="plug-in-small-tiles">
+  <title>Mosaico pequeno</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Mapeamento</secondary>
+    <tertiary>Mosaico pequeno</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Mosaico pequeno</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>Mosaico pequeno</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/map-taj-smalltile.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Esse filtro reduz o conteúdo da imagem (camada ou seleção ativa) e monta várias cópias do mesmo dentro da imagem original.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Map</guisubmenu>
+        <guimenuitem>Small Tiles…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Mosaico pequeno</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/map/smalltiles.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Espelhar</term>
+        <listitem>
+          <para>Você pode espelhar as pastilhas no eixo <guilabel>Horizontal</guilabel> e/ou <guilabel>Vertical</guilabel> marcando as opções correspondentes.</para>
+          <para>Você também pode decidir quais pastilhas serão espelhadas: <variablelist>
+              <varlistentry>
+                <term>All tiles</term>
+                <listitem>
+                  <para>
+                    All tiles will be flipped.
+                  </para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Alternate tiles</term>
+                <listitem>
+                  <para>Apenas as pastilhas ímpares serão espelhadas.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Explicit tile</term>
+                <listitem>
+                  <para>Você pode definir uma pastilha em particular usando as caixas de entrada de <guilabel>Linha</guilabel> e <guilabel>Coluna</guilabel>. Essa pastilha será marcada com uma caixa na pré-visualização. Pressione <guibutton>Aplicar</guibutton> para marcar essa pastilha explícita. Repita esse procedimento se desejar marcar mais de uma pastilha para ser espelhada.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Opacidade</term>
+        <listitem>
+          <para>Com esse controle deslizante e sua caixa de entrada, você pode determinar a opacidade da imagem resultante. Esta opção só é válida se sua camada de origem tiver um canal alfa.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Número de segmentos</term>
+        <listitem>
+          <para><guilabel>n²</guilabel> significa <quote>transformar a imagem em n ao quadrado pastilhas</quote>, onde <quote>n</quote> é o número que você escolhe com esse controle deslizante ou sua caixa de entrada. Por exemplo: n = 3 irá criar 9 pastilhas com a sua imagem. </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

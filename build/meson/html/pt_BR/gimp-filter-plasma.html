@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.7. Plasma</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="gimp-filter-noise-perlin.html" title="14.6. Perlin Noise" />
+    <link rel="next" href="gimp-filter-noise-simplex.html" title="14.8. Simplex Noise" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.7. Plasma</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-noise-perlin.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="gimp-filter-noise-simplex.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-plasma"></a>14.7. Plasma</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id59849" class="indexterm"></a>
+      <a id="id59853" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4976"></a>14.7.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4977"></a>
+          <p class="title">
+            <strong>Figura 17.357. Exemplo de um plasma criado</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-taj-plasma.jpg" alt="Exemplo de um plasma criado" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Todas as cores produzidas por Plasma são completamente saturadas. Às vezes, as cores fortes podem ser uma distração, e uma superfície mais interessante irá aparecer quando você dessaturar a imagem usando <span class="guimenu">Cores</span> → <span class="guimenuitem">Dessaturar</span>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4978"></a>14.7.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guisubmenu">Noise</span> → <span class="guimenuitem">Plasma…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4979"></a>14.7.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4980"></a>
+          <p class="title">
+            <strong>Figura 17.358. Opções do filtro <span class="quote">“<span class="quote">Plasma</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/plasma-dialog.png" alt="Opções do filtro “Plasma”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Turbulência</span>
+            </dt>
+            <dd>
+              <p>
+            This parameter controls the complexity of the plasma.
+            High values give a hard feeling to the cloud (like an
+            abstract oil painting or mineral grains), low values
+            produce a softer cloud (like steam, mist or smoke).  The
+            range is 0.0 to 7.0.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Semente aleatória, </span>
+              <span class="term">Nova semente</span>
+            </dt>
+            <dd>
+              <p>
+            This option controls the randomness of the filter.
+            The <span class="guilabel">Random seed</span> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <span class="guibutton">New Seed</span>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-noise-perlin.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-noise-simplex.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-noise-perlin.html">14.6. Perlin Noise</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-noise-simplex.html">14.8. Simplex Noise</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

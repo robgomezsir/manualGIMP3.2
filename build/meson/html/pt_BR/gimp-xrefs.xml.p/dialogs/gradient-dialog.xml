@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-03-04 j.h: updated to v2.8
+  2012-03-02 j.h: added link to tagging
+  2008-12-15 j.h: updated to v2.6
+  2008-02-22 j.h: added description for the four first gradients en;fr.
+  2008-01-18 ude: added v2.4. gradient menu options and screenshot
+  2007-09-30 j.h : revised for v2.4. no change
+  2006-04-29 lexa: made file docbook compliant
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-gradient-dialog">
+  <title>Diálogo de degradês</title>
+
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Diálogo de Degradê</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Degradê</primary>
+    <secondary>Diálogo</secondary>
+  </indexterm>
+
+  <figure>
+    <title>A imagem ilustra o diálogo de Degradês</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/gradient-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>O diálogo de <quote>Degradês</quote> oferece uma paleta de degradês que é usada para selcionar um degradê &ndash; um conjunto de cores arranjado de forma linear &ndash; para uso com a ferramenta de <link linkend="gimp-tool-blend">Degradês</link> e várias outras operações. O diálogo também oferece várias funções para manipular degradês. Você pode selecionar um degradê clicando diretamente sobre ele: ele aparecerá na área da caixa de ferramentas destinada a Pincéis/Texturas/Degradês, se essa área estiver ativa nas preferências. Algumas dezenas de degradês acompanham a instalação do GIMP. Você pode criar mais usando o <link linkend="gimp-gradient-editor-dialog">Editor de degradês</link>. Informação geral sobre degradês pode ser vista na seção específica de <link linkend="gimp-concepts-gradients">Degradês</link>.</para>
+  <itemizedlist>
+    <para>Os primeiros cindo degradês da lista são especiais: eles reproduzem o degradê entre as cores de frente e de fundo do GIMP de diferentes formas.</para>
+    <listitem>
+      <para><guilabel>Frente  e Fundo (duas cores)</guilabel>: somente as duas cores de frente e fundo, com um limite bem nítido entre elas.</para>
+    </listitem>
+    <listitem>
+      <para>
+        <guilabel>FG to BG (HSV clock-wise/counter-clockwise Hue)</guilabel>:
+        all hues in the color wheel between the Foreground and the
+        background color, clockwise or counter-clockwise.
+      </para>
+    </listitem>
+    <listitem>
+      <para><guilabel>Frente para fundo (RGB)</guilabel>: O degradê padrão do GIMP - varia suavemente entre as cores de Frente e de Fundo da caixas de ferramentas, usando o modo RGB para calcular as cores intermediárias.</para>
+    </listitem>
+    <listitem>
+      <para><guilabel>Frente para transparente</guilabel>: Só usa uma cor (a cor de Frente), e varia de totalmente opaco  para totalmente transparente. Esse degradê é muito útil quando você trabalha com montagens com limites um pouco enevoados, ou para efeitos de névoa.</para>
+    </listitem>
+  </itemizedlist>
+
+  <sect3 id="gimp-gradient-dialog-activate">
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Gradients</guimenuitem>
+          </menuchoice>;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Gradients</guimenuitem>
+          </menuchoice>,
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Toolbox, by clicking on the current gradient in the
+          <link linkend="gimp-toolbox-indicator-area">Brush/Pattern/Gradient area</link>
+          (if you have checked the
+          <quote>Show active brush, pattern and gradient</quote> option in the
+          <link linkend="gimp-prefs-toolbox">toolbox preferences</link>).
+        </para>
+      </listitem>
+      <listitem>
+        <para>A partir da imagem, usando o atalho de teclado <keycombo><keycap>Ctrl</keycap><keycap>G</keycap></keycombo>.</para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      In the <guimenu>Windows</guimenu> menu, there is a list of
+      <link linkend="gimp-dockable-menu">detached windows</link> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <quote>Gradients</quote> dialog from the main menu:
+      <menuchoice>
+        <guimenu>Windows</guimenu>
+        <guimenuitem>Gradients</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="gimp-gradient-dialog-using">
+    <title>Usando o diálogo de <quote>Degradês</quote></title>
+    <para>A operação mais básica e mais comum com o diálogo é simplesmente clicar em um dos degradês da lista para torna-lo o degradê ativo do GIMP. Ele será então usado em qualquer operação que envolva um degradê.</para>
+    <para>Se você fizer um <emphasis>duplo-clique</emphasis> em um degradê, ele será aberto no Editor de degradês, onde você poderá edita-lo. Enretanto, você só pode aletar degradês que você mesmo tenha criado, não os que vem junto com o GIMP. Se você alterar, por exemplo, o nome de um degradê na lista do editor de degradês, ele será revertido para o nome anterior quando você pressionar Enter. Essa á uma regra geral para todos os recursos que vem com o GIMP: pincéis, texturas, degradês, etc... no entanto, não tem nada de mágica – basta você criar cópias dos recursos que deseja alterar, ou mover os arquivos que vêm com o GIMP para uma pasta onde você tenha permissão de escrita.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Modo de Grade/Lista</term>
+        <listitem>
+          <para>No menu de Guia para o diálogo de <quote>Degradês</quote>, vocêpode escolher entre <guimenuitem>Ver como grade</guimenuitem>e <guimenuitem>Ver como lista</guimenuitem>. No modo de grade, os degradês aparecem em um arranjo regularde miniaturas. Eles ficam muito bonitos quando exibidos desta forma, no entanto é mais difícil escolher o que você quer devido a interferência visual entre degradês vizinhos.  No modo de lista, que é o mais funcional e o modo padrão, eles são alinhados um abaixo do outro, e o nome de cada degradê é exibido.</para>
+          <para>No menu de guias, a opção de <guilabel>Tamanho da pré-visualização</guilabel> permite que você configure o tamanho das miniaturas como mais gostar.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>
+      The button bar at the bottom offers the following functionality:
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gtk-edit.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase>Editar degradê</phrase>
+        </term>
+        <listitem>
+          <para>Este botão ativa o <link linkend="gimp-gradient-editor-dialog">Editor de degradês</link></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase>Novo degradê</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-gradient-new"/>
+          <para>
+            This creates a new gradient, initialized as a simple grayscale,
+            and activates the Gradient Editor so that you can alter it.
+          </para>
+          <para>
+            Gradients that you create are automatically saved in the
+            <filename>gradients</filename> folder of your personal
+            <acronym>GIMP</acronym> directory. Any gradient files (ending with
+            the extension <filename>.ggr</filename>) found in one of these
+            folders, will automatically be loaded when you start
+            <acronym>GIMP</acronym>. You can add more directories to the
+            gradient search path, if you want to, in the Gradients tab of the
+            <link linkend="gimp-prefs-folders-data">Data Folders</link>
+            section of the Preferences dialog.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-duplicate.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase>Duplicar degradê</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-gradient-duplicate"/>
+          <para>
+            This creates a copy of the currently selected gradient. You will
+            be able to edit the copy as editing the original is not supported.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase>Remover degradê</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-gradient-delete"/>
+          <para>Esse botão remove completamente o degradê, se você tiver permissão para isso. O GIMP pede uma confirmação antes de apagar o degradê de forma permanente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/view-refresh.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase>Atualizar degradês</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-gradient-refresh"/>
+          <para>Se você adicionar degradês à sua pasta pessoal de degradês (<filename>gradients</filename>), de outra forma que não através deste diálogo, esse botão faz com que a lista de degradês seja atualizada, de forma que novas entradas se tornem disponíveis.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>
+      The functions performed by these buttons can also be accessed from the
+      dialog pop-up menu, activated by right-clicking anywhere in the
+      gradient list, or via <guisubmenu>Gradient Menu</guisubmenu> in the
+      Tab menu.
+    </para>
+    <para>O menu de degradês também exibe algumas funções adicionais:</para>
+    <variablelist>
+      <varlistentry id="gimp-gradient-save-as-pov">
+        <term>Salvar como POV-Ray</term>
+        <listitem>
+          <para>Permite que você salve o degradê no formato usado pelo programa de Ray-tracing 3D <application>POV-Ray</application>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-gradient-copy-location">
+        <term>Copiar localização do degradê</term>
+        <listitem>
+          <para>Este comando permite que você copie a localização do arquivo do degradê para a área de transferência. Então você pode usá-la para abrir o degradê em outro programa, como um editor de textos, ou anexá-lo a um e-mail.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-gradient-show-in-file-manager">
+        <term>Mostrar no Gerenciador de Arquivos</term>
+        <listitem>
+          <para><guilabel>Média</guilabel>: O valor da médio do intervalo, no canal selecionado.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="script-fu-gradient-example">
+        <term>Degradê personalizado...</term>
+        <listitem>
+          <para>Este comando cria uma imagem de exemplo preenchida com o degradê selecionado. Você pode determinar a largura e altura da imagem, bem como a direção do degradê na janela de diálogo que se abre. Note que áreas transparentes do degradê são preenchidas na imagem com um padrão de xadrez, como o usado pelo GIMP para indicar transparência. Nesse caso, o xadrez fica de fato pintado na imagem. Se você quiser áreas de transparência na sua imagem de exemplo, crie uma nova imagem, e desenhe o degradê com a ferramenta de Degradês.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="python-fu-gradient-save-as-css">
+        <term>Save Gradient as CSS…</term>
+        <listitem>
+          <!--Written with the help of Joao S.O Bueno, plug-in author-->
+          <indexterm>
+            <primary>Trecho de código do CSS de degradês</primary>
+          </indexterm>
+          <para>
+            The CSS (Cascading Style Sheets) language is used to format the
+            display of HTML and XML files, for instance background color,
+            background gradient, or font size. The "CSS Save" plug-in is a CSS3
+            linear gradient generator that allows you to save a CSS3
+            code snippet, containing the gradient data for a given GIMP
+            gradient. This code snippet is a text file: you can copy-paste it to
+            the stylesheet related to your HTML file, to get a gradient
+            background on opening the HTML file in Firefox, Chrome or Safari web
+            navigators. This CSS3 code snippet can also be used as a gradient in
+            SVG files.
+          </para>
+          <para>Aqui está um exemplo de código gerado, obtido usando-se o degradê <quote>Blue Green</quote>:</para>
+          <formalpara>
+            <title>Um trecho de CSS gerado usando o Exportar como CSS</title>
+            <para>
+              <literallayout>
+background-image: linear-gradient(top, rgb(0,123,255) 0%, rgb(72,226,255) 56%,
+     rgb(0,255,161) 100%);
+              </literallayout>
+          </para>
+          </formalpara>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <sect4 id="gimp-gradient-dialog-tags">
+      <title>Rotulando</title>
+      <para>Você pode usar rótulos (tags) para reorganizar a exibição de degradês. Veja <xref linkend="gimp-tagging"/>.</para>
+    </sect4>
+    
+  </sect3>
+  <xi:include href="gradient-editor-dialog.xml"/>
+</sect2>

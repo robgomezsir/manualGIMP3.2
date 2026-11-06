@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Capítulo 11. Gerenciamento de cor com o GIMP</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="become-a-gimp-wizard.html" title="Parte II. Como posso me tornar um mestre no GIMP?" />
+    <link rel="prev" href="gimp-imaging-photos.html" title="Capítulo 10. Melhorando fotografias" />
+    <link rel="next" href="gimp-pimping.html" title="Capítulo 12. Enriqueça meu GIMP" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Capítulo 11. Gerenciamento de cor com o GIMP</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-imaging-photos.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Parte II. Como posso me tornar um mestre no <acronym class="acronym">GIMP</acronym>?</span>
+        <nav> <a accesskey="n" href="gimp-pimping.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="chapter">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="gimp-imaging-color-management"></a>Capítulo 11. Gerenciamento de cor com o GIMP</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Índice</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-imaging-color-management.html#gimp-concepts-color-management">1. Gerenciamento de cores no GIMP</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-imaging-color-management.html#id2807">1.1. Problemas de um fluxo de trabalho sem gerenciamento de cores </a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-imaging-color-management.html#plug-in-icc-profile-set">1.2. Introdução a um fluxo de trabalho de gerenciamento de cor</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-concepts-color-management"></a>1. Gerenciamento de cores no GIMP</h2>
+            </div>
+          </div>
+        </div>
+        <a id="id13059" class="indexterm"></a>
+        <a id="id13061" class="indexterm"></a>
+        <p>Muitos dispositivos que você usa em seu projeto ou fluxo de trabalho de fotografia, como câmeras de fotografia digital, scanners, monitores, impressoras, etc, tem suas características próprias de reprodução de cor. Se estas não forem levadas em conta durante a abertura, edição e gravação de imagens, os ajustes feito podem ser prejudiciais para as mesmas. Com o <acronym class="acronym">GIMP</acronym> você pode ter resultados confiáveis para Web e impressão.</p>
+        <div class="figure">
+          <a id="id2806"></a>
+          <p class="title">
+            <strong>Figura 11.1. Fluxo de processamento de imagens</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/using/colormanagement-workflow1.png" alt="Fluxo de processamento de imagens" />
+              <div class="caption">
+                <p>Fluxo de trabalho sem gerenciamento de Cores </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/using/colormanagement-workflow2.png" alt="Fluxo de processamento de imagens" />
+              <div class="caption">
+                <p>Processamento com gerenciamento de cores</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id2807"></a>1.1. Problemas de um fluxo de trabalho sem gerenciamento de cores </h3>
+              </div>
+            </div>
+          </div>
+          <p>O problema básico de manipulação de imagem, sem gerenciamento de cores é que você simplesmente não vê o que você faz. Isso afeta duas áreas distintas:</p>
+          <div class="orderedlist">
+            <ol class="orderedlist" type="1">
+              <li class="listitem">
+                <p>Há diferenças nas cores, causadas pelas características de cor diferentes de diferentes dispositivos, como câmeras, scanners, monitores ou impressoras</p>
+              </li>
+              <li class="listitem">
+                <p>Existem diferenças de cores causadas pelas limitações de espaço de cores com que um dispositivo específico é capaz de lidar</p>
+              </li>
+            </ol>
+          </div>
+          <p>O principal objetivo do gerenciamento de cores é para evitar tais problemas. A abordagem seguida para fazer isso implica na adição de uma descrição das características de cor de uma imagem ou dispositivos.</p>
+          <p>Estas descrições são chamados de <span class="emphasis"><em>perfis de cor</em></span>. Um perfil de cor é, basicamente, uma tabela de consulta para converter a característica de cor específica de um dispositivo para um espaço de cor independente do dispositivo - o chamado <span class="quote">“<span class="quote">espaço de trabalho</span>”</span>. Toda a manipulação de imagens então, é feita em imagens no espaço de trabalho. Além disso o perfil de cor de um dispositivo (impressora, monitor, etc...) pode ser utilizado para simular a forma como as cores ficariam naquele dispositivo.</p>
+          <p>A criação de perfis de cor é mais frequentemente feita pelo fabricante dos próprios aparelhos. Para tornar esses perfis utilizáveis, independente do sistema operacional e da plataforma, o ICC (International Color Consortium) criou um padrão chamado de perfil ICC que descreve como os perfis de cores são armazenados em arquivos e incorporados em imagens.</p>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="plug-in-icc-profile-set"></a>1.2. Introdução a um fluxo de trabalho de gerenciamento de cor</h3>
+              </div>
+            </div>
+          </div>
+          <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Tip">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Dica]" src="images/tip.png" />
+                </td>
+                <th align="left">Dica</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>A maioria dos parâmetros e perfis descritos aqui podem ser definidos nas preferências do <acronym class="acronym">GIMP</acronym>. Consulte <a class="xref" href="gimp-prefs-color-management.html" title="6.4. Gerenciamento de camadas">Seção 6.4, “Gerenciamento de camadas”</a> para maiores detalhes.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="plug-in-icc-profile-apply"></a>1.2.1. Entrada</h4>
+                </div>
+              </div>
+            </div>
+            <p>A maioria das câmeras digitais incorporam um perfil de cores para arquivos de fotos sem nenhuma interação do usuário. Scanners digitais geralmente vêm com um perfil de cor, que eles também atribuem às imagens digitalizadas.</p>
+            <div class="figure">
+              <a id="id2808"></a>
+              <p class="title">
+                <strong>Figura 11.2. Aplicando o perfil ICC</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/icc-apply-dialog.png" alt="Aplicando o perfil ICC" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>Ao abrir uma imagem com um perfil de cor incorporado, o <acronym class="acronym">GIMP</acronym> oferece-se para converter o arquivo para o espaço de cor RGB de trabalho. Este perfil por padrão é o <span class="quote">“<span class="quote">sRGB</span>”</span> e recomenda-se que todo o trabalho seja feito em nesse espaço de cor. Se, porém, você decidir manter o perfil de cor incorporado na imagem, mesmo assim ela ainda será exibida corretamente.</p>
+            <p>No caso, se por algum motivo um perfil de cor não esteja incorporado na imagem e você sabe (ou tem um bom palpite) qual ele deveria ser, você pode atribuí-lo manualmente para essa imagem.</p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-concepts-cm-display"></a>1.2.2. Visualização</h4>
+                </div>
+              </div>
+            </div>
+            <p>Para obter os melhores resultados, você precisa de um perfil de cor para o monitor. Se um perfil de monitor for configurado, ou para todo o sistema ou na seção de Gerenciamento de Cores do diálogo Preferências do <acronym class="acronym">GIMP</acronym>, as cores da imagem serão exibidas de forma mais precisa.</p>
+            <p>Um dos comandos mais importantes do <acronym class="acronym">GIMP</acronym> para trabalhar com gerenciamento de cores é descrito em <a class="xref" href="gimp-display-filter-dialog.html" title="5.12. Filtros para a tela">Seção 5.12, “Filtros para a tela”</a>.</p>
+            <p>Se você não tem um perfil de cor para o seu monitor, você pode criá-lo usando a calibração de hardware e ferramentas de medição. Em sistemas UNIX você terá o <span class="productname">ColorHug</span>™ (http://www.hughski.com/), <span class="productname">Argyll Color Management System</span>™<a class="xref" href="bibliography.html#bibliography-online-argyllcms" title="Página inicial do sistema de gerenciamento de cores Argyll">[<abbr class="abbrev">ARGYLLCMS</abbr>]</a> ou <span class="productname">LProf</span>™<a class="xref" href="bibliography.html#bibliography-online-lprof" title="Criador de perfis LPROF ICC (2006)">[<abbr class="abbrev">LPROF</abbr>]</a> para criar perfis de cor.</p>
+            <div class="sect4">
+              <div class="titlepage">
+                <div>
+                  <div>
+                    <h5 class="title"><a id="gimp-concepts-cm-display-profiling"></a>1.2.2.1. Visualizar calibração e perfis</h5>
+                  </div>
+                </div>
+              </div>
+              <a id="id13120" class="indexterm"></a>
+              <a id="id13122" class="indexterm"></a>
+              <p>Para telas existem dois passos envolvidos. Uma é chamada a calibração e o outro é chamado de criação do perfil. Além disso, a calibração envolve geralmente duas etapas. A primeira envolve o ajuste controles externos do monitor externos, como contraste, brilho, temperatura de cor, etc, e é altamente dependente do monitor específico. Além disso, existem outros ajustes que são carregados na memória da placa de vídeo para deixar o monitor tão perto de um estado padrão quanto seja possível. Esta informação é armazenada no perfil do monitor na tag chamada <span class="quote">“<span class="quote">vgct</span>”</span>. Provavelmente sob o Windows ou Mac OS, o sistema operacional carrega esta informação (LUT) na placa de vídeo no processo de iniciar o computador. No Linux, no momento, você tem que que usar um programa externo, como o xcalib ou dispwin. (Se você vai fazer uma calibração visual simples usando um site como o de Norman Koren, é possível usar apenas o xgamma para carregar um valor de gama.)</p>
+              <p>O segundo passo, de criação de perfil, deriva um conjunto de regras que possibilitam ao<acronym class="acronym">GIMP</acronym> traduzir os valores RGB no arquivo de imagem em cores adequadas na tela. Isso também é armazenado no perfil do monitor, e não altera os valores RGB na imagem, mas muda quais valores são enviados para a placa de vídeo (que já contém o LUT vgct).</p>
+            </div>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="id2809"></a>1.2.3. Simulação de impressão</h4>
+                </div>
+              </div>
+            </div>
+            <p>Usando o <acronym class="acronym">GIMP</acronym> você pode facilmente obter uma prévia de como sua imagem será no papel. Dado um perfil de cores para a impressora, a wexibição do GIMP pode ser ligada em modo de prova eletrônica. Em tal impressão simulada, cores que não podem ser reproduzidas adequadamente, podem opcionalmente ser marcadas com uma cor cinza neutra, permitindo-lhe corrigir esses erros antes de enviar suas imagens para a impressora.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-imaging-photos.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="become-a-gimp-wizard.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-pimping.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-imaging-photos.html">Capítulo 10. Melhorando fotografias</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-pimping.html">Capítulo 12. Enriqueça meu GIMP</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

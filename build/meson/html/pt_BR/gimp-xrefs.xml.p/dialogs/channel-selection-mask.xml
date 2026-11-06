@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect3 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-02-20 added Spanish translation by manuq
+  2006-04-29 lexa: made docbook compliant
+  2006-02-25 romanofski fixed broken image references
+-->
+<sect3 id="gimp-channel-mask">
+  <title>Máscaras de seleção</title>
+  <anchor id="dialogs-selection-masks" xreflabel="Máscaras de seleção"/>
+
+  <indexterm>
+    <primary>Máscaras</primary>
+    <secondary>Máscara de seleção</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Máscara de seleção</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Máscaras</primary>
+    <secondary>Máscara de canal</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Canal</primary>
+    <secondary>Máscara de canal</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Máscaras</primary>
+    <secondary>Máscara rápida</secondary>
+  </indexterm>
+
+  <figure>
+    <title>Uma seleção composta a partir de canais.</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/channel-masks-example-dialog.png"/>
+      </imageobject>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/channel-masks-example-example.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>
+    Channels can be used to save and restore your selections.
+    In the Channels dialog you can see a thumbnail representing the selection.
+    Selection Masks are a graphical way to build selections into a gray level
+    channel where white pixels are selected and black pixels are not selected.
+    Therefore gray pixels are partially selected. You can think of them as
+    feathering the selection, a smooth transition between selected and not
+    selected. This is important to avoid the ugly pixelization effect when you
+    fill the selection or when you erase its content after isolating a subject
+    from background.
+  </para>
+
+  <variablelist>
+    <varlistentry>
+      <term>Criando máscaras de seleção</term>
+      <listitem>
+        <para>Há várias formas de inicializar uma máscara de seleção. <itemizedlist>
+            <listitem>
+              <para>
+                From the main menu
+                <menuchoice>
+                  <guimenu>Select</guimenu>
+                  <guimenuitem>Save to Channel</guimenuitem>
+                </menuchoice>
+                if there is an active selection.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                In the image window the bottom-left
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-quick-mask-off-symbolic.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                button creates a
+                <link linkend="gimp-quick-mask">Quick Mask</link>; the content
+                will be initialized with the active selection.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                From the Channels dialog, when you click on the
+                <guilabel>New channel</guilabel> button or from the context
+                menu. When created, this Selection mask appears in the
+                Channels dialog, named <quote>Selection maskcopy</quote> with
+                a queuing number. You can change this by using the context
+                menu that you get by right-clicking on the channel.
+              </para>
+            </listitem>
+          </itemizedlist></para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+
+  <sect4>
+    <title>Usando máscaras de seleção</title>
+    <para>Uma vez que o canal esteja inicializado, selecionado (em destaque na lista do diálogo de Canais), visível (ícone de olho no diálogo), e exibido como você deseja (atributos de cor e opacidade), você pode trabalhar no mesmo com todas as ferramentas de pintura. As cores usadas são importantes. Se você pintar com qualquer cor que não seja branco, preto , ou cinza, o valor da cor (sua luminosidade) será usado para determinar o tom de cinza equivalente àquela cor. Quando sua máscara estiver pintada, você pode transformá-la numa seleção clicando no botão <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/gimp-selection.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon> (<link linkend="gimp-channel-selection-replace">Canal para seleção</link>) ou a partir do <link linkend="gimp-channel-menu">menu de contexto</link></para>
+    <para>Você pode trabalhar nos canais (máscaras de seleção) não só com a ferramenta de pincel, mas também com as outras ferramentas e filtros. Por exemplo, você pode usar as próprias ferramentas de seleção no canal para preencher áreas uniformemente com degradês ou texturas. Ao adicionar várias máscaras diferentes a sua lista, você pode compor facilmente seleções bastante complexas. Pode se dizer que uma máscara de seleção é para uma seleção o que uma camada é para uma imagem.</para>
+    <caution>
+      <para>Enquanto um canal (máscara de seleção) estiver ativo, você está trabalhando nesse canal, e não na imagem. Para voltar a trabalhar na imagem, você deve desativar todos os canais (você pode simplesmente selecionar uma camada no diálogo de Camadas para isso). Não se esqueça de desligar sua visualização, clicando no ícone de olho para que ele suma. Certifique-se também de que os 4 canais RGB e A estejam ativos nesse diálogo e exibidos na imagem (os canais no topo da lista).</para>
+    </caution>
+  </sect4>
+</sect3>

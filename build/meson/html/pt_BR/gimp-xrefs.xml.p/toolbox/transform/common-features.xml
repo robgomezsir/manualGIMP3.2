@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history
+  2019-05-02 j.h: add linking FW/BW modes
+-->
+<sect2 id="gimp-tool-transform">
+  <title>Funcionalidades em comum</title>
+
+  <para>Dentro do menu de ferramentas de Transformação, você encontrará oito ferramentas para modificar a apresentação da imagem ou de um elemento da imagem, seleção, camada ou vetor. Cada ferramenta de transformação tem um diálogo de opções e um diálogo de informação para configurar os parâmetros.</para>
+
+  <para>This category includes the following tools:</para>
+  <itemizedlist>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-align">Align and Distribute</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-move">Move</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-crop">Crop</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-rotate">Rotate</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-scale">Scale</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-shear">Shear</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-perspective">Perspective</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>Essas opções estão descritas em <link linkend="gimp-tool-transform">Opções em comum das ferramentas de transformação</link></para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-unified-transform">Unified Transform</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>Essas opções estão descritas em <link linkend="gimp-tool-transform">Opções em comum das ferramentas de transformação</link></para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-flip">Flip</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-cage">Cage Transform</link>;
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <link linkend="gimp-tool-warp">Warp Transform</link>.
+      </para>
+    </listitem>
+  </itemizedlist>
+
+  <sect3 id="gimp-tool-transform-options">
+    <title>Opções</title>
+    <para>Algumas opções são compartilhadas por várias das ferramentas de transformação. Nós as descreveremos aqui. Opções mais específicas serão descritas por cada ferramenta.</para>
+    <variablelist>
+      <varlistentry id="transform-option">
+        <term>Transformar</term>
+        <listitem>
+          <para>O <acronym>GIMP</acronym> oferece três botões que deixam você selecionar em qual elemento a ferramenta de transformação vai atuar.</para>
+          <note>
+            <para>
+              The Transform option for a tool persists after changing tools.
+            </para>
+          </note>
+          <variablelist>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-layer.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Camada</phrase>
+              </term>
+              <listitem>
+                <para>Quando você ativa o primeiro botão na seleção de <quote>o que transformar</quote> - <guiicon><inlinegraphic fileref="images/tool-options/rotate-affect-layer.png"/></guiicon> a ferramenta vai operar na camada ou objeto de desenho (máscara, canal, ...)  ativo. Se não existir nenhuma seleção, toda a camada será transformada.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-selection.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Seleção</phrase>
+              </term>
+              <listitem>
+                <para>Quando você ativa o segundo botão, <guiicon><inlinegraphic fileref="images/tool-options/rotate-affect-selection.png"/></guiicon>, a ferramenta vai afetar a própria seleção: o seu contorno será transformado. (na verdade, o canal interno do GIMP que contém a seleção).</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-path.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Vetor</phrase>
+              </term>
+              <listitem>
+                <para>
+                  When you activate the third button,
+                  the tool works on the active path only.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-image.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Imagem</phrase>
+              </term>
+              <listitem>
+                <para>
+                  When you activate the fourth button,
+                  the transformation is applied to all layers.
+                </para>
+              <figure>
+                <title>Exemplo para cortar com proporção</title>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="JPG" fileref="images/toolbox/transform-image-ex1.jpg"/>
+                  </imageobject>
+                  <caption>
+                    <para>Você pode usar as Guias para ajudar a posicionar a área de corte. Certifique-se de que a opção <menuchoice><guimenu>Visualizar</guimenu><guimenuitem>Atrair para as guias</guimenuitem></menuchoice> está ligada.</para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="JPG" fileref="images/toolbox/transform-image-ex2.jpg"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      Fourth button pressed, Rotate tool applied. Note the
+                      adaptation of layer sizes.
+                    </para>
+                  </caption>
+                </mediaobject>
+              </figure>
+            </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="direction-option">
+        <term>Direção</term>
+        <listitem>
+          <para>Esta opção configura a direção em que a transformação atuará</para>
+          <para>O modo <quote>Normal (Para frente)</quote> transformará a imagem ou seleção como você espera que aconteça: você usa as alças de manipulação para realizar a transformação desejada. A imagem ou camada será transformada para a posição em que você coloca a pré-visualização ou a grade (se você usar uma grade, veja abaixo).</para>
+          <para>O modo <quote>Corretivo (Para trás)</quote> inverte a direção. Quando não existia a pré-visualização da imagem para transformações, era usado principalmente com a transformação de rotação para permitir nivelar objetos inclinados em fotografias: sem a pré-visualização ativada, você alinha a grade com o objeto inclinado e usa a transformação reversa. Isso ainda pode ser útil em alguns casos. Com a pré-visualização, o modo Corretivo continua sendo a melhor forma, por exemplo, de normalizar uma área que está num plano inclinado numa foto (como uma capa de livro, uma pintura numa parede, etc...) de forma que ele se torne o assunto principal de uma imagem: Na transformação de perspectiva mova as quatro alças para os cantos do objeto em questão, e use o modo Corretivo. Veja <xref linkend="gimp-tool-rotate"/> e  <xref linkend="gimp-tool-perspective"/></para>
+          <para>
+            You can link these two options in Rotate,
+            Scale, Perspective, Unified transform and Handle transform tools.
+            This allows moving handles without affecting the transformation,
+            letting you manually readjust their position.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-tool-interpolation-methods">
+        <term>Interpolação</term>
+        <listitem>
+          <para>
+            This drop-down list lets you choose the method of the
+            transformation. The chosen method influences the speed and quality,
+            though it also depends on the image and the type of transformation
+            what will work best in each case.
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>Nenhum</term>
+              <listitem>
+                <para>A cor de cada pixel é copiada diretamente do pixel vizinho mais próximo na imagem original. Isso normalmente resulta em imagens serrilhadas (o efeito de <quote>escadinha</quote>) é uma imagem pobre. É o método mais rápido, embora nos computadores atuais isso não faça tanta diferença. É mais útil para se obter efeitos especiais, ao se aumentar o tamanho de imagens para a obtenção de uma imagem pixelada <quote>retrô</quote>, e para fins de computação gráfica quando outros métodos tem que ser comparados com esse. Em alguns lugares é chamada de <quote>Vizinho mais próximo</quote>.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Linear</term>
+              <listitem>
+                <para>A cor de cada pixel é computada levando-se em conta os quatro pixels mais próximos na imagem original. Isso gera um resultado satisfatório e é uma boa relação  entre velocidade e qualidade. Algumas vezes este método é chamado de <quote>Bilinear</quote>.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Cúbica</term>
+              <listitem>
+                <para>A cor de cada pixel é computada levando-se em conta os oito pixels mais próximos na imagem original. Em geral dá um bom resultado, mas naturalmente leva mais tempo. Algumas vezes é chamada de <quote>Bicúbica</quote>.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>LoHalo</term>
+              <term>NoHalo</term>
+              <listitem>
+                <para>
+                  These methods perform a high quality interpolation. Use the
+                  <guilabel>NoHalo</guilabel> method when you downscale an image
+                  to less than a half of the original size and the
+                  <guilabel>LoHalo</guilabel> method when you do not reduce the
+                  size much (rotate, shear).
+                </para>
+                <para>
+                  A <quote>Halo</quote> is an artifact that can be created by
+                  interpolation. It reminds of the halo you can get when using
+                  <xref linkend="gimp-filter-unsharp-mask"/>.
+                  Here is a note from Nicolas Robidoux, the creator of these
+                  quality samplers for GEGL and GIMP:
+                </para>
+                <literallayout>
+                  "If haloing is not an issue with your content and use case,
+                  which of the two should you try first?
+                  (Clearly, if you want to minimize haloing, NoHalo is the
+                  ticket.)
+
+                  If you are reducing an image, LoHalo is generally better.
+
+                  If your transformation is not an all around reduction, for
+                  example if you enlarge, rotate or apply a perspective
+                  transformation that keeps portions of the image at the same or
+                  higher resolution, I generally prefer NoHalo. This preference,
+                  however, changes depending on the image content. If, for
+                  example, the image contains text or text-like objects or has
+                  significant areas with only a handful of different colours,
+                  like old school pixel art, I’d switch to LoHalo. Likewise if
+                  the image is quite noisy or marred by compression artifacts
+                  (as are most JPEGs found on the web). Conversely, if the
+                  image is noise free, very slightly blurry (meaning that when
+                  pixel peeking, the lines and interfaces are smeared over two
+                  or more pixels), and there are delicate skin tones to be
+                  preserved, I’d try NoHalo first. Actually, if I find that
+                  colours have not been preserved nicely after transforming an
+                  image with LoHalo, I’d immediately switch to NoHalo, even if
+                  reducing.
+
+                  In any case, these recommendations should not be taken as
+                  gospel. I still have much to learn and figure out. For
+                  example, how best to deal with transparency and different
+                  colour spaces is something I’m likely to be thinking about
+                  for a while."
+                </literallayout>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+          <note>
+            <para>Você pode configurar o método padrão de interpolação na guia de <link linkend="gimp-prefs-tool-options">Opções de Ferramentas</link> do diálogo de Preferências.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="clipping-option">
+        <term>Cortar</term>
+        <listitem>
+          <indexterm>
+            <primary>Transformar</primary>
+            <secondary>Cortar</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Cortar</primary>
+            <secondary>Transformar</secondary>
+          </indexterm>
+          <para>Após a transformação, a imagem pode ser maior. Esta opção vai cortar a imagem transformada, limitando-a ao tamanho da imagem original.</para>
+          <para>Você pode escolher entre várias formas de corte:</para>
+          <variablelist>
+            <varlistentry>
+              <term>Ajustar</term>
+              <listitem>
+                <figure>
+                  <title>Imagem original usada para os exemplos</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/clip-orig.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Imagem original</para>
+                    </caption>
+                  </mediaobject>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/clip-adjust.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Rotação aplicada com <quote>Ajustar</quote></para>
+                    </caption>
+                  </mediaobject>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/clip-adjust2.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Rotação aplicada com <quote>Ajustar</quote> e a tela de pintura aumentada para o tamanho da camada.</para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+                <para>Com Ajustar: a camada é aumentada para conter toda a camada rotacionada. A nova borda de camada é visível; a camada toda se torna visível ao se usar o comando <menuchoice><guimenu>Imagem</guimenu><guimenuitem>Ajustar tela às camadas</guimenuitem></menuchoice></para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Cortar</term>
+              <listitem>
+                <figure>
+                  <title>Exemplo com Cortar</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/clip-crop.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Cortar</para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+                <para>Com Cortar: tudo o que ultrapassa o tamanho da imagem é removido.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Cortar para o resultado</term>
+              <listitem>
+                <figure>
+                  <title>Exemplo de Cortar para o resultado</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/clip-3.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Rotação de 45° com Cortar para o resultado</para>
+                    </caption>
+                  </mediaobject>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/toolbox/clip-3b.png" format="PNG"/>
+                    </imageobject>
+                    <caption>
+                      <para>O limite corte está marcado com vermelho. Nenhuma área transparente é incluída.</para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+                <para>Se esta opção estiver selecionada, a imagem é cortada de forma que um retângulo que deixe de fora todas as áreas transparentes, que são criadas nos cantos de uma transformação de rotação por exemplo, limite o tamanho da imagem final. Áreas não transparentes, mas que fiquem fora desse limite, são cortadas.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Cortar com proporção</term>
+              <listitem>
+                <figure>
+                  <title>Exemplo para cortar com proporção</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/toolbox/clip-4a.png" format="PNG"/>
+                    </imageobject>
+                    <caption>
+                      <para>Imagem original</para>
+                    </caption>
+                  </mediaobject>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/toolbox/clip-4b.png" format="PNG"/>
+                    </imageobject>
+                    <caption>
+                      <para>Rotação de -22°</para>
+                    </caption>
+                  </mediaobject>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/toolbox/clip-4c.png" format="PNG"/>
+                    </imageobject>
+                    <caption>
+                      <para>A imagem rotacionada</para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+
+                <para>Essa opção funciona como a descrita anteriormente, mas certifica-se de que a proporção (largura:altura) do retângulo preservado seja a mesma da camada original.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="preview-option">
+        <term>Show image preview</term>
+        <listitem>
+          <indexterm>
+            <primary>Pré-visualização</primary>
+            <secondary>Ferramentas de transformação</secondary>
+          </indexterm>
+          <para>Se estiver habilitada, que é a configuração padrão, a imagem transformada será visível acima da imagem original, não importa quantas camadas ela tenha. Também há um controle que permite selecionar a opacidade da pré-visualização. (as configurações de opacidade, modo e outras da camada original são ignoradas)</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="composited-preview">
+        <term>Composited preview</term>
+        <listitem>
+          <indexterm>
+            <primary>Pré-visualização</primary>
+            <secondary>Composited preview</secondary>
+          </indexterm>
+          <para>
+            <subscript>
+              Inspired from
+              <ulink url="https://librearts.org/2020/02/gimp-2-10-18-full-review"/>
+            </subscript>
+          </para>
+          <para>
+            <emphasis>Show preview as part of the image composition</emphasis>:
+            when you have multiple layers, each one with its own blending mode
+            and opacity, transforming it means it pops up right above every
+            other layer. So in a complex layers composition you can't align
+            this layer against other layers without much trial and error.
+          </para>
+          <para>
+            The Composited Preview option removes this problem in favor
+            of rendering the preview of the transformed layer exactly where it
+            is in the layers stack, exactly with the opacity and blending mode
+            of choice.
+          </para>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/toolbox/3DTransf-orig-example.png" format="PNG"/>
+            </imageobject>
+            <caption>
+              <para>Imagem original usada para os exemplos</para>
+            </caption>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/toolbox/3DTransf-orig-dialog.png" format="PNG"/>
+            </imageobject>
+            <caption>
+              <para>The red layer opacity is 80%.</para>
+            </caption>
+          </mediaobject>
+          <figure>
+            <title>Composited Preview Example</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/3DTransf-no.jpg" format="JPEG"/>
+              </imageobject>
+              <caption>
+                <para>
+                  Composited option unchecked: in preview, red layer is above
+                  all other layers.
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/3DTransf-with.jpg" format="JPEG"/>
+              </imageobject>
+              <caption>
+                <para>
+                  Composited option checked: in preview, red layer is at its
+                  right place, like in layer stack.
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>
+            One sub option is available:
+            <itemizedlist>
+              <listitem>
+                <para>
+                  <guilabel>Synchronous preview</guilabel>: this option is
+                  experimental. The idea is to render the preview as soon as
+                  you change the transform. So instead of waiting for the mouse
+                  to stop moving, it renders the result immediately. If GIMP
+                  can render everything fast enough, this means a much smoother
+                  and more instant feedback.
+                </para>
+                <para>
+                  But this option also blocks everything until the preview is
+                  done rendering. This means, GIMP can become much less
+                  responsive, usually when the layer is very large. That's why
+                  this is disabled by default.
+                </para>
+              </listitem>
+            </itemizedlist>
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-tool-transform-guides">
+        <term>Guias</term>
+        <listitem>
+          <indexterm>
+            <primary>Transformar</primary>
+            <secondary>Guias</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Guias</primary>
+            <secondary>Transformar</secondary>
+          </indexterm>
+          <para>Esta é uma lista flutuante onde você seleciona o tipo de linhas guia que poderá lhe ajudar na transformação. Todas as guias usam uma moldura para delimitar os limites da imagem além das linhas usadas pelas diferentes opções.</para>
+          <variablelist>
+            <varlistentry>
+              <term>Nehuma guia</term>
+              <listitem>
+                <para>Como o nome diz, nenhuma guia será usada.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Linhas centrais</term>
+                <listitem>
+                  <para>Usa uma linha vertical e uma horizontal que se cruzam no centro da imagem ou camada.</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Regra dos terços</term>
+              <listitem>
+                <para>Dividem a área de transformação em  nove partes iguais adicionando duas linhas horizontais e duas linhas verticais com espaçamento igual. De acordo com essa regra, popular em fotografia, as partes mais interessantes de uma imagem estão localizadas nos pontos de intersecção das linhas.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Regra dos quintos</term>
+              <listitem>
+                <para>Como a <quote>regra dos terços</quote>, mas divide a imagem em cinco linhas de cinco retângulos.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Seções áureas</term>
+              <listitem>
+                <para>Também chamada de <quote>proporção Áurea</quote>. Divide a área sendo transformada em nove partes, usando a fórmula matemática da proporção áurea, que é usada para formas mais agradáveis, tanto ao longo da história da arte como em formas da natureza.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Linhas diagonais</term>
+              <listitem>
+                <para>Divide a área a ser transformada usando linhas diagonais.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Número de linhas da grade</term>
+              <listitem>
+                <para>Desenha uma grade retangular com um número fixo de linhas verticais e horizontais. O número de linhas é configurado no controle deslizante que aparece quando esta opção é selecionada.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Espaçamento das linhas da grade</term>
+              <listitem>
+                <para>Desenha uma grade retangular na área de transformação usando linhas espaçadas umas das outras, conforme configuradas no controle deslizante que aparece.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+  <sect3 id="transform-path">
+    <title>Transformando vetores</title>
+    <indexterm>
+      <primary>Transformar</primary>
+      <secondary>Vetores</secondary>
+    </indexterm>
+    <indexterm>
+      <primary>Vetores</primary>
+      <secondary>Transformar</secondary>
+    </indexterm>
+    <para>Se por algum motivo você desejar transformar vetores, é possível fazer isso usando-se as ferramentas de transformação.</para>
+    <figure>
+      <title>Rotacionando vetores</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/paths-transform-1.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Diálogo de vetores</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/paths-transform-2.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Modo de operação: Vetor</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Após o vetor ser desenhado, vá até o diálogo de vetores, e clique no primeiro campo na frente do nome do vetor, de forma que o ícone de olho apareça e o vetor se torne visível. Senão ele desaparece assim que você seleciona uma ferramenta que não seja a de vetores. Em seguida, escolha uma ferramenta de transformação e na parte superior do diálogo de Opções de ferramentas, clique no ícone de vetores. Isso configurar a ferramenta para atuar no vetor ativo.</para>
+    <para>Execute a transformação como de costume e confirme quando tiver acabado. Pode ser uma boa ideia configurar as guias para <quote>Nenhuma guia</quote> para não ter outros elementos interferindo com o vetor.</para>
+    <para>Quando a transformação tiver terminado, escolha a ferramenta de vetores e clique no vetor alterado para ativa-lo novamente para continuar trabalhando nele.</para>
+  </sect3>
+</sect2>

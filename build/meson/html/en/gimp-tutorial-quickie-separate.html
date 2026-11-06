@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.10. Separating an Object From Its Background</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-tutorial-quickies.html" title="4. Common Tasks" />
+    <link rel="prev" href="gimp-tutorial-quickie-rotate.html" title="4.9. Rotate An Image" />
+    <link rel="next" href="gimp-getting-unstuck.html" title="Chapter 4. What to do if you are stuck" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.10. Separating an Object From Its Background</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tutorial-quickie-rotate.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>4. Common Tasks</span>
+        <nav> <a accesskey="n" href="gimp-getting-unstuck.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tutorial-quickie-separate"></a>4.10. Separating an Object From Its Background</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id6500" class="indexterm"></a>
+      <div class="figure">
+        <a id="id1365"></a>
+        <p class="title">
+          <strong>Figure 3.27. Object with Background</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/tutorials/quickie-remove-background-source.jpg" alt="Object with Background" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+      Sometimes you need to separate the subject of an image from its
+      background. You may want to have the subject on a flat color, or keep the
+      background transparent so you can use it on an existing background, or
+      any other thing you have in mind. To do this, you must first use
+      <acronym class="acronym">GIMP</acronym>'s selection tools to draw a selection around your
+      subject. This is not an easy task, and selecting the correct tool is
+      crucial. You have several tools to accomplish this:
+      </p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p>
+            <span class="bold"><strong>The <span class="quote">“<span class="quote">Free Select
+            Tool</span>”</span></strong></span> allows you to draw a border using either
+            freehand or straight lines. Use this when the subject has a
+            relatively simple shape. Read more about this tool here:
+            <a class="xref" href="gimp-tool-free-select.html" title="2.4. Free Selection (Lasso)">Section 2.4, “Free Selection (Lasso)”</a>
+          </p>
+            <div class="figure">
+              <a id="id1366"></a>
+              <p class="title">
+                <strong>Figure 3.28. Free Select Tool</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/stock-icons/gimp-tool-free-select.svg" width="16" alt="Free Select Tool" />
+                </div>
+                <div class="mediaobject">
+                  <img src="images/tutorials/quickie-background-free-select.jpg" alt="Free Select Tool" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+          </li>
+          <li class="listitem">
+            <p>
+            <span class="bold"><strong>The <span class="quote">“<span class="quote">Scissors Select
+            tool</span>”</span></strong></span> lets you select a freehand border and uses
+            edge-recognition algorithms to better fit the border around the
+            object. Use this when the subject is complex but distinct enough
+            against its current background. Read more about this tool here:
+            <a class="xref" href="gimp-tool-iscissors.html" title="2.8. Scissors Select">Section 2.8, “Scissors Select”</a>
+          </p>
+            <div class="figure">
+              <a id="id1367"></a>
+              <p class="title">
+                <strong>Figure 3.29. Scissors Select Tool</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/stock-icons/gimp-tool-iscissors.svg" width="16" alt="Scissors Select Tool" />
+                </div>
+                <div class="mediaobject">
+                  <img src="images/tutorials/quickie-background-scissors.jpg" alt="Scissors Select Tool" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+          </li>
+          <li class="listitem">
+            <p>
+            <span class="bold"><strong>The <span class="quote">“<span class="quote">Foreground Select
+            Tool</span>”</span></strong></span> lets you mark areas as
+            <span class="quote">“<span class="quote">Foreground</span>”</span> or <span class="quote">“<span class="quote">Background</span>”</span> and refines
+            the selection automatically. Read more about this tool here:
+            <a class="xref" href="gimp-tool-foreground-select.html" title="2.5. Foreground Select">Section 2.5, “Foreground Select”</a>
+          </p>
+            <div class="figure">
+              <a id="id1368"></a>
+              <p class="title">
+                <strong>Figure 3.30. Foreground Select Tool</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/stock-icons/gimp-tool-foreground-select.svg" width="16" alt="Foreground Select Tool" />
+                </div>
+                <div class="mediaobject">
+                  <img src="images/tutorials/quickie-background-foreground-select.jpg" alt="Foreground Select Tool" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+          </li>
+        </ul>
+      </div>
+      <p>
+    </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1369"></a>4.10.1. Once you have selected your subject</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Once you have selected your subject successfully, use
+      <span class="guimenu">Select</span> → <span class="guimenuitem">Invert</span>. Now,
+      instead of the subject, the background is selected. What you do now
+      depends on what you intended to do with the background:
+      </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>To fill the background with a single color:</p>
+              <p>
+            Click the foreground color swatch (the top left of the two
+            overlapping colored rectangles) in the toolbox and select the
+            desired color. Next, use <a class="xref" href="gimp-tool-bucket-fill.html" title="3.4. Bucket Fill">Section 3.4, “Bucket Fill”</a>
+            to replace the background with your chosen color.
+          </p>
+              <div class="figure">
+                <a id="id1370"></a>
+                <p class="title">
+                  <strong>Figure 3.31. Result of Adding a Plain Color Background</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/tutorials/quickie-background-color-result.png" alt="Result of Adding a Plain Color Background" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="listitem">
+              <p>
+            To make a black-and-white background while keeping the subject in
+            color:
+          </p>
+              <p>
+            Use
+            <span class="guimenu">Colors</span> → <span class="guimenuitem">Desaturate</span>. In the dialog that opens, cycle between the modes
+            and select the best-looking one, then click OK.
+          </p>
+              <div class="figure">
+                <a id="id1371"></a>
+                <p class="title">
+                  <strong>Figure 3.32. Result of Desaturating the Background</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/tutorials/quickie-background-desaturate-result.png" alt="Result of Desaturating the Background" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+          </ul>
+        </div>
+        <p>
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tutorial-quickie-rotate.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tutorial-quickies.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-getting-unstuck.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tutorial-quickie-rotate.html">4.9. Rotate An Image</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-getting-unstuck.html">Chapter 4. What to do if you are stuck</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.7. Pixelizar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-blur.html" title="3. Filtros de desfocar" />
+    <link rel="prev" href="gimp-filter-median-blur.html" title="3.6. Desfoque por Mediana" />
+    <link rel="next" href="gimp-filter-gaussian-blur-selective.html" title="3.8. Desfoque Gaussiano Seletivo" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.7. Pixelizar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-median-blur.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Filtros de desfocar</span>
+        <nav> <a accesskey="n" href="gimp-filter-gaussian-blur-selective.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-pixelize"></a>3.7. Pixelizar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id47997" class="indexterm"></a>
+      <a id="id48001" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4253"></a>3.7.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4254"></a>
+          <p class="title">
+            <strong>Figura 17.25. Exemplo para o filtro <span class="quote">“<span class="quote">Pixelizar</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo para o filtro “Pixelizar”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/blur-taj-pixelise.jpg" alt="Exemplo para o filtro “Pixelizar”" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>O filtro Pixelizar renderiza a imagem usando grande blocos de cor. É muito similar ao efeito visto na televisão quando escondem um criminoso durante um julgamento. Esse filtro é usado para criar o <span class="quote">“<span class="quote">efeito Abraham Lincoln</span>”</span>: veja <a class="xref" href="bibliography.html#bibliography-online-bach" title="Face em blocos">[<abbr class="abbrev">BACH04</abbr>]</a>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4255"></a>3.7.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>Você pode encontrar este filtro no menu principal em <span class="guimenu">Filtros</span> → <span class="guisubmenu">Desfocar</span> → <span class="guimenuitem">Pixelizar...</span>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4256"></a>3.7.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4257"></a>
+          <p class="title">
+            <strong>Figura 17.26. Opções do filtro <span class="quote">“<span class="quote">Pixelizar</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/blur/pixelize-options.png" alt="Opções do filtro “Pixelizar”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Forma</span>
+            </dt>
+            <dd>
+              <p>Há três tipos de Forma: <span class="guilabel">Losango</span>, <span class="guilabel">Círculo</span> e <span class="guilabel">Quadrado</span> (o padrão). As formas Losango e Círculo só serão visíveis quando você baixar a <span class="guilabel">Proporção de Tamanho X/Y</span> para cerca de 0,6 (losango) ou 0,5 (círculo).</p>
+            </dd>
+            <dt>
+              <span class="term">Largura do bloco, </span>
+              <span class="term">Altura do bloco</span>
+            </dt>
+            <dd>
+              <p>Aqui, você pode definir a largura e altura desejadas para os blocos, em pixels.</p>
+              <p>
+            By default, width and height are linked, indicated by the
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-vchain.svg" width="16" /></span>
+            </span>
+            chain symbol next to the input boxes. If you want to set width and
+            height separately, click on that chain symbol to unlink them.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Deslocamento X, </span>
+              <span class="term">Deslocamento Y</span>
+            </dt>
+            <dd>
+              <p>Deslocamento horizontal/vertical das formas em pixels dentro de um bloco.</p>
+            </dd>
+            <dt>
+              <span class="term">Proporção de tamanho X, </span>
+              <span class="term">Proporção de tamanho Y</span>
+            </dt>
+            <dd>
+              <p>Proporção de tamanho horizontal/vertical (0,000-1,000) de um pixel dentro de um bloco. O valor padrão é 1,000. O número de blocos permanece o mesmo; então, se você mudar a proporção, o tamanho do bloco muda, e os pixels faltantes são substituídos pela cor de fundo.</p>
+            </dd>
+            <dt>
+              <span class="term">Cor de fundo</span>
+            </dt>
+            <dd>
+              <p>A cor de fundo padrão é a que estiver na caixa de ferramentas. Você pode alterá-la clicando na referência de cor, que abrirá um <a class="link" href="gimp-dialogs-content.html#gimp-color-dialog" title="3.1. DIálogo de cor de Frente/Fundo">diálogo de seleção de cor</a>, ou escolher uma cor usando o <a class="link" href="gimp-tool-color-picker.html" title="5.4. Seletor de cores">seletor de cores</a> à direita.</p>
+              <p>Observe que você pode alterar a cor de fundo para ser parcial ou totalmente transparente pela redução do valor de alfa no diálogo de seleção de cor. Isto pode levar a efeitos interessantes desde que a camada em que você esteja trabalhando possua um canal alfa.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-median-blur.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-blur.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-gaussian-blur-selective.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-median-blur.html">3.6. Desfoque por Mediana</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-gaussian-blur-selective.html">3.8. Desfoque Gaussiano Seletivo</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

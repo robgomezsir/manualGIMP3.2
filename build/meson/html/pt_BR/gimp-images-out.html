@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Capítulo 6. Obtendo imagens fora do GIMP</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="become-a-gimp-wizard.html" title="Parte II. Como posso me tornar um mestre no GIMP?" />
+    <link rel="prev" href="gimp-using-fileformats-opening.html" title="3. Opening Images" />
+    <link rel="next" href="gimp-using-web.html" title="2. Preparando suas imagens para a Web" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Capítulo 6. Obtendo imagens fora do GIMP</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-fileformats-opening.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Parte II. Como posso me tornar um mestre no <acronym class="acronym">GIMP</acronym>?</span>
+        <nav> <a accesskey="n" href="gimp-using-web.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="chapter">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="gimp-images-out"></a>Capítulo 6. Obtendo imagens fora do GIMP</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Índice</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-images-out.html#gimp-using-fileformats">1. Arquivos</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-images-out.html#save-export-image">1.1. Salvar / Exportar imagens</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-images-out.html#gimp-using-fileformats-export-dialog">1.2. Formatos de arquivo</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-using-web.html">2. Preparando suas imagens para a Web</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-web.html#gimp-using-web-size-vs-quality">2.1. Imagens coma relação ótima entre tamanho e qualidade</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-web-reducing-file-size.html">2.2. Reduzindo o tamanho do arquivo ainda mais</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-web-transparency.html">2.3. Exportando imagens com transparência</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-using-fileformats"></a>1. Arquivos</h2>
+            </div>
+          </div>
+        </div>
+        <a id="id8381" class="indexterm"></a>
+        <p>O <acronym class="acronym">GIMP</acronym> é capaz de ler e escrever uma grande variedade de formatos de arquivo. Com exceção de arquivos nativos do GIMP, no formato XCF, o tratamento de arquivos é feito por plug-ins. Então é fácil estender o suporte do <acronym class="acronym">GIMP</acronym> a novos formatos de arquivo conforme a necessidade aparece.</p>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="save-export-image"></a>1.1. Salvar / Exportar imagens</h3>
+              </div>
+            </div>
+          </div>
+          <a id="id8388" class="indexterm"></a>
+          <a id="id8390" class="indexterm"></a>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Nota]" src="images/note.png" />
+                </td>
+                <th align="left">Nota</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>Quando você abre uma imagem, digamos no formato de arquivo JPG ou PNG, ela é importada para o próprio formato XCF do <acronym class="acronym">GIMP</acronym>, como um novo projeto.</p>
+                  <p>Nas edições anteriores do <acronym class="acronym">GIMP</acronym>, quando você abria uma imagem de algum formato, por exemplo, JPG ou PNG, a imagem mantinha esse formato e era salva no mesmo arquivo com o comando <span class="command"><strong>Salvar</strong></span>. No <acronym class="acronym">GIMP</acronym>-2.8, as imagens que não são do tipo XCF são importadas como um novo projeto neste formato. Por exemplo, uma imagem <span class="quote">“<span class="quote">girassol.png</span>”</span> será carregada como <span class="quote">“<span class="quote">*[girassol] (importada)-1.0 (Cor indexada, 1 layer)</span>”</span>. O asterisco no início indica que esta imagem foi alterada depois que o projeto foi salvo pela última vez. A imagem será salva num arquivo <span class="quote">“<span class="quote">girassol.xcf</span>”</span> pelo comando <span class="command"><strong>Salvar</strong></span>. Para gravar um arquivo em qualquer formato que não seja o XCF, use o comando <span class="command"><strong>Exportar</strong></span>, no menu arquivo.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>Quando terminar de trabalhar com uma imagem, você salvará os resultados. Na verdade, geralmente é uma boa ideia salvar em estágios intermediários também. O <acronym class="acronym">GIMP</acronym> é um programa bastante robusto, mas em ocasiões raras falhas aconteceram.</p>
+          <p>O formato nativo XCF do <acronym class="acronym">GIMP</acronym> é especial. É o único formato que pode armazenar <span class="emphasis"><em>tudo</em></span> sobre uma imagem (com exceção das informações <span class="quote">“<span class="quote">desfazer</span>”</span>). Esta é a razão pela qual salvar só pode ser feito neste formato. Isso torna o formato XCF especialmente adequado para armazenar resultados intermediários e para salvar imagens para serem reabertas posteriormente no <acronym class="acronym">GIMP</acronym>.</p>
+          <p>Os arquivos XCF não são legíveis pela maioria dos outros programas que exibem imagens. Depois de terminar de editar sua imagem, você pode exportá-la para o formato de sua escolha. O <acronym class="acronym">GIMP</acronym> suporta uma ampla variedade de formatos. A maioria dos formatos de arquivo que podem ser importados também pode ser usada para exportação.</p>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-using-fileformats-export-dialog"></a>1.2. Formatos de arquivo</h3>
+              </div>
+            </div>
+          </div>
+          <p>Há vários comandos para <span class="emphasis"><em>salvar</em></span> ou <span class="emphasis"><em>exportar</em></span> imagens. Uma listagem e informações sobre como usa-los pode ser vista na seção falando sobre o <a class="link" href="gimp-file-menu.html" title="2. O menu “Arquivo”">menu Arquivo</a></p>
+          <p>O <acronym class="acronym">GIMP</acronym> permite que você salve as imagens que cria numa grande variedade de formatos. É importante ter sempre em mente que o único formato que pode preservar <span class="emphasis"><em>todas</em></span> as informações de uma imagem, incluindo camadas, transparência, etc... é o formato XCF nativo do GIMP. Todos os outros formatos preservam algumas propriedades da imagem e perdem outras, e a maior parte sequer pode preservar camadas. É importante entender as capacidades do formato que você escolhe para o uso de sua imagem fora do GIMP.</p>
+          <p>Exportar uma imagem não modifica a imagem em si, portanto você não perde nada ao exportar. Veja <a class="link" href="gimp-export-dialog.html" title="5.4. Exportar arquivo">Exportar arquivo</a>.</p>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Nota]" src="images/note.png" />
+                </td>
+                <th align="left">Nota</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        When you close an image (possibly by quitting GIMP), you are warned if
+        the image has been changed without subsequently being saved (an asterisk
+        is in front of the image name in the title bar of the main window).
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-fileformats-opening.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="become-a-gimp-wizard.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-web.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-fileformats-opening.html">3. Opening Images</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-web.html">2. Preparando suas imagens para a Web</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

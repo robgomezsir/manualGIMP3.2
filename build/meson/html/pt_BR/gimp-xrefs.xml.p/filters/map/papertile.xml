@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-03-02 j.h: update to v2.10
+  2005-11-15: created by julien hardelin
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-tile-paper">
+  <title>Mosaico de papel</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Mapeamento</secondary>
+    <tertiary>Mosaico de papel</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Mosaico de papel</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>Mosaico de papel</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/map-taj-papertile.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro corta a imagem (a camada ativa ou a seleção) em vários pedaços, de forma quadrada, e então movimenta cada um de forma que eles se sobreponham ouse distanciem. Eles podem sair um pouco pra fora das bordas da imagem.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Map</guisubmenu>
+        <guimenuitem>Paper Tile…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Mosaico de papel</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/map/paper_tile-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tile Width</term>
+        <term>Tile Height</term>
+        <listitem>
+          <para>
+            Filter starts cutting image before it displaces pieces; so, piece
+            size and number of pieces in horizontal (Width) and vertical
+            (Height) directions must be convenient to image size.
+          </para>
+          <para>
+            When these options are linked, tiles are square.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Move rate</term>
+        <listitem>
+          <para>Essa é a percentagem máximo de deslocamento de cada quadrado recortado em relação ao seu tamanho.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Dar a volta</term>
+        <listitem>
+          <para>Conforme os quadrados se deslocam, alguns podem sair pelas bordas da imagem. Se esta opção estiver marcada, o que sair de um lado da imagem reaparece do lado oposto.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fractional type</term>
+        <listitem>
+          <para>Por conta do corte na imagem, pixels da imagem original pode persistir. Há três formas de trata-los:</para>
+          <variablelist>
+            <varlistentry>
+              <term>Forçar</term>
+              <listitem>
+                <para>Os pixels restantes também serão cortados</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Ignorar</term>
+              <listitem>
+                <para>O <guilabel>Tipo de fundo</guilabel> não é levado em conta, e os pixels restantes são deixados sem modificações.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Plano de fundo</term>
+              <listitem>
+                <para>Os pixels restantes serão deixados com a cor de fundo, conforme definida na seção <quote>Tipo de fundo</quote></para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Centralizando</term>
+        <listitem>
+          <para>Se esta opção for marcada, os quadradinhos serão reunidos em conjunto, no centro da imagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tipo de fundo</term>
+        <listitem>
+          <para>Você pode selecionar o tipo de fundo que será usado, se o botão de <guilabel>Fundo</guilabel> estiver marcado em uma das seis opções:</para>
+          <variablelist>
+            <varlistentry>
+              <term>Imagem invertida</term>
+              <listitem>
+                <para>As cores de fundo serão a cor da imagem original, no mesmo local, só que invertidas;</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Transparente</term>
+              <listitem>
+                <para>O fundo será transparente</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Imagem</term>
+              <listitem>
+                <para>As cores de fundo serão a cor da imagem original, no mesmo local.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Color</term>
+              <listitem>
+                <para>
+                  Remaining pixels will be replaced by the color you can
+                  select. Default is the Foreground color of toolbox. You can
+                  choose another color using the color button or the color
+                  picker.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Random seed</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

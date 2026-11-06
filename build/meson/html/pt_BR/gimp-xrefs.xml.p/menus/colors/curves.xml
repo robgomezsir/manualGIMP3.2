@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-07-03 j.h: update to v2.10.12
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-curves">
+  <title>Curvas</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Curvas</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Curvas</primary>
+  </indexterm>
+
+  <para>A ferramenta Curvas é a ferramenta mais sofisticada para mudar a cor, brilho, contraste ou transparência da camada ou seleção ativa. Enquanto a ferramenta Níveis lhe permite trabalhar em Sombras e Destaques, a ferramenta Curvas lhe permite trabalhar em qualquer intervalo tonal. Funciona em imagens RGB.</para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          You can access this command from the main menu through
+          <menuchoice>
+            <guimenu>Colors</guimenu>
+            <guimenuitem>Curves…</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          You can also access it by clicking the tool icon
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-curves.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          in the Toolbox if this tool has been installed there. For this, please
+          refer to <xref linkend="gimp-prefs-toolbox"/>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções de <quote>Curvas</quote></title>
+    <figure>
+      <title>O diálogo <quote>Curvas</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/colors/curves-dialog.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term>Opções de Mistura</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Canal</term>
+        <listitem>
+          <variablelist>
+            <para>Há cinco opções:</para>
+            <varlistentry>
+              <term>Valor</term>
+              <listitem>
+                <para>Esta curva representa o Valor, i.e. o brilho de pixels como pode ser visto na imagem composta.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Red</term>
+              <term>Green</term>
+              <term>Blue</term>
+              <listitem>
+                <para>A curva representa a quantidade de cor em cada um dos três canais RGB. Aqui, <emphasis>escuro</emphasis> significa <emphasis>pouca</emphasis> cor. <emphasis>Claro</emphasis> significa <emphasis>muita</emphasis> cor.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Alfa</term>
+              <listitem>
+                <para>A curva representa a opacidade dos pixels. <emphasis>Escuro</emphasis> significa <emphasis>muito transparente</emphasis>. <emphasis>Claro</emphasis> significa <emphasis>muito opaco</emphasis>. Sua imagem ou camada ativa precisa ter um canal alfa para esta opção estar disponível.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Redefinir Canal</term>
+        <listitem>
+          <para>Este botão apaga todas as mudanças feitas ao canal selecionado e o retorna aos valores padrão.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-color-space-linear-symbolic.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          Linear
+        </term>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-color-space-non-linear-symbolic.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          Non-Linear
+        </term>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-color-space-perceptual-symbolic.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          Perceptual
+        </term>
+        <listitem>
+          <para>
+            These three buttons determine whether the tone reproduction (TRC)
+            will be displayed using a linear, non-linear, or perceptual X axis.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-histogram-linear.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          Linear histogram
+        </term>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-histogram-logarithmic.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          Logarithmic histogram
+        </term>
+        <listitem>
+          <para>
+            These two buttons determine whether the histogram will be displayed
+            using a linear or logarithmic Y axis. For images taken from
+            photographs, the linear mode is most commonly useful. For images
+            that contain substantial areas of constant color, though, a linear
+            histogram will often be dominated by a single bar, and a
+            logarithmic histogram will often be more useful.
+          </para>
+          <para>
+            You can also use the same
+            options in the Tool Options dialog if Curves has been enabled as a
+            tool. This grayed out histogram is not displayed by default.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Área de Edição Principal</term>
+        <listitem>
+          <itemizedlist>
+            <listitem>
+              <para><emphasis role="bold">O gradiente horizontal</emphasis>: ele representa a escala tonal da <emphasis>entrada</emphasis>. Ele também vai de 0 (preto) a 255 (branco), de Sombras a Destaques. Quando você ajusta a curva, ela se divide em duas partes; a parte superior, então, representa o <emphasis>balanço tonal</emphasis> da camada ou seleção.</para>
+            </listitem>
+            <listitem>
+              <para><emphasis role="bold">O gradiente vertical</emphasis>: ele representa o destino, a escala tonal da <emphasis>saída</emphasis>. Ele vai de 0 (preto) a 255 (branco), de Sombras a Destaques.</para>
+            </listitem>
+            <listitem>
+              <para><emphasis role="bold">O gráfico</emphasis>: A curva é desenhada numa grade e vai do canto inferior esquerdo para o canto superior direito. A <emphasis>posição x/y do cursor</emphasis> é permanentemente exibida na parte superior esquerda da grade. Por padrão esta curva é reta, porque todo nível da entrada corresponde ao mesmo tom de saída. O GIMP automaticamente coloca um ponto em ambas as pontas da curva, para preto (0) e branco (255).</para>
+              <para>Se você clicar na curva, um novo <emphasis>ponto</emphasis> é criado. Quando o cursor do mouse passa sobre um ponto, ele se transforma numa pequena mão. Você pode clicar e arrastar o ponto para dobrar a curva.</para>
+              <para>Se você clicar fora da curva, um ponto também é criado, e a curva automaticamente o inclui. <emphasis role="underline"> Se você clicar enquanto aperta <keycap>Ctrl</keycap> fora da curva, a coordenada Y é atraída para a curva original</emphasis>: isto é particularmente útil para adicionar pontos ao longo da curva.</para>
+              <para>Pontos inativos são brancos. O ponto ativo é preto. Você pode ativar um ponto ao clicar nele. Você também pode alternar a ativação do ponto usando as setas direcionais Esquerda e Direita do seu teclado.</para>
+              <para>Dois pontos definem um <emphasis>segmento de curva</emphasis> que representa um intervalo tonal na camada. Você pode clicar e arrastar este segmento (o que criará um novo ponto). Logicamente, você não pode arrastar para além dos pontos extremos.</para>
+              <para>Para <emphasis>mover um ponto</emphasis>, há várias possibilidades para um fino ajuste da posição do ponto: <itemizedlist>
+                  <listitem>
+                    <para>Clique e arraste o ponto.</para>
+                  </listitem>
+                  <listitem>
+                    <para>Usar as setas direcionais Cima e Baixo (segurar <keycap>Shift</keycap> pressionado lhe permite mover em incrementos de 15 pixels) para mover o ponto verticalmente.</para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <emphasis role="underline"><keycap>Ctrl</keycap> + 
+                      click-and-drag allows you to move the point along the 
+                      curve in its segment, independently of the pointer 
+                      position.</emphasis>
+                    </para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      Another way to move point is using the 
+                      <quote>Input</quote> and <quote>Output</quote> spin 
+                      buttons: see below.
+                    </para>
+                  </listitem>
+                </itemizedlist></para>
+              <para>Para <emphasis>apagar</emphasis> todos os pontos (exceto os dois extremos, que não podem ser removidos), clique no botão <guibutton>Redefinir Canal</guibutton>. Para apagar somente um ponto, mova-o além de qualquer ponto adjacente horizontalmente.</para>
+              <para>Enquanto isso, na tela de pintura, o cursor do mouse tem a forma de um conta-gotas. Se você clicar num pixel, uma linha vertical aparece no gráfico, na posição do valor de referência para este pixel no canal selecionado. Se você segurar <keycap>Shift</keycap> e clicar, você criará um ponto no canal selecionado. Se você segurar <keycap>Ctrl</keycap> e clicar, você criará um ponto em todos os canais, possivelmente incluindo o canal Alfa. Você também pode apertar <keycap>Shift</keycap> e arrastar e apertar <keycap>Ctrl</keycap> e arrastar: isto moverá a linha vertical e o ponto aparecerá ao soltar o botão esquerdo do mouse.</para>
+              <para>O <emphasis>histograma</emphasis> da camada ou seleção ativa para o canal selecionado é representado em cinza no gráfico. É apenas uma referência e não é atualizado durante o tratamento.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Input</term>
+        <term>Output</term>
+        <listitem>
+          <para>Estes botões giratórios permitem definir numérica e precisamente as coordenadas do ponto selecionado caso preciso.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tipo</term>
+        <listitem>
+          <para>Os pontos de controle podem ser ou pontos <guilabel>Suaves</guilabel> (padrão: todos os pontos são suaves) ou <guilabel>Cantos</guilabel>. Estes pontos de canto resultam em ângulos duros. Eles são exibidos por meio de um formato de losango. Você pode alternar entre Suave e Canto para o ponto selecionado.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tipo de curva</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Suave</term>
+              <listitem>
+                <para>Esta opção Suave afeta a curva inteira, não apenas o ponto selecionado como acima.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Mão Livre</term>
+               <listitem>
+                 <para>Com este modo, você pode desenhar à mão livre uma linha que pode ser suavizada clicando no tipo de Curva <guilabel>Suave</guilabel>.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Usando <quote>Curvas</quote></title>
+
+    <sect4>
+      <title>Sumário e formas básicas</title>
+
+      <para>Nós criamos pontos e segmentos na curva e os movemos para moldar a curva. Esta curva mapeia os tons de <quote>entrada</quote> da camada ou seleção ativa para tons de <quote>saída</quote>.</para>
+
+      <simplesect role="NotInToc">
+        <title>Como a ferramenta Curvas funciona</title>
+
+        <para>Movendo o ponto um pixel para cima torna este pixel mais claro.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/toolbox/curves-work.png" format="PNG"/>
+          </imageobject>
+          <caption>
+            <para lang="en">Movendo o ponto para cima</para>
+          </caption>
+        </mediaobject>
+      </simplesect>
+
+      <simplesect role="NotInToc">
+        <title>Tornando a curva mais horizontal</title>
+
+        <para>Tornar a curva mais horizontal força todo o intervalo tonal de entrada a ocupar um intervalo tonal de saída reduzido.</para>
+        <para>O histograma mostra a compressão dos pixels dentro do intervalo de saída. Pixels mais escuros e mais claros desapareceram: o contraste diminui.</para>
+        <figure>
+          <title>Tornando a curva mais horizontal</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/toolbox/curves-horiz-1.png" format="PNG"/>
+            </imageobject>
+            <caption>
+              <para>Tornar a curva mais horizontal</para>
+            </caption>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/toolbox/curves-horiz-2.png" format="PNG"/>
+            </imageobject>
+            <caption>
+              <para>O histograma resultante</para>
+            </caption>
+          </mediaobject>
+        </figure>
+      </simplesect>
+
+      <simplesect role="NotInToc">
+        <title>Tornando a curva mais vertical</title>
+
+        <para>Mover o ponto extremo superior para a esquerda e o ponto extremo inferior para a direita é o mesmo que mover o botão deslizante branco para a esquerda e o botão deslizante preto para a direita na ferramenta Níveis: todos os pixels cujo valor for superior ao ponto branco (porção achatada da curva) são tornados brancos (mais coloridos/opacos de acordo com o canal selecionado). Todos os pixels cujo valor for inferior ao ponto preto (a curva inferior achatada) são tornados pretos (preto/totalmente transparente). Pixels correspondentes aos pontos da curva que foram movidos para cima ficam mais claros. Pixels correspondentes aos pontos da curva que foram movidos para baixo são tornados mais escuros (setas verdes). Todos estes pixels serão estendidos para o intervalo tonal de saída inteiro.</para>
+        <para>O histograma mostra a extensão dos valores, de preto (0) a branco (255): contraste é aumentado. Uma vez que o canal Valor foi selecionado, as mudanças afetam todos os canais de cor e as cores se intensificam.</para>
+        <figure>
+          <title>Tornando a curva mais vertical</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/toolbox/curves-vert-1.png"/>
+            </imageobject>
+            <caption>
+              <para>Tornar a curva mais vertical</para>
+            </caption>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/toolbox/curves-vert-2.png"/>
+            </imageobject>
+            <caption>
+              <para>Resultado e seu histograma</para>
+            </caption>
+          </mediaobject>
+        </figure>
+      </simplesect>
+    </sect4>
+
+    <sect4>
+      <title>Casos práticos</title>
+
+      <simplesect role="NotInToc">
+        <title>Inverter cores</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/toolbox/curves-invert.png"/>
+          </imageobject>
+          <caption>
+            <para>Curva invertida</para>
+          </caption>
+        </mediaobject>
+        <para>Preto se torna branco (totalmente colorido/opaco). Branco se torna preto (preto, totalmente transparente). Todos os pixels adotam as cores complementares. Por quê? Porque subtrair os valores do canal de 255 dá a cor complementar. Por exemplo: 19;197;248, um azul celeste, dá 255-19;255-197; 255-248 = 236;58;7, um vermelho forte.</para>
+      </simplesect>
+
+      <simplesect role="NotInToc">
+        <title>Melhorar contraste</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/toolbox/curves-H-S.png" format="PNG"/>
+          </imageobject>
+          <caption>
+            <para>Contraste melhorado</para>
+          </caption>
+        </mediaobject>
+        <para>Contraste é melhorado em tons médios porque a curva é mais abrupta aqui. Destaques e Sombras são aumentados mas o contraste é menor nestas áreas porque a curva é mais achatada.</para>
+      </simplesect>
+
+      <simplesect role="NotInToc">
+        <title>Trabalhando em canais de cor</title>
+
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/toolbox/curves-lighten-1.png"/>
+          </imageobject>
+        </mediaobject>
+        <para>Para cada canal, movemos o ponto branco horizontalmente para a esquerda, para o primeito tom claro. Isto clareia os Destaques. Então, moldamos a curva para clarear os Tons Médios e Sombras enquanto mantemos o preto.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/toolbox/curves-lighten-2.png"/>
+          </imageobject>
+          <caption>
+            <para>A imagem original e o resultado</para>
+          </caption>
+        </mediaobject>
+      </simplesect>
+    </sect4>
+  </sect3>
+</sect2>

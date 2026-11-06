@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-01 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-supernova">
+  <title>Supernova</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Luz e sombra</secondary>
+    <tertiary>Supernova</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Supernova</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro Supernova</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/light-taj-supernova.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter creates a big star reminding a supernova. It works with
+      RGB and GRAY images. Light effect decreases according to 1/r where r
+      is the distance from star center.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Light and Shadow</guisubmenu>
+        <guimenuitem>Supernova…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Supernova</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/light-and-shadow/supernova-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term><quote>Tipo de entrada</quote></term>
+        <term>Recorte</term>
+        <term>Opções de mesclagem</term>
+        <term>Pré-visualização</term>
+        <term>Mesclar filtro</term>
+        <term>Visualização dividida</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Centro X</term>
+        <term>Centro Y</term>
+        <listitem>
+          <para>Você pode usar caixas de entrada para definir as coordenadas horizontal (X) e vertical (Y)  do centro da Supernova. Você também pode clicar o centro da SuperNova na caixa de <emphasis>pré-visualização</emphasis> caixa.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio</term>
+        <listitem>
+          <para>
+            This is radius of the Supernova center: the upper limit seems to 
+            be unlimited. When you increase the value, you increase the number 
+            of central white pixels according to r*r (1, 4, 9, …).
+          </para>
+          <para>O raio é representado por uma linha horizontal na pré-visualização, com uma cruz na ponta. Você pode clicar e arrastar esta cruz para definir o raio.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Número de raios</term>
+        <listitem>
+          <para>Este é o número de raios (1-1024). Cada pixel no centro da supernova emite raios de largura de um pixel. Todos esses raios são mais ou menos sobrepostos resultando neste efeito cintilante que você obtém ao mover este controle. </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Matiz aleatório</term>
+        <listitem>
+          <para>
+            Color rays at random. (0-360) value seems to be a range in
+            HSV color wheel.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor</term>
+        <listitem>
+          <para>Quando você clica no botão de cor, você abre o seletor de cores de costume.</para>
+          <para>Você também tem um seletor de cores. Quando selecionado, o ponteiro do mouse acompanha um quadrado na imagem: é a amostra de cor cujo tamanho você pode modificar na janela da operação GEGL, sob a Caixa de Ferramentas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Semente aleatória</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

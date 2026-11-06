@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-05-06 ude: changed (help-)id [was: gimp-xtns-procedure-browser]
+  2005-11-24 split of from menus-toolbox.xml by axel.wernicke
+-->
+<sect2 id="plug-in-dbbrowser">
+  <title>O navegador de procedimentos</title>
+  <indexterm>
+    <primary>Procedimentos</primary>
+    <secondary>Navegador</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Navegador</primary>
+    <secondary>Procedimentos</secondary>
+  </indexterm>
+
+  <para>O comando <guimenuitem>Navegador de procedimentos</guimenuitem>mostrará os procedimentos disponíveis na <link linkend="glossary-pdb">PDB</link>, a base de dados de procedimentos. Esses procedimentos possuem funções que são chamadas por scripts ou plug-ins.</para>
+
+  <sect3>
+    <title>Acessando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Help</guimenu>
+        <guimenuitem>Procedure Browser</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Descrição da janela de <quote>Navegador de procedimentos</quote></title>
+    <figure>
+      <title>A janela de <quote>Navegador de procedimentos</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/help/procedure-browser.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>A figura abaixo mostra a janela de <guilabel>Navegador de procedimentos</guilabel>. Se você clicar em um dos itens da lista da caixa esquerda, então as informações sobre este item serão mostradas no lado direito. Você também pode buscar por um procedimento em especifico da base de dados procedural usando uma expressão em especial através da caixa de texto <guilabel>Procurar</guilabel>:</para>
+    <variablelist>
+      <varlistentry>
+        <term>por nome</term>
+        <listitem>
+          <para>
+            Shows a list of procedures which have code names that contain
+            the part of the name you entered.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>por descrição</term>
+        <listitem>
+          <para>Mostra uma lista de procedimentos que possuem, entre as suas notas, a palavra digitada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>por ajuda</term>
+        <listitem>
+          <para>
+            Shows a list of procedures which have additional information
+            text that contains the word you entered.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>by authors</term>
+        <listitem>
+          <para>
+            Shows a list of procedures created by the author
+            whose name contains the word you entered.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>por copyright</term>
+        <listitem>
+          <para>
+            Shows a list of procedures whose copyright are hold by
+            someone whose name contains the word you entered.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>por data</term>
+        <listitem>
+          <para>
+            Shows a list of procedures which have a date of a year
+            which matches the year you entered.
+          </para>
+          <note>
+            <para>Este tipo de pesquisa funciona com o texto e não com o valor da data em si, então você não conseguirá encontrar alguns procedimentos mesmo que eles sejam do ano que você está procurando. Por exemplo, um procedimento com data 2000-2005 não irá aparecer caso você busque por 2001, mas irá aparecer se você buscar por 2000 ou 2005.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>por tipo</term>
+        <listitem>
+          <para>
+            Shows a list of procedures which have one of four types:
+            <quote>Internal GIMP procedure</quote>, <quote>GIMP Plug-In
+            </quote>, <quote>GIMP Extension</quote>, or <quote>Temporary
+            Procedure</quote>.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+    2009-01-11 j.h: created
+-->
+<sect2 id="script-fu-distress-selection">
+  <title>Distorcer</title>
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Distorcer</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Distorcer seleção.</primary>
+  </indexterm>
+   <figure>
+    <title>Exemplos de distorcer a seleção</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/menus/select/distort-selection-01.png"/>
+      </imageobject>
+      <caption>
+        <para>Uma imagem com uma seleção</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/menus/select/distort-selection-02.png"/>
+      </imageobject>
+      <caption>
+        <para>Depois de <quote>Distorcer</quote></para>
+      </caption>
+    </mediaobject>
+  </figure>
+  <para>O comando<quote>Distorcer</quote> deforma o contorno da seleção.</para>
+
+  <sect3>
+    <title>Ativando o comando.</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Select</guimenu>
+        <guimenuitem>Distort…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Descrição da janela de diálogo do comando <quote>Distorcer</quote> </title>
+    <figure>
+      <title>A caixa de diálogo de <quote>Distorcer</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/select/distort.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Este comando tem muitas opções as quais permitem aumentar ou diminuir a deformação de suas seleções. Não há pré-visualização do resultado então terá que ser por tentativa e e erro, você terá que experimentar. (O Desfazer com Ctrl + Z funciona normalmente para restaurar a seleção)</para>
+    <variablelist>
+      <varlistentry>
+        <term>Limiar ou limite.</term>
+        <listitem>
+          <para>Um limiar muito alto encolhe a seleção distorcida. Um limiar baixo  faz a seleção ficar maior.</para>
+          <para>Esta opção controla se o novo contorno é mais interno do que a seleção original ou se é mais externo que a imagem que o originou.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Espalhar</term>
+        <listitem>
+          <para>Um alto índice de <quote>Espalhar</quote> aumenta a deformação. Esse é o valor usado para o <quote> o quanto espalhar</quote>, em pixels, para o filtro ruído-&gt;espalhar que é aplicado internamente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Granularidade</term>
+        <listitem>
+          <para>Na prática, é como se o valor da <quote>Granularidade</quote> fosse  multiplicado pelo valor de <quote>Espalhar</quote> para gerar a amplitude final da distorção. Quanto maior a Granularidade, mais arredondada a distorção final.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Suavizar</term>
+        <listitem>
+          <para>Um alto índice de <quote>Suavizar</quote> diminui a deformação: esse valor é passado internamente ao filtro de desfocagem gaussiana, depois da primeira deformação usando os outros valores.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Smooth horizontally</term>
+        <term>Smooth vertically</term>
+        <listitem>
+          <para>Desativar a <guilabel>suavização horizontal</guilabel> ou a <guilabel>Suavização vertical</guilabel> aumentam a deformação, fazendo com que a suavização não seja aplicada nos respectivos sentidos.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

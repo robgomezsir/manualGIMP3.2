@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-12-05 j.h: create
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-emboss">
+  <title>Esculpir</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Esculpir</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Esculpir</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro Esculpir</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-emboss.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Esse filtro estampa e talha a camada ou seleção ativas, dando à imagem partes altas e partes baixas. Áreas mais claras são colocadas em alto relevo, e áreas escuras deixadas como se estivessem afundadas. Você pode variar a iluminação.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Emboss…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Esculpir</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/emboss-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Emboss Type</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Esculpir</term>
+              <listitem>
+                <para>
+                  This changes the colors in your image to grayscale and the
+                  relief is more pronounced, looking like metal. Although the
+                  image looks grayscale, its color mode is not changed. In
+                  most cases this means it will stay RGB, but you can also
+                  use this filter on Indexed and Grayscale images.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Bumpmap (preserve original colors)</term>
+              <listitem>
+                <para>O relevo é suave e as cores são preservadas</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Azimute</term>
+        <listitem>
+          <para>Isso específica a direção da luz, como se fossem as direções de uma bússola (0 - 360). Se você considerar que o Sul é o alto da sua imagem, então o Leste (0°) fica a esquerda. Os valores seguem o sentido anti-horário.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Elevação</term>
+        <listitem>
+          <para>
+            <guilabel>Elevation</guilabel> is the height from the horizon (0°),
+            in principle up to the zenith (90°), but here it means up to the
+            opposite horizon (180°).
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Profundidade</term>
+        <listitem>
+          <para>
+            Bumps are higher and hollows deeper when <guilabel>Depth</guilabel>
+            increases.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

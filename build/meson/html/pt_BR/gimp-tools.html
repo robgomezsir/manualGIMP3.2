@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Capítulo 14. Ferramentas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-function-reference.html" title="Parte III. Referência das funções" />
+    <link rel="prev" href="gimp-function-reference.html" title="Parte III. Referência das funções" />
+    <link rel="next" href="gimp-tools-selection.html" title="2. Ferramentas de seleção" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Capítulo 14. Ferramentas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-function-reference.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Parte III. Referência das funções</span>
+        <nav> <a accesskey="n" href="gimp-tools-selection.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="chapter">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="gimp-tools"></a>Capítulo 14. Ferramentas</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Índice</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-tools.html#gimp-toolbox">1. A Caixa de ferramentas</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tools.html#gimp-toolbox-introduction">1.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tools.html#gimp-toolbox-icons">1.2. Ícones das ferramentas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tools.html#gimp-toolbox-areas">1.3. Área de indicações e cores</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tools.html#gimp-tool-options-dialog">1.4. Opções da ferramenta</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-tools-selection.html">2. Ferramentas de seleção</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tools-selection.html#gimp-tool-select">2.1. Características comuns</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-rect-select.html">2.2. Seleção Retangular</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-ellipse-select.html">2.3. Seleção elíptica</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-free-select.html">2.4. Seleção Livre (Laço)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-foreground-select.html">2.5. Seleção de frente</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-fuzzy-select.html">2.6. Seleção Contígua (Varinha Mágica)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-by-color-select.html">2.7. Seleção Por Cor</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-iscissors.html">2.8. Ferramenta Tesoura</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-tools-paint.html">3. Ferramentas de pintura</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tools-paint.html#gimp-tool-brush">3.1. Características em comum</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-dynamics.html">3.2. Dinâmicas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tools-brush.html">3.3. Ferramentas de pincel (lápis, pincel, aerógrafo)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-bucket-fill.html">3.4. Preenchimento com balde</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-gradient.html">3.5. Degradê</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-pencil.html">3.6. Lápis</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-paintbrush.html">3.7. Pincel</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-eraser.html">3.8. Borracha</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-airbrush.html">3.9. Aerógrafo</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-ink.html">3.10. Tinta</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-mypaint-brush.html">3.11. Pincel</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-clone.html">3.12. Clonagem</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-heal.html">3.13. Restaurar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-perspective-clone.html">3.14. Clonagem em perspectiva</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-convolve.html">3.15. Desfocar/Deixar nítido</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-smudge.html">3.16. Borrar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-dodge-burn.html">3.17. Sub/Super-exposição</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-tools-transform.html">4. Ferramentas de transformação</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tools-transform.html#gimp-tool-transform">4.1. Funcionalidades em comum</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-align.html">4.2. Distribuir</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-move.html">4.3. Mover</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-crop.html">4.4. Cortar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-rotate.html">4.5. Rotacionar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-scale.html">4.6. Redimensionar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-shear.html">4.7. Inclinar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-perspective.html">4.8. Perspectiva</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-transform-3d.html">4.9. Transformar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-unified-transform.html">4.10. Transformar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-handle-transform.html">4.11. Transformar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-flip.html">4.12. Espelhar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-cage.html">4.13. Transformar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-warp.html">4.14. Transformar</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-tools-other.html">5. Other Tools</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tools-other.html#gimp-tools-other-overview">5.1. Visão-geral</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-path.html">5.2. Vetores</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-text.html">5.3. Texto</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-color-picker.html">5.4. Seletor de cores</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-measure.html">5.5. Medidas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-zoom.html">5.6. Zoom</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-tool-gegl.html">5.7. Operação da GEGL</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-toolbox"></a>1. A Caixa de ferramentas</h2>
+            </div>
+          </div>
+        </div>
+        <a id="id14225" class="indexterm"></a>
+        <a id="id14227" class="indexterm"></a>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-toolbox-introduction"></a>1.1. Introdução</h3>
+              </div>
+            </div>
+          </div>
+          <p>O <acronym class="acronym">GIMP</acronym> provê uma caixa de ferramentas que tenta ser completa, de forma a permitir completar rapidamente várias tarefas básicas, tais como criar seleções ou desenhar vetores. As várias ferramentas contidas na Caixa de ferramentas do <acronym class="acronym">GIMP</acronym> são discutidas em detalhes aqui.</p>
+          <p>(No caso de você estar curioso, na linguagem do <acronym class="acronym">GIMP</acronym>, uma <span class="quote">“<span class="quote">ferramenta</span>”</span> é um meio de interagir com uma imagem que requer acesso à tela, ou seja,  ou que permita que você indique o que você deseja fazer movendo e clicando o ponteiro do mouse na imagem, ou para mostrar interativamente os resultados de mudanças realizadas. Porém, se você quiser pensar nas ferramentas como uma serra, e na imagem como um tronco de madeira, não vai lhe fazer muito mal.)</p>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Nota]" src="images/note.png" />
+                </td>
+                <th align="left">Nota</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>Veja mais em <a class="link" href="gimp-concepts-main-windows.html#gimp-concepts-toolbox" title="2.1. A caixa de ferramentas">Janela principal: A caixa de ferramentas</a> para ver uma visão-geral da caixa de ferramentas e dos seus componentes.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>
+      <acronym class="acronym">GIMP</acronym> has a diverse assortment of tools that let you
+      perform a large variety of tasks. The tools can be thought of as falling
+      into the following categories:
+    </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p><span class="emphasis"><em>Ferramentas de seleção</em></span>, que definem ou modificam uma parte da imagem que será afetada pelas próximas ações;</p>
+              </li>
+              <li class="listitem">
+                <p><span class="emphasis"><em>Ferramentas de pintura</em></span>, que inserem cores e desenhos em partes da imagem;</p>
+              </li>
+              <li class="listitem">
+                <p><span class="emphasis"><em>Ferramentas de transformação</em></span>, que alteram a geometria da imagem;</p>
+              </li>
+              <li class="listitem">
+                <p>
+          <span class="emphasis"><em>Color tools</em></span>, which alter the colors in the
+          image as a whole;
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          <span class="emphasis"><em>Other tools</em></span>, which don't fall into the other
+          categories.
+        </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-toolbox-icons"></a>1.2. Ícones das ferramentas</h3>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id2864"></a>
+            <p class="title">
+              <strong>Figura 14.1. Os ícones das ferramentas na caixa de ferramentas</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/toolbox/toolbox-icons.png" alt="Os ícones das ferramentas na caixa de ferramentas" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>
+      Most tools can be activated by clicking on an icon in the Toolbox. By
+      default, some tools are accessible only via the menus.
+      Every tool can be activated from the <span class="guimenu">Tools</span> menu (or
+      the <span class="guimenu">Colors</span> menu for some color tools). Most tools can
+      also be activated from the keyboard using an accelerator key.
+    </p>
+          <p>
+      In the default setup, created when <acronym class="acronym">GIMP</acronym> is first
+      installed, not all tools show icons in the Toolbox: some tools are
+      omitted. You can customize the set of tools that are shown in the
+      Toolbox in the
+      <a class="link" href="gimp-prefs-toolbox.html" title="6.13. Caixa de ferramentas">Toolbox Preferences</a>.
+    </p>
+          <p>
+      There are two reasons you might want to do this: first, if you only
+      rarely use a tool, it might be easier to find the tools you want if the
+      distracting icon is removed; second, if you use tools that are not found
+      in the toolbox by default, you might find it convenient to have icons for
+      them easily available. In any case, you can always access any tool at any
+      time using the <span class="guimenu">Tools</span> or <span class="guimenu">Colors</span> menu
+      from the main menu.
+    </p>
+          <p>
+      Tool icons are grouped by default.
+      Tool groups are marked with a small dark triangle at the bottom
+      right corner of the icon. The group icon displayed is the last used tool
+      in the group. Right click on the group icon to display the list of tools
+      in the group.
+      </p>
+          <div class="mediaobject">
+            <img src="images/toolbox/toolbox-icons-grouped-selector.png" />
+          </div>
+          <p>
+    </p>
+          <p>
+      You can get all tools displayed by unchecking the <span class="guilabel">Use tool
+      groups</span> option in <a class="xref" href="gimp-prefs-toolbox.html" title="6.13. Caixa de ferramentas">Seção 6.13, “Caixa de ferramentas”</a>.
+    </p>
+          <p>
+      By default, the shape of the pointer changes when it is inside an image,
+      to a shape that indicates which tool is active. You can change this
+      behavior in the <span class="guilabel">Pointers</span> section of the
+      <a class="link" href="gimp-prefs-input-devices.html" title="6.24. Dispositivos de entrada">Input Devices settings</a>.
+    </p>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-toolbox-areas"></a>1.3. Área de indicações e cores</h3>
+              </div>
+            </div>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-toolbox-color-area"></a>1.3.1. Foreground/Background Colors Area</h4>
+                </div>
+              </div>
+            </div>
+            <a id="id14288" class="indexterm"></a>
+            <a id="id14291" class="indexterm"></a>
+            <a id="id14293" class="indexterm"></a>
+            <a id="id14295" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2865"></a>
+              <p class="title">
+                <strong>Figura 14.2. Foreground/Background Colors Area in the Toolbox</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/toolbox-description.png" alt="Foreground/Background Colors Area in the Toolbox" />
+                  <div class="caption">
+                    <p>
+            The Foreground/Background Colors area, marked with (3)
+          </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <div class="variablelist">
+              <dl class="variablelist">
+                <dt>
+                  <span class="term">Área de cores</span>
+                </dt>
+                <dd>
+                  <p>
+            The color area shows <acronym class="acronym">GIMP</acronym>'s current foreground
+            and background colors, which are used for painting, filling, and
+            many other operations.
+            Clicking on either one of them brings up a color selector dialog
+            that allows you to change to a different color.
+          </p>
+                </dd>
+                <dt>
+                  <a id="gimp-toolbox-default-colors"></a>
+                  <span class="term">Cores padrão</span>
+                </dt>
+                <dd>
+                  <p>
+            Clicking on the small symbol in the lower left corner resets the
+            foreground and background colors to black and white. Pressing the
+            <span class="keycap"><strong>D</strong></span> key has the same effect.
+          </p>
+                </dd>
+                <dt>
+                  <a id="gimp-toolbox-swap-colors"></a>
+                  <span class="term">Swap Foreground/Background colors</span>
+                </dt>
+                <dd>
+                  <p>
+            Clicking on the double-headed arrow symbol swaps the foreground and
+            background colors. Pressing the <span class="keycap"><strong>X</strong></span> key has the same
+            effect.
+          </p>
+                  <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                    <table border="0" summary="Tip">
+                      <tr>
+                        <td rowspan="2" align="center" valign="top" width="25">
+                          <img alt="[Dica]" src="images/tip.png" />
+                        </td>
+                        <th align="left">Dica</th>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <p>Você pode clicar e arrastar uma dessas cores diretamente para uma camada: isso fará com que a camada seja preenchida inteiramente com essa cor.</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-toolbox-indicator-area"></a>1.3.2. Brush/Pattern/Gradient Area</h4>
+                </div>
+              </div>
+            </div>
+            <a id="id14323" class="indexterm"></a>
+            <a id="id14326" class="indexterm"></a>
+            <a id="id14329" class="indexterm"></a>
+            <a id="id14332" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2866"></a>
+              <p class="title">
+                <strong>Figura 14.3. Active Brush, Pattern and Gradient Area in the Toolbox</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/toolbox-description.png" alt="Active Brush, Pattern and Gradient Area in the Toolbox" />
+                  <div class="caption">
+                    <p>
+            The Active Brush, Pattern and Gradient area, marked with (4)
+          </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+      By default, this area is not displayed. You can add this area through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Preferences</span> → <span class="guimenuitem">Toolbox</span>:
+      <a class="xref" href="gimp-prefs-toolbox.html" title="6.13. Caixa de ferramentas">Seção 6.13, “Caixa de ferramentas”</a>.
+    </p>
+            <p>Essa parte da caixa de ferramentas mostra o pincel, textura e degradê que estão selecionados no momento. Clicar em qualquer uma das três fará abrir uma janela em que você poderá mudá-las. Esta área não é visível por padrão, mas pode ser configurada no diálogo de Preferências/Caixa de ferramentas.</p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-toolbox-image-area"></a>1.3.3. Área da imagem ativa</h4>
+                </div>
+              </div>
+            </div>
+            <a id="id14350" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2867"></a>
+              <p class="title">
+                <strong>Figura 14.4. Active Image Area in the Toolbox</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/toolbox-description.png" alt="Active Image Area in the Toolbox" />
+                  <div class="caption">
+                    <p>
+            The Active Image area, marked with (5)
+          </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+      By default, this area is not displayed. You can add this area through
+      <span class="guimenu">Edit</span> → <span class="guisubmenu">Preferences</span> → <span class="guimenuitem">Toolbox</span>:
+      <a class="xref" href="gimp-prefs-toolbox.html" title="6.13. Caixa de ferramentas">Seção 6.13, “Caixa de ferramentas”</a>.
+    </p>
+            <p>
+      A thumbnail of the active image is displayed in this area.
+      If you click on this thumbnail, the
+      <a class="link" href="gimp-image-dialog.html" title="4.2. Diálogo de imagens">Images dialog</a> is opened.
+      This can be useful if you have many images on your screen.
+    </p>
+            <p>
+      If you use <acronym class="acronym">GIMP</acronym> on a Unix-like operating system with
+      the X Window System, you can also drag and drop the thumbnail to an
+      enabled <a class="link" href="bibliography.html#bibliography-online-xds" title="Protocolo de salvamento direto (XDS)">XDS file manager</a>
+      to directly save the corresponding image.
+    </p>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-tool-options-dialog"></a>1.4. Opções da ferramenta</h3>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id2868"></a>
+            <p class="title">
+              <strong>Figura 14.5. Caixa de opções da ferramenta</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/toolbox/tool-options-airbrush.png" alt="Caixa de opções da ferramenta" />
+                <div class="caption">
+                  <p>A janela de opções da ferramenta aerógrafo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Se seu programa estiver configurado como o da maioria das pessoas, então ao ativar uma ferramenta a janela de opções da ferramenta irá aparecer abaixo da caixa de ferramentas. Se o seu programa não estiver configurado dessa forma, pelo menos deveria: é muito difícil usar as ferramentas de forma eficiente sem estar apto a alterar as suas opções. De qualquer forma, um clique-duplo no ícone de qualquer ferramenta faz a caixa de opções da ferramenta se tornar visível se estiver escondida.</p>
+          <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Tip">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Dica]" src="images/tip.png" />
+                </td>
+                <th align="left">Dica</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        The Tool Options appear beneath the Toolbox in the default
+        setup.  If you lose it somehow, you can get it back by creating
+        a new Tool Options dialog using
+        <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Dialogs</span> → <span class="guimenuitem">Tool Options</span>
+        and then docking it below the Toolbox.
+      </p>
+                  <p>
+        Alternatively you can double-click any tool button in the Toolbox as a
+        quick way to open the Tool Options. If it appears in a different dock
+        than the one you want, you can drag it to your preferred dock.
+      </p>
+                  <p>
+        See the section on
+        <a class="link" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe">Dialogs and Docking</a> if you
+        need help moving the Tool Options.
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>Cada ferramenta tem a suas próprias opções. As escolhas que você faz nas ferramentas serão mantidas durante a sessão, até que você as altere novamente. Na verdade, as opções de ferramentas são mantidas de sessão em sessão. A persistência de uma opção de ferramenta entre os usos do programa as vezes pode causar alguma irritação: uma ferramenta se comporta de uma maneira estranha, e você não consegue imaginar o porquê, já que você não se lembra que você ativou alguma opção incomum na última vez que você a usou, há duas semanas atrás. </p>
+          <p>Na parte inferior da janela de opções de ferramentas, existem quatro botões:</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/document-save.svg" width="16" /></span>
+          </span>
+          <span class="phrase">Save Tool Preset…</span>
+        </span>
+              </dt>
+              <dd>
+                <a id="gimp-tool-options-save"></a>
+                <p>
+            This button allows you to save the settings for the current tool,
+            so that you can restore them later. It brings up the <a class="xref" href="gimp-tool-preset-dialog.html" title="7.2. Diálogo de Definições de ferramentas">Seção 7.2, “Diálogo de Definições de ferramentas”</a>
+            allowing you to give a name for the new preset. When
+            you Restore options, only saved presets for the active tool are
+            shown, so you need not worry about including the name of the tool
+            when you assign a name here.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/document-revert.svg" width="16" /></span>
+          </span>
+          <span class="phrase">Restore Tool Preset…</span>
+        </span>
+              </dt>
+              <dd>
+                <a id="gimp-tool-options-restore"></a>
+                <p>
+            This button allows you to restore a previously saved preset of
+            options for the active tool. If no presets have ever been
+            saved for the active tool, the button will be disabled.
+            Otherwise, clicking it will bring up a menu showing the names of
+            all saved option sets: choosing a menu entry will apply those
+            settings.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+          </span>
+          <span class="phrase">Delete Tool Preset</span>
+        </span>
+              </dt>
+              <dd>
+                <a id="gimp-tool-options-delete"></a>
+                <p>Este botão permite que você remova um conjunto de opções previamente salvo para a ferramenta ativa no momento. Se nenhuma configuração foi salva anteriormente para a ferramenta ativa, então o botão ira exibir o nome da ferramenta. Caso contrário, clicar sobre o botão irá mostrar um menu com os nomes de configurações salvas: a configuração selecionada será removida.</p>
+              </dd>
+              <dt>
+                <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-reset.svg" width="16" /></span>
+          </span>
+          <span class="phrase">Reset to default values</span>
+        </span>
+              </dt>
+              <dd>
+                <a id="gimp-tool-options-reset"></a>
+                <p>
+            This button resets the options for the active tool to their
+            default values. If you hold the <span class="keycap"><strong>Shift</strong></span> key while
+            pressing the Reset button, the options for all tools will be
+            reset to their default values.
+          </p>
+              </dd>
+            </dl>
+          </div>
+          <p>
+      In addition to the commands for the above buttons, the Tool Options tab
+      menu has an extra submenu:
+    </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Edit Tool Preset</span>
+              </dt>
+              <dd>
+                <a id="gimp-tool-options-edit"></a>
+                <p>
+            This submenu shows a list of presets for the active tool that you
+            can edit. Selecting one of them will open the
+            <a class="link" href="gimp-tool-preset-editor-dialog.html" title="7.3. Editor de pré-definições de ferramentas">Tool Presets
+            Editor</a> with that tool preset loaded. From there you can
+            edit the preset, unless it is one of the default presets that come
+            with GIMP.
+          </p>
+              </dd>
+            </dl>
+          </div>
+          <p>
+      Below we will explain the interaction with sliders and the mouse
+      scroll-wheel.
+    </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <a id="sliders"></a>
+                <span class="term">Novos controles deslizantes</span>
+              </dt>
+              <dd>
+                <a id="id14446" class="indexterm"></a>
+                <p>
+            You can use multiple modifiers with either
+            left-click or mouse wheel scrolling:
+          </p>
+                <div class="table">
+                  <a id="id2869"></a>
+                  <p class="title">
+                    <strong>Tabela 14.1. Interaction with the Slider Widget</strong>
+                  </p>
+                  <div class="table-contents">
+                    <table class="table" summary="Interaction with the Slider Widget" border="1">
+                      <colgroup>
+                        <col class="c1" />
+                        <col class="c2" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th align="right">
+                            <p>Mouse / key combination</p>
+                          </th>
+                          <th align="left">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td align="right">
+                  <div class="mediaobject"><img src="images/toolbox/slider-interaction-under-pointer.png" /><div class="caption"><p><span class="mousebutton">Left-click</span></p></div></div>
+                  </td>
+                          <td align="left" valign="middle">Change the value to what's under the pointer</td>
+                        </tr>
+                        <tr>
+                          <td align="right">
+                  <div class="mediaobject"><img src="images/toolbox/slider-interaction-default-increment.png" /><div class="caption"><p><span class="mousebutton">Left-click-and-drag</span></p></div></div>
+                  </td>
+                          <td align="left" valign="middle">Change the value using the default increment</td>
+                        </tr>
+                        <tr>
+                          <td align="right">
+                  <div class="mediaobject"><img src="images/toolbox/slider-interaction-smaller-increment.png" /><div class="caption"><p><span class="keycap"><strong>Shift</strong></span> + <span class="mousebutton">Left-click-and-drag</span>
+                      or <span class="mousebutton">Right-click-and-drag</span></p></div></div>
+                  </td>
+                          <td align="left" valign="middle">Change the value using smaller increment</td>
+                        </tr>
+                        <tr>
+                          <td align="right">
+                  <div class="mediaobject"><img src="images/toolbox/slider-interaction-larger-increment.png" /><div class="caption"><p><span class="keycap"><strong>Ctrl</strong></span> + <span class="mousebutton">Left-click-and-drag</span></p></div></div>
+                  </td>
+                          <td align="left" valign="middle">Change the value using larger increment</td>
+                        </tr>
+                        <tr>
+                          <td align="right">
+                  <div class="mediaobject"><img src="images/toolbox/slider-interaction-numeric-input-no-select.png" /><div class="caption"><p><span class="mousebutton">Middle-click</span></p></div></div>
+                  </td>
+                          <td align="left" valign="middle">Enter numeric input mode,
+                  do not select the value</td>
+                        </tr>
+                        <tr>
+                          <td align="right">
+                  <div class="mediaobject"><img src="images/toolbox/slider-interaction-numeric-input-select.png" /><div class="caption"><p><span class="mousebutton">Right-click</span></p></div></div>
+                  </td>
+                          <td align="left" valign="middle">Enter numeric input mode,
+                  select the value</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" align="center">Hint: Any left-click
+                  interaction enables numeric input mode.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <br class="table-break" />
+                <p>
+            Once you have set the value approximately, you can fine-tune it
+            using the <span class="guilabel">+</span> and
+            <span class="guilabel">-</span> buttons at the right of the slider.
+          </p>
+                <p>A área do valor na área deslizante trabalha como um editor de texto: lá você pode editar o valor ou inserir diretamente um novo valor.</p>
+                <p>
+            For some options, you can drag the pointer outside the tool dialog.
+            For example with the size slider, you can get the maximum value
+            (10000) so.
+          </p>
+              </dd>
+            </dl>
+          </div>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Mouse Scroll-Wheel actions on canvas</span>
+              </dt>
+              <dd>
+                <a id="id14527" class="indexterm"></a>
+                <p>
+            When using tools, you can use the mouse scroll-wheel, in
+             combination with various modifiers, to do useful things with the
+            tool options of the selected tool:
+          </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" style="list-style-type: disc; ">
+                    <li class="listitem">
+                      <p><strong><span class="keycap"><strong>Alt</strong></span> + Mouse-wheel: </strong>
+                  increase/decrease <span class="emphasis"><em>opacity</em></span>
+                </p>
+                    </li>
+                    <li class="listitem">
+                      <p><strong><span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Primary</strong></span> + Mouse-wheel: </strong>
+                  increase/decrease <span class="emphasis"><em>aspect ratio</em></span>
+                </p>
+                    </li>
+                    <li class="listitem">
+                      <p><strong><span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Alt</strong></span> + Mouse-wheel: </strong>
+                    increase/decrease <span class="emphasis"><em>angle</em></span>
+                  </p>
+                    </li>
+                    <li class="listitem">
+                      <p><strong><span class="keycap"><strong>Primary</strong></span>+<span class="keycap"><strong>Alt</strong></span> + Mouse-wheel: </strong>
+                   increase/decrease <span class="emphasis"><em>size</em></span>
+                </p>
+                    </li>
+                    <li class="listitem">
+                      <p><strong><span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Primary</strong></span>+<span class="keycap"><strong>Alt</strong></span> + Mouse-wheel: </strong>
+                  increase/decrease <span class="emphasis"><em>spacing</em></span>
+                </p>
+                    </li>
+                  </ul>
+                </div>
+                <p>
+            Note: the <span class="keycap"><strong>Primary</strong></span> modifier is usually <span class="keycap"><strong>Ctrl</strong></span> or <span class="keycap"><strong>Cmd</strong></span>, depending on
+            your platform.
+          </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-function-reference.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-function-reference.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tools-selection.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-function-reference.html">Parte III. Referência das funções</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tools-selection.html">2. Ferramentas de seleção</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

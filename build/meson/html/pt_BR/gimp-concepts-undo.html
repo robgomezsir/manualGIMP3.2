@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3. Desfazendo</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-first-steps.html" title="Capítulo 3. Primeiros passos com o GIMP" />
+    <link rel="prev" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe" />
+    <link rel="next" href="gimp-tutorial-quickies.html" title="4. Tarefas comuns" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3. Desfazendo</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-concepts-docks.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 3. Primeiros passos com o <acronym class="acronym">GIMP</acronym></span>
+        <nav> <a accesskey="n" href="gimp-tutorial-quickies.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-concepts-undo"></a>3. Desfazendo</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id7386" class="indexterm"></a>
+      <p>
+    Almost anything you do to an image in <acronym class="acronym">GIMP</acronym> can be
+    undone.  You can undo the most recent action by choosing
+    <span class="guimenu">Edit</span> → <span class="guimenuitem">Undo</span>
+    from the main menu, but this is done so frequently that you
+    really should memorize the keyboard shortcut,
+    <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Z</strong></span>.
+  </p>
+      <p>
+    Undoing can itself be undone. After having undone an action, you
+    can <span class="emphasis"><em>redo</em></span> it by choosing
+    <span class="guimenu">Edit</span> → <span class="guimenuitem">Redo</span>
+    from the main menu, or use the keyboard shortcut,
+    <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Y</strong></span>.
+    It is often helpful to judge the effect of an action by repeatedly
+    undoing and redoing it.  This is usually very quick, and does not
+    consume any extra resources or alter the undo history, so there is
+    never any harm in it.
+  </p>
+      <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Caution">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Cuidado]" src="images/caution.png" />
+            </td>
+            <th align="left">Cuidado</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Se você desfizer uma ou mais ações e operar na imagem de alguma forma, exceto usando Desfazer ou Refazer, deixará de ser possível refazer essas ações: elas serão perdidas para sempre. A solução, se isso for um problema para você, é duplicar a imagem, depois de desfazer até o ponto desejado, e testar as novas operações na cópia. (<span class="emphasis"><em>Não</em></span> testar na imagem original, porque o histórico de desfazer/refazer não é copiado quando você duplica uma imagem.)</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>Se você costuma ficar desfazendo e refazendo muitos passos de cada vez, pode ser mais conveniente para trabalhar com o <a class="link" href="gimp-undo-dialog.html" title="2.7. Diálogo do Histórico do desfazer">diálogo de Histórico do Desfazer</a>, um diálogo de encaixe que mostra um pequeno esboço de cada ponto no Histórico de desfazer, permitindo-lhe voltar ou andar pra frente até esse ponto, só clicando no mesmo.</p>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Dica]" src="images/tip.png" />
+            </td>
+            <th align="left">Dica</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      If you make a small mistake while actively drawing with a mouse — like
+      painting a little too far in one direction (over an important line, etc)
+      — you can also cancel the action early by pressing both mouse buttons at
+      the same time then releasing the left (primary) button first.
+      Canceling an action in this manner is even faster than accessing the Undo
+      command (it avoids adding the action to the Undo History at all).
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>Desfazer é executada numa base de imagem específica: o "Histórico do Desfazer" é um dos componentes de uma imagem. O <acronym class="acronym">GIMP</acronym> aloca uma certa quantidade de memória para cada imagem para este propósito. Você pode personalizar as suas preferências para aumentar ou diminuir essa quantidade, usando a página <a class="link" href="">Ambiente</a> da janela de Preferências. Existem duas variáveis importantes: o <span class="emphasis"><em>Número mínimo de níveis de desfazer</em></span>, que o <acronym class="acronym">GIMP</acronym> manterá independentemente da quantidade de memória que consomem, e o <span class="emphasis"><em>Máximo de memória para desfazer</em></span>, além do que o <acronym class="acronym">GIMP</acronym> vai começar a apagar os itens mais antigos do Histórico do desfazer.</p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Mesmo que o Histórico de desfazer seja um componente de uma imagem, ele não é salvo quando você salva a imagem usando o formato XCF nativo do <acronym class="acronym">GIMP</acronym>, que preserva todas as outras propriedades da imagem. Quando a imagem é reaberta, ela terá um <span class="quote">“<span class="quote">Histórico do desfazer</span>”</span> vazio.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>A implementação de Desfazer do <acronym class="acronym">GIMP</acronym> é bastante sofisticada. Muitas operações exigem muito pouca memória para Desfazer (por exemplo, alterar a visibilidade de uma camada), para que você possa realizar longas sequências delas antes que elas saiam do histórico de desfazer. Algumas operações, como alterar a visibilidade da camada, são <span class="emphasis"><em>compactadas</em></span>, para que fazê-las várias vezes em uma série produza apenas um único ponto no histórico de desfazer. No entanto, há outras operações que podem consumir uma grande quantidade de memória para desfazer. A maioria dos filtros são implementados por plug-ins, desta forma o núcleo do <acronym class="acronym">GIMP</acronym> não tem nenhuma maneira eficiente de saber o que mudou. Como tal, não há maneira de implementar Desfazer exceto memorizando os conteúdos inteiros da camada antes e depois da operação ser executada . Pode ser que você seja capaz de realizar apenas algumas dessas operações antes delas saírem do histórico do desfazer.</p>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id2611"></a>3.1. Coisas que não podem ser desfeitas</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      Most actions that alter an image can be undone. Actions that do not
+      alter the image generally cannot be undone. Examples include
+      saving the image to a file, duplicating the image, copying part of the
+      image to the clipboard, etc. It also includes most actions that affect
+      the image display without altering the underlying image data. The most
+      important example is zooming. There are, however, exceptions: toggling
+      Quick Mask on or off can be undone, even though it does not alter the
+      image data.
+    </p>
+        <p>Existem algumas ações importantes que alteraram uma imagem e não podem ser desfeitas:</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Fechar a imagem</span>
+            </dt>
+            <dd>
+              <p>O <span class="quote">“<span class="quote">Historico do desfazer</span>”</span> é um componente da imagem, por isso quando a imagem está fechada e todos os seus recursos são liberados, o histórico do desfazer se foi. Devido a isso, a menos que a imagem não tenha sido modificada desde a última vez que ela foi salva, o <acronym class="acronym">GIMP</acronym> sempre pede que você confirme que você realmente quer fechar a imagem. (Você pode desativar isso na página <a class="link" href="">Ambiente</a> da janela de Preferências, se você fizer isso, você está assumindo a responsabilidade de pensar sobre o que está fazendo.)</p>
+            </dd>
+            <dt>
+              <span class="term">Reverter a imagem</span>
+            </dt>
+            <dd>
+              <p><span class="quote">“<span class="quote">Reverter</span>”</span> significa recarregar a imagem do arquivo. O <acronym class="acronym">GIMP</acronym> implementa isso fechando a imagem e criando uma nova imagem, e portanto, o histórico de desfazer é perdido como consequência. Devido a isso, se a imagem foi alterada, o <acronym class="acronym">GIMP</acronym> lhe pede para confirmar se você realmente quer reverter a imagem.</p>
+            </dd>
+            <dt>
+              <span class="term"><span class="quote">“<span class="quote">Pedaços</span>”</span> de ações</span>
+            </dt>
+            <dd>
+              <p>
+            Some tools require you to perform a complex series of
+            manipulations before they take effect, but only allow you to undo
+            the whole thing rather than the individual elements. For example,
+            the Scissors Select tool requires you to create a closed path by
+            clicking at multiple points in the image, and then clicking inside
+            the path to create a selection. You cannot undo the individual
+            clicks: undoing after you are finished takes you all the way back
+            to the starting point. For another example, when you are working
+            with the Text tool, you cannot undo individual letters, font
+            changes, etc.: undoing after you are finished removes the newly
+            created text layer.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+      Filters, and other actions performed by plug-ins or scripts, can be
+      undone just like actions implemented by the <acronym class="acronym">GIMP</acronym>
+      core, but this requires
+      them to make correct use of <acronym class="acronym">GIMP</acronym>'s Undo functions. If
+      the code is not
+      correct, a plug-in can potentially corrupt the Undo History, so that not
+      only the plug-in but also previous actions can no longer properly be
+      undone. The plug-ins and scripts distributed with <acronym class="acronym">GIMP</acronym>
+      are all believed
+      to be set up correctly, but obviously no guarantees can be given for
+      plug-ins you obtain from other sources. Also, even if the code is
+      correct, canceling a plug-in while it is running may corrupt the
+      Undo History, so it is best to avoid this unless you have
+      accidentally done something whose consequences are going to be very
+      harmful.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-concepts-docks.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-first-steps.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tutorial-quickies.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-concepts-docks.html">2.3. Caixas de diálogo e de encaixe</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tutorial-quickies.html">4. Tarefas comuns</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-01-18 lexa: further enhancements to filter description for en, de
+  2007-12-27 lexa: reviewed for color management enhancements
+  2007-05-22 Added Spanish translation by AntI
+  2007-03-18 ude: Re-arranged color proof options
+  2005-12-21 julien: Created en;fr; the "profile" section needs more information
+-->
+<sect2 id="gimp-display-filter-dialog">
+  <title>Filtros para a tela</title>
+
+  <indexterm>
+    <primary>Cor</primary>
+    <secondary>Cores de tela</secondary>
+  </indexterm>
+  <para>
+    This command shows a dialog window when executed. This window can be used
+    to manage the display filters and their options. Display filters are not
+    to be confused with the filters in the <guimenu>filters</guimenu>-menu.
+    Display filters do not alter the image data, but only one display of it.
+    You can imagine display filters like big panes before your screen. They
+    change your perception of the image. This can be useful for things like
+    soft-proofing prints, controlling the color management but also simulation
+    of color deficient vision.
+  </para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+      <para>
+        You can access this command from the main menu through
+        <menuchoice>
+          <guimenu>View</guimenu>
+          <guimenuitem>Display Filters…</guimenuitem>
+        </menuchoice>.
+      </para>
+  </sect3>
+
+  <sect3>
+    <title>Descrição da janela de diálogo de <quote>Filtros para a tela</quote></title>
+    <figure>
+      <title>
+        The <quote>Color Display Filters</quote> dialog
+      </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/view/display-filters.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      This dialog has two small selectboxes. The left selectbox displays the
+      <guilabel>Available Filters</guilabel>. You can move a filter to the
+      right selectbox by selecting it and clicking on the
+      <guibutton>right arrow</guibutton> button. The
+      <guilabel>Active Filters</guilabel> window on the right displays
+      filters you have chosen and which will be applied if the adjacent box
+      is checked. You can move filters from the right selectbox to the left
+      selectbox by using the <guibutton>left arrow</guibutton> button. If you
+      select a filter by clicking on its name, its options are displayed
+      below the two selectboxes.
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <phrase>Simulation of deficient vision</phrase>
+          (<xref linkend="gimp-colordisplay-colorblind"/>;
+          <xref linkend="gimp-colordisplay-contrast"/>)
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <phrase>Digital photography helper</phrase>
+          (<xref linkend="gimp-colordisplay-clip"/>)
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <phrase>Others</phrase> (<xref linkend="gimp-colordisplay-gamma"/>)
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3 id="gimp-colordisplay-aces-rrt">
+    <title>Aces RRT</title>
+    <indexterm>
+      <primary>Aces RRT</primary>
+    </indexterm>
+    <para>
+      <figure>
+        <title>The <quote>Aces RRT</quote> dialog</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/view/display-filters/aces-rrt.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </para>
+    <para>
+      ACES (Academy Color Encoding Specification) is a specification that defines
+      a color encoding system created to standardize how color is
+      managed to create an accurate color workflow. Within that standard,
+      a RRT (Reference Rendering Transform) converts the colors from the ACES
+      color space to the used color space in your image.
+    </para>
+
+    <sect4>
+      <title>Opções</title>
+      <variablelist>
+        <varlistentry>
+          <term>Pre-transform change in stops</term>
+          <listitem>
+            <para>
+              This value between -10.0 and 10.0 influences the brightness of
+              the result.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+
+  <sect3 id="gimp-colordisplay-clip">
+    <title>Clip Warning</title>
+    <indexterm>
+      <primary>Clip Warning</primary>
+    </indexterm>
+    <figure>
+      <title>The <quote>Clip Warning</quote> dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/view/display-filters/clip-warning.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter allows to visualize underexposed and overexposed areas of
+      a photo with user-configurable colors. For now, it’s mostly geared
+      towards images where colors are stored with floating point precision.
+      You will mostly benefit from this, if you work on 16-/32-bit per channel
+      float images such as EXR and TIFF.
+    </para>
+
+    <sect4>
+      <title>Opções</title>
+      <variablelist>
+        <varlistentry>
+          <term>Show shadows</term>
+          <listitem>
+            <para>
+              Enable visualization for underexposed pixels (less than 0 in
+              32-bit float mode).
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Shadows color</term>
+          <listitem>
+            <para>
+              User-configurable color that will be used to fill underexposed
+              pixels.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Show highlights</term>
+          <listitem>
+            <para>
+              Enable visualization for overexposed pixels (more than 1 in
+              32-bit float mode).
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Highlights color</term>
+          <listitem>
+            <para>
+              User-configurable color that will be used to fill overexposed
+              pixels.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Show bogus</term>
+          <listitem>
+            <para>
+              Enable visualization for not-a-number (NaN) pixels, only visible
+              when there is a division by zero error and suchlike.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Bogus color</term>
+          <listitem>
+            <para>
+              User-configurable color that will be used to fill NaN     pixels.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Include alpha component</term>
+          <listitem>
+            <para>
+              When enabled, include the alpha component in the warning.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Include transparent pixels</term>
+          <listitem>
+            <para>
+              When enabled, include fully transparent pixels in the warning.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+
+  <sect3 id="gimp-colordisplay-colorblind">
+    <title>Visão com deficiência de cor</title>
+    <indexterm>
+      <primary>Cor</primary>
+      <secondary>Visão deficiente</secondary>
+    </indexterm>
+    <para>A imagem que você criará, nós esperamos, será vista por muitas pessoas em muitos sistemas diferentes. A imagem que parece incrível na sua tela pode parecer diferente para pessoas com deficiências de visão ou em uma tela com configurações diferentes da sua. Algumas informações podem até mesmo não serem visíveis.</para>
+    <figure>
+      <title>Descrição do diálogo de <quote>Visão com deficiência de cor</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/view/display-filters/color-deficient-vision.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <sect4>
+      <title>Opções</title>
+      <variablelist>
+        <varlistentry>
+          <term>Tipo de deficiência de cor</term>
+          <listitem>
+            <para>Neste menu em lista você pode selecionar entre:</para>
+            <variablelist>
+              <varlistentry>
+                <term>Protanopia<footnote>
+                    <para>Do grego: <foreignphrase>proto</foreignphrase>: primeira (cor no <link linkend="glossary-colormodel">Sistema de cor RGB</link>): <foreignphrase>an</foreignphrase>: negação; <foreignphrase>op</foreignphrase>: olho, visão.</para>
+                  </footnote> (insensibilidade ao vermelho)</term>
+                <listitem>
+                  <para>A protanopia é uma deficiência visual da cor vermelha. É o conhecido daltonismo (incapacidade de enxergar as cores vermelho e verde). O daltonismo ocorre com bastante frequência na população.</para>
+                  <para>Já a Protanopia é mais complexa; uma pessoa com esse problema não consegue enxergar tanto a cor vermelha ou verde, mas ainda continua sendo sensível ao amarelo e azul. Inclusive, essa pessoa perde a percepção à luminosidade e às mudanças de tons em comprimentos de onda curtas.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Deuteranopia (insensitivity to green)</term>
+                <listitem>
+                  <para>Com a deuteranopia, a pessoa possui uma deficiência de visão verde. Deuteranopia é na verdade como a protanopia, pois a pessoa perde a percepção ao vermelho e verde, mas não perde a percepção de luminosidade ou mudanças de tom.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Trinatopia (insensibilidade ao azul)</term>
+                <listitem>
+                  <para>Com a tritanopia, a pessoa possui deficiência na percepção de azul e amarelo, apesar de ainda ser sensível ao vermelho e verde. A pessoa ainda possui alguma percepção de luminosidade, e mudanças de tonalidade devido ao longo comprimento de ondas.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Exemplos</title>
+      <figure>
+        <title>Exemplo de protanopia</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/view/display-filters/protanopia-normal.png"/>
+          </imageobject>
+          <caption>
+            <para>Imagem original</para>
+          </caption>
+        </mediaobject>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/view/display-filters/protanopia-filtered.png"/>
+          </imageobject>
+          <caption>
+            <!--
+              As you can see, a red-blind person cannot see the red (255,0,0)
+              text on a black (0,0,0) background. You have to change the text
+              color. Daltonism occurs fairly frequently in the population.
+            -->
+            <para>Uma pessoa cega para o vermelho não pode enxergar o texto vermelho (255,0,0) em um fundo preto (0,0,0).</para>
+          </caption>
+        </mediaobject>
+      </figure>
+      <figure>
+        <title>Exemplos de três tipos de deficiência em uma imagem</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/view/display-filters/sight-defects_normal-view.png"/>
+          </imageobject>
+          <caption>
+            <para>Visão normal</para>
+          </caption>
+        </mediaobject>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/view/display-filters/sight-defects_protanopia.png"/>
+          </imageobject>
+          <caption>
+            <para>Protanopia</para>
+          </caption>
+        </mediaobject>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/view/display-filters/sight-defects_deuteranopia.png"/>
+          </imageobject>
+          <caption>
+            <para>Deuteranopia; na deuteranopia, o amarelo é trocado pelo vermelho.</para>
+          </caption>
+        </mediaobject>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/view/display-filters/sight-defects_tritanopia.png"/>
+          </imageobject>
+          <caption>
+            <para>Tritanopia; na tritanopia, o verde é levemente representado na extensão do azul.</para>
+          </caption>
+        </mediaobject>
+      </figure>
+    </sect4>
+  </sect3>
+
+  <sect3 id="gimp-colordisplay-contrast">
+    <title>Contraste</title>
+    <indexterm>
+      <primary>Contraste</primary>
+    </indexterm>
+    <para>
+      <figure>
+        <title>O diálogo de <quote>Contraste</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/view/display-filters/contrast.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </para>
+    <para>Aqui voltamos ao campo médico. A <quote>Sensibilidade ao contraste</quote> é a capacidade do sistema visual de distinguir pequenas diferenças no contraste. Algumas pessoas com catarata (que significa que a lente possui cristais opacos, que dispersa a luz sobre a retina) ou doença na retina (por exemplo, devido à diabetes, que destrói os bastões e cones da retina) possuem uma deficiência na sensibilidade ao contraste: por exemplo, elas possuem dificuldades em distinguir pontinhos em um vestido.</para>
+    <para>Se você ficou interessado nesse assunto, você pode pesquisar na internet por <quote>sensibilidade ao contraste</quote>.</para>
+
+    <sect4>
+      <title>Opções</title>
+      <variablelist>
+        <varlistentry>
+          <term>Ciclos de contraste</term>
+          <listitem>
+            <para>Com o filtro de <quote>contraste</quote>, você pode ver a imagem como se estivesse sofrendo de catarata. Você pode precisar aumentar o contraste da imagem para que a sua avó possa ve-la bem. Na maioria dos casos, apenas pequenos valores de <guilabel>Ciclos de contraste</guilabel> são interessantes. Valores altos criam um efeito lateral que não tem interesse para nós aqui: se você aumenta a luminosidade para valores acima de 255, as cores complementares aparecerão.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+
+  <sect3 id="gimp-colordisplay-gamma">
+    <title>Gama</title>
+    <indexterm>
+      <primary>Gama</primary>
+    </indexterm>
+    <para>
+      <figure>
+        <title>O diálogo de <quote>Gama</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/view/display-filters/gamma.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </para>
+    <para>A relação entre a intensidade do sinal elétrico e o brilho da cor não é exato e depende do dispositivo (da câmera, da scanner, do monitor, etc.) O <quote>Gama</quote> é um coeficiente usado para corrigir essa relação. A sua imagem deve ser visível tanto em áreas escuras quanto claras, mesmo que ela sejaexibida num monitor com muita luminosidade ou, ao contrário, com pouca. O filtro de tela <quote>Gama</quote> permite que você tenha uma ideia da aparência da sua imagem sob essas condições.</para>
+    <tip>
+      <para>No caso de você desejar não apenas alterar o gama da visualização atual, mas alterar o gama da imagem em si, então pode encontrar uma descrição para isso em <xref linkend="gimp-tool-levels"/>.</para>
+    </tip>
+  </sect3>
+
+</sect2>

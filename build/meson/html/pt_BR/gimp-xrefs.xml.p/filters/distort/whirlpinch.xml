@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-12-30 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-whirl-pinch">
+  <title>Redemoinhos e marteladas</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Redemoinhos e marteladas</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Redemoinhos e marteladas</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro Redemoinhos e marteladas</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-whirlpinch.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para><quote>Redemoinhos e marteladas</quote> distorce a sua imagem de uma forma concêntrica.</para>
+    <para>O efeito <quote>Redemoinho</quote> (aplicação de um <guilabel>Ângulo do turbilhão</guilabel> diferente de zero) distorce a imagem de forma bem semelhante ao redemoinho que aparece quando se esvazia a água de uma pia.</para>
+    <para><quote>Marteladas</quote> sem nenhuma rotação, pode ser comparado a estampar sua imagem numa superfície de borracha e prender as laterais. Se a quantidade marcada no controle de marteladas (<guilabel>Quanto martelar</guilabel>) for negativa, vai parecer como se alguém tivesse tentado empurrar um objeto redondo na sua direção por trás da camada de borracha. Se for um valor positivo vai parecer como se alguém estivesse puxando o centro da imagem para trás, para longe de você.</para>
+    <tip>
+      <para>O efeito de <quote>martelada</quote> pode as vezes ser usado para compensar a distorção da imagem produzida por uma lente teleobjetiva, ou olho de peixe (<quote>distorção de barril</quote>). Mas veja o filtro de <quote>Distorção de lente</quote> se esse for seu objetivo. Se desejar um controle maior sobre o efeito, verifique o filtro <quote>Deslocar</quote> em Filtros/Mapeamento, no modo <quote>Polar</quote>.</para>
+    </tip>
+    <figure>
+      <title>Ilustração</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/whirlpinch-orig.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/whirlpinch-whirl.png"/>
+        </imageobject>
+        <caption>
+          <para>Redemoinho aplicado</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/whirlpinch-pinch.png"/>
+        </imageobject>
+        <caption>
+          <para>Marteladas aplicadas</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Whirl and Pinch…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Redemoinhos e marteladas</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/whirlpinch-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Whirl</term>
+        <listitem>
+          <para>
+            The clockwise or counter clockwise angle (-360 to +360). Controls
+            how many degrees the affected part of the image is rotated.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Pinch</term>
+        <listitem>
+          <para>
+            The pinch amount (-1 to +1) determines how strongly the affected
+            part of the image is pinched.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio</term>
+        <listitem>
+          <para>Tamanho do redemoinho (0.-0 - 2.0). Determina quanto da imagem será afetado pela distorção. Se você deixar o <parameter>Raio</parameter> igual a 2, a imagem toda será afetada. Com <parameter>Raio</parameter> 1, metade da imagem será afetada. Se o <parameter>Raio</parameter> for 0, nada será afetado (imagine como se fosse o raio de um círculo, com 0 sendo o centro e 1 metade do caminho até a borda).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

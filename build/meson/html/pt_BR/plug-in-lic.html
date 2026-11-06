@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>11.13. Van Gogh (LIC)</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-artistic.html" title="11. Filtros artísticos" />
+    <link rel="prev" href="plug-in-gimpressionist.html" title="11.12. GIMPressionista" />
+    <link rel="next" href="script-fu-weave.html" title="11.14. Traçar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>11.13. Van Gogh (LIC)</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-gimpressionist.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>11. Filtros artísticos</span>
+        <nav> <a accesskey="n" href="script-fu-weave.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-lic"></a>11.13. Van Gogh (LIC)</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id56290" class="indexterm"></a>
+      <a id="id56294" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4751"></a>11.13.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4752"></a>
+          <p class="title">
+            <strong>Figura 17.245. Da esquerda para a direita: imagem original, mapeada, imagem resultante</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/map-lic-s.png" alt="Da esquerda para a direita: imagem original, mapeada, imagem resultante" />
+              <div class="caption">
+                <p>A textura possui três tiras: uma área preta sólida, uma área vertical de degradê, uma área branca sólida. Assim como você pode ver, na imagem resultante, essas zonas da imagem que correspondem a áreas sólidas da textura, não estão desfocagem. Apenas a zona da imagem correspondente à área de degradê da textura está desfocada.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p><span class="quote">“<span class="quote">LIC</span>”</span> stands for Line Integral Convolution, a
+      mathematical method.
+      This filter is used to apply a directional blur to an image, or to
+      create textures. It could be called <span class="quote">“<span class="quote">Astigmatism</span>”</span> as it
+      blurs certain directions in the image.
+    </p>
+        <p>
+      It uses a blur map. Unlike other maps, this filter doesn't use gray
+      levels of this blur map. <span class="emphasis"><em>Filter takes in account only
+      gradient direction(s)</em></span>. Image pixels corresponding to
+      solid areas of the map are ignored.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in grayscale mode or indexed mode, this menu entry
+        is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4753"></a>11.13.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Artistic</span> → <span class="guimenuitem">Van Gogh (LIC)…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4754"></a>11.13.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4755"></a>
+          <p class="title">
+            <strong>Figura 17.246. Opções do filtro <span class="quote">“<span class="quote">Van Gogh (LIC)</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/artistic/vangogh.png" alt="Opções do filtro “Van Gogh (LIC)”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Dica]" src="images/tip.png" />
+              </td>
+              <th align="left">Dica</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" style="list-style-type: disc; ">
+                    <li class="listitem">
+                      <p>Para criar uma desfocagem, marque <span class="guilabel">com imagem de origem</span>. Apenas os seletores de comprimento do filtro e passos de integração são úteis.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>Para criar uma textura, marque <span class="guilabel">com ruído branco</span>. Todos os seletores podem ser usados.</p>
+                    </li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Canal de efeitos</span>
+            </dt>
+            <dd>
+              <p>Selecionando <span class="guilabel">matiz</span>, <span class="guilabel">saturação</span> ou <span class="guilabel">brilho (=valor)</span>, o filtro ira usar esse canal para tratar a imagem.</p>
+            </dd>
+            <dt>
+              <span class="term">Operador de efeito</span>
+            </dt>
+            <dd>
+              <p>A opção <span class="quote">“<span class="quote">derivativo</span>”</span> inverte a direção do <span class="quote">“<span class="quote">degradê</span>”</span>:</p>
+              <div class="figure">
+                <a id="id4756"></a>
+                <p class="title">
+                  <strong>Figura 17.247. Exemplo da opção derivativo</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/map-lic-deriv.png" alt="Exemplo da opção derivativo" />
+                    <div class="caption">
+                      <p>Usando um mapeamento quadrado de degradê. O operador de efeito está em <span class="quote">“<span class="quote">degradê</span>”</span> na esquerda, e em <span class="quote">“<span class="quote">derivativa</span>”</span> na direita: o que estava nítido está borrado e vice-versa.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Convolver</span>
+            </dt>
+            <dd>
+              <p>Você pode usar dois tipos de convolução. Este é o primeiro parâmetro que você tem para definir:</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Com ruído branco</span>
+                  </dt>
+                  <dd>
+                    <p>Com ruído branco é um nome acústico. É um ruído onde todas as frequências possuem a mesma amplitude. Aqui, essa opção é usada para criar texturas.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Com imagem de origem</span>
+                  </dt>
+                  <dd>
+                    <p>A imagem de origem será desfocada.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Imagem de efeito</span>
+            </dt>
+            <dd>
+              <p>Este é o mapeamento para desfoques ou texturas direcionais. Este mapeamento precisa ter as mesmas direções das imagens originais. Isso precisa ser feito preferencialmente em uma imagem em escalas-de-cinza. </p>
+              <div class="figure">
+                <a id="id4757"></a>
+                <p class="title">
+                  <strong>Figura 17.248. Desfocando com um mapeamento de degradê vertical</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/map-lic-vert-blur.png" alt="Desfocando com um mapeamento de degradê vertical" />
+                    <div class="caption">
+                      <p>Com um mapeamento de degradê vertical, apenas linhas verticais serão desfocadas.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id4758"></a>
+                <p class="title">
+                  <strong>Figura 17.249. Desfocando com um mapeamento de degradê quadrado</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/map-lic-sq-blur.png" alt="Desfocando com um mapeamento de degradê quadrado" />
+                    <div class="caption">
+                      <p>Um mapeamento de degradê é dividido em quatro degradês triangulares: cada um deles possui sua própria direção. Em cada área da imagem correspondente a degradês triangulares acontecerá de apenas linhas com as mesmas direções que os do degradê serão desfocadas.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id4759"></a>
+                <p class="title">
+                  <strong>Figura 17.250. Exemplo de textura</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/map-lic-vert-pat.png" alt="Exemplo de textura" />
+                    <div class="caption">
+                      <p>Com a opção de <span class="quote">“<span class="quote">com ruído branco</span>”</span> marcada. Outras opções foram as pré-determinadas. Com um mapeamento de degradê vertical, a textura das <span class="quote">“<span class="quote">fibras</span>”</span> seguem a direção horizontal.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Comprimento de filtro</span>
+            </dt>
+            <dd>
+              <p>Durante a aplicação da desfocagem, essa opção controla o quão importante a desfocagem é. Ao criar uma textura, isso controla o quão áspero a textura será: valores baixos resultam em uma superfície suave; valores altos em superfícies ásperas.</p>
+              <div class="figure">
+                <a id="id4760"></a>
+                <p class="title">
+                  <strong>Figura 17.251. Exemplo da ação do comprimento do filtro na desfocagem</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/map-lic-blur-lg.png" alt="Exemplo da ação do comprimento do filtro na desfocagem" />
+                    <div class="caption">
+                      <p>Na esquerda: uma linha vertical, um pixel de largura (zoom de 800%). Na direita: a mesma linha, após a aplicação de uma desfocagem vertical com um comprimento de filtro em 3. Você pode ver que a largura da desfocagem é de 6 pixels, 3 pixels em cada lado.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id4761"></a>
+                <p class="title">
+                  <strong>Figura 17.252. Exemplo de comprimento do filtro na textura</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/map-lic-text-lg.png" alt="Exemplo de comprimento do filtro na textura" />
+                    <div class="caption">
+                      <p>Na esquerda: uma textura com comprimento de filtro = 3. Na direita, a mesma textura com comprimento de filtro = 24.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Magnitude de ruído</span>
+            </dt>
+            <dd>
+              <p>Essa opção controla a quantidade e tamanho do ruído branco. Baixos valores produzem superfícies com um leve ruído. Valores altos produzem texturas excessivamente ruidosas.</p>
+              <div class="figure">
+                <a id="id4762"></a>
+                <p class="title">
+                  <strong>Figura 17.253. Exemplo da ação da magnitude de ruído na textura</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/map-lic-vp-nm4.png" alt="Exemplo da ação da magnitude de ruído na textura" />
+                    <div class="caption">
+                      <p>Magnitude de ruído = 4</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Passos de integração</span>
+            </dt>
+            <dd>
+              <p>Essa opção controla a influência do mapa de degradê na textura.</p>
+              <div class="figure">
+                <a id="id4763"></a>
+                <p class="title">
+                  <strong>Figura 17.254. Exemplo da ação dos passos de integração na textura</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/map-lic-is.png" alt="Exemplo da ação dos passos de integração na textura" />
+                    <div class="caption">
+                      <p>Na esquerda: passos de integração = 2. Na direita: passos de integração = 4.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Valor mínimo, </span>
+              <span class="term">Valor máximo</span>
+            </dt>
+            <dd>
+              <p>Ambos os valores determinam um controlador de contraste da textura: valores baixos resultam em alto contraste e altos valores resultam em baixo contraste.</p>
+              <div class="figure">
+                <a id="id4764"></a>
+                <p class="title">
+                  <strong>Figura 17.255. Exemplo de ação dos valores min/máx na textura</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/map-lic-mm.png" alt="Exemplo de ação dos valores min/máx na textura" />
+                    <div class="caption">
+                      <p>Valor mínimo = -4,0. Valores máximos = 5,0.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-gimpressionist.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-artistic.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-weave.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-gimpressionist.html">11.12. GIMPressionista</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-weave.html">11.14. Traçar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

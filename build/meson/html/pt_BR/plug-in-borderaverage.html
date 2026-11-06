@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.52. Média da borda</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. O menu “Cores”" />
+    <link rel="prev" href="python-fu-histogram-export.html" title="8.51. Exportar Histograma" />
+    <link rel="next" href="plug-in-smooth-palette.html" title="8.53. Paleta suave" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.52. Média da borda</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="python-fu-histogram-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. O menu <span class="quote">“<span class="quote">Cores</span>”</span></span>
+        <nav> <a accesskey="n" href="plug-in-smooth-palette.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-borderaverage"></a>8.52. Média da borda</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id45637" class="indexterm"></a>
+      <a id="id45640" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4124"></a>8.52.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4125"></a>
+          <p class="title">
+            <strong>Figura 16.211. Exemplo do filtro <span class="quote">“<span class="quote">Média da borda</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.png" alt="Exemplo do filtro “Média da borda”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/color-taj-borderaverage.png" alt="Exemplo do filtro “Média da borda”" />
+              <div class="caption">
+                <p><a class="link" href="gimp-tools.html#gimp-toolbox-color-area" title="1.3.1. Foreground/Background Colors Area">Foreground color in
+          the Toolbox</a> after applying the <span class="quote">“<span class="quote">Border Average</span>”</span>
+          filter</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This plug-in calculates the most often used color in a specified border
+      of the active layer or selection. It can gather similar colors together
+      so that they become predominant. The calculated color becomes the
+      <a class="link" href="gimp-tools.html#gimp-toolbox-color-area" title="1.3.1. Foreground/Background Colors Area">foreground color in the Toolbox</a>.
+      This filter is interesting when
+      you have to find a Web page color background that differs as little as
+      possible from your image border. The action of this filter is not
+      registered in Undo History and can't be undone with
+      <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Z</strong></span>:
+      it doesn't modify the image.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Este comando somente funciona em imagens RGB. Se a imagem estiver em Tons de Cinza ou for Indexada, a entrada no menu é desativada.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4126"></a>8.52.2. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Info</span> → <span class="guimenuitem">Border Average…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4127"></a>8.52.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4128"></a>
+          <p class="title">
+            <strong>Figura 16.212. Options of the <span class="quote">“<span class="quote">Border Average</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/info/borderaverage.png" alt="Options of the “Border Average” filter" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Tamanho da borda</span>
+            </dt>
+            <dd>
+              <p>
+            The border <span class="guilabel">Thickness</span> in pixels.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Número de cores</span>
+            </dt>
+            <dd>
+              <p>O <span class="guilabel">Tamanho de Balde</span> lhe permite controlar o número de cores que serão consideradas como similares e contadas no mesmo <span class="quote">“<span class="quote">balde</span>”</span> (faixa de cores no histograma). Um tamanho de balde pequeno (ou seja, um grande número de baldes distintos) dá uma melhor precisão no cálculo da média de cor. Note que uma melhor precisão não significa necessariamente um melhor resultado (veja o exemplo abaixo).</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4129"></a>8.52.4. Exemplos ilustrando o filtro <span class="quote">“<span class="quote">Média da Borda</span>”</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4130"></a>
+          <p class="title">
+            <strong>Figura 16.213. Imagem original</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/borderaverage.png" alt="Imagem original" />
+              <div class="caption">
+                <p>
+            Original image: colors are pure Red (255;0;0), pure Blue
+            (0;0;255), and different but similar kinds of Green
+            (0;255;0 , 63;240;63 , 48;224;47 , 0;192;38).
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id4131"></a>
+          <p class="title">
+            <strong>Figura 16.214. O <span class="quote">“<span class="quote">Número de cores</span>”</span> está definido como 8:</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/borderaverage08.png" alt="O “Número de cores” está definido como 8:" />
+              <div class="caption">
+                <p>A cor resultante é Vermelho (254,2,2).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The bucket size is low. So the bucket number is high. All color shades
+      can be stored in different buckets. Here, the bucket containing red is
+      the most filled. The resulting color is a nearly pure
+      Red (254,2,2) and becomes the foreground color in the Toolbox.
+      </p>
+        <div class="figure">
+          <a id="id4132"></a>
+          <p class="title">
+            <strong>Figura 16.215. O <span class="quote">“<span class="quote">Número de cores</span>”</span> está definido como 64:</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/borderaverage64.png" alt="O “Número de cores” está definido como 64:" />
+              <div class="caption">
+                <p>A cor resultante é Verde (32,224,32).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Neste caso o tamanho do balde é grande, então o número de baldes é pequeno. Cores similares (neste caso, verde) estão armazenadas no mesmo balde. Agora este balde <span class="quote">“<span class="quote">verde</span>”</span> é o mais cheio. Todas as cores neste balde tem os mesmos valores para os dois bits mais importantes: (00******;11******;00******). Os 6 bits restantes podem ter qualquer valor de 0 a 63 para o respectivo canal. Então, neste balde, os canais de cor vermelha vão de 0 a 63, canais de verde vão de 192 a 255, canais de azul vão de 0 a 63. A cor resultante é Verde (32,224,32), o que, para cada canal, é a média entre os limites do intervalo do canal (63 + 0)/2, (255+192)/2, (63+0)/2.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="python-fu-histogram-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-smooth-palette.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="python-fu-histogram-export.html">8.51. Exportar Histograma</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-smooth-palette.html">8.53. Paleta suave</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

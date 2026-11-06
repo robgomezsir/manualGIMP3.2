@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.9. Supressão de manchas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-enhance.html" title="4. Filtros de realce" />
+    <link rel="prev" href="gimp-filter-unsharp-mask.html" title="4.8. Sharpen (Unsharp Mask)" />
+    <link rel="next" href="plug-in-nl-filter.html" title="4.10. Filtro NL" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.9. Supressão de manchas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-unsharp-mask.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. Filtros de realce</span>
+        <nav> <a accesskey="n" href="plug-in-nl-filter.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-despeckle"></a>4.9. Supressão de manchas</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id49006" class="indexterm"></a>
+      <a id="id49010" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4324"></a>4.9.1. Visão Geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is used to remove small defects due to dust, or scratches,
+      on a scanned image, and also moiré effects on images scanned from a
+      magazine.  You should select isolated defects before applying this
+      filter, in order to avoid unwanted changes in other areas of your image.
+      The filter replaces each pixel with the median value of the pixels within
+      the specified radius.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4325"></a>4.9.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Enhance</span> → <span class="guimenuitem">Despeckle…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4326"></a>4.9.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4327"></a>
+          <p class="title">
+            <strong>Figura 17.51. Opções do filtro <span class="quote">“<span class="quote">Desfocar</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/enhance/despeckle.png" alt="Opções do filtro “Desfocar”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Previsão</span>
+            </dt>
+            <dd>
+              <p>Se estiver marcado, os resultados de parametrização são exibidos interativamente na visualização.</p>
+            </dd>
+            <dt>
+              <span class="term">Filter Type</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Mediana</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The median value of the pixels within the set
+                  <span class="guilabel">Radius</span> around the target pixel is
+                  used to replace the target pixel value.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Adaptativa</span>
+                  </dt>
+                  <dd>
+                    <p>Adapta o raio à imagem ou conteúdo da seleção através da análise do histograma da região em torno de um pixel alvo. O raio adaptado será sempre menor ou igual ao raio especificado.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Recursive-Median</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Repeats the Median filter action to get a stronger effect.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Recursive-Adaptive</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Repeats the Adaptive filter action to get a stronger effect.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Raio</span>
+            </dt>
+            <dd>
+              <p>
+            Sets size of action window from 1 (3×3 pixels) to 20 (41×41). This
+            window moves over the image, and the color in it is smoothed, so
+            imperfections are removed.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Nível de preto</span>
+            </dt>
+            <dd>
+              <p>Só inclui pixels mais claros do que o valor definido no histograma final(-1-255).</p>
+            </dd>
+            <dt>
+              <span class="term">Nível de branco</span>
+            </dt>
+            <dd>
+              <p>Só inclui pixels mais escuros do que o valor definido aqui no histograma (0-256).</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-unsharp-mask.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-enhance.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-nl-filter.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-unsharp-mask.html">4.8. Sharpen (Unsharp Mask)</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-nl-filter.html">4.10. Filtro NL</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

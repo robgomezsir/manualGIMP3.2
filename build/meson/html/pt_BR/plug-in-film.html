@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>10.3. Filmstrip</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-combine.html" title="10. Filtros de combinação" />
+    <link rel="prev" href="plug-in-depth-merge.html" title="10.2. Mapa de profundidade" />
+    <link rel="next" href="filters-artistic.html" title="11. Filtros artísticos" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>10.3. Filmstrip</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-depth-merge.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>10. Filtros de combinação</span>
+        <nav> <a accesskey="n" href="filters-artistic.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-film"></a>10.3. Filmstrip</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id54922" class="indexterm"></a>
+      <a id="id54926" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4665"></a>10.3.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4666"></a>
+          <p class="title">
+            <strong>Figura 17.208. Applying example for the Filmstrip filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Applying example for the Filmstrip filter" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/combine-taj-filmstrip.jpg" alt="Applying example for the Filmstrip filter" />
+              <div class="caption">
+                <p>Filtro aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      Filmstrip filter lets you merge several pictures into a photographic film
+      drawing.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Esse filtro não inverte as cores, ou seja, ele não imita negativo de filmes como aqueles usados para produzir impressões. Ao invés disso, você deve pensar que o resultado é uma imitação de um slide de filme ou de um filme de cinema.</p>
+                <p>
+        The drawing is a new separate image instance which would need to be saved separately, not a layer in any existing image.                       
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4667"></a>10.3.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Combine</span> → <span class="guimenuitem">Filmstrip…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4668"></a>10.3.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4669"></a>10.3.3.1. Seleção</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4670"></a>
+            <p class="title">
+              <strong>Figura 17.209. <span class="quote">“<span class="quote">Filmstrip</span>”</span> filter options (Selection)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/combine/film-selection.png" alt="“Filmstrip” filter options (Selection)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <p class="title">
+              <strong>Filmstrip</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Mudar altura para caber as imagens</span>
+              </dt>
+              <dd>
+                <p>Aplica a altura da imagem original para a imagem resultante.</p>
+              </dd>
+              <dt>
+                <span class="term">Film height</span>
+              </dt>
+              <dd>
+                <p>Essa opção permite definir a altura da imagem resultante. Se as imagens originais possuirem tamanhos diferentes, elas serão redimensionadas para este tamanho.</p>
+              </dd>
+              <dt>
+                <span class="term">Film color</span>
+              </dt>
+              <dd>
+                <p>
+              By clicking on the color button you can define the color of
+              the film (around and between pictures).
+            </p>
+              </dd>
+            </dl>
+          </div>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Numeração</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Índice inicial</span>
+              </dt>
+              <dd>
+                <p>Define o número inicial que será usado para as imagens.</p>
+              </dd>
+              <dt>
+                <span class="term">Number font</span>
+              </dt>
+              <dd>
+                <p>Define a fonte dos dígitos.</p>
+              </dd>
+              <dt>
+                <span class="term">Number color</span>
+              </dt>
+              <dd>
+                <p>
+              By clicking on the color button, you can define the font
+              color of digits.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Em cima, </span>
+                <span class="term">Embaixo</span>
+              </dt>
+              <dd>
+                <p>Define a posição do número.</p>
+              </dd>
+            </dl>
+          </div>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Seleção de imagens</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Imagens disponíveis</span>
+              </dt>
+              <dd>
+                <p>Mostra as imagens que podem ser usadas para a junção. As imagens são aquelas já abertas anteriormente no GIMP.</p>
+              </dd>
+              <dt>
+                <span class="term">No filme</span>
+              </dt>
+              <dd>
+                <p>Mostra as imagens já escolhidas para serem juntas.</p>
+              </dd>
+              <dt>
+                <span class="term">Adicionar</span>
+              </dt>
+              <dd>
+                <p>Este botão permite ao usuário adicionar uma imagem disponível na seção <span class="quote">“<span class="quote">no filme</span>”</span>.</p>
+              </dd>
+              <dt>
+                <span class="term">Remover</span>
+              </dt>
+              <dd>
+                <p>
+              This button allows to bring a picture from <span class="quote">“<span class="quote">On
+              film</span>”</span> to <span class="quote">“<span class="quote">Available images</span>”</span>. After that,
+              the picture will not be used anymore in the resulting
+              document.
+            </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4671"></a>10.3.3.2. Avançado</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4672"></a>
+            <p class="title">
+              <strong>Figura 17.210. <span class="quote">“<span class="quote">Filmstrip</span>”</span> filter options (Advanced)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/combine/film-advanced.png" alt="“Filmstrip” filter options (Advanced)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Altura da imagem</span>
+              </dt>
+              <dd>
+                <p>
+              Defines the height of each picture in the resulting image.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Espaçamento das imagens</span>
+              </dt>
+              <dd>
+                <p>Define o espaçamento entre as figuras conforme elas serão inseridas na imagem futura.</p>
+              </dd>
+              <dt>
+                <span class="term">Deslocamento dos orifícios</span>
+              </dt>
+              <dd>
+                <p>Define a posição do orifício a partir da borda da imagem.</p>
+              </dd>
+              <dt>
+                <span class="term">Largura dos orifícios</span>
+              </dt>
+              <dd>
+                <p>Define a largura dos orifícios na imagem resultante.</p>
+              </dd>
+              <dt>
+                <span class="term">Altura dos orifícios</span>
+              </dt>
+              <dd>
+                <p>Define a altura dos orifícios na imagem resultante.</p>
+              </dd>
+              <dt>
+                <span class="term">Hole distance</span>
+              </dt>
+              <dd>
+                <p>Defines the space between holes.</p>
+              </dd>
+              <dt>
+                <span class="term">Altura dos números</span>
+              </dt>
+              <dd>
+                <p>Define a altura dos números de início, proporcionalmente à altura das figuras.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-depth-merge.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-combine.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-artistic.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-depth-merge.html">10.2. Mapa de profundidade</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-artistic.html">11. Filtros artísticos</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

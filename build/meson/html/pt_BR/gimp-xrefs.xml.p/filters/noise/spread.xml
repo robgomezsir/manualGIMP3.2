@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-13 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-noise-spread">
+  <title>Espalhar</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Ruído</secondary>
+    <tertiary>Espalhar</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Espalhar</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro Espalhar</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/noise-taj-spread.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O filtro Espalhar troca cada pixel da camada ativa ou da seleção por outro escolhido aleatoriamente de acordo com a quantidade (distância) escolhida pelo usuário. Seus efeitos são visíveis apenas em áreas com transição de cores, e são nulos em áreas com apenas uma cor. Nenhuma nova cor é introduzida.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Noise</guisubmenu>
+        <guimenuitem>Spread…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Espalhar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/noise/spread-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Horizontal</term>
+        <term>Vertical</term>
+        <listitem>
+          <para>
+            You can set the distance that pixels will be moved along
+            <guilabel>Horizontal</guilabel> and
+            <guilabel>Vertical</guilabel> axis. The axis can be locked by
+            clicking the Chain icon.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Semente aleatória</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-12-23 j.h: update to v-2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-polar-coordinates">
+  <title>Polar Coordinates</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Polar Coordinates</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Polar Coordinates</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Example for Polar Coordinates filter</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-polarcoords.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Dá uma representação circular  de sua imagem.Reposiciona todos os pixels da sua imagem transpondo os números das coordenadas x e y de cada pixel para valores Teta e R de coordenadas polares.O resultado final pode ser deixado retângular de acordo com as configurações.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Polar Coordinates…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title><quote>Polar Coordinates</quote> filter options</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/polar_coords-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Profundidade do círculo em porcentagem</term>
+        <listitem>
+          <para>Controles que permitem que você configure a <quote>circularidade</quote> da transformação, desde um retângulo (0%) até um círculo (100%).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ângulo de início</term>
+        <listitem>
+          <para>Esta opção controla o ângulo em que o desenho vai ser iniciado (0 - 359°), ou seja, qual ângulo corresponde à coordenada x = 0 dos pixels. É como se a imagem final fosse girada em torno do centro, durante a transformação.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mapear ao contrário</term>
+        <listitem>
+          <para>Com esta opção selecionada, o desenho começa a partir da direita em vez da esquerda.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mapear a partir do topo</term>
+        <listitem>
+          <para>Se deixada desmarcada, o mapeamento vai colocar a linha de baixo da imagem no meio do círculo e a linha do topo na borda. Se for marcada, acontece o contrário.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Para polar</term>
+        <listitem>
+          <para>O padrão é que esteja ligada: faz o mapeamento normal para coordenadas polares. Se deixada desmarcada, será feito o mapeamento contrário: de coordenadas polares para retangulares. É mais útil para reverter um mapeamento feito para coordenadas polares anteriormente (embora, claro, a imagem vá perder bastante nitidez nas áreas que estavam próximas ao centro).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>X</term>
+        <term>Y</term>
+        <listitem>
+          <para>
+            These polar coordinates are active only if the <quote>Choose 
+            middle</quote> option is unchecked.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Choose middle</term>
+        <listitem>
+          <para>
+            Checked by default: origin center is at the middle of the layer. If 
+            unchecked, you can modify X and Y parameters to position the origin
+            center.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Exemplos</title>
+    <figure>
+      <title>Com texto</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/polcoords1.png"/>
+        </imageobject>
+        <caption>
+          <para>Você deve aplicar o filtro na camada do texto, ou achatar a imagem antes de usar o filtro.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Com duas barras horizontais</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/polcoords2.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

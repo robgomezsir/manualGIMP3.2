@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.17. Window Management</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-prefs-dialog.html" title="6. Preferences Dialog" />
+    <link rel="prev" href="gimp-prefs-display.html" title="6.16. Display" />
+    <link rel="next" href="gimp-prefs-canvas-interaction.html" title="6.18. Canvas Interaction" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.17. Window Management</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-prefs-display.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>6. Preferences Dialog</span>
+        <nav> <a accesskey="n" href="gimp-prefs-canvas-interaction.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-prefs-window-management"></a>6.17. Window Management</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id29517" class="indexterm"></a>
+      <a id="id29521" class="indexterm"></a>
+      <div class="figure">
+        <a id="id2151"></a>
+        <p class="title">
+          <strong>Figure 15.115. Window Management Preferences</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/preferences/prefs-window-management.png" alt="Window Management Preferences" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    This page lets you customize the way windows are handled in GIMP. You
+    should note that GIMP does not manipulate windows directly, instead it
+    sends requests to the window manager (i.e., to Windows if you are running
+    in Windows; to Mutter if you are running in a standard GNOME setup in
+    Linux; etc). Because there are many window managers, and not all of them
+    are well behaved, it cannot be guaranteed that the functions described
+    here will actually work as described. However, if you are using a modern,
+    standards-compliant window manager, they ought to.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2152"></a>6.17.1. Activating the Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The preferences dialog can be accessed from the main menu, through
+      <span class="guimenu">Edit</span> → <span class="guimenuitem">Preferences</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2153"></a>6.17.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Window Manager Hints</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Hint for docks and toolbox</span>
+            </dt>
+            <dd>
+              <p>
+            The choices you make here determine how the Toolbox, and the docks
+            that hold dialogs, will be treated. You have three possibilities
+            for them:
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                  If you choose <span class="guilabel">Normal Window</span>, they will
+                  be treated like any other windows.
+                </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                  If you choose <span class="guilabel">Utility Window</span>, the
+                  reduce button in the title bar is absent and the docks will
+                  remain permanently on your screen.
+                </p>
+                    <div class="figure">
+                      <a id="id2154"></a>
+                      <p class="title">
+                        <strong>Figure 15.116. Utility window title bar</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/preferences/normal-title-bar.png" alt="Utility window title bar" />
+                          <div class="caption">
+                            <p>
+                        Normal title bar
+                      </p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/preferences/utility-title-bar.png" alt="Utility window title bar" />
+                          <div class="caption">
+                            <p>
+                        The title bar in a utility window
+                      </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                  <li class="listitem">
+                    <p>
+                  If you choose <span class="guilabel">Keep above</span>, they will be
+                  kept in front of every other window at all times.
+                </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+            Note that changes you make here will not take effect until the
+            next time you start <acronym class="acronym">GIMP</acronym>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Focus</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Activate the focused image</span>
+            </dt>
+            <dd>
+              <p>
+            Normally, when you focus an image window (usually indicated by a
+            change in the color of the frame), it becomes the <span class="quote">“<span class="quote">active
+            image</span>”</span> for GIMP, and therefore the target for any
+            image-related actions you perform.  Some people, though, prefer
+            to set up their window managers such that any window entered by
+            the pointer is automatically focused.  If you do this, you
+            may find that it is inconvenient for focused images to
+            automatically become active, and may be happier if you uncheck
+            this option.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Window Positions</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Save window positions on exit</span>
+            </dt>
+            <dd>
+              <p>
+            If this option is checked, the next time you start GIMP,
+            you will see the same set of dialog windows, in the same
+            positions they occupied when you last exited.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Open windows on the same monitor they were open before</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, <acronym class="acronym">GIMP</acronym> will try to restore windows
+            on the same monitor they were used previously. When disabled,
+            windows will appear on the currently used monitor.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save Window Positions Now</span>
+            </dt>
+            <dd>
+              <p>
+            This button is only useful if <span class="quote">“<span class="quote">Save window positions on
+            exit</span>”</span> is unchecked. It allows you to set up your windows
+            they way you like, click the button, and then have them come up in
+            that arrangement each time you start GIMP.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Reset Saved Window Positions to Default Values</span>
+            </dt>
+            <dd>
+              <p>
+            If you decide that you are unhappy with the arrangement of windows
+            you have saved, and would rather go back to the default
+            arrangement than spend time moving them around, you can do so by
+            pressing this button.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-prefs-display.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-prefs-dialog.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-prefs-canvas-interaction.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-prefs-display.html">6.16. Display</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-prefs-canvas-interaction.html">6.18. Canvas Interaction</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

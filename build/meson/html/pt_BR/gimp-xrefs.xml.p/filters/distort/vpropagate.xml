@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-12-28 j.h: update to v2.10
+  2008-08-13 ude: fixed description (bug #546324); re-arranged option list
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-value-propagate">
+  <title>Propagar valores</title>
+
+  <indexterm>
+    <primary>Propagar valores</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro Propagar valores</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-vpropagate.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter works on color borders. It spreads pixels that differ in a
+      specified way from their neighboring pixels.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Value Propagate…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Propagar valores</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/value_propagate-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Modo</term>
+        <listitem>
+          <variablelist>
+            <para>Os exemplos serão gerados a partir desta imagem:</para>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/vpropag-base.png"/>
+              </imageobject>
+            </mediaobject>
+            <varlistentry>
+              <term>Mais branco (valor maior)</term>
+              <listitem>
+                <para>Os pixels serão propagados a partir de pixels de maior valor (mais claros) por cima de pixels de menor valor. Então, as áreas claras ficarão maiores.</para>
+                <figure>
+                  <title>Mais branco</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/filters/examples/vpropag1.png" format="PNG"/>
+                    </imageobject>
+                    <caption>
+                      <para>
+                        Bright pixels have been propagated to dark pixels in
+                        the four directions: top, bottom, right and left.
+                        Filter applied several times to increase effect.
+                      </para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Mais preto (valor menor)</term>
+              <listitem>
+                <para>Os pixels serão propagados de pixels de valores menor (mais escuros) para pixels de valor maior. Então, áreas mais escuras vão ficar maiores.</para>
+                <figure>
+                  <title>Mais preto</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/filters/examples/vpropag2.png"/>
+                    </imageobject>
+                  </mediaobject>
+                </figure>
+                <figure>
+                  <title>Apenas para baixo</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/filters/examples/vpropag2-bis.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>O mesmo que acima, mas somente a direção <guilabel>Para baixo</guilabel> estava selecionada.</para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Valor médio para os picos</term>
+              <listitem>
+                <para>Nas bordas entre os limites selecionados, a média de ambos os valores será propagada. </para>
+                <figure>
+                  <title>Valor médio para os picos</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/filters/examples/vpropag3.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Uma borda fina de uma cor temporária foi adicionada aos objetos. Ela não é visível em torno de objetos com bordas suaves.</para>
+                    </caption>
+                  </mediaobject>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/filters/examples/vpropag3-zoom.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>
+                        Green area zoomed x800. A thin border (one pixel wide)
+                        has been added. Its value is the average between gray
+                        (90%) and green (78%): (90 + 78) / 2 = 84.
+                      </para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Color to peaks</term>
+              <listitem>
+                <para>As áreas propagadas serão preenchidas com a cor de frente da Caixa de ferramentas.</para>
+                <para>
+                    A color selector opens, with a color picker.
+                </para>
+                <figure>
+                  <title>Color to peaks</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/filters/examples/vpropag4.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>
+                        In this example, the selected color is
+                        Red. A thin border, one pixel wide, red, is added
+                        around objects. With smoothed objects, this border is
+                        located at the furthest limit of smoothing. Here,
+                        another border appears inside. This is an artifact due
+                        to the small size of the object which makes the
+                        smoothing area of opposite sides to overlap.
+                      </para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Only color</term>
+              <listitem>
+                <para>
+                  Only areas with the selected color will propagate. With this 
+                  option, soft and fuzzy edges don't propagate well.
+                </para>
+                <figure>
+                  <title>Only color</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/filters/examples/vpropag5.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>
+                        In this example, the selected color is
+                        that of the green object. After applying filter
+                        several times, the green area is clearly enlarged.
+                      </para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Mais opaco</term>
+              <term>Mais transparente</term>
+              <listitem>
+                <para>Esses comandos funcionam como <quote>Mais branco</quote> e <quote>Mais preto</quote>, só que afetam o canal Alfa. Áreas mais opacas (ou transparentes)serão propagadas por cima de áreas menos opacas (transparentes). Essas opções dependem da camada ter um canal Alfa.</para>
+                <figure>
+                  <title>Mais opaco</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/filters/examples/vpropag6a.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Camada original, com um fundo transparente.</para>
+                    </caption>
+                  </mediaobject>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/filters/examples/vpropag6b.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>O filtro aplicado diversas vezes: a área verde, opaca, aumentou.</para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Limite de baixo</term>
+        <term>Limite mais alto</term>
+        <listitem>
+          <para>
+            A pixel will be propagated (spread) if the difference in
+            value between the pixel and its neighbor is no smaller than
+            the lower threshold and no larger than the upper threshold.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Taxa de propagação</term>
+        <listitem>
+          <para>Isso é a quantidade de propagação. Quanto maior o valor, mais forte a propagação será.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <!--Propagating direction-->
+        <term>Para cima</term>
+        <term>Para a esquerda</term>
+        <term>Para a direita</term>
+        <term>Para baixo</term>
+        <listitem>
+          <para>Você pode selecionar uma ou mais direções.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Propagando canal de valor</term>
+        <listitem>
+          <para>
+            If checked, the pixel's color channels (gray channel on
+            grayscaled images) will be propagated. The option is
+            checked by default, of course. 
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Propagando o canal alfa</term>
+        <listitem>
+          <para>
+            If checked, the pixel alpha value will be propagated,
+            otherwise the pixel will get the alpha of the neighboring
+            pixels.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+  <sect3>
+    <title>Using Value Propagate</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="JPG" fileref="images/filters/examples/distort/vpropag-ex-b-w.jpg"/>
+      </imageobject>
+      <caption>
+        <para>
+          Left: Original. Middle: More white. Right: More black.
+        </para>
+      </caption>
+    </mediaobject>
+  </sect3>
+</sect2>

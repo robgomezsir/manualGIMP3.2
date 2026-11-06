@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.9. Sombra projetada</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra" />
+    <link rel="prev" href="gimp-filter-drop-shadow.html" title="6.8. Sombra projetada" />
+    <link rel="next" href="gimp-filter-vignette.html" title="6.10. Vinheta" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.9. Sombra projetada</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-drop-shadow.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Filtros de luz e sombra</span>
+        <nav> <a accesskey="n" href="gimp-filter-vignette.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-long-shadow"></a>6.9. Sombra projetada</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id52183" class="indexterm"></a>
+      <a id="id52186" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4505"></a>6.9.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This GEGL-based filter
+      simplifies creating long shadows in several visual styles.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        It is available if the selected layer holds an Alpha channel
+        (see <a class="xref" href="gimp-layer-alpha-add.html" title="7.36. Adicionar canal alfa">Seção 7.36, “Adicionar canal alfa”</a>).
+        Otherwise, it is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4506"></a>6.9.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Light and Shadow</span> → <span class="guimenuitem">Long Shadow…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4507"></a>6.9.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4508"></a>
+          <p class="title">
+            <strong>Figura 17.134. Opções do filtro <span class="quote">“<span class="quote">Sombra projetada</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/light-and-shadow/long-shadow-dialog.png" alt="Opções do filtro “Sombra projetada”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Predefinições, </span>
+              <span class="term"><span class="quote">“<span class="quote">Tipo de entrada</span>”</span>, </span>
+              <span class="term">Recorte, </span>
+              <span class="term">Opções de mesclagem, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Mesclar filtro, </span>
+              <span class="term">Visualização dividida</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Estilo</span>
+            </dt>
+            <dd>
+              <div class="mediaobject">
+                <img src="images/filters/examples/light-and-shadow/long-shadow-ex-orig-example.png" />
+                <div class="caption">
+              Original image.
+            </div>
+              </div>
+              <div class="mediaobject">
+                <img src="images/filters/examples/light-and-shadow/long-shadow-ex-orig-dialog.png" />
+                <div class="caption">
+              The layers of the image. The text layer was created via
+              the "Layers to Image Size" function in the "Layer" menu.
+            </div>
+              </div>
+              <p>
+            <span class="guilabel">Finite</span> is the default style. Other available
+            styles are <span class="guilabel">Infinite</span>,
+            <span class="guilabel">Fading</span>,
+            and <span class="guilabel">Fading (fixed length)</span>.
+          </p>
+              <div class="figure">
+                <a id="id4509"></a>
+                <p class="title">
+                  <strong>Figura 17.135. Exemplo de <span class="quote">“<span class="quote">ângulo</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/light-and-shadow/long-shadow-ex-default.png" alt="Exemplo de “ângulo”" />
+                    <div class="caption">Ângulo de 45° (padrão)</div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/light-and-shadow/long-shadow-ex-infinite.png" alt="Exemplo de “ângulo”" />
+                    <div class="caption">Infinito</div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/light-and-shadow/long-shadow-ex-fading.png" alt="Exemplo de “ângulo”" />
+                    <div class="caption">Avançando</div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/light-and-shadow/long-shadow-ex-fixlength.png" alt="Exemplo de “ângulo”" />
+                    <div class="caption">Avançando (comprimento fixo); comprimento = 30</div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Ângulo</span>
+            </dt>
+            <dd>
+              <p>Ângulo da sombra, em graus.</p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/light-and-shadow/long-shadow-ex-angle.png" />
+                <div class="caption">Ângulo de 15°</div>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Comprimento = 1,5</span>
+            </dt>
+            <dd>
+              <p>
+            Shadow length, in pixels. Only available when
+            <span class="guilabel">Style</span> is set to
+            <span class="guilabel">Finite</span> or
+            <span class="guilabel">Fading (fixed length)</span>.
+           </p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/light-and-shadow/long-shadow-ex-length.png" />
+                <div class="caption">Comprimento = 1,5</div>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Midpoint</span>
+            </dt>
+            <dd>
+              <p>
+            Shadow fade midpoint. Only available when
+            <span class="guilabel">Style</span> is set to
+            <span class="guilabel">Fading</span> or
+            <span class="guilabel">Fading (fixed length)</span>.
+           </p>
+            </dd>
+            <dt>
+              <span class="term">Cor</span>
+            </dt>
+            <dd>
+              <p>
+            You can choose the color of the shadow here. Just click on the
+            color swatch, and select a color when the color selector pops up,
+            or use the eye-dropper to pick a color from the image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Mostrar posição</span>
+            </dt>
+            <dd>
+              <p>
+            The <span class="quote">“<span class="quote">Output composition</span>”</span> selects how the output of
+            this filter will be determined. There are three choices:
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Shadow plus image</span> will output both the
+                input image and the created shadow. This is the default.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Shadow only</span> will output only the created
+                shadow.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Shadow minus image</span> will output the
+                created shadow but subtracts the area hidden by the image.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="figure">
+                <a id="id4510"></a>
+                <p class="title">
+                  <strong>Figura 17.136. Exemplo de <span class="quote">“<span class="quote">Permitir redimensionamento</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/light-and-shadow/long-shadow-ex-shadonly.png" alt="Exemplo de “Permitir redimensionamento”" />
+                    <div class="caption">
+                      <p>Sombra apenas</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/light-and-shadow/long-shadow-ex-shadminus.png" alt="Exemplo de “Permitir redimensionamento”" />
+                    <div class="caption">
+                      <p>Sombra menos imagem</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-drop-shadow.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-light-and-shadow.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-vignette.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-drop-shadow.html">6.8. Sombra projetada</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-vignette.html">6.10. Vinheta</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

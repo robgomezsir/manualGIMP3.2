@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>9.8. Text Styling</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-generic.html" title="9. Generic Filters" />
+    <link rel="prev" href="gimp-filter-gegl-graph.html" title="9.7. GEGL Graph" />
+    <link rel="next" href="filters-combine.html" title="10. Combine Filters" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>9.8. Text Styling</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-gegl-graph.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>9. Generic Filters</span>
+        <nav> <a accesskey="n" href="filters-combine.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gegl-styles"></a>9.8. Text Styling</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id53237" class="indexterm"></a>
+      <a id="id53241" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3390"></a>9.8.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3391"></a>
+          <p class="title">
+            <strong>Figure 17.200. Applying example for the Text Styling filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/gegl-styles.png" alt="Applying example for the Text Styling filter" />
+              <div class="caption">
+                <p>
+            Text Styling examples. Topmost unstyled text; second: color,
+            outline and shadow applied; third: bevel and inner glow applied;
+            bottom: image and outline image overlay applied.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter allows you to combine and apply several styles to a layer,
+      such as an outline, shadow, bevel, inner glow and image overlay.
+      Although this can be especially useful for text, it works on other
+      layers too.
+      Some of the settings require an alpha channel and transparent areas for
+      best results.
+    </p>
+        <p>
+      The settings consist of three parts. Which part is visible can be
+      selected by changing <span class="guilabel">Part of filter to be displayed</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3392"></a>9.8.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Generic</span> → <span class="guimenuitem">Text Styling…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3393"></a>9.8.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3394"></a>
+          <p class="title">
+            <strong>Figure 17.201. <span class="quote">“<span class="quote">Text Styling</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/generic/text-styling-dialog-1.png" alt="“Text Styling” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-filters-common.html" title="2. Common Features">Section 2, “Common Features”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Part of filter to be displayed</span>
+            </dt>
+            <dd>
+              <p>
+            The settings consist of three parts. Which part is visible can be
+            changed by selecting a choice from the drop-down list here.
+            The choices are <a class="link" href="gegl-styles.html#styles-page-1">Color, Outline,
+            Shadow</a>, <a class="link" href="gegl-styles.html#styles-page-2">Bevel and Inner
+            Glow</a>, and <a class="link" href="gegl-styles.html#styles-page-3">Image upload and
+            Outline Bevel</a>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Color, Outline and Shadow</span>
+            </dt>
+            <dd>
+              <p>
+            The below settings control color, outline and shadow styles.
+          </p>
+              <div class="variablelist">
+                <a id="styles-page-1"></a>
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Color Overlay</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This sets the color of the non-transparent areas of the
+                  layer or selection. Changing the color can be done by
+                  clicking the color button, or the color picker.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Color policy</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This decides how the color is applied to the layer or
+                  selection. The choices are:
+                  </p>
+                    <div class="variablelist">
+                      <dl class="variablelist">
+                        <dt>
+                          <span class="term">No Color</span>
+                        </dt>
+                        <dd>
+                          <p>
+                          Do not use the color selected here.
+                        </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Multiply</span>
+                        </dt>
+                        <dd>
+                          <p>
+                          Multiply the color of the selection or layer with
+                          that of the styles color.
+                        </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Solid Color</span>
+                        </dt>
+                        <dd>
+                          <p>
+                          Replace the colors of the layer or selection with
+                          the styles color.
+                        </p>
+                        </dd>
+                      </dl>
+                    </div>
+                    <p>
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="styles-enable-outline"></a>
+                    <span class="term">Enable Outline</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When this is enabled, an outline will be created around the
+                  edges of the objects in the selection or layer.
+                  The following settings control the parameters used to create
+                  the outline.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline Opacity</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The opacity of the outline controls how transparent the
+                  outline will be.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline X, </span>
+                    <span class="term">Outline Y</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  These control the location where the outline starts.
+                </p>
+                    <p>
+                  By default these slide together. You can click the lock to
+                  the right of the sliders to make them move separately (and
+                  vice versa).
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline Grow Shape</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The shape used to grow the outline. Choices are
+                  <span class="guilabel">Square</span>, <span class="guilabel">Circle</span>
+                  (default), and <span class="guilabel">Diamond</span>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline blur radius</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This determines the amount of blur to use on the outline.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline grow radius</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This determines the size of the outline.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline's color</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This sets the color of outline. Changing the color can be
+                  done by clicking the color button, or the color picker.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Shadow/Glow opacity</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the visibility and transparency of the shadow
+                  glow around the outline. When set to 0.0 there is no
+                  shadow glow.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Shadow/Glow X, </span>
+                    <span class="term">Shadow/Glow Y</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  These control the location where the shadow glow starts.
+                </p>
+                    <p>
+                  By default these slide together. You can click the lock to
+                  the right of the sliders to make them move separately (and
+                  vice versa).
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Shadow/Glow's color</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This sets the color of the shadow glow. Changing the color
+                  can be done by clicking the color button, or the color picker.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Shadow/Glow grow radius</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The distance to expand the shadow glow before blurring.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Shadow/Glow blur radius</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This determines the amount of blur to use for the shadow glow.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Bevel and Inner Glow</span>
+            </dt>
+            <dd>
+              <div class="figure">
+                <a id="id3395"></a>
+                <p class="title">
+                  <strong>Figure 17.202. <span class="quote">“<span class="quote">Bevel and Inner Glow</span>”</span> filter options</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/generic/text-styling-dialog-2.png" alt="“Bevel and Inner Glow” filter options" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            The below settings control bevel and inner glow styles.
+          </p>
+              <div class="variablelist">
+                <a id="styles-page-2"></a>
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Enable Bevel</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When enabled a bevel is added. The settings below define
+                  how exactly the bevel is made.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Bevel blend mode</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This selects the blend mode that will be used to blend the
+                  bevel with the layer or selection. This affects how the two
+                  will be combined and thus the visual effect.
+                </p>
+                    <p>
+                  Choices are <span class="guilabel">Multiply</span>,
+                  <span class="guilabel">Add</span>, <span class="guilabel">Hard Light</span>,
+                  <span class="guilabel">Darken</span>, and
+                  <span class="guilabel">Color Dodge</span>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Select Bevel</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  You can choose between the following bevel types:
+                  <span class="guilabel">Bump Bevel</span> (the default) and
+                  <span class="guilabel">Chamfer Bevel</span>.
+                </p>
+                    <div class="variablelist">
+                      <dl class="variablelist">
+                        <dt>
+                          <span class="term">Bump Bevel</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        Makes a 3D effect by adding an emboss effect on top
+                        of a blur.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Chamfer Bevel</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        Simulates lighting of chamfered 3D-edges. Chamfered
+                        edges are sloped edges between two faces of an object.
+                      </p>
+                        </dd>
+                      </dl>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Bevel depth</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the emboss depth; i.e. how deep and detailed the
+                  bevel will be.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Bevel elevation</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the elevation angle of the bevel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Bevel azimuth</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the angle of the light source illuminating and
+                  shading the bevel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Bevel radius (bump only)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Only available for <span class="guilabel">Bump Bevel</span>. This
+                  determines the size of the softening for the bump.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Levels low output lighting for Bevel, </span>
+                    <span class="term">Levels high output lighting for Bevel</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  These allow adjustment of the low and high levels of the
+                  bevel, which control the dark and light areas.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Dark Bevel/ignore image mode</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This instructs the outline bevel to ignore image details if
+                  there is an image file overlay below it. It also allows
+                  outline bevel to work better when the user selects darker
+                  colors.
+                </p>
+                    <p>
+                  This effect is mainly intended for <span class="guilabel">Bump
+                  Bevel</span> and will be hardly noticeable when
+                  <span class="guilabel">Chamfer Bevel</span> is selected.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Enable Inner Glow</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When enabled an inner glow is added. The settings below define
+                  how exactly the inner glow is made.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Blend mode of Inner Glow</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This selects the blend mode that will be used to blend the
+                  inner glow with the layer or selection. This affects how the
+                  two will be combined and thus the visual effect.
+                </p>
+                    <p>
+                  Choices are <span class="guilabel">Normal</span>,
+                  <span class="guilabel">Overlay</span>, <span class="guilabel">Screen</span>,
+                  <span class="guilabel">Hard Light</span>, <span class="guilabel">Color
+                  Dodge</span>, and <span class="guilabel">Plus</span>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Inner Glow's blur radius</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This determines the size of the blur.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Inner Glow's grow radius</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The distance to expand the inner glow before blurring.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Inner Glow's opacity</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This determines how transparent or solid the inner glow
+                  will be.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Inner Glow's color</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The color to use for the glow. By default picks the current
+                  foreground color, but it can be changed using either the color
+                  selection button or the color picker.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Inner Glow's unmodified pixel fix</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Median blur covers unaffected pixels. Setting this slider
+                  too high will make it outline-like. Only slide it high enough
+                  to cover thin shaped corners.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Image upload and Outline Bevel</span>
+            </dt>
+            <dd>
+              <div class="figure">
+                <a id="id3396"></a>
+                <p class="title">
+                  <strong>Figure 17.203. <span class="quote">“<span class="quote">Image upload and Outline Bevel</span>”</span> filter options</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/generic/text-styling-dialog-3.png" alt="“Image upload and Outline Bevel” filter options" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            The below settings control image overlay and outline bevel styles.
+          </p>
+              <div class="variablelist">
+                <a id="styles-page-3"></a>
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Enable image upload</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When enabled an external image will be used as overlay
+                  and adjust related settings below it.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Image file overlay</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This allows you to browse for and select an image on your
+                  computer to be used as image overlay. This will be shown
+                  on top of the opaque parts of the layer or selection.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Opacity of image file overlay</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This setting allows you to adjust the opacity of the image
+                  overlay. By lowering the opacity you will be able to see a
+                  combination of the overlay and what's under it.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Saturation</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This allows you adjust the saturation of the image overlay,
+                  or anything below it when no image was chosen.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Lightness</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This allows you adjust the lightness of the image overlay,
+                  or anything below it when no image was chosen.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Enable advanced options on Outline (requires outline)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When enabled, and
+                  <a class="link" href="gegl-styles.html#styles-enable-outline">Enable Outline</a>
+                   is enabled, the below settings can be used to set
+                   additional outline options.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Enable Outline Bevel (requires advanced options)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When enabled and the advanced options setting is also
+                  enabled, it allows you to outline the bevel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline Bevel blend mode</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This selects the blend mode that will be used to blend the
+                  bevel with the outline. This affects how the two
+                  will be combined and thus the visual effect.
+                </p>
+                    <p>
+                  Choices are <span class="guilabel">Multiply</span>,
+                  <span class="guilabel">Add</span>, <span class="guilabel">Hard Light</span>,
+                  <span class="guilabel">Darken</span>, and
+                  <span class="guilabel">Color Dodge</span>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline Bevel depth</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the emboss depth; i.e. how deep and detailed the
+                  bevel will be.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline Bevel elevation</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the elevation angle of the bevel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline Bevel azimuth</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the angle of the light source illuminating and
+                  shading the bevel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline Bevel radius</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This determines the size of the softening for the bump.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Enable image upload on Outline (requires advanced options)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When enabled and the advanced options setting is also
+                  enabled, it allows you to outline the bevel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline image file overlay</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This allows you to browse for and select an image on your
+                  computer to be used as image overlay for the outline. This
+                  will be shown on top of the opaque parts of the outline.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline image opacity</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This setting allows you to adjust the opacity of the image
+                  overlay for the outline. By lowering the opacity you will be
+                  able to see a combination of the overlay and what's under it.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Levels low output lighting for Outline Bevel, </span>
+                    <span class="term">Levels high output lighting for Outline Bevel</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  These allow adjustment of the low and high levels of the
+                  outline bevel, which control the dark and light areas.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Outline Dark Bevel/ignore image mode</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This instructs the outline bevel to ignore image details if
+                  there is an image file overlay below it. It also allows
+                  outline bevel to work better when the user selects darker
+                  colors.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-gegl-graph.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-generic.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-combine.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-gegl-graph.html">9.7. GEGL Graph</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-combine.html">10. Combine Filters</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.10. Ink</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-tools-paint.html" title="3. Paint Tools" />
+    <link rel="prev" href="gimp-tool-airbrush.html" title="3.9. Airbrush" />
+    <link rel="next" href="gimp-tool-mypaint-brush.html" title="3.11. MyPaint Brush" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.10. Ink</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-airbrush.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>3. Paint Tools</span>
+        <nav> <a accesskey="n" href="gimp-tool-mypaint-brush.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-ink"></a>3.10. Ink</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id16212" class="indexterm"></a>
+      <a id="id16215" class="indexterm"></a>
+      <p>
+    The Ink tool uses a simulation of an ink pen with a controllable nib to
+    paint solid brush strokes with an anti-aliased edge. The size, shape and
+    angle of the nib can be set to determine how the strokes will be rendered.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1717"></a>3.10.1. Activating the Tool</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the main menu:
+          <span class="guimenu">Tools</span> → <span class="guisubmenu">Paint Tools</span> → <span class="guimenuitem">Ink</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By clicking the tool icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-ink.svg" width="16" /></span>
+          </span>
+          in the Toolbox.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By pressing the <span class="keycap"><strong>K</strong></span> keyboard shortcut.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1718"></a>3.10.2. Key modifiers</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>
+            This key changes the nib to a
+            <a class="link" href="gimp-tool-color-picker.html" title="5.4. Color Picker">Color Picker</a>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1719"></a>3.10.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1720"></a>
+          <p class="title">
+            <strong>Figure 14.66. Tool Options Dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-ink.png" alt="Tool Options Dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Mode, </span>
+              <span class="term">Opacity, </span>
+              <span class="term">Expand Layers</span>
+            </dt>
+            <dd>
+  See the <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-options" title="3.1.2. Options">Common Paint Tool
+  Options</a> for a description of tool options that apply to many or all
+  paint tools.
+</dd>
+            <dt>
+              <span class="term">Adjustment</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Size</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Controls the apparent width of the pen's nib with values
+                  that ranges from 0 (very thin) to 200 (very thick).
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Angle</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the apparent angle of the pen's nib relative
+                  to horizontal.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Sensitivity</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Size</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the size of the nib, from minimum to maximum.
+                  Note that a size of 0 does not result in a nib of size zero,
+                  but rather a nib of minimum size.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Tilt</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Controls the apparent tilt of the nib relative to
+                  horizontal. This control and the Angle control described
+                  above are interrelated. Experimentation is the best means of
+                  learning how to use them.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Speed</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This controls the effective size of the nib as a function of
+                  drawing speed. That is, as with a physical pen, the faster
+                  you draw, the narrower the line.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Type and Shape</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Type</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  There are three nib shapes to choose from: circle, square,
+                  and diamond.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Shape</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The geometry of the nib type can be adjusted by keeping the
+                  mouse button pressed while on the small square at the center
+                  of the Shape icon and moving it around.
+                </p>
+                    <p>
+                  <span class="inlinemediaobject"><img src="images/tool-options/ink-type-circle.png" /></span>
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-airbrush.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-paint.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-mypaint-brush.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-airbrush.html">3.9. Airbrush</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-mypaint-brush.html">3.11. MyPaint Brush</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.6. modo indexado</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-image-menu.html" title="6. O menu “Imagem”" />
+    <link rel="prev" href="gimp-image-convert-grayscale.html" title="6.5. Modo de tons de cinza" />
+    <link rel="next" href="gimp-image-encoding.html" title="6.7. “Encoding” Submenu" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.6. modo indexado</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-image-convert-grayscale.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. O menu <span class="quote">“<span class="quote">Imagem</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-image-encoding.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-image-convert-indexed"></a>6.6. modo indexado</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id37109" class="indexterm"></a>
+      <a id="id37113" class="indexterm"></a>
+      <a id="id37116" class="indexterm"></a>
+      <p>
+    The <span class="guimenuitem">Indexed</span> command converts your image to
+    indexed mode. See
+    <a class="link" href="glossary.html#glossary-indexedcolors" title="Cores indexadas">indexed colors</a> in the
+    Glossary for more information about Indexed Color Mode.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3691"></a>6.6.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Image</span> → <span class="guisubmenu">Mode</span> → <span class="guimenuitem">Indexed…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3692"></a>6.6.2. O diálogo <span class="quote">“<span class="quote">Converte a imagem para cores indexadas</span>”</span></h4>
+            </div>
+          </div>
+        </div>
+        <p>O comando <span class="guimenuitem">Indexado</span> abre o diálogo <span class="guilabel">Converte a imagem para cores indexadas</span>.</p>
+        <div class="figure">
+          <a id="id3693"></a>
+          <p class="title">
+            <strong>Figura 16.50. O diálogo <span class="quote">“<span class="quote">Converte a imagem para cores indexadas</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/image-mode-indexed.png" alt="O diálogo “Converte a imagem para cores indexadas”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Opções de mapa de cores</span>
+            </dt>
+            <dd>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Gerar paleta otimizada</span>: Esta opção cria a melhor paleta possível com no máximo 256 cores por padrão (suportadas no formato GIF clássico). Você pode reduzir este <span class="emphasis"><em>Número máximo de cores</em></span>, embora isso possa criar efeitos indesejados (faixas de cores) em transições suaves. Entretanto, você pode diminuir os efeitos indesejados fazendo uso do reticulado.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Usar paleta otimizada para Web</span>:  Usa uma paleta fixa, otimizada para web: nos anos 1990 havia algumas cores seguras para se colocar numa imagem na Web que não seriam alteradas pelo navegador - isso não se aplica mais hoje em dia.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Usar paleta preto e branco (1 Bit)</span>: Esta opção gera uma imagem que usa apenas duas cores: perto e branco.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Usar planeta personalizada</span>: Este botão permite que você selecione uma paleta personalizada de uma lista. O número de cores é indicado para cada paleta. Você pode visualizar e editar essas paletas no diálogo de paletas - use esta opção com uma paleta personalizada para forçar que a imagem tenha apenas as cores que você desejar (por exemplo só 3 cores: preto, vermelho e branco)</p>
+                    <p>Algumas cores da paleta podem não ser usadas se sua imagem não tiver muitas cores - elas serão removidas da imagem final se a opção <span class="guilabel">Remover cores não utilizadas do mapa de cores</span> estiver selecionada. Uma vez que a versão 2.8 do GIMP não cria novas cores automaticamente em imagens indexadas, não use esta opção se você pretende desenhar na imagem com as cores da paleta escolhida (nas versões 2.10 em diante esta restrição não existe) </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Opções de retícula</span>
+            </dt>
+            <dd>
+              <p>Uma vez que uma imagem indexada contém 256 cores ou menos, algumas das cores na imagem original podem não estar disponíveis na paleta final. Isso pode resultar em alguns trechos blocados ou sólidos, em áreas em que deveria haver mudanças sutis de cores. As opções de <span class="guilabel">reticulado</span> permitem que você corrija os efeitos indesejados criados pelas opções de paleta.</p>
+              <p>Um filtro de retícula tenta aproximar uma cor faltante na paleta usando grupos de pixels de cores semelhantes, que existam na paleta. Quando vistos de longe, esses pixels dão a impressão de uma nova cor. Consulte o glossário para maiores informações sobre <a class="link" href="glossary.html#glossary-dithering" title="Reticulado">reticulado</a>.</p>
+              <p>Três filtros (além de <span class="quote">“<span class="quote">Nenhum</span>”</span>) estão disponíveis. Não é possível prever qual resultado um dos filtros em particular vai ter na sua imagem, então você terá que tentar todos (aplicando a conversão, desfazendo e refazendo) para ver qual funciona melhor.   O filtro <span class="quote">“<span class="quote">Posicionada</span>”</span> é bem adaptado para animações. </p>
+              <div class="figure">
+                <a id="id3694"></a>
+                <p class="title">
+                  <strong>Figura 16.51. Exemplo: todas as cores, sem retícula</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/examples/dither1.png" alt="Exemplo: todas as cores, sem retícula" />
+                    <div class="caption">
+                      <p>Este é um exemplo com uma transição suave no modo RGB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id3695"></a>
+                <p class="title">
+                  <strong>Figura 16.52. Exemplo: quatro cores, sem retícula</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/examples/dither2.png" alt="Exemplo: quatro cores, sem retícula" />
+                    <div class="caption">
+                      <p>A mesma imagem, depois de ser transformada para quatro cores indexadas, sem uso do reticulado</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id3696"></a>
+                <p class="title">
+                  <strong>Figura 16.53. Exemplo: Floyd-Steinberg (normal)</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/examples/dither3.png" alt="Exemplo: Floyd-Steinberg (normal)" />
+                    <div class="caption">
+                      <p>A mesma imagem, com 4 cores indexadas e reticulado <span class="quote">“<span class="quote">Floyd-Steinberg (normal)</span>”</span></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id3697"></a>
+                <p class="title">
+                  <strong>Figura 16.54. Exemplo: Floyd-Steinberg (perda de cores reduzida)</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/examples/dither4.png" alt="Exemplo: Floyd-Steinberg (perda de cores reduzida)" />
+                    <div class="caption">
+                      <p>A mesma imagem, com quatro cores indexadas e reticulado <span class="quote">“<span class="quote"> Floyd-Steinberg (perda de cores reduzida)</span>”</span>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            In a GIF image, transparency is encoded in 1 bit: transparent
+            or not transparent. To give the illusion of partial
+            transparency, you can use the <span class="guilabel">Enable dithering of
+              transparency</span> option. However, the
+            <a class="link" href="gimp-filter-semi-flatten.html" title="15.3. Semi-Achatar">Semi-flatten</a>
+            plug-in may give you better results.
+          </p>
+              <p>
+            <span class="guilabel">Enable dithering of text layers</span>: dithering 
+            text layers will make them uneditable.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Você pode editar a paleta de cores de uma imagem indexada usando o <a class="link" href="gimp-indexed-palette-dialog.html" title="2.4. Diálogo do mapa de cores">Diálogo de mapa de cores</a>.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-image-convert-grayscale.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-image-encoding.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-image-convert-grayscale.html">6.5. Modo de tons de cinza</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-image-encoding.html">6.7. <span class="quote">“<span class="quote">Encoding</span>”</span> Submenu</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

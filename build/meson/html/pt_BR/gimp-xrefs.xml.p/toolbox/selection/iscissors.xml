@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-iscissors">
+  <title>Ferramenta Tesoura</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Tesouras</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Ferramenta Tesoura</primary>
+  </indexterm>
+
+  <para>A ferramenta Tesoura Inteligente é uma peça do equipamento interessante: tem algumas características em comum com a Laço, algumas características em comum com a ferramenta de Vetores, e algumas características próprias. É útil quando você está tentando selecionar uma região definida por fortes mudanças de cor nas bordas. Para usar a Tesoura, clique para criar um conjunto de <quote>nós de controle</quote>, também conhecidos como âncoras ou pontos de controle, nas bordas da região que você está tentando selecionar. A ferramenta produz uma curva contínua passando por estes nós de controle, seguindo todas as bordas de alto contraste que encontrar. Se você tiver sorte, o vetor que a ferramenta encontrar corresponderá ao contorno que você está tentando selecionar.</para>
+  <para>Infelizmente, parece haver alguns problemas com a lógica de seguir a borda desta ferramenta, com o resultado que as seleções que criam tendem a ser muito tremidas em muitos dos casos. Uma boa maneira de limpá-los é mudando para o modo Mascara Rápida, e usar ferramentas de pintura para pintar as partes problemáticas. Em geral, a maioria das pessoas acham a ferramenta de Vetor mais útil do que as tesouras, porque, mesmo que ela não tenha a capacidade de encontrar a borda de forma inteligente, os caminhos que ela produz persistem até você excluí-los, e podem ser alterados a qualquer momento.</para>
+
+  <sect3>
+    <title>Ativando a Ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir da barra de menu <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de Seleção</guisubmenu><guimenuitem>Seleção Livre</guimenuitem></menuchoice>,</para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-iscissors.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas,</para>
+      </listitem>
+      <listitem>
+        <para>
+          By pressing the <keycap>I</keycap> keyboard shortcut.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Teclas Modificadoras</title>
+    <para>O comportamento padrão das teclas <keycap>Shift</keycap>, <keycap>Ctrl</keycap>, e <keycap>Alt</keycap> está descrito em <xref linkend="gimp-tools-select-modifiers"/> para todas as ferramentas de seleção.</para>
+    <para>Há, no entanto, um modificador de tecla que tem um comportamento especial, se você usá-lo durante a edição de uma seleção, que é <emphasis>depois</emphasis> de ter adicionado o primeiro nó:</para>
+    <variablelist>
+      <varlistentry>
+        <term><keycap>Shift</keycap></term>
+        <listitem>
+          <para>Por padrão, o <emphasis>recurso de atração automática para a borda</emphasis> está ativado: sempre que você clicar e arrastar o ponteiro do mouse, a ferramenta Tesoura encontra o ponto do gradiente máximo (onde a mudança de cor é máxima) para a colocação de um novo nó de controle ou mover um nó existente.</para>
+          <para>Mantendo essa tecla pressionada enquanto clica e arrasta desativa esse recurso, e o nó de controle será colocado na posição do ponteiro do mouse.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>
+      <keycap>Backspace</keycap> removes last segment drawn, 
+      <keycap>Escape</keycap> cancels all selection segments.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Manuseando a ferramenta</title>
+    <figure>
+      <title>Using Scissors Select</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/iscissors-selection.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Cada vez que você clicar com o mouse, você cria um novo ponto de controle, que é conectado ao último ponto de controle por uma curva que tenta seguir as bordas do objeto na imagem. Para finalizar, clique no primeiro ponto (o cursor muda para indicar que você está no lugar certo). Você pode ajustar a curva arrastando os nós de controle ou clicando para criar novos nós de controle. Quando estiver satisfeito, clique em qualquer lugar dentro da curva para convertê-lo em uma seleção.</para>
+    <para>Como dito acima, quando você clicar com esta ferramenta você cria pontos. A borda  da seleção é conduzida por esses pontos de controle. Durante a criação, você pode mover cada um deles, clicando e arrastando, exceto o primeiro e o último. A seleção é fechada quando você clicar o último ponto sobre o primeiro. Quando a seleção é fechada, a forma do ponteiro muda de acordo com a sua posição: no interior <guiicon><inlinegraphic fileref="images/toolbox/cissors-mouse.png"/></guiicon>, na fronteira <guiicon><inlinegraphic fileref="images/toolbox/cissors-plus.png"/></guiicon>, e de fora <guiicon><inlinegraphic fileref="images/toolbox/cissors-bad.png"/></guiicon>. Você pode ajustar a seleção, criar novos pontos clicando no limite ou movendo cada ponto de controle (o primeiro e o último ponto combinados). A seleção é validada quando você clicar dentro do contorno criado com a tesoura: nesse momento a seleção passa a ser uma máscara como a criada pelas outras ferramentas de seleção e não pode mais ser editada com a tesoura.</para>
+    <para>Você tem que perceber que você pode obter apenas uma seleção, se você criar uma segunda seleção, a primeiro é apagada quando você valida a segunda.</para>
+    <warning>
+      <para>Cuidado para não clicar dentro da curva até que você tenha feito o ajuste completamente. Depois de ter convertido em uma seleção, usar o desfazer vai leva-lo de volta a estaca zero, e portanto você vai ter que começar a construir a curva de novo a partir do início, se você precisar modifica-la. Também não se esqueça de não mudar para uma ferramenta diferente, ou todos os seus nós de controle cuidadosamente criados serão perdidos. (Mas você ainda pode transformar a sua seleção em um vetor e trabalhá-la com a ferramenta de Vetores).</para>
+    </warning>
+    <para>Para mover a seleção, consulte <link linkend="gimp-using-selections-moving">Movendo seleções</link>.</para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-scissors-select.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Anti-serrilhamento</term>
+        <term>Enevoar bordas</term>
+        <listitem>
+          <xi:include href="about-common-select-options.xml"/>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <varlistentry>
+        <term>Exibir borda interativa</term>
+        <listitem>
+          <para>Se esta opção estiver ativada, arrastar um nó de controle durante a colocação vai indicar o caminho que será tomado pelo limite da seleção. Se ele não estiver ativado, o nó será mostrado ligado ao nó anterior por uma linha reta, enquanto você o posiciona, e o caminho resultante não será visível até que você solte o botão do ponteiro. Em sistemas muito antigos e lentos, se os seus nós de controle são muito distantes, isso pode aumentar um pouco a velocidade. Em computadores atuais, é melhor sempre deixar esta opção ligada.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

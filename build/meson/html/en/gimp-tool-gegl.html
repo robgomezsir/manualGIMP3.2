@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.7. GEGL Operation</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-tools-other.html" title="5. Other Tools" />
+    <link rel="prev" href="gimp-tool-zoom.html" title="5.6. Zoom" />
+    <link rel="next" href="dialogs.html" title="Chapter 15. Dialogs" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.7. GEGL Operation</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-zoom.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. Other Tools</span>
+        <nav> <a accesskey="n" href="dialogs.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-gegl"></a>5.7. GEGL Operation</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id20298" class="indexterm"></a>
+      <a id="id20301" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1880"></a>5.7.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+    <acronym class="acronym">GEGL</acronym> (<span class="quote">“<span class="quote">Generic Graphical Library</span>”</span>) is a
+    graph based image processing library designed to handle various image
+    processing tasks needed in <acronym class="acronym">GIMP</acronym>. Most
+    <acronym class="acronym">GEGL</acronym> operations have their own menu commands in
+    <acronym class="acronym">GIMP</acronym>. The majority of them are filters found in the
+    Colors and Filters menus.
+  </p>
+        <p>
+    However, there are some <acronym class="acronym">GEGL</acronym> operations that don't have
+    their own command. Either because the operation was not considered important
+    enough, or because the operation may still be experimental.
+  </p>
+        <p>
+    The <acronym class="acronym">GEGL</acronym> Operation filter was added to give access to all
+    these operations that you can't use in another way. It enables applying
+    <acronym class="acronym">GEGL</acronym> operations to the image and gives on-canvas previews
+    of the results.
+    New <acronym class="acronym">GEGL</acronym> operations made by third-party developers
+    will also show up in this dialog.
+  </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1881"></a>5.7.2. Activating the Tool</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can get to this tool only from the main menu:
+      <span class="guimenu">Tools</span> → <span class="guimenuitem">GEGL Operation…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1882"></a>5.7.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1883"></a>
+          <p class="title">
+            <strong>Figure 14.145. Tool Options Dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/gegl-operation-dialog.png" alt="Tool Options Dialog" />
+              <div class="caption">
+                <p>GEGL Operation with no operation selected.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Operation</span>
+            </dt>
+            <dd>
+              <p>
+            Click on this button to select the operation you want to apply to
+            the active selection or, if there is no selection, to the active
+            layer.
+          </p>
+              <p>
+            Some of these operations are very basic operations like
+            <span class="quote">“<span class="quote">color</span>”</span> which fills the active selection or layer
+            with the specified color, while operations like
+            <span class="quote">“<span class="quote">fractal-explorer</span>”</span> produce fairly complex patterns
+            — just like a <a class="link" href="filters-render.html" title="14. Rendering Filters">rendering
+            filter</a>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Operation Settings</span>
+            </dt>
+            <dd>
+              <p>
+            The operation settings depend on the selected
+            <span class="guilabel">Operation</span>:
+          </p>
+              <div class="figure">
+                <a id="id1884"></a>
+                <p class="title">
+                  <strong>Figure 14.146. <span class="quote">“<span class="quote">Operation Settings</span>”</span> example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/gegl-operation-box-blur.png" alt="“Operation Settings” example" />
+                    <div class="caption">
+                      <p>
+                  GEGL operation <span class="quote">“<span class="quote">Gaussian Blur</span>”</span> selected.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            If the options of the selected <acronym class="acronym">GEGL</acronym> operation
+            are not self-explanatory (guess what's the purpose of the
+            <span class="quote">“<span class="quote">color</span>”</span> operation's <span class="quote">“<span class="quote">Color</span>”</span> option)
+            you can look for a corresponding non-<acronym class="acronym">GEGL</acronym> tool.
+            For example, the <a class="link" href="plug-in-fractalexplorer.html" title="14.3. Fractal Explorer">Fractal
+            Explorer</a> filter may have the same or similar options as the
+            <span class="quote">“<span class="quote">fractal-explorer</span>”</span> operation.
+          </p>
+              <p>
+            Or you can make use of the nice realtime preview feature and just
+            experiment with different settings.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Preview</span>
+            </dt>
+            <dd>
+              <p>
+            If this option is checked, as it is by default, you will get an
+            on-canvas preview of the selected operation as soon as the
+            operation is finished. You will have to press the
+            <span class="guibutton">OK</span> button to actually apply the operation
+            to the image.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>The buttons</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Reset</span>
+            </dt>
+            <dd>
+              <p>
+            Pressing this button resets the operation settings to their
+            defaults.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Cancel</span>
+            </dt>
+            <dd>
+              <p>
+            Clicking on this button aborts the <acronym class="acronym">GEGL</acronym>
+            operation and leaves your image untouched. This is equivalent
+            to close the dialog window using the usual
+            <span class="guibutton">Close</span> button provided by your window
+            manager.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">OK</span>
+            </dt>
+            <dd>
+              <p>
+            You have to press this button to apply the selected operation to
+            the image. Then the dialog window will be closed.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-zoom.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-other.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="dialogs.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-zoom.html">5.6. Zoom</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="dialogs.html">Chapter 15. Dialogs</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

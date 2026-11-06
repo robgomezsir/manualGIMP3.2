@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.20. Dobra da página</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-distort.html" title="5. Filtros de distorção" />
+    <link rel="prev" href="plug-in-curve-bend.html" title="5.19. Dobrar em curva" />
+    <link rel="next" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.20. Dobra da página</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-curve-bend.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Filtros de distorção</span>
+        <nav> <a accesskey="n" href="filters-light-and-shadow.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-pagecurl"></a>5.20. Dobra da página</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id51120" class="indexterm"></a>
+      <a id="id51124" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4447"></a>5.20.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4448"></a>
+          <p class="title">
+            <strong>Figura 17.108. Exemplo do filtro Dobra da página</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo do filtro Dobra da página" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/distort-taj-pagecurl.jpg" alt="Exemplo do filtro Dobra da página" />
+              <div class="caption">
+                <p>Filtro aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter curls a corner of the current layer or selection into a
+      kind of cornet showing the underlying layer in the cleared area. A new
+      <span class="quote">“<span class="quote">Curl Layer</span>”</span> is created. If the layer doesn't have an Alpha
+      channel, one is added. The part of the initial layer corresponding to
+      the curl, is made transparent.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4449"></a>5.20.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Distorts</span> → <span class="guimenuitem">Page Curl…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4450"></a>5.20.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4451"></a>
+          <p class="title">
+            <strong>Figura 17.109. <span class="quote">“<span class="quote">Page Curl</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/distort/pagecurl.png" alt="“Page Curl” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Location</span>
+            </dt>
+            <dd>
+              <p>
+            This lets you select the corner you want to curl. The default is
+            the <span class="guilabel">Lower right</span> corner.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Orientação</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="guilabel">Vertical</span> and <span class="guilabel">Horizontal</span>
+            refer to the border you want to raise.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Shade</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, a shadow is added inside the cornet.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Colors</span>
+            </dt>
+            <dd>
+              <p>
+            This determines how the outer face of the cornet is drawn.
+            Available options are
+            <span class="guilabel">Foreground / background colors</span>,
+            <span class="guilabel">Current gradient</span>, and
+            <span class="guilabel">Current gradient (reversed)</span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Opacidade</span>
+            </dt>
+            <dd>
+              <p>
+            This sets the visibility of the original image beneath the cornet.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-curve-bend.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-distort.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-light-and-shadow.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-curve-bend.html">5.19. Dobrar em curva</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-light-and-shadow.html">6. Filtros de luz e sombra</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

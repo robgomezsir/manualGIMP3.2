@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.8. Sombra projetada</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra" />
+    <link rel="prev" href="plug-in-sparkle.html" title="6.7. Cintilância" />
+    <link rel="next" href="gimp-filter-long-shadow.html" title="6.9. Sombra projetada" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.8. Sombra projetada</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-sparkle.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Filtros de luz e sombra</span>
+        <nav> <a accesskey="n" href="gimp-filter-long-shadow.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-drop-shadow"></a>6.8. Sombra projetada</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id52035" class="indexterm"></a>
+      <a id="id52038" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4499"></a>6.8.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4500"></a>
+          <p class="title">
+            <strong>Figura 17.132. Exemplo para o filtro <span class="quote">“<span class="quote">Sombra projetada</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo para o filtro “Sombra projetada”" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/light-taj-drop-shadow.jpg" alt="Exemplo para o filtro “Sombra projetada”" />
+              <div class="caption">
+                <p>Exemplo para o filtro <span class="quote">“<span class="quote">Sombra projetada</span>”</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Com este filtro GEGL você pode adicionar uma sombra projetada a uma imagem, uma seleção ou um texto. Você pode escolher a cor, posição e tamanho da sombra.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        It is available if your image holds an Alpha channel
+        (see <a class="xref" href="gimp-layer-alpha-add.html" title="7.36. Adicionar canal alfa">Seção 7.36, “Adicionar canal alfa”</a>).
+        Otherwise, it is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4501"></a>6.8.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Light and Shadow</span> → <span class="guimenuitem">Drop Shadow…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4502"></a>6.8.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4503"></a>
+          <p class="title">
+            <strong>Figura 17.133. Opções do filtro <span class="quote">“<span class="quote">Sombra projetada</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/light-and-shadow/drop-shadow-dialog.png" alt="Opções do filtro “Sombra projetada”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Predefinições, </span>
+              <span class="term"><span class="quote">“<span class="quote">Tipo de entrada</span>”</span>, </span>
+              <span class="term">Recorte, </span>
+              <span class="term">Opções de mesclagem, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Mesclar filtro, </span>
+              <span class="term">Visualização dividida</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">X, </span>
+              <span class="term">Y</span>
+            </dt>
+            <dd>
+              <p>A camada que contém a sombra será movida horizontalmente por X pixels e verticalmente por Y pixels. Assim, o deslocamento X e Y  determina, onde a sombra será colocada em relação à imagem original.Valores altos fazem parecer que a imagem está flutuando mais longe do fundo, e valores próximos fazem a imagem parecer estar flutuando logo acima do fundo.</p>
+              <p>Os deslocamentos podem ser negativos, levando a sombra para a esquerda da seleção se o deslocamento X for menor que 0, ou acima da mesma se o deslocamento Y for menor que 0.</p>
+              <p>Por pura curiosidade, você pode ver a camada de sombra projetada claramente definindo o raio de desfoque como 0 e movendo a sombra projetada com X e Y.</p>
+            </dd>
+            <dt>
+              <span class="term">Raio do desfocamento</span>
+            </dt>
+            <dd>
+              <p>Depois de criar a sombra, uma <a class="link" href="">Desfocagem gaussiana</a> com o raio especificado é aplicada à camada de sombra, resultando na aparência realista da sombra.</p>
+            </dd>
+            <dt>
+              <span class="term">Grow shape</span>
+            </dt>
+            <dd>
+              <p>
+            You can choose the shape that will be used to expand or contract
+            the shadow. The choices should be self explanatory:
+            <span class="guilabel">Circle</span> (default), <span class="guilabel">Square</span>,
+            or <span class="guilabel">Diamond</span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Grow radius</span>
+            </dt>
+            <dd>
+              <p>
+            The distance to expand the shadow before blurring. A negative
+            value will contract the shadow instead.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Cor</span>
+            </dt>
+            <dd>
+              <p>
+            You can choose the color of the shadow here. Just click on the
+            color swatch, and select a color when the color selector pops up,
+            or use the eye-dropper to pick a color from the image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Opacidade</span>
+            </dt>
+            <dd>
+              <p>Opacidade da sombra. O padrão é 0,500, mas você pode selecionar qualquer outro valor de 0 (transparência total) a 2,00 (opacidade total) aqui.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4504"></a>6.8.4. Cor da sombra projetada</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This GEGL Drop Shadow filter is surprising: if you apply the filter
+      directly to the image as you do with the legacy filter, you get nothing,
+      unless you have transparent areas in your image.
+    </p>
+        <p><span class="bold"><strong>Para obter o mesmo resultado do filtro legado</strong></span>: </p>
+        <div class="orderedlist">
+          <ol class="orderedlist" type="1">
+            <li class="listitem">
+              <p>A imagem original</p>
+            </li>
+            <li class="listitem">
+              <p>Abra uma nova imagem, um pouco maior que a sua imagem original, preenchida com <span class="emphasis"><em>transparência</em></span>.</p>
+            </li>
+            <li class="listitem">
+              <p>
+            Copy your original image and paste it into the new image. A floating
+            selection is created in the Layers dialog.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>Faça a âncora da seleção flutuante.</p>
+            </li>
+            <li class="listitem">
+              <p>
+            Select <span class="guimenu">Layer</span> → <span class="guimenuitem">Crop Layers to Content</span>.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            Select <span class="guimenu">Layer</span> → <span class="guimenuitem">Layer Boundary
+            Size…</span>: set layer size to the same size than
+            your image and filled with transparency; click on the
+            <span class="guibutton">Center</span> button. Then click on the
+            <span class="guibutton">Resize</span> button.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>Abra a caixa de diálogo Sombra Projetada: a sombra projetada é exibida na pré-visualização na tela. Você pode alterar os valores padrão das opções.</p>
+            </li>
+            <li class="listitem">
+              <p>Eventualmente, adicione uma nova camada, com o mesmo tamanho da imagem e preenchida com a cor que você deseja dar ao fundo. Mova esta camada para a parte inferior da pilha de camadas.</p>
+            </li>
+            <li class="listitem">
+              <p>Clique no botão para abrir um seletor de cores.</p>
+            </li>
+          </ol>
+        </div>
+        <p><span class="bold"><strong>Aplicando filtro a uma seleção</strong></span>: </p>
+        <div class="orderedlist">
+          <ol class="orderedlist" type="1">
+            <li class="listitem">
+              <p>A imagem original</p>
+            </li>
+            <li class="listitem">
+              <p>Abra uma nova imagem, do mesmo tamanho da sua imagem original, preenchida com <span class="emphasis"><em>transparência</em></span>.</p>
+            </li>
+            <li class="listitem">
+              <p>Manter seleção</p>
+            </li>
+            <li class="listitem">
+              <p>
+            Copy the selection and paste it into the new image. A floating
+            selection is created in the Layers dialog.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>Faça a âncora da seleção flutuante.</p>
+            </li>
+            <li class="listitem">
+              <p>
+            Select <span class="guimenu">Layer</span> → <span class="guimenuitem">Crop Layers to Content</span>.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            Select <span class="guimenu">Layer</span> → <span class="guimenuitem">Layer to
+            Image Size</span> (with transparency).
+          </p>
+            </li>
+            <li class="listitem">
+              <p>Abra a caixa de diálogo Sombra Projetada: a sombra projetada é exibida na pré-visualização na tela. Você pode alterar os valores padrão das opções.</p>
+            </li>
+            <li class="listitem">
+              <p>Eventualmente, adicione uma nova camada, com o mesmo tamanho da imagem e preenchida com a cor que você deseja dar ao fundo. Mova esta camada para a parte inferior da pilha de camadas.</p>
+              <p>Você também pode usar sua imagem original como plano de fundo: desfaça a seleção, copie a imagem e cole como uma nova camada na nova imagem. Mova a nova camada para a parte inferior da pilha de camadas.</p>
+            </li>
+            <li class="listitem">
+              <p>Clique no botão para abrir um seletor de cores.</p>
+            </li>
+          </ol>
+        </div>
+        <p><span class="bold"><strong>Aplicando filtro a um texto</strong></span>:</p>
+        <p>O procedimento é mais simples para criar uma sombra projetada para um texto: crie o texto e aplique o filtro Sombra Projetada diretamente.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-sparkle.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-light-and-shadow.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-long-shadow.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-sparkle.html">6.7. Cintilância</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-long-shadow.html">6.9. Sombra projetada</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

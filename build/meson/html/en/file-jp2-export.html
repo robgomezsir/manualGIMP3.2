@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.31. Export Image as JPEG 2000</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="file-j2k-export.html" title="5.30. Export Image as JPEG 2000 codestream" />
+    <link rel="next" href="file-jpeg-export.html" title="5.32. Export Image as JPEG" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.31. Export Image as JPEG 2000</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-j2k-export.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="file-jpeg-export.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-jp2-export"></a>5.31. Export Image as JPEG 2000</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id27115" class="indexterm"></a>
+      <a id="id27117" class="indexterm"></a>
+      <a id="id27119" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2040"></a>5.31.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The <a class="ulink" href="https://en.wikipedia.org/wiki/JPEG_2000" target="_top">JPEG 2000</a>
+      format was developed to succeed JPEG. It supports both lossy and
+      lossless compression, and high dynamic range images.
+      <acronym class="acronym">GIMP</acronym> also has
+      a <a class="link" href="file-j2k-export.html" title="5.30. Export Image as JPEG 2000 codestream">JPEG 2000 codestream</a> exporter,
+      and an <a class="link" href="file-heif-hej2-export.html" title="5.26. Export Image as HEJ2">exporter</a> for storing
+      a JPEG 2000 image inside a HEIF container.
+    </p>
+        <p>
+      Compared to JPEG, JPEG 2000 generally has an improved compression in the
+      range of 20%, depending on the image characteristics. Higher-resolution
+      images tend to benefit more.
+    </p>
+        <div class="figure">
+          <a id="id2041"></a>
+          <p class="title">
+            <strong>Figure 15.79. The JPEG 2000 Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-jp2-dialog.png" alt="The JPEG 2000 Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2042"></a>5.31.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">ICT compression</span>
+            </dt>
+            <dd>
+              <p>
+        When checked, ICT (Irreversible Color Transform) compression will be
+        used instead of RCT (Reversible Color Transform).
+        ICT can cause rounding errors, which means it is lossy, contrary to
+        RCT.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Export as CMYK</span>
+            </dt>
+            <dd>
+              <p>
+      If you have a <a class="link" href="glossary.html#glossary-cmyk" title="CMY, CMYK">CMYK</a> profile
+      assigned to your image as soft-proofing profile, this setting can
+      be checked to have your image exported using that CMYK profile.
+      This is sometimes required when you have your image professionally
+      printed. Your printing company will tell you if this is needed.
+    </p>
+              <p>
+      If this setting is disabled, you don't have a soft-proofing profile
+      set for this image yet. See assigning a
+      <a class="link" href="gimp-image-soft-proof-profile-assign.html" title="6.14. Soft-Proof Profile">Soft-Proof
+      Profile</a>.
+    </p>
+              <p>
+      The name of the CMYK profile that is assigned to this image will
+      be shown below this setting.
+    </p>
+            </dd>
+            <dt>
+              <span class="term">Number of resolutions</span>
+            </dt>
+            <dd>
+              <p>
+        Set this to the number of resolutions you want to be stored in your
+        image. This adds reduced size images for faster loading.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Progression order</span>
+            </dt>
+            <dd>
+              <p>
+        This defines how image data is organized in the JPEG 2000 codestream,
+        allowing you to prioritize progressive viewing by quality, resolution
+        or component.
+        The letters stand for Layer, Resolution, Component, Position.
+      </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">LRCP</span>
+                  </dt>
+                  <dd>
+                    <p>
+              The default.
+              Shows quality layers first, then resolution, then components,
+              then spatial positions (good for gradual quality increase).
+            </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RLCP</span>
+                  </dt>
+                  <dd>
+                    <p>
+              Shows all data for the lowest resolution, then adds layers, then
+              moves to the next resolution level.
+            </p>
+                  </dd>
+                  <dt>
+                    <span class="term">PCRL</span>
+                  </dt>
+                  <dd>
+                    <p>
+              Shows full resolution tiles first, then fills in layers, good
+              for fast preview.
+            </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RPCL</span>
+                  </dt>
+                  <dd>
+                    <p>
+              Focuses on spatial detail within a tile first.
+            </p>
+                  </dd>
+                  <dt>
+                    <span class="term">CPRL</span>
+                  </dt>
+                  <dd>
+                    <p>
+              Focuses on full data for one component before moving to the next.
+            </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Compliance profile</span>
+            </dt>
+            <dd>
+              <p>
+        Select the compliance profile you require for your image.
+      </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Standard Profile</span>
+                  </dt>
+                  <dd>
+                    <p>
+              The default conforms to the basic standard functionality for
+              JPEG 2000 images.
+            </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cinema2K (24 FPS)</span>
+                  </dt>
+                  <dd>
+                    <p>
+              Generates a codestream compliant with the Digital Cinema
+              Specifications for 2K resolution content at 24 FPS.
+            </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cinema2K (48 FPS)</span>
+                  </dt>
+                  <dd>
+                    <p>
+              Generates a codestream compliant with the Digital Cinema
+              Specifications for 2K resolution content at 48 FPS.
+            </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cinema4K (24 FPS)</span>
+                  </dt>
+                  <dd>
+                    <p>
+              Generates a codestream compliant with the Digital Cinema
+              Specifications for 4K resolution content at 24 FPS.
+            </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Metadata (edit)</span>
+            </dt>
+            <dd>
+              <p>
+            You can click the <span class="quote">“<span class="quote">(edit)</span>”</span> link to open the
+            <a class="link" href="plug-in-metadata-editor.html" title="6.39. Metadata Editor">metadata editor</a>
+            to change or add any metadata that you want to be
+            included in the image. Note: you will also still need to
+            enable the relevant metadata saving options listed below.
+          </p>
+              <p>
+            The metadata settings in the export dialog override the default values
+            set in your <a class="link" href="gimp-prefs-import-export.html#gimp-metadata-export-policies" title="Export Policies">Metadata
+            Export Preferences</a>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save comment</span>
+            </dt>
+            <dd>
+              <p>
+            You can read this comment in the
+            <a class="link" href="gimp-image-properties.html" title="6.37. Image Properties">Image Properties</a>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-j2k-export.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-jpeg-export.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-j2k-export.html">5.30. Export Image as JPEG 2000 codestream</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-jpeg-export.html">5.32. Export Image as JPEG</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

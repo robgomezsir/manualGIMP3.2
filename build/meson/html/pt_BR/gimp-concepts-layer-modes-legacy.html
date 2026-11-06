@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3. Modos de Camada</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-image-combining.html" title="Capítulo 8. Combinando imagens" />
+    <link rel="prev" href="layer-mode-group-lch.html" title="2.7. Modos de Camada de Componentes LCh" />
+    <link rel="next" href="gimp-using-layers.html" title="4. Criando novas camadas" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3. Modos de Camada</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="layer-mode-group-lch.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 8. Combinando imagens</span>
+        <nav> <a accesskey="n" href="gimp-using-layers.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-concepts-layer-modes-legacy"></a>3. Modos de Camada</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id11264" class="indexterm"></a>
+      <a id="id11268" class="indexterm"></a>
+      <p>Desde o <acronym class="acronym">GIMP</acronym> 2.10, os modos de camada mudaram. Os antigos modos de camada perceptuais ainda estão disponíveis para compatibilidade com versões anteriores. Eles são chamados de <span class="quote">“<span class="quote">modos de camada legados</span>”</span>. Esses modos de camada legados serão usados ao carregar imagens criadas antes da introdução dos novos modos de camada, em sua maioria lineares.</p>
+      <p>Para mais informações sobre modos de camada em geral, consulte o padrão <a class="link" href="gimp-concepts-layer-modes.html" title="2. Modos de Camada">Modos de Camada</a>.</p>
+      <div class="figure">
+        <a id="id2733"></a>
+        <p class="title">
+          <strong>Figura 8.46. Combinando modos de camadas</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/dialogs/layer-dialog.png" alt="Combinando modos de camadas" />
+            <div class="caption">
+              <p>
+          The Layers Dialog showing the
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-reset.svg" width="16" alt="Combinando modos de camadas" /></span>
+          </span>
+          drop-down.
+        </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    If you need to stay compatible with older GIMP versions or you need to
+    use the legacy layer modes for other reasons, select the
+    <span class="guiicon">
+      <span class="inlinemediaobject"><img src="images/stock-icons/gimp-reset.svg" width="16" /></span>
+    </span>
+    icon next to the <span class="guilabel">Mode</span> drop-down and change the setting
+    from <span class="guilabel">Default</span> to
+    <span class="guiicon">
+      <span class="inlinemediaobject"><img src="images/stock-icons/gimp-wilber-eek.svg" width="16" /></span>
+    </span>
+    <span class="guilabel">Legacy</span> mode.
+    The <span class="guilabel">Mode</span> drop-down will now only show legacy layer
+    modes. All modes will have <span class="guilabel">(legacy)</span> behind their name
+    (the selected mode will use the short version <span class="guilabel">(l)</span>).
+  </p>
+      <div class="figure">
+        <a id="id2734"></a>
+        <p class="title">
+          <strong>Figura 8.47. Imagens (máscaras) para exemplos de modos de camada</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/legacy-layer-mode-mask1.jpg" alt="Imagens (máscaras) para exemplos de modos de camada" />
+            <div class="caption">
+              <p>Máscara 1</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/using/legacy-layer-mode-mask2.jpg" alt="Imagens (máscaras) para exemplos de modos de camada" />
+            <div class="caption">
+              <p>Máscara 2 (nota: esta imagem não é a máscara real usada, mas uma captura de tela da máscara com o padrão de xadrez mostrando as partes transparentes no GIMP)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="figure">
+        <a id="id2735"></a>
+        <p class="title">
+          <strong>Figura 8.48. Imagens (fundos) para exemplos de modo de camada</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/keyfob_orig.png" alt="Imagens (fundos) para exemplos de modo de camada" />
+            <div class="caption">
+              <p>Boneco de lata</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/using/duck_orig.png" alt="Imagens (fundos) para exemplos de modo de camada" />
+            <div class="caption">
+              <p>Patos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>Nas descrições dos modos de camada inferiores, as equações também são mostradas. Isto é para aqueles que estão curiosos sobre a matemática dos modos de camada. Você não precisa entender as equações, a fim de usar os modos de camada de forma eficaz, no entanto.</p>
+      <p>As equações estão em uma notação abreviada. Por exemplo, a equação</p>
+      <div class="equation">
+        <a id="id2736"></a>
+        <p class="title">
+          <strong>Equação 8.1. Exemplo</strong>
+        </p>
+        <div class="equation-contents">
+          <div>
+            <img src="images/math/layer-mode-example.png" />
+          </div>
+        </div>
+      </div>
+      <br class="equation-break" />
+      <p>significa, <span class="quote">“<span class="quote">Para cada pixel da camada superior(<span class="emphasis"><em>M</em></span>áscara) e da camada inferior (<span class="emphasis"><em>I</em></span>magem), somar cada um dos componentes de cor correspondentes entre si para formar a cor do pixel resultante(<span class="emphasis"><em>E</em></span>). </span>”</span> Componentes de cor do pixel devem estar sempre entre 0 e 255.</p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>A menos que a descrição abaixo diga o contrário, um componente de cor negativo é definido como 0 e um componente de cor maior que 255 é 255.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>Os exemplos abaixo mostram os efeitos de cada um dos modos legados. Note que, por simplicidade, omitiremos <span class="quote">“<span class="quote">(legado)</span>”</span> ao mencionar os modos de camada aqui.</p>
+      <p>Uma vez que os resultados de cada modo variam muito, dependendo das cores das camadas, essas imagens só podem dar uma idéia geral de como funcionam os modos. Você é encorajado a experimentá-los. Você pode começar com duas camadas similares, onde uma é cópia da outra, mas modificando-a ligeiramente (deixe a desfocada, movida, girada, redimensionada, inverta a cor, etc) e veja o que acontece em vários dos modos de camada.</p>
+      <div class="variablelist">
+        <p class="title">
+          <strong>Modos de Camada</strong>
+        </p>
+        <dl class="variablelist">
+          <dt>
+            <span class="term">Normal</span>
+          </dt>
+          <dd>
+            <a id="id11343" class="indexterm"></a>
+            <p>Neste grupo, apenas <span class="quote">“<span class="quote">Normal</span>”</span> é normal.</p>
+            <div class="figure">
+              <a id="id2737"></a>
+              <p class="title">
+                <strong>Figura 8.49. Exemplo para o modo de camada <span class="quote">“<span class="quote">Normal</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-normal-50.jpg" alt="Exemplo para o modo de camada “Normal”" />
+                  <div class="caption">
+                    <p>Ambas as imagens são combinadas uma com a outra com a mesma intensidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-normal-100.jpg" alt="Exemplo para o modo de camada “Normal”" />
+                  <div class="caption">
+                    <p>Com 100% de opacidade apenas a camada superior é mostrada quando a combinação é feita no modo <span class="quote">“<span class="quote">Normal</span>”</span>. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Normal</span> é o modo da camada padrão. A camada em cima cobre as camadas abaixo dela. Se você quer ver qualquer coisa abaixo da camada superior quando você usar este modo, a camada deve ter algumas áreas transparentes.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2738"></a>
+              <p class="title">
+                <strong>Equação 8.2. Equação para o modo de camada <span class="quote">“<span class="quote">Normal</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-normal.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+          </dd>
+          <dt>
+            <span class="term">Dissolver</span>
+          </dt>
+          <dd>
+            <a id="id11371" class="indexterm"></a>
+            <a id="id11374" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2739"></a>
+              <p class="title">
+                <strong>Figura 8.50. Exemplo para o modo de camada <span class="quote">“<span class="quote">Dissolver</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-dissolve-50.jpg" alt="Exemplo para o modo de camada “Dissolver”" />
+                  <div class="caption">
+                    <p>Ambas as imagens são combinadas uma com a outra com a mesma intensidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-dissolve-100.jpg" alt="Exemplo para o modo de camada “Dissolver”" />
+                  <div class="caption">
+                    <p>Com 100% de opacidade apenas a camada superior é mostrada quando se está usando o modo <span class="quote">“<span class="quote">dissolver</span>”</span>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Dissolver</span> dissolve a camada superior na camada abaixo dela pelo desenho de um padrão aleatório de pixels em áreas de transparência parcial. É útil como um modo de camada, mas geralmente também é útil como um modo de pintura.</p>
+            <p>Isto é especialmente visível o longo das bordas em uma imagem. É mais fácil ver em uma captura de tela ampliada. A imagem à esquerda ilustra o modo de camada <span class="quote">“<span class="quote">Normal</span>”</span> (ampliada) e a imagem da direita mostra as mesmas duas camadas no Modo <span class="quote">“<span class="quote">Dissolver</span>”</span>, onde pode ser visto claramente como os pixels estão dispersos.</p>
+            <div class="figure">
+              <a id="id2740"></a>
+              <p class="title">
+                <strong>Figura 8.51. Capturas de tela ampliadas</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-dissolve-nbig.jpg" alt="Capturas de tela ampliadas" />
+                  <div class="caption">
+                    <p>Nodo normal</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-dissolve-dbig.jpg" alt="Capturas de tela ampliadas" />
+                  <div class="caption">
+                    <p>Modo dissolver</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+          </dd>
+        </dl>
+      </div>
+      <div class="variablelist">
+        <p class="title">
+          <strong>Modos de Camada</strong>
+        </p>
+        <dl class="variablelist">
+          <dt>
+            <span class="term">Somente clarear</span>
+          </dt>
+          <dd>
+            <a id="id11410" class="indexterm"></a>
+            <a id="id11413" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2741"></a>
+              <p class="title">
+                <strong>Figura 8.52. Exemplo para modo de camadas <span class="quote">“<span class="quote">Somente clarear</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-lighten-only-mask1.jpg" alt="Exemplo para modo de camadas “Somente clarear”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-lighten-only-mask2.jpg" alt="Exemplo para modo de camadas “Somente clarear”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guimenuitem">Somente clarear</span> compara cada componente de cada pixel na camada superior com o correspondente na camada inferior e utiliza o valor maior na imagem resultante. Camadas completamente pretas não têm efeito sobre a imagem final e camadas completamente brancas resultam em uma imagem branca.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2742"></a>
+              <p class="title">
+                <strong>Equação 8.3. Equação para o modo de camada <span class="quote">“<span class="quote">Somente Clarear</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-lighten.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <span class="term">Esconder</span>
+          </dt>
+          <dd>
+            <a id="id11438" class="indexterm"></a>
+            <a id="id11441" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2743"></a>
+              <p class="title">
+                <strong>Figura 8.53. Exemplo para o modo de camada <span class="quote">“<span class="quote">Esconder</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-screen-mask1.jpg" alt="Exemplo para o modo de camada “Esconder”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-screen-mask2.jpg" alt="Exemplo para o modo de camada “Esconder”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Esconder</span> inverte os valores de cada um dos pixels visíveis nas duas camadas da imagem. (Isto é, ela subtrai cada componente deles de 255). Em seguida, ele os multiplica entre si, divide por 255 e inverte este valor novamente. A imagem resultante é geralmente mais brilhante, e às vezes de aparência <span class="quote">“<span class="quote">lavada</span>”</span>. As exceções a isto são as camadas em preto, o que não altera a outra camada, e uma camada em branco, o que resulta em uma imagem branca. Cores mais escuras na imagem aparentam ser transparentes.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2744"></a>
+              <p class="title">
+                <strong>Equação 8.4. Equação para o modo de camada <span class="quote">“<span class="quote">Esconder</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-screen.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <span class="term">Sub-exposição</span>
+          </dt>
+          <dd>
+            <a id="id11467" class="indexterm"></a>
+            <a id="id11470" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2745"></a>
+              <p class="title">
+                <strong>Figura 8.54. Exemplo para o modo de camada <span class="quote">“<span class="quote">Sub-exposição</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-dodge-mask1.jpg" alt="Exemplo para o modo de camada “Sub-exposição”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-dodge-mask2.jpg" alt="Exemplo para o modo de camada “Sub-exposição”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Sub-exposição</span> multiplica o valor do pixel da camada inferior por 256, que então divide pelo inverso do valor do pixel da camada superior. A imagem resultante é geralmente mais clara, mas algumas cores podem ser invertidas.</p>
+            <p>Na fotografia, a sub-exposição é uma técnica usada em uma câmara escura para diminuir a exposição em áreas específicas da imagem. Isso traz a tona detalhes as sombras. Quando utilizado para este fim, o modo Sub-exposição pode trabalhar melhor em imagens em tons de cinza e com uma ferramenta de pintura, em vez de um modo de camada.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2746"></a>
+              <p class="title">
+                <strong>Equação 8.5. Equação para o modo de camada <span class="quote">“<span class="quote">Sub-exposição</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-dodge.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+          </dd>
+          <dt>
+            <span class="term">Adição</span>
+          </dt>
+          <dd>
+            <a id="id11495" class="indexterm"></a>
+            <a id="id11498" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2747"></a>
+              <p class="title">
+                <strong>Figura 8.55. Exemplo para o modo de camada <span class="quote">“<span class="quote">Adicionar</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-addition-mask1.jpg" alt="Exemplo para o modo de camada “Adicionar”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-addition-mask2.jpg" alt="Exemplo para o modo de camada “Adicionar”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Adicionar</span> é muito simples. Os valores de pixel da camadas superior e inferior são adicionados uns aos outros. A imagem resultante é geralmente mais clara. A equação pode resultar em valores de cores maiores que 255, portanto, algumas das cores claras podem ser ajustadas para o valor máximo de 255.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2748"></a>
+              <p class="title">
+                <strong>Equação 8.6. Equação para o modo de camada <span class="quote">“<span class="quote">Adicionar</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-addition.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+        </dl>
+      </div>
+      <div class="variablelist">
+        <p class="title">
+          <strong>Modos de Camada</strong>
+        </p>
+        <dl class="variablelist">
+          <dt>
+            <span class="term">Somente escurecer</span>
+          </dt>
+          <dd>
+            <a id="id11525" class="indexterm"></a>
+            <a id="id11528" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2749"></a>
+              <p class="title">
+                <strong>Figura 8.56. Exemplo para o modo de camadas <span class="quote">“<span class="quote">Somente escurecer</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-darken-only-mask1.jpg" alt="Exemplo para o modo de camadas “Somente escurecer”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-darken-only-mask2.jpg" alt="Exemplo para o modo de camadas “Somente escurecer”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guimenuitem">Somente escurecer</span> compara cada componente de cada pixel na camada superior com o correspondente na camada inferior e usa o menor valor na imagem resultante. Camadas completamente brancas não têm efeito sobre a imagem final e camadas completamente pretas resultam em uma imagem preta. </p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2750"></a>
+              <p class="title">
+                <strong>Equação 8.7. Equação para o modo de camada <span class="quote">“<span class="quote">apenas Escurecer</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-darken.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-multiply-legacy"></a>
+            <span class="term">Multiplicar</span>
+          </dt>
+          <dd>
+            <a id="id11553" class="indexterm"></a>
+            <a id="id11556" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2751"></a>
+              <p class="title">
+                <strong>Figura 8.57. Exemplo para o modo de camada <span class="quote">“<span class="quote">Multiplicar</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-multiply-mask1.jpg" alt="Exemplo para o modo de camada “Multiplicar”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-multiply-mask2.jpg" alt="Exemplo para o modo de camada “Multiplicar”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Multiplicar</span> multiplica os valores dos componentes dos pixels da camada superior com os da camada inferior e então divide o resultado por 255. O resultado é geralmente uma imagem mais escura. Se qualquer camada é branca, a imagem resultante é o mesma que a outra camada (1 * I = I). Se qualquer camada é preto, a imagem resultante é completamente preta (0 * I = 0).</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2752"></a>
+              <p class="title">
+                <strong>Equação 8.8. Equação para o modo de camada <span class="quote">“<span class="quote">Multiplicar</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-multiply.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-burn-legacy"></a>
+            <span class="term">Super-exposição</span>
+          </dt>
+          <dd>
+            <a id="id11581" class="indexterm"></a>
+            <a id="id11584" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2753"></a>
+              <p class="title">
+                <strong>Figura 8.58. Exemplo para o modo de camada <span class="quote">“<span class="quote">Super-exposição</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-burn-mask1.jpg" alt="Exemplo para o modo de camada “Super-exposição”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-burn-mask2.jpg" alt="Exemplo para o modo de camada “Super-exposição”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Super-exposição</span> inverte o valor do pixel da camada inferior, multiplica-o por 256, divide por um mais o valor do pixel da camada superior e, em seguida inverte o resultado. Ele tende a tornar a imagem mais escura, um pouco semelhante ao modo <span class="quote">“<span class="quote">Multiplicação</span>”</span>.</p>
+            <p>Na fotografia, a Super-exposição é uma técnica usada em uma câmara escura para aumentar a exposição em áreas específicas da imagem. Isso torna visíveis mais detalhes nas partes claras. Quando utilizado para este fim, a Super-exposição pode funcionar melhor em imagens em tons de cinza e como uma ferramenta de pintura, em vez de um modo de camada.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2754"></a>
+              <p class="title">
+                <strong>Equação 8.9. Equação para o modo de camada <span class="quote">“<span class="quote">Super-exposição</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-burn.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+          </dd>
+        </dl>
+      </div>
+      <div class="variablelist">
+        <p class="title">
+          <strong>Modos de Camada</strong>
+        </p>
+        <dl class="variablelist">
+          <dt>
+            <a id="layer-mode-overlay-legacy"></a>
+            <span class="term">Sobrepor</span>
+          </dt>
+          <dd>
+            <a id="id11612" class="indexterm"></a>
+            <a id="id11615" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2755"></a>
+              <p class="title">
+                <strong>Figura 8.59. Exemplo para o modo de camada <span class="quote">“<span class="quote">Sobrepor</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-overlay-mask1.jpg" alt="Exemplo para o modo de camada “Sobrepor”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-overlay-mask2.jpg" alt="Exemplo para o modo de camada “Sobrepor”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Sobrepor</span> inverte o valor do pixel da camada inferior, multiplica-o por duas vezes o valor do pixel da camada superior, adiciona isso ao valor original do pixel da camada inferior, divide por 255, e depois multiplica pelo valor do pixel da camada original inferior e divide por 255 novamente. O efeito geral é que ele escurece, a imagem, mas não tanto quanto com o modo <span class="quote">“<span class="quote">Multiplicar</span>”</span>.</p>
+            <p>Devido a um bug <a href="#ftn.gimp-layer-mode-bug162395" class="footnote" id="gimp-layer-mode-bug162395"><sup class="footnote">[3]</sup></a>, a equação real é equivalente à Luz Suave. Isso não será corrigido para o modo de camada legado. No entanto, mesmo que você use explicitamente o modo de camada legado, o GIMP ainda definirá o modo de camada Sobreposição padrão. Imagens que tenham o modo de camada Sobreposição legado definido para uma camada, terão isso alterado para Luz Suave legado, já que é isso que ele efetivamente é.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-soft-light-legacy"></a>
+            <span class="term">Luz suave</span>
+          </dt>
+          <dd>
+            <a id="id11639" class="indexterm"></a>
+            <a id="id11642" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2756"></a>
+              <p class="title">
+                <strong>Figura 8.60. Exemplo para o modo de camada <span class="quote">“<span class="quote">Luz suave</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-soft-light-mask1.jpg" alt="Exemplo para o modo de camada “Luz suave”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-soft-light-mask2.jpg" alt="Exemplo para o modo de camada “Luz suave”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O Modo <span class="guilabel">luz suave</span> não está relacionado a <span class="quote">“<span class="quote">luz dura</span>”</span> em nada, além do nome, mas ele tende a fazer as bordas mais suaves e as cores não tão brilhantes. É semelhante ao modo <span class="quote">“<span class="quote">Sobrepor</span>”</span>. Em algumas versões do <acronym class="acronym">GIMP</acronym>, o modo <span class="quote">“<span class="quote">Sobrepor</span>”</span> e o modo <span class="quote">“<span class="quote">Luz suave</span>”</span> são idênticos.</p>
+            <p>A equação é complicada. Ela precisa de Rs, o resultado do modo <span class="quote">“<span class="quote">Esconder</span>”</span>:</p>
+            <div class="equation">
+              <a id="id2757"></a>
+              <p class="title">
+                <strong>Equação 8.10. Equação para o modo de camada <span class="quote">“<span class="quote">Esconder</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-soft-light1.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+            <div class="equation">
+              <a id="id2758"></a>
+              <p class="title">
+                <strong>Equação 8.11. Equação para modo de camada <span class="quote">“<span class="quote">Luz suave</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-soft-light2.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+          </dd>
+          <dt>
+            <a id="layer-mode-hard-light-legacy"></a>
+            <span class="term">Luz dura</span>
+          </dt>
+          <dd>
+            <a id="id11676" class="indexterm"></a>
+            <a id="id11679" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2759"></a>
+              <p class="title">
+                <strong>Figura 8.61. Exemplo para modo de camada <span class="quote">“<span class="quote">Luz dura</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-hard-light-mask1.jpg" alt="Exemplo para modo de camada “Luz dura”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-hard-light-mask2.jpg" alt="Exemplo para modo de camada “Luz dura”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Luz dura</span> é bastante complicado porque a equação é composta por duas partes, uma para cores mais escuras e outra para cores mais claras. Se a cor do pixel da camada superior é maior do que 128, as camadas são combinadas de acordo com a primeira fórmula mostrada abaixo. Caso contrário, os valores de pixel da camadas superior e inferior são multiplicados e multiplicado por dois, e divididos por 256. Você pode usar este modo de combinar duas fotografias e obter cores brilhantes e bordas nítidas.</p>
+            <p>A equação é complexa e diferente de acordo com o valor &gt;128 ou ≤ 128:</p>
+            <div class="equation">
+              <a id="id2760"></a>
+              <p class="title">
+                <strong>Equação 8.12. Equação para modo de camada <span class="quote">“<span class="quote">Luz dura</span>”</span>, M &gt; 128</strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-hard-light1.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+            <div class="equation">
+              <a id="id2761"></a>
+              <p class="title">
+                <strong>Equação 8.13. Equação para modo de camada <span class="quote">“<span class="quote">Luz dura</span>”</span>, M &gt; 128</strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-hard-light2.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+          </dd>
+        </dl>
+      </div>
+      <div class="variablelist">
+        <p class="title">
+          <strong>Combinando modos de camadas</strong>
+        </p>
+        <dl class="variablelist">
+          <dt>
+            <a id="layer-mode-difference-legacy"></a>
+            <span class="term">Diferença</span>
+          </dt>
+          <dd>
+            <a id="id11709" class="indexterm"></a>
+            <a id="id11712" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2762"></a>
+              <p class="title">
+                <strong>Figura 8.62. Exemplo para o modo de camada <span class="quote">“<span class="quote">Diferença</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-difference-mask1.jpg" alt="Exemplo para o modo de camada “Diferença”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-difference-mask2.jpg" alt="Exemplo para o modo de camada “Diferença”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Diferença</span>subtrai o valor do pixel da camada superior da camada inferior e, em seguida, toma o valor absoluto do resultado. Não importa a aparência das duas primeiras camadas, o resultado pode parecer bastante estranho. Você pode usá-lo para inverter os elementos de uma imagem, criando uma camada completamente branca no modo <span class="quote">“<span class="quote">Diferença</span>”</span> por cima, por exemplo.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2763"></a>
+              <p class="title">
+                <strong>Equação 8.14. Equação para o modo de camada <span class="quote">“<span class="quote">Diferença</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-difference.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-subtract-legacy"></a>
+            <span class="term">Subtrair</span>
+          </dt>
+          <dd>
+            <a id="id11738" class="indexterm"></a>
+            <a id="id11741" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2764"></a>
+              <p class="title">
+                <strong>Figura 8.63. Exemplo para o modo de camada <span class="quote">“<span class="quote">Subtrair</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-subtract-mask1.jpg" alt="Exemplo para o modo de camada “Subtrair”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-subtract-mask2.jpg" alt="Exemplo para o modo de camada “Subtrair”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Subtrair</span> subtrai os valores de pixel da camada superior dos valores de pixel da camada inferior. A imagem resultante é, normalmente, mais escura. Você pode ter um monte de preto ou uma imagem resultante quase preta. A equação pode resultar em valores negativos para as cores mais escuras, portanto, elas serão ajustadas para o valor mínimo de 0.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2765"></a>
+              <p class="title">
+                <strong>Equação 8.15. Equation for layer mode <span class="quote">“<span class="quote">Subtract</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-subtract.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+          </dd>
+          <dt>
+            <a id="layer-mode-grain-extract-legacy"></a>
+            <span class="term">Extrair grãos</span>
+          </dt>
+          <dd>
+            <a id="id11765" class="indexterm"></a>
+            <a id="id11768" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2766"></a>
+              <p class="title">
+                <strong>Figura 8.64. Exemplo para a camada de modo <span class="quote">“<span class="quote">Extrair grãos</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-grain-extract-mask1.jpg" alt="Exemplo para a camada de modo “Extrair grãos”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-grain-extract-mask2.jpg" alt="Exemplo para a camada de modo “Extrair grãos”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O Modo <span class="guilabel">Extrair grãos</span> poderia extrair os <span class="quote">“<span class="quote">grãos do filme</span>”</span> de uma camada para a criação de uma nova camada que é composta só de grãos, mas também pode ser útil para dar as imagens uma aparência de relevo. Ele subtrai o valor do pixel da camada superior do pixel na camada inferior e adiciona 128.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2767"></a>
+              <p class="title">
+                <strong>Equação 8.16. Equação para o modo de camada <span class="quote">“<span class="quote">Extrair grãos</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-grainextract.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+          </dd>
+          <dt>
+            <a id="layer-mode-grain-merge-legacy"></a>
+            <span class="term">Mesclar grãos</span>
+          </dt>
+          <dd>
+            <a id="id11793" class="indexterm"></a>
+            <a id="id11796" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2768"></a>
+              <p class="title">
+                <strong>Figura 8.65. Exemplo para o modo de camada <span class="quote">“<span class="quote">Mesclar grãos</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-grain-merge-mask1.jpg" alt="Exemplo para o modo de camada “Mesclar grãos”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-grain-merge-mask2.jpg" alt="Exemplo para o modo de camada “Mesclar grãos”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Mesclar grãos</span> combina uma camada de grãos (possivelmente criada a partir do Modo <span class="quote">“<span class="quote">Extrair grãos</span>”</span> ) na camada atual, deixando uma versão granulada da camada original. Ele faz exatamente o oposto de <span class="quote">“<span class="quote">Extrair de grãos</span>”</span>. Ele adiciona os valores de pixels das camadas superior e inferior e subtrai 128.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2769"></a>
+              <p class="title">
+                <strong>Equação 8.17. Equação para o modo de camada <span class="quote">“<span class="quote">Mesclar grãos</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-grainmerge.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+          </dd>
+          <dt>
+            <span class="term">Dividir</span>
+          </dt>
+          <dd>
+            <a id="id11822" class="indexterm"></a>
+            <a id="id11825" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2770"></a>
+              <p class="title">
+                <strong>Figura 8.66. Exemplo para o modo de camada <span class="quote">“<span class="quote">Dividir</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-divide-mask1.jpg" alt="Exemplo para o modo de camada “Dividir”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-divide-mask2.jpg" alt="Exemplo para o modo de camada “Dividir”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Dividir</span> multiplica cada valor de pixel na camada inferior por 256 e depois divide pelo valor do pixel correspondente da camada superior mais um. (Ao adicionar um ao denominador evita-se a divisão por zero.) A imagem resultante é muitas vezes mais clara, e às vezes parece <span class="quote">“<span class="quote">queimada</span>”</span>.</p>
+            <p>A equação é:</p>
+            <div class="equation">
+              <a id="id2771"></a>
+              <p class="title">
+                <strong>Equação 8.18. Equação para o modo de camada <span class="quote">“<span class="quote">Dividir</span>”</span></strong>
+              </p>
+              <div class="equation-contents">
+                <div>
+                  <img src="images/math/layer-mode-divide.png" />
+                </div>
+              </div>
+            </div>
+            <br class="equation-break" />
+          </dd>
+        </dl>
+      </div>
+      <div class="variablelist">
+        <p class="title">
+          <strong>Modos de Camada de Componentes HSV</strong>
+        </p>
+        <dl class="variablelist">
+          <dt>
+            <span class="term">Matiz HSV</span>
+          </dt>
+          <dd>
+            <a id="id11852" class="indexterm"></a>
+            <a id="id11855" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2772"></a>
+              <p class="title">
+                <strong>Figura 8.67. Exemplo para modo de camadas <span class="quote">“<span class="quote">Matiz</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-hue-mask1.jpg" alt="Exemplo para modo de camadas “Matiz”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-hue-mask2.jpg" alt="Exemplo para modo de camadas “Matiz”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Matiz</span> utiliza o matiz da camada superior e a saturação e o valor da camada inferior para formar a imagem resultante. No entanto, se a saturação da camada superior é igual for zero, a tonalidade é retirada da camada inferior, também.</p>
+          </dd>
+          <dt>
+            <span class="term">Saturação</span>
+          </dt>
+          <dd>
+            <a id="id11874" class="indexterm"></a>
+            <a id="id11877" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2773"></a>
+              <p class="title">
+                <strong>Figura 8.68. Exemplo para o modo de camada <span class="quote">“<span class="quote">Saturação</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-saturation-mask1.jpg" alt="Exemplo para o modo de camada “Saturação”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-saturation-mask2.jpg" alt="Exemplo para o modo de camada “Saturação”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Saturação</span> utiliza a saturação da camada superior e o matiz e o valor da camada inferior para formar a imagem resultante.</p>
+          </dd>
+          <dt>
+            <span class="term">Cor</span>
+          </dt>
+          <dd>
+            <a id="id11896" class="indexterm"></a>
+            <a id="id11899" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2774"></a>
+              <p class="title">
+                <strong>Figura 8.69. Exemplo para o modo de camada <span class="quote">“<span class="quote">Cor</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-color-mask1.jpg" alt="Exemplo para o modo de camada “Cor”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-color-mask2.jpg" alt="Exemplo para o modo de camada “Cor”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Cor</span> usa o matiz e a saturação da camada superior e o valor da camada inferior para formar a imagem resultante.</p>
+          </dd>
+          <dt>
+            <span class="term">Valor</span>
+          </dt>
+          <dd>
+            <a id="id11918" class="indexterm"></a>
+            <a id="id11921" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2775"></a>
+              <p class="title">
+                <strong>Figura 8.70. Exemplo para o modo de camada <span class="quote">“<span class="quote">valor</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-value-mask1.jpg" alt="Exemplo para o modo de camada “valor”" />
+                  <div class="caption">
+                    <p>Máscara 1 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/legacy-layer-mode-value-mask2.jpg" alt="Exemplo para o modo de camada “valor”" />
+                  <div class="caption">
+                    <p>Máscara 2 é usada como a camada superior com 100% de opacidade.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Valor</span> utiliza o valor da camada superior e asaturação e o matiz da camada inferior para formar a imagem resultante. Você pode usar este modo para revelar detalhes em áreas escuras e claras de uma imagem sem alterar a saturação e as cores em geral.</p>
+          </dd>
+        </dl>
+      </div>
+      <div class="footnotes">
+        <br />
+        <hr style="width:100; text-align:left;margin-left: 0" />
+        <div id="ftn.gimp-layer-mode-bug162395" class="footnote">
+          <p><a href="#gimp-layer-mode-bug162395" class="para"><sup class="para">[3] </sup></a>Consulte o antigo rastreador de problemas Bugzilla: <a class="ulink" href="https://bugzilla.gnome.org/show_bug.cgi?id=162395" target="_top">problema #162395</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="layer-mode-group-lch.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-combining.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-layers.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="layer-mode-group-lch.html">2.7. Modos de Camada de Componentes LCh</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-layers.html">4. Criando novas camadas</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

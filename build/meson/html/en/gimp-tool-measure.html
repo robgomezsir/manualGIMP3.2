@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.5. Measure</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-tools-other.html" title="5. Other Tools" />
+    <link rel="prev" href="gimp-tool-color-picker.html" title="5.4. Color Picker" />
+    <link rel="next" href="gimp-tool-zoom.html" title="5.6. Zoom" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.5. Measure</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-color-picker.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. Other Tools</span>
+        <nav> <a accesskey="n" href="gimp-tool-zoom.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-measure"></a>5.5. Measure</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id20045" class="indexterm"></a>
+      <a id="id20048" class="indexterm"></a>
+      <a id="id20050" class="indexterm"></a>
+      <a id="id20052" class="indexterm"></a>
+      <a id="id20054" class="indexterm"></a>
+      <a id="id20056" class="indexterm"></a>
+      <p>
+    The Measure Tool is used to gain knowledge about pixel distances in your
+    working image. By clicking and dragging the mouse button, you can 
+    determine the angle and number of pixels between the point of click and 
+    where the mouse pointer is located. The information is displayed on the 
+    status bar or can also be displayed in the Info Window.
+  </p>
+      <p>
+    A common use case for <span class="quote">“<span class="quote">Measure</span>”</span> is to calculate the angle of 
+    rotation when horizon is uneven on a photo. To rotate in order to
+    straighten the horizon, click the
+    <span class="emphasis"><em>Straighten</em></span> button after measuring the angle.
+  </p>
+      <p>
+    This button can be used in straightening horizontal or vertical lines up: 
+    the starting point comes with a small bar that shows the direction.
+  </p>
+      <p>
+    When you pass the mouse pointer over the end point it turns to a move
+    pointer. Then if you click you can resume the measure.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1867"></a>5.5.1. Status Bar</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Information is displayed in the
+      <a class="link" href="gimp-image-window.html#gimp-image-window-status-bar">status bar</a>, at the
+      bottom of the Image window:
+      </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+            Distance between the original point and the mouse pointer, in
+            pixels.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            Angle, in every quadrant, from 0° to 90°.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            Pointer coordinates relative to the original point.
+          </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1868"></a>5.5.2. Activating the Tool</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the main menu:
+          <span class="guimenu">Tools</span> → <span class="guimenuitem">Measure</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By clicking the tool icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-measure.svg" width="16" /></span>
+          </span>
+          in the Toolbox.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1869"></a>5.5.3. Key modifiers</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+                <span class="keycap">
+                  <strong>Shift</strong>
+                </span>
+              </span>
+            </dt>
+            <dd>
+              <p>
+            While holding down the <span class="keycap"><strong>Shift</strong></span> key, click and drag from an existing 
+            endpoint to create a second measurement line from this endpoint. 
+            The angle between the two lines will be displayed. Any endpoint can 
+            be moved by clicking and dragging. So, you can
+            <span class="emphasis"><em>measure any angle</em></span> on the image:
+          </p>
+              <div class="figure">
+                <a id="id1870"></a>
+                <p class="title">
+                  <strong>Figure 14.141. Shift modifier</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/tool-options/measure-shift-ex1.png" alt="Shift modifier" />
+                    <div class="caption">
+                      <p>
+                  Click on start point and drag following a side of the 
+                  angle.
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/measure-shift-ex2.png" alt="Shift modifier" />
+                    <div class="caption">
+                      <p>
+                  Then, Shift-click on start point and drag following the 
+                  other side of the angle: you get the value of this particular 
+                  angle.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">
+                <span class="keycap">
+                  <strong>Ctrl</strong>
+                </span>
+              </span>
+            </dt>
+            <dd>
+              <p>
+            Holding down the <span class="keycap"><strong>Ctrl</strong></span> key puts the tool
+            into constrained straight line mode. The orientation of the
+            line is constrained to the nearest multiple of 15 degrees.
+          </p>
+              <p>
+            <span class="keycap"><strong>Ctrl</strong></span> key pressed and click on an end point
+            creates a horizontal guide. The mouse pointer goes with 
+            the
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/toolbox/cursor-measure.png" /></span>
+            </span>
+            icon.
+          </p>
+              <p>
+            In Horizontal or Vertical Orientation modes, <span class="keycap"><strong>Ctrl</strong></span> 
+            also toggles between Horizontal and Vertical.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">
+                <span class="keycap">
+                  <strong>Alt</strong>
+                </span>
+              </span>
+            </dt>
+            <dd>
+              <p>
+            <span class="keycap"><strong>Alt</strong></span> key and click on an end point creates a
+            vertical guide. 
+          </p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>
+            This key combination and click on a measure line allows to move
+            the measure.
+          </p>
+              <p><span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>
+            key combination and click on an end point creates a vertical and a
+            horizontal guides.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1871"></a>5.5.4. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1872"></a>
+          <p class="title">
+            <strong>Figure 14.142. Tool Options Dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-measure.png" alt="Tool Options Dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Orientation (Ctrl)</span>
+            </dt>
+            <dd>
+              <p>
+            In the <span class="guilabel">Auto</span> mode (default), 
+            <span class="guibutton">Straighten</span> will snap to the smallest angle 
+            between the measure line and the vertical or horizontal direction. 
+            <span class="guilabel">Horizontal</span> and <span class="guilabel">Vertical</span> 
+            allow to override this behavior by specifying explicitly what it 
+            should be.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Use Info Window</span>
+            </dt>
+            <dd>
+              <p>
+            This option will display an Info Window dialog that details the
+            measure tool results. The results are more complete than on the 
+            status bar.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Straighten</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="guilabel">Transform</span>, <span class="guilabel">Interpolation</span>, 
+            and <span class="guilabel">Clipping</span> are treated in 
+            <a class="xref" href="gimp-tools-transform.html#gimp-tool-transform-options" title="4.1.1. Options">Section 4.1.1, “Options”</a>. Here is an example
+            for straightening a path:
+            </p>
+              <div class="mediaobject">
+                <img src="images/tool-options/measure-ex1.jpg" />
+                <div class="caption">
+                  <p>
+                  Original image
+                </p>
+                </div>
+              </div>
+              <p>
+            </p>
+              <div class="mediaobject">
+                <img src="images/tool-options/measure-path-ex1.png" />
+                <div class="caption">
+                  <p>
+                  Draw path
+                </p>
+                </div>
+              </div>
+              <p>
+            </p>
+              <div class="mediaobject">
+                <img src="images/tool-options/measure-path-ex2.png" />
+                <div class="caption">
+                  <p>
+                  Make path visible
+                </p>
+                </div>
+              </div>
+              <p>
+            </p>
+              <div class="mediaobject">
+                <img src="images/tool-options/measure-path-ex3.png" />
+                <div class="caption">
+                  <p>
+                  Draw measure line on the segment you want to straighten
+                </p>
+                </div>
+              </div>
+              <p>
+            </p>
+              <div class="mediaobject">
+                <img src="images/tool-options/measure-path-ex4.png" />
+                <div class="caption">
+                  <p>
+                  Straighten
+                </p>
+                </div>
+              </div>
+              <p>
+          </p>
+              <div class="figure">
+                <a id="id1873"></a>
+                <p class="title">
+                  <strong>Figure 14.143. <span class="quote">“<span class="quote">Straighten</span>”</span> clipping options</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/tool-options/measure-ex1-b.jpg" alt="“Straighten” clipping options" />
+                    <div class="caption">
+                      <p>
+                  Draw measure line
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/measure-adjust-ex.jpg" alt="“Straighten” clipping options" />
+                    <div class="caption">
+                      <p>
+                  Straighten with <span class="quote">“<span class="quote">Adjust</span>”</span> option
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/measure-clip-ex.jpg" alt="“Straighten” clipping options" />
+                    <div class="caption">
+                      <p>
+                  Straighten with <span class="quote">“<span class="quote">Clip</span>”</span> option
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/measure-crop_to_result-ex.jpg" alt="“Straighten” clipping options" />
+                    <div class="caption">
+                      <p>
+                  Straighten with <span class="quote">“<span class="quote">Crop to result</span>”</span> option
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/measure-crop_with_aspect-ex.jpg" alt="“Straighten” clipping options" />
+                    <div class="caption">
+                      <p>
+                  Straighten with <span class="quote">“<span class="quote">Crop with aspect</span>”</span> option
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            <span class="guibutton">Straighten</span>: click on this button to perform 
+            straightening.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1874"></a>5.5.5. Measuring surfaces</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can't measure surfaces directly, but you can use the
+      <a class="link" href="gimp-histogram-dialog.html" title="2.5. Histogram Dialog">Histogram</a> that gives you
+      the number of pixels in a selection.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-color-picker.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-other.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-zoom.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-color-picker.html">5.4. Color Picker</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-zoom.html">5.6. Zoom</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

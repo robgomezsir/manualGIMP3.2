@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2. Texto</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-image-text-management.html" title="Capítulo 9. Gerenciamento de textos" />
+    <link rel="prev" href="gimp-image-text-management.html" title="Capítulo 9. Gerenciamento de textos" />
+    <link rel="next" href="gimp-imaging-photos.html" title="Capítulo 10. Melhorando fotografias" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2. Texto</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-image-text-management.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 9. Gerenciamento de textos</span>
+        <nav> <a accesskey="n" href="gimp-imaging-photos.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-using-text"></a>2. Texto</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id12684" class="indexterm"></a>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-using-fonts"></a>2.1. Adicionando fontes</h3>
+            </div>
+          </div>
+        </div>
+        <a id="id12689" class="indexterm"></a>
+        <a id="id12692" class="indexterm"></a>
+        <p>
+      GIMP uses the <a class="link" href="bibliography.html#bibliography-online-freetype" title="Página inicial do Freetype 2">FreeType 2</a> font engine to render fonts, and a system
+      called Fontconfig to manage them.
+      FreeType 2 supports many common font file formats.
+    </p>
+        <p>
+      Any font in Fontconfig's font path is available in GIMP. In addition,
+      any font which is located in GIMP's <span class="guilabel">Font Folders</span>
+      is available in GIMP. Font Folders are set on the
+      <span class="guilabel">Fonts</span> page in the
+      <a class="link" href="gimp-prefs-folders-data.html" title="6.27. Pastas de dados">Folders</a> preferences.
+    </p>
+        <p>
+      By default, there are two <span class="guilabel">Font Folders</span>: The system
+      GIMP fonts folder (which you should not alter), and a
+      <code class="filename">fonts</code> folder inside your personal GIMP directory.
+      You can also add additional font folders if wanted.
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <div class="itemizedlist">
+                <p class="title">
+                  <strong>Linux</strong>
+                </p>
+                <p>Existem várias maneiras de instalar uma fonte:</p>
+                <ul class="itemizedlist" style="list-style-type: circle; ">
+                  <li class="listitem">
+                    <p>Use um aplicativo como <span class="application">GNOME Fonts</span> ou <span class="application">KFontView</span> para instalar a fonte.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Coloque o arquivo de fonte no diretório <code class="filename">~/.local/share/fonts/</code>. Isso tornará a fonte disponível apenas para você.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Se você tiver direitos de administrador, coloque o arquivo de fonte no diretório <code class="filename">/usr/local/share/fonts/</code>. Isso tornará a fonte disponível para todos os usuários.</p>
+                  </li>
+                </ul>
+              </div>
+              <p>Em todos os casos, a fonte ficará disponível para todos os programas que usam o Fontconfig.</p>
+            </li>
+            <li class="listitem">
+              <div class="itemizedlist">
+                <p class="title">
+                  <strong>Microsoft Windows</strong>
+                </p>
+                <p>Existem várias maneiras de instalar uma fonte em todo o sistema:</p>
+                <ul class="itemizedlist" style="list-style-type: circle; ">
+                  <li class="listitem">
+                    <p>Arraste o arquivo de fonte para o diretório Fontes <code class="filename">C:\Windows\Fonts</code>.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+              Install the font via the <span class="application">Settings</span> app.
+              In Windows, go to <span class="guilabel">Settings</span>, select
+              <span class="guilabel">Personalization</span>, then from there go to
+              <span class="guilabel">Fonts</span>.
+            </p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="listitem">
+              <div class="itemizedlist">
+                <p class="title">
+                  <strong>macOS</strong>
+                </p>
+                <ul class="itemizedlist" style="list-style-type: circle; ">
+                  <li class="listitem">
+                    <p>Instale a fonte através do aplicativo <span class="application">Font Book</span>.</p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <p>
+        The installed fonts will show up the next time you start GIMP. If you
+        want to use it in an already running GIMP instance, press the
+        <span class="emphasis"><em>Refresh</em></span>
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/view-refresh.svg" width="16" /></span>
+        </span>
+        button in the <a class="link" href="gimp-font-dialog.html" title="3.8. Diálogo de fontes">Fonts dialog</a>.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Se por algum motivo você encontrar problemas ao tentar instalar uma fonte em todo o sistema, tente instalar a fonte na pasta <code class="filename">fontes</code> do seu diretório pessoal do GIMP (veja acima).</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="font-problems"></a>2.1.1. Problemas com fontes</h4>
+              </div>
+            </div>
+          </div>
+          <a id="id12752" class="indexterm"></a>
+          <p>
+        In most cases, problems with fonts are caused by malformed font files
+        or outdated font formats.
+        If you experience crashes at start-up when GIMP scans your
+        font directories, as a quick workaround you can start GIMP
+        with the <code class="filename">--no-fonts</code>
+        <a class="link" href="gimp-fire-up.html#gimp-concepts-running-command-line" title="1.2. Argumentos da Linha de Comando">command line
+        argument</a>, but then you will not be able to use the text tool.
+      </p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-image-text-management.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-text-management.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-imaging-photos.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-image-text-management.html">Capítulo 9. Gerenciamento de textos</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-imaging-photos.html">Capítulo 10. Melhorando fotografias</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

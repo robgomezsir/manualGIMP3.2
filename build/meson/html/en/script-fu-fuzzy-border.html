@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>12.5. Fuzzy Border</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-decor.html" title="12. Decor Filters" />
+    <link rel="prev" href="python-fu-foggify.html" title="12.4. Fog" />
+    <link rel="next" href="script-fu-old-photo.html" title="12.6. Old Photo" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>12.5. Fuzzy Border</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="python-fu-foggify.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>12. Decor Filters</span>
+        <nav> <a accesskey="n" href="script-fu-old-photo.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-fuzzy-border"></a>12.5. Fuzzy Border</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id55537" class="indexterm"></a>
+      <a id="id55541" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3529"></a>12.5.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3530"></a>
+          <p class="title">
+            <strong>Figure 17.267. Example for the <span class="quote">“<span class="quote">Fuzzy Border</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for the “Fuzzy Border” filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/decor-taj-fuzzyborder.jpg" alt="Example for the “Fuzzy Border” filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter adds a cool fading border to an image. The border will look
+      jagged and fuzzy, and you can specify color and thickness of the fading
+      border. Optionally you may add a shadow to the image.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3531"></a>12.5.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Decor</span> → <span class="guimenuitem">Fuzzy Border…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3532"></a>12.5.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3533"></a>
+          <p class="title">
+            <strong>Figure 17.268. <span class="quote">“<span class="quote">Fuzzy Border</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/decor/fuzzyborder.png" alt="“Fuzzy Border” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Color</span>
+            </dt>
+            <dd>
+              <p>
+            Clicking on this button brings up the color selector dialog that
+            allows you to choose the border color.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Border size</span>
+            </dt>
+            <dd>
+              <p>
+            Here you can set the thickness of the fuzzy border, in pixels.
+            Maximum is 300 pixels, regardless of the image width or height.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Blur border</span>
+            </dt>
+            <dd>
+              <p>
+            If checked, the border will be blurred. The example below shows
+            the effect of blurring:
+          </p>
+              <div class="figure">
+                <a id="id3534"></a>
+                <p class="title">
+                  <strong>Figure 17.269. <span class="quote">“<span class="quote">Blur border</span>”</span> example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-blur.png" alt="“Blur border” example" />
+                    <div class="caption">
+                      <p><span class="quote">“<span class="quote">Blur border</span>”</span> checked</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-noblur.png" alt="“Blur border” example" />
+                    <div class="caption">
+                      <p><span class="quote">“<span class="quote">Blur border</span>”</span> unchecked</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id3535"></a>
+                <p class="title">
+                  <strong>Figure 17.270. <span class="quote">“<span class="quote">Blur border</span>”</span> zoomed (1600%)</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-blurx16.png" alt="“Blur border” zoomed (1600%)" />
+                    <div class="caption">
+                      <p><span class="quote">“<span class="quote">Blur border</span>”</span> checked</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-noblurx16.png" alt="“Blur border” zoomed (1600%)" />
+                    <div class="caption">
+                      <p><span class="quote">“<span class="quote">Blur border</span>”</span> unchecked</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Granularity</span>
+            </dt>
+            <dd>
+              <p>
+            The border's granularity is almost the size of pixel blocks spread
+            to create the effect of a jagged and fuzzy border.
+          </p>
+              <div class="figure">
+                <a id="id3536"></a>
+                <p class="title">
+                  <strong>Figure 17.271. Granularity example (without blurring)</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-gran1.png" alt="Granularity example (without blurring)" />
+                    <div class="caption">
+                      <p>Granularity 1 (min)</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-gran4.png" alt="Granularity example (without blurring)" />
+                    <div class="caption">
+                      <p>Granularity 4 (default)</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-gran16.png" alt="Granularity example (without blurring)" />
+                    <div class="caption">
+                      <p>Granularity 16 (max)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Add shadow</span>
+            </dt>
+            <dd>
+              <p>
+            If checked, the filter will also create a shadow at the border.
+          </p>
+              <div class="figure">
+                <a id="id3537"></a>
+                <p class="title">
+                  <strong>Figure 17.272. <span class="quote">“<span class="quote">Add shadow</span>”</span> example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-shadow100.png" alt="“Add shadow” example" />
+                    <div class="caption">
+                      <p>
+                  <span class="quote">“<span class="quote">Add shadow</span>”</span> checked, shadow weight 100%
+                  (default shadow weight).
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-shadow10.png" alt="“Add shadow” example" />
+                    <div class="caption">
+                      <p>
+                  <span class="quote">“<span class="quote">Add shadow</span>”</span> with shadow weight 10%.
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/fuzzyborder-noshadow.png" alt="“Add shadow” example" />
+                    <div class="caption">
+                      <p>
+                  <span class="quote">“<span class="quote">Add shadow</span>”</span> unchecked (default)
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Shadow weight</span>
+            </dt>
+            <dd>
+              <p>
+            If <span class="guilabel">Add shadow</span> is checked,
+            you may set the shadow opacity here. Defaults to 100% (full
+            opacity).
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Work on copy</span>
+            </dt>
+            <dd>
+              <p>
+            If checked, the filter creates a new window containing a copy of
+            the image with the filter applied. The original image remains
+            unchanged.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Flatten image</span>
+            </dt>
+            <dd>
+              <p>
+            If unchecked, the filter keeps the additional layers it used to
+            create the border and the shadow (if demanded). Default is to
+            merge down all layers.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="python-fu-foggify.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-decor.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-old-photo.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="python-fu-foggify.html">12.4. Fog</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-old-photo.html">12.6. Old Photo</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

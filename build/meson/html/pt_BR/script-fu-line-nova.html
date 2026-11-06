@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.27. Explosão de linhas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="script-fu-lava.html" title="14.26. Lava" />
+    <link rel="next" href="plug-in-spheredesigner.html" title="14.28. Designer de esferas" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.27. Explosão de linhas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-lava.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="plug-in-spheredesigner.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-line-nova"></a>14.27. Explosão de linhas</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id61570" class="indexterm"></a>
+      <a id="id61574" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5082"></a>14.27.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5083"></a>
+          <p class="title">
+            <strong>Figura 17.403. Exemplo para a filtro <span class="quote">“<span class="quote">Explosão de linhas</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo para a filtro “Explosão de linhas”" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/render/taj-line-nova.jpg" alt="Exemplo para a filtro “Explosão de linhas”" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>O filtro de Explosão de linhas preenche uma camada com raios emanando para fora do centro da camada usando a cor de primeiro plano mostrada na Caixa de ferramentas. Os raios começam com um pixel de largura e se alargam na direção das bordas da camada.</p>
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Dica]" src="images/tip.png" />
+              </td>
+              <th align="left">Dica</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Este filtro não fornece nenhuma opção que permita definir o ponto central das linhas. Se você precisar  ajustar o lugar das linhas radiais onde quiser, crie uma outra imagem transparente e aplique esse filtro na mesma, em seguida, copie a camada com as linhas para a imagem desejada . Defina um tamanho grande para a nova imagem para não quebrar linhas dentro da sua imagem, se quiser que elas se estendam até as bordas.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5084"></a>14.27.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guimenuitem">Line Nova…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5085"></a>14.27.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5086"></a>
+          <p class="title">
+            <strong>Figura 17.404. Opções para o filtro <span class="quote">“<span class="quote">Explosão de linhas</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/line-nova.png" alt="Opções para o filtro “Explosão de linhas”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Número de linhas</span>
+            </dt>
+            <dd>
+              <p>Ao usar esta opção, você pode definir o número de linhas entre 40 e 1000. O padrão é 200.</p>
+            </dd>
+            <dt>
+              <span class="term">Ângulo das pontas</span>
+            </dt>
+            <dd>
+              <p>Esse controle determina o quanto os raios vão ser ampliados na direção das bordas: cada raio é um triângulo com esse ângulo na ponta mais fina. A escala vai de 0,0 até 10,0. Se for definido como 0.0, nada será desenhado. Se for deixado como 10,0, a maior parte da área perto das extremidades será pintada.</p>
+              <div class="figure">
+                <a id="id5087"></a>
+                <p class="title">
+                  <strong>Figura 17.405. Opção de Ângulo das pontas de <span class="quote">“<span class="quote">Explosão de linhas</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/render/line-nova-sharp.png" alt="Opção de Ângulo das pontas de “Explosão de linhas”" />
+                    <div class="caption">
+                      <p>Da esquerda para a direita: ângulo = 1; ângulo = 5; ângulo = 10</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Raio de deslocamento</span>
+            </dt>
+            <dd>
+              <p>Aqui você escolhe a distância, em pixels, do centro ao ponto de de início dos raios. Se for definido como 0,0 os raios começam a partir do centro. Qualquer outro valor fará com que os pontos de partida sejam em um círculo na distância selecionada a partir do centro. A distância máxima é de 2000 pixels. O valor padrão é 100 pixels.</p>
+              <div class="figure">
+                <a id="id5088"></a>
+                <p class="title">
+                  <strong>Figura 17.406. <span class="quote">“<span class="quote">Explosão de linhas</span>”</span>, opção de Raio de deslocamento</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/render/line-nova-radius.png" alt="“Explosão de linhas”, opção de Raio de deslocamento" />
+                    <div class="caption">
+                      <p>Da esquerda para a direita: Raio de deslocamento = 0; Raio de deslocamento = 50</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Fator aleatório</span>
+            </dt>
+            <dd>
+              <p>Se esse controle é ajustado para um valor maior que 1, o ponto de partida para cada raio varia, aleatoriamente,  do ponto médio inicial definido como o raio do deslocamento, acima. Com o valor definido como 1, todos os raios começarão exatamente no círculo determinado pelo raio  do deslocamento. O valor máximo é de 2000. O valor padrão é 30.</p>
+              <div class="figure">
+                <a id="id5089"></a>
+                <p class="title">
+                  <strong>Figura 17.407. Opção Fator aleatório de <span class="quote">“<span class="quote">Explosão de linhas</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/render/line-nova-rand.png" alt="Opção Fator aleatório de “Explosão de linhas”" />
+                    <div class="caption">
+                      <p>Da esquerda para a direita: Fator aleatório = 1; Fato aleatório = 50</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-lava.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-spheredesigner.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-lava.html">14.26. Lava</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-spheredesigner.html">14.28. Designer de esferas</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

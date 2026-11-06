@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-05-05 j.h: update to v2.10.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-shear">
+  <title>Inclinar</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Inclinar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Inclinar</primary>
+  </indexterm>
+
+  <para>A ferramenta de Inclinar é usada para deslocar uma parte de uma imagem, uma camada, uma seleção ou um vetor em uma direção, e a outra parte na direção oposta. Por exemplo, uma inclinação horizontal vai deslocar a metade de cima para a direita, e a metade de baixo para a esquerda. Um retângulo se torna um losango. Isso não é uma rotação: a imagem fica distorcida. para usar esta ferramenta após fazer uma seleção, clique na imagem ou na seleção: uma pré-visualização (ou possivelmente uma grade) aparece superposta a sua imagem, e o diálogo de informação da Inclinação é aberto. Ao arrastar o mouse sobre a imagem você a distorce, horizontalmente ou verticalmente, dependendo da direção de movimento do mouse. Quando estiver satisfeito, pressione <keycap>Enter</keycap> ou clique em Inclinar o diálogo de informação para efetuar a transformação.</para>
+
+  <figure>
+    <title>Exemplo de inclinar</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/toolbox/shear-example.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <note>
+    <para>Você não pode inclinar nas duas direções ao mesmo tempo: você deve usar a ferramenta de inclinar duas vezes seguidas se quiser fazer isso.</para>
+  </note>
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagens, em:<menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de transformação</guisubmenu><guimenuitem>Inclinar</guimenuitem></menuchoice></para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-shear.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>Usando o atalho de teclado  <keycombo><keycap>Shift</keycap><keycap>P</keycap></keycombo></para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+  <sect3>
+
+    <title>Opções</title>
+    <figure>
+      <title>Opções de ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-shear.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Transformar</term>
+        <term>Direção</term>
+        <term>Interpolação</term>
+        <term>Cortar</term>
+        <term>Show image preview</term>
+        <term>Guias</term>
+        <listitem>
+          <xi:include href="about-common-transform-options.xml"/>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>The Shear adjustment dialog</title>
+    <figure>
+      <title>The Shear adjustment dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/shear-adjust.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Magnitude de inclinação X</term>
+        <listitem>
+          <para>Aqui você pode dizer a amplitude da inclinação horizontal. Um valor positivo causará uma inclinação no sentido horário. Um valor negativo resulta num movimento no sentido anti-horário. A unidade de medida usada aqui é meio pixel.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Magnitude de inclinação Y</term>
+        <listitem>
+          <para>Como acima, a inclinação acontece na direção vertical.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

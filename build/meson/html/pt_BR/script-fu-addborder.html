@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>12.3. Adicionar borda</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-decor.html" title="12. Filtros de decoração" />
+    <link rel="prev" href="script-fu-add-bevel.html" title="12.2. Adicionar chanfro" />
+    <link rel="next" href="python-fu-foggify.html" title="12.4. Fog" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>12.3. Adicionar borda</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-add-bevel.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>12. Filtros de decoração</span>
+        <nav> <a accesskey="n" href="python-fu-foggify.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-addborder"></a>12.3. Adicionar borda</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id56635" class="indexterm"></a>
+      <a id="id56638" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4778"></a>12.3.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4779"></a>
+          <p class="title">
+            <strong>Figura 17.262. Exemplo para o filtro <span class="quote">“<span class="quote">Adicionar borda</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo para o filtro “Adicionar borda”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/decor-taj-addborder.jpg" alt="Exemplo para o filtro “Adicionar borda”" />
+              <div class="caption">
+                <p>Filtro aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Este filtro faz exatamente o que o nome diz: ele adiciona uma borda à imagem. Você pode especificar a espessura da borda bem como sua cor. Os quatro lados da borda são coloridos em tons diferentes, de forma que a imagem pareça levantada.</p>
+        <p>A imagem será aumentada em tamanho igual ao tamanho das bordas: elas não serão pintadas por cima da imagem</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4780"></a>12.3.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Decor</span> → <span class="guimenuitem">Add Border…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4781"></a>12.3.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4782"></a>
+          <p class="title">
+            <strong>Figura 17.263. Opções de <span class="quote">“<span class="quote">Adicionar borda</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/decor/addborder.png" alt="Opções de “Adicionar borda”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Tamanho X da borda, </span>
+              <span class="term">Tamanho Y da borda</span>
+            </dt>
+            <dd>
+              <p>
+            Here you can select the thickness of the added border, in pixels.
+            X size (left and right) and Y size (top and bottom) may be
+            different. Maximum is 250 pixels.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Cor da borda</span>
+            </dt>
+            <dd>
+              <p>Ao clicar neste botão, surge um diálogo de seleção de cores, que permite que você escolha uma cor <span class="quote">“<span class="quote">média</span>”</span> para a borda (veja abaixo, <span class="guilabel">Influência da iluminação na cor</span>).</p>
+            </dd>
+            <dt>
+              <span class="term">Influência da iluminação na cor</span>
+            </dt>
+            <dd>
+              <p>Esta opção faz com que os lados da borda sejam coloridos em tons diferentes e assim, faz parecer que a imagem está levantada (como um botão em relevo). A cor real para cada lado da borda é calculado para cada componente de cor (vermelho, verde e azul <a href="#ftn.id56683" class="footnote" id="id56683"><sup class="footnote">[8]</sup></a>) a partir da cor <span class="quote">“<span class="quote">média</span>”</span> especificada em <span class="guilabel">Cor da borda</span> como se segue: (valores resultantes menores que 0 ficam como 0, e valores maiores que 255, ficam sendo 255)</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>Tom da parte de cima = Cor da borda + influência</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Tom da direita = Cor da borda  -  metade da influência</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Tom de baixo = Cor da borda - influência</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Tom da esquerda = Cor da borda + metade da influência</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="figure">
+                <a id="id4783"></a>
+                <p class="title">
+                  <strong>Figura 17.264. Exemplos de influência</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/addborder-delta.png" alt="Exemplos de influência" />
+                    <div class="caption">
+                      <p>
+                  <span class="quote">“<span class="quote">Add Border</span>”</span> filter applied with
+                  <span class="guilabel">Delta value on color</span> 25, then with 75, 125, 175,
+                  and 225.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>Exemplo: a cor padrão é azul (38,31,207), a influência padrão é 25. Então as cores da borda serão: topo: (38,31,207) + (25,25,25) = (63,56,232), direita: (38,31,207) + (-13,-13,-13) = (25,18,194), etc.</p>
+            </dd>
+            <dt>
+              <span class="term">Allow resizing</span>
+            </dt>
+            <dd>
+              <p>
+            By default, the image size is increased by twice the specified border
+            size to create the border in this additional space. If your image
+            already has the intended final size, disable this option.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="footnotes">
+        <br />
+        <hr style="width:100; text-align:left;margin-left: 0" />
+        <div id="ftn.id56683" class="footnote">
+          <p><a href="#id56683" class="para"><sup class="para">[8] </sup></a>Veja <a class="link" href="gimp-images-in.html#gimp-concepts-image-types" title="1. Tipos de Imagem">tipos de imagem</a> ou  <a class="xref" href="glossary.html#glossary-rgb" title="RGB">
+      <span class="phrase">RGB</span>
+    </a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-add-bevel.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-decor.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="python-fu-foggify.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-add-bevel.html">12.2. Adicionar chanfro</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="python-fu-foggify.html">12.4. Fog</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

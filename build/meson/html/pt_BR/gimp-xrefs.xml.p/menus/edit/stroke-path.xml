@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- Section history:
+  2007-10-14 j.h: rearranged according to v2.4
+  2007-05-14 Added Spanish translation by AntI
+-->
+<sect2 id="gimp-path-stroke">
+  <title>Stroke Paths</title>
+
+  <indexterm>
+    <primary>Vetores</primary>
+    <secondary>Contornar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Stroke path</primary>
+  </indexterm>
+
+  <para>
+    The <guimenuitem>Stroke Paths…</guimenuitem> command strokes a path in
+    the image. There are two ways you can stroke the path, either by using
+    a paint tool, or without using one. There are various options which you
+    can use to specify how this stroke should look.
+  </para>
+  <note>
+    <para>Este comando fica disponível apenas no caso de existir um vetor na sua imagem.</para>
+  </note>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          You can access this command from the main menu through
+          <menuchoice>
+            <guimenu>Edit</guimenu>
+            <guimenuitem>Stroke Paths…</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          You can also access it by clicking on the button with the same name
+          in the <link linkend="gimp-path-dialog">Paths Dialog</link>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Descrição da janela de diálogo</title>
+    <figure>
+      <title>A janela de diálogo de <quote>Escolha o estilo do contorno</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/edit/stroke-path.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      The <guilabel>Choose Stroke Style</guilabel> dialog box allows you to
+      choose between stroking the path with the <guibutton>Line</guibutton>
+      options you specify or stroking it with a
+      <guibutton>Paint tool</guibutton>.
+    </para>
+    <variablelist>
+      <title>Line</title>
+      <!-- FIXME: Most of the below is duplicated with toolbox/path.xml -->
+      <varlistentry>
+        <term>Foreground color</term>
+        <term>Background color</term>
+        <term>Textura</term>
+        <listitem>
+          <para>
+            Choose whether the line is drawn with the current
+            <guilabel>Foreground color</guilabel> or
+            <guilabel>Background color</guilabel> or
+            <guilabel>Pattern</guilabel>, set in the Toolbox.
+            This is distinct from the <guilabel>Dash pattern</guilabel>.
+            If you select one of the two color options with no dash pattern,
+            an unbroken line is drawn in the color set in the Toolbox.
+            If you select Pattern with no dash pattern, an unbroken line
+            is drawn with the pattern set in the Toolbox. If you select a
+            line with a dash pattern, the color or pattern is still
+            determined by the color or pattern set in the Toolbox. That is,
+            if you have a marbled pattern set in the Toolbox, and select
+            <guilabel>Pattern</guilabel> and dashed lines as
+            <guilabel>Dash pattern</guilabel>, the dashes are drawn in the
+            marbled pattern.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Anti-serrilhamento</term>
+        <listitem>
+          <para>
+            Curved strokes or strokes drawn at an angle may look jagged
+            or stair-stepped. The anti-aliasing option smooths them out.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Line width</term>
+        <listitem>
+          <para>Você pode determinar o tamanho do contorno usando a caixa de texto. A unidade de medida padrão é o pixel, mas você pode escolher outra unidade na lista em formato de botão ao lado.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-path-stroke-styles">
+        <term>Cap style</term>
+        <listitem>
+          <para>
+            Choose the shape of the ends of an unclosed path, which can
+            be <guilabel>Butt</guilabel>, <guilabel>Round</guilabel>
+            or <guilabel>Square</guilabel>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Join style</term>
+        <listitem>
+          <para>
+            You can choose the shape of the path corners by
+            clicking on <guilabel>Miter</guilabel>,
+            <guilabel>Round</guilabel> or <guilabel>Bevel</guilabel>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Miter limit</term>
+        <listitem>
+          <para>
+            When two segments of a path come together, the mitering of
+            the corner is determined by the Miter Limit. If the strokes
+            were wide, and no mitering were done, there would be pointed
+            ends sticking out at the corner. The Miter Limit setting
+            determines how the gap, formed when the outer edges of the
+            two lines are extended, will be filled. You can set it to a
+            value between 0.0 and 100.0, by using the slider or its
+            <guilabel>+</guilabel> and <guilabel>-</guilabel> buttons.
+          </para>
+          <figure>
+            <title>Exemplo de Limite dos ângulos</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/edit/stroke-path-miter.png"/>
+              </imageobject>
+              <caption>
+                <para>Left image: Limit=0. Right image: Limit=5.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Dash pattern</term>
+        <listitem>
+          <para>
+            On the pixel level, a dashed line is drawn as a series of
+            tiny boxes. You can modify the pattern of these boxes. The
+            black area with thin vertical lines represents the pixels of
+            the dash. If you click on a black pixel, you remove it from
+            the dash. If you click on a white pixel, you add it to the
+            dash. The gray areas indicate how the pattern will be
+            repeated when a dashed line is drawn.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Dash preset</term>
+        <listitem>
+          <para>
+            Instead of making your own dash pattern, you can choose
+            one from the drop-down box. This pattern will
+            then be displayed in the <guilabel>Dash pattern</guilabel>
+            area, so you can get an idea of how it will look.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <title>Ferramenta de pintura</title>
+      <varlistentry>
+        <term>Paint tool</term>
+        <listitem>
+          <para>
+            Select a paint tool to use from the drop-down box to draw the
+            stroke. The current options of the paint tool options are used
+            to draw the stroke.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Emulate brush dynamics</term>
+        <listitem>
+          <para>Veja <link linkend="gimp-tool-brush-dynamics">Dinâmica de pincéis</link></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

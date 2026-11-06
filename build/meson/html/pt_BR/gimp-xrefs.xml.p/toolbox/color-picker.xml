@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-04-06 j.h: reviewed for v2.6
+  2008-01-29 j.h: updated to v2.4 'en;fr'
+  2007-06-03 kost: added 'no'
+  2006-06-02 "Add to palette" translated to en;fr from german by j.h
+  2006-01-18 note added in Activating the Tool section by j.h: en;fr
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-12-01 informalfigure replaced by figure by lexa
+  050818 de added key modifier Strg and Shift
+  050818 de fixed wrong shortcut - its O not Shift-O
+  050817 de reviewed by axel.wernicke
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-color-picker">
+  <title>Seletor de cores</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Seletor de cores</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seletor de cores</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Conta-gotas</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Cor</primary>
+    <secondary>Escolher cor</secondary>
+  </indexterm>
+
+  <para>
+    The Color Picker Tool is used to select a color on any image opened on
+    your screen. By clicking a point on an image, you can change the active
+    color to that which is located under the pointer. By default, the tool
+    works on the active layer, but the <guilabel>Sample merged</guilabel>
+    option lets you grab the color as a composite from all visible layers.
+    <emphasis>Only colors in visible layers are used</emphasis>. A
+    <guilabel>Color Picker Information window</guilabel> opens when you
+    click on the image.
+  </para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          From the main menu:
+          <menuchoice>
+            <guimenu>Tools</guimenu>
+            <guisubmenu>Color Picker.</guisubmenu>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          By clicking the tool icon
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-color-picker.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          in the Toolbox.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          By pressing the <keycap>O</keycap> keyboard shortcut.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          By pressing the <keycap>Ctrl</keycap> key while using a paint
+          tool. The Color-picker dialog is not opened during this operation
+          and the tool remains unchanged after releasing the key.
+          Nevertheless, you can get information by using the
+          <link linkend="gimp-pointer-info-dialog">Pointer window</link>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Key modifiers</title>
+    <variablelist>
+      <varlistentry>
+        <term><keycap>Ctrl</keycap></term>
+        <listitem>
+          <para>
+            <keycap>Ctrl</keycap> does nothing here. But, when using a paint 
+              tool, pressing <keycap>Ctrl</keycap> allows you to pick colors
+              without having to switch to <emphasis>Color Picker</emphasis>
+              tool.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><keycap>Shift</keycap></term>
+        <listitem>
+          <para>
+            If the <guilabel>Use info window (Shift)</guilabel> option is not
+            checked, pressing the <keycap>Shift</keycap> key when you click
+            on a pixel opens the
+            <guilabel>Color Picker Information window</guilabel>.
+          </para>
+          <note>
+            <para>
+              The <link linkend="gimp-pointer-info-dialog">Pointer
+              Information</link> gives you the same information permanently.
+              Note that it defaults to <guilabel>Sample
+              merged</guilabel>.
+            </para>
+          </note>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Caixa de opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-color-picker.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Sample average</term>
+        <listitem>
+          <para>O seletor de <guilabel>Raio</guilabel> ajusta o tamanho do quadrado da área que será usada para determinar a cor média da seleção final. Quando você continua clicar e segurar o botão apertado sobre a imagem, o cursor do mouse mostrará o tamanho do quadrado ou o raio.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Sample merged</term>
+        <listitem>
+          <para>
+            If you enable this option, sampling is not calculated only
+            from the values of the active layer, but from all visible layers.
+          </para>
+          <para>
+            For more information, see the
+            <link linkend="glossary-samplemerge">Glossary entry</link>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Pick Target (Ctrl)</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Pick only</term>
+              <listitem>
+                <para>A cor do pixel selecionado será exibida em uma janela de informação, mas não terá outra utilidade além dessa.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Set foreground color</term>
+              <listitem>
+                <para>
+                  The Foreground color, as shown in the
+                  <link linkend="gimp-toolbox-color-area">Color Area</link> of
+                  the Toolbox, will be set to the color of the pixel you click
+                  on.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Set background color</term>
+              <listitem>
+                <para>
+                  The Background color, as shown in the
+                  <link linkend="gimp-toolbox-color-area">Color Area</link> of
+                  the Toolbox, will be set to the color of the pixel you click
+                  on.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Add to palette</term>
+              <listitem>
+                <para>Quando esta opção está marcada, a cor selecionada é enviada para a paleta ativa, como uma nova cor, e incorporada à mesma (desde que você tenha permissões para alterar a paleta). Veja mais em <link linkend="gimp-palette-editor-dialog">Editor de paletas</link>.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Use info window (Shift)</term>
+        <listitem>
+          <para>Quando esta opção está marcada, a janela de informações será aberta automaticamente. A tecla <keycap>Shift</keycap> permite que você altere essa possibilidade temporariamente.</para>
+          <figure>
+            <title>Color Picker Information Window</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/color-picker-info.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

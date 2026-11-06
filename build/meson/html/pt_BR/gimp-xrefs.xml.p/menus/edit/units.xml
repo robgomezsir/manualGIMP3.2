@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-01-07 j.h: renamed file-units to edit-units
+  2008-05-06 ude: changed filename [was: xtns-unit-editor.xml]
+                  and (help-)id [was: gimp-xtns-unit-editor]
+  2005-11-24 split of from menus-toolbox.xml by axel.wernicke
+-->
+<sect2 id="plug-in-unit-editor">
+  <title>Unidades</title>
+
+  <indexterm>
+    <primary>Unidade de medida</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Unidades</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Editor de unidades</primary>
+  </indexterm>
+
+  <para>O comando <guimenuitem>Unidades</guimenuitem> exibe uma janela que mostra informações sobre as unidades de medida que estão sendo usadas atualmentepelo <acronym>GIMP</acronym>. Ela também permite criar novas unidades que podem ser usadas pelo <acronym>GIMP</acronym> em diversas situações.</para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Units</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Descrição da janela de diálogo do <quote>Editor de unidades</quote></title>
+    <figure>
+      <title>A janela de diálogo do <quote>editor de unidades</quote></title>
+      <mediaobject>
+        <imageobject>
+          <!--OLD: images/menus/unit-editor.png-->
+          <imagedata fileref="images/menus/edit/units.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      The list shows the units of measurement which are currently defined.
+    </para>
+    <itemizedlist>
+      <title>Descrição dos elementos da lista</title>
+      <listitem>
+        <para>
+          <emphasis>Saved</emphasis>:
+          If this column is checked, a unit definition will be saved when
+          <acronym>GIMP</acronym> exits.
+          Some basic units are always kept and cannot be unchecked. These are
+          listed at the top of the list.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis>Name</emphasis>:
+          The string <acronym>GIMP</acronym> uses to identify
+          the unit in its configuration files.
+        </para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Fator</emphasis>: Quantas unidades desta medida estão contidas em uma polegada.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Dígitos</emphasis>: Este campo é uma dica para caixas de entrada de dados  numéricos. Ele especifica quantos dígitos decimais o campo de digitação deve ter para obter aproximadamente a mesma precisão que um campo de digitação de <quote>polegadas</quote> com dois dígitos decimais.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Símbolo</emphasis>: O símbolo da unidade, caso exista um (por exemplo " para polegadas). Caso não exista nenhum símbolo, as abreviações das unidades são usadas.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Abreviatura</emphasis>: A abreviatura das unidades (por exemplo, <quote>cm</quote> para centímetros).</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Definindo novas unidades</title>
+    <figure>
+      <title>The <quote>Add a New Unit</quote> dialog</title>
+      <mediaobject>
+        <imageobject>
+          <!--OLD: images/menus/unit-editor-new.png-->
+          <imagedata format="PNG" fileref="images/menus/edit/units-add-new.png"/>
+        </imageobject>
+        <caption>
+          <para>Adicionando uma nova unidade chamada <quote>wilbers</quote></para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      Click on the
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      New button or the
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/gimp-duplicate.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      Duplicate button to open the dialog shown above. The input
+      fields on the dialog are described in the previous section.
+    </para>
+    <para>
+      If you click on the
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      New button, most input fields
+      are empty. If you click on the
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/gimp-duplicate.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      Duplicate button,
+      the values initially displayed in the input fields of the dialog are the
+      values of the unit you have currently selected in the
+      <guilabel>Unit&nbsp;Editor</guilabel> dialog. You can then edit the
+      values to create your new unit.
+    </para>
+  </sect3>
+</sect2>

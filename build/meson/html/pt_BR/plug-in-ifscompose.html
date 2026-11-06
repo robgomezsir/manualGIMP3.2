@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.4. Fractal IFS</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="plug-in-fractalexplorer.html" title="14.3. Explorador de fractais" />
+    <link rel="next" href="gimp-filter-noise-cell.html" title="14.5. Cell Noise" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.4. Fractal IFS</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-fractalexplorer.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="gimp-filter-noise-cell.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-ifscompose"></a>14.4. Fractal IFS</h3>
+          </div>
+        </div>
+      </div>
+      <a id="plug-in-ifsfractal"></a>
+      <a id="id59461" class="indexterm"></a>
+      <a id="id59465" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4956"></a>14.4.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4957"></a>
+          <p class="title">
+            <strong>Figura 17.347. Exemplo de aplicação do filtro Fractal IFS</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-taj-ifscompose.jpg" alt="Exemplo de aplicação do filtro Fractal IFS" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This fractal-based plug-in is truly wonderful! With this versatile
+      instrument, you can create amazingly naturalistic organic shapes, like
+      leaves, flowers, branches, or even whole trees. <span class="quote">“<span class="quote">IFS</span>”</span>
+      stands for
+      <a class="ulink" href="https://en.wikipedia.org/wiki/Iterated_function_system" target="_top">Iterated
+      Function System</a>.
+    </p>
+        <p>
+      The key to using this plug-in lies in making very small and precise
+      movements in fractal space. The outcome is always hard to predict, and
+      you have to be extremely careful when you change the pattern. If you make
+      a component triangle too big, or if you move it too far (even ever so
+      slightly), the preview screen will black out, or more commonly, you'll
+      get stuck with a big shapeless particle cloud.
+    </p>
+        <p>Uma conselho: Quando você encontrar um padrão próximo do que você quer obter, faça  apenas pequenas mudanças, e fique com variações desse padrão. É muito fácil perder uma coisa boa. Ao contrário do que você pode acreditar, é realmente muito mais fácil criar uma folha ou uma árvore com o Fractal IFS do que criar um padrão geométrico definido (onde você realmente sabe o que está fazendo, até obter o padrão que você tinha em mente).</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4958"></a>14.4.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guisubmenu">Fractals</span> → <span class="guimenuitem">IFS Fractal…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4959"></a>14.4.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4960"></a>
+          <p class="title">
+            <strong>Figura 17.348. Opções para o filtro <span class="quote">“<span class="quote">Fractal IFS </span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/ifscompose.png" alt="Opções para o filtro “Fractal IFS ”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>A interface do plug-in consiste de uma área de composição a esquerda, uma tela de pré-visualização a direita e algumas guias e botões de opção na parte inferior da janela. A configuração padrão (na área de pré-visualização) usar três triângulos equiláteros - que gera um Fractal conhecido como  <span class="emphasis"><em>Triângulo de Sierpinski</em></span>.</p>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Barra de ferramentas</strong>
+          </p>
+          <p>Clique nos botões da barra de ferramentas para utilizar as seguintes ferramentas, ou abra o menu de contexto da área de composição.</p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-move.svg" width="16" /></span>
+          </span>
+          Move
+          , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-rotate.svg" width="16" /></span>
+          </span>
+          Rotate
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-perspective.svg" width="16" /></span>
+          </span>
+          Stretch
+        </span>
+            </dt>
+            <dd>
+              <p>Selecione a ação a ser executada usando o ponteiro do mouse.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/document-new.svg" width="16" /></span>
+          </span>
+          New
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+          </span>
+          Delete
+        </span>
+            </dt>
+            <dd>
+              <p>Adicione ou remova fractais.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/edit-undo.svg" width="16" /></span>
+          </span>
+          Undo
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/edit-redo.svg" width="16" /></span>
+          </span>
+          Redo
+        </span>
+            </dt>
+            <dd>
+              <p>Padrão.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-selection-all.svg" width="16" /></span>
+          </span>
+          Select All
+        </span>
+            </dt>
+            <dd>
+              <p>Vincula os Fractais e permite que as ações e alterações sejam aplicadas a todos eles.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-center-symbolic.svg" width="16" /></span>
+          </span>
+          Recompute Center
+        </span>
+            </dt>
+            <dd>
+              <p>Recalcula o centro dos fractais. Isto não tem qualquer efeito visível no fractal resultante.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/preferences-system-symbolic.svg" width="16" /></span>
+          </span>
+          Render Options
+        </span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Memória máxima</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Enables you to speed up rendering time. This is
+                  especially useful when working with a large spot
+                  radius; just remember to use even multiples of the
+                  default value: 4096, 8192, 16384, …
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Iterações</span>
+                  </dt>
+                  <dd>
+                    <p>Determina quantas vezes o fractal se repetirá. (Um valor muito alto para as operações de subdivisão e interações é, por razões óbvias um desperdício de tempo de processo, a menos que a sua imagem seja muito grande.)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Subdividir</span>
+                  </dt>
+                  <dd>
+                    <p>Controla o nível de detalhe.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Raio das manchas</span>
+                  </dt>
+                  <dd>
+                    <p>Determina a densidade das <span class="quote">“<span class="quote">pinceladas</span>”</span> na imagem renderizada. Um valor pequeno para o raio é bom para  nuvens de partículas finas, tipo spray, enquanto que um valor maior para o raio produz traços grossos, similares a aquarela. Tenha cuidado para não usar raio de manchas muito grande — pode levar muito tempo para renderizar.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Transformação espacial</strong>
+          </p>
+          <p>Dá a você informações sobre o componente ativo, e permite que você digite um valor em vez de mudá-lo manualmente. Alterar parâmetros com o mouse não é muito preciso, por isso, esta é uma opção útil quando você precisa ser mais exato, por exemplo, para aplicar pequenas variações a um fractal que esteja quase bom.</p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">X, </span>
+              <span class="term">Y, </span>
+              <span class="term">Escala:, </span>
+              <span class="term">Ângulo, </span>
+              <span class="term">Inclinar</span>
+            </dt>
+            <dd>
+              <p>Move, redimensionar ou inclina o componente ativo do fractal.</p>
+            </dd>
+            <dt>
+              <span class="term">Assimetria</span>
+            </dt>
+            <dd>
+              <p>Estica o componente ativo do fractal.</p>
+            </dd>
+            <dt>
+              <span class="term">Espelhar</span>
+            </dt>
+            <dd>
+              <p>Reflete o componente ativo do fractal.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Transformação de Cor</strong>
+          </p>
+          <div class="mediaobject">
+            <img src="images/filters/render/ifscompose2.png" />
+          </div>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Simples</span>
+            </dt>
+            <dd>
+              <p>Muda a cor do componente de fractal atualmente selecionado para uma cor de sua escolha. (o padrão é a cor de frente na caixa de ferramentas)</p>
+            </dd>
+            <dt>
+              <span class="term">Completo</span>
+            </dt>
+            <dd>
+              <p>Como a transformação de cor simples, mas desta vez você pode gerenciar a transformação de cor para cada canal de cor e para o canal alfa (mostrado como um canal em preto).</p>
+            </dd>
+            <dt>
+              <span class="term">Redimensionar matiz por, </span>
+              <span class="term">Redimensionar valor por</span>
+            </dt>
+            <dd>
+              <p>Quando você tem muitos fractais com cores diferentes, as cores misturam-se umas as outras. Assim, mesmo se você definir  <span class="quote">“<span class="quote">vermelho</span>”</span> puro para um componente do fractal, ele pode se tornar azul em alguns lugares, enquanto outro componente vermelho acumular a cor amarela com as transformações. O redimensionamento de matiz/valor altera a força da cor do componente atual, ou seja, quanto influente este componente vai ser na composição geral do fractal.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Outro</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Probabilidade relativa</span>
+            </dt>
+            <dd>
+              <p>Determina influência ou impacto total de um determinado componente do fractal.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4961"></a>14.4.4. Um breve tutorial</h4>
+            </div>
+          </div>
+        </div>
+        <p>Este é um plug-in bastante complexo, por isso, para ajudar você a entendê-lo, vamos guiá-lo através de um exemplo onde você vai criar uma folha ou ramo.</p>
+        <p>Muitas formas de vida e, principalmente plantas, tem formas que podem ser representadas por fractais matemáticos, ou seja, uma forma que  reproduz em escalas diferentes a sua forma básica, começando com a forma geral e descendo até os menores detalhes. Você pode facilmente reproduzir a forma de uma folha ou um ramo por meio de quatro (ou mais) componentes de fractal. Três componentes geram a forma da ponta e dos lados da folha, e o quarto representa a haste.</p>
+        <div class="orderedlist">
+          <ol class="orderedlist" type="1">
+            <li class="listitem">
+              <p>
+          Before invoking the filter: Select
+          <span class="guimenu">File</span> → <span class="guimenuitem">New Image</span>.
+          Add a transparent layer with
+          <span class="guimenu">Layer</span> → <span class="guimenuitem">New Layer</span>.
+          Set the foreground color in the toolbox to black, and
+          set the background to white.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>Abra o Fractal IFS. Comece pela rotação dos triângulos direito e inferior de modo que eles apontem para cima. Você vai agora ser capaz de ver o esboço do que virá a ser a ponta e os lados da folha. (Se você tiver problemas, pode ajudar saber que os três vértices de um triângulo desses não são equivalentes.) <a id="id59640" class="indexterm"></a></p>
+              <div class="figure">
+                <a id="id4962"></a>
+                <p class="title">
+                  <strong>Figura 17.349. Passo 2 do tutorial</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/ifscompose-tut1.png" alt="Passo 2 do tutorial" />
+                    <div class="caption">
+                      <p>Comece rotacionando os triângulos 2 e 3 tentando mantê-los aproximadamente do mesmo tamanho.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="listitem">
+              <p>Para deixar a folha simétrica, ajuste o triângulo de baixo de forma que aponte ligeiramente para a esquerda, e o triângulo da direita apontar ligeiramente para a direita.</p>
+            </li>
+            <li class="listitem">
+              <p>Pressione o botão <span class="guibutton">Novo</span> para adicionar um componente à composição. Este vai ser a haste da folha, então precisamos torná-lo longo e fino. Pressione o botão <span class="guibutton">Estica</span> e arraste para esticar o novo triângulo. Não se assuste se isso bagunçar demais a imagem, basta usar o controle de <span class="guibutton">Escala</span> para ajustar o tamanho do triângulo longo demais. Provavelmente você também terá que mover e girar o novo componente de fractal para torná-lo convincente.</p>
+              <div class="figure">
+                <a id="id4963"></a>
+                <p class="title">
+                  <strong>Figura 17.350. Passo 3 do tutorial</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/ifscompose-tut2.png" alt="Passo 3 do tutorial" />
+                    <div class="caption">
+                      <p>Adicione um quarto componente, em seguida, estique-o, mude sua escala e mová-o como mostrado.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="listitem">
+              <p>Você ainda tem que tornar o fractal mais parecido com uma folha. Aumente o tamanho do triângulo superior, até que você ache que está espessa e frondosa o bastante. Ajuste todos os fractais até que esteja feliz com a forma. Use o botão direito do mouse para abrir o menu  de contexto e escolha <span class="guibutton">Selecionar tudo</span>. Agora, todos os componentes estão selecionados, e você pode redimensionar e rotacionar a folha como um todo.</p>
+              <div class="figure">
+                <a id="id4964"></a>
+                <p class="title">
+                  <strong>Figura 17.351. Passo 4 do tutorial</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/ifscompose-tut3.png" alt="Passo 4 do tutorial" />
+                    <div class="caption">
+                      <p>Aumente o componente 1, arrume os demais componentes de forma apropriada e então selecione tudo, redimensione e rotacione.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="listitem">
+              <p>
+          The final step is to adjust color. Click on the
+          <span class="guibutton">Color Transformation</span> tab, and choose
+          a different color for each fractal. To do this, check
+          <span class="guibutton">Simple</span> and press the right color
+          square. A color wheel appears, where you can click or
+          select to choose a color.
+        </p>
+              <div class="figure">
+                <a id="id4965"></a>
+                <p class="title">
+                  <strong>Figura 17.352. Passo 5 do tutorial</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/ifscompose-tut4.png" alt="Passo 5 do tutorial" />
+                    <div class="caption">
+                      <p>Atribua uma cor marrom-castanho ao componente 4, e vários tons de verde para os outros componentes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="listitem">
+              <p>Pressione OK para aplicar a imagem, e lá está:  você acabou de criar uma folha fractal perfeita! Agora que você pegou o jeito, deve experimentar e fazer seus próprios projetos. Todos os fractais imitando plantas(sejam elas carvalhos, arbustos ou capim) são feitos mais ou menos dessa forma: folhas em torno de um tronco (ou várias hastes). Você apenas tem que girar de outra forma, esticar e aumentar um pouco ou adicionar mais alguns fractais para obter uma planta totalmente diferente.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-fractalexplorer.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-noise-cell.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-fractalexplorer.html">14.3. Explorador de fractais</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-noise-cell.html">14.5. Cell Noise</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

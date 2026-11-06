@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.38. Export Image as PDF</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="file-pcx-export.html" title="5.37. Export Image as PCX" />
+    <link rel="next" href="file-pfm-export.html" title="5.39. Export Image as PFM" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.38. Export Image as PDF</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-pcx-export.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="file-pfm-export.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-pdf-export"></a>5.38. Export Image as PDF</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id27503" class="indexterm"></a>
+      <a id="id27505" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2056"></a>5.38.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2057"></a>
+          <p class="title">
+            <strong>Figure 15.84. The PDF Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-pdf-dialog.png" alt="The PDF Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      You can export your image in PDF format when you choose the
+      <span class="quote">“<span class="quote">.pdf</span>”</span> extension, or explicitly choose <span class="quote">“<span class="quote">Portable
+      Document Format</span>”</span> as file type in the export dialog.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2058"></a>5.38.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Layers as pages</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, creates a page for each layer in your image, starting
+            from the bottom layer. This setting is disabled when you only have
+            one layer.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Reverse order</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, the pages are created in reverse order, starting
+            from the top.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Root layers only</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, only the layers not inside a group will be used to
+            create pages. Groups at the root level will be included by merging
+            the layers inside them.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Apply layer masks</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, applies the layer mask before saving. This does not
+            change the PDF output, only the internal structure of the PDF.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Convert bitmaps to vector graphics where possible</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, vector graphics will be used instead of bitmaps,
+            where possible.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Omit hidden layers and layers with zero opacity</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, layers that have visibility turned off, or where the
+            opacity of the layer is set to zero, will be ignored when creating
+            the page or pages.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Fill transparent areas with background color</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, if there are transparent areas, it will
+            replace those with the background color.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Convert text layers to image</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, text layers will be converted to raster graphics
+            instead of including it as actual text.
+            This can be useful if the font used for the text cannot be found
+            by the PDF exporter and thus not included in the PDF. If the font
+            is not included in your PDF, there is no guarantee that the text
+            will look the same to someone else.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-pcx-export.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-pfm-export.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-pcx-export.html">5.37. Export Image as PCX</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-pfm-export.html">5.39. Export Image as PFM</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

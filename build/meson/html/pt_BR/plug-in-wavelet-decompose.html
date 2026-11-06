@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.11. Wavelet Decompose</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-enhance.html" title="4. Filtros de realce" />
+    <link rel="prev" href="plug-in-nl-filter.html" title="4.10. Filtro NL" />
+    <link rel="next" href="filters-distort.html" title="5. Filtros de distorção" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.11. Wavelet Decompose</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-nl-filter.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. Filtros de realce</span>
+        <nav> <a accesskey="n" href="filters-distort.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-wavelet-decompose"></a>4.11. Wavelet Decompose</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id49183" class="indexterm"></a>
+      <a id="id49187" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4333"></a>4.11.1. Visão Geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        Explanations are mostly inspired from the Pat David's tutorials <a class="ulink" href="https://patdavid.net/2011/12/getting-around-in-gimp-skin-retouching.html" target="_top">https://patdavid.net/2011/12/getting-around-in-gimp-skin-retouching.html</a>
+        and <a class="ulink" href="https://patdavid.net/2014/07/wavelet-decompose-again.html" target="_top">https://patdavid.net/2014/07/wavelet-decompose-again.html</a>.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="figure">
+          <a id="id4334"></a>
+          <p class="title">
+            <strong>Figura 17.54. Example for <span class="quote">“<span class="quote">Wavelet decompose</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for “Wavelet decompose” filter" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/enhance/wavelet-ex-1.png" alt="Example for “Wavelet decompose” filter" />
+              <div class="caption">
+                <p><span class="quote">“<span class="quote">Wavelet Decompose</span>”</span> applied. Only scale 2 is 
+          made visible in the layer group.</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/enhance/wavelet-ex-2.png" alt="Example for “Wavelet decompose” filter" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter decomposes the active layer or selection into several layers,
+      named <span class="quote">“<span class="quote">scales</span>”</span>, each of them containing a particular set of
+      details. The finest details are in the first layer, each layer below it
+      has less details until you get to the last one, at bottom. This last layer
+      is called <span class="quote">“<span class="quote">residual</span>”</span> and holds what is left after all detail
+      layers have been removed; it represents the global contrast and colors of
+      the image.
+    </p>
+        <p>
+      Each of the scale layers are set to be combined using the Grain Merge
+      layer mode. This means that pixels that have a 50% value will not affect
+      the final result. So, painting a wavelet scale with neutral gray
+      (R:50% G:50% B:50%) will erase details.
+    </p>
+        <p>
+      Note that for images using integer
+      <a class="link" href="gimp-image-encoding.html#gimp-image-precision">precision</a>, the
+      <a class="link" href="gimp-concepts-layer-modes-legacy.html" title="3. Modos de Camada">legacy</a> grain merge
+      mode is used. This avoids imperfect reconstruction of the image when using
+      integer precision. When using floating point precision, the regular
+      grain merge mode is used.
+    </p>
+        <p>
+      Wavelet-decompose is a wonderful filter for skin smoothing and
+      retouching, removing blemishes, wrinkles, or spots from your photos. It
+      can also be used for sharpening and local contrast enhancement and for
+      removing stains, colors, or tones. All this is well explained in the
+      tutorials mentioned above.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4335"></a>4.11.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Enhance</span> → <span class="guimenuitem">Wavelet decompose</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4336"></a>4.11.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4337"></a>
+          <p class="title">
+            <strong>Figura 17.55. <span class="quote">“<span class="quote">Wavelet decompose</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/enhance/wavelets-options.png" alt="“Wavelet decompose” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Scales</span>
+            </dt>
+            <dd>
+              <p>
+            Default scales number is 5. You can increase it to increase
+            scale fineness.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Create a layer group to store the decomposition</span>
+            </dt>
+            <dd>
+              <p>
+            Layer groups are treated in <a class="xref" href="gimp-layer-groups.html" title="5. Grupos de camadas">Seção 5, “Grupos de camadas”</a>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Add a layer mask to each scale layer</span>
+            </dt>
+            <dd>
+              <p>
+            Layer masks are treated in <a class="xref" href="gimp-dialogs-structure.html#gimp-layer-mask" title="2.1.4. Máscaras de camada">Seção 2.1.4, “Máscaras de camada”</a>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-nl-filter.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-enhance.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-distort.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-nl-filter.html">4.10. Filtro NL</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-distort.html">5. Filtros de distorção</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.10. Filtro NL</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-enhance.html" title="4. Filtros de realce" />
+    <link rel="prev" href="plug-in-despeckle.html" title="4.9. Supressão de manchas" />
+    <link rel="next" href="plug-in-wavelet-decompose.html" title="4.11. Wavelet Decompose" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.10. Filtro NL</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-despeckle.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. Filtros de realce</span>
+        <nav> <a accesskey="n" href="plug-in-wavelet-decompose.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-nl-filter"></a>4.10. Filtro NL</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id49068" class="indexterm"></a>
+      <a id="id49072" class="indexterm"></a>
+      <a id="id49074" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4328"></a>4.10.1. Visão Geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4329"></a>
+          <p class="title">
+            <strong>Figura 17.52. Exemplo para o Filtro NL</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo para o Filtro NL" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/enhance-taj-nl-filter.jpg" alt="Exemplo para o Filtro NL" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>NL significa <span class="quote">“<span class="quote">Não Linear</span>”</span>. Derivado do programa de Unix<span class="command"><strong>pnmnlfilt</strong></span>, ele se junta às funções Suavizar, Desfocar e Suprimir Listras. Ele funciona em toda a camada, e não na seleção.</p>
+        <p>
+      This is something of a swiss army knife filter. It has 3 distinct
+      operating modes. In all of the modes each pixel in the image is examined
+      and processed according to it and its surrounding pixels values. Rather
+      than using 9 pixels in a 3×3 block, it uses a hexagonal block whose
+      size can be set with the Radius option.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        The filter does not work if the image is in indexed mode, or if the
+        active layer has an alpha channel. Then the menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4330"></a>4.10.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Enhance</span> → <span class="guimenuitem">NL Filter…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4331"></a>4.10.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4332"></a>
+          <p class="title">
+            <strong>Figura 17.53. Opções para o <span class="quote">“<span class="quote">Filtro NL</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/enhance/nl-filter.png" alt="Opções para o “Filtro NL”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Previsão</span>
+            </dt>
+            <dd>
+              <p>Quando marcado, os resultados de parametrização são exibidos interativamente na visualização.</p>
+            </dd>
+            <dt>
+              <span class="term">Filtro</span>
+            </dt>
+            <dd>
+              <p>
+            The <a class="link" href="plug-in-nl-filter.html#plug-in-nl-filter-mode" title="4.10.4. Modos de operação">Operating Mode</a>
+            is described below.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Alfa</span>
+            </dt>
+            <dd>
+              <p>Controla a montante do filtro a aplicar. O intervalo válido é de 0,00 a 1,00. O significado exato deste valor depende do modo de operação selecionado. Note que este parâmetro está relacionado, mas não ŕ o mesmo que o parâmetro <em class="parameter"><code>alfa</code></em> utilizado no programa <span class="command"><strong>pnmnlfilt</strong></span>.</p>
+            </dd>
+            <dt>
+              <span class="term">Raio</span>
+            </dt>
+            <dd>
+              <p>
+            Controls the size of the effective sampling region around each
+            pixel. The range of this value is 0.33-1.00, where 0.33 means just
+            the pixel itself (and thus the filter will have no effect), and
+            1.00 means all pixels in the 3×3 grid are sampled.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="plug-in-nl-filter-mode"></a>4.10.4. Modos de operação</h4>
+            </div>
+          </div>
+        </div>
+        <p>Este filtro pode executar várias funções distintas:</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Média regulada pelo alfa</span>
+            </dt>
+            <dd>
+              <p>O valor do pixel central será substituído pela média dos sete valores do hexágono, mas os sete valores são ordenados por tamanho e e o maior e o menor valores são excluídos dessa média. Isto implica que um valor <em class="parameter"><code>alfa</code></em> de 0,0 proporciona o mesmo tipo de saída que uma convolução normal (ou seja, a média ou o filtro de suavização), onde o <em class="parameter"><code>Raio</code></em> irá determinar a <span class="quote">“<span class="quote">força</span>”</span> do filtro. Um bom valor para começar mum filtragem sutil é <em class="parameter"><code>Alfa</code></em> = 0.0, <em class="parameter"><code>Raio</code></em> = 0,55. Para um efeito mais visível, tente <em class="parameter"><code>Alfa</code></em> = 0,0 e <em class="parameter"><code>Raio</code></em> = 1.0.</p>
+              <p>Um valor <em class="parameter"><code>Alfa</code></em> de 1,0 fará com que o valor da mediana do valores do hexágono seja usado para substituir o valor de pixel central. Este tipo de filtro é bom para eliminar <span class="quote">“<span class="quote">sal</span>”</span> ou, seja, ruídos em um único pixel em uma imagem sem espalhar o ruído ou manchar a imagem. O uso criterioso do <em class="parameter"><code>Raio</code></em> pode melhorar o efeito do filtro.</p>
+              <p>Valores intermediários de <em class="parameter"><code>Alfa</code></em> dão feitos em algum lugar entre a neutralização e redução ruido de <span class="quote">“<span class="quote">sal</span>”</span> e <span class="quote">“<span class="quote">pimenta</span>”</span>. Para uma filtragem sutil tente iniciar com valores de <em class="parameter"><code>Alfa</code></em> = 0,8, <em class="parameter"><code>Raio</code></em> = 0,6. Para um efeito mais notável tentar <em class="parameter"><code>Alfa</code></em> = 1,0  e <em class="parameter"><code>Raio</code></em> = 1.0.</p>
+            </dd>
+            <dt>
+              <span class="term">Estimativa ótima</span>
+            </dt>
+            <dd>
+              <p>Este tipo de filtro aplica um filtro de suavização adaptativa sobre a imagem . Para cada pixel a variância dos valores de hexágono circundantes é calculada , e a quantidade de suavização é feita de forma inversamente proporcional a ela. A ideia é que, se a variação é pequena , então é devido ao ruído na imagem , enquanto que, se a variação é grande, é devido a características da imagem que são  desejadas. Como de costume, o parâmetro <em class="parameter"><code>Raio</code></em> controla o raio efetivo , mas é aconselhável deixar o raio entre 0,8 e 1,0 para o cálculo da variância ser significativo. O parâmetro <em class="parameter"><code>Alfa</code></em> define o limite de ruído, acima do qual menos suavização será feita. Isto significa que pequenos valores de <em class="parameter"><code>Alfa</code></em> vão criar um efeito de filtragem mais sútil , enquanto que valores grandes tendem a suavizar todas as partes da imagem. Você poderia começar com valores como <em class="parameter"><code>Alfa</code></em> = 0,2, <em class="parameter"><code>Raio</code></em> = 1,0, e tentar aumentar ou diminuir a <em class="parameter"><code>Alfa</code></em> para obter o efeito desejado. Este tipo de filtro é bom para filtrar ruído devido a retículas de cor, tanto em imagens preto e brancas (bitmap de 1bit)  como em imagens coloridas.</p>
+            </dd>
+            <dt>
+              <span class="term">Realce de borda</span>
+            </dt>
+            <dd>
+              <p>Este é o efeito de filtro oposto ao filtro de suavização. Ele realça as bordas. O <em class="parameter"><code>Alfa</code></em> controla a quantidade de realce de borda, de sutil (0,1) até bem aparente (0,9). O <em class="parameter"><code>Raio</code></em> controla o raio efetivo, como de costume, mas os valores úteis estão entre 0,5 e 0,9. Tente começar com valores <em class="parameter"><code>Alfa</code></em> = 0,3 e<em class="parameter"><code>Raio</code></em> = 0,8.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id49171"></a>4.10.4.1. Utilização combinada</h5>
+              </div>
+            </div>
+          </div>
+          <p>Os vários modos de operação podem ser utilizados um após o outro para obter o resultado desejado. Por exemplo, para transformar uma imagem monocromática (1 bit) com valores posicionados (dithered)  em uma imagem em tons de cinza, você pode tentar uma ou duas passagens do filtro de suavização, seguido de uma passagem do filtro de estimativa ótima, e então algum realce de borda sutil. Note que a utilização do realce de borda só tem como ser útil sendo utilizada depois de um dos filtros não-lineares (mediana regulada pelo alfa ou filtro de estimativa ótima), uma vez que o realce de borda é o oposto direto da suavização.</p>
+          <p>Para reduzir o ruído de quantização de cores em imagens (ou seja, transformar imagens em  .gif de volta em arquivos de 24 bits), você pode tentar uma passadado filtro de estimativa ótima (<em class="parameter"><code>Alpha</code></em> = 0,2, <em class="parameter"><code>Raio</code></em> = 1.0), uma passagem do filtro da mediana (<em class="parameter"><code>alfa</code></em> = 1,0, <em class="parameter"><code>Raio</code></em> = 0,55), e, possivelmente, uma passagem do filtro de realce de borda. Várias passagens do filtro de estimativa ótima com o valores <em class="parameter"><code>Alfa</code></em> reduzidos aos poucos são mais eficazes do que uma única passagem com um valor <em class="parameter"><code>Alfa</code></em> grande. Como de costume, há uma trocaentre a efetividade do uso do filtro e a perda de detalhes na imagem. Você tem que experimentar para ver o que fica melhor.</p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-despeckle.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-enhance.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-wavelet-decompose.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-despeckle.html">4.9. Supressão de manchas</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-wavelet-decompose.html">4.11. Wavelet Decompose</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

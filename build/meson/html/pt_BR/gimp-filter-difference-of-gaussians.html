@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.2. Diferença de Gaussianas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-edge.html" title="8. Filtros de detecção de borda" />
+    <link rel="prev" href="filters-edge.html" title="8. Filtros de detecção de borda" />
+    <link rel="next" href="gimp-filter-edge.html" title="8.3. Bordas" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.2. Diferença de Gaussianas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="filters-edge.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. Filtros de detecção de borda</span>
+        <nav> <a accesskey="n" href="gimp-filter-edge.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-difference-of-gaussians"></a>8.2. Diferença de Gaussianas</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id53514" class="indexterm"></a>
+      <a id="id53518" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4582"></a>8.2.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4583"></a>
+          <p class="title">
+            <strong>Figura 17.169. Exemplo aplicativo do filtro <span class="quote">“<span class="quote">diferença de gaussianas</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo aplicativo do filtro “diferença de gaussianas”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/edge-taj-dog.jpg" alt="Exemplo aplicativo do filtro “diferença de gaussianas”" />
+              <div class="caption">
+                <p>
+            Filter <span class="quote">“<span class="quote">Difference of Gaussians</span>”</span> applied with radius 1 = 
+            1.000 and radius 2 = 0.100.
+            </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter does edge detection using the
+      so-called <span class="quote">“<span class="quote">Difference of Gaussians</span>”</span>
+      algorithm, which works by performing two different Gaussian blurs on the
+      image, with a different blurring radius for each, and subtracting them
+      to yield the result.
+    </p>
+        <p>
+      This algorithm is very widely used in artificial vision, and is pretty
+      fast because there are very efficient methods for doing Gaussian blurs.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4584"></a>8.2.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Edge-Detect</span> → <span class="guimenuitem">Difference of Gaussians…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4585"></a>8.2.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4586"></a>
+          <p class="title">
+            <strong>Figura 17.170. Opções do filtro de diferença de gaussianas</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/edge-detect/diff_gauss-dialog.png" alt="Opções do filtro de diferença de gaussianas" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Radius 1, </span>
+              <span class="term">Radius 2</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="guilabel">Radius 1</span> and <span class="guilabel">Radius 2</span>
+            are the blurring radii for the two Gaussian blurs.
+            Increasing <span class="quote">“<span class="quote">Radius 1</span>”</span> tends to give
+            thicker-appearing edges, and decreasing the
+            <span class="quote">“<span class="quote">Radius 2</span>”</span> tends to increase the
+            <span class="quote">“<span class="quote">threshold</span>”</span> for recognizing something as an edge.
+          </p>
+              <p>
+            If you want to produce something that looks like a sketch,
+            in most cases setting <span class="quote">“<span class="quote">Radius 2</span>”</span> smaller than
+            <span class="quote">“<span class="quote">Radius 1</span>”</span> will give better results.
+          </p>
+              <p>
+            In situations where you have a light figure on the dark background,
+            reversing them may actually improve the result.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="filters-edge.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-edge.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-edge.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="filters-edge.html">8. Filtros de detecção de borda</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-edge.html">8.3. Bordas</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

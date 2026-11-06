@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect3 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-06-26 Added Spanish translation by AntI
+  2007-05-02 KoSt: added 'no'
+  2007-01-18 it added by alessandro falappa
+  2006-04-17 small spelling fix for german
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-09-15 de added by axel.wernicke
+  2005-11-07 small add in Overview by julien hardelin
+-->
+<sect3 id="gimpressionist-orient-map-editor">
+  <title>Editor do mapa de orientação</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Artísticos</secondary>
+    <tertiary>GIMPressionista</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>GIMPressionista</primary>
+  </indexterm>
+
+  <sect4>
+    <title>Visão-geral</title>
+    <para>O editor do mapa de orientação é um anexo do filtro <link linkend="plug-in-gimpressionist">GIMPressionista</link>. Você pode obte-lo clicando no botão <guibutton>editar</guibutton> na aba <link linkend="gimpressionist-orientation-options">Orientação</link>. Com esse editor, você pode definir a direção que a pincelada dada pelo filtro terá.</para>
+  </sect4>
+
+  <sect4>
+    <!-- Parameter Settings -->
+    <title>Opções</title>
+    <figure>
+      <title>Opções do diálogo de <quote>editor do mapa de orientação</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/artistic/gimpressionist-orientmap-editor.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <para>Você pode posicionar um ou vários vetores. Você pode definir suas direções e suas forças. Eles irão agir na área correspondente da imagem.</para>
+      <varlistentry>
+        <term>Vetores</term>
+        <listitem>
+          <para>
+            In the left window (Vectors) you can manage your vectors. By
+            default, a vector is at center. Vectors are red when they are
+            active, and gray when they are not with a white point at tip.
+          </para>
+          <itemizedlist>
+            <listitem>
+              <para>Clicando no botão <guibutton>acrescentar</guibutton>, você adiciona um vetor ao centro da janela, clicando em qualquer lugar com o <mousebutton>botão do meio</mousebutton> do mouse acrescenta no local que você clicar.</para>
+            </listitem>
+            <listitem>
+              <para>Clicar com o <mousebutton>botão esquerdo</mousebutton> desloca o vetor selecionado até o ponto clicado.</para>
+            </listitem>
+            <listitem>
+              <para>Ao clicar com o <mousebutton>botão direito</mousebutton> do mouse, o vetor selecionado aponta para onde você clicou.</para>
+            </listitem>
+            <listitem>
+              <para>Clicar sobre os botões <guibutton>&lt;&lt;</guibutton> e <guibutton>&gt;&gt;</guibutton> desloca o foco de um vetor para outro.</para>
+            </listitem>
+            <listitem>
+              <para>
+                The <guilabel>Kill</guilabel> button allows you to delete
+                the selected vector.
+              </para>
+            </listitem>
+          </itemizedlist>
+          <tip>
+            <para>Com a barra de rolar na direita do painel de escalares, você pode definir o brilho da imagem. Isso pode ser muito útil se a imagem é muito escura/clara e você não pode enxergar bem os vetores.</para>
+          </tip>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Pré-visuação</term>
+        <listitem>
+          <para>Essa pré-visualização dá uma ideia da ação de vários vetores. O seletor na borda direita permite alterar a luminosidade da pré-visualização.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tipo</term>
+        <listitem>
+          <para>
+            You have four types to arrange the brush strokes within the
+            selected vector domain: <guilabel>Normal</guilabel>,
+            <guilabel>Vortex</guilabel>, <guilabel>Vortex2</guilabel>,
+            and <guilabel>Vortex3</guilabel>.
+            Describing them is difficult, but you can
+            see the result in the Preview.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimpressionist-editor-voronoi">
+        <term>Voronoi</term>
+        <listitem>
+          <indexterm>
+            <primary>Voronoi</primary>
+          </indexterm>
+          <para>Um diagrama de Voronoi consiste em dividir um plano com n pontos mestres em n polígonos aonde cada polígono possui apenas uma desses n pontos mestres e aonde qualquer outro ponto dado do polígono está mais próximo do ponto mestre que qualquer outro. Então cada limite de polígono está no meio entre dois pontos mestres. Aqui está um exemplo do diagrama Voronoi: <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/voronoi.png"/>
+              </imageobject>
+            </mediaobject> Aqui, quando essa opção está marcada, apenas o vetor mais próximo a um ponto dado da imagem influencia este ponto.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ângulo</term>
+        <listitem>
+          <para>Direção do vetor selecionado. Esse seletor tem a mesma ação de clicar com o botão direito (veja abaixo).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ângulo de início</term>
+        <listitem>
+          <para>Este seletor permite alterar o ângulo de <emphasis>todos</emphasis> vetores.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Força</term>
+        <listitem>
+          <para>Este seletor age sob o domínio de influência do vetor selecionado. Ainfluencia diminui com a distância. A força é exibida com o comprimento do vetor.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Expoente de força</term>
+        <listitem>
+          <para>Este seletor age sobre o comprimento de <emphasis>todos</emphasis> os vetores, que então altera as forças de todos as pinceladas.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect4>
+</sect3>

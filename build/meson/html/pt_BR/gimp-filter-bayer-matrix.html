@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.11. Bayer Matrix</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="script-fu-difference-clouds.html" title="14.10. Nuvens de diferença" />
+    <link rel="next" href="gimp-filter-checkerboard.html" title="14.12. Xadrez" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.11. Bayer Matrix</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-difference-clouds.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="gimp-filter-checkerboard.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-bayer-matrix"></a>14.11. Bayer Matrix</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id60097" class="indexterm"></a>
+      <a id="id60101" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4995"></a>14.11.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4996"></a>
+          <p class="title">
+            <strong>Figura 17.364. Example for the Bayer Matrix filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/render/bayer_matrix-ex.jpg" alt="Example for the Bayer Matrix filter" />
+              <div class="caption">
+                <p>
+            <span class="quote">“<span class="quote">Bayer Matrix</span>”</span> filter applied with Scale X, Y = 20
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      A grand-sounding name for a simple filter. Bayer matrix is related to 
+      <span class="emphasis"><em>ordered dithering</em></span>, which is an image dithering 
+      algorithm used to display a continuous image on a display of smaller 
+      color depth. The algorithm reduces the number of colors by applying a 
+      threshold map known as Bayer matrix (Wikipedia). The present filter 
+      uses the Bayer matrix only to create a pattern.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4997"></a>14.11.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guisubmenu">Pattern</span> → <span class="guimenuitem">Bayer Matrix…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4998"></a>14.11.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4999"></a>
+          <p class="title">
+            <strong>Figura 17.365. <span class="quote">“<span class="quote">Bayer Matrix</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/bayer_matrix-dialog.png" alt="“Bayer Matrix” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Subdivisions</span>
+            </dt>
+            <dd>
+              <p>
+            The number of subdivisions used.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">X Scale, </span>
+              <span class="term">Y Scale</span>
+            </dt>
+            <dd>
+              <p>
+            Horizontal, Vertical pattern size.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Rotation</span>
+            </dt>
+            <dd>
+              <p>
+            Pattern rotation angle.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Reflect</span>
+            </dt>
+            <dd>
+              <p>
+            Reflect the pattern horizontally when enabled.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Amplitude</span>
+            </dt>
+            <dd>
+              <p>
+            Pattern amplitude.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Deslocamento</span>
+            </dt>
+            <dd>
+              <p>
+            Value offset.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Expoente</span>
+            </dt>
+            <dd>
+              <p>
+            Value exponent using a logarithmic scale.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">X Offset, </span>
+              <span class="term">Y Offset</span>
+            </dt>
+            <dd>
+              <p>
+            Here you can change the X and Y offsets.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-difference-clouds.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-checkerboard.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-difference-clouds.html">14.10. Nuvens de diferença</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-checkerboard.html">14.12. Xadrez</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

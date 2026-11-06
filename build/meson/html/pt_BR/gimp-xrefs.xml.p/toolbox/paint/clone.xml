@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-10-14 j.h: update to v2.10
+  2009-03-16 j.h: reviewed for v2.6. No change.
+  2008-02-05 j.h : updated fr to v2.4 and enhanced align modes
+                   examples for 'en' and 'fr'
+  2008-01-18 ude: enhanced(?) align mode examples
+  2007-05-23 Rebuilt Alignment section by j.h
+  2006-02-05 fr revised; shortcut modified in "en" by j.h
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-11-30 replaced informalfigure by figure by lexa
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-clone">
+  <title>Clonagem</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Clonagem</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Clonagem</primary>
+  </indexterm>
+
+  <para>A ferramenta de clonagem usa o pincel ativo para copiar de uma imagem ou textura. Isso possui muitas utilidades: uma das mais importantes é a de reparar áreas com problemas em fotos digitais, ao <quote>pintar sobre</quote> ela com os pixels de outras áreas. Leva um tempo para aprender essa técnica, mas nas mãos de um usuário habilidoso se torna muito poderosa. Outro uso importante é desenhar linhas ou curvas texturizadas: veja exemplos na sessão de <link linkend="gimp-concepts-patterns">Texturas</link>.</para>
+  <para>Se você deseja clonar a partir de uma imagem, ao invés de uma textura, você precisa dizer ao GIMP de qual imagem você deseja copiar. Você faz isso pressionando a tecla <keycap>Ctrl</keycap> e clicando na parte desejada da imagem de origem. Até que você tenha definido a origem dessa forma, você não será capaz de desenhar com a ferramenta de clonagem: o cursor da ferramenta dá essa informação ao mostrar o símbolo <guiicon><inlinegraphic fileref="images/toolbox/clone-bad.png"/></guiicon>.</para>
+  <para>Se você clonar a partir de uma textura, a textura se torna <emphasis>continua</emphasis>; isso é, quando o ponteiro com o qual você está copiando passa de uma das bordas, então ele vai para a borda oposta da textura e continua, assim as texturas são repetidas lado-a-lado. Quando você clona a partir de uma imagem, isso não acontece: se você ultrapassar as bordas da origem, a ferramenta de clonagem para de produzir qualquer alteração.</para>
+  <para>Você pode clonar a partir de qualquer local desenhável (isso é, qualquer camada, máscara de camada, ou canal) para qualquer outro lugar desenhável. Você pode até mesmo clonar de ou a partir de uma máscara selecionada, ao trocar para o modo de Máscara rápida. Caso deseje copiar cores que o local de destino não suporta (por exemplo, clonar a partir de uma camada RGB para uma camada indexada ou uma máscara de camada), então as cores serão convertidas para a usando a melhor aproximação possível.</para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>Existem várias formas para ativar a ferramenta:</para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagem: <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de pintura</guisubmenu><guimenuitem>Degradê</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Ícone da ferramenta de clonagem na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>Ao pressionar o atalho de teclado <keycap>C</keycap>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Modificadores de tecla</title>
+    <para>Veja <link linkend="gimp-tools-paint-modifiers">Modificadores de tecla das ferramentas de pintura</link> para uma descrição das teclas modificadoras que possuem o mesmo efeito em todas as ferramentas de pintura.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>A tecla <keycap>Ctrl</keycap> é usada para selecionar a origem, caso esteja clonando a partir de uma imagem: isso não tem efeito caso esteja clonando a partir de uma textura. Você pode clonar a partir de qualquer camada ou qualquer imagem, ao clicar na imagem, com a tecla <keycap>Ctrl</keycap> pressionada, enquanto a camada é ativa (como mostrada na janela de camadas). Caso o alinhamento seja definido para <guilabel>Nenhum</guilabel>, <guilabel>Alinhado</guilabel>, ou <keycap>Fixo</keycap> nas opções da ferramenta, então o ponto que você clicar se torna a origem da clonagem: os dados da imagem neste ponto serão usados quando você começar a pintar com a ferramenta de clonagem. No modo de seleção de origem, o cursor muda para um símbolo de cruz: <guiicon><inlinegraphic fileref="images/toolbox/clone-cross.png"/></guiicon>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-clone.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Normalmente, as opções da ferramenta são exibidas numa janela acoplada abaixo da caixa de ferramentas assim que você ativa a ferramenta. Caso isso não aconteça, você pode acessá-las com um clique duplo no ícone da ferramenta, ou a partir do menu da janela de imagem em <menuchoice><guimenu>Janelas</guimenu><guisubmenu>Diálogos de encaixe</guisubmenu><guimenuitem>Opções de ferramenta</guimenuitem></menuchoice> que abre uma janela de opções da ferramenta selecionada.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Opacidade</term>
+        <term>Pincel</term>
+        <term>Tamanho</term>
+        <term>Proporção</term>
+        <term>Ângulo</term>
+        <term>Espaçamento</term>
+        <term>Dureza</term>
+        <term>Força</term>
+        <term>Dinâmicas</term>
+        <term>Opções de dinâmicas</term>
+        <term>Aplicar espalhamento</term>
+        <term>Pincelada suave</term>
+        <term>O tamanho do pincel - curva de esmaecimento</term>
+        <term>Expand Layers</term>
+        <listitem>
+          <xi:include href="about-common-paint-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Origem</term>
+        <listitem>
+          <indexterm>
+            <primary>Textura</primary>
+            <secondary>Clonagem</secondary>
+          </indexterm>
+          <para>A escolha que você fizer aqui determinará se os dados serão copiados a partir da textura exibida abaixo, ou a partir de imagens que você tenha aberto. Na verdade, o uso mais comum da ferramenta é usar a própria camada de destino como fonte: a ferramenta é muito útil para copiar trechos parecidos e esconder detalhes indesejados em fotos, e assim por diante.</para>
+          <variablelist>
+            <varlistentry>
+              <term>Imagem</term>
+              <listitem>
+                <para>Se você escolher <guilabel>Imagem de origem</guilabel>, então você precisa dizer ao <acronym>GIMP</acronym> qual camada usar como origem, com o <keycap>Ctrl</keycap> — clique sobre ela, antes de pintar com a ferramenta.</para>
+                <para>Se você ativar essa opção, a recuperação não é calculada apenas a partir de valores da camada ativa, mas de todas as camadas visíveis.</para>
+                <para>O reticulado é completamente explicado no <link linkend="glossary-dithering">Glossário</link></para>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/toolbox/clone-ex-sample-merged-example.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      Example image showing the cloned pixels in the upper left
+                      corner.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/toolbox/clone-ex-sample-merged-dialog.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      Layers dialog showing the new layer with the cloned pixels.
+                    </para>
+                  </caption>
+                </mediaobject>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Textura</term>
+              <listitem>
+                <para>Clicar no símbolo de textura abre a janela de texturas, onde você pode selecionar a textura para pintar. Essa opção só é relevante caso você esteja clonando a partir de uma textura.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Alinhamento</term>
+        <listitem>
+          <para>O modo de alinhamento define a relação entre a posição do pincel e a posição de origem.</para>
+          <para>Nos exemplos a seguir, nós usaremos uma imagem de origem de onde o trecho a ser clonado será pego, e uma imagem de destino onde o exemplo será clonado (pode ser uma camada na própria imagem de origem).</para>
+          <figure>
+            <title>Imagens originais para as opções de alinhamento da clonagem</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/clone-source.png"/>
+              </imageobject>
+              <caption>
+                <para>Nós usaremos o maior pincel com a ferramenta de lápis. A origem é representada aqui pelo círculo com uma cruz dentro.</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/clone-dest.png"/>
+              </imageobject>
+              <caption>
+                <para>Uma imagem com apenas um fundo sólido. Nós devemos desenhar três pinceladas de clonagem sucessivamente.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <variablelist>
+            <varlistentry>
+              <term>Nenhum</term>
+              <listitem>
+                <para>Neste modo, cada pincelada é tratada separadamente. Para cada pincelada, o ponto no qual você clica primeiro é copiado a partir da fonte de origem; não há nenhuma relação entre uma pincelada e outra. No modo não alinhado, pinceladas diferentes normalmente irão se chocar.</para>
+                <para>Exemplo abaixo: para cada nova pincelada, o ponto de origem volta para sua posição inicial. O mesmo trecho da imagem é clonado todas as vezes.</para>
+                <figure>
+                  <title>Alinhamento de clonagem <quote>Nenhum</quote></title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/clone-none.png"/>
+                    </imageobject>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Alinhado</term>
+              <listitem>
+                <para>Neste modo, o primeiro clique que você fizer definirá o espaçamento entre a fonte de origem e o resultado clonado, e todas as pinceladas seguintes usarão a mesma compensação. Além disso, você pode usar quantas pinceladas quiser, e todas elas irão se misturar suavemente entre si.</para>
+                <para>Se você deseja mudar o espaçamento, selecione uma nova origem (mesmo que seja no mesmo ponto) clicando com a tecla <keycap>Ctrl</keycap> pressionada.</para>
+                <para>No exemplo abaixo, para cada nova pincelada, a origem continua a usar o mesmo espaçamento que a primeira pincelada. Então, não existe nenhum espaçamento de clonagem para a primeira pincelada. Aqui, para as pinceladas seguintes, a origem termina fora da tela da imagem de origem, por isso o aspecto cortado.</para>
+                <figure>
+                  <title>Alinhamento de clonagem <quote>Alinhado</quote></title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/clone-aligned.png"/>
+                    </imageobject>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Registrado</term>
+              <listitem>
+                <para>O modo <quote>Registrado</quote> é diferente dos outros modos de alinhamento. Quando você copia a partir de uma imagem, um clique pressionando <keycap>Ctrl</keycap> irá registrar a camada de origem. Então pintar em uma camada de destino irá clonar cada pixel na posição correspondente (com as mesmas coordenadas) da camada de origem. Isso é útil quando você deseja clonar partes de uma imagem de uma camada com a mesma imagem. (Mas lembre-se de que você também pode clonar de uma imagem para outra imagem).</para>
+                <para>Em cada pincelada, a origem adota a posição do ponteiro do mouse na camada de destino. No exemplo seguinte, a camada de destino é menor que a camada de origem, então, não existe nenhum corte.</para>
+                <figure>
+                  <title>Alinhamento de clonagem <quote>Registrado</quote></title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/clone-registered.png"/>
+                    </imageobject>
+                    <caption>
+                    </caption>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Fixo</term>
+              <listitem>
+                <para>Usar este modo irá pintar sempre com a mesma origem, diferente dos modos <guilabel>Nenhum</guilabel> ou <guilabel>Alinhado</guilabel> mesmo ao desenhar uma linha. A origem não será movida.</para>
+                <para>Veja que a origem continua fixa. O mesmo pequeno exemplo é reproduzido identicamente em marcas bem próximas:</para>
+                <figure>
+                  <title>Alinhamento de clonagem <quote>Fixo</quote></title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/clone-fixed.png"/>
+                    </imageobject>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Borda dura</term>
+        <listitem>
+          <para><guilabel>Borda firme</guilabel>: esta opção dá um contorno firme à área clonada.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3 id="filter-and-history-brushes">
+    <title>Informação adicional</title>
+    <variablelist>
+      <varlistentry>
+        <term>Transparência</term>
+        <listitem>
+          <para>Os efeitos da ferramenta de clonagem em transparência são um pouco complicadas. Você não pode clonar transparência: se tentar clonar de uma área transparente, nada acontecerá no destino. Se você clonar a partir de uma área parcialmente transparente, o efeito é definido pela opacidade da origem. Então, assumindo uma opacidade de 100% e um pincel duro:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Clonar um preto translúcido em um branco produz cinza.</para>
+            </listitem>
+            <listitem>
+              <para>Clonar um preto translúcido em um preto produz preto.</para>
+            </listitem>
+            <listitem>
+              <para>Clonar um branco translúcido em um branco produz branco.</para>
+            </listitem>
+            <listitem>
+              <para>Clonar um branco translúcido em um preto produz cinza.</para>
+            </listitem>
+          </itemizedlist>
+          <para>Clonar nunca aumenta a transparência, e a menos que a opção <quote>manter transparência</quote> esteja ativada na camada, ela pode reduzi-la. Clonar uma área opaca em uma área translucida produz um resultado opaco; clonar uma área translúcida em outra área translucida causa um aumento na opacidade.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Pincéis de <quote>filtro</quote></term>
+        <listitem>
+          <indexterm>
+            <primary>Pincéis</primary>
+            <secondary>Pincel de filtro</secondary>
+          </indexterm>
+          <para>Existem algumas maneiras não tão óbvias de usar a ferramenta de clonagem para obter efeitos poderosos. Uma coisa que você pode fazer é criar um <quote>pincel de filtro</quote>, isso é, criar o efeito da aplicação de um filtro com um pincel. Para fazer isso, duplique a camada que você deseja trabalhar, e aplique o filtro na cópia. Então ative a ferramenta de clonagem, configurando a origem como <quote>imagem</quote> e o alinhamento como <quote>registrado</quote>. Pressione <keycap>Ctrl</keycap> enquanto clica na camada sob efeito do filtro para defini-la como a origem, e desenhe sobre a camada original: então você estará na verdade copiando trechos da imagem filtrada na imagem original.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Pincel de Histórico </term>
+        <listitem>
+          <indexterm>
+            <primary>Pincéis</primary>
+            <secondary>Pincel de Histórico </secondary>
+          </indexterm>
+          <para>Você pode usar algo próximo de imitar o <quote>pincel de histórico</quote> que existe em outros programas, como o Photoshop, que permite desfazer e refazer  mudanças seletivamente usando um pincel. Para fazer isso, comece duplicando a imagem; então, na imagem original, volte para o estado desejado usando o histórico da imagem, seja usando desfazer (Ctrl + Z) ou através da janela de histórico do desfazer. (Isso precisa ser feito na imagem original, e não na cópia, pois duplicar uma imagem não duplica o histórico do desfazer). Agora ative a ferramenta de clonagem, configurando como origem <quote>Imagem</quote> e alinhamento como <quote>registrado</quote>. Pressione <keycap>Ctrl</keycap> enquanto clica em uma camada da imagem, e pinte na camada correspondente da outra imagem. Dependendo de como fizer, terá tanto um <quote>pincel de desfazer</quote> quanto um <quote>pincel de refazer</quote>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

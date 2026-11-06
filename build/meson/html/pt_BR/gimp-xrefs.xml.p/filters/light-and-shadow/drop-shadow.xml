@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  20019-01-09 j.h Create
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-drop-shadow">
+  <title>Sombra projetada</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Sombra projetada</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Sombra projetada</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Sombra projetada</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/light-taj-drop-shadow.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Exemplo para o filtro <quote>Sombra projetada</quote></para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Com este filtro GEGL você pode adicionar uma sombra projetada a uma imagem, uma seleção ou um texto. Você pode escolher a cor, posição e tamanho da sombra.</para>
+    <note>
+      <para>
+        It is available if your image holds an Alpha channel
+        (see <xref linkend="gimp-layer-alpha-add"/>).
+        Otherwise, it is disabled.
+      </para>
+    </note>
+   </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Light and Shadow</guisubmenu>
+        <guimenuitem>Drop Shadow…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Sombra projetada</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/light-and-shadow/drop-shadow-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term><quote>Tipo de entrada</quote></term>
+        <term>Recorte</term>
+        <term>Opções de mesclagem</term>
+        <term>Pré-visualização</term>
+        <term>Mesclar filtro</term>
+        <term>Visualização dividida</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>X</term>
+        <term>Y</term>
+        <listitem>
+          <para>A camada que contém a sombra será movida horizontalmente por X pixels e verticalmente por Y pixels. Assim, o deslocamento X e Y  determina, onde a sombra será colocada em relação à imagem original.Valores altos fazem parecer que a imagem está flutuando mais longe do fundo, e valores próximos fazem a imagem parecer estar flutuando logo acima do fundo.</para>
+          <para>Os deslocamentos podem ser negativos, levando a sombra para a esquerda da seleção se o deslocamento X for menor que 0, ou acima da mesma se o deslocamento Y for menor que 0.</para>
+          <para>Por pura curiosidade, você pode ver a camada de sombra projetada claramente definindo o raio de desfoque como 0 e movendo a sombra projetada com X e Y.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio do desfocamento</term>
+        <listitem>
+          <para>Depois de criar a sombra, uma <link linkend="plug-in-gauss">Desfocagem gaussiana</link> com o raio especificado é aplicada à camada de sombra, resultando na aparência realista da sombra.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Grow shape</term>
+        <listitem>
+          <para>
+            You can choose the shape that will be used to expand or contract
+            the shadow. The choices should be self explanatory:
+            <guilabel>Circle</guilabel> (default), <guilabel>Square</guilabel>,
+            or <guilabel>Diamond</guilabel>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Grow radius</term>
+        <listitem>
+          <para>
+            The distance to expand the shadow before blurring. A negative
+            value will contract the shadow instead.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor</term>
+        <listitem>
+          <para>
+            You can choose the color of the shadow here. Just click on the
+            color swatch, and select a color when the color selector pops up,
+            or use the eye-dropper to pick a color from the image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Opacidade</term>
+        <listitem>
+          <para>Opacidade da sombra. O padrão é 0,500, mas você pode selecionar qualquer outro valor de 0 (transparência total) a 2,00 (opacidade total) aqui.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Cor da sombra projetada</title>
+    <para>
+      This GEGL Drop Shadow filter is surprising: if you apply the filter
+      directly to the image as you do with the legacy filter, you get nothing,
+      unless you have transparent areas in your image.
+    </para>
+    <para><emphasis role="bold">Para obter o mesmo resultado do filtro legado</emphasis>: <orderedlist>
+        <listitem>
+          <para>A imagem original</para>
+        </listitem>
+        <listitem>
+          <para>Abra uma nova imagem, um pouco maior que a sua imagem original, preenchida com <emphasis>transparência</emphasis>.</para>
+        </listitem>
+        <listitem>
+          <para>
+            Copy your original image and paste it into the new image. A floating
+            selection is created in the Layers dialog.
+          </para>
+        </listitem>
+        <listitem>
+          <para>Faça a âncora da seleção flutuante.</para>
+        </listitem>
+        <listitem>
+          <para>
+            Select <menuchoice><guimenu>Layer</guimenu><guimenuitem>Crop Layers to Content</guimenuitem></menuchoice>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Select <menuchoice><guimenu>Layer</guimenu><guimenuitem>Layer Boundary
+            Size…</guimenuitem></menuchoice>: set layer size to the same size than
+            your image and filled with transparency; click on the
+            <guibutton>Center</guibutton> button. Then click on the
+            <guibutton>Resize</guibutton> button.
+          </para>
+        </listitem>
+        <listitem>
+          <para>Abra a caixa de diálogo Sombra Projetada: a sombra projetada é exibida na pré-visualização na tela. Você pode alterar os valores padrão das opções.</para>
+        </listitem>
+        <listitem>
+          <para>Eventualmente, adicione uma nova camada, com o mesmo tamanho da imagem e preenchida com a cor que você deseja dar ao fundo. Mova esta camada para a parte inferior da pilha de camadas.</para>
+        </listitem>
+        <listitem>
+          <para>Clique no botão para abrir um seletor de cores.</para>
+        </listitem>
+      </orderedlist></para>
+    <para><emphasis role="bold">Aplicando filtro a uma seleção</emphasis>: <orderedlist>
+        <listitem>
+          <para>A imagem original</para>
+        </listitem>
+        <listitem>
+          <para>Abra uma nova imagem, do mesmo tamanho da sua imagem original, preenchida com <emphasis>transparência</emphasis>.</para>
+        </listitem>
+        <listitem>
+          <para>Manter seleção</para>
+        </listitem>
+        <listitem>
+          <para>
+            Copy the selection and paste it into the new image. A floating
+            selection is created in the Layers dialog.
+          </para>
+        </listitem>
+        <listitem>
+          <para>Faça a âncora da seleção flutuante.</para>
+        </listitem>
+        <listitem>
+          <para>
+            Select <menuchoice><guimenu>Layer</guimenu><guimenuitem>Crop Layers to Content</guimenuitem></menuchoice>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Select <menuchoice><guimenu>Layer</guimenu><guimenuitem>Layer to
+            Image Size</guimenuitem></menuchoice> (with transparency).
+          </para>
+        </listitem>
+        <listitem>
+          <para>Abra a caixa de diálogo Sombra Projetada: a sombra projetada é exibida na pré-visualização na tela. Você pode alterar os valores padrão das opções.</para>
+        </listitem>
+        <listitem>
+          <para>Eventualmente, adicione uma nova camada, com o mesmo tamanho da imagem e preenchida com a cor que você deseja dar ao fundo. Mova esta camada para a parte inferior da pilha de camadas.</para>
+          <para>Você também pode usar sua imagem original como plano de fundo: desfaça a seleção, copie a imagem e cole como uma nova camada na nova imagem. Mova a nova camada para a parte inferior da pilha de camadas.</para>
+        </listitem>
+        <listitem>
+          <para>Clique no botão para abrir um seletor de cores.</para>
+        </listitem>
+      </orderedlist></para>
+
+    <para><emphasis role="bold">Aplicando filtro a um texto</emphasis>:</para>
+    <para>O procedimento é mais simples para criar uma sombra projetada para um texto: crie o texto e aplique o filtro Sombra Projetada diretamente.</para>
+  </sect3>
+</sect2>

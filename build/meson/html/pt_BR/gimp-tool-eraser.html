@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.8. Borracha</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+    <link rel="prev" href="gimp-tool-paintbrush.html" title="3.7. Pincel" />
+    <link rel="next" href="gimp-tool-airbrush.html" title="3.9. Aerógrafo" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.8. Borracha</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-paintbrush.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Ferramentas de pintura</span>
+        <nav> <a accesskey="n" href="gimp-tool-airbrush.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-eraser"></a>3.8. Borracha</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id17243" class="indexterm"></a>
+      <a id="id17246" class="indexterm"></a>
+      <a id="id17248" class="indexterm"></a>
+      <p>A borracha é usada para remover áreas de cores da camada ativa ou de uma seleção dessa camada. Se a ferramenta de borracha é usada em algo que não suporta transparência (um canal de máscara de seleção, uma máscara de camada, ou o fundo de uma camada que não tenha um canal alfa), apagar vai ser equivalente a usar a ferramenta de pincel (ou lápis) usando a cor de Fundo, que está selecionada na Caixa de ferramentas. Numa camada com canal alfa, a borracha produz transparência total ou parcial, dependendo das configurações das opções da ferramenta. Seu uso é intuitivo, e em termos técnicos, ela funciona como um pincel para o canal alfa. Você pode aprender como adicionar um canal alfa à sua camada em <a class="xref" href="gimp-layer-alpha-add.html" title="7.36. Adicionar canal alfa">Seção 7.36, “Adicionar canal alfa”</a>.</p>
+      <div class="figure">
+        <a id="id2969"></a>
+        <p class="title">
+          <strong>Figura 14.63. Borracha e canal alfa</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/toolbox/eraser-ex1.png" alt="Borracha e canal alfa" />
+            <div class="caption">
+              <p>A cor de fundo é branco. A imagem não possui canal alfa. A borracha (com opacidade de 100%) mostra a cor do fundo.</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/toolbox/eraser-ex2.png" alt="Borracha e canal alfa" />
+            <div class="caption">
+              <p>A imagem tem um canal alfa. A borracha mostra transparência.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>Se você precisa apagar completamente algum grupo de pixels, sem deixar nenhum traço por trás do seu conteúdo anterior, então você deve marcar a caixa "Borda dura" nas opções da ferramenta. Caso contrário, a substituição de sub-pixels do pincel irá causar um apagamento parcial das bordas da pincelada, mesmo que use um pincel com bordas duras. Esta opção de <span class="quote">“<span class="quote">Borda dura</span>”</span> faz a borracha funcionar tanto como a ferramenta de pincel (sem borda dura), ou como o lápis.</p>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Dica]" src="images/tip.png" />
+            </td>
+            <th align="left">Dica</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Se você usa o GIMP a partir de um tablet (mesa digitalizadora), então você pode achar conveniente tratar a ponta oposta da sua caneta como uma borracha. Para fazer isso, tudo o que você precisa fazer é clicar com a ponta oposta no ícone de borracha na caixa de ferramentas. Já que cada ponta da caneta é reconhecida como um dispositivo em separado, com isso a ponta oposta continuará a funcionar como uma borracha enquanto você não selecionar uma ferramenta diferente.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2970"></a>3.8.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>Existem várias formas para ativar a ferramenta:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>Através do menu da janela de imagem em <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de pintura</span> → <span class="guimenuitem">Borracha</span>;</p>
+            </li>
+            <li class="listitem">
+              <p>Ícone da ferramenta de clonagem na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>o usando o atalho de teclado <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>D</strong></span>.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2971"></a>3.8.2. Modificadores de tecla</h4>
+            </div>
+          </div>
+        </div>
+        <p>Veja <a class="xref" href="gimp-tools-paint.html#gimp-tool-brush" title="3.1. Características em comum">Seção 3.1, “Características em comum”</a> para uma descrição de modificadores de tecla que possuem o mesmo efeito em todas as ferramentas de desenho.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>Para a borracha, pressione a tecla <span class="keycap"><strong>Ctrl</strong></span> e a coloque no modo <span class="quote">“<span class="quote">seletor de cor</span>”</span>, para selecionar a cor de qualquer pixel que clicar. Entretanto, diferente de outras ferramentas de pincel, a borracha define a cor de <span class="emphasis"><em>fundo</em></span> ao invés da cor de frente. Isso é mais útil, já que em trabalhos que não suportem transparência, a borracha substitui as áreas apagadas com a cor de fundo atual.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="keycap"><strong>Alt</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>Para a borracha, pressionar a tecla <span class="keycap"><strong>Alt</strong></span> muda para o modo <span class="quote">“<span class="quote">anti-borracha</span>”</span>, como descrito na área inferior da seção de opções da ferramenta. Perceba que em alguns sistemas, a tecla <span class="keycap"><strong>Alt</strong></span> em conjunto com o mouse é capturada pelo gerenciador de janelas. Caso isso aconteça com você, pode usar o atalho <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Shift</strong></span> no lugar de só <span class="keycap"><strong>Alt</strong></span>.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2972"></a>3.8.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2973"></a>
+          <p class="title">
+            <strong>Figura 14.64. Opções da ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-eraser.png" alt="Opções da ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo, </span>
+              <span class="term">Pincel, </span>
+              <span class="term">Tamanho, </span>
+              <span class="term">Proporção, </span>
+              <span class="term">Ângulo, </span>
+              <span class="term">Espaçamento, </span>
+              <span class="term">Dureza, </span>
+              <span class="term">Força, </span>
+              <span class="term">Dinâmicas, </span>
+              <span class="term">Opções de dinâmicas, </span>
+              <span class="term">Aplicar espalhamento, </span>
+              <span class="term">Pincelada suave, </span>
+              <span class="term">O tamanho do pincel - curva de esmaecimento, </span>
+              <span class="term">Incremental</span>
+            </dt>
+            <dd>Veja <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-options" title="3.1.2. Opções">Opções em comum das ferramentas de pintura</a> para uma descrição das opções da ferramenta que são aplicáveis a todas as ferramentas de pintura.</dd>
+            <dt>
+              <span class="term">Opacidade</span>
+            </dt>
+            <dd>
+              <p>O controle de <span class="guilabel">opacidade</span>, apesar de seu nome, que é comum com as outras ferramentas de pintura, determina a <span class="quote">“<span class="quote">força</span>”</span> da ferramenta. Portanto, quando você apaga uma camada com um canal alfa, quanto maior a opacidade que você usa, mais transparente ficará!</p>
+            </dd>
+            <dt>
+              <span class="term">Borda dura</span>
+            </dt>
+            <dd>
+              <p>Essa opção evita que se apague parcialmente as bordas da pincelada. Veja acima.</p>
+            </dd>
+            <dt>
+              <span class="term">Anti-borracha</span>
+            </dt>
+            <dd>
+              <p>A opção de anti-borracha da ferramenta borracha pode <span class="quote">“<span class="quote">desapagar</span>”</span> áreas de uma imagem, mesmo que ela esteja completamente transparente. Essa opção só funciona quando usada em camadas com canal alfa. Além da caixa de selecionar nas opções da ferramenta, ela também pode ser ativada a qualquer momento pressionando a tecla <span class="keycap"><strong>Alt</strong></span> (ou, caso a tecla <span class="keycap"><strong>Alt</strong></span> estiver bloqueada pelo gerenciador de janelas, basta pressionar <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Shift</strong></span>).</p>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Para entender como a <span class="quote">“<span class="quote">anti-borracha</span>”</span> funciona, você precisa entender que apagar (ou tambem editar-&gt;cortar) afeta apenas o canal alfa, e não os canais RGB que contém informações de imagem. Mesmo que o resultado seja completamente transparente, as informações de RGB continuam lá, você apenas não consegue vê-las. A anti-borracha aumenta o valor de alfa para que você possa ver as informações de RGB novamente. Outros meios no GIMP que afetam o canal Alfa também podem tornar a informação de cor visível novamente — um exemplo seria usar a ferramenta de Cores&gt;Curvas no canal Alfa, e posiciona a âncora de canto esquerdo em qualquer ponto diferente de 0.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Dica]" src="images/tip.png" />
+              </td>
+              <th align="left"><a id="change-selection-shape"></a>Dica</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <a id="id17361" class="indexterm"></a>
+                <p>Você pode usar a ferramenta borracha para alterar a forma de uma seleção flutuante. Ao apagar, é como se você estivesse recortando as bordas da seleção.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-paintbrush.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-paint.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-airbrush.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-paintbrush.html">3.7. Pincel</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-airbrush.html">3.9. Aerógrafo</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

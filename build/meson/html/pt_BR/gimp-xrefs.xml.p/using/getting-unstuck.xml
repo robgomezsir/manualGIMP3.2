@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2015-08-30 j.h: fix bug #742256
+  2009-02-19 j.h: revised for v2.6
+  2007-08-27 lexa: replaced list by sect3
+  2007-02-21 lexa: changed top level from chapter to sect1
+  2006-03-10 changed structure
+  2006-02-20 fixed #322305
+  2005-11-30 replaced informalfigure by axel.wernicke
+-->
+<sect1 id="gimp-using-getting-unstuck">
+  <title>Causas comuns de não-responsividade do GIMP</title>
+  <sect2 id="gimp-stuck-floating-selection">
+    <title>Existe uma seleção flutuante</title>
+    <figure>
+      <title>Diálogo de camadas exibindo uma seleção flutuante.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/using/unstuck-floating-sel.png"/>
+        </imageobject>
+        <caption>
+          <para>Mostrando uma seleção flutuante que pode ser ancorada ( <keycombo><keycap>Ctrl</keycap><keycap>H</keycap></keycombo>) ou transformada em uma nova camada ( <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>).</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para><emphasis>Como saber</emphasis>: se há uma seleção flutuante, muitas ações se tornam impossíveis até que a seleção flutuante seja ancorada. Para verificar, veja o diálogo de camadas (certifique-se de que são as camadas da imagem em que você está trabalhando) e veja se a camada do topo é chamada de <quote>Seleção flutuante</quote>.</para>
+    <para><emphasis>Como resolver:</emphasis> Clique com o botão direito na seleção flutuante para abrir o menu Camada e selecione <guimenuitem>Ancorar Camada</guimenuitem> (atalho <keycombo><keycap>Ctrl</keycap><keycap>H</keycap></keycombo>) para ancorar a seleção flutuante à camada abaixo, ou converta-a em uma camada comum selecionando <guimenuitem>Para Nova Camada </guimenuitem> (atalho <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>). Se precisar de mais ajuda sobre como fazer isso, consulte <link linkend="anchor-floating-selection">Seleções Flutuantes</link>.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-hidden-selection">
+    <title>A seleção está escondida</title>
+    <para><emphasis>Como saber</emphasis>: Se esse é o problema, é possível que só de ler isso talvez já tenha feito você se dar conta, mas é melhor explicar em todo caso: algumas vezes o pisca-pisca que acompanha as linhas de seleção são chatas, por que torna difícil ver detalhes importantes da imagem. Por isso o <acronym>GIMP</acronym> oferece a opção de esconder a seleção, bastante desmarcar a opção  <guimenuitem>Exibir seleção</guimenuitem> no menu <guimenu>Visualizar</guimenu>. No entanto, é fácil de esquecer que você fez isso.</para>
+    <para>
+      <emphasis>How to fix:</emphasis> Go to
+      the <guimenu>View</guimenu> menu for the image and, if
+      <guimenuitem>Show Selection</guimenuitem> is
+      unchecked, click on it.
+    </para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-outside-selection">
+    <title>Você está tentando fazer coisas fora da seleção</title>
+    <figure>
+      <title>Corrigir seleção usando o menu "Selecionar"</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/select.png"/>
+        </imageobject>
+        <caption>
+          <para>Do menu Selecionar, escolha <quote>Tudo</quote> para garantir que tudo está selecionado, escolha <quote>Nenhum</quote> para remover a seleção, ou escolha <quote>Inverter</quote> para inverter a área selecionada.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para><emphasis>Como saber:</emphasis> Você pode ter selecionado anteriormente uma parte da sua imagem, mas agora está tentando trabalhar em outra parte que não está dentro da seleção. Procure o contorno da seleção e verifique se está onde você deseja.</para>
+    <para><emphasis>Como resolver</emphasis>: Mova o controle</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          If you can't see any selection, there may be a very small one, or
+          it is outside the visible area on your screen, or it can even be one
+          that contains no pixels. If this is the case, either display the
+          selection via
+          <menuchoice>
+            <guimenu>View</guimenu>
+            <guisubmenu>Zoom</guisubmenu>
+            <guimenuitem>Zoom to Selection</guimenuitem>
+          </menuchoice>,
+          or remove the selection via
+          <menuchoice>
+            <guimenu>Select</guimenu>
+            <guimenuitem>None</guimenuitem>
+          </menuchoice>
+          or the shortcut <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap>
+          <keycap>A</keycap></keycombo>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>Se você puder ver uma seleção e achou que estava dentro dela, ela pode estar invertida em relação ao que você pensa. A maneira mais fácil de saber é pressionar o botão <link linkend="gimp-image-window-quick-mask-button">Máscara Rápida</link>: a área selecionada ficará visível e a área não selecionada será mascarada. Se este for o problema, você pode resolvê-lo escolhendo <quote>Inverter</quote> no menu <guimenu>Selecionar</guimenu> (após desativar a <quote>Máscara Rápida</quote> se ainda estiver ativada).</para>
+      </listitem>
+    </itemizedlist>
+    <note>
+      <para>Se fazer isso destruiu uma seleção que você queria manter, use <quote>Desfazer</quote> (<keycombo><keycap>Ctrl</keycap><keycap>Z</keycap></keycombo>) para restaurá-la, e então podemos continuar descobrindo qual é o problema.</para>
+    </note>
+  </sect2>
+
+  <sect2 id="gimp-stuck-drawable-invisible">
+    <title>O desenhável ativo não está visível</title>
+    <figure>
+      <title>A camada está invisível</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/using/unstuck-layers-dialog-invislayer.png"/>
+        </imageobject>
+        <caption>
+          <para>Diálogo de camadas com visibilidade desligada para a camada ativa</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para><emphasis>Como saber</emphasis>: O diálogo de camadas lhe dá a habilidade de ligar e desligar cada camada. Olhe no diálogo de camadas, e certifique-se de que a camada em que você quer agir está ativa (i.e. escolhida), de que não é um grupo de camadas (você não pode desenhar nos grupos, só nas camadas dentro do mesmo), e que há um símbolo de olho a esquerda da mesma. Se não houver um ícone de olho lá, esse é o seu problema.</para>
+    <para>
+      <emphasis>How to fix:</emphasis>
+      If your intended target layer is not active, click on it in the Layers
+      dialog to activate it. If none of the layers are active, the
+      active drawable might be a channel&mdash;you can look at the
+      <link linkend="gimp-channel-dialog">Channels Dialog</link> to see.
+      This does not change the solution, though.
+      If the eye symbol is not visible, click in the Layers dialog at the left
+      edge to toggle it: this should make the layer visible. See the Help
+      section for the
+      <link linkend="gimp-layer-dialog">Layers Dialog</link> if you need more
+      help.
+    </para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-drawable-transparent">
+    <title>O desenhável ativo esta transparente</title>
+    <figure>
+      <title>Opacidade da camada definida como zero</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/using/unstuck-layers-dialog-transparentlayer.png"/>
+        </imageobject>
+        <caption>
+          <para>Diálogo de camada com opacidade zero configurada para a camada ativa </para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para><emphasis>Como saber</emphasis>: Quando a opacidade estiver configurada para 0 na camada, você não pode ver nada do que for desenhado na mesma. Veja o controle de <guilabel>Opacidade</guilabel>, no diálogo de camadas, e que valor ele está indicando. Se o controle estiver todo para a esquerda (opacidade zero), ai está o seu problema.</para>
+    <para><emphasis>Como resolver</emphasis>: Mova o controle</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-outside-layer">
+    <title>Você está tentando agir fora de uma camada</title>
+    <para><emphasis>Como saber</emphasis>: No <acronym>GIMP</acronym>, as camadas não tem que ter as mesmas dimensões que uma imagem: elas podem ser maiores ou menores. Se você tentar pintar fora dos limites de uma camada, nada acontece. Para verificar se isso está acontecendo, procure um retângulo tracejado em preto e amarelo, e veja se o lugar que você está tentando pintar está dentro dele.</para>
+    <para>
+      <emphasis>How to fix:</emphasis>
+      You need to enlarge the layer. There are two commands near the bottom of
+      the <guimenu>Layer</guimenu> menu that will let you do this:
+      <guimenuitem>Layers to Image Size</guimenuitem>, which sets the layer
+      bounds to match the image borders; and
+      <guimenuitem>Layer Boundary Size</guimenuitem>, which brings up a dialog
+      that allows you to set the layer dimensions to whatever you please.
+    </para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-layer-group">
+    <title>Você está tentando agir fora de uma camada</title>
+    <figure>
+      <title>Grupo de camadas selecionado</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/layer-group.png"/>
+        </imageobject>
+        <caption>
+          <para>Diálogo de camadas exibindo uma seleção flutuante.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      <emphasis>How to tell:</emphasis>
+      Check the <link linkend="gimp-layer-dialog">Layers Dialog</link> to
+      see if the active layer is actually a
+      <link linkend="gimp-layer-groups">Layer group</link>.
+      When a layer group is not empty, a small icon 
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/pan-end-symbolic.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon> or
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/pan-down-symbolic.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon> appears in front of the layer group's thumbnail and name.
+      Most actions don't work on a layer group, in which case an error message
+      will show up: <quote>Cannot paint on layer groups.</quote>
+    </para>
+    <para><emphasis>Como corrigir:</emphasis> Você precisa ativar uma camada que não seja um grupo de camadas. Selecione uma camada clicando nela na caixa de diálogo Camadas. Se o grupo de camadas ativo tiver um sinal <guibutton>+</guibutton> na frente, ele está recolhido. Você pode clicar nele para expandir e mostrar as camadas individuais dentro desse grupo.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-indexed-mode">
+    <title>A imagem está no modo de cor indexado</title>
+    <para><emphasis>Como saber</emphasis>: O <acronym>GIMP</acronym> pode trabalahr com imagens em três modos de cor diferentes:<link linkend="glossary-colormodel">RGB(A), Indexado, e Tons de cinza</link>. O modo de cor indexado usa um mapa de cores, onde todas as cores usadas na imagem estão listadas. O <link linkend="gimp-tool-color-picker">selecionador de cores</link>, no entanto, deixa você escolher qualquer cor RGB. Só que se você tentar pintar na imagem com uma cor que não está no mapa de cores, você obtém resultados indeterminados (pode acontecer do GIMP pintar com a cor errada, ou não deixar você pintar). </para>
+    <para><emphasis>Como resolver</emphasis>: Sempre use o modo de cor RGB para pintar em imagens. Você pode verificar o modo atual e selecionar outro no sub-menu <link linkend="gimp-image-mode">Modo</link> do menu  <guimenu>Imagem</guimenu>.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-tool-opacity">
+    <title>Sem efeito visível ao tentar usar um pincel, borracha ou outra ferramenta</title>
+    <para><emphasis>Como saber:</emphasis> Você está tentando usar o pincel ou a borracha, mas não está vendo nada mudar.</para>
+    <para><emphasis>Como corrigir:</emphasis> Verifique as <link linkend="gimp-tool-options-dialog">Opções da Ferramenta</link> e certifique-se de que <guimenuitem>Opacidade</guimenuitem> não está definida como 0.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-tool-transform">
+    <title>Sem efeito visível ao tentar usar a ferramenta mover, girar ou outra ferramenta de transformação</title>
+    <para><emphasis>Como saber:</emphasis> Você está tentando mover (ou realizar uma transformação) em uma camada, mas não vê nada mudar.</para>
+    <para><emphasis>Como corrigir:</emphasis> Verifique a <link linkend="gimp-image-window-status-bar">barra de status</link> para ver se há uma mensagem dizendo o que está acontecendo, em seguida, verifique as <link linkend="gimp-tool-options-dialog">Opções da Ferramenta</link> e certifique-se de que a ferramenta que você está usando não está definida para trabalhar em uma <guibutton>Seleção</guibutton> ou <guibutton>Caminho</guibutton>. Esses pequenos botões estão no topo do <link linkend="gimp-tool-transform-options">Opções da Ferramenta para Ferramentas de Transformação</link>.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-empty-clipboard"><!--Bug #742256 2015-08-30-->
+    <title>Borracha e pincéis não funcionam mais</title>
+    <para>Você selecionou o pincel da área de transferência e a área de transferência está vazia.</para>
+    <figure>
+      <title>Pincel da Área de Transferência Vazia</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/using/brushes-dialog-empty-clipboard.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para><emphasis>Como saber:</emphasis> Você está tentando usar um pincel ou a borracha e nada está acontecendo.</para>
+    <para><emphasis>Como corrigir:</emphasis> Verifique a caixa de diálogo <link linkend="gimp-brush-dialog">Pincéis</link> para ver qual pincel está em uso atualmente. Se for o Pincel da Área de Transferência e mostrar um retângulo vazio, selecione um pincel diferente para usar.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-no-alpha-channel"><!--Bug #742256 2015-08-30-->
+    <title>A borracha não torna a área transparente</title>
+    <para><emphasis>Como saber:</emphasis> Você está tentando usar a borracha para remover toda a cor, mas em vez de uma área transparente aparecer, ela se torna a cor de fundo (geralmente branca).</para>
+    <para><emphasis>Como corrigir:</emphasis> Verifique a camada ativa na <link linkend="gimp-layer-dialog">caixa de diálogo Camadas</link>: clique com o botão direito nela para abrir um menu e veja se <guimenuitem>Adicionar Canal Alfa</guimenuitem> está habilitado. Se estiver, sua camada não tem canal alfa: clique naquele item de menu para adicionar um canal alfa. Com isso corrigido, você poderá apagar até a transparência.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-layer-mask">
+    <title>Cores inesperadas ao tentar usar um pincel ou borracha</title>
+    <para><emphasis>Como saber:</emphasis> Você está tentando usar o pincel ou a borracha, mas o resultado não é como esperado.</para>
+    <para><emphasis>Como corrigir:</emphasis> Verifique se a camada em que você está pintando tem uma <link linkend="gimp-layer-mask">Máscara de Camada</link>. Se houver, você pode estar pintando na Máscara de Camada em vez da Camada em si. Nesse caso, clique na Camada para torná-la a área de pintura ativa.</para>
+    <para>Outra possibilidade semelhante é que um Canal está ativo em vez de uma Camada. Nesse caso, clique em uma camada na caixa de diálogo Camadas para ativar uma camada.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-delete-cropped-pixels">
+    <title>A ferramenta Recortar deixa uma área vazia após o recorte</title>
+    <para><emphasis>Como saber:</emphasis> Após recortar usando a <link linkend="gimp-tool-crop">ferramenta Recortar</link>, a tela da imagem ainda está usando o tamanho antigo e apenas a parte visível foi recortada.</para>
+    <para><emphasis>Como corrigir:</emphasis> Vá para as <link linkend="gimp-tool-options-dialog">Opções da Ferramenta</link> e certifique-se de que <guilabel>Excluir pixels recortados</guilabel> esteja marcado.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-not-responding">
+    <title>Estou esperando há muito tempo e o GIMP não está respondendo</title>
+    <para><emphasis>Como saber:</emphasis> o cursor do mouse está girando ou a janela está dizendo que não está respondendo e você não pode fazer nada no GIMP.</para>
+    <para><emphasis>Como corrigir:</emphasis> alguns filtros e outras operações podem demorar muito, especialmente em imagens grandes ou se o seu computador não tiver muita memória livre. Nesses casos, você pode precisar apenas de mais paciência. Às vezes pode ajudar a reduzir a parte em que você está trabalhando fazendo uma seleção em torno de uma área específica.</para>
+    <para>O GIMP, como qualquer outro software, não é perfeito. Você pode ter encontrado um bug. A melhor coisa a fazer é reportá-lo, já que você pode ser o primeiro a encontrá-lo. Não reportá-lo pode significar que não será corrigido até que outra pessoa o relate.</para>
+    <para>Primeiro, verifique se você está usando a versão mais recente do GIMP; se não, atualize e verifique se o problema ainda existe. Se estiver, verifique se o problema já é conhecido pesquisando nossa <ulink url="https://gitlab.gnome.org/GNOME/gimp/-/issues">lista de problemas</ulink> (também verifique os problemas fechados, problemas corrigidos são fechados mesmo que não haja uma nova versão disponível). Se não vir lá, abra um novo problema, certificando-se de nos fornecer todos os detalhes como seu Sistema Operacional, versão do GIMP, qual ferramenta ou filtro você estava usando e exatamente o que aconteceu. Adicionar uma captura de tela, ou fazer upload da imagem que está usando também pode ser útil em certos casos.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-general-guidelines">
+    <title>Diretrizes gerais sobre o que verificar se você estiver travado</title>
+    <itemizedlist>
+      <listitem>
+        <para>Verifique a <link linkend="gimp-image-window-status-bar">barra de status</link> para ver se há uma mensagem dizendo o que está acontecendo.</para>
+        <tip>
+          <para>Se você adicionar o <link linkend="gimp-errors-dialog">Console de Erros</link> a um dos seus docks, a maioria dos avisos aparecerá lá. Isso pode facilitar a identificação de problemas.</para>
+        </tip>
+      </listitem>
+      <listitem>
+        <para>Verifique as <link linkend="gimp-tool-options-dialog">Opções da Ferramenta</link> e certifique-se de que todas as configurações lá tenham os valores esperados, ou tente <link linkend="gimp-tool-options-reset">redefinir para os valores padrão</link>.</para>
+      </listitem>
+      <listitem>
+        <para>Verifique qual <link linkend="gimp-image-mode">Modo de Imagem</link> sua imagem está usando. Algumas operações têm limitações ao usar o Modo Indexado.</para>
+      </listitem>
+      <listitem>
+        <para>Verifique se uma seleção está ativa e, se necessário, <link linkend="gimp-selection-none">remova a seleção</link>.</para>
+      </listitem>
+      <listitem>
+        <para>
+          Check the
+          <link linkend="gimp-layer-dialog">Layers Dialog</link> and make sure
+          the correct layer is active, that the opacity, blending mode and
+          layer attributes are set as expected.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Check the
+          <link linkend="gimp-view-menu">View Menu</link> to see if the part
+          of the user interface that you are looking for is hidden, or to
+          make sure that snapping is enabled or disabled as desired.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+
+</sect1>

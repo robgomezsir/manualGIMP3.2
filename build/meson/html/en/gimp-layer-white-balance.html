@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.17. White Balance</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. The “Colors” Menu" />
+    <link rel="prev" href="gimp-layer-equalize.html" title="8.16. Equalize" />
+    <link rel="next" href="gimp-filter-stretch-contrast.html" title="8.18. Stretch Contrast" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.17. White Balance</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-layer-equalize.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>8. The <span class="quote">“<span class="quote">Colors</span>”</span> Menu</span>
+        <nav> <a accesskey="n" href="gimp-filter-stretch-contrast.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-layer-white-balance"></a>8.17. White Balance</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id42381" class="indexterm"></a>
+      <a id="id42384" class="indexterm"></a>
+      <p>
+    The <span class="guimenuitem">White Balance</span> command automatically
+    adjusts the colors of the active layer by stretching the Red, Green and
+    Blue channels separately. To do this, it discards pixel colors at each
+    end of the Red, Green and Blue histograms which are used by only 0.05%
+    of the pixels in the image and stretches the remaining range as much as
+    possible. The result is that pixel colors which occur very infrequently
+    at the outer edges of the histograms (perhaps bits of dust, etc.) do
+    not negatively influence the minimum and maximum values used for
+    stretching the histograms, in comparison with
+    <a class="link" href="gimp-filter-stretch-contrast.html" title="8.18. Stretch Contrast">Stretch Contrast</a>. Like
+    <span class="quote">“<span class="quote">Stretch Contrast</span>”</span>, however, there may be hue shifts in
+    the resulting image.
+  </p>
+      <p>
+    This command suits images with poor white or black. Since it tends to
+    create pure white (and black), it may be useful e.g. to enhance
+    photographs.
+  </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Note]" src="images/note.png" />
+            </td>
+            <th align="left">Note</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      This command only works on RGB images. If the image is Grayscale or
+      Indexed, the menu entry is disabled.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2721"></a>8.17.1. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Auto</span> → <span class="guimenuitem">White Balance</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2722"></a>8.17.2. <span class="quote">“<span class="quote">White Balance</span>”</span> example</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2723"></a>
+          <p class="title">
+            <strong>Figure 16.153. Original image</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/auto/alice.png" alt="Original image" />
+              <div class="caption">
+                <p>
+            The active layer and its Red, Green and Blue histograms
+            before <span class="quote">“<span class="quote">White Balance</span>”</span>.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id2724"></a>
+          <p class="title">
+            <strong>Figure 16.154. Image after the command</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/auto/white-balance.png" alt="Image after the command" />
+              <div class="caption">
+                <p>
+            The active layer and its Red, Green and Blue histograms after
+            <span class="quote">“<span class="quote">White Balance</span>”</span>.  Poor white areas in the image
+            became pure white.
+          </p>
+                <p>
+            Histogram stretching creates gaps between the pixel columns,
+            giving it a striped look.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-layer-equalize.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-stretch-contrast.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-layer-equalize.html">8.16. Equalize</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-stretch-contrast.html">8.18. Stretch Contrast</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

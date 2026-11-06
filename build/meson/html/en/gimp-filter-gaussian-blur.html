@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.3. Gaussian Blur</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-blur.html" title="3. Blur Filters" />
+    <link rel="prev" href="gimp-filter-focus-blur.html" title="3.2. Focus Blur" />
+    <link rel="next" href="gimp-filter-lens-blur.html" title="3.4. Lens Blur" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.3. Gaussian Blur</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-focus-blur.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>3. Blur Filters</span>
+        <nav> <a accesskey="n" href="gimp-filter-lens-blur.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-gaussian-blur"></a>3.3. Gaussian Blur</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id46366" class="indexterm"></a>
+      <a id="id46370" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2965"></a>3.3.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2966"></a>
+          <p class="title">
+            <strong>Figure 17.11. Example for the <span class="quote">“<span class="quote">Gaussian Blur</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for the “Gaussian Blur” filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/blur-taj-gauss.jpg" alt="Example for the “Gaussian Blur” filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The Gaussian Blur filter acts on each pixel of the active layer or
+      selection, setting its Value to the average of all pixel Values present
+      in a radius defined in the dialog. A higher Value will produce a higher
+      amount of blur. The blur can be set to act in one direction more than
+      the other by clicking the Chain Button so that it is broken, and
+      altering the radius. GIMP supports two implementations of Gaussian Blur:
+      FIR and IIR. They both produce the same results, but each one can be
+      faster in some cases. They are complemented by the default Auto setting,
+      that automatically picks the optimal choice.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2967"></a>3.3.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Blur</span> → <span class="guimenuitem">Gaussian Blur…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2968"></a>3.3.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2969"></a>
+          <p class="title">
+            <strong>Figure 17.12. <span class="quote">“<span class="quote">Gaussian</span>”</span> filter parameters settings</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/blur/gauss-options.png" alt="“Gaussian” filter parameters settings" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-filters-common.html" title="2. Common Features">Section 2, “Common Features”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Size X, </span>
+              <span class="term">Size Y</span>
+            </dt>
+            <dd>
+              <p>
+            Here you can set the blur intensity. By altering the ratio of
+            horizontal to vertical blur, you can give the effect of a motion
+            blur.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Filter</span>
+            </dt>
+            <dd>
+              <p>
+            Here you can select the filter type.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Auto</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Try to select the best filter automatically. In most cases
+                  this default is best left alone.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">FIR</span>
+                  </dt>
+                  <dd>
+                    <p>Stands for <span class="quote">“<span class="quote">Finite Impulse Response</span>”</span>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">IIR</span>
+                  </dt>
+                  <dd>
+                    <p>Stands for <span class="quote">“<span class="quote">Infinite Impulse Response</span>”</span>.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Abyss policy</span>
+            </dt>
+            <dd>
+              <p>
+            Abyss policy (border management) is treated with
+              <a class="xref" href="gimp-tool-warp.html#abyss-policy">Abyss policy</a>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Clip to the input extent</span>
+            </dt>
+            <dd>
+              <p>
+            Should the output extent be clipped to the input extent: this
+            option removes unwanted pixels created on borders by blurring.
+          </p>
+              <div class="figure">
+                <a id="id2970"></a>
+                <p class="title">
+                  <strong>Figure 17.13. Example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/blur/clip-orig.png" alt="Example" />
+                    <div class="caption">
+                      <p>
+                  Right-up corner of the image, zoom x800
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/blur/clip-0.png" alt="Example" />
+                    <div class="caption">
+                      <p>
+                  <span class="quote">“<span class="quote">Clip to the input extent</span>”</span> unchecked
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/blur/clip-1.png" alt="Example" />
+                    <div class="caption">
+                      <p>
+                  <span class="quote">“<span class="quote">Clip to the input extent</span>”</span> checked
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+        <p>
+      The Gaussian Blur filter doesn't preserve edges in the image:
+      </p>
+        <div class="mediaobject">
+          <img src="images/filters/examples/blur/median-vs-gaussian.png" />
+          <div class="caption">
+            <p>
+            Left: Original image
+          </p>
+            <p>
+            Middle: <a class="link" href="gimp-filter-median-blur.html" title="3.6. Median Blur">Median Blur</a> filter applied
+          </p>
+            <p>
+            Right: <a class="link" href="gimp-filter-gaussian-blur.html" title="3.3. Gaussian Blur">Gaussian Blur</a> filter applied
+          </p>
+          </div>
+        </div>
+        <p>
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-focus-blur.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-blur.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-lens-blur.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-focus-blur.html">3.2. Focus Blur</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-lens-blur.html">3.4. Lens Blur</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

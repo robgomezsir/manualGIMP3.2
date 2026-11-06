@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-02-27 ude: moved content of menus/layer/stretch-commands.xml here
+  2007-10-17 ude: moved here from menus/layer-colors-auto.xml ('en','de')
+  2007-06-07 Added Spanish translation by AntI
+  2007-03-12 Kolbjørn: added no translation
+  2005/11/11 split of from layer-colors.xml by axel.wernicke
+-->
+<sect2 id="gimp-colors-auto-menu">
+  <title>O submenu <quote>Automático</quote></title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Automático</secondary>
+  </indexterm>
+
+  <para>
+    The <guimenuitem>Auto</guimenuitem> submenu contains operations which
+    automatically adjust the distribution of colors in the active layer,
+    without requiring any input from the user. Several of these operations
+    are actually implemented as plug-ins.
+  </para>
+
+  <para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <xref linkend="gimp-layer-equalize"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <xref linkend="gimp-layer-white-balance"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <xref linkend="gimp-filter-stretch-contrast"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <xref linkend="gimp-filter-stretch-contrast-hsv"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <xref linkend="gimp-filter-color-enhance"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </para>
+
+  <sect3>
+    <title>Ativando o submenu</title>
+    <para>
+      You can access this submenu from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guimenuitem>Auto</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="gimp-color-stretch-commands">
+    <title>Esticamento Automático das Cores</title>
+    <indexterm>
+      <primary>Cores</primary>
+      <secondary>Esticando</secondary>
+    </indexterm>
+ 
+    <para>O <acronym>GIMP</acronym> tem vários comandos automáticos para esticar as colunas de histograma para os canais de cor da camada ativa. Ao puxar os pixels claros para a direita e os pixels escuros para a esquerda, eles tornam os pixels claros mais claros e os pixels escuros mais escuros, o que aumenta o contraste na camada.</para>
+    <para>Alguns dos comandos esticam os três canais de cor por igual, de forma que os matizes não são alterados. Outros comandos modificam cada um dos canais separadamente, o que altera os matizes.</para>
+    <para>A forma como o esticamento é feito varia com os diferentes comandos e os resultados parecem diferentes. Não é fácil prever exatamente o que cada comando fará. Se você souber exatamente o que está fazendo, você pode conseguir os mesmos resultados, e ainda mais, com a ferramenta <link linkend="gimp-tool-levels">Níveis</link>.</para>
+    <para>Aqui estão os exemplos dos resultados desses comandos, todos juntos em uma única página, de forma que você possa compara-los mais facilmente. O comando mais apropriado depende da sua imagem, então você pode experimentar com cada um deles para achar qual é mais apropriado para ela.</para>
+
+    <para>
+      <figure>
+        <title>A camada original e seus histogramas</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/colors/auto/alice.png"/>
+          </imageobject>
+          <caption>
+            <para>Esta camada não tem nenhum pixel nem muito claro, nem muito escuro, então ela é uma boa candidata ao uso desses comandos.</para>
+          </caption>
+        </mediaobject>
+      </figure>
+    </para>
+    <para>
+      <figure>
+        <title>O comando <link linkend="gimp-layer-equalize">Equalizar</link></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/colors/auto/equalize.png"/>
+          </imageobject>
+          <caption>
+            <para>Exemplo de <quote>Equalizar</quote></para>
+          </caption>
+        </mediaobject>
+      </figure>
+    </para>
+    <para>
+      <figure>
+        <title>O comando <link linkend="gimp-layer-white-balance">Equilíbrio de branco</link></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/colors/auto/white-balance.png"/>
+          </imageobject>
+          <caption>
+            <para>Exemplo de <quote>Equilíbrio de branco</quote></para>
+          </caption>
+        </mediaobject>
+      </figure>
+    </para>
+    <para>
+      <figure>
+        <title>O comando <link linkend="gimp-filter-stretch-contrast">Esticar Contraste</link></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/colors/auto/c-stretch.png"/>
+          </imageobject>
+          <caption>
+            <para>Exemplo de <quote>Esticar contraste</quote></para>
+          </caption>
+        </mediaobject>
+      </figure>
+    </para>
+    <para>
+      <figure>
+        <title>O comando <link linkend="gimp-filter-stretch-contrast-hsv">Esticar contraste HSV</link></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/colors/auto/stretch-hsv.png"/>
+          </imageobject>
+          <caption>
+            <para>Exemplo de <quote>Esticar Contraste HSV</quote></para>
+          </caption>
+        </mediaobject>
+      </figure>
+    </para>
+    <para>
+      <figure>
+        <title>O comando <link linkend="gimp-filter-color-enhance">Realce de Cor</link></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/colors/auto/color-enhance.png"/>
+          </imageobject>
+          <caption>
+            <para>Exemplo de <quote>Realce de cor</quote></para>
+          </caption>
+        </mediaobject>
+      </figure>
+    </para>
+  </sect3>
+</sect2>

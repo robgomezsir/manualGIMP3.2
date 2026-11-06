@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history;
+  2007-10-22 ude: moved here from filters/color/smooth_palette.xml ('en','de')
+  2007-07-09 Added Spanish translation by AntI
+  2007-04-07 KoSt: added 'no'
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-09-30 de replaced informalfigure by axel.wernicke
+  2005-08-26 de added by axel.wernicke
+-->
+<sect2 id="plug-in-smooth-palette">
+  <title>Paleta suave</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Paleta suave</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Paleta suave</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>Paleta suave</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/color-taj-smoothpalette.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro <quote>Paleta suave</quote> aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este efeito cria uma paleta de faixas com cores da camada ativa ou seleção. O propósito principal deste filtro é criar um mapa de cores para ser usado com o filtro <link linkend="plug-in-flame">Chama</link>.</para>
+    <note>
+      <para>Este comando somente funciona em imagens RGB. Se a imagem estiver em Tons de Cinza ou for Indexada, a entrada no menu é desativada.</para>
+    </note>
+    </sect3>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Info</guisubmenu>
+        <guimenuitem>Smooth Palette…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da <quote>Paleta suave</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/info/smoothpalette.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Width</term>
+        <term>Height</term>
+        <listitem>
+          <para>
+            You can set palette dimensions for <guilabel>Width</guilabel> and
+            <guilabel>Height</guilabel>. Dimensions are linked when the chain
+            is not broken. You can also select the unit.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Search depth</term>
+        <listitem>
+          <para>
+            Increasing Search depth (1 - 1024) will result in more shades in
+            the palette.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

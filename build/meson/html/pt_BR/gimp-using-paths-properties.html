@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.2. Propriedades de vetores</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-using-paths.html" title="4. Vetores" />
+    <link rel="prev" href="gimp-using-paths.html" title="4. Vetores" />
+    <link rel="next" href="gimp-using-paths-and-selections.html" title="4.3. Vetores e seleções" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.2. Propriedades de vetores</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-paths.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. 
+    
+    <span class="phrase">Vetores</span>
+  </span>
+        <nav> <a accesskey="n" href="gimp-using-paths-and-selections.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-using-paths-properties"></a>4.2. Propriedades de vetores</h3>
+          </div>
+        </div>
+      </div>
+      <p>
+      Paths, like layers and channels, are components of an image. When an
+      image is saved in <acronym class="acronym">GIMP</acronym>'s native XCF file format, any
+      paths it has are saved with it. The list of paths in an image can be
+      viewed and operated on using the
+      <a class="link" href="gimp-path-dialog.html" title="2.3. Diálogo de vetores">Paths Dialog</a>.
+      You can move a path from one image to another by copying and pasting
+      using the pop-up menu in the Paths dialog, or by dragging an icon from
+      the Paths dialog into the destination image window.
+    </p>
+      <p>Vetores do <acronym class="acronym">GIMP</acronym> pertencem ao tipo matemático chamado <span class="quote">“<span class="quote">curvas de Bézier</span>”</span>. O que isso significa, em termos práticos, é que os mesmos são definidos por <span class="emphasis"><em>âncoras</em></span> e <span class="emphasis"><em>alças</em></span>.  <span class="quote">“<span class="quote">Âncoras</span>”</span>  são pontos por onde o vetor passa, e <span class="quote">“<span class="quote">Alças</span>”</span> definem a direção da curva do vetor quando ele entra ou sai de cada ponto de âncora: cada ponto de âncora tem duas alças associadas.</p>
+      <p>
+      Paths can be very complex. If you create them by hand using the
+      <a class="link" href="gimp-tool-path.html" title="5.2. Vetores">Paths</a> tool, they probably won't
+      contain more than a few dozen anchor points and usually a lot less than
+      that. However, if you create them by transforming a selection into a
+      path, or by transforming text into a path, the result can easily contain
+      hundreds or even thousands of anchor points.
+    </p>
+      <p>Um vetor pode conter múltiplos <span class="emphasis"><em>componentes</em></span>. Um <span class="emphasis"><em>componente</em></span> é uma parte do vetor cujos pontos de controle estão todos conectados entre si por segmentos de curva. A habilidade de ter múltiplos componentes num vetor permite que você os converta em seleções que tem múltiplas partes desconectadas.</p>
+      <p>Cada componente de um vetor pode ser <span class="emphasis"><em>aberto</em></span> ou <span class="emphasis"><em>fechado</em></span>: <span class="quote">“<span class="quote">fechado</span>”</span> significa que o último ponto de âncora está conectado ao primeiro ponto de âncora. Se você transformar um vetor numa seleção, ela é criada como se os componentes abertos fossem fechados, criando automaticamente uma linha reta que liga a última âncora até a primeira. Os componentes do vetor em si não são alterados por conta disso.</p>
+      <p>Segmentos de vetor pode ser retos ou curvos. Um vetor é chamado de<span class="quote">“<span class="quote">poligonal</span>”</span> se todos os seus segmentos são retos. Um novo segmento de vetor sempre é criado sendo reto; as alças para os pontos de âncora ficam diretamente em cima dos próprios pontos, com controladores comprimento zero - o que produz segmentos retos. Arraste uma alça para fora de sua âncora correspondente para fazer um segmento se curvar. (Nas versões antigas do GIMP, até a 2.2 arrastar diretamente a alça era a única forma de curvar um segmento)</p>
+      <p>Uma coisa interessante sobre vetores é que eles consomem muito poucos recursos, especialmente se comparados com imagens. A representação de um Vetor na memória requer que sejam guardados apenas as coordenadas de seus pontos de âncora e alças. 1KB de memória é o suficiente para guardar um vetor complexo, mas não é o suficiente para manter nem uma pequena  uma camada RGB de 20x20 pixels. Portanto é possível ter literalmente centenas de vetores numa imagem sem causar stress significativo ao seu sistema. O tanto de stress que centenas de vetores podem causar em <span class="emphasis"><em>você</em></span>, entretanto, é uma outra questão. Mesmo um vetor com milhares de segmentos consome recursos mínimos se comparado com uma Camada ou Canais típicos.</p>
+      <p>Vetores podem ser criados e manipulados através da  <a class="link" href="gimp-tool-path.html" title="5.2. Vetores">ferramenta de Vetores</a>.</p>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-paths.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-using-paths.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-paths-and-selections.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-paths.html">4. 
+    
+    <span class="phrase">Vetores</span>
+  </a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-paths-and-selections.html">4.3. Vetores e seleções</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

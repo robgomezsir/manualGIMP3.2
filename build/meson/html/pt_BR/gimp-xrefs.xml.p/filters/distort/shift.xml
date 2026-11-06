@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-12-27 j.h: Update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-shift">
+  <title>Empurrar</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Empurrar</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Empurrar</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro Empurrar</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-shift.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Empurra todas as linhas de pixels, horizontal ou verticalmente, na camada atual, por uma distância aleatória dentro dos limites determinados.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Shift…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de filtro para <quote>Empurrar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/shift-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Empurrar</term>
+        <listitem>
+          <para>
+            With this option, you can set the maximum shift, between 1 and
+            200 pixels.
+          </para>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/distort/shift-ex-100.png"/>
+            </imageobject>
+            <caption>
+              <para>
+                Left: original. Right: shift = 100 horizontally.
+              </para>
+            </caption>
+          </mediaobject>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Shift direction</term>
+        <listitem>
+          <para>
+            This option sets the direction horizontally or vertically.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Random seed</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

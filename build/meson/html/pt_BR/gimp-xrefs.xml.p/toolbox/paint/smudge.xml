@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2017-07-30 j.h Update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-smudge">
+  <title>Borrar</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Borrar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Borrar</primary>
+  </indexterm>
+
+  <para>A ferramenta Dedinho lembra a pintura com os dedos. Com o GIMP-2.10, ela funciona de duas maneiras: <itemizedlist>
+      <listitem>
+        <para>A ferramenta de borrar usa o pincel ativo para borrar as cores na camada ativa ou seleção. Ela pega as cores por onde passa e as usa para misturar a cores próximas, numa distancia que você pode determinar.</para>
+      </listitem>
+      <listitem>
+        <para>Quando a opção <guilabel>Fluxo</guilabel> for maior que 0,00, a ferramenta Dedinho funciona como um pincel usando a cor de primeiro plano da caixa de ferramentas e misturando com a cor subjacente.</para>
+      </listitem>
+    </itemizedlist></para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>Existem várias formas para ativar a ferramenta:</para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagem: <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de pintura</guisubmenu><guimenuitem>Degradê</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Ícone da ferramenta de clonagem na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>Ao pressionar o atalho de teclado <keycap>C</keycap>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Modificadores de tecla</title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <!-- TRANSLATORS: This is about the Shift key -->
+          <keycap>Shift</keycap>
+        </term>
+        <listitem>
+          <para>A tecla <keycap>Shift</keycap> coloca a ferramenta de borrar no modo de linha reta. Pressionar a tecla <keycap>Shift</keycap> enquanto clica no <mousebutton>Botão 1</mousebutton> faz com que o borrão seja feito em linha reta. Clicar consecutivamente fará com que continue a borrar em linhas retas a partir do fim da linha anterior.</para>
+          <figure>
+            <title>Ferramenta de borrar</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/smudge-ex-line.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>Clique com Shift e arraste para criar uma linha</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>Pressionar <keycap>Ctrl</keycap> com o <keycap>Shift</keycap>, faz com que o ângulo entre duas linhas sucessivas variem em etapas de 15°.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-smudge.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Opacidade</term>
+        <term>Pincel</term>
+        <term>Tamanho</term>
+        <term>Proporção</term>
+        <term>Ângulo</term>
+        <term>Espaçamento</term>
+        <term>Dureza</term>
+        <term>Força</term>
+        <term>Dinâmicas</term>
+        <term>Opções de dinâmicas</term>
+        <term>Aplicar espalhamento</term>
+        <term>Pincelada suave</term>
+        <term>O tamanho do pincel - curva de esmaecimento</term>
+        <term>Expand Layers</term>
+        <listitem>
+          <xi:include href="about-common-paint-options.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Borda dura</term>
+        <listitem>
+          <para><guilabel>Pressão</guilabel>: Pressione com mais força para tornar o pincel maior.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Sem efeito de apagamento</term>
+        <listitem>
+          <para>Se a dedação diminuir o alfa de alguns pixels; este alfa não diminui se esta opção estiver marcada, e os pixels não são apagados. Isso é útil para preencher uma lacuna entre duas áreas de cor.</para>
+          <figure>
+            <title>Um exemplo de "Sem apagamento" do programador</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/smudge-ex-noerasing-without-effect.jpg" format="JPG"/>
+              </imageobject>
+              <caption>
+                <para>Sem efeito de apagamento</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/smudge-ex-noerasing-with-effect.jpg" format="JPG"/>
+              </imageobject>
+              <caption>
+                <para>Sem efeito de apagamento</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Usar amostra combinada</term>
+        <listitem>
+          <para>Se você ativar essa opção, a recuperação não é calculada apenas a partir de valores da camada ativa, mas de todas as camadas visíveis.</para>
+          <para>O reticulado é completamente explicado no <link linkend="glossary-dithering">Glossário</link></para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Taxa</term>
+        <listitem>
+          <para>Esta opção poderia ser chamada de "Comprimento do Dedinho" pois define o comprimento do efeito de dedinho em um traço.</para>
+          <figure>
+            <title>Exemplo de pintura</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/smudge-ex-rate.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>1: Taxa=20 2: Taxa=60 3: Taxa=90</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Fluxo</term>
+        <listitem>
+          <para>Já vimos o comportamento diferente da opção <quote>Fluxo</quote> quando definida como 0,00 (funciona como a ferramenta Dedinho original) e definida como mais que 0,00 (usa a cor de primeiro plano para dedar).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para><quote>Sem efeito de apagamento</quote> e <quote>Fluxo</quote> são novas opções no GIMP-2.10. Aqui estão comentários e exemplos do programador dessas opções em <ulink url="https://www.gimp-forum.net/Thread-Customized-smudge-tool-Smudge-with-painting">gimp-forum.net</ulink>:</para>
+    <!--TRANSLATORS: a xcf file exists for this image at
+      https://gitlab.gnome.org/GNOME/gimp-help/-/blob/master/docs/xcf%20images/smudge-simpletest.xcf -->
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/toolbox/smudge-simpletest.jpg" format="JPG"/>
+      </imageobject>
+    </mediaobject>
+
+  </sect3>
+</sect2>

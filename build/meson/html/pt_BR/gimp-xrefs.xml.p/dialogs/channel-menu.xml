@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect3 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-23 j.h: no change for 2.8
+-->
+<sect3 id="gimp-channel-menu">
+  <title>Menu de contexto de canais</title>
+
+  <indexterm>
+    <primary>Canais</primary>
+    <secondary>Menu</secondary>
+  </indexterm>
+
+  <variablelist>
+    <varlistentry>
+      <term>Visão geral</term>
+      <listitem>
+        <para>
+          You can get the Channels context menu by right clicking on a channel.
+          Several of the operations on channels are also available through
+          buttons at the bottom of the channels list. Those operations are
+          documented <link linkend="gimp-channel-edit">there</link>.
+        </para>
+        <para>
+          These commands, except <guilabel>Edit Channel Attributes…</guilabel>,
+          also work when multiple channels are selected.
+        </para>
+        <variablelist>
+          <varlistentry id="gimp-channel-edit">
+            <term>Editar atributos de canal</term>
+            <listitem>
+              <para>Só está disponível para canais do tipo máscara. Aqui você pode alterar o <guilabel>nome do Canal</guilabel>. Os outros dois parâmetros afetam a visibilidade do canal na janela de imagem; eles controlam a <guilabel>Opacidade</guilabel> e a cor usadas para a máscara na janela de imagens. Um clique no botão de cor exibe o seletor de cores do GIMP, e você pode escolher outra cor para máscara. Com essas opções você pode usar canais também para simular cores especiais (spot colors) em imagens destinadas a impressão especial.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry id="gimp-channel-color-tag">
+            <term>Color Tags</term>
+            <listitem>
+              <para>
+                Only available for selection masks. This allows you to assign
+                a color tag to one or more selected channels. If you have a lot
+                of channels this can make it easier to identify them by giving
+                related channels the same color tag.
+                To remove the color tag choose <guilabel>None</guilabel>.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>New Channel…</term>
+            <term>Raise Channels</term>
+            <term>Lower Channels</term>
+            <term>Duplicate Channels</term>
+            <term>Delete Channels</term>
+            <listitem>
+              <para>Veja <link linkend="gimp-channel-edit">Gerenciando canais</link></para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Channels to Selection</term>
+            <listitem>
+              <para>
+                The selection derived from the selected channels replaces the
+                previously active selection.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Add Channels to Selection</term>
+            <listitem>
+              <para>
+                The selection derived from the selected channels is added to the
+                active selection. The final selection is merged from both.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Subtract Channels from Selection</term>
+            <listitem>
+              <para>
+                The final selection is the subtraction of the selection
+                derived from the selected channels from the active selection.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Intersect Channels with Selection</term>
+            <listitem>
+              <para>
+                The final selection is the intersection of the selection
+                derived from the selected channels with the active one. Only the
+                selected parts common to both are kept.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</sect3>

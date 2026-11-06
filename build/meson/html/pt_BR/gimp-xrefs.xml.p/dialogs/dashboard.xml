@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-07-01 j.h: create
+-->
+<sect2 id="gimp-dashboard-dialog">
+  <title>Painel de Controle</title>
+
+  <indexterm>
+    <primary>Painel de Controle</primary>
+  </indexterm>
+
+  <para>O Painel de Controle ajuda a monitorar o uso de recursos do GIMP (Cache, Swap, CPU, Memória). Isso permite que você tome decisões mais informadas sobre várias opções de configuração, especialmente <link linkend="gimp-prefs-system-resources">Recursos do Sistema</link>. Também é usado por desenvolvedores.</para>
+
+  <figure>
+    <title>A <quote>janela d e diálogo</quote> terminal de erros</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/dashboard-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Dashboard</guimenuitem>
+          </menuchoice>;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Dashboard</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Usando o diálogo de vetores</title>
+    <para>O Painel de Controle consiste em cinco grupos que você pode monitorar: uso de <guilabel>Cache</guilabel>, uso de <guilabel>Swap</guilabel>, uso de <guilabel>CPU</guilabel>, uso de <guilabel>Memória</guilabel> e informações de <guilabel>Diversos</guilabel>. Por padrão o grupo Diversos está oculto e os grupos CPU e Memória estão recolhidos.</para>
+    <para>Cada grupo tem um <link linkend="tab-menus">menu de guias</link> separado onde você pode alterar configurações relacionadas a esse grupo.</para>
+    <para>Na parte inferior do Painel de Controle existem dois botões, que serão explicados no menu de contexto do Painel de Controle, onde esses comandos também estão disponíveis.</para>
+    <variablelist>
+      <varlistentry>
+        <term>O menu de contexto de Texturas </term>
+        <listitem>
+          <para>Este menu de contexto permite alterar quais grupos estão visíveis, algumas outras configurações relacionadas ao Painel de Controle, bem como alguns comandos relacionados ao Painel de Controle.</para>
+          <figure>
+            <title>O menu de contexto de Texturas </title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/dashboard-context-menu.png" format="PNG"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          <variablelist>
+            <varlistentry id="gimp-dashboard-groups">
+              <term>Submenu Grupos</term>
+              <listitem>
+                <para>O submenu Grupos permite alterar quais grupos estão visíveis. Por padrão <guimenuitem>Cache</guimenuitem>, <guimenuitem>Swap</guimenuitem>, <guimenuitem>CPU</guimenuitem> e <guimenuitem>Memória</guimenuitem> estão visíveis, e <guimenuitem>Diversos</guimenuitem> está oculto, mas você pode escolher mostrar ou ocultar qualquer um deles aqui.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-dashboard-update-interval">
+              <term>Submenu Intervalo de Atualização</term>
+              <listitem>
+                <para>O submenu Intervalo de Atualização permite alterar com que frequência as informações mostradas no Painel de Controle são atualizadas. O padrão é 0.25 segundos, mas você pode alterar isso para um período mais longo de até 4 segundos.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-dashboard-history-duration">
+              <term>Submenu Duração do Histórico</term>
+              <listitem>
+                <para>O submenu Duração do Histórico permite alterar por qual período de tempo as informações são mostradas. O padrão é 60 segundos, mas você pode escolher valores entre 15 e 240 segundos.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-dashboard-log-record">
+              <term>Iniciar/Parar Gravação…</term>
+              <listitem>
+                <para>Isto também está disponível como um botão na parte inferior do Painel de Controle. Isso permite que você inicie ou pare de gravar um log de desempenho. Em certas situações, os desenvolvedores podem solicitar este log se você estiver enfrentando problemas relacionados ao desempenho. Este log pode ajudá-los a descobrir o problema. Quando você inicia a gravação, será solicitado que selecione um local e um nome de arquivo onde o log será salvo.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-dashboard-log-add-marker">
+              <term>Adicionar Marcador…</term>
+              <listitem>
+                <para>Se você está gravando um log de desempenho, isso permite que você marque um evento específico no log. Será solicitado que você dê um nome a este evento. Isso pode facilitar para os desenvolvedores encontrarem a área problemática no seu log, porque os logs podem ficar bastante grandes. Isto também está disponível como um botão na parte inferior do Painel de Controle quando você está gravando um log de desempenho.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-dashboard-log-add-empty-marker">
+              <term>Adicionar Marcador Vazio…</term>
+              <listitem>
+                <para>Se você está gravando um log de desempenho, isso permite que você marque um ponto específico no log. Um marcador vazio será adicionado, significando que não será solicitado que você dê um nome a ele. Isso pode facilitar para os desenvolvedores encontrarem a área problemática no seu log, porque os logs podem ficar bastante grandes. Quando você está gravando, também pode usar o botão na parte inferior do Painel de Controle pressionando a tecla <keycap>Shift</keycap> para adicionar um marcador vazio.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-dashboard-reset">
+              <term>Pré-definições</term>
+              <listitem>
+                <para>Redefinir dados cumulativos remove os dados de desempenho e começa do zero. Isto também está disponível como um botão na parte inferior do Painel de Controle quando você não está gravando um log de desempenho.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-dashboard-low-swap-space-warning">
+              <term>Aviso de Baixo Espaço de Swap…</term>
+              <listitem>
+                <para>Se esta opção estiver habilitada, o Painel de Controle será elevado ao topo se o seu espaço de swap estiver chegando ao limite.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>Agora explicaremos cada grupo separadamente.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Cache</term>
+        <listitem>
+          <para>O Cache mostra qual parte do cache de tiles, cujo tamanho pode ser definido nas preferências de Recursos do Sistema, está sendo usado atualmente. Se o seu cache costuma estar perto do máximo, e você tem memória disponível suficiente, poderia considerar aumentar o tamanho do cache.</para>
+          <para>
+            By default this shows the currently occupied part of the Cache,
+            and the maximum cache size as set in preferences. What is shown
+            can be changed in the Cache tab menu by clicking on
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject><imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>.
+            You can choose to show or hide
+            <guilabel>Occupied</guilabel> size, <guilabel>Maximum</guilabel>
+            size used since you started measuring, the cache
+            <guilabel>Limit</guilabel>, the <guilabel>Compression</guilabel>
+            ratio, and <guilabel>Hit/Miss</guilabel> ratio.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Swap</term>
+        <listitem>
+          <para>O Swap mostra o tamanho atual do swap de tiles em disco e qual parte dele está sendo usada atualmente. Também mostra o limite de tamanho do swap. Se o seu swap costuma ser usado, e você tem memória disponível suficiente, poderia considerar aumentar o tamanho do cache.</para>
+          <para>
+            By default this shows the current Swap size and what part is
+            occupied, as well as the Swap size limit.
+            What is shown can be changed in the Swap tab menu by clicking on
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject><imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>.
+            You can choose to show or hide the
+            <guilabel>Occupied</guilabel> size, the current swap file
+            <guilabel>Size</guilabel>, the swap file size
+            <guilabel>Limit</guilabel>, the <guilabel>Queued</guilabel> size
+            (the amount planned to be written to the swap file),
+            <guilabel>Read</guilabel> is the total amount read from the swap
+            file, <guilabel>Written</guilabel> is the total amount written to
+            the swap file, and the <guilabel>Compression</guilabel> ratio of
+            the data written to the swap file.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>CPU</term>
+        <listitem>
+          <para>A CPU mostra o uso atual da CPU.</para>
+          <para>
+            By default this shows the current CPU usage.
+            What is shown can be changed in the CPU tab menu by clicking on
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject><imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>.
+            You can choose to
+            show or hide CPU <guilabel>Usage</guilabel>, and the total amount
+            of time the CPU has been <guilabel>Active</guilabel>.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Memória</term>
+        <listitem>
+          <para>A Memória mostra a quantidade atual de memória usada pelo GIMP, a quantidade de memória física disponível (livre) e o tamanho total da sua memória física.</para>
+          <para>
+            What is shown can be changed in the Memory tab menu by clicking on
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject><imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>.
+            You can choose to show or hide
+            the occupied tile <guilabel>Cache</guilabel>, the total size of
+            the <guilabel>Tile</guilabel> memory, the amount of memory
+            <guilabel>Used</guilabel>, the size of the
+            <guilabel>Available</guilabel> physical memory, and the physical
+            memory <guilabel>Size</guilabel>.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Diversos</term>
+        <listitem>
+          <para>O grupo Diversos não é mostrado por padrão, mas precisa ser habilitado primeiro no menu de contexto do Painel de Controle. Ele mostra informações extras principalmente úteis para desenvolvedores.</para>
+          <para>
+            By default all settings are shown, but what is shown can be changed
+            in the Misc tab menu by clicking on
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject><imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>.
+            You can choose to show or
+            hide total size of processed <guilabel>Mipmapped</guilabel> data,
+            the number of <guilabel>Assigned</guilabel> worker threads,
+            the number of <guilabel>Active</guilabel> worker threads, the
+            number of <guilabel>Async</guilabel> (asynchronous) operations, the
+            total size of <guilabel>Tile</guilabel> memory, the total size of
+            <guilabel>Scratch</guilabel> memory, and the total size of
+            <guilabel>TempBuf</guilabel> (temporary buffers).
+          </para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect3>
+
+</sect2>

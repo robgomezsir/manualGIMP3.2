@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.3. Listas, Listas e mais Listas!</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-using-script-fu-tutorial.html" title="3. Um tutorial de Script-Fu" />
+    <link rel="prev" href="gimp-using-script-fu-tutorial-identifier.html" title="3.2. Varáveis e funções" />
+    <link rel="next" href="gimp-using-script-fu-tutorial-first-script.html" title="3.4. Seu primeiro Script de Script-Fu" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.3. Listas, Listas e mais Listas!</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-script-fu-tutorial-identifier.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Um tutorial de Script-Fu</span>
+        <nav> <a accesskey="n" href="gimp-using-script-fu-tutorial-first-script.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-using-script-fu-tutorial-lists"></a>3.3. Listas, Listas e mais Listas!</h3>
+          </div>
+        </div>
+      </div>
+      <p>Nós explicamos variáveis e funções, e agora vamos adentrar os lodaçais turvos das listas de Scheme.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2833"></a>3.3.1. Definindo uma lista</h4>
+            </div>
+          </div>
+        </div>
+        <p>Antes de falar mais sobre listas, é necessário que você entenda a diferença entre valores atômicos e listas.</p>
+        <p>Você já viu valores atômicos quando inicializamos variáveis na lição anterior. Um valor atômico é um único valor. Então, por exemplo, nós podemos atribuir para a variável <span class="quote">“<span class="quote"><code class="varname">x</code></span>”</span> o valor simples de 42 como o comando seguinte:</p>
+        <pre class="programlisting">(let* ( (x 8) ) x)</pre>
+        <p>(Nós adicionamos a expressão <code class="varname">x</code> ao final da expressão para que o valor atribuído a <code class="varname">x</code> fosse impresso — normalmente você não precisa fazer isso. Note como o código do <code class="code">let*</code> funciona quase como uma função: o valor da última expressão é o valor retornado.)</p>
+        <p>Uma variável também pode se referir a uma lista de valores, em vez de a um valor simples. Para atribuir  a lista de valores 1, 3, 5 a uma variável  <code class="varname">x</code> , nós digitaríamos:</p>
+        <pre class="programlisting">(let* ( (x '(1 3 5))) x)</pre>
+        <p>Digite ambos os comanos no Script-fu e veja como ele responde. Quando você digita o primeiro, ele simplesmente dá o resultado:</p>
+        <pre class="programlisting">42</pre>
+        <p>Entretanto, quando você digita o segundo comando, ele responde com o seguinte resultado: </p>
+        <pre class="programlisting">(1 3 5)</pre>
+        <p>Quando ele responde o valor 42, ele está informando você que a variável <code class="varname">x</code> contém o valor atômico 42. Entretanto, ao responder com <code class="computeroutput">(1 3 5)</code>, ele está informando você que a <code class="varname">x</code> não contém um único valor, mas uma lista de valores. Note que não há virgulas em nossa declaração ou atribuição de lista, nem no resultado impresso: os elementos são separados por espaço.</p>
+        <p>A sintaxe para definir uma lista é:</p>
+        <pre class="programlisting">'(a b c)</pre>
+        <p> Onde <code class="varname">a</code>, <code class="varname">b</code>, e <code class="varname">c</code> são valores literais. Nós usamos o apóstrofe (<code class="code">'</code>)  para indicar que o que se segue entre parênteses é uma lista, e não uma chamada a função ou uma expressão.</p>
+        <p>Uma lista vazia pode ser definida assim:</p>
+        <pre class="programlisting">'()</pre>
+        <p>Ou simplesmente:</p>
+        <pre class="programlisting">()</pre>
+        <p>As listas podem conter valores atômicos, como também podem conter outras listas:</p>
+        <pre class="programlisting">
+(let*
+   (
+        (x
+           '("O GIMP" (1 2 3) ("é" ("demais" () ) ) )
+        )
+    )
+    x
+)
+      </pre>
+        <p>Note que após o primeiro apóstrofo, você não precisa mais usar um apóstrofo ao definir as listas internas. Vá em frente e copie a expressão acima no terminal do Script-fu (lembrando-se de digitar tudo numa linha só) e veja o que ele retorna.</p>
+        <p>
+        You should notice that the result returned is not a list of
+        single, atomic values; rather, it is a list of a literal
+        <code class="code">("GIMP")</code>, the list <code class="code">(1 2 3)</code>, etc.
+      </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2834"></a>3.3.2. Como pensar sobre as listas</h4>
+            </div>
+          </div>
+        </div>
+        <p>É útil pensar nas listas como compostas de uma <span class="quote">“<span class="quote">cabeça</span>”</span> e uma <span class="quote">“<span class="quote">cauda</span>”</span>. A cabeça é o primeiro elemento da lista, e a cauda é o restante da lista. Você verá por que isso é importante quando nós discutirmos sobre como acrescentar elementos à listas e como acessar elementos dentro da lista.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2835"></a>3.3.3. Criando listas por concatenação (a função <code class="function">cons</code>) </h4>
+            </div>
+          </div>
+        </div>
+        <p>Uma das funções mais comuns que você vai encontrar é a função <code class="code">cons</code>. Ela pega um valor, e coloca o mesmo no começo de seu segundo argumento, que deve ser uma lista. Na seção anterior, eu sugeri que você pensasse nas listas como sendo compostas de um elemento (a cabeça), seguida do restante da lista (a cauda). Isso é exatamente como a função <span class="quote">“<span class="quote">cons</span>”</span> funciona — ela adiciona um elemento como a cabeça de uma lista. Portanto, você pode criar uma lista dessa forma:</p>
+        <pre class="programlisting">(cons 1 '(2 3 4) )</pre>
+        <p>O resultado é a lista <code class="code">(1 2 3 4)</code>.</p>
+        <p>Você também pode criar uma lista com um único elemento:</p>
+        <pre class="programlisting">(cons 1 () )</pre>
+        <p>E, claro, você pode usar variáveis declaradas previamente no lugar de quaisquer literais, como seria de se esperar.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2836"></a>3.3.4. Definindo uma lista usando a função <code class="function">list</code></h4>
+            </div>
+          </div>
+        </div>
+        <p>Para definir uma lista composta de literais ou de variáveis já declaradas, use a função <code class="function">list</code>:</p>
+        <pre class="programlisting">(list 5 4 3 a b c)</pre>
+        <p>Isso irá compor e retornar uma lista contendo os valores das variáveis <code class="varname">a</code>, <code class="varname">b</code> e <code class="varname">c</code>. Por exemplo:</p>
+        <pre class="programlisting">
+        (let*  (
+                  (a 1)
+                  (b 2)
+                  (c 3)
+               )
+
+               (list 5 4 3 a b c)
+        )
+      </pre>
+        <p>Esse código cria a lista <code class="code">(5 4 3 1 2 3)</code>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2837"></a>3.3.5. Acessando valores em uma lista</h4>
+            </div>
+          </div>
+        </div>
+        <p>Para acessar valores em uma lista, use as funções <code class="function">car</code> e <code class="function">cdr</code>, que retornam o primeiro elemento de uma lista (cabeça) e o restante da lista (cauda), respectivamente. Essas funções vão quebrar uma lista na construção cabeça::cauda, como eu mencionei anteriormente.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2838"></a>3.3.6. A  função <code class="function">car</code> </h4>
+            </div>
+          </div>
+        </div>
+        <p>A função <code class="function">car</code> retorna o primeiro elemento da lista (a cabeça da lista). A lista não pode estar vazia. Portanto, a seguinte expressão retorna o primeiro elemento da lista:</p>
+        <pre class="programlisting">(car '("primeiro" 2 "terceiro"))</pre>
+        <p>Que é</p>
+        <pre class="programlisting">"primeiro"</pre>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2839"></a>3.3.7. A função <code class="function">cdr</code></h4>
+            </div>
+          </div>
+        </div>
+        <p>A função <code class="function">cdr</code> retorna o restante da lista depois do primeiro elemento (a cauda da lista). Se só houver um elemento na lista, ela retorna a lista vazia.</p>
+        <pre class="programlisting">(cdr '("primeiro" 2 "terceiro"))</pre>
+        <p>retorna:</p>
+        <pre class="programlisting">(2 "terceiro")</pre>
+        <p>Enquanto que o seguinte:</p>
+        <pre class="programlisting">(cdr '("um e único"))</pre>
+        <p>retorna:</p>
+        <pre class="programlisting">()</pre>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2840"></a>3.3.8. Acessando outros elementos em uma lista</h4>
+            </div>
+          </div>
+        </div>
+        <p>Ok, legal, nós temos o primeiro elemento de uma lista, e também o restante da lista, mas como acessamos o segundo, terceiro, ou outros elementos de uma lista? Existem várias funções de <span class="quote">“<span class="quote">conveniência</span>”</span> para acessar, por exemplo, a cabeça da cabeça da cauda de uma lista (<code class="code">caadr</code>), a cauda da cauda de uma lista (<code class="code">cddr</code>), e assim por diante.</p>
+        <p>A convenção de nomes usados é simples: os a's e d's representam as cabeças e caudas das listas, portanto:</p>
+        <pre class="programlisting">(car (cdr (car x) ) )</pre>
+        <p>Poderia ser escrito como:</p>
+        <pre class="programlisting">(cadar x)</pre>
+        <p>Para ganhar alguma prática em funções de acesso a elementos de lista, tente digitar o seguinte (lembre-se que tem que ser numa única linha); Use variações das funções  <code class="function">car</code> e <code class="function">cdr</code> para acessar diferentes elementos da lista:</p>
+        <pre class="programlisting">
+        (let* (
+                 (x  '( (1 2 (3 4 5) 6)  7  8  (9 10) )
+                 )
+              )
+              ; Coloque seu código com car/cdr aqui        )
+      </pre>
+        <p>Tente acessar o número 3 do conjunto acima usando somente duas chamadas as função. Se você puder fazer isso, você está no caminho certo para se tornar um Mestre de Script-fu!</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Em Scheme, um ponto e vírgula (<code class="code">;</code>) denota um comentário. Ele, e tudo o que vier depois dele na mesma linha são ignorados pelo interpretador de scripts, então você pode usar isso para adicionar comentários para refrescar sua memória quando você olhar um script mais tarde.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-script-fu-tutorial-identifier.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-using-script-fu-tutorial.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-script-fu-tutorial-first-script.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-script-fu-tutorial-identifier.html">3.2. Varáveis e funções</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-script-fu-tutorial-first-script.html">3.4. Seu primeiro Script de Script-Fu</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

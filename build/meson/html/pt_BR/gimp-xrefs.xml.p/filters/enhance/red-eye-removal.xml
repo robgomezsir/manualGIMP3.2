@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-01-03 ude: added some basic stuff (screenshots,indexterms,etc.)
+  2007-12-02 lexa: created initial version
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-red-eye-removal">
+  <title>Remoção de olho vermelho</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Realçar</secondary>
+    <tertiary>Remoção de olho vermelho</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Remoção de olho vermelho</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão Geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Remoção de olho vermelho</quote> </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/enhance-red-eye-before.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/enhance-red-eye-after.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      The aim of this filter is to remove red eyes from an image.
+      For best results, you should first select the red parts of the eyes
+      before applying this filter, or else all red areas in your image will
+      be affected.
+    </para>
+    <note>
+      <para>
+        If the image is in grayscale mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Enhance</guisubmenu>
+        <guimenuitem>Red Eye Removal…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções para o filtro <quote>Remoção de olho vermelho</quote> </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/enhance/red-eye-removal-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Previsão</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Limiar</term>
+        <listitem>
+          <para>
+            This setting allows you to adjust the amount of red needed to
+            change the color. The red value in each pixel is replaced by a
+            combination of the green and almost 20% of the blue in the
+            same pixel.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

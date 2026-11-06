@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  
+-->
+<sect2 id="gimp-filter-invert-value">
+  <title>Inverter Valor</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Inverter Valor</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Inverter Valor</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>Inverter valor</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/taj_orig.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/color-taj-vinvert.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para><quote>Inverter valor</quote> aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro inverte o canal de valor (luminosidade) da camada ou seleção ativa. O matiz e a saturação não são afetados, embora a cor, algumas vezes, possa ficar ligeiramente diferente devido a erros de arredondamento. Se você desejar inverter o matiz e a saturação também, use <menuchoice><guimenu>Cores</guimenu><guimenuitem>Inverter</guimenuitem></menuchoice>.</para>
+    <para>Note que o matiz e a saturação podem ficar bastante distorcidos ao se aplicar duas vezes este filtro em cores com alta luminosidade (por exemplo, HSV 102°, 100%, 98% resulta em HSV 96°, 100%, 2% depois de uma primeira aplicação, e 96°, 100%, 98% após uma segunda aplicação). Portanto não espere aplicar este filtro duas vezes em sequência e ter de volta a mesma imagem com que começou.</para>
+    <figure>
+      <title>Exemplo da aplicação dupla deste filtro</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/cosmos-1.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/invert.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Primeira aplicação do filtro</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/invertx2.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Segunda aplicação: a imagem resultante não é exatamente a mesma que a original.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guimenuitem>Value Invert</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+</sect2>

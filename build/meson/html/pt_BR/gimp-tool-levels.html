@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.10. Níveis</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. O menu “Cores”" />
+    <link rel="prev" href="gimp-tool-brightness-contrast.html" title="8.9. Brilho-Contraste" />
+    <link rel="next" href="gimp-tool-curves.html" title="8.11. Curvas" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.10. Níveis</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-brightness-contrast.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. O menu <span class="quote">“<span class="quote">Cores</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-tool-curves.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-levels"></a>8.10. Níveis</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id42834" class="indexterm"></a>
+      <a id="id42837" class="indexterm"></a>
+      <a id="id42840" class="indexterm"></a>
+      <a id="id42842" class="indexterm"></a>
+      <a id="id42844" class="indexterm"></a>
+      <a id="id42846" class="indexterm"></a>
+      <a id="id42848" class="indexterm"></a>
+      <p>A ferramenta Níveis providencia funcionalidades similares ao diálogo <a class="link" href="gimp-histogram-dialog.html" title="2.5. Histogram Dialog">Histograma</a>, mas também pode mudar o intervalo de intensidade da camada ou seleção ativa em cada canal. Esta ferramenta é usada para tornar uma imagem mais clara ou escura, mudar o contraste ou corrigir uma tonalidade predominante.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3942"></a>8.10.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Colors</span> → <span class="guimenuitem">Levels…</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          You can also access it by clicking the tool icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-levels.svg" width="16" /></span>
+          </span>
+          in the Toolbox if this tool has been installed there. For this, please
+          refer to <a class="xref" href="gimp-prefs-toolbox.html" title="6.13. Caixa de ferramentas">Seção 6.13, “Caixa de ferramentas”</a>.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3943"></a>8.10.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3944"></a>
+          <p class="title">
+            <strong>Figura 16.132. Opções da ferramenta Níveis</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/levels-dialog.png" alt="Opções da ferramenta Níveis" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Predefinições, </span>
+              <span class="term">Opções de Mistura, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-colors-menu.html#colors-common-features" title="8.1.2. Funcionalidades Comuns de Cores">Seção 8.1.2, “Funcionalidades Comuns de Cores”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Canal</span>
+            </dt>
+            <dd>
+              <p>Você pode escolher o canal específico a ser modificado pela ferramenta: </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Valor</span> modifica o valor de todos os canais RGB na imagem: a imagem se torna mais escura ou mais clara.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Vermelho</span>, <span class="guilabel">Verde</span> e <span class="guilabel">Azul</span> operam em um canal de cor particular: a imagem recebe mais ou menos cor. Lembre-se de que adicionar ou remover uma cor resulta em remover ou adicionar a cor complementar.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Alfa</span> funciona em camadas ou seleções semitransparentes: aqui, escuro significa mais transparência, e branco é totalmente opaco. Sua imagem deve possuir um Canal Alfa, se não esta opção é desabilitada.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Redefinir canal</span> recupera a configuração original para o canal selecionado.</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-space-linear-symbolic.svg" width="16" /></span>
+          </span>
+          Linear
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-space-non-linear-symbolic.svg" width="16" /></span>
+          </span>
+          Non-Linear
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-space-perceptual-symbolic.svg" width="16" /></span>
+          </span>
+          Perceptual
+        </span>
+            </dt>
+            <dd>
+              <p>
+            These three buttons determine whether the tone reproduction (TRC)
+            will be displayed using a linear, non-linear, or perceptual X axis.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-histogram-linear.svg" width="16" /></span>
+          </span>
+          Linear histogram
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-histogram-logarithmic.svg" width="16" /></span>
+          </span>
+          Logarithmic histogram
+        </span>
+            </dt>
+            <dd>
+              <p>
+            These two buttons determine whether the histogram will be displayed
+            using a linear or logarithmic Y axis. For images taken from
+            photographs, the linear mode is most commonly useful. For images
+            that contain substantial areas of constant color, though, a linear
+            histogram will often be dominated by a single bar, and a
+            logarithmic histogram will often be more useful.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Níveis da Entrada</span>
+            </dt>
+            <dd>
+              <p>A área principal é uma representação gráfica do conteúdo (o Histograma) de tons escuros (Sombras), médios e claros(Destaques) da camada ou seleção ativa. Eles estão na abscissa do nível 0 (preto) ao 255 (branco). O número de pixels para um nível está no eixo das ordenadas. A superfície da curva representa todos os pixels da imagem para o canal selecionado. Uma imagem bem balanceada é uma imagem com níveis (tons) distribuídos por todo o intervalo. Uma imagem com uma cor predominante azul, por exemplo, produzirá um histograma deslocado para a esquerda nos canais Verde e Vermelho, representado pela falta de verde e vermelho nos tons claros.</p>
+              <p>Intervalos de níveis podem ser modificados de três formas:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: opencircle; ">
+                  <li class="listitem" style="list-style-type: circle">
+                    <p>Três triângulos como controles deslizantes: um preto para tons escuros (Sombras), um cinza para tons médios (Gama), um branco para tons claros (Destaques).</p>
+                    <p>
+                The black slider determines the <span class="emphasis"><em>black point</em></span>:
+                all pixels with this value or less
+                will be black (no color with a color channel selected /
+                transparent with the Alpha channel selected).
+              </p>
+                    <p>
+                The white slider determines the <span class="emphasis"><em>white point</em></span>:
+                all pixels with this value or
+                higher, will be white (fully colored with a color channel
+                selected / fully opaque with the Alpha channel selected).
+              </p>
+                    <p>O controle deslizante cinza determina o <span class="emphasis"><em>ponto médio</em></span>. Indo para a esquerda, rumo ao preto, torna a imagem mais clara (mais colorida/mais opaca). Indo para a direita, rumo ao branco, torna a imagem mais escura (menos colorida/mais transparente).</p>
+                  </li>
+                  <li class="listitem" style="list-style-type: circle">
+                    <p>
+                Two eye-droppers: when you click them, the mouse pointer
+                becomes an eye-dropper. Then clicking on the image determines
+                the black or the white point according to the chosen
+                eye-dropper. Use the left, dark one
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-picker-black.svg" width="16" /></span>
+                </span>
+                to determine the black-point; use the right, white one
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-picker-white.svg" width="16" /></span>
+                </span>
+                to determine the white point.
+              </p>
+                  </li>
+                  <li class="listitem" style="list-style-type: circle">
+                    <p>Três caixas de texto numéricas para informar diretamente os valores.</p>
+                  </li>
+                </ul>
+              </div>
+              <p>Níveis de Entrada são usados para clarear destaques (tons claros), escurecer sombras (tons escuros), alterar o balanço de tons claros e escuros. Mova os controles deslizantes para a esquerda para aumentar luminosidade (aumenta a cor escolhida/aumenta opacidade). Mova os controles deslizantes para a direita para reduzir a luminosidade (reduz a cor escolhida/reduz opacidade).</p>
+              <div class="orderedlist">
+                <p class="title">
+                  <strong>Exemplos para Níveis de Entrada</strong>
+                </p>
+                <p>A imagem original é uma imagem em tons de cinza com três faixas: Sombras (64), Tons Médios (127) e Destaques (192). O histograma mostra três picos, um para cada um dos três tons.</p>
+                <div class="mediaobject">
+                  <img src="images/toolbox/levels-input-1.png" />
+                  <div class="caption">
+                    <p>Imagem original</p>
+                  </div>
+                </div>
+                <ol class="orderedlist" type="1">
+                  <li class="listitem">
+                    <p>O canal Valor está selecionado. O controle deslizante preto (Sombras) foi movido para o pico de Sombras. O valor 64 se tornou 0 e a faixa de Sombras se tornou preta (0). O controle do Gama (tons médios) é automaticamente movido para o meio do intervalo de tons. Os tons médios foram escurecidos para 84 e os Destaques para 171.</p>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/levels-input-2-dialog.png" />
+                      <div class="caption">
+                        <p>Controle deslizante preto foi movido</p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/levels-input-2.png" />
+                      <div class="caption">
+                        <p>Imagem resultante</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p>O controle deslizante branco (destaques) foi movido para o pico de Destaques. O valor 192 se tornou 255 e a faixa de destaques se tornou branca. O controle do Gama (tons médios) é automaticamente movido para o meio do intervalo de tons. Tons médios foram clareados para 169 e Sombras para 84.</p>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/levels-input-3-dialog.png" />
+                      <div class="caption">
+                        <p>Controle deslizante branco foi movido</p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/levels-input-3.png" />
+                      <div class="caption">
+                        <p>Imagem resultante</p>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Níveis de Saída</span>
+            </dt>
+            <dd>
+              <p>
+            Output levels allow manual selection of a constrained output
+            level range. There are also numeric text boxes with
+            <span class="guilabel">+</span> and <span class="guilabel">-</span> buttons
+            located here that can be used to interactively change the Output
+            Levels.
+          </p>
+              <p>Níveis de saída forçam o intervalo de tons a se encaixar nos novos limites que você definiu.</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>Trabalhando com Valor: valores são comprimidos e se parecem mais; assim, o contraste é reduzido. Sombras ficam mais claras: novos detalhes podem aparecer mas o contraste é menor; um comprometimento é necessário. Tons claros ficam mais escuros.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Trabalhando com canais de cor: se você usar o canal verde, por exemplo, e definir os níveis de saída entre 100 e 140, todos os pixels com algum verde, mesmo um valor baixo, terão seu valor de canal verde alterado entre 100 e 140.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Trabalhando com canal Alfa: todos os valores Alfa são deslocados para o intervalo que você delimitou.</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="orderedlist">
+                <p class="title">
+                  <strong>Exemplo para Níveis de Saída</strong>
+                </p>
+                <ol class="orderedlist" type="1">
+                  <li class="listitem">
+                    <p>A imagem original é um gradiente RGB de preto (0;0;0) para branco (255;255;255). Níveis de Saída não tem histograma; aqui, usamos <span class="guimenu">Janelas</span> → <span class="guisubmenu">Diálogos Encaixáveis</span> → <span class="guimenuitem">Histograma</span>.</p>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/levels-output-1.png" />
+                      <div class="caption">
+                        <p>Imagem original (um gradiente)</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p>Canal Valor selecionado. O controle deslizante preto foi movido para 63 e o controle branco para 189. O histograma mostra a compressão dos pixels. Nenhum pixel é menor do que 63, nem maior do que 189. Na imagem, Sombras são mais claras e Destaques são mais escuros: contraste é reduzido.</p>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/levels-output-2.png" />
+                      <div class="caption">
+                        <p>Controle deslizante preto foi movido</p>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Todos Os Canais</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="guilabel">Auto Input Levels</span>: Performs an automatic
+            setting of the levels.
+          </p>
+              <p><strong>
+              Three eyedroppers
+              <span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-picker-white.svg" width="16" /></span>
+              </span>,
+              <span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-picker-gray.svg" width="16" /></span>
+              </span>,
+              <span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-picker-black.svg" width="16" /></span>
+              </span>.
+            . </strong>
+              These three buttons
+              respectively represent a white, a gray and a black eye-dropper.
+              When you click one of these buttons, the mouse pointer takes the
+              form of the eye-dropper it represents. Then, when clicking the
+              image, the clicked pixel determines the
+              <span class="emphasis"><em>white point</em></span>, the
+              <span class="emphasis"><em>black point</em></span> or the
+              <span class="emphasis"><em>mid point</em></span> according to the eye-dropper you
+              chose. Works on all channels, even if a particular channel is
+              selected.
+            </p>
+              <div class="figure">
+                <a id="id3945"></a>
+                <p class="title">
+                  <strong>Figura 16.133. Exemplo para os conta-gotas de Níveis</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/levels-eyedrop.png" alt="Exemplo para os conta-gotas de Níveis" />
+                    <div class="caption">
+                      <p>Acima está o gradiente original de preto para branco. Abaixo está o resultado após clicar com o conta-gotas branco: todos os pixels com um valor maior do que o do pixel clicado se tornaram brancos.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Edite estas configurações como Curvas</span>
+            </dt>
+            <dd>
+              <p>Para facilitar seu trabalho, este botão lhe permite usar a ferramenta <a class="link" href="gimp-tool-curves.html" title="8.11. Curvas">Curvas</a> com as mesmas configurações.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3946"></a>8.10.3. Diálogo de Opções de Ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <p>
+        </p>
+          <div class="figure">
+            <a id="id3947"></a>
+            <p class="title">
+              <strong>Figura 16.134. Opções da ferramenta <span class="quote">“<span class="quote">Níveis</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/toolbox/tool-options-levels.png" alt="Opções da ferramenta “Níveis”" />
+              </div>
+            </div>
+          </div>
+          <p><br class="figure-break" />
+      </p>
+          <p>Embora esta ferramenta não esteja presente por padrão na Caixa de Ferramentas (favor consultar <a class="xref" href="gimp-prefs-toolbox.html" title="6.13. Caixa de ferramentas">Seção 6.13, “Caixa de ferramentas”</a> caso queira adicioná-la), ainda assim ela tem um diálogo de Opção de Ferramentas abaixo da Caixa de Ferramentas.</p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Sample average</span>
+            </dt>
+            <dd>
+              <p>Este controle deslizante define o <span class="quote">“<span class="quote">raio</span>”</span> da área de captura de cores para obter o valor de cor médio de pixels adjacentes. Esta área aparece como um quadrado mais ou menos aumentado quando você mantém o clique em um pixel.</p>
+            </dd>
+            <dt>
+              <span class="term">Sample merged</span>
+            </dt>
+            <dd>
+              <p>
+            If you enable this option, sampling is not calculated only
+            from the values of the active layer, but from all visible layers.
+          </p>
+              <p>
+            For more information, see the
+            <a class="link" href="glossary.html#glossary-samplemerge" title="Sample Merged">Glossary entry</a>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3948"></a>8.10.4. Pŕatica real</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3949"></a>
+          <p class="title">
+            <strong>Figura 16.135. Uma imagem muito subexposta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/colors-retinex1.png" alt="Uma imagem muito subexposta" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/levels-ex1b.png" alt="Uma imagem muito subexposta" />
+              <div class="caption">
+                <p>O histograma exibe uma predominância de sombras e tons claros ausentes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id3950"></a>
+          <p class="title">
+            <strong>Figura 16.136. Definindo o ponto branco</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/levels-ex2a.png" alt="Definindo o ponto branco" />
+              <div class="caption">
+                <p>O controle deslizante branco foi movido para o início do bem-definido Destaque (tons claros). A imagem é clareada.</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/levels-ex2b.png" alt="Definindo o ponto branco" />
+              <div class="caption">
+                <p>O histograma resultante (abaixo) mostra Tons Claros agora, mas as sombras ainda predominam.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id3951"></a>
+          <p class="title">
+            <strong>Figura 16.137. Definindo o balanço entre Sombras e Destaques</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/levels-ex3a.png" alt="Definindo o balanço entre Sombras e Destaques" />
+              <div class="caption">
+                <p>O controle deslizante do meio foi movido para a esquerda. Isto resulta na redução da proporção de sombras e aumento da proporção de tons claros.</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/levels-ex3b.png" alt="Definindo o balanço entre Sombras e Destaques" />
+              <div class="caption">
+                <p>O histograma resultante (abaixo) confirma a redução de Sombras.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-brightness-contrast.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-curves.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-brightness-contrast.html">8.9. Brilho-Contraste</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-curves.html">8.11. Curvas</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

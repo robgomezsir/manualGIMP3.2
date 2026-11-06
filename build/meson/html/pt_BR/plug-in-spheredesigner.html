@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.28. Designer de esferas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="script-fu-line-nova.html" title="14.27. Explosão de linhas" />
+    <link rel="next" href="plug-in-spyrogimp.html" title="14.29. Espirogimp" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.28. Designer de esferas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-line-nova.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="plug-in-spyrogimp.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-spheredesigner"></a>14.28. Designer de esferas</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id61644" class="indexterm"></a>
+      <a id="id61648" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5090"></a>14.28.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5091"></a>
+          <p class="title">
+            <strong>Figura 17.408. A mesma imagem, antes e após a aplicação do filtro <span class="quote">“<span class="quote">Designer de esferas</span>”</span>.</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="A mesma imagem, antes e após a aplicação do filtro “Designer de esferas”." />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-taj-spheredesigner.jpg" alt="A mesma imagem, antes e após a aplicação do filtro “Designer de esferas”." />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Este filtro cria uma esfera tridimensional com diferentes texturas. Ele substitui a imagem original.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5092"></a>14.28.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guimenuitem">Sphere Designer…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5093"></a>14.28.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5094"></a>
+          <p class="title">
+            <strong>Figura 17.409. Parâmetros do filtro <span class="quote">“<span class="quote">Designer de esferas</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/spheredesigner.png" alt="Parâmetros do filtro “Designer de esferas”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Pré-visualização</span>
+            </dt>
+            <dd>
+              <p>Todas as suas mudanças de configuração serão exibidas na pré-visualização, sem afetar a imagem até que você clique em <span class="guilabel">OK</span>. Note que a pré-visualização exibe a imagem inteira, mesmo que o resultado final vá afetar apenas uma área selecionada.  As atualizações são exibidas na pré-visualização em tempo real.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Texturas</strong>
+          </p>
+          <p>
+        The list of textures applied to the sphere. The textures are applied
+        in the order listed. Each item shows the type and the name of the
+        texture.
+      </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Novo</span>
+            </dt>
+            <dd>
+              <p>Cria uma nova textura e a adiciona no o final da lista. O nome e as características desta nova textura são os que são exibidos na área de Propriedades de textura, mas você pode alterá-los operando nesta área, desde que a sua nova textura esteja selecionada na lista.</p>
+            </dd>
+            <dt>
+              <span class="term">Duplicar</span>
+            </dt>
+            <dd>
+              <p>Cópias a textura selecionada e adiciona a cópia da mesma no final da lista.</p>
+            </dd>
+            <dt>
+              <span class="term">Excluir</span>
+            </dt>
+            <dd>
+              <p>Exclui a textura selecionada da lista.</p>
+            </dd>
+            <dt>
+              <span class="term">Abrir, </span>
+              <span class="term">Salvar</span>
+            </dt>
+            <dd>
+              <p>Permite salvar as configurações atuais ou carregar as configurações salvas anteriormente.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Propriedades</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Tipo</span>
+            </dt>
+            <dd>
+              <p>Determina o tipo de ação na esfera.</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Textura</span>
+                  </dt>
+                  <dd>
+                    <p>Cobre a esfera com um padrão específico.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Relevo</span>
+                  </dt>
+                  <dd>
+                    <p>Dá um pouco de relevo à textura.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Luz</span>
+                  </dt>
+                  <dd>
+                    <p>Permite definir os parâmetros da luz sobre a esfera.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Textura</span>
+            </dt>
+            <dd>
+              <p>Determina o padrão utilizado pelo tipo de textura. Se a textura aplica-se à luz, então a luz é distorcida por essa textura como se estivesse passando por essa textura antes de ser projetada na esfera. Se a textura se aplica à própria textura, a textura é aplicada diretamente à esfera. Várias opções estão disponíveis.</p>
+            </dd>
+            <dt>
+              <span class="term">Cores</span>
+            </dt>
+            <dd>
+              <p>Define duas cores para serem utilizadas para uma textura. Ao se pressionar um dos botões de cor aparece uma caixa de diálogo de seleção de cores.</p>
+            </dd>
+            <dt>
+              <span class="term">Escala:</span>
+            </dt>
+            <dd>
+              <p>Determina o tamanho de elementos distintos que compõem a textura. Por exemplo, para a textura <span class="quote">“<span class="quote">Xadrez</span>”</span> este parâmetro determina o tamanho dos quadrados pretos e brancos. A faixa de valores é de 0 a 10.</p>
+            </dd>
+            <dt>
+              <span class="term">Turbulência</span>
+            </dt>
+            <dd>
+              <p>Determina o grau de distorção da textura antes de aplicá-la à esfera. A faixa de valores é de 0 a 10. Com valores de até 1.0 você ainda pode perceber os padrões não distorcidos;  para valores maiores que isso, a textura gradualmente se transforma em ruído.</p>
+            </dd>
+            <dt>
+              <span class="term">Quantidade</span>
+            </dt>
+            <dd>
+              <p>Determina o grau de influência a textura tem sobre o resultado final. A faixa de valores é de 0 a 1. Com o valor de 0 a textura não afeta o resultado.</p>
+            </dd>
+            <dt>
+              <span class="term">Expoente</span>
+            </dt>
+            <dd>
+              <p>
+            With the Wood texture, this option gives an aspect of venetian
+            blind, more or less open.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Transformações</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Escala X, </span>
+              <span class="term">Escala Y, </span>
+              <span class="term">Escala Z</span>
+            </dt>
+            <dd>
+              <p>Determina o grau de alongamento / compressão da textura sobre a esfera ao longo das três direções. A faixa de valores é de 0 a 10.</p>
+            </dd>
+            <dt>
+              <span class="term">Rotacionar X, </span>
+              <span class="term">Rotacionar Y, </span>
+              <span class="term">Rotacionar Z</span>
+            </dt>
+            <dd>
+              <p>Determina o quanto uma textura será girada sobre a esfera, em cada eixo. A faixa de valores é de 0 a 360 graus.</p>
+            </dd>
+            <dt>
+              <span class="term">Posição X, </span>
+              <span class="term">Posição Y, </span>
+              <span class="term">Posição Z</span>
+            </dt>
+            <dd>
+              <p>Determina a posição da textura em relação à esfera. Quando o tipo é Luz, este parâmetro refere-se à posição da luz em relação a esfera.</p>
+            </dd>
+          </dl>
+        </div>
+        <p>O botão <span class="guibutton">Restaurar</span> devolve todos os parâmetros para os valores padrão.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-line-nova.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-spyrogimp.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-line-nova.html">14.27. Explosão de linhas</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-spyrogimp.html">14.29. Espirogimp</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

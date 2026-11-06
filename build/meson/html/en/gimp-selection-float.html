@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.5. Float</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-select-menu.html" title="4. The “Select” Menu" />
+    <link rel="prev" href="gimp-selection-invert.html" title="4.4. Invert" />
+    <link rel="next" href="gimp-selection-by_color.html" title="4.6. By Color" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.5. Float</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-selection-invert.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>4. The <span class="quote">“<span class="quote">Select</span>”</span> Menu</span>
+        <nav> <a accesskey="n" href="gimp-selection-by_color.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-selection-float"></a>4.5. Float</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id33541" class="indexterm"></a>
+      <a id="id33544" class="indexterm"></a>
+      <a id="id33547" class="indexterm"></a>
+      <p>
+    The <span class="guimenuitem">Float</span> submenu consists of commands to convert
+    a selection into a <span class="quote">“<span class="quote">floating selection</span>”</span>.
+  </p>
+      <p>
+    A floating selection (sometimes called a <span class="quote">“<span class="quote">floating layer</span>”</span>) is
+    a type of temporary layer which is similar in function to a normal layer,
+    except that before you can resume working on any other layers in the
+    image, a floating selection must be <span class="emphasis"><em>anchored</em></span>.
+    That is, you have to attach it to a normal (non-floating) layer, usually
+    the original layer (the one which was active previously), or turn it into
+    a new layer.
+  </p>
+      <div class="important" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Important">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Important]" src="images/important.png" />
+            </td>
+            <th align="left">Important</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      You cannot perform any operations on other layers while the image has a
+      floating selection!
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>
+    You can use various operations to change the image data on the floating
+    selection. There can only be one floating selection in an image at a time.
+  </p>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Tip]" src="images/tip.png" />
+            </td>
+            <th align="left">Tip</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      If you display the layer boundary by using the
+      <a class="link" href="gimp-view-show-layer-boundary.html" title="5.21. Show Layer Boundary">Show Layer Boundary</a>
+      command, you may have difficulty selecting a precise area of the
+      image which you want in a layer. To avoid this problem, you can make a
+      rectangular selection, transform it into a floating selection and
+      anchor it to a new layer. Then simply remove the original layer.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2319"></a>4.5.1. Activating the Submenu</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this submenu from the main menu through
+      <span class="guimenu">Select</span> → <span class="guimenuitem">Float</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2320"></a>4.5.2. Contents of the <span class="quote">“<span class="quote">Float</span>”</span> submenu</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The <span class="quote">“<span class="quote">Float</span>”</span> submenu commands are described below.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Cut and Float</span>
+            </dt>
+            <dd>
+              <p>
+            The <span class="quote">“<span class="quote">Cut and Float</span>”</span> command cuts the image selection
+            from the layer and converts it into a floating selection.
+          </p>
+              <div class="itemizedlist">
+                <p class="title">
+                  <strong>Activating the Command</strong>
+                </p>
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                You can access this command from the main menu through
+                <span class="guimenu">Select</span> → <span class="guisubmenu">Float</span> → <span class="guimenuitem">Cut and Float</span>.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                You can also use the keyboard shortcut
+                <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>L</strong></span>.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Copy and Float</span>
+            </dt>
+            <dd>
+              <p>
+            The <span class="quote">“<span class="quote">Copy and Float</span>”</span> command copies the image selection
+            from the layer and converts it into a floating selection.
+          </p>
+              <div class="itemizedlist">
+                <p class="title">
+                  <strong>Activating the Command</strong>
+                </p>
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                You can access this command from the main menu through
+                <span class="guimenu">Select</span> → <span class="guisubmenu">Float</span> → <span class="guimenuitem">Copy and Float</span>.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2321"></a>4.5.3. Creating a Floating Selection Automatically</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Some image operations create a floating selection automatically:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          The <span class="quote">“<span class="quote">paste</span>”</span> operations
+          <a class="link" href="gimp-dialogs-management.html#gimp-buffer-paste">Paste Buffer</a>,
+          <a class="link" href="gimp-dialogs-management.html#gimp-buffer-paste-in-place">Paste Buffer In Place</a>,
+          <a class="link" href="gimp-dialogs-management.html#gimp-buffer-paste-into">Paste Buffer Into The Selection</a>,
+          <a class="link" href="gimp-dialogs-management.html#gimp-buffer-paste-into-in-place">Paste Buffer Into The Selection In Place</a>,
+          <a class="link" href="gimp-edit-paste-as.html#gimp-edit-paste-float" title="3.10.4. Paste as Floating Data">Paste as Floating Data</a> or
+          <a class="link" href="gimp-edit-paste-as.html#gimp-edit-paste-float-in-place" title="3.10.5. Paste as Floating Data In Place">Paste as Floating Data In Place</a> or
+          <a class="link" href="gimp-edit-paste-as.html#gimp-edit-paste-into" title="3.10.6. Paste as Floating Data Into Selection">Paste as Floating Data Into Selection</a> or
+          <a class="link" href="gimp-edit-paste-as.html#gimp-edit-paste-into-in-place" title="3.10.7. Paste as Floating Data Into Selection In Place">Paste as Floating Data Into Selection In Place</a>,
+          also create a floating selection.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          In addition, all the Transform tools:
+          <a class="link" href="gimp-tool-unified-transform.html" title="4.10. Unified Transform">Unified Transform</a>,
+          <a class="link" href="gimp-tool-rotate.html" title="4.5. Rotate">Rotate</a>,
+          <a class="link" href="gimp-tool-scale.html" title="4.6. Scale">Scale</a>,
+          <a class="link" href="gimp-tool-shear.html" title="4.7. Shear">Shear</a>,
+          <a class="link" href="gimp-tool-flip.html" title="4.12. Flip">Flip</a>,
+          <a class="link" href="gimp-tool-perspective.html" title="4.8. Perspective">Perspective</a>,
+          <a class="link" href="gimp-tool-transform-3d.html" title="4.9. 3D Transform">3D Transform</a>,
+          and
+          <a class="link" href="gimp-tool-handle-transform.html" title="4.11. Handle Transform">Handle Transform</a>,
+          create a floating selection when they are used on a selection,
+          rather than a layer. When the <span class="guilabel">Transform</span> mode is
+          <span class="emphasis"><em>Layer</em></span> and a selection already exists,
+          these tools transform the selection and create a floating selection
+          with the result. If a selection does not exist, they transform the
+          current layer and do not create a floating selection. (If the
+          <span class="guilabel">Transform</span> mode is
+          <span class="emphasis"><em>Selection</em></span>, they also do not create a
+          floating selection.)
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By click-and-dragging a selection while pressing the
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>, or
+          <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Alt</strong></span> keys
+          (see <a class="xref" href="gimp-using-selections.html#gimp-using-selections-moving" title="2.1. Moving or Resizing a Selection">Section 2.1, “Moving or Resizing a Selection”</a>) you also
+          automatically create a floating selection.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="anchor-floating-selection"></a>4.5.4. Anchor a Floating Selection</h4>
+            </div>
+          </div>
+        </div>
+        <p>You can anchor a floating selection in various ways:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can anchor the floating selection to the current layer the
+          selection is originating from. To do this, click anywhere on the
+          image except on the floating selection. This merges the floating
+          selection with the current layer.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          Use the
+          <a class="link" href="gimp-layer-anchor.html" title="7.6. Anchor Floating Layer or Mask">Anchor layer</a> command
+          (<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>H</strong></span>).
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By clicking on the anchor button
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-anchor.svg" width="16" alt="Anchor the floating Layer" /></span>
+          </span>
+          of the <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Layers Dialog">Layers Dialog</a>, that
+          appears when the floating selection is created,
+          instead of the default Merge layers icon.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          Use the
+          <a class="link" href="gimp-layer-new.html" title="7.2. New Layer">To New Layer</a> command (
+          <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>N</strong></span>) to
+          turn the floating selection into a newly created layer.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-selection-invert.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-select-menu.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-selection-by_color.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-selection-invert.html">4.4. Invert</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-selection-by_color.html">4.6. By Color</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

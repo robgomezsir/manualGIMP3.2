@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.20. Explorador CML</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="plug-in-checkerboard.html" title="14.19. Checkerboard (legacy)" />
+    <link rel="next" href="plug-in-grid.html" title="14.21. Grid (legacy)" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.20. Explorador CML</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-checkerboard.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="plug-in-grid.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-cml-explorer"></a>14.20. Explorador CML</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id60728" class="indexterm"></a>
+      <a id="id60732" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5040"></a>14.20.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5041"></a>
+          <p class="title">
+            <strong>Figura 17.382. Exemplo para o filtro <span class="quote">“<span class="quote">Explorador CML</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-taj-cmlexplorer.jpg" alt="Exemplo para o filtro “Explorador CML”" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter is very efficient but also very complex. It uses a
+      mathematical method named Cellular Automata
+      <a class="xref" href="bibliography.html#bibliography-online-wkpd-cellular-automata" title="Wikipedia - Cellular Automata">[<abbr class="abbrev">WKPD-CA</abbr>]</a>.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5042"></a>14.20.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guisubmenu">Pattern</span> → <span class="guimenuitem">CML Explorer…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5043"></a>14.20.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id60754"></a>14.20.3.1. Opções Gerais</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+        Filter options are distributed among
+        <span class="guilabel">Hue</span>, <span class="guilabel">Saturation</span>,
+        <span class="guilabel">Value</span>, <span class="guilabel">Advanced</span>,
+        <span class="guilabel">Others</span> and <span class="guilabel">Misc</span>
+        tabs. Some more options are available. They will be described
+        in following section.
+      </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Pré-visualização</span>
+              </dt>
+              <dd>
+                <p>Esse filtro oferece uma pré-visualização, onde você pode ver o resultado de suas configurações antes de serem aplicados à imagem.</p>
+              </dd>
+              <dt>
+                <span class="term">Nova semente, </span>
+                <span class="term">Fixar semente, </span>
+                <span class="term">Semente aleatória</span>
+              </dt>
+              <dd>
+                <p>Fatores aleatórios desempenham um grande papel na criação de texturas. Com essas opções, você pode influenciar a maneira como os números aleatórios são gerados. Ao clicar no botão <span class="guibutton">Nova Semente</span>, você pode forçar o gerador de números aleatórios a usar uma nova fonte. A pré-visualização irá exibir o resultado. O botão <span class="guibutton">Fixar Semente</span>  permite que você mantenha a mesma semente e assim possa reproduzir exatamente o mesmo efeito com o filtro, em aplicações futuras <span class="guibutton">Semente aleatória</span> gera uma semente ao acaso, que não pode ser re-utilizada.</p>
+              </dd>
+              <dt>
+                <span class="term">Abrir, </span>
+                <span class="term">Salvar</span>
+              </dt>
+              <dd>
+                <p>Com esses botões de comando, você pode salvar as configurações do filtro em um arquivo, e recuperá-las mais tarde. Assim, se conseguir a criação de texturas interessantes, pode criar uma coleção de parâmetros para re-utilizar.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id60782"></a>14.20.3.2. Opções do filtro <span class="quote">“<span class="quote">Explorador CML</span>”</span> (Matiz)</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id5044"></a>
+            <p class="title">
+              <strong>Figura 17.383. Guia Matiz</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/render/cmlexplorer1.png" alt="Guia Matiz" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Esse filtro opera no modelo de cor<a class="link" href="glossary.html#glossary-hsv" title="HSV"> HSV </a>. Nessa guia, você pode definir as opções para o canal de Matiz.</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Tipo de função</span>
+              </dt>
+              <dd>
+                <p>Nesta lista flutuante, você pode selecionar o método que será usado para tratar a camada atual. Estes métodos são os seguintes:</p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Mantenha os valores da imagem</span>
+                    </dt>
+                    <dd>
+                      <p>Com esta opção, os valores de matiz dos pixels da imagem serão mantidos.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Mantenha o primeiro valor</span>
+                    </dt>
+                    <dd>
+                      <p>Com esta opção, a cor inicial será o ciano padrão.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Completar com o parâmetro k</span>
+                    </dt>
+                    <dd>
+                      <p>A textura dependerá do parâmetro <em class="parameter"><code>k</code></em>, que você vai configurar mais adiante.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Diversas funções baseadas em  k</span>
+                    </dt>
+                    <dd>
+                      <p>Veja acima, <span class="quote">“<span class="quote">Completar com parâmetro k</span>”</span>.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Função delta, </span>
+                      <span class="term">Função delta por passos</span>
+                    </dt>
+                    <dd>
+                      <p>
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Função baseada em seno ^ p, </span>
+                      <span class="term">Seno ^P por passos</span>
+                    </dt>
+                    <dd>
+                      <p>Estas opções criar padrões em forma de ondas, como uma aurora boreal ou dobras de cortina.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Composição</span>
+              </dt>
+              <dd>
+                <p>Aqui, essas funções referem se ao Matiz. Você pode escolher dentre várias funções, e poderia ser escrito um livro só com os resultados dessas funções. Experimente muda-las!</p>
+              </dd>
+              <dt>
+                <span class="term">Arranjo variado</span>
+              </dt>
+              <dd>
+                <p>Esta lista flutuante lhe oferece vários outros parâmetros. Também seria necessário um livro para explicar todas as possibilidades desses parâmetros.</p>
+              </dd>
+              <dt>
+                <span class="term">Usa faixa cíclica</span>
+              </dt>
+              <dd>
+                <p>
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Taxa de modulação</span>
+              </dt>
+              <dd>
+                <p>Com este controle você pode definir a taxa de modificação de 0,0 a 1,0. Valores baixos resultam num padrão com linhas verticais.</p>
+              </dd>
+              <dt>
+                <span class="term">Sensibilidade de ambiente</span>
+              </dt>
+              <dd>
+                <p>O valor é de 0,0 a 1,0: quanto cada pixel é sensível ao valor de luz do ambiente.</p>
+              </dd>
+              <dt>
+                <span class="term">Distância de difusão</span>
+              </dt>
+              <dd>
+                <p>Distância de difusão: de 2 a 10.</p>
+              </dd>
+              <dt>
+                <span class="term">Nº de sub-faixas </span>
+              </dt>
+              <dd>
+                <p>
+              Number of sub-ranges: from 1 to 10.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Fator de potência (p)</span>
+              </dt>
+              <dd>
+                <p>Com esta opção você pode influenciar os  <span class="guilabel">Tipos de função </span> usando o parâmetro <em class="parameter"><code>p</code></em>. Os valores vão de 0,0 a 10,0.</p>
+              </dd>
+              <dt>
+                <span class="term">Parâmetro k</span>
+              </dt>
+              <dd>
+                <p>Com esta opção você pode influenciar os <span class="guilabel">Tipos de função </span> usando o parâmetro <em class="parameter"><code>k</code></em>. Os valores vão de 0,0 a 10,0.</p>
+              </dd>
+              <dt>
+                <span class="term">Faixa baixa</span>
+              </dt>
+              <dd>
+                <p>Definir o limite inferior de matiz que vai ser usada para o cálculo. Os valores vão de 0,0 a 1,0.</p>
+              </dd>
+              <dt>
+                <span class="term">Faixa alta</span>
+              </dt>
+              <dd>
+                <p>Definir o limite superior de matiz que vai ser usada para o cálculo. Os valores vão de 0.0 a 1.0: os valores de saída da função são normalizados entre os valores nos parâmetros Faixa baixa e Faixa alta.</p>
+              </dd>
+              <dt>
+                <span class="term">Traçar o gráfico das configurações</span>
+              </dt>
+              <dd>
+                <p>Ao clicar neste botão enorme, você pode abrir uma janela que exibe um gráfico com a curva resultante das configurações atuais para  matiz.</p>
+                <div class="figure">
+                  <a id="id5045"></a>
+                  <p class="title">
+                    <strong>Figura 17.384. Gráfico da função das configurações atuais.</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/filters/render/cmlexplorer1a.png" alt="Gráfico da função das configurações atuais." />
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id60881"></a>14.20.3.3. Opções do filtro <span class="quote">“<span class="quote">Explorador CML</span>”</span> (Saturação)</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id5046"></a>
+            <p class="title">
+              <strong>Figura 17.385. Guia saturação</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/render/cmlexplorer2.png" alt="Guia saturação" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Nessa guia, você pode definir como o componente de saturação do modelo de cor HSV será criado no cálculo da textura.</p>
+          <p>Estas opções são semelhantes às opções da guia Matiz</p>
+        </div>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id60890"></a>14.20.3.4. Opções do filtro <span class="quote">“<span class="quote">Explorador CML</span>”</span> (Valor)</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id5047"></a>
+            <p class="title">
+              <strong>Figura 17.386. Guia valor</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/render/cmlexplorer3.png" alt="Guia valor" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Neste guia, você pode definir a forma como o componente de Valor(Luminosidade) do modelo de cor HSV será criado no cálculo da textura.</p>
+          <p>Estas opções são semelhantes às opções da guia Matiz</p>
+        </div>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id60899"></a>14.20.3.5. Opções do filtro <span class="quote">“<span class="quote">Explorador CML</span>”</span> (avançada)</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id5048"></a>
+            <p class="title">
+              <strong>Figura 17.387. Guia Avançada</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/render/cmlexplorer4.png" alt="Guia Avançada" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>As configurações desta guia aplicam-se aos três canais de HSV.</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Sensibilidade do canal</span>
+              </dt>
+              <dd>
+                <p></p>
+              </dd>
+              <dt>
+                <span class="term">Taxa de mutação</span>
+              </dt>
+              <dd>
+                <p></p>
+              </dd>
+              <dt>
+                <span class="term">Distância de mutação</span>
+              </dt>
+              <dd>
+                <p></p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id60920"></a>14.20.3.6. Opções do filtro <span class="quote">“<span class="quote">Explorador CML</span>”</span> (Outros)</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id5049"></a>
+            <p class="title">
+              <strong>Figura 17.388. Guia Outros</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/render/cmlexplorer5.png" alt="Guia Outros" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Nessa guia, você pode encontrar vários parâmetros sobre a exibição da imagem e intervenção aleatória.</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Valor inicial</span>
+              </dt>
+              <dd>
+                <p></p>
+              </dd>
+              <dt>
+                <span class="term">Escala de zoom</span>
+              </dt>
+              <dd>
+                <p></p>
+              </dd>
+              <dt>
+                <span class="term">Deslocamento de início</span>
+              </dt>
+              <dd>
+                <p></p>
+              </dd>
+              <dt>
+                <span class="term">Semente dos números aleatórios</span>
+              </dt>
+              <dd>
+                <p></p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id60945"></a>14.20.3.7. <span class="quote">“<span class="quote">CML Explorer</span>”</span> filter options (Misc)</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id5050"></a>
+            <p class="title">
+              <strong>Figura 17.389. Guia de Operações variadas</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/render/cmlexplorer6.png" alt="Guia de Operações variadas" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Nesta guia você pode encontrar várias opções sobre cópia e carregamento.</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Configurações de cópia</span>
+              </dt>
+              <dd>
+                <p>Estas opções permitem que você transferir a configuração de parâmetros de um dos canais de HSV para outro.</p>
+              </dd>
+              <dt>
+                <span class="term">Configurações de carga seletiva</span>
+              </dt>
+              <dd>
+                <p>
+              With the <span class="guibutton">Open</span> button of this
+              filter,  you can load previously saved settings. If you
+              don't want to load all of them, you can select a source
+              and a destination channel here.
+            </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-checkerboard.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-grid.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-checkerboard.html">14.19. Checkerboard (legacy)</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-grid.html">14.21. Grid (legacy)</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

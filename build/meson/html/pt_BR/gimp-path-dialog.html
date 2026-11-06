@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.3. Diálogo de vetores</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-structure.html" title="2. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="gimp-channel-dialog.html" title="2.2. Diálogo de canais" />
+    <link rel="next" href="gimp-indexed-palette-dialog.html" title="2.4. Diálogo do mapa de cores" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.3. Diálogo de vetores</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-channel-dialog.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>2. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="gimp-indexed-palette-dialog.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-path-dialog"></a>2.3. Diálogo de vetores</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id22682" class="indexterm"></a>
+      <a id="id22685" class="indexterm"></a>
+      <p>
+    The <span class="quote">“<span class="quote">Paths</span>”</span> dialog is used to manage paths, allowing you to
+    create or delete them, save them, convert them to and from selections, etc.
+    Please see <a class="xref" href="gimp-using-paths.html" title="4. Vetores">Seção 4, “
+    
+    <span class="phrase">Vetores</span>
+  ”</a> for more information about
+    paths.
+  </p>
+      <div class="figure">
+        <a id="id3159"></a>
+        <p class="title">
+          <strong>Figura 15.10. O diálogo de <span class="quote">“<span class="quote">Vetores</span>”</span></strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/dialogs/paths-dialog.png" alt="O diálogo de “Vetores”" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-path-dialog-activate"></a>2.3.1. Ativando o diálogo</h4>
+            </div>
+          </div>
+        </div>
+        <p>O diálogo de <span class="quote">“<span class="quote">Buffers</span>”</span> é um diálogo de encaixe;veja a  seção <a class="xref" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe">Seção 2.3, “Caixas de diálogo e de encaixe”</a> para mais informações sobre como gerenciá-lo.</p>
+        <p>Você pode acessa-lo:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the main menu, as
+          <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Dialogs</span> → <span class="guimenuitem">Paths</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          From the Tab menu in any dockable dialog by clicking on
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+          </span> and selecting
+          <span class="guimenu">Add Tab</span> → <span class="guimenuitem">Paths</span>.
+        </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+      In the <span class="guimenu">Windows</span> menu, there is a list of
+      <a class="link" href="gimp-concepts-docks.html#gimp-dockable-menu" title="2.3.2. Menu das Abas (guias)">detached windows</a> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <span class="quote">“<span class="quote">Paths</span>”</span> dialog from the main menu:
+      <span class="guimenu">Windows</span> → <span class="guimenuitem">Paths</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-path-dialog-using"></a>2.3.2. Using the Paths Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Visão geral</span>
+            </dt>
+            <dd>
+              <p>
+            This dialog shows a list of all paths present in the current image.
+            For each path you can set their attributes, as explained below, and
+            perform certain actions using the
+            <a class="link" href="gimp-path-dialog.html#gimp-path-dialog-buttons">buttons</a> at the
+            bottom of the dialog, or using the
+            <a class="link" href="gimp-path-dialog.html#gimp-paths-menu" title="2.3.3. O menu de contexto de “Vetores”">context menu</a>.
+          </p>
+              <p>
+            In multi-window mode, you can show the name of the active image at
+            the top of the dock by choosing <span class="quote">“<span class="quote">Show Image Selection</span>”</span>
+            from the Tab menu. This allows you to see at a glance to which
+            image the paths you are working on belong.
+          </p>
+              <p>Se a lista não for vazia, sempre haverá um vetor que será o <span class="emphasis"><em>vetor ativo</em></span>. Ele será o alvo de qualquer operação feita através do menu do diálogo ou os botões na parte de baixo. O vetor ativo é exibido em destaque na lista. Clicar em qualquer outro vetor, vai fazer dele o novo vetor ativo.</p>
+              <p>
+            Right-clicking on any entry in the list brings up the
+            <a class="link" href="gimp-path-dialog.html#gimp-paths-menu" title="2.3.3. O menu de contexto de “Vetores”">Paths Menu</a>.
+            You can also access the Paths Menu from the dialog Tab menu.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Selecting multiple paths</span>
+            </dt>
+            <dd>
+              <p>
+            <acronym class="acronym">GIMP</acronym> allows you to select multiple paths
+            and perform actions on them, like stroking or filling.
+            Selecting multiple paths is done by using the mouse and
+            <span class="keycap"><strong>Shift</strong></span> key, for adding a range of paths, or
+            <span class="keycap"><strong>Ctrl</strong></span> key, for adding or removing the clicked
+            path.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Path list header</span>
+            </dt>
+            <dd>
+              <p>
+            Directly above the list of paths is the header bar. On
+            the left you see the icons that identify the visibility and lock
+            columns. In the middle a text label will tell you how many paths
+            are currently selected if it is more than one.
+          </p>
+            </dd>
+            <dt>
+              <a id="gimp-path-dialog-using-attributes"></a>
+              <span class="term">
+          
+          <a id="gimp-path-linked"></a>
+          <span class="phrase">Path attributes</span>
+        </span>
+            </dt>
+            <dd>
+              <p>
+            Every path is shown in the list with its own attributes, which are
+            very similar to the <a class="link" href="gimp-dialogs-structure.html#gimp-layer-attributes">layer
+            attributes</a>:
+          </p>
+              <div class="variablelist">
+                <a id="path-attributes"></a>
+                <dl class="variablelist">
+                  <dt>
+                    <a id="gimp-path-visible"></a>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-visible.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Visibilidade do vetor</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  By default, paths are not visible. This icon is shown when
+                  the path is visible. Clicking this toggles between visible
+                  and invisible.
+                  When a path is <span class="quote">“<span class="quote">visible</span>”</span>, a border is drawn
+                  over each path segment on the image display. This does not
+                  change the actual pixel data of the image.
+                  <span class="keycap"><strong>Shift</strong></span>-clicking on the icon causes
+                  all <span class="emphasis"><em>other</em></span> paths to be hidden.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-path-dialog-using-locks"></a>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-lock.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Path lock attributes</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Each path has lock attributes. If one of its attributes is set,
+                  the respective lock icon will show up in front of the thumbnail.
+                </p>
+                    <p>
+                  When multiple attributes are set, a double lock icon will
+                  show here. Clicking in this column allows you to change
+                  these attributes.
+                </p>
+                    <div class="variablelist">
+                      <dl class="variablelist">
+                        <dt>
+                          <a id="gimp-path-lock-strokes"></a>
+                          <span class="term">
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-lock-path.svg" width="16" /></span>
+                      </span>
+                      <span class="phrase">Lock path</span>
+                    </span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This icon shows when <span class="quote">“<span class="quote">lock path</span>”</span> is
+                        enabled for the current path. When this is enabled,
+                        the path is locked for any action that changes it,
+                        meaning there will be no changes done to this path.
+                        Clicking the icon toggles between enabled and disabled.
+                      </p>
+                        </dd>
+                        <dt>
+                          <a id="gimp-path-lock-position"></a>
+                          <span class="term">
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-lock-position.svg" width="16" /></span>
+                      </span>
+                      <span class="phrase">Travar posição e tamanho</span>
+                    </span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This icon shows when <span class="quote">“<span class="quote">lock path position</span>”</span>
+                        is enabled for the current path. When this is enabled,
+                        the path is locked for any action that changes its
+                        position.
+                        Clicking the icon toggles between enabled and disabled.
+                      </p>
+                        </dd>
+                        <dt>
+                          <a id="gimp-path-lock-visibility"></a>
+                          <span class="term">
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-lock-visibility.svg" width="16" /></span>
+                      </span>
+                      <span class="phrase">Lock visibility</span>
+                    </span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This toggle button controls the <span class="quote">“<span class="quote">Lock</span>”</span>
+                        setting for the visibility of the path. If this is
+                        enabled, the path visibility cannot be changed until
+                        you disable the lock.
+                      </p>
+                        </dd>
+                      </dl>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Miniatura</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  A small preview icon represents the effect of the path. This
+                  preview can be enlarged by holding down the left mouse button
+                  on it.
+                  If you drag the thumbnail into the Layers dialog, it will
+                  create a new layer with a rasterized copy of the path.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Nome do vetor</span>
+                  </dt>
+                  <dd>
+                    <p>O nome do vetor, que deve ser único na imagem. Clicar duas vezes no nome permite que você o edite (pressione <span class="quote">“<span class="quote">enter</span>”</span> após editar). Se o nome que você criou já existe, um número será adicionado ( por exemplo <span class="quote">“<span class="quote">#1</span>”</span>), para garantir que o nome continue único.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <a id="gimp-path-dialog-buttons"></a>
+              <span class="term">Managing paths</span>
+            </dt>
+            <dd>
+              <p>
+            The button bar at the bottom offers the following functionality:
+          </p>
+              <p>
+            These buttons correspond to entries in the context menu (accessed by
+            right-clicking on an entry in the list), but some of them have extra
+            options obtainable by holding down modifier keys while pressing the button.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/document-new.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Novo vetor</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>Veja <a class="link" href="gimp-path-dialog.html#gimp-path-new">Novo vetor</a>. Se você mantiver a tecla<span class="keycap"><strong>Shift</strong></span> pressionada, surgirá um diálogo onde o nome do novo vetor poderá ser editado.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/go-up.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Raise Paths</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <a id="gimp-path-raise-to-top"></a>
+                    <p>
+                  See <a class="link" href="gimp-path-dialog.html#gimp-path-raise">Raise Paths</a>. Holding down
+                  <span class="keycap"><strong>Shift</strong></span> moves the selected paths to the top of the list.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/go-down.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Lower Paths</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <a id="gimp-path-lower-to-bottom"></a>
+                    <p>
+                  See <a class="link" href="gimp-path-dialog.html#gimp-path-lower">Lower Paths</a>. Holding down
+                  <span class="keycap"><strong>Shift</strong></span> moves the selected paths to the bottom of the list.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-duplicate.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Duplicate Paths</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  See <a class="link" href="gimp-path-dialog.html#gimp-path-duplicate">Duplicate Paths</a>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-selection.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Paths to Selection</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Converts paths into a selection; see
+                  <a class="link" href="gimp-path-selection-replace.html" title="4.7. Selection From Paths">Paths to Selection</a>
+                  for a full explanation. You can use modifier keys to set the way
+                  the new selection interacts with the existing selection:
+                </p>
+                    <div class="segmentedlist">
+                      <table border="0">
+                        <thead>
+                          <tr class="segtitle">
+                            <th>Modificadores</th>
+                            <th>Ação</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="seglistitem">
+                            <td class="seg">Nenhuma</td>
+                            <td class="seg">Substitui a seleção existente</td>
+                          </tr>
+                          <tr class="seglistitem">
+                            <td class="seg">
+                      <span class="keycap"><strong>Shift</strong></span>
+                    </td>
+                            <td class="seg">Adiciona à seleção</td>
+                          </tr>
+                          <tr class="seglistitem">
+                            <td class="seg">
+                      <span class="keycap"><strong>Ctrl</strong></span>
+                    </td>
+                            <td class="seg">Subtrai da seleção atual</td>
+                          </tr>
+                          <tr class="seglistitem">
+                            <td class="seg">
+                      <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>
+                    </td>
+                            <td class="seg">Faz intersecção com a seleção existente.</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-selection-to-path.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Seleção para vetor</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  <span class="keycap"><strong>Shift</strong></span>-clicking this button brings up the
+                  <a class="link" href="gimp-selection-dialog.html#advanced-settings-for-selection-to-path" title="4.8.3. A caixa de diálogo do “Ajustes avançados de seleções para vetores”">Advanced
+                  Settings</a> dialog that allows you to adjust how the selection
+                  is converted to a path.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-path-stroke.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Paint along the paths</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  See <a class="link" href="gimp-path-stroke.html" title="3.19. Stroke Paths">Stroke Paths</a>. Holding
+                  down <span class="keycap"><strong>Shift</strong></span> strokes the paths based on the
+                  last used values without opening the Stroke Paths dialog.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Delete Paths</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  <span class="guilabel">Delete Paths</span> deletes the currently selected
+                  paths.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-paths-menu"></a>2.3.3. O menu de contexto de <span class="quote">“<span class="quote">Vetores</span>”</span></h4>
+            </div>
+          </div>
+        </div>
+        <p>O menu de vetores pode ser acessado clicando-se com o botão direito no diálogo de Vetores, ou escolhendo-se a entrada de cima (<span class="quote">“<span class="quote">Menu  de vetores</span>”</span>) do menu de guias do diálogo de vetores.  Esse menu dá acesso a maioria das operações que envolve vetores.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Editar paleta</span>
+            </dt>
+            <dd>
+              <a id="gimp-tool-vectors"></a>
+              <p>A opção <span class="guilabel">Ferramenta de vetores</span> é uma forma alterativa de ativar a ferramenta de <a class="link" href="gimp-tool-path.html" title="5.2. Vetores">Vetores</a>, que é usada para criar e manipular vetores. Ela também pode ser ativada a partir da caixa de ferramentas, ou com o uso do atalho de teclado <span class="keycap"><strong>B</strong></span> (de <span class="emphasis"><em>Bézier</em></span>).</p>
+            </dd>
+            <dt>
+              <span class="term">Editar atributos de vetor</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-edit"></a>
+              <p>A opção <span class="guilabel">Editar atributos de vetor</span> faz aparecer um pequeno diálogo que permite que você altere o nome de um vetor. Também é possível fazer isso com um clique-duplo direto sobre o nome do vetor na lista do diálogo de Vetores.</p>
+            </dd>
+            <dt>
+              <span class="term">Color Tags</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-color-tag"></a>
+              <p>
+            <span class="guilabel">Color Tags</span> brings up a sub menu, similar to
+            the one in the Layers Dialog, that allows you to select a color
+            tag for the selected paths.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Novo vetor</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-new"></a>
+              <p>
+            <span class="guilabel">New Path</span> creates a new path, adds it to
+            the list in the Paths dialog, and makes it the active path
+            for the image. It brings up a dialog that allows you to
+            give a name to the path. The new path is created with no
+            anchor points, so you will need to use the Path tool to give
+            it some before you can use it for anything.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Raise Paths</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-raise"></a>
+              <p>
+            <span class="guilabel">Raise Paths</span> moves the selected paths one slot
+            higher in the list in the Paths dialog.
+          </p>
+              <p>
+            The position of a path in the list has no functional significance,
+            so this is simply a convenience to help you keep things organized.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Lower Paths</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-lower"></a>
+              <p>
+            <span class="guilabel">Lower Paths</span> moves the selected paths one slot
+            lower in the list in the Paths dialog.
+          </p>
+              <p>
+            The position of a path in the list has no functional significance,
+            so this is simply a convenience to help you keep things organized.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Duplicate Paths</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-duplicate"></a>
+              <p>
+            <span class="guilabel">Duplicate Paths</span> creates a copy of the selected
+            paths, assigns unique names, adds them to the list in the Paths dialog,
+            and makes them the selected paths for the image. The copies will
+            be visible only if the original paths were visible.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Delete Paths</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-delete"></a>
+              <p>
+            <span class="guilabel">Delete Paths</span> deletes the currently selected
+            paths.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Combinar vetores visíveis</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-merge-visible"></a>
+              <p>A opção <span class="guilabel">Combinar vetores visíveis</span> torna todos os vetores que estão visíveis na imagem (isto é, todos os que tem o ícone de <span class="quote">“<span class="quote">olho aberto</span>”</span>), e os transforma em componentes de um único vetor. Isso pode ser conveniente se você deseja contornar a todos com as mesmas opções, etc.</p>
+            </dd>
+            <dt>
+              <span class="term">Path to Vector Layer</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-to-vector-layer"></a>
+              <p>
+            <span class="guilabel">Path to Vector Layer</span> creates a
+            <a class="link" href="gimp-layer-types.html#gimp-layer-type-vector-layer" title="7.3. Vector Layer">vector layer</a>
+            from the current path. The path itself will not be removed.
+          </p>
+              <p>
+            Each vector layer can have their own stroke and fill settings and
+            can have layer effects applied to it.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Paths to Selection, </span>
+              <span class="term">Add Paths to Selection, </span>
+              <span class="term">Subtract Paths from Selection, </span>
+              <span class="term">Intersect Paths with Selection</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-selection-add"></a>
+              <a id="gimp-path-selection-subtract"></a>
+              <a id="gimp-path-selection-intersect"></a>
+              <p>
+            These commands all convert the active paths into a selection, and
+            then combine it with the existing selection in the specified
+            ways.
+            (<span class="guilabel">Paths to Selection</span> discards the existing selection
+            and replaces it with one formed from the path.) If necessary, any
+            unclosed components of the path are closed by connecting the last
+            anchor point to the first anchor point with a straight line. The
+            <a class="link" href="glossary.html#glossary-marching-ants" title="Formigas marchantes"><span class="quote">“<span class="quote">marching ants</span>”</span>
+            </a> for the resulting selection should closely follow the path,
+            but don't expect the correspondence to be perfect.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Seleção para vetor</span>
+            </dt>
+            <dd>
+              <a id="selection-to-path"></a>
+              <p>Esta operação pode ser acessada de várias formas diferentes:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                From the main menu, as
+                <span class="guimenu">Select</span> → <span class="guimenuitem">To Path</span>
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>Do menu do diálogo de Vetores, como <span class="guimenuitem">Seleção para vetor</span>.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                From the <span class="guilabel">Selection to Path</span> button
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-selection-to-path.svg" width="16" /></span>
+                </span>
+                at the bottom of the Paths dialog.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <p><span class="guilabel">Selection to Path</span> creates a new path
+            from the image's selection. In most cases the resulting path
+            will closely follow the <a class="link" href="glossary.html#glossary-marching-ants" title="Formigas marchantes">
+            <span class="quote">“<span class="quote">marching ants</span>”</span></a> of the
+            selection, but the correspondence will not usually be perfect.
+          </p>
+              <p>
+            Converting a two-dimensional selection mask into a
+            one-dimensional path involves some rather tricky algorithms:
+            you can alter the way it is done using the
+            <span class="guilabel">Advanced Options</span>, which are accessed by
+            holding down the <span class="keycap"><strong>Shift</strong></span> key while pressing
+            the <span class="guilabel">Selection to Path</span> button
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-selection-to-path.svg" width="16" /></span>
+            </span>
+            at the bottom of the Paths dialog. This brings up the
+            <a class="link" href="gimp-selection-dialog.html#advanced-settings-for-selection-to-path" title="4.8.3. A caixa de diálogo do “Ajustes avançados de seleções para vetores”">Advanced
+            Settings</a> dialog, which allows you to set a lot of different
+            options. In general, <span class="guilabel">Selection to Path</span> will do
+            what you expect it to, without the need to adjust the advanced
+            settings.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Fill Paths</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-dialog-fill"></a>
+              <p>Esta operação pode ser acessada de várias formas diferentes:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                From the main menu, as
+                <span class="guimenu">Edit</span> → <span class="guimenuitem">Fill Paths…</span>
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                From the Paths dialog menu, as <span class="guimenuitem">Fill
+                Paths…</span>.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                From the <span class="guilabel">Fill Paths</span> button in the
+                Tool Options for the Paths tool.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+            <span class="guilabel">Fill Paths</span> fills all areas delimited by the
+            selected paths with the current foreground color or currently
+            selected pattern.
+            See the section about
+            <a class="link" href="gimp-path-fill.html" title="3.17. Fill Paths">Fill Paths</a> for more
+            information.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Stroke Paths…</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-dialog-stroke"></a>
+              <p>Esta operação pode ser acessada de várias formas diferentes:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                From the main menu, as
+                <span class="guimenu">Edit</span> → <span class="guimenuitem">Stroke Paths…</span>
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                From the Paths dialog menu, as <span class="guimenuitem">Stroke
+                Paths…</span>.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                From the <span class="guilabel">Paint along the path</span> button
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-path-stroke.svg" width="16" /></span>
+                </span>
+                at the bottom of the Paths dialog.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                From the <span class="guilabel">Stroke Paths</span> button in the
+                Tool Options for the Paths tool.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+            <span class="guilabel">Stroke Paths</span> renders the selected paths on the
+            active layer of the image, permitting a wide variety of line styles
+            and stroking options. See the sections about
+            <a class="link" href="gimp-path-stroke.html" title="3.19. Stroke Paths">Stroke Paths</a> and
+            <a class="link" href="gimp-selection-stroke.html" title="3.18. Contornar seleção">Stroking</a> for more
+            information.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Copy Paths</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-copy"></a>
+              <p>
+            <span class="guilabel">Copy Paths</span> copies the selected paths to the
+            Paths Clipboard, enabling you to paste it into a different image.
+          </p>
+              <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Tip">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Dica]" src="images/tip.png" />
+                    </td>
+                    <th align="left">Dica</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+              You can also copy and paste paths by dragging their icon
+              from the Paths dialog into the target image's display.
+            </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Quando você cola um vetor em uma imagem, ele não fica visível. Você tem que torna-lo visível no diálogo de vetores.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Colar vetor</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-paste"></a>
+              <p><span class="guilabel">Colar vetor</span> cria um novo vetor a partir do conteúdo da área de transferência de vetores, e o adiciona a lista de vetores da imagem, tornando-o o vetor ativo. Se nenhum vetor foi copiado para a área de transferência, esta opção estará inativa.</p>
+            </dd>
+            <dt>
+              <span class="term">Export Paths</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-export"></a>
+              <p>
+            <span class="guilabel">Export Paths…</span> allows you to save a path to
+            a file: it pops up a file save dialog that allows you to
+            specify the file name and location. You can later add this
+            path to any GIMP image using the <span class="guilabel">Import
+            Path</span> command. The format used for saving paths is
+            SVG: this means that vector-graphics programs such as
+            <span class="application">Inkscape</span> will also be able to
+            import the paths you save. See the
+            <a class="link" href="gimp-using-paths.html#gimp-concepts-paths">Paths</a> section for more
+            information on SVG files and how they relate to GIMP paths.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Importar vetor</span>
+            </dt>
+            <dd>
+              <a id="gimp-path-import"></a>
+              <p>
+            <span class="guilabel">Import Path…</span> creates a new path from an SVG
+            file: it pops up a file chooser dialog that allows you to navigate
+            to the file. See the <a class="link" href="gimp-using-paths.html#gimp-concepts-paths">Paths</a>
+            section for information on SVG files and how they relate
+            to GIMP paths.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-channel-dialog.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-structure.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-indexed-palette-dialog.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-channel-dialog.html">2.2. Diálogo de canais</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-indexed-palette-dialog.html">2.4. Diálogo do mapa de cores</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.5. Degradê</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+    <link rel="prev" href="gimp-tool-bucket-fill.html" title="3.4. Preenchimento com balde" />
+    <link rel="next" href="gimp-tool-pencil.html" title="3.6. Lápis" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.5. Degradê</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-bucket-fill.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Ferramentas de pintura</span>
+        <nav> <a accesskey="n" href="gimp-tool-pencil.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-gradient"></a>3.5. Degradê</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id16794" class="indexterm"></a>
+      <a id="id16796" class="indexterm"></a>
+      <a id="id16799" class="indexterm"></a>
+      <p>Essa ferramenta preenche a área selecionada com um degradê das cores frente e de fundo por padrão, mas existem outras opções. Para produzir um degradê, arraste o cursor na direção que você deseja que o degradê avance, e solte o botão do mouse quando você sentir que tem a posição certa e o tamanho do seu degradê. A suavidade do degradê depende de quão longe você arrasta o cursor. Quanto mais curta for a distância, mais brusco ele será. Vale mencionar que o nome em inglês dessa ferramenta é <span class="quote">“<span class="quote">Blend Tool</span>”</span>, que ao pé da letra seria ferramenta de <span class="quote">“<span class="quote">Mistura</span>”</span> — pode acontecer de você encontrar trechos do manual, ou no próprio GIMP usando esse outro nome.</p>
+      <p>Se você clicar e arrastar fora da seleção, apenas uma parte do gradiente aparecerá na seleção.</p>
+      <p>Existe um número surpreendente de coisas que você pode fazer com essa ferramenta, e as possibilidades podem até parecer um pouco de mais no  inicio. As duas opções mais importantes que você tem são o degradê e a forma. Clicar no botão degradê nas opções da ferramenta exibe a janela de seleção de degradê, permitindo que você escolha entre uma variedade de degradês instalados com o GIMP; você também pode criar e salvar degradês customizados. Informações adicionais sobre degradês podem ser encontradas em <a class="xref" href="gimp-concepts-gradients.html" title="6. Degradês">Seção 6, “Degradês”</a> and <a class="xref" href="gimp-gradient-dialog.html" title="3.5. Diálogo de degradês">Seção 3.5, “Diálogo de degradês”</a>.</p>
+      <p>Para a forma, existem 11 opções: Linear, Bi-linear, Radial, Quadrado, Cônico (simétrico), Cônico (assimétrico), Acompanha a forma (angular), Acompanha a forma (esférico), Acompanha a forma (com ondas), Espiral (sentido horário), e Espiral (sentido anti-horário); estas estão descritas abaixo. As opções de acompanhar a forma são as mais interessantes: elas fazem com que o degradê siga a forma do contorno da seleção, não importa o quão sinuosa seja a forma. Diferente de outras formas, degradês acompanhando a forma não são afetados pelo tamanho ou direção da linha que você desenhar: tanto para eles como como para todos os outros tipos de degradês, você precisará clicar dentro da seleção e mover o mouse, mas a forma aparece independente de onde você clicar e como mover.</p>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Dica]" src="images/tip.png" />
+            </td>
+            <th align="left">Dica</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Confira a opção de <span class="quote">“<span class="quote">Diferença</span>”</span> no menu modo, onde fazer a mesma coisa (mesmo com opacidade total) irá resultar em fantásticas textura de redemoinho, se alterando e ficando mais complexas a cada vez que você repete a operação.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2951"></a>3.5.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>Existem várias formas para ativar a ferramenta:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagem: <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de pintura</span> → <span class="guimenuitem">Degradê</span>.</p>
+            </li>
+            <li class="listitem">
+              <p>Ícone da ferramenta de clonagem na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>Ao pressionar o atalho de teclado <span class="keycap"><strong>C</strong></span>.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2952"></a>3.5.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2953"></a>
+          <p class="title">
+            <strong>Figura 14.54. Opções da ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-gradient.png" alt="Opções da ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo, </span>
+              <span class="term">Opacidade</span>
+            </dt>
+            <dd>Veja <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-options" title="3.1.2. Opções">Opções em comum das ferramentas de pintura</a> para uma descrição das opções da ferramenta que são aplicáveis a todas as ferramentas de pintura.</dd>
+            <dt>
+              <span class="term">Degradê</span>
+            </dt>
+            <dd>
+              <p>Uma variedade de texturas de degradê podem ser selecionadas a partir da lista de seleção. A ferramenta cria uma textura com uma variação de cores que vai da cor de frente até a cor de fundo ou outras cores introduzidas, na direção que o usuário determinar ao desenhar a linha na imagem. Para os propósitos de desenhar o degradê, a caixa de seleção <span class="guilabel">Inverter</span><span class="guiicon"><img src="images/dialogs/stock-flip-horizontal-16.png" /></span> reverter a direção do degradê com o efeito, por um instante, de formatar as cores de frente e de fundo.</p>
+              <p>À direita, um botão para abrir a caixa de diálogo Editor de Gradiente.</p>
+            </dd>
+            <dt>
+              <span class="term">Blend Color Space</span>
+            </dt>
+            <dd>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Inclinação</span>: O tamanho do pincel depende da inclinação da caneta.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Linear RGB</span>: When this option is chosen,
+                the Blend Color Space is linearized sRGB (defined by the sRGB
+                primaries and a linear tone reproduction curve). This results
+                in gradients that resemble the physical behavior of light.
+                This option should be used if the color, as measured with a
+                colorimeter, should change linearly with the distance from the
+                color stops within the gradient.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">CIE Lab</span>: When this option is chosen, the
+                Blend Color Space is CIE L*a*b*. This perceptionally uniform
+                color space is used to model human perception of color blending.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Forma</span>
+            </dt>
+            <dd>
+              <p>O <acronym class="acronym">GIMP</acronym> possui 11 formas, que podem ser selecionadas a partir da lista de seleção. Detalhes de cada uma da formas estão descritas abaixo.</p>
+              <div class="figure">
+                <a id="id2954"></a>
+                <p class="title">
+                  <strong>Figura 14.55. Exemplos de formas de degradê</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/tool-options/gradient-linear.png" alt="Exemplos de formas de degradê" />
+                    <div class="caption">
+                      <p>Linear</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/gradient-bilinear.png" alt="Exemplos de formas de degradê" />
+                    <div class="caption">
+                      <p>Bi-Linear</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/gradient-radial.png" alt="Exemplos de formas de degradê" />
+                    <div class="caption">
+                      <p>Radial</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Linear</span>
+                  </dt>
+                  <dd>
+                    <p>Esse degradê começou com a cor de frente no ponto de início da linha de desenho e se altera linearmente até a cor de fundo no ponto de fim.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Bi-Linear</span>
+                  </dt>
+                  <dd>
+                    <p>Esta forma segue em ambas as direções a partir do ponto de início, por uma distância determinada pela largura da linha desenhada. Isso é útil, por exemplo, para dar uma aparência de um cilindro.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Radial</span>
+                  </dt>
+                  <dd>
+                    <p>Este degradê cria um círculo, com a cor de frente no centro e a cor de fundo fora do círculo. Isso dá a aparência de uma esfera sem uma iluminação direcional.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Quadrado, </span>
+                    <span class="term">Forma</span>
+                  </dt>
+                  <dd>
+                    <div class="figure">
+                      <a id="id2955"></a>
+                      <p class="title">
+                        <strong>Figura 14.56. Exemplos de degradê quadrado e acompanha a forma</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/tool-options/gradient-square.png" alt="Exemplos de degradê quadrado e acompanha a forma" />
+                          <div class="caption">
+                            <p>Quadrado</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/tool-options/gradient-ang-shapeburst.png" alt="Exemplos de degradê quadrado e acompanha a forma" />
+                          <div class="caption">
+                            <p>Acompanha a forma (angular)</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/tool-options/gradient-spher-shapeburst.png" alt="Exemplos de degradê quadrado e acompanha a forma" />
+                          <div class="caption">
+                            <p>Acompanha a forma (esférico)</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/tool-options/gradient-dim-shapeburst.png" alt="Exemplos de degradê quadrado e acompanha a forma" />
+                          <div class="caption">
+                            <p>Acompanha a forma (com ondas)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                    <p>Existem quatro formas que são uma variante do quadrado: <span class="guilabel">Quadrado</span>, <span class="guilabel">Acompanha a forma (angular)</span>, <span class="guilabel">Acompanha a forma (esférico)</span>, e <span class="guilabel">Acompanha a forma (com ondas)</span>. Todos eles colocam a cor de frente como o centro do quadrado, sendo o centro definido pelo começo da linha desenhada, e a metade da diagonal é o comprimento da linha desenhada. As quatro opções produzem alterações na maneira pela qual o degradê é calculado; fazer experimentos é a melhor maneira de ver as diferenças.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cônico (simétrico), </span>
+                    <span class="term">Cônico (assimétrico)</span>
+                  </dt>
+                  <dd>
+                    <div class="figure">
+                      <a id="id2956"></a>
+                      <p class="title">
+                        <strong>Figura 14.57. Exemplos de degradê cônico</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/tool-options/gradient-sym-conical.png" alt="Exemplos de degradê cônico" />
+                          <div class="caption">
+                            <p>Cônico (simétrico)</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/tool-options/gradient-asym-conical.png" alt="Exemplos de degradê cônico" />
+                          <div class="caption">
+                            <p>Cônico (assimétrico)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                    <p>A forma <span class="guilabel">Cônico (simétrico)</span> dá a sensação de olhar para baixo do topo de um cone, que aparecerá iluminado com a cor de fundo a partir de uma direção determinada pela direção da linha desenhada.</p>
+                    <p><span class="guilabel">Cônico (assimétrico)</span> é similar ao <span class="guilabel">Cônico (simétrico)</span> exceto que o <span class="quote">“<span class="quote">cone</span>”</span> parece ter um cume aonde a linha é desenhada.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Espiral (sentido horário), </span>
+                    <span class="term">Espiral (sentido anti-horário)</span>
+                  </dt>
+                  <dd>
+                    <div class="figure">
+                      <a id="id2957"></a>
+                      <p class="title">
+                        <strong>Figura 14.58. Exemplos de degradês em espiral</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/tool-options/gradient-clock-spiral.png" alt="Exemplos de degradês em espiral" />
+                          <div class="caption">
+                            <p>Espiral (sentido horário)</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/tool-options/gradient-anticlock-spiral.png" alt="Exemplos de degradês em espiral" />
+                          <div class="caption">
+                            <p>Espiral (sentido anti-horário)</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                    <p>A forma de <span class="guilabel">espiral</span> cria uma espiral em que a  repetição é determinada pelo tamanho da linha desenhada.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Repetir</span>
+            </dt>
+            <dd>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Rodinha</span>: A opacidade depende da posição da rodinha</p>
+                    <div class="mediaobject">
+                      <img src="images/tool-options/gradient-repeat-none.png" />
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Pressão</span>: Pressione com mais força para tornar a pincelada menos transparente.</p>
+                    <div class="mediaobject">
+                      <img src="images/tool-options/gradient-repeat-truncate.png" />
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p>Existem dois modos de repetir: <span class="guilabel">onda de serra</span> e <span class="guilabel">onda triangular</span>. A textura de serra é conseguida começando pela cor de frente, passando por uma transição para a cor de fundo, e então começando novamente com a cor de frente. A triangular começa com a cor de frente, passando uma transição para a cor de fundo, e então sofrendo uma nova transição para a cor de frente.</p>
+                    <div class="mediaobject">
+                      <img src="images/tool-options/gradient-repeat-sawtooth.png" />
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Onda Triangular</span>: começa com o primeiro plano, transiciona para o fundo, e então transiciona de volta para o primeiro plano.</p>
+                    <div class="mediaobject">
+                      <img src="images/tool-options/gradient-repeat-triangular.png" />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Deslocamento</span>
+            </dt>
+            <dd>
+              <p>O valor de <span class="guilabel">deslocamento</span> permite aumentar a <span class="quote">“<span class="quote">declividade</span>”</span> do degradê. Isso determina o quão distante do ponto inicial o degradê começará. A opçãode <span class="quote">“<span class="quote">Acompanha forma</span>”</span> não é afetadas por essa opção.</p>
+              <div class="figure">
+                <a id="id2958"></a>
+                <p class="title">
+                  <strong>Figura 14.59. Ferramenta de <span class="quote">“<span class="quote">degradê</span>”</span>: exemplo de deslocamento</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/gradient-tool-offset.png" alt="Ferramenta de “degradê”: exemplo de deslocamento" />
+                    <div class="caption">
+                      <p>Parte superior, deslocamento = 0 ; Parte inferior, deslocamento = 50%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Reticulado</span>
+            </dt>
+            <dd>
+              <p>O reticulado é completamente explicado no <a class="link" href="glossary.html#glossary-dithering" title="Reticulado">Glossário</a></p>
+            </dd>
+            <dt>
+              <span class="term">Amostragem adaptativa</span>
+            </dt>
+            <dd>
+              <p>Isso é uma forma mais sofisticada de reduzir o efeito de pontilhado, ou faixas de cores de uma transição de cor ao longo de uma inclinação ou linha curva, por exemplo se ocorre uma mudança de cor brusca no degradê em si. Em geral dá melhores resultados que o uso normal,mas é bem mais lenta.</p>
+            </dd>
+            <dt>
+              <span class="term">Modo instantâneo</span>
+            </dt>
+            <dd>
+              <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Warning">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Atenção]" src="images/warning.png" />
+                    </td>
+                    <th align="left">Atenção</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>A opção deve ser ativada (também com <span class="keycap"><strong>Shift</strong></span>) antes de começar a desenhar o gradiente.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <p>Quando esta opção está marcada, a ferramenta gradiente funciona como no GIMP-2.8: a linha do gradiente desaparece assim que você solta o botão do mouse. Você não pode editar paradas de cor antes de aplicar o preenchimento de gradiente.</p>
+            </dd>
+            <dt>
+              <span class="term">Modificar gradiente ativo</span>
+            </dt>
+            <dd>
+              <p>Quando esta opção está marcada, a ferramenta gradiente funciona como no GIMP-2.8: o gradiente personalizado não é criado automaticamente e deve ser criado manualmente. A opção pode ser ativada antes de começar a desenhar o gradiente ou se o gradiente ativo não for o gradiente personalizado. Permite alterar gradientes graváveis pelo usuário diretamente em vez de criar cópias deles.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2959"></a>3.5.3. Degradê</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Edição na tela</span>
+            </dt>
+            <dd>
+              <p>Todos os recursos antigos da caixa de diálogo Editor de Gradiente estão agora disponíveis diretamente na tela. Você pode criar e excluir paradas de cor, selecionar e movê-las, atribuir cores a paradas de cor, alterar mesclagem e coloração para segmentos entre paradas de cor, criar paradas de cor a partir de pontos médios.</p>
+              <p>Selecione um gradiente na caixa de diálogo de gradiente. Clique e arraste na tela. Uma linha é desenhada e o gradiente é exibido. Você pode editar este gradiente movendo o ponteiro do mouse nesta linha. Assim que você tentar editar o gradiente, o GIMP-2.10 cria um gradiente personalizado, que é uma cópia do gradiente selecionado. Ele se torna o gradiente ativo e será preservado entre sessões. Aqui, usamos o gradiente Abstract3.</p>
+              <div class="mediaobject">
+                <img src="images/toolbox/gradient-endpoint.png" />
+                <div class="caption">
+                  <p>O gradiente Abstract3, com pontos finais</p>
+                </div>
+              </div>
+              <p>Em ambas as extremidades da linha, você pode ver um <span class="guilabel">Ponto inicial</span> e um <span class="guilabel">Ponto final</span>. Clique e arraste um ponto final (o ponteiro do mouse é acompanhado por uma cruz móvel) para movê-lo para onde você quiser na tela. Uma pequena janela aparece mostrando dados sobre o ponto final selecionado: a posição do mouse (a origem das coordenadas é o canto superior esquerdo da imagem ou seleção), a cor inicial (esquerda) e a cor final (direita) do gradiente.</p>
+              <div class="mediaobject">
+                <img src="images/toolbox/gradient-endpoint-move.png" />
+                <div class="caption">
+                  <p>Atrás (modo de pintura)</p>
+                </div>
+              </div>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Se você mover apenas os pontos finais, o gradiente personalizado ainda não é criado.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <p>Na linha, você pode ver vários pequenos quadrados. Estes são <span class="guilabel">Paradas</span> que dividem o gradiente em segmentos. Você pode editar segmentos separadamente. Clique e arraste paradas para movê-las (o ponto final ativo fica amarelo). Assim que você mover uma parada, o gradiente personalizado é criado. A pequena janela de dados mostra um botão que permite remover a parada ativa.</p>
+              <div class="mediaobject">
+                <img src="images/toolbox/gradient-stop.png" />
+                <div class="caption">
+                  <p>Ponto de parada movido e janela de dados</p>
+                </div>
+              </div>
+              <p>Se você mover o ponteiro do mouse sobre a linha, um <span class="guilabel">Ponto médio</span> aparece. Então, a pequena janela de dados tem dois botões: <span class="guiicon"><img src="images/toolbox/gradient-icon1.png" /></span> para criar uma nova parada no ponto médio, e <span class="guiicon"><img src="images/toolbox/gradient-icon2.png" /></span> para centralizar o ponto médio.</p>
+              <div class="mediaobject">
+                <img src="images/toolbox/gradient-midpoint.png" />
+              </div>
+              <p>Para Paradas e Pontos Médios, <span class="guilabel">Posição</span> se refere à linha do gradiente: 0 é o ponto inicial, 100 é o ponto final.</p>
+              <p><span class="guilabel">Mesclagem</span>: você pode alterar o modo de mesclagem entre duas paradas, usando a lista suspensa. A opção <span class="guilabel">Passo</span> apareceu com o GIMP-2.10.8: ela cria uma transição com borda firme entre as duas paradas de cor adjacentes no ponto médio. </p>
+              <div class="figure">
+                <a id="id2960"></a>
+                <p class="title">
+                  <strong>Figura 14.60. Exemplo de <span class="quote">“<span class="quote">espalhamento</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/gradient-step-orig.jpg" alt="Exemplo de “espalhamento”" />
+                    <div class="caption">
+                      <p>Imagem original</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/toolbox/gradient-step.jpg" alt="Exemplo de “espalhamento”" />
+                    <div class="caption">
+                      <p>Passo aplicado no Ponto Médio2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p>
+                <br class="figure-break" />
+              </p>
+              <p><span class="bold"><strong>Alterando cor</strong></span>: nas janelas de dados de parada e fim, você tem amostras de cor com uma lista suspensa. A opção padrão é <span class="guilabel">Fixo</span>; isso significa que a escolha da cor será independente das cores de primeiro plano e de fundo. Clique em uma amostra de cor para abrir um seletor de cores.</p>
+            </dd>
+            <dt>
+              <span class="term">Modificadores de tecla</span>
+            </dt>
+            <dd>
+              <p>O <span class="keycap"><strong>Ctrl</strong></span> é usado para criar linhas retas que são colocadas a ângulos absolutos de 15 graus.</p>
+              <p>Ou usando a tecla de atalho <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>U</strong></span>.</p>
+            </dd>
+            <dt>
+              <span class="term">O Editor de Gradiente</span>
+            </dt>
+            <dd>
+              <p>O Editor de Gradiente ainda existe: <a class="xref" href="gimp-gradient-dialog.html#gimp-gradient-editor-dialog" title="3.5.3. O Editor de degradês">Seção 3.5.3, “O Editor de degradês”</a>.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-bucket-fill.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-paint.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-pencil.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-bucket-fill.html">3.4. Preenchimento com balde</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-pencil.html">3.6. Lápis</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

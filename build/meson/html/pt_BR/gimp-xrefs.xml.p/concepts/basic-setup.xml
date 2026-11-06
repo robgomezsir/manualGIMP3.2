@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--  section history:
+  2019-05-18 j.h: some updates, fixing issue #149
+ -->
+<sect1 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-concepts-main-windows">
+
+  <title>Janelas principais</title>
+  <anchor id="gimp-concepts-usage"/>
+
+  <indexterm>
+    <primary>Configuração básica</primary>
+  </indexterm>
+
+  <para>
+    The GIMP user interface is available in two modes:
+    <itemizedlist>
+      <listitem>
+        <para>modo multi janela,</para>
+      </listitem>
+      <listitem>
+        <para>Modo de janela única</para>
+      </listitem>
+    </itemizedlist>
+  </para>
+  <para>
+    When you open GIMP for the first time, it opens in single-window mode by
+    default. You can enable multi-window mode by unchecking the
+    <menuchoice>
+      <guimenu>Windows</guimenu>
+      <guimenuitem>Single-Window Mode</guimenuitem>
+    </menuchoice> option in the main menu.
+    After quitting GIMP, GIMP will start in the mode you have selected next
+    time.
+  </para>
+
+  <variablelist>
+    <varlistentry id="multi-window-mode">
+      <term>Modo Multi Janela</term>
+      <listitem>
+        <figure>
+          <title>Um tela capturada ilustrando o modo multi-janela.</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/using/multi-window.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+        <orderedlist>
+          <para>A imagem acima mostra o arranjo mais básico das janelas do<acronym>GIMP</acronym> que podem ser utilizados de forma eficaz.</para>
+          <para>
+            On the left and right you see two panels, with an image window in
+            the middle. A second image is partially masked. The left panel
+            contains the Toolbox as well as Tool Options, Device Status, Undo
+            History and Images dialogs together. The right panel contains
+            Brushes, Patterns, Fonts and Document History dialogs together in
+            a multi-tab dock, and Layers, Channels and Paths dialogs together
+            in another multi-tab dock.
+          </para>
+          <listitem>
+            <!--1-->
+            <para>
+              <emphasis>The Toolbox:</emphasis>
+              Contains a set of icon buttons used to select tools.
+              By default, it also contains the foreground and background colors.
+              You can add brush, pattern, gradient and active image icons.
+              Use
+              <menuchoice>
+              <guimenu>Edit</guimenu>
+              <guisubmenu>Preferences</guisubmenu>
+              <guisubmenu>Toolbox</guisubmenu>
+            </menuchoice>
+            to enable, or disable the extra items.
+            </para>
+          </listitem>
+          <listitem>
+            <!--2-->
+            <para>
+              <emphasis>Tool options:</emphasis>
+              Docked below the Toolbox is a Tool Options dialog, showing
+              options for the currently selected tool (in this case, the
+              Move tool).
+            </para>
+          </listitem>
+          <listitem>
+            <!--3-->
+            <para><emphasis>Janela de Imagem: </emphasis> Cada imagem aberta no <acronym>GIMP</acronym> é exibida em uma janela separada. Muitas imagens podem ser abertas ao mesmo tempo, e isso é limitado apenas pelos recursos do sistema. Antes que você possa fazer qualquer coisa útil no <acronym>GIMP</acronym>, você precisa ter pelo menos uma janela de imagem aberta. A janela de imagem mantém o menu dos comandos principais do <acronym>GIMP</acronym> (Arquivo, Editar, Selecionar ...), que você também pode obter clicando com o botão direito na janela.</para>
+            <para>Uma imagem pode ser maior do que a janela de imagem. Nesse caso, GIMP exibe a imagem em um nível de zoom reduzido, o que permite ver a imagem completa na janela da imagem. Se você mudar para o nível de zoom de 100%, as barras de rolagem aparecem, o que lhe permite deslocar a imagem para ver todas as partes.</para>
+          </listitem>
+          <listitem>
+            <!--4-->
+            <para>O dock <emphasis>Pincéis, Padrões, Fontes, Histórico de Documentos</emphasis> &mdash; note que as caixas de diálogo no dock são abas. A aba Pincéis está aberta: ela mostra o tipo de pincel usado pelas ferramentas de pintura.</para>
+          </listitem>
+          <listitem>
+            <!--5-->
+            <para>O encaixe de <emphasis>Camadas, Canais, Caminhos, e Histórico do Desfazer</emphasis> &mdash; note que os diálogos no encaixe são guias (abas). A guia de Camadas está aberta: ela mostra a estrutura de camadas da imagem que está ativa, e permite que seja manipulada de varias maneiras. É possível fazer algumas coisas muito básicas sem usar o diálogo de Camadas, mas mesmo usuáriosmoderadamente sofisticados do <acronym>GIMP</acronym> acham indispensável ter o diálogo de Camadas disponível o tempo todo.</para>
+          </listitem>
+        </orderedlist>
+        <para>O gerenciamento de diálogos e encaixes é descrito em <xref linkend="gimp-concepts-docks"/>.</para>
+      </listitem>
+    </varlistentry>
+
+    <varlistentry id="single-window-mode">
+      <term>Modo de janela única</term>
+
+      <listitem>
+        <figure>
+          <title>Uma fotografia ilustrando o modo de janela única</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/using/single-window.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+
+        <para>Você vê os mesmos elementos, com diferenças em como foram arranjados: <itemizedlist>
+            <listitem>
+              <para>Os painéis esquerdo e direito são fixos, você não pode movê-los. Mas você pode diminuir ou aumentar a sua largura. Se você reduzir a largura de um encaixe com múltiplas guias (abas), pode não haver lugar o suficiente para todas as guias, então aparecem setas permitindo que você navegue pelas mesmas. <placeholder-1/></para>
+              <para>
+               If you reduce the width of a multi-tab dock, there may be not
+               enough room for all tabs; then arrow-heads
+               <guiicon>
+                 <inlinemediaobject>
+                   <imageobject>
+                     <imagedata fileref="images/stock-icons/pan-start-symbolic.svg" contentwidth="16px"/>
+                   </imageobject>
+                 </inlinemediaobject>
+               </guiicon>,
+               <guiicon>
+                 <inlinemediaobject>
+                   <imageobject>
+                     <imagedata fileref="images/stock-icons/pan-end-symbolic.svg" contentwidth="16px"/>
+                   </imageobject>
+                 </inlinemediaobject>
+               </guiicon>
+               appear allowing you
+               to scroll through tabs.
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/using/scroll-through-tabs.png"/>
+                  </imageobject>
+                </mediaobject>
+              </para>
+              <para>Como no modo multi-janelas, você pode esconder e mostrar esses painéis usando a tecla<keycap>TAB</keycap>.</para>
+            </listitem>
+            <listitem>
+              <para>A janela de imagem ocupa todo o espaço entre ambos os painéis.</para>
+              <para>Quando várias imagens estão abertas, uma nova barra aparece acima da janela de imagem, com uma guia para cada imagem. Você pode navegar entre as imagens clicando nas abas ou usando <keycombo><keycap>Ctrl</keycap> <keycap>PageUp ou PageDown </keycap></keycombo> ou <keycombo><keycap>Alt</keycap><keycap>Número</keycap></keycombo>. <quote>Número</quote> é o número da guia, você deve usar as teclas numéricas da linha superior do teclado, e não do teclado numérico.</para>
+            </listitem>
+          </itemizedlist></para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+
+    <para>Esta é uma configuração mínima. Há mais de uma dúzia de outros tipos de caixas de diálogo utilizadas pelo <acronym>GIMP</acronym> para vários fins, mas os usuários normalmente as abrem quando precisam delas e as fecha quando acabaram de usar. Usuários experientes geralmente mantém a Caixa de ferramentas (com as opções de ferramentas) e o diálogo de Camadas abertos o tempo todo. A Caixa de ferramentas é essencial para muitas operações do <acronym>GIMP</acronym>. A seção Opções de ferramentas é, na verdade, um diálogo separado, mostrado encaixado na Caixa de ferramentas principal nesta captura de tela, usuários experientes quase sempre a deixam configurada dessa forma: é muito difícil usar as ferramentas de forma eficaz, sem de ver como suas opções estão definidas - se ela for fechada, no entanto, um clique-duplo sobre o ícone de qualquer ferramenta na Caixa de ferramentas, abre de novo a caixa de Opções. A caixa de diálogo de Camadas entra em jogo quando você trabalha com uma imagem com várias camadas: depois de experimentar além dos estágios mais básicos do <acronym>GIMP</acronym>, isso significa <emphasis>quase sempre</emphasis>. E é claro que ajuda se você estiver vendo as imagens que você está editando na tela; se você fechar a janela de imagem antes de salvar o seu trabalho, o <acronym>GIMP</acronym> irá perguntar se você realmente deseja fechar a imagem;</para>
+    <note>
+      <para>
+        If your <acronym>GIMP</acronym> layout is lost, your arrangement
+        is easy to recover using
+        <menuchoice>
+          <guimenu>Windows</guimenu>
+          <guisubmenu>Recently Closed Docks</guisubmenu>
+        </menuchoice>.
+        This menu command is only available while an image is open.
+        To add, close, or detach a tab from a dock, click
+        <guiicon>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+            </imageobject>
+          </inlinemediaobject>
+        </guiicon>
+        in the upper right corner of a dialog. This opens the Tab menu. Select
+        <guimenuitem>Add Tab</guimenuitem>,
+        <guimenuitem>Close Tab</guimenuitem>, or
+        <guimenuitem>Detach Tab</guimenuitem>.
+      </para>
+    </note>
+
+    <para>As seções a seguir instruem você sobre os princípios básicos dos componentes de cada uma das janelas mostradas nessa tela, explicando o que são e como eles funcionam. Uma vez que você as leia, e também a seção que descreve a estrutura básica das imagens no <acronym>GIMP</acronym>, você deverá ter aprendido o suficiente para usar o <acronym>GIMP</acronym> para realizar várias tarefas simples com imagens. Você poderá então olhar o restante do manual com calma (ou apenas ir experimentando) para conhecer o número quase ilimitado de coisas mais sutis e especializadas que são possíveis. Divirta-se!</para>
+
+  <xi:include href="toolbox.xml"/>
+  <xi:include href="imagewindow.xml"/>
+  <xi:include href="docks.xml"/>
+</sect1>

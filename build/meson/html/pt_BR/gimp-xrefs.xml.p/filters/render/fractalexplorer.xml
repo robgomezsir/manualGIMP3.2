@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-11-14 AntI:Added "es"
+  2007-05-18 KoSt: added 'no'
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005/09/23 created by axel.wernicke
+  2005/10/23 en;fr and adds-on by julien hardelin
+-->
+<sect2 id="plug-in-fractalexplorer">
+  <title>Explorador de fractais</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Explorador de fractais</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Explorador de fractais</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro de Explorador de fractais</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-taj-fractalexplorer.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      With this filter, you can create fractals and multicolored pictures
+      verging on chaos. This filter lets you pick from a collection of
+      presets that can be adjusted easily. In contrast, the
+      <link linkend="plug-in-ifscompose">IFS Fractal</link> filter lets you
+      change the fractal structure in more detail, at the cost of being
+      more complicated.
+    </para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guisubmenu>Fractals</guisubmenu>
+        <guimenuitem>Fractal Explorer…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Explorador de fractais</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/fractalexplorer.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>A janela do Explorador de fractais contém dois painéis: à esquerda, há o painel de pré-visualização com um recurso de zoom, no lado direito você encontra as principais opções organizadas em guias: parâmetros, cores e fractais.</para>
+
+    <sect4>
+      <title>Pré-visualização</title>
+      <variablelist>
+        <varlistentry>
+          <term>Pré-visualização em tempo real</term>
+          <listitem>
+            <para>
+              You can disable the <guilabel>Realtime preview</guilabel> if
+              updating the preview is slow. In that case, you can update the
+              preview by clicking the <guibutton>Redraw preview</guibutton> button.
+            </para>
+            <para>
+              By click-dragging the mouse pointer on the preview, you can draw a
+              rectangle delimiting the area that will be zoomed.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Zoom</term>
+          <listitem>
+            <para>
+              These buttons allow you to <guibutton>Zoom In</guibutton> or
+              <guibutton>Zoom Out</guibutton> the preview. The
+              <guibutton>Undo</guibutton> button takes you back to the previous
+              state. The <guibutton>Redo</guibutton> button will revert the
+              last Undo.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Parâmetros</title>
+      <para>
+        This tab contains settings to adjust the calculation and select a
+        fractal type.
+      </para>
+      <variablelist>
+        <varlistentry>
+          <term>Parâmetros do Fractal</term>
+          <listitem>
+            <para>
+              These sliders and input boxes allow you to set fractal
+              spreading, repetition and aspect.
+            </para>
+            <variablelist>
+              <varlistentry>
+                <!--was: XMIN-->
+                <term>Esquerdo</term>
+                <!--was: XMAX-->
+                <term>Direito</term>
+                <!--was: YMIN-->
+                <term>Topo</term>
+                <!--was: YMAX-->
+                <term>Fundo</term>
+                <listitem>
+                  <para>Você pode definir a área renderizada do fractal entre um mínimo e um máximo, nas direções horizontal e / ou vertical. Os valores são entre -3,0 a 3,0.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <!--was: ITER-->
+                <term>Iterações</term>
+                <listitem>
+                  <para>
+                    With this parameter, you can set fractal repetition
+                    in detail. Values are from 0.0 to 1000.0
+                  </para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>CX</term>
+                <term>CY</term>
+                <listitem>
+                  <para>Com esses parâmetros, você pode alterar os parâmetros de aspecto do fractal, nas direções horizontal, ou real (X)e  vertical, ou imaginária (Y), com exceção dos tipos Mandelbrot e Sierpinski. Para os outros tipos, essa posição representa um número complexo que é usado interativamente no cálculo do fractal.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Abrir</term>
+                <term>Salvar</term>
+                <listitem>
+                  <para>
+                    With these buttons, you can open a previously saved
+                    fractal or save your work with all its parameters.
+                  </para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Tipo de fractal</term>
+          <listitem>
+            <para>
+              Here you can choose the fractal type you want. You can choose
+              from
+              <guilabel>Mandelbrot</guilabel>, <guilabel>Julia</guilabel>,
+              <guilabel>Barnsley</guilabel> 1, 2 or 3, <guilabel>Spider</guilabel>,
+              <guilabel>Man-o-War</guilabel>, <guilabel>Lambda</guilabel> or
+              <guilabel>Sierpinski</guilabel>.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Cores</title>
+      <figure>
+        <title>Opções para o filtro <quote>Explorador de Fractais</quote>(cores)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/render/fractalexplorer2.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Esta guia contém opções para a configuração de cores do fractal.</para>
+      <variablelist>
+        <title>Número de cores</title>
+        <varlistentry>
+          <term>Número de cores</term>
+          <listitem>
+            <para>
+              This slider and its input boxes allow you to set the number of
+              colors for the fractal, between 2 and 8192. A palette of these
+              colors is displayed at the bottom of the tab. Actually, that's a
+              gradient between colors in fractal: you can change colors with
+              <guilabel>Color Density</guilabel> and
+              <guilabel>Color Function</guilabel> options. Fractal colors don't
+              depend on the colors of the original image. You can even use a
+              white image for creating fractals.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Use log log smoothing</term>
+          <listitem>
+            <para>Se esta opção estiver marcada, o efeito de faixas de cor é suavizado.</para>
+            <figure>
+              <title>Log log smoothing example</title>
+              <mediaobject>
+                <imageobject>
+                  <imagedata format="PNG" fileref="images/filters/examples/render-fractalexpl.png"/>
+                </imageobject>
+              </mediaobject>
+            </figure>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <variablelist>
+        <title>Densidade das cores</title>
+        <varlistentry>
+          <term>Red stretch</term>
+          <term>Green stretch</term>
+          <term>Blue stretch</term>
+          <listitem>
+            <para>Estes três controles deslizantes e as suas caixas de texto permitem que você defina a intensidade da cor nos três canais de cor. Os valores variam de 0,0 a 1,0.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <variablelist>
+        <title>Função de cor</title>
+        <para>Para cada canal de cor dentre <guilabel>Vermelho </guilabel>, <guilabel>Verde</guilabel> e <guilabel>Azul</guilabel>, você pode selecionar como a cor será tratada:</para>
+        <varlistentry>
+          <term>Seno</term>
+          <listitem>
+            <para>As variações de cores serão moduladas pela função seno.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Cosseno</term>
+          <listitem>
+            <para>As cores serão moduladas pela função cosseno.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Nenhuma</term>
+          <listitem>
+            <para>As densidades de cor irão variar linearmente.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Inversão</term>
+          <listitem>
+            <para>Se você marcar esta opção, os valores da função serão invertidos.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <variablelist>
+        <title>Modo de cor</title>
+        <para>Estas definem de onde os valores de cor devem ser tomados.</para>
+        <varlistentry>
+          <term>Conforme especificado acima</term>
+          <listitem>
+            <para>
+              Color values will be taken from the <guilabel>Color
+              Density</guilabel> settings.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Aplicar degradê ativo à imagem final</term>
+          <listitem>
+            <para>
+              The colors used will be that of the active gradient. You can
+              select another gradient by clicking on the button that shows
+              the currently active gradient.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Fractais</title>
+      <figure>
+        <title>
+          <quote>Fractal Explorer</quote> sample fractals
+        </title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/render/fractalexplorer3.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>
+        This tab contains a list of fractals with their parameters that
+        you can use as a model and adjust. To select one, you can either
+        double click the name, or click the name and then press
+        <guibutton>Apply</guibutton>.
+      </para>
+      <para>
+        The <guibutton>Refresh</guibutton> button allows you to update the list
+        if you have saved your work (see the Parameters tab). You can remove
+        a fractal from the list by clicking <guibutton>Delete</guibutton>.
+      </para>
+    </sect4>
+  </sect3>
+</sect2>

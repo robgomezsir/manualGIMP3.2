@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.42. Export Image as PNM, PAM, PBM, PGM, PPM</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="file-png-export.html" title="5.41. Export Image as PNG" />
+    <link rel="next" href="file-ps-export.html" title="5.43. Export Image as PostScript" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.42. Export Image as PNM, PAM, PBM, PGM, PPM</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-png-export.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="file-ps-export.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-pnm-export"></a>5.42. Export Image as PNM, PAM, PBM, PGM, PPM</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id27677" class="indexterm"></a>
+      <a id="id27679" class="indexterm"></a>
+      <a id="id27681" class="indexterm"></a>
+      <a id="id27683" class="indexterm"></a>
+      <a id="id27685" class="indexterm"></a>
+      <a id="id27687" class="indexterm"></a>
+      <a id="id27690" class="indexterm"></a>
+      <a id="id27693" class="indexterm"></a>
+      <a id="id27696" class="indexterm"></a>
+      <a id="id27699" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2064"></a>5.42.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <a id="file-pam-export"></a>
+        <a id="file-pbm-export"></a>
+        <a id="file-pgm-export"></a>
+        <a id="file-ppm-export"></a>
+        <div class="figure">
+          <a id="id2065"></a>
+          <p class="title">
+            <strong>Figure 15.86. The PNM Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-pnm-dialog.png" alt="The PNM Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This export dialog allows you to export your image as one of the
+      so-called <acronym class="acronym">Portable Anymap</acronym> image formats. More
+      specifically the PAM, PBM, PGM, PNM and PPM formats.
+      For more information see
+      <a class="ulink" href="https://en.wikipedia.org/wiki/Netpbm" target="_top">Netpbm</a>.
+    </p>
+        <p>
+      Besides the above listed formats, there is also the related
+      <a class="link" href="file-pfm-export.html" title="5.39. Export Image as PFM">PFM</a> format.
+    </p>
+        <p>
+      The formats can be used as follows:
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">PAM</span>
+            </dt>
+            <dd>
+              <p>
+            This is an extended version of the below formats. This newer
+            format allows for transparency.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">PBM</span>
+            </dt>
+            <dd>
+              <p>
+            This format saves the image as a monochrome bitmap with two colors:
+            black and white.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">PGM</span>
+            </dt>
+            <dd>
+              <p>
+            This format saves the image as a grayscale image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">PPM</span>
+            </dt>
+            <dd>
+              <p>
+            This format saves the images as a color RGB image without
+            transparency.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">PNM</span>
+            </dt>
+            <dd>
+              <p>
+            When using the generic name <span class="quote">“<span class="quote">PNM</span>”</span>,
+            <acronym class="acronym">GIMP</acronym> chooses the closest matching format
+            from the above mentioned types.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2066"></a>5.42.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Data formatting</span>
+            </dt>
+            <dd>
+              <p>
+            This setting allows you to choose whether the image should be
+            stored as <span class="guilabel">ASCII</span> or as <span class="guilabel">RAW</span>
+            data. The former is a format that is easier to read by humans, but
+            the latter, binary format, is more compact and results in
+            smaller files.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-png-export.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-ps-export.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-png-export.html">5.41. Export Image as PNG</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-ps-export.html">5.43. Export Image as PostScript</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

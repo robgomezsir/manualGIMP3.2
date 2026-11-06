@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-12-25 lexA: initial version
+-->
+<sect2 id="gimp-image-properties">
+  <title>Propriedades da imagem</title>
+
+  <indexterm>
+    <primary>Propriedades da imagem</primary>
+  </indexterm>
+
+  <para>O comando de <quote>Propriedades da imagem</quote> propriedades da imagem abre uma janela que mostra várias informações diferentes sobre a imagem.</para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          You can access this command from the main menu through
+          <menuchoice>
+            <guimenu>Image</guimenu>
+            <guimenuitem>Image Properties</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          You can also use the keyboard shortcut
+          <keycombo>
+            <keycap>Alt</keycap>
+            <keycap>Return</keycap>
+          </keycombo>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <para>A janela de propriedades é dividia em três guias</para>
+
+    <sect4>
+      <title>A guia <quote>Propriedades</quote></title>
+      <figure>
+        <title>A guia <quote>Propriedades</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/menus/image/properties.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Size in pixels</term>
+          <listitem>
+            <para>Mostra a largura e altura da imagem em pixels, isso é, o tamanho <emphasis>físico</emphasis> da imagem.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Tamanho de impressão</term>
+          <listitem>
+            <para>Mostra o tamanho que a imagem terá ao ser impressa, nas unidades atuais. Este é o tamanho <emphasis>lógico</emphasis> da imagem.  O mesmo depende do tamanho físico da imagem e da resolução.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Resolução</term>
+          <listitem>
+            <para>
+              Shows the print resolution of the image.
+            </para>
+            <note>
+              <para>
+                The default resolution unit used may depend on the type of
+                image you imported. PNG images that have a resolution set, are
+                known to be imported with the unit set to metric, meaning you
+                will see pixels/mm here in that case.
+              </para>
+              <para>
+                See also <xref linkend="gimp-image-print-size"/>.
+              </para>
+            </note>
+            </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Espaço de cor</term>
+          <listitem>
+            <para>Shows the image's color space.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Precision</term>
+          <listitem>
+            <para>Shows the precision of the image's encoding.</para>
+            <para>
+              See also <xref linkend="gimp-image-encoding"/>.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Nome do arquivo</term>
+          <listitem>
+            <para>Caminho e nome do arquivo que contém a imagem.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Tamanho do arquivo.</term>
+          <listitem>
+            <para>Tamanho do arquivo que contém a imagem.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Tipo de arquivo</term>
+          <listitem>
+            <para>Formato do arquivo que contém a imagem</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Tamanho na memória</term>
+          <listitem>
+            <para>Consumo de memória RAM da imagem carregada, incluindo o histórico de operações. Esta informação também aparece por padrão na janela da imagem. O tamanho aqui é bem diferente do tamanho da imagem em disco. Isso ocorre por que a imagem na memória fica sem compressão nenhuma, e por que o  <acronym>GIMP</acronym> mantém uma cópia da imagem em memória para operações de desfazer e refazer.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Passos de desfazer</term>
+          <listitem>
+            <para>Número de ações realizadas na imagem que podem ser desfeitas. Você pode vê-las no diálogo do <link linkend="gimp-undo-dialog">Histórico de Desfazer</link></para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Passos de refazer</term>
+          <listitem>
+            <para>Número de ações desfeitas na imagem, que podem ser refeitas.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Number of pixels</term>
+          <term>Number of layers</term>
+          <term>Number of channels</term>
+          <term>Number of paths</term>
+          <listitem>
+            <para>Bem contados!</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Guia <quote>Perfil de cores</quote></title>
+      <para>Esta guia contém o nome do perfil de cores que a imagem tinha anexo ao ser aberta no GIMP. Por padrão ele é o perfil de cor <quote>sRGB</quote>.</para>
+    </sect4>
+
+    <sect4>
+      <title>Guia <quote>Comentários</quote></title>
+      <para>Esta guia permite que você veja ou edite um comentário sobre a imagem.</para>
+    </sect4>
+  </sect3>
+</sect2>

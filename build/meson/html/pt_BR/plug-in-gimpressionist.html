@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>11.12. GIMPressionista</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-artistic.html" title="11. Filtros artísticos" />
+    <link rel="prev" href="script-fu-clothify.html" title="11.11. Aspecto de tecido" />
+    <link rel="next" href="plug-in-lic.html" title="11.13. Van Gogh (LIC)" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>11.12. GIMPressionista</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-clothify.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>11. Filtros artísticos</span>
+        <nav> <a accesskey="n" href="plug-in-lic.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-gimpressionist"></a>11.12. GIMPressionista</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id55784" class="indexterm"></a>
+      <a id="id55788" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4725"></a>11.12.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4726"></a>
+          <p class="title">
+            <strong>Figura 17.233. Exemplo para o filtro <span class="quote">“<span class="quote">GIMPressionista</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo para o filtro “GIMPressionista”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/artistic-taj-gimpressionist.jpg" alt="Exemplo para o filtro “GIMPressionista”" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter can do what <a class="link" href="gimp-filter-cubism.html" title="11.4. Cubismo">Cubism</a>
+      and <a class="link" href="gimp-filter-apply-canvas.html" title="11.2. Aplicar textura de tela">Apply Canvas</a> do and
+      much more. It gives your image the look of a painting. All is going as if
+      your image was painted again on a paper and with a brush you'd have
+      chosen. It works on the active layer or selection.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4727"></a>11.12.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Artistic</span> → <span class="guimenuitem">GIMPressionist…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4728"></a>11.12.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4729"></a>
+          <p class="title">
+            <strong>Figura 17.234. Opções do GIMPressionisa</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/artistic/gimpressionist1.png" alt="Opções do GIMPressionisa" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>A janela de diálogo consiste de uma pequena área de pré-visualização na esquerda, que está sempre visível, e uma grande quantidade de opções do GIMPressionista organizadas em guias.</p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4730"></a>11.12.3.1. Pré-visuação</h5>
+              </div>
+            </div>
+          </div>
+          <p>Todas as suas configurações de mudanças irão aparecer na pré-visualização sem afetar a imagem de fato até que você clique em <span class="guibutton">OK</span>. O botão <span class="guibutton">Atualizar</span> atualiza a janela de pré-visualização (isso não é automático, o GIMPressionista tem muito trabalho a fazer!), e o botão <span class="guibutton">Restaurar</span> reverte para a imagem original.</p>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4731"></a>11.12.3.2. Guia de valores de fábrica</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4732"></a>
+            <p class="title">
+              <strong>Figura 17.235. Opções da guia <span class="quote">“<span class="quote">valores de fábrica</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist1.png" alt="Opções da guia “valores de fábrica”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>
+        GIMPressionist has a lot of parameters. When combined, they
+        give an astronomical number of possibilities. So, it is important,
+        when an interesting preset has been found, to save it and also to
+        send it to the plug-in author if exceptional. Per contra, the
+        intricacy of all these parameters makes difficult understanding
+        and foreseeing how each one works.
+      </p>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Opções de valores de fábrica</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Salvar atual</span>
+              </dt>
+              <dd>
+                <p>
+              Save current parameters.
+              You can give a name in the input box on the left and a short
+              description in the dialog that appears.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Aplicar</span>
+              </dt>
+              <dd>
+                <p>Carrega os parâmetros do valor de fábrica selecionado na lista.</p>
+              </dd>
+              <dt>
+                <span class="term">Excluir</span>
+              </dt>
+              <dd>
+                <p>Exclui o valor de fábrica selecionado. Você pode excluir apenas os valores de fábrica que você criou.</p>
+              </dd>
+              <dt>
+                <span class="term">Atualizar</span>
+              </dt>
+              <dd>
+                <p>Atualiza a lista de valores de fábrica.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4733"></a>11.12.3.3. Guia papel</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4734"></a>
+            <p class="title">
+              <strong>Figura 17.236. Opções da guia <span class="quote">“<span class="quote">papel</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist2.png" alt="Opções da guia “papel”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Essa guia trata da textura da tela na qual a sua imagem será pintada. Você tem uma lista de textura e uma <span class="guilabel">pré-visualização</span> para a textura selecionada. Uma descrição é exibida a direita para cada textura selecionada.</p>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Opções de papel</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Inverter</span>
+              </dt>
+              <dd>
+                <p>Inverte a textura de papel: aonde existe uma depressão se torna em algo elevado e vice-versa.</p>
+              </dd>
+              <dt>
+                <span class="term">Superposição</span>
+              </dt>
+              <dd>
+                <p>
+              Apply the paper as it, without embossing it. It looks like
+              if a transparent paper has been overlaid on the image.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Escala</span>
+              </dt>
+              <dd>
+                <p>Especifica a escala da textura (em % do arquivo original): controla o ruído da textura.</p>
+              </dd>
+              <dt>
+                <span class="term">Relevo</span>
+              </dt>
+              <dd>
+                <p>Específica a quantidade de relevo a ser aplicado (3-150).</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4735"></a>11.12.3.4. Guia pincel</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4736"></a>
+            <p class="title">
+              <strong>Figura 17.237. Opções da guia <span class="quote">“<span class="quote">pincel</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist3.png" alt="Opções da guia “pincel”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p><span class="quote">“<span class="quote">Pincel</span>”</span> é um termo genérico para qualquer material usado para pintar. Uma lista de pincéis está disponível com uma <span class="guilabel">pré-visualização</span> para o pincel selecionado.</p>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Opções de pincel</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Gama</span>
+              </dt>
+              <dd>
+                <p>Altera a gama (luminosidade) do pincel selecionado. O gama corrige o brilho ou escuridão dos tons médios.</p>
+              </dd>
+              <dt>
+                <span class="term">Selecione</span>
+              </dt>
+              <dd>
+                <p>Você também pode usar uma textura de pincel que você tenha criado ao selecionar a sua imagem (botão de seta na linha de selecionar). Essa imagem precisa estar aberta no GIMP antes de você iniciar o filtro para que seja exibida. Obviamente, você não usar imagens grandes.</p>
+                <p>Se a sua imagem possui diversas camadas, elas também serão exibidas na lista de selecionar e podem ser usadas como um pincel. Quando selecionada, a camada aparecerá na pré-visualização de pincel e o pincel normal será des-selecionado.</p>
+                <p>O botão <span class="guibutton">Salvar como</span> permite salvar o pincel selecionado.</p>
+              </dd>
+              <dt>
+                <span class="term">Proporção</span>
+              </dt>
+              <dd>
+                <p>Específica as proporções do pincel, altura (0-1) e largura (0 +1).</p>
+              </dd>
+              <dt>
+                <span class="term">Relevo</span>
+              </dt>
+              <dd>
+                <p>Especifica a quantidade de tinta usada em cada pincelada. Isso pode permitir pintar com uma textura de faca.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="gimpressionist-orientation-options"></a>11.12.3.5. Guia orientação</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4737"></a>
+            <p class="title">
+              <strong>Figura 17.238. Opções da guia <span class="quote">“<span class="quote">orientação</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist4.png" alt="Opções da guia “orientação”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Esta guia permite selecionar a orientação das pinceladas. Um pintor não é obrigado a seguir um mesmo ângulo de pincelada. Para produzir os mesmo efeitos, ele pode variar a sua orientação.</p>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Opções de orientação</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Direções</span>
+              </dt>
+              <dd>
+                <p>Com essa opção, você pode definir quantas direções diferentes o pincel terá, podendo criar vários efeitos interessantes com poucas direções, 2, por exemplo, e todas as pinceladas serão só da direita pra esquerda e da direita pra esquerda. Muitas direções (ex. 30), não restringirão a angulação das pinceladas.</p>
+              </dd>
+              <dt>
+                <span class="term">Ângulo de início</span>
+              </dt>
+              <dd>
+                <p>Específica a direção geral das pinceladas, o ângulo a partir do qual a série de ângulos terá inicio. As direções são escolhidas para dar um certo movimento à imagem.</p>
+              </dd>
+              <dt>
+                <span class="term">Alcance do ângulo</span>
+              </dt>
+              <dd>
+                <p>Específica o ângulo, o setor, da <span class="quote">“<span class="quote">rotação</span>”</span> das pinceladas.</p>
+              </dd>
+              <dt>
+                <span class="term">Orientação</span>
+              </dt>
+              <dd>
+                <p>Específica a direção das pinceladas.</p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Valor</span>
+                    </dt>
+                    <dd>
+                      <p>Faz com que o valor (luminosidade) da região determine a direção da pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Raio</span>
+                    </dt>
+                    <dd>
+                      <p>A distância a partir do centro da imagem determina a direção da pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Randômico</span>
+                    </dt>
+                    <dd>
+                      <p>Seleciona uma direção randômica para cada pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Radial</span>
+                    </dt>
+                    <dd>
+                      <p>Faz com que a direção a partir do centro determine a direção da pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Fluindo</span>
+                    </dt>
+                    <dd>
+                      <p>Não é uma questão de direção aqui: as pinceladas seguem uma textura <span class="quote">“<span class="quote">fluída</span>”</span></p>
+                    </dd>
+                    <dt>
+                      <span class="term">Matiz</span>
+                    </dt>
+                    <dd>
+                      <p>Faz com que o matiz da região determinar a direção da pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Adaptativo</span>
+                    </dt>
+                    <dd>
+                      <p>A direção do pincel que melhor corresponder a imagem original é selecionada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Manual</span>
+                    </dt>
+                    <dd>
+                      <p>O botão <span class="guilabel">Editar</span> abre o <a class="link" href="plug-in-gimpressionist.html#gimpressionist-orient-map-editor" title="11.12.4. Editor do mapa de orientação">Diálogo editor de mapa de orientação</a> que  permite definir as direções manualmente.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="gimpressionist-size-options"></a>11.12.3.6. Guia tamanho</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4738"></a>
+            <p class="title">
+              <strong>Figura 17.239. Opções da guia <span class="quote">“<span class="quote">tamanho</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist5.png" alt="Opções da guia “tamanho”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Essa guia permite definir o número de tamanhos de pincel que serão usados na pintura, os limites de variação desses tamanhos e o critério usado para determina-los.</p>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Opções de tamanho</strong>
+            </p>
+            <p>Você pode especificar quantos tamanhos de pincel serão usados e seus tamanhos.</p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Size variants</span>
+              </dt>
+              <dd>
+                <p>O número de tamanhos de pincel a serem usados.</p>
+              </dd>
+              <dt>
+                <span class="term">Tamanho minimo, </span>
+                <span class="term">Tamanho máximo</span>
+              </dt>
+              <dd>
+                <p>Os tamanhos de pincel são definidos entre esses dois valores. Quanto maior o tamanho, maior é o comprimento e largura da pincelada.</p>
+              </dd>
+              <dt>
+                <span class="term">Size depends on</span>
+              </dt>
+              <dd>
+                <p>Você tem essas opções para especificar como o tamanho dos pincéis serão determinados.</p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Valor</span>
+                    </dt>
+                    <dd>
+                      <p>Faz com que o valor (luminosidade) da região determine o tamanho da pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Raio</span>
+                    </dt>
+                    <dd>
+                      <p>A distância a partir do centro da imagem determina o tamanho da pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Randômico</span>
+                    </dt>
+                    <dd>
+                      <p>Seleciona um tamanho aleatório para cada pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Radial</span>
+                    </dt>
+                    <dd>
+                      <p>Faz com que a direção a partir do centro determine o tamanho da pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Fluindo</span>
+                    </dt>
+                    <dd>
+                      <p>Não é uma questão de comprimento aqui: as pinceladas seguem uma textura da <span class="quote">“<span class="quote">fluída</span>”</span>.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Matiz</span>
+                    </dt>
+                    <dd>
+                      <p>Faz com que o matiz da região determine o tamanho da pincelada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Adaptativo</span>
+                    </dt>
+                    <dd>
+                      <p>O tamanho do pincel que melhor corresponder a imagem original é selecionado.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Manual</span>
+                    </dt>
+                    <dd>
+                      <p>O botão <span class="guilabel">editar</span> abre o <a class="link" href="plug-in-gimpressionist.html#gimpressionist-size-map-editor" title="11.12.5. Editor do mapa de tamanho">editor do mapa de tamanho</a>. Que permite especificar o tamanho das pinceladas manualmente.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4739"></a>11.12.3.7. Guia colocação</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4740"></a>
+            <p class="title">
+              <strong>Figura 17.240. Opções da guia <span class="quote">“<span class="quote">colocação</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist6.png" alt="Opções da guia “colocação”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Nessa aba você pode definir como as pinceladas serão distribuídas.</p>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Opções de colocação</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Colocação</span>
+              </dt>
+              <dd>
+                <p>Na pré-visualização do editor de orientação de mapa, todas as pequenas setas parecem fluir em volta dos objetos. Dentro desta fluidez, as pinceladas podem ser posicionadas duas formas diferentes:</p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Aleatória</span>
+                    </dt>
+                    <dd>
+                      <p>Pinceladas posicionadas aleatoriamente. Isso produz uma pintura mais realista.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Igualmente distribuída</span>
+                    </dt>
+                    <dd>
+                      <p>As pinceladas são distribuídas de forma igualmente espaçada através da imagem.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Centralizadas</span>
+              </dt>
+              <dd>
+                <p>Focaliza as pinceladas em volta do centro.</p>
+              </dd>
+              <dt>
+                <span class="term">Densidade da pincelada</span>
+              </dt>
+              <dd>
+                <p>Quanto maior a densidade mais próximas são as pinceladas. Com uma baixa densidade, o papel ou o fundo pode se tornar visível em áreas não pinceladas.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4741"></a>11.12.3.8. Guia cor</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4742"></a>
+            <p class="title">
+              <strong>Figura 17.241. Opções da guia <span class="quote">“<span class="quote">cor</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist7.png" alt="Opções da guia “cor”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Nessa guia, você pode definir qual será a cor da pincelada.</p>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Opções de cor</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Cor</span>
+              </dt>
+              <dd>
+                <p>Você pode definir a cor da pincelada de duas formas:</p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Média sob o pincel</span>
+                    </dt>
+                    <dd>
+                      <p>A cor da pincelada é computada a partir da média de todos os pixels abaixo do pincel.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Centro do pincel</span>
+                    </dt>
+                    <dd>
+                      <p>Exemplos da cor a partir do pixel no centro do pincel.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Ruído de cor</span>
+              </dt>
+              <dd>
+                <p>Esse seletor, e sua caixa de entrada, permitem adicionar ruído na cor dapincelada, o que fará com que pareça menos homogênea.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4743"></a>11.12.3.9. Guia geral</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4744"></a>
+            <p class="title">
+              <strong>Figura 17.242. Opções da guia <span class="quote">“<span class="quote">geral</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist8.png" alt="Opções da guia “geral”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Nessa aba você pode definir qual será o fundo e o relevo das pinceladas.</p>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Opções gerais</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Fundo</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Manter original</span>
+                    </dt>
+                    <dd>
+                      <p>A imagem original será usada como fundo.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">A partir do papel</span>
+                    </dt>
+                    <dd>
+                      <p>Copia a textura do papel selecionado como fundo.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Sólida</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    By clicking on the color button you can select a solid
+                    colored background.
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Transparente</span>
+                    </dt>
+                    <dd>
+                      <p>Usa um fundo transparente. Apenas as pinceladas pintadas serão visíveis. Essa opção está disponível apenas se a sua imagem possuir um canal alfa.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Pintar bordas</span>
+              </dt>
+              <dd>
+                <p>Caso estiver ativada, uma fina borda será pintada em volta da borda exterior da imagem.</p>
+              </dd>
+              <dt>
+                <span class="term">Encaixável</span>
+              </dt>
+              <dd>
+                <p>Caso selecionado, a imagem resultante será perfeitamente ladrilhável. O lado direito irá corresponder ao lado esquerdo e a parte superior irá corresponder à parte inferior. Isso é interessante caso você queira usar sua imagem final como um fundo de página na Internet, ou mesmo uma textura do GIMP.</p>
+              </dd>
+              <dt>
+                <span class="term">Sombra projetada</span>
+              </dt>
+              <dd>
+                <p>Adiciona um efeito de sombra para cada pincelada.</p>
+              </dd>
+              <dt>
+                <span class="term">Escurecer borda</span>
+              </dt>
+              <dd>
+                <p>O quanto para escurecer as bordas de cada pincelada. Isso aumenta o relevo ou espessurada pintura.</p>
+              </dd>
+              <dt>
+                <span class="term">Escurecer sombra</span>
+              </dt>
+              <dd>
+                <p>O quanto para escurecer a sombra do pincel.</p>
+              </dd>
+              <dt>
+                <span class="term">Profundidade da sombra</span>
+              </dt>
+              <dd>
+                <p>O quão longe do objeto a sombra da tinta deve estar.</p>
+              </dd>
+              <dt>
+                <span class="term">Desfocagem da sombra</span>
+              </dt>
+              <dd>
+                <p>O quanto para desfocar a sombra da tinta.</p>
+              </dd>
+              <dt>
+                <span class="term">Limiar de desvio</span>
+              </dt>
+              <dd>
+                <p>Um valor de limiar para as seleções adaptativas do tamanho do pincel.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimpressionist-orient-map-editor"></a>11.12.4. Editor do mapa de orientação</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id56148" class="indexterm"></a>
+        <a id="id56152" class="indexterm"></a>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4745"></a>11.12.4.1. Visão-geral</h5>
+              </div>
+            </div>
+          </div>
+          <p>O editor do mapa de orientação é um anexo do filtro <a class="link" href="plug-in-gimpressionist.html" title="11.12. GIMPressionista">GIMPressionista</a>. Você pode obte-lo clicando no botão <span class="guibutton">editar</span> na aba <a class="link" href="plug-in-gimpressionist.html#gimpressionist-orientation-options" title="11.12.3.5. Guia orientação">Orientação</a>. Com esse editor, você pode definir a direção que a pincelada dada pelo filtro terá.</p>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4746"></a>11.12.4.2. Opções</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4747"></a>
+            <p class="title">
+              <strong>Figura 17.243. Opções do diálogo de <span class="quote">“<span class="quote">editor do mapa de orientação</span>”</span></strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist-orientmap-editor.png" alt="Opções do diálogo de “editor do mapa de orientação”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <p>Você pode posicionar um ou vários vetores. Você pode definir suas direções e suas forças. Eles irão agir na área correspondente da imagem.</p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Vetores</span>
+              </dt>
+              <dd>
+                <p>
+            In the left window (Vectors) you can manage your vectors. By
+            default, a vector is at center. Vectors are red when they are
+            active, and gray when they are not with a white point at tip.
+          </p>
+                <div class="itemizedlist">
+                  <ul class="itemizedlist" style="list-style-type: disc; ">
+                    <li class="listitem">
+                      <p>Clicando no botão <span class="guibutton">acrescentar</span>, você adiciona um vetor ao centro da janela, clicando em qualquer lugar com o <span class="mousebutton">botão do meio</span> do mouse acrescenta no local que você clicar.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>Clicar com o <span class="mousebutton">botão esquerdo</span> desloca o vetor selecionado até o ponto clicado.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>Ao clicar com o <span class="mousebutton">botão direito</span> do mouse, o vetor selecionado aponta para onde você clicou.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>Clicar sobre os botões <span class="guibutton">&lt;&lt;</span> e <span class="guibutton">&gt;&gt;</span> desloca o foco de um vetor para outro.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                The <span class="guilabel">Kill</span> button allows you to delete
+                the selected vector.
+              </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Dica]" src="images/tip.png" />
+                      </td>
+                      <th align="left">Dica</th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>Com a barra de rolar na direita do painel de escalares, você pode definir o brilho da imagem. Isso pode ser muito útil se a imagem é muito escura/clara e você não pode enxergar bem os vetores.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Pré-visuação</span>
+              </dt>
+              <dd>
+                <p>Essa pré-visualização dá uma ideia da ação de vários vetores. O seletor na borda direita permite alterar a luminosidade da pré-visualização.</p>
+              </dd>
+              <dt>
+                <span class="term">Tipo</span>
+              </dt>
+              <dd>
+                <p>
+            You have four types to arrange the brush strokes within the
+            selected vector domain: <span class="guilabel">Normal</span>,
+            <span class="guilabel">Vortex</span>, <span class="guilabel">Vortex2</span>,
+            and <span class="guilabel">Vortex3</span>.
+            Describing them is difficult, but you can
+            see the result in the Preview.
+          </p>
+              </dd>
+              <dt>
+                <a id="gimpressionist-editor-voronoi"></a>
+                <span class="term">Voronoi</span>
+              </dt>
+              <dd>
+                <a id="id56206" class="indexterm"></a>
+                <p>Um diagrama de Voronoi consiste em dividir um plano com n pontos mestres em n polígonos aonde cada polígono possui apenas uma desses n pontos mestres e aonde qualquer outro ponto dado do polígono está mais próximo do ponto mestre que qualquer outro. Então cada limite de polígono está no meio entre dois pontos mestres. Aqui está um exemplo do diagrama Voronoi: </p>
+                <div class="mediaobject">
+                  <img src="images/filters/examples/voronoi.png" />
+                </div>
+                <p> Aqui, quando essa opção está marcada, apenas o vetor mais próximo a um ponto dado da imagem influencia este ponto.</p>
+              </dd>
+              <dt>
+                <span class="term">Ângulo</span>
+              </dt>
+              <dd>
+                <p>Direção do vetor selecionado. Esse seletor tem a mesma ação de clicar com o botão direito (veja abaixo).</p>
+              </dd>
+              <dt>
+                <span class="term">Ângulo de início</span>
+              </dt>
+              <dd>
+                <p>Este seletor permite alterar o ângulo de <span class="emphasis"><em>todos</em></span> vetores.</p>
+              </dd>
+              <dt>
+                <span class="term">Força</span>
+              </dt>
+              <dd>
+                <p>Este seletor age sob o domínio de influência do vetor selecionado. Ainfluencia diminui com a distância. A força é exibida com o comprimento do vetor.</p>
+              </dd>
+              <dt>
+                <span class="term">Expoente de força</span>
+              </dt>
+              <dd>
+                <p>Este seletor age sobre o comprimento de <span class="emphasis"><em>todos</em></span> os vetores, que então altera as forças de todos as pinceladas.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimpressionist-size-map-editor"></a>11.12.5. Editor do mapa de tamanho</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id56232" class="indexterm"></a>
+        <a id="id56236" class="indexterm"></a>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4748"></a>11.12.5.1. Visão-geral</h5>
+              </div>
+            </div>
+          </div>
+          <p>O editor do mapa de tamanho é um anexo ao filtro do <a class="link" href="plug-in-gimpressionist.html" title="11.12. GIMPressionista">GIMPressionista</a>. Você pode acessá-lo clicando no botão <span class="guibutton">editar</span> na aba <a class="link" href="plug-in-gimpressionist.html#gimpressionist-size-options" title="11.12.3.6. Guia tamanho">Tamanho</a>. Com esse editor, você pode definir o tamanho que cada pincelada dada pelo filtro terá.</p>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4749"></a>11.12.5.2. Opções</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4750"></a>
+            <p class="title">
+              <strong>Figura 17.244. Opções do editor do mapa de tamanho</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/artistic/gimpressionist-sizemap-editor.png" alt="Opções do editor do mapa de tamanho" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <p>Você pode posicionar um ou diversos vetores. Você pode definir a sua força. Eles vão agir na área correspondente da imagem.</p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Vetores</span>
+              </dt>
+              <dd>
+                <p>Nessa janela você pode posicionar os seus vetores. Ao clicar no botão <span class="guibutton">Acrescentar</span>, você pode adicionar um vetor no centro da janela, enquanto que clicando em qualquer local com o <span class="mousebutton">botão do meio</span> do mouse, cria um onde você clicar. Os vetores estarão em vermelho quando selecionados, e cinzas quando não selecionados, com um ponto branco na ponta.</p>
+                <p>Clicar com o <span class="mousebutton">botão esquerdo</span> desloca o vetor selecionado até o ponto clicado.</p>
+                <p>
+            Clicking on the mouse
+            <span class="mousebutton">Right Button</span> has no evident
+            action.
+          </p>
+                <p>Clicar sobre os botões <span class="guibutton">&lt;&lt;</span> e <span class="guibutton">&gt;&gt;</span> desloca o foco de um vetor para outro.</p>
+                <p>O botão <span class="guibutton">terminar</span> permite que você remova o vetorselecionado.</p>
+                <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Dica]" src="images/tip.png" />
+                      </td>
+                      <th align="left">Dica</th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>Com a barra de rolar na direita do painel de escalares, você pode definir o brilho da imagem. Isso pode ser muito útil se a imagem é muito escura/clara e você não pode enxergar bem os vetores.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Pré-visuação</span>
+              </dt>
+              <dd>
+                <p>Essa pré-visualização dá uma ideia da ação dos diferentes vetores. O tamanho dos quadrados representa o tamanho do pincel e sua força.</p>
+              </dd>
+              <dt>
+                <span class="term">Tamanho</span>
+              </dt>
+              <dd>
+                <p>Altera o tamanho da pincelada no domínio do vetor selecionado.</p>
+              </dd>
+              <dt>
+                <span class="term">Força</span>
+              </dt>
+              <dd>
+                <p>Esse seletor age em quanta influencia o vetor selecionado tem. Essainfluencia diminui com a distância.</p>
+              </dd>
+              <dt>
+                <span class="term">Expoente de força</span>
+              </dt>
+              <dd>
+                <p>Altera o expoente de força.</p>
+              </dd>
+              <dt>
+                <span class="term">Voronoi</span>
+              </dt>
+              <dd>
+                <p>Veja <a class="link" href="plug-in-gimpressionist.html#gimpressionist-editor-voronoi">Editor do mapa de orientação</a> para uma explicação.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-clothify.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-artistic.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-lic.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-clothify.html">11.11. Aspecto de tecido</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-lic.html">11.13. Van Gogh (LIC)</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

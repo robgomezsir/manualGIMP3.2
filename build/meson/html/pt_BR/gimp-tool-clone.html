@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.12. Clonagem</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+    <link rel="prev" href="gimp-tool-mypaint-brush.html" title="3.11. Pincel" />
+    <link rel="next" href="gimp-tool-heal.html" title="3.13. Restaurar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.12. Clonagem</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-mypaint-brush.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Ferramentas de pintura</span>
+        <nav> <a accesskey="n" href="gimp-tool-heal.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-clone"></a>3.12. Clonagem</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id17750" class="indexterm"></a>
+      <a id="id17753" class="indexterm"></a>
+      <p>A ferramenta de clonagem usa o pincel ativo para copiar de uma imagem ou textura. Isso possui muitas utilidades: uma das mais importantes é a de reparar áreas com problemas em fotos digitais, ao <span class="quote">“<span class="quote">pintar sobre</span>”</span> ela com os pixels de outras áreas. Leva um tempo para aprender essa técnica, mas nas mãos de um usuário habilidoso se torna muito poderosa. Outro uso importante é desenhar linhas ou curvas texturizadas: veja exemplos na sessão de <a class="link" href="gimp-concepts-patterns.html" title="7. Texturas">Texturas</a>.</p>
+      <p>Se você deseja clonar a partir de uma imagem, ao invés de uma textura, você precisa dizer ao GIMP de qual imagem você deseja copiar. Você faz isso pressionando a tecla <span class="keycap"><strong>Ctrl</strong></span> e clicando na parte desejada da imagem de origem. Até que você tenha definido a origem dessa forma, você não será capaz de desenhar com a ferramenta de clonagem: o cursor da ferramenta dá essa informação ao mostrar o símbolo <span class="guiicon"><img src="images/toolbox/clone-bad.png" /></span>.</p>
+      <p>Se você clonar a partir de uma textura, a textura se torna <span class="emphasis"><em>continua</em></span>; isso é, quando o ponteiro com o qual você está copiando passa de uma das bordas, então ele vai para a borda oposta da textura e continua, assim as texturas são repetidas lado-a-lado. Quando você clona a partir de uma imagem, isso não acontece: se você ultrapassar as bordas da origem, a ferramenta de clonagem para de produzir qualquer alteração.</p>
+      <p>Você pode clonar a partir de qualquer local desenhável (isso é, qualquer camada, máscara de camada, ou canal) para qualquer outro lugar desenhável. Você pode até mesmo clonar de ou a partir de uma máscara selecionada, ao trocar para o modo de Máscara rápida. Caso deseje copiar cores que o local de destino não suporta (por exemplo, clonar a partir de uma camada RGB para uma camada indexada ou uma máscara de camada), então as cores serão convertidas para a usando a melhor aproximação possível.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2990"></a>3.12.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>Existem várias formas para ativar a ferramenta:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagem: <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de pintura</span> → <span class="guimenuitem">Degradê</span>.</p>
+            </li>
+            <li class="listitem">
+              <p>Ícone da ferramenta de clonagem na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>Ao pressionar o atalho de teclado <span class="keycap"><strong>C</strong></span>.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2991"></a>3.12.2. Modificadores de tecla</h4>
+            </div>
+          </div>
+        </div>
+        <p>Veja <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-modifiers" title="3.1.1. Modificadores de tecla">Modificadores de tecla das ferramentas de pintura</a> para uma descrição das teclas modificadoras que possuem o mesmo efeito em todas as ferramentas de pintura.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>A tecla <span class="keycap"><strong>Ctrl</strong></span> é usada para selecionar a origem, caso esteja clonando a partir de uma imagem: isso não tem efeito caso esteja clonando a partir de uma textura. Você pode clonar a partir de qualquer camada ou qualquer imagem, ao clicar na imagem, com a tecla <span class="keycap"><strong>Ctrl</strong></span> pressionada, enquanto a camada é ativa (como mostrada na janela de camadas). Caso o alinhamento seja definido para <span class="guilabel">Nenhum</span>, <span class="guilabel">Alinhado</span>, ou <span class="keycap"><strong>Fixo</strong></span> nas opções da ferramenta, então o ponto que você clicar se torna a origem da clonagem: os dados da imagem neste ponto serão usados quando você começar a pintar com a ferramenta de clonagem. No modo de seleção de origem, o cursor muda para um símbolo de cruz: <span class="guiicon"><img src="images/toolbox/clone-cross.png" /></span>.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2992"></a>3.12.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2993"></a>
+          <p class="title">
+            <strong>Figura 14.71. Opções da ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-clone.png" alt="Opções da ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Normalmente, as opções da ferramenta são exibidas numa janela acoplada abaixo da caixa de ferramentas assim que você ativa a ferramenta. Caso isso não aconteça, você pode acessá-las com um clique duplo no ícone da ferramenta, ou a partir do menu da janela de imagem em <span class="guimenu">Janelas</span> → <span class="guisubmenu">Diálogos de encaixe</span> → <span class="guimenuitem">Opções de ferramenta</span> que abre uma janela de opções da ferramenta selecionada.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo, </span>
+              <span class="term">Opacidade, </span>
+              <span class="term">Pincel, </span>
+              <span class="term">Tamanho, </span>
+              <span class="term">Proporção, </span>
+              <span class="term">Ângulo, </span>
+              <span class="term">Espaçamento, </span>
+              <span class="term">Dureza, </span>
+              <span class="term">Força, </span>
+              <span class="term">Dinâmicas, </span>
+              <span class="term">Opções de dinâmicas, </span>
+              <span class="term">Aplicar espalhamento, </span>
+              <span class="term">Pincelada suave, </span>
+              <span class="term">O tamanho do pincel - curva de esmaecimento, </span>
+              <span class="term">Expand Layers</span>
+            </dt>
+            <dd>Veja <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-options" title="3.1.2. Opções">Opções em comum das ferramentas de pintura</a> para uma descrição das opções da ferramenta que são aplicáveis a todas as ferramentas de pintura.</dd>
+            <dt>
+              <span class="term">Origem</span>
+            </dt>
+            <dd>
+              <a id="id17828" class="indexterm"></a>
+              <p>A escolha que você fizer aqui determinará se os dados serão copiados a partir da textura exibida abaixo, ou a partir de imagens que você tenha aberto. Na verdade, o uso mais comum da ferramenta é usar a própria camada de destino como fonte: a ferramenta é muito útil para copiar trechos parecidos e esconder detalhes indesejados em fotos, e assim por diante.</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Imagem</span>
+                  </dt>
+                  <dd>
+                    <p>Se você escolher <span class="guilabel">Imagem de origem</span>, então você precisa dizer ao <acronym class="acronym">GIMP</acronym> qual camada usar como origem, com o <span class="keycap"><strong>Ctrl</strong></span> — clique sobre ela, antes de pintar com a ferramenta.</p>
+                    <p>Se você ativar essa opção, a recuperação não é calculada apenas a partir de valores da camada ativa, mas de todas as camadas visíveis.</p>
+                    <p>O reticulado é completamente explicado no <a class="link" href="glossary.html#glossary-dithering" title="Reticulado">Glossário</a></p>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/clone-ex-sample-merged-example.png" />
+                      <div class="caption">
+                        <p>
+                      Example image showing the cloned pixels in the upper left
+                      corner.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/clone-ex-sample-merged-dialog.png" />
+                      <div class="caption">
+                        <p>
+                      Layers dialog showing the new layer with the cloned pixels.
+                    </p>
+                      </div>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Textura</span>
+                  </dt>
+                  <dd>
+                    <p>Clicar no símbolo de textura abre a janela de texturas, onde você pode selecionar a textura para pintar. Essa opção só é relevante caso você esteja clonando a partir de uma textura.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Alinhamento</span>
+            </dt>
+            <dd>
+              <p>O modo de alinhamento define a relação entre a posição do pincel e a posição de origem.</p>
+              <p>Nos exemplos a seguir, nós usaremos uma imagem de origem de onde o trecho a ser clonado será pego, e uma imagem de destino onde o exemplo será clonado (pode ser uma camada na própria imagem de origem).</p>
+              <div class="figure">
+                <a id="id2994"></a>
+                <p class="title">
+                  <strong>Figura 14.72. Imagens originais para as opções de alinhamento da clonagem</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/clone-source.png" alt="Imagens originais para as opções de alinhamento da clonagem" />
+                    <div class="caption">
+                      <p>Nós usaremos o maior pincel com a ferramenta de lápis. A origem é representada aqui pelo círculo com uma cruz dentro.</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/toolbox/clone-dest.png" alt="Imagens originais para as opções de alinhamento da clonagem" />
+                    <div class="caption">
+                      <p>Uma imagem com apenas um fundo sólido. Nós devemos desenhar três pinceladas de clonagem sucessivamente.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Nenhum</span>
+                  </dt>
+                  <dd>
+                    <p>Neste modo, cada pincelada é tratada separadamente. Para cada pincelada, o ponto no qual você clica primeiro é copiado a partir da fonte de origem; não há nenhuma relação entre uma pincelada e outra. No modo não alinhado, pinceladas diferentes normalmente irão se chocar.</p>
+                    <p>Exemplo abaixo: para cada nova pincelada, o ponto de origem volta para sua posição inicial. O mesmo trecho da imagem é clonado todas as vezes.</p>
+                    <div class="figure">
+                      <a id="id2995"></a>
+                      <p class="title">
+                        <strong>Figura 14.73. Alinhamento de clonagem <span class="quote">“<span class="quote">Nenhum</span>”</span></strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/clone-none.png" alt="Alinhamento de clonagem “Nenhum”" />
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </dd>
+                  <dt>
+                    <span class="term">Alinhado</span>
+                  </dt>
+                  <dd>
+                    <p>Neste modo, o primeiro clique que você fizer definirá o espaçamento entre a fonte de origem e o resultado clonado, e todas as pinceladas seguintes usarão a mesma compensação. Além disso, você pode usar quantas pinceladas quiser, e todas elas irão se misturar suavemente entre si.</p>
+                    <p>Se você deseja mudar o espaçamento, selecione uma nova origem (mesmo que seja no mesmo ponto) clicando com a tecla <span class="keycap"><strong>Ctrl</strong></span> pressionada.</p>
+                    <p>No exemplo abaixo, para cada nova pincelada, a origem continua a usar o mesmo espaçamento que a primeira pincelada. Então, não existe nenhum espaçamento de clonagem para a primeira pincelada. Aqui, para as pinceladas seguintes, a origem termina fora da tela da imagem de origem, por isso o aspecto cortado.</p>
+                    <div class="figure">
+                      <a id="id2996"></a>
+                      <p class="title">
+                        <strong>Figura 14.74. Alinhamento de clonagem <span class="quote">“<span class="quote">Alinhado</span>”</span></strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/clone-aligned.png" alt="Alinhamento de clonagem “Alinhado”" />
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </dd>
+                  <dt>
+                    <span class="term">Registrado</span>
+                  </dt>
+                  <dd>
+                    <p>O modo <span class="quote">“<span class="quote">Registrado</span>”</span> é diferente dos outros modos de alinhamento. Quando você copia a partir de uma imagem, um clique pressionando <span class="keycap"><strong>Ctrl</strong></span> irá registrar a camada de origem. Então pintar em uma camada de destino irá clonar cada pixel na posição correspondente (com as mesmas coordenadas) da camada de origem. Isso é útil quando você deseja clonar partes de uma imagem de uma camada com a mesma imagem. (Mas lembre-se de que você também pode clonar de uma imagem para outra imagem).</p>
+                    <p>Em cada pincelada, a origem adota a posição do ponteiro do mouse na camada de destino. No exemplo seguinte, a camada de destino é menor que a camada de origem, então, não existe nenhum corte.</p>
+                    <div class="figure">
+                      <a id="id2997"></a>
+                      <p class="title">
+                        <strong>Figura 14.75. Alinhamento de clonagem <span class="quote">“<span class="quote">Registrado</span>”</span></strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/clone-registered.png" alt="Alinhamento de clonagem “Registrado”" />
+                          <div class="caption"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </dd>
+                  <dt>
+                    <span class="term">Fixo</span>
+                  </dt>
+                  <dd>
+                    <p>Usar este modo irá pintar sempre com a mesma origem, diferente dos modos <span class="guilabel">Nenhum</span> ou <span class="guilabel">Alinhado</span> mesmo ao desenhar uma linha. A origem não será movida.</p>
+                    <p>Veja que a origem continua fixa. O mesmo pequeno exemplo é reproduzido identicamente em marcas bem próximas:</p>
+                    <div class="figure">
+                      <a id="id2998"></a>
+                      <p class="title">
+                        <strong>Figura 14.76. Alinhamento de clonagem <span class="quote">“<span class="quote">Fixo</span>”</span></strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/clone-fixed.png" alt="Alinhamento de clonagem “Fixo”" />
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Borda dura</span>
+            </dt>
+            <dd>
+              <p><span class="guilabel">Borda firme</span>: esta opção dá um contorno firme à área clonada.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="filter-and-history-brushes"></a>3.12.4. Informação adicional</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Transparência</span>
+            </dt>
+            <dd>
+              <p>Os efeitos da ferramenta de clonagem em transparência são um pouco complicadas. Você não pode clonar transparência: se tentar clonar de uma área transparente, nada acontecerá no destino. Se você clonar a partir de uma área parcialmente transparente, o efeito é definido pela opacidade da origem. Então, assumindo uma opacidade de 100% e um pincel duro:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>Clonar um preto translúcido em um branco produz cinza.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Clonar um preto translúcido em um preto produz preto.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Clonar um branco translúcido em um branco produz branco.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Clonar um branco translúcido em um preto produz cinza.</p>
+                  </li>
+                </ul>
+              </div>
+              <p>Clonar nunca aumenta a transparência, e a menos que a opção <span class="quote">“<span class="quote">manter transparência</span>”</span> esteja ativada na camada, ela pode reduzi-la. Clonar uma área opaca em uma área translucida produz um resultado opaco; clonar uma área translúcida em outra área translucida causa um aumento na opacidade.</p>
+            </dd>
+            <dt>
+              <span class="term">Pincéis de <span class="quote">“<span class="quote">filtro</span>”</span></span>
+            </dt>
+            <dd>
+              <a id="id17948" class="indexterm"></a>
+              <p>Existem algumas maneiras não tão óbvias de usar a ferramenta de clonagem para obter efeitos poderosos. Uma coisa que você pode fazer é criar um <span class="quote">“<span class="quote">pincel de filtro</span>”</span>, isso é, criar o efeito da aplicação de um filtro com um pincel. Para fazer isso, duplique a camada que você deseja trabalhar, e aplique o filtro na cópia. Então ative a ferramenta de clonagem, configurando a origem como <span class="quote">“<span class="quote">imagem</span>”</span> e o alinhamento como <span class="quote">“<span class="quote">registrado</span>”</span>. Pressione <span class="keycap"><strong>Ctrl</strong></span> enquanto clica na camada sob efeito do filtro para defini-la como a origem, e desenhe sobre a camada original: então você estará na verdade copiando trechos da imagem filtrada na imagem original.</p>
+            </dd>
+            <dt>
+              <span class="term">Pincel de Histórico </span>
+            </dt>
+            <dd>
+              <a id="id17959" class="indexterm"></a>
+              <p>Você pode usar algo próximo de imitar o <span class="quote">“<span class="quote">pincel de histórico</span>”</span> que existe em outros programas, como o Photoshop, que permite desfazer e refazer  mudanças seletivamente usando um pincel. Para fazer isso, comece duplicando a imagem; então, na imagem original, volte para o estado desejado usando o histórico da imagem, seja usando desfazer (Ctrl + Z) ou através da janela de histórico do desfazer. (Isso precisa ser feito na imagem original, e não na cópia, pois duplicar uma imagem não duplica o histórico do desfazer). Agora ative a ferramenta de clonagem, configurando como origem <span class="quote">“<span class="quote">Imagem</span>”</span> e alinhamento como <span class="quote">“<span class="quote">registrado</span>”</span>. Pressione <span class="keycap"><strong>Ctrl</strong></span> enquanto clica em uma camada da imagem, e pinte na camada correspondente da outra imagem. Dependendo de como fizer, terá tanto um <span class="quote">“<span class="quote">pincel de desfazer</span>”</span> quanto um <span class="quote">“<span class="quote">pincel de refazer</span>”</span>.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-mypaint-brush.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-paint.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-heal.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-mypaint-brush.html">3.11. Pincel</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-heal.html">3.13. Restaurar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

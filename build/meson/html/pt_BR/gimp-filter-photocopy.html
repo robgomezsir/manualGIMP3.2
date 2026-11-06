@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>11.7. Fotocópia</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-artistic.html" title="11. Filtros artísticos" />
+    <link rel="prev" href="gimp-filter-oilify.html" title="11.6. Pintura a óleo" />
+    <link rel="next" href="gimp-filter-slic.html" title="11.8. Simple Linear Iterative Clustering (SLIC)" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>11.7. Fotocópia</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-oilify.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>11. Filtros artísticos</span>
+        <nav> <a accesskey="n" href="gimp-filter-slic.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-photocopy"></a>11.7. Fotocópia</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id55417" class="indexterm"></a>
+      <a id="id55421" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4698"></a>11.7.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4699"></a>
+          <p class="title">
+            <strong>Figura 17.221. Exemplo do filtro <span class="quote">“<span class="quote">fotocópia</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo do filtro “fotocópia”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/artistic-taj-photocopy.jpg" alt="Exemplo do filtro “fotocópia”" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>O filtro fotocópia aplicado modifica a camada ativa ou seleção para que ela se pareça com uma fotocópia em preto e branco, como se o tom transferido fosse baseado na relativa escuridão na região em particular. Isso é conseguido ao escurecer áreas da imagem que são tidas com sendo mais escuras que a média da região que se encontra, e configurando os demais pixels como branco.</p>
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Dica]" src="images/tip.png" />
+              </td>
+              <th align="left">Dica</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Você pode usar esse filtro para tornar a sua imagem nítida. Crie uma cópia da camada ativa e use o filtro na cópia. Defina o <a class="link" href="gimp-concepts-layer-modes.html" title="2. Modos de Camada">modo de camada</a> para <span class="guilabel">multiplicar</span> e ajuste o seletor de opacidade para obter o melhor resultado.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4700"></a>11.7.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Artistic</span> → <span class="guimenuitem">Photocopy…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4701"></a>11.7.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4702"></a>
+          <p class="title">
+            <strong>Figura 17.222. Opções do filtro <span class="quote">“<span class="quote">fotocópia</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/artistic/photocopy-dialog.png" alt="Opções do filtro “fotocópia”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Pré-visuação, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Raio da máscara</span>
+            </dt>
+            <dd>
+              <p>
+            This parameter controls the size of the pixel neighborhood over
+            which the average intensity is computed and then compared to each
+            pixel in the neighborhood to decide whether or not to darken it.
+            Large values result in very thick black areas bordering the
+            regions of white and much less detail for black areas. Small
+            values result in less toner overall and more details everywhere.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Acuidade</span>
+            </dt>
+            <dd>
+              <p>Com essa opção, você pode definir a acuidade da fotocópia, de 0,0 a 1,0.</p>
+            </dd>
+            <dt>
+              <span class="term">Porcentagem do preto</span>
+            </dt>
+            <dd>
+              <p>Este parâmetro controla a quantidade de cor preto adicionada à imagem. Pequenos valores produzem uma transição mais suave das regiões de cores às áreas escuras e as linhas escuras se tornam mais finas e menos notáveis. Valores maiores produzem linhas mais grossas, escuras e marcadas. O valor máximo produz linhas pixelizadas. O melhor, e mais natural resultado são normalmente conseguidos com um valor intermediário. Os valores variam de 0,0 a 1,0.</p>
+            </dd>
+            <dt>
+              <span class="term">Porcentagem do branco</span>
+            </dt>
+            <dd>
+              <p>Este parâmetro aumenta a porcentagem de pixels branco.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-oilify.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-artistic.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-slic.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-oilify.html">11.6. Pintura a óleo</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-slic.html">11.8. Simple Linear Iterative Clustering (SLIC)</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

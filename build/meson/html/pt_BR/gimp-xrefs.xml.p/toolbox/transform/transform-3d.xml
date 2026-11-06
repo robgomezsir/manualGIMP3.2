@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2020-03-10 j.h: Fist version
+ -->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-transform-3d">
+  <title>Transformar</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Transformar</secondary>
+  </indexterm>
+  <indexterm><primary>Transformar</primary></indexterm>
+
+  <para>
+    The 3D Transform tool allows you to change the perspective of a layer and 
+    to move it in 3D space. You can set a vanishing point, then rotate the 
+    layer in X, Y, and Z axes.
+  </para>
+  <para>
+    It offers the usual option dialog under Toolbox and an on-canvas settings 
+    dialog.
+  </para>
+  
+  <sect3>
+    <title>Ativando a ferramenta</title>
+
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagens, em: <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de transformação</guisubmenu><guimenuitem>Transformar com gaiola</guimenuitem></menuchoice></para>
+      </listitem>
+
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-transform-3d.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas</para>
+      </listitem>
+
+      <listitem>
+        <para>Usando o atalho de teclado  <keycombo><keycap>Shift</keycap><keycap>P</keycap></keycombo></para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+  
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-3d-transform.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Transformar</term>
+        <term>Direção</term>
+        <term>Interpolação</term>
+        <term>Cortar</term>
+        <term>Show image preview</term>
+        <term>Guias</term>
+        <listitem>
+          <xi:include href="about-common-transform-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Unified interaction</term>
+        <listitem>
+          <para>
+            This option allows shifting the vanishing, as well as panning and 
+            rotating without switching between tabs on the on-canvas settings 
+            dialog.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Restrições</term>
+        <listitem>
+          <para>
+            When you press <keycap>Shift</keycap>, the present transformation axis 
+            becomes fixed in preview.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Z axis (Ctrl)</term>
+        <listitem>
+          <para>
+            When you press <keycap>Ctrl</keycap>, transformation is done around 
+            the Z axis.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Local frame (Alt)</term>
+        <listitem>
+          <para>
+            This option allows controlling the transformation in the layer local 
+            frame of reference (the current layer), instead of the global one (all 
+            layers).
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-04-04 alex falappa: fixed missing italian part
+  2007-03-24 lexa: merged path concept and path usage
+  2007-02-17 no rewritten by KoSt
+  2007-02-12 de translation of re-written part by ude
+  2007-01-11 fr modified by Pierre ; 1rst part re-written
+  2006-09-10 added norwegian translation by KoSt
+-->
+<sect1 id="gimp-using-paths">
+  <title>
+    <anchor id="gimp-concepts-paths" xreflabel="Vetores"/>
+    <phrase condition="tag-is-required">Vetores</phrase>
+  </title>
+
+  <indexterm>
+    <primary>Vetores</primary>
+    <secondary>Usando</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Imagem</primary>
+    <secondary>Vetores</secondary>
+  </indexterm>
+
+  <para>Vetores e curvas (conhecidas como curvas de Bézier). Vetores e caminhos são fáceis de aprender e usar no <acronym>GIMP</acronym>. Para entender seus conceitos e mecanismos, veja no glossário em  <link linkend="glossary-bezier-curve">Bézier-curve</link>, ou na Wikipedia  <xref linkend="bibliography-online-wkpd-bezier"/>. A ferramenta de vetores é bastante poderosa, permitindo que você desenhe formas sofisticadas. Para usar a ferramenta de vetores em uma imagem do <acronym>GIMP</acronym>, você precisa primeiro criar um vetor, e depois contornar o esse vetor.</para>
+  <para>No <acronym>GIMP</acronym>, o termo <quote>Contornar vetor</quote> significa aplicar um estilo específico ao vetor (cor, largura, textura, ...)</para>
+  <para>Um caminho pode ser usado de várias maneiras:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Você pode converter um vetor fechado em uma seleção.</para>
+    </listitem>
+    <listitem>
+      <para>Qualquer vetor, aberto ou fechado, pode ser <emphasis>contornado</emphasis>: isso é, pintado na imagem de várias formas diferentes.</para>
+    </listitem>
+    <listitem>
+      <para>Um caminho pode ser <emphasis>preenchido</emphasis> com uma cor ou padrão. Se o caminho não estiver fechado, ele tentará descobrir a forma e então preenchê-la. No entanto, isso não funcionará se o caminho for uma linha reta.</para>
+    </listitem>
+  </itemizedlist>
+  <figure>
+    <title>Ilustração de quatro diferentes formas de criação de vetor</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/using/path-examples.png" format="PNG"/>
+      </imageobject>
+      <caption>
+        <para>Quatro exemplos de vetores do GIMP: um fechado e poligonal; um aberto e poligonal; um fechado e curvo; e um que é uma mistura de segmentos em curvas e retos.</para>
+      </caption>
+    </mediaobject>
+  </figure>
+
+  <sect2 id="gimp-using-paths-creating">
+    <title>Criação de vetores</title>
+    <para>Comece desenhando uma linha de esboço para seu vetor; esse esboço poderá ser alterado depois (veja ferramenta de <link linkend="gimp-tool-path">Vetores</link>). Para começar, selecione a ferramenta de Vetores usando um dos métodos a seguir:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Use <menuchoice><guimenu>Ferramentas</guimenu><guimenuitem>Vetores</guimenuitem></menuchoice> a partir do menu da janela de imagens.</para>
+      </listitem>
+      <listitem>
+        <para>
+          Use the relevant icon
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-path.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> in toolbox.
+        </para>
+      </listitem>
+      <listitem>
+        <para>Use the <keycap>B</keycap> keyboard shortcut.</para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      When the Paths tool is selected, the mouse cursor changes into a
+      crosshair with a curve by default. The actual shape depends on your
+      <link linkend="gimp-prefs-input-devices">mouse pointer mode setting</link>.
+      Make sure that the Paths <guilabel>Edit Mode</guilabel> in
+      <link linkend="gimp-tool-path">Tool Options</link> is set to
+      <guilabel>Design</guilabel>.
+    </para>
+    <para>Clique com o botão esquerdo na imagem para criar o primeiro ponto do caminho. Mova o mouse para um novo ponto e clique com o botão esquerdo para criar outro ponto vinculado ao ponto anterior. Embora você possa criar quantos pontos desejar, você só precisa de dois pontos para aprender sobre Caminhos.</para>
+    <para>Ao adicionar pontos, o cursor do mouse tem um pequeno <quote>+</quote> ao lado da curva, o que indica que clicar adicionará um novo ponto.</para>
+    <para>Quando o cursor do mouse está perto de um dos pontos do caminho, o <quote>+</quote> se torna uma cruz com setas; como a ferramenta Mover. Você pode então mover o ponto do caminho existente.</para>
+    <para>
+      To close your path, go with the mouse on top of the point you want to
+      connect to, and then click that point. When you are done designing
+      your path, you can press <keycode>Enter</keycode>. This will turn the
+      path into a Selection. You can also keep adding more points, or start
+      changing the curves of the path.
+    </para>
+    <para>Mova o cursor do mouse próximo a um segmento de linha, clicando com o botão da esquerda e arrastando a linha. Dois eventos ocorrem.</para>
+    <itemizedlist>
+      <listitem>
+        <para>O segmento de linha se dobra e fica curvado, conforme ele é puxado.</para>
+      </listitem>
+      <listitem>
+        <para>Cada segmento de linha tem um ponto de início e um ponto de fim que são claramente marcados. Agora, uma <quote>linha de direção</quote> se projeta de cada ponto nas extremidades do segmento que foi movido.</para>
+      </listitem>
+    </itemizedlist>
+    <para>O segmento de linha curvo sai do ponto da extremidade na mesma direção que a <quote>linha de direção</quote>. O comprimento da <quote>linha de direção</quote> controla quanto longe o segmento de linha segue na mesma direção, antes de se curvar na direção da outra extremidade. Cada <quote>linha de direção</quote> tem um quadradinho vazio (chamado de <quote>alça</quote>) em uma ponta. Clique e arraste uma alça para mudar a direção e o comprimento de uma <quote>linha de direção</quote>.</para>
+    <para>A alça na extremidade de cada <quote>linha de direção</quote> pode ser arrastada para alterar a direção e o comprimento da curva. As alças na outra extremidade, onde se conectam ao caminho, podem ser usadas para mover a posição daquele ponto do caminho.</para>
+    <figure>
+      <title>Aparência do vetor enquanto ele é manipulado</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/using/path-with-anchors.png"/>
+        </imageobject>
+        <caption>
+          <para>Aparência de um vetor enquanto ele é manipulado usando-se a ferramenta de Vetores.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O vetor acima é formado por dois componentes, com segmentos retos e curvos misturados. Os quadrados pretos são os pontos de âncora, o círculo aberto indica que se trata da âncora selecionada e os dois quadrados abertos indicam as alças associadas à esta âncora.</para>
+  </sect2>
+
+  <sect2 id="gimp-using-paths-properties">
+    <title>Propriedades de vetores</title>
+    <para>
+      Paths, like layers and channels, are components of an image. When an
+      image is saved in <acronym>GIMP</acronym>'s native XCF file format, any
+      paths it has are saved with it. The list of paths in an image can be
+      viewed and operated on using the
+      <link linkend="gimp-path-dialog">Paths Dialog</link>.
+      You can move a path from one image to another by copying and pasting
+      using the pop-up menu in the Paths dialog, or by dragging an icon from
+      the Paths dialog into the destination image window.
+    </para>
+    <para>Vetores do <acronym>GIMP</acronym> pertencem ao tipo matemático chamado <quote>curvas de Bézier</quote>. O que isso significa, em termos práticos, é que os mesmos são definidos por <emphasis>âncoras</emphasis> e <emphasis>alças</emphasis>.  <quote>Âncoras</quote>  são pontos por onde o vetor passa, e <quote>Alças</quote> definem a direção da curva do vetor quando ele entra ou sai de cada ponto de âncora: cada ponto de âncora tem duas alças associadas.</para>
+    <para>
+      Paths can be very complex. If you create them by hand using the
+      <link linkend="gimp-tool-path">Paths</link> tool, they probably won't
+      contain more than a few dozen anchor points and usually a lot less than
+      that. However, if you create them by transforming a selection into a
+      path, or by transforming text into a path, the result can easily contain
+      hundreds or even thousands of anchor points.
+    </para>
+    <para>Um vetor pode conter múltiplos <emphasis>componentes</emphasis>. Um <emphasis>componente</emphasis> é uma parte do vetor cujos pontos de controle estão todos conectados entre si por segmentos de curva. A habilidade de ter múltiplos componentes num vetor permite que você os converta em seleções que tem múltiplas partes desconectadas.</para>
+    <para>Cada componente de um vetor pode ser <emphasis>aberto</emphasis> ou <emphasis>fechado</emphasis>: <quote>fechado</quote> significa que o último ponto de âncora está conectado ao primeiro ponto de âncora. Se você transformar um vetor numa seleção, ela é criada como se os componentes abertos fossem fechados, criando automaticamente uma linha reta que liga a última âncora até a primeira. Os componentes do vetor em si não são alterados por conta disso.</para>
+    <para>Segmentos de vetor pode ser retos ou curvos. Um vetor é chamado de<quote>poligonal</quote> se todos os seus segmentos são retos. Um novo segmento de vetor sempre é criado sendo reto; as alças para os pontos de âncora ficam diretamente em cima dos próprios pontos, com controladores comprimento zero - o que produz segmentos retos. Arraste uma alça para fora de sua âncora correspondente para fazer um segmento se curvar. (Nas versões antigas do GIMP, até a 2.2 arrastar diretamente a alça era a única forma de curvar um segmento)</para>
+    <para>Uma coisa interessante sobre vetores é que eles consomem muito poucos recursos, especialmente se comparados com imagens. A representação de um Vetor na memória requer que sejam guardados apenas as coordenadas de seus pontos de âncora e alças. 1KB de memória é o suficiente para guardar um vetor complexo, mas não é o suficiente para manter nem uma pequena  uma camada RGB de 20x20 pixels. Portanto é possível ter literalmente centenas de vetores numa imagem sem causar stress significativo ao seu sistema. O tanto de stress que centenas de vetores podem causar em <emphasis>você</emphasis>, entretanto, é uma outra questão. Mesmo um vetor com milhares de segmentos consome recursos mínimos se comparado com uma Camada ou Canais típicos.</para>
+    <para>Vetores podem ser criados e manipulados através da  <link linkend="gimp-tool-path">ferramenta de Vetores</link>.</para>
+  </sect2>
+
+  <sect2 id="gimp-using-paths-and-selections">
+    <title>Vetores e seleções</title>
+    <para>O GIMP permite que você transforme a seleção de uma imagem em um vetor. ele também permite que você transforme vetores em seleções. Para informações sobre a seleção e como ela funciona, consulte a seção <link linkend="gimp-concepts-selection">Seleção</link>.</para>
+    <para>
+      When you transform a selection into a path, the path closely follows the
+      <link linkend="glossary-marching-ants"><quote>marching ants</quote></link>.
+      Now, the selection is a two-dimensional entity, but a path is a
+      one-dimensional entity, so there is no way to transform the selection
+      into a path without losing information. In fact, any information about
+      partially selected areas (i.e., feathering) are lost when a
+      selection is turned into a path. If the path is transformed back into a
+      selection, the result is an all-or-none selection, similar to what is
+      obtained by executing <link linkend="gimp-selection-sharpen">Sharpen</link>
+      from the Select menu.
+    </para>
+  </sect2>
+
+  <sect2 id="gimp-using-paths-transforming">
+    <title>Transformando vetores</title>
+    <para>
+      Each of the <link linkend="gimp-tools-transform">Transform tools</link>
+      (Rotate, Scale, Perspective, etc) can be set
+      to act on a layer, selection, or path. Select the transform tool in the
+      toolbox, then select
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/gimp-layer.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      layer,
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/gimp-selection.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      selection, or
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/gimp-path.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      path for the
+      <guilabel>Transform</guilabel> option in the tool's Tool Options
+      dialog. This gives you a powerful set of
+      methods for altering the shapes of paths without affecting other
+      elements of the image.
+    </para>
+    <para>
+      By default a Transform tool, when it is set to affect paths, acts only on
+      the <emphasis>active path</emphasis> which is shown highlighted in the
+      <link linkend="gimp-path-dialog">Paths Dialog</link>. You can make a
+      transformation affect more than one path by selecting additional paths.
+      Selecting multiple paths is done by using the mouse and
+      <keycap>Shift</keycap> key, for adding a range of paths, or
+      <keycap>Ctrl</keycap> key, for adding or removing the clicked path.
+    </para>
+  </sect2>
+
+  <sect2 id="gimp-using-paths-stroking">
+    <title>Contornando um vetor</title>
+    <figure>
+      <title>Contornando vetores</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/using/path-stroking-examples.png"/>
+        </imageobject>
+        <caption>
+          <para>Os quatro vetores da ilustração do início da seção, cada um contornado com configurações diferentes</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      Paths do not alter the appearance of the image pixel data unless
+      they are <emphasis>stroked</emphasis>, using
+      <menuchoice>
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Stroke Paths…</guimenuitem>
+      </menuchoice>
+      from the main menu or the
+      <link linkend="gimp-path-dialog">Paths Dialog</link> right-click menu,
+      or the <quote>Stroke Path</quote> button in the Tool Options dialog for
+      the <link linkend="gimp-tool-path">Paths</link> tool.
+    </para>
+    <para>Escolher <quote>Contornar vetor</quote> por qualquer desse métodos traz um diálogo que permite que você controle a forma que o contorno será traçado. Você pode escolher de uma grande variedade de estilos de linha, ou você pode criar o contorno como se tivesse sido feito com qualquer uma das ferramentas de pintura, incluindo algumas não usuais, como a ferramenta de Clonar, de Borrar, a Borracha, etc...</para>
+    <figure>
+      <title>O diálogo de <guilabel>Contornar vetor</guilabel></title>
+      <mediaobject>
+        <imageobject>
+          <!--changed 2009-08-28: don't use 2 screenshots for the same dialog
+              (OLD: images/dialogs/gimp-path-stroke.png)-->
+          <imagedata format="PNG" fileref="images/menus/edit/stroke-path.png"/>
+        </imageobject>
+        <caption>
+        <para>See <xref linkend="gimp-path-stroke"/> for more information.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Você pode aumentar a gama de efeitos de contorno ao desenhar o contorno de um vetor múltiplas vezes, ou usando múltiplas linhas de diferentes larguras e cores. As possibilidades de se obter efeitos interessantes desta forma são quase ilimitadas.</para>
+  </sect2>
+
+  <sect2 id="gimp-using-paths-and-text">
+    <title>Vetores e texto</title>
+    <figure>
+      <title>Texto convertido em um Vetor</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/using/path-from-text.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Texto convertido em um vetor e então transformado usando a ferramenta de Perspectiva</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/using/path-text-stroked.png"/>
+        </imageobject>
+        <caption>
+          <para>O vetor mostrado acima, contornado com um pincel enevoado, e então mapeado para um degradê usando-se o filtro <quote>Mapear com degradê</quote> usando o degradê <quote>Yellow Contrast</quote> (<quote>contraste amarelo</quote>, que vem junto com o GIMP)</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      A text item created using the <link linkend="gimp-tool-text">Text</link>
+      tool can be transformed into a path using the
+      <link linkend="gimp-text-tool-text-to-path">Text to Path</link> command
+      in the context menu of the Text tool. This can be useful for several
+      purposes, including:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>Contornar o vetor, o que lhe dá muitas possibilidades de um texto com efeitos sofisticados.</para>
+      </listitem>
+      <listitem>
+        <para>E mais importante, transformar o texto. Converter o texto para um vetor, transformar o vetor, e finalmente, ou contornar o vetor, ou transforma-lo numa seleção e preenche-la, com frequência dá resultados de qualidade muito melhor do que transformar direto a camada de texto, tratando seus dados como pixels.</para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      You can also wrap text along an existing path using the
+      <link linkend="gimp-text-tool-text-along-path">Text along Path</link>
+      command.
+    </para>
+  </sect2>
+
+  <sect2 id="gimp-using-paths-and-svg">
+    <title>Vetores e arquivos <acronym>SVG</acronym></title>
+    <para>
+      <acronym>SVG</acronym>, standing for <quote>Scalable Vector
+      Graphics</quote>, is a popular file format for
+      <emphasis>vector graphics</emphasis>, in which graphical elements are
+      represented in a resolution-independent format, in contrast to
+      <emphasis>raster graphics</emphasis>; in which graphical elements are
+      represented as arrays of pixels. GIMP is mainly a raster graphics
+      program, but paths are vector entities.
+    </para>
+    <para>
+      Fortunately, paths are represented in <acronym>SVG</acronym> files in
+      almost exactly the same way they are represented in GIMP. This
+      compatibility makes it possible to store GIMP paths as
+      <acronym>SVG</acronym> files without losing any information. You can
+      access this capability in the
+      <link linkend="gimp-path-dialog">Paths Dialog</link>.
+    </para>
+    <para>Isso também significa que o GIMP pode criar vetores a partir de arquivos <acronym>SVG</acronym>salvos por outros programas, tais como o <application>Inkscape</application> ou do <application>Libreoffice Draw</application> - duas aplicações em Software Livre populares para edição de imagens vetoriais. Isso é interessante por que outros programas podem ter ferramentas de manipulação de vetores muito mais poderosas do que o GIMP. Você pode importar um vetor de arquivo <acronym>SVG</acronym> usando o diálogo de Vetores.</para>
+    <para>O formato <acronym>SVG</acronym> suporta muitos outros elementos gráficos além das curvas Bézier: entre outras coisas ele trata formas tais como quadrados, retângulos, círculos elipses, polígonos regulares, etc... O GIMP não pode criar nenhuma dessas entidades sozinho, pela interface de usuário, mas pode carrega-las de arquivos de vetores.</para>
+    <note>
+      <para>Criar vetores não é a única coisa que o GIMP pode fazer com arquivos <acronym>SVG</acronym>. Ele também pode abrir arquivos  <acronym>SVG</acronym> como imagens, do modo tradicional. (Você só precisa escolher manualmente o tamanho em pixels da imagem ao abri-la no GIMP)</para>
+    </note>
+  </sect2>
+</sect1>

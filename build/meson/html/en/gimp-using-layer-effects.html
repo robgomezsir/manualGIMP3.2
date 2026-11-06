@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6. Layer Effects</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-image-combining.html" title="Chapter 8. Combining Images" />
+    <link rel="prev" href="gimp-layer-groups.html" title="5. Layer Groups" />
+    <link rel="next" href="gimp-layer-types.html" title="7. Layer Types" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6. Layer Effects</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-layer-groups.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>Chapter 8. Combining Images</span>
+        <nav> <a accesskey="n" href="gimp-layer-types.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-using-layer-effects"></a>6. Layer Effects</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id10861" class="indexterm"></a>
+      <a id="id10863" class="indexterm"></a>
+      <a id="id10865" class="indexterm"></a>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id1517"></a>6.1. Introduction</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      A layer effect is a filter that you can tweak at any time,
+      that doesn't permanently affect a layer. It is rendered on top of the
+      actual layer, which means the actual contents of the layer itself
+      stay unchanged.
+    </p>
+        <p>
+      The advantage is that you can still go back and tweak the layer effect,
+      even after doing other operations in between.
+      Unlike Undo, where you might need to Undo and Redo many operations.
+    </p>
+        <p>
+      Layer effects are also saved in your XCF image, so they can still be
+      tweaked after saving and reopening your image.
+    </p>
+        <p>
+      You add a layer effect just like other filters, by selecting a layer and
+      then choosing a command (a menu item or keyboard shortcut.)
+    </p>
+        <p>
+      A layer effect is a class of filters. You may not know whether a command
+      creates a layer effect until you activate the command and see the
+      <span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-effects.svg" width="16" /></span>
+      </span>
+       icon in the Layers dialog.
+    </p>
+        <p>
+      When starting a filter that can be used as a layer effect, the Filter
+      dialog will have a <a class="link" href="gimp-filters-common.html#gimp-filter-merge">Merge Filter</a>
+      checkbox.
+    </p>
+        <p>
+      Most <acronym class="acronym">GEGL</acronym> filters can be layer effects.
+      <acronym class="acronym">GEGL</acronym> is the image processing library used by
+      <acronym class="acronym">GIMP</acronym>.
+      No other types of filters or plug-ins can be layer effects.
+    </p>
+        <p>
+      Layer effects only apply to a single layer, while other filters may
+      apply to channels, layers, or entire images.
+    </p>
+        <p>
+      You can't choose whether a filter can be <span class="emphasis"><em>used</em></span> as a
+      layer effect. But you can choose to use a filter that can be a layer
+      effect in a non-tweakable way:
+      see <a class="link" href="gimp-using-layer-effects.html#gimp-merging-layer-effects" title="6.6. Merging">Merging</a>.
+    </p>
+        <p>
+      Having a lot of layer effects in your image can impact performance.
+      Some filters take longer to compute and affect performance more than
+      others. Layer effects need to be re-rendered any time something in the
+      layer stack that affects it changes. If you experience slowdowns, you
+      might want to consider merging some of your effects with the layer.
+    </p>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id1518"></a>6.2. Terminology</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      GIMP represents layer effects with an icon:
+      <span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-effects.svg" width="16" /></span>
+      </span>.
+      This icon appears in the <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Layers Dialog">Layers
+      Dialog</a>, in the row of the layer the layer effect applies to.
+      Only layers that have at least one layer effect will show this icon.
+    </p>
+        <p>
+      The term <span class="emphasis"><em>fx</em></span> used on the icon is an abbreviation for
+      <span class="emphasis"><em>effects</em></span>.
+    </p>
+        <p>
+      Using layer effects is a form of <span class="quote">“<span class="quote">non-destructive editing</span>”</span>,
+      often shortened as <span class="quote">“<span class="quote">NDE</span>”</span>. Which means they don't permanently
+      change the layer they are applied to.
+    </p>
+        <p>
+      Layer effects have settings which you can change at a later time.
+      Changing any of these settings immediately updates their effect onto
+      their layer and the entire image.
+    </p>
+        <p>
+      While all filters have an effect on layers, in the sense of a result,
+      here we intend the words <span class="quote">“<span class="quote">layer effect</span>”</span> to mean the
+      specific use of eligible filters.
+    </p>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id1519"></a>6.3. Adding a Layer Effect to a Layer</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      You create a layer effect by selecting a layer, then choosing a command
+      that starts a filter that can be a layer effect.
+      As soon as the filter dialog opens, the
+      <span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-effects.svg" width="16" /></span>
+      </span>
+      icon appears next to the layer name in the
+      <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Layers Dialog">Layers dialog.</a>
+    </p>
+        <p>
+      A layer effect belongs to a layer. A layer can have multiple layer
+      effects. When you add a layer effect, it is added above any already
+      existing layer effects for that layer. You can later move it, using the
+      <a class="link" href="gimp-dialogs-structure.html#gimp-layer-effects-dialog">Layer Effects dialog</a>.
+    </p>
+        <p>
+      Adding a layer effect can be undone using the
+      <a class="link" href="gimp-edit-undo.html" title="3.2. Undo">Undo</a> command.
+    </p>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id1520"></a>6.4. Order Matters</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      The order of layer effects matters. The layer effects of a layer are
+      rendered from the bottom up. After taking the pixels of the layer,
+      the first effect rendered is the bottom-most one in the effect list,
+      followed by each effect above it. This means that the layer effects
+      below, affect the output of a layer effect.
+    </p>
+        <p>
+      You can rearrange the order of layer effects on a layer by choosing a
+      layer effect and then clicking the
+      <span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/go-up.svg" width="16" /></span>
+      </span>
+      Up or
+      <span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/go-down.svg" width="16" /></span>
+      </span>
+      Down buttons in the
+      <a class="link" href="gimp-using-layer-effects.html#gimp-using-layer-effects-dialog" title="6.5. The Layer Effects Dialog">Layer Effects</a>
+      dialog.
+    </p>
+        <p>
+      Some changes in order might appear invisible, it depends on the actual
+      layer effects and their parameters.
+      Reordering layer effects can be undone.
+    </p>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-using-layer-effects-dialog"></a>6.5. The Layer Effects Dialog</h3>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1521"></a>
+          <p class="title">
+            <strong>Figure 8.73. Layer Effects Dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/using/layer-effects-dialog.png" alt="Layer Effects Dialog" />
+              <div class="caption">
+                <p>
+            An example of the Layer Effects pop-up dialog inside the Layers
+            dialog, showing three layer effects applied to the layer
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      Use this dialog to edit, reorder, remove, or change the visibility of
+      layer effects. You can also use this dialog to merge down all effects
+      on a layer.
+      Any change made here immediately updates the image.
+    </p>
+        <p>
+      You open this dialog by clicking on the
+      <span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-effects.svg" width="16" /></span>
+      </span>
+      icon shown next to the layer name in the Layers dialog.
+    </p>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1522"></a>6.5.1. Selecting a Layer Effect</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        Click on a row in the Layer Effects dialog to select the effect.
+        Only one layer effect can be selected.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1523"></a>6.5.2. Editing a Layer Effect</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        Click the
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/gtk-edit.svg" width="16" /></span>
+        </span>
+        Edit Layer Effects button after you select an effect, to open the
+        filter dialog. You can then change the filter settings as desired.
+        Any changes will be immediately shown on your image.
+      </p>
+          <p>
+        To accept your changes to the layer effect, click
+        <span class="guibutton">OK</span>, or choose <span class="guibutton">Cancel</span> if
+        you want to keep your previous settings.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1524"></a>6.5.3. Removing a Layer Effect</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        Click the
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+        </span>
+        Remove Layer Effects button after you select the effect.
+        The layer effect will disappear from the dialog. When it is the last
+        effect on the layer, the dialog will also close.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1525"></a>6.5.4. Reordering Layer Effects</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        If you want to move a layer effect up or down, click the
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/go-up.svg" width="16" /></span>
+        </span>
+        Up or
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/go-down.svg" width="16" /></span>
+        </span>
+        Down buttons.
+        The layer effect position will be changed and the effects on the
+        image updated.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1526"></a>6.5.5. Changing the Visibility of a Layer Effect</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        Click the
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-visible.svg" width="16" /></span>
+        </span>
+        Visibility button next to a layer effect to show or hide the visibility
+        of the effect on the layer. You can also show or hide all layer effects
+        by clicking the button at the bottom of the dialog.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1527"></a>6.5.6. Merging All Layer Effects</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        Click the
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-merge-down.svg" width="16" /></span>
+        </span>
+        Merge Down button to merge all layer effects with the layer itself.
+        All the layer effects will disappear and the dialog will close.
+      </p>
+          <p>
+        You will not be able to make further changes to the layer effects,
+        unless you Undo the merge. To undo and restore the layer effects,
+        choose the <span class="quote">“<span class="quote">Undo Rasterize filters</span>”</span> item from the
+        Edit menu.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1528"></a>6.5.7. Closing the Layer Effects Dialog</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        To close the Layer Effects dialog, you can click anywhere outside the
+        dialog.
+      </p>
+        </div>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-merging-layer-effects"></a>6.6. Merging</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      When you choose a command that can be <span class="emphasis"><em>used</em></span> as a
+      layer effect, you can choose to use the filter in a non-tweakable way.
+      This is called <span class="quote">“<span class="quote">merging</span>”</span>, similar to the way you merge
+      layers.
+    </p>
+        <p>
+      When you do not want to use a filter as a layer effect, enable the
+      <span class="guilabel">Merge Filter</span> checkbox in the filter's dialog.
+      Then, after choosing <span class="guibutton">OK</span>, the results of the
+      filter will be merged with the layer.
+    </p>
+        <p>
+      You can still Undo what you did, or do it again with different choices.
+      But it won't appear in the stack of layer effects, and if you
+      subsequently do other operations, it will be harder to undo. After
+      saving you won't be able to undo at all, because the undo actions are
+      removed after saving.
+    </p>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id1529"></a>6.7. Merging and Auxiliary Other Images</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      Some filters take two images, the active image and another so-called
+      <span class="quote">“<span class="quote">auxiliary</span>”</span> image, which you must separately choose in the
+      filter's dialog.
+      Examples of these auxiliary images are a <span class="quote">“<span class="quote">bump map</span>”</span> or a
+      <span class="quote">“<span class="quote">mask</span>”</span>.
+    </p>
+        <p>
+      Such a filter's dialog will have the <span class="guilabel">Merge Filter</span>
+      checkbox checked and disabled. This means that the filter can't be used
+      as a layer effect at this time.
+    </p>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id1530"></a>6.8. Undo and Layer Effects</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can undo adding or removing a layer effect. Even changing the
+      settings of a layer effect shows up in the undo history and thus can be
+      undone.
+    </p>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id1531"></a>6.9. Copying Layer Effects</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      At this time, it is not possible to copy a layer effect and add it to
+      a different layer. To work around that, you can save the layer effect
+      settings in a preset, the same as for other filters.
+      See <a class="link" href="gimp-filters-common.html#gimp-filter-presets">Filter Presets.</a>
+    </p>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="id1532"></a>6.10. Persistence of Layer Effects</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      Layer effects are saved when you save an image in
+      <acronym class="acronym">GIMP</acronym>'s native XCF format.
+      All the presets for a layer effect are also saved.
+    </p>
+        <p>
+      Layer effects are <span class="quote">“<span class="quote">merged</span>”</span> when you export an image to
+      another format. Even when you export to formats which also support
+      layer effects, such as the PSD format.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-layer-groups.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-combining.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-layer-types.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-layer-groups.html">5. Layer Groups</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-layer-types.html">7. Layer Types</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

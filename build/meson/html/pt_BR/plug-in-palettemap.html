@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.40. Mapear com paleta</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. O menu “Cores”" />
+    <link rel="prev" href="plug-in-gradmap.html" title="8.39. Mapear com degradê" />
+    <link rel="next" href="plug-in-sample-colorize.html" title="8.41. Colorizar a partir de amostra" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.40. Mapear com paleta</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-gradmap.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. O menu <span class="quote">“<span class="quote">Cores</span>”</span></span>
+        <nav> <a accesskey="n" href="plug-in-sample-colorize.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-palettemap"></a>8.40. Mapear com paleta</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id45018" class="indexterm"></a>
+      <a id="id45022" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4079"></a>8.40.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This plug-in recolors the image using colors from the active palette
+      that you choose in the
+      <a class="link" href="gimp-palette-dialog.html" title="3.6. Diálogo de paletas">Palettes dialog</a>.
+    </p>
+        <p>
+      It maps the contents of the specified drawable (layer, selection, etc.)
+      with the active palette. It calculates luminosity of each pixel and
+      replaces the pixel by the palette sample at the corresponding index. A
+      complete black pixel becomes the lowest palette entry, and complete
+      white becomes the highest. Works on both Grayscale and RGB images
+      with or without alpha channel.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4080"></a>8.40.2. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Map</span> → <span class="guimenuitem">Palette Map</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4081"></a>8.40.3. Exemplo</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4082"></a>
+          <p class="title">
+            <strong>Figura 16.195. A Paleta ativa é aplicada a uma imagem com degradê.</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/map/palettemap-ex1.png" alt="A Paleta ativa é aplicada a uma imagem com degradê." />
+              <div class="caption">
+                <p>A paleta atual, com 18 cores</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/menus/colors/map/palettemap-ex2.png" alt="A Paleta ativa é aplicada a uma imagem com degradê." />
+              <div class="caption">
+                <p>As cores na paleta ativa serão aplicadas no degradê de preto para branco. A cor com o índice mais baixo na paleta (laranja) substitui a cor preta no degradê, A cor com o mais alto índice na paleta (vermelho) substitui a cor branca no degradê. As outras cores acompanham o intervalo, na ordem da paleta.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-gradmap.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-sample-colorize.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-gradmap.html">8.39. Mapear com degradê</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-sample-colorize.html">8.41. Colorizar a partir de amostra</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

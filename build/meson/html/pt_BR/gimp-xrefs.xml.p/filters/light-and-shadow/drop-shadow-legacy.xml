@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-08-26 j.h: rename to Drop Shadow (legacy)
+-->
+<sect2 id="script-fu-drop-shadow">
+  <title>Opacidade da sombra projetada</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Luz e sombra</secondary>
+    <tertiary>Opacidade da sombra projetada</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Opacidade da sombra projetada</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Sombra projetada</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/light-taj-drop-shadow-legacy.jpg"/>
+        </imageobject>
+        <caption>
+          <para><quote>Sombra projetada</quote> aplicada (camada de fundo branco adicionada manualmente)</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Esse filtro adiciona uma sombra projetada atrás da seleção atual ou das partes que não são transparentes da imagem, se não houver uma seleção. Opcionalmente, o filtro pode redimensionar a imagem se isso for necessário para a exibição da sombra toda. Esse efeito é bastante utilizado em imagens comerciais para dar um leve efeito 3D a textos, e, também, alterando-se a cor da sombra para branco, criar um efeito de contra-luz.</para>
+    <para>Você pode escolher a cor, posição e tamanho da sombra.</para>
+    <para>Note que o filtro não adiciona uma camada de fundo para tornar a sombra visível. O fundo da sombra é transparente. O fundo branco, no exemplo acima não foi criado pelo filtro, e sim,  adicionado mais tarde para tornar a sombra visível.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Light and Shadow</guisubmenu>
+        <guimenuitem>Drop Shadow (legacy)…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Sombra projetada</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/light-and-shadow/drop-shadow-legacy.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Deslocamento X</term>
+        <term>Deslocamento Y</term>
+        <listitem>
+          <para>A camada que contém a sombra será movida horizontalmente por X pixels e verticalmente por Y pixels. Assim, o deslocamento X e Y  determina, onde a sombra será colocada em relação à imagem original.Valores altos fazem parecer que a imagem está flutuando mais longe do fundo, e valores próximos fazem a imagem parecer estar flutuando logo acima do fundo.</para>
+          <para>Os deslocamentos podem ser negativos, levando a sombra para a esquerda da seleção se o deslocamento X for menor que 0, ou acima da mesma se o deslocamento Y for menor que 0.</para>
+          <para>Se não houver nenhuma seleção ativa, e a camada atual não tiver áreas transparentes você precisará  <guilabel>Permitir redimensionamento</guilabel> para ver qualquer efeito.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio do desfocamento</term>
+        <listitem>
+          <para>Depois de criar a camada de sombra, uma <link linkend="plug-in-gauss">Desfocagem gaussiana</link> com o raio especificado é aplicada à mesma, resultando na aparência realista da sombra projetada.  Pode ser necessário ativar a opção de <guilabel>Permitir redimensionamento</guilabel>, uma vez que a desfocagem aumenta o tamanho da sombra.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor</term>
+        <listitem>
+          <para>A sombra pode ter qualquer cor. Basta clicar no botão e selecionar uma nova cor no seletor que aparece.</para>
+          <figure>
+            <title>Exemplo de cor para <quote>Sombra projetada</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/drop-shadow-color.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Opacidade</term>
+        <listitem>
+          <para>Opacidade da sombra é apenas a opacidade da nova camada contendo a sombra (ver <xref linkend="gimp-layer-properties"/> ). O padrão é 80%, mas você pode selecionar qualquer outro valor de 0 (totalmente transparente) a 100 (opacidade total) aqui. Depois de aplicar o filtro para uma imagem que você pode mudar a opacidade no diálogo de <link linkend="gimp-layer-dialog">Camadas</link>. No caso de adicionar uma sombra branca, como um efeito de halo ou de contra-luz, mesmo a opacidade de 100% pode parecer muito fraca. Nesse caso, após aplicar o efeito, use a opção de <guilabel>Curvas</guilabel>  no menu de cores: selecione o canal Alfa, e puxe a curva para cima, num formato de <quote>U</quote> invertido. Isso vai diminuir a transparência das áreas desfocadas, criando um belíssimo efeito de contra-luz.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Permitir redimensionamento</term>
+        <listitem>
+          <para>Se ativado, o filtro irá redimensionar a imagem, se isso for necessário para que toda a sombra apareça. O novo tamanho vai depender do tamanho da seleção ou áreas sem transparência, dos deslocamentos da sombra e do o raio de desfocagem.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.2. Preferências do sistema de ajuda</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-prefs-dialog.html" title="6. Diálogo de definições" />
+    <link rel="prev" href="gimp-prefs-dialog.html" title="6. Diálogo de definições" />
+    <link rel="next" href="gimp-prefs-debugging.html" title="6.3. Rotulando" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.2. Preferências do sistema de ajuda</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-prefs-dialog.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Diálogo de definições</span>
+        <nav> <a accesskey="n" href="gimp-prefs-debugging.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-prefs-system-resources"></a>6.2. Preferências do sistema de ajuda</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id29700" class="indexterm"></a>
+      <a id="id29704" class="indexterm"></a>
+      <div class="figure">
+        <a id="id3367"></a>
+        <p class="title">
+          <strong>Figura 15.98. System Resources Preferences</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/preferences/prefs-system-resources.png" alt="System Resources Preferences" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>Esta página permite que você personalize a quantidade de memória usada pelo sistema para várias finalidades. Ela também permite que você desabilite os diálogos de confirmação que aparecem quando você fechar as imagens que não foram salvas, e que você defina o tamanho dos arquivos em miniatura que o GIMP produz.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3368"></a>6.2.1. Ativando o diálogo</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The preferences dialog can be accessed from the main menu, through
+      <span class="guimenu">Edit</span> → <span class="guimenuitem">Preferences</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3369"></a>6.2.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Consumo de Recursos</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Número mínimo de níveis de desfazer</span>
+            </dt>
+            <dd>
+              <p>O GIMP permite desfazer a maioria das ações, mantendo um <span class="quote">“<span class="quote">Histórico de desfazer</span>”</span> para cada imagem, para o qual uma certa quantidade de memória é alocada. Independentemente do uso de memória, no entanto, o GIMP sempre permite que um número mínimo das ações mais recentes possa ser desfeito: este é o número especificado aqui. Veja <a class="xref" href="gimp-concepts-undo.html" title="3. Desfazendo">Seção 3, “Desfazendo”</a> para mais informações sobre mecanismo de desfazer do GIMP.</p>
+            </dd>
+            <dt>
+              <span class="term">Máximo de memória para desfazer</span>
+            </dt>
+            <dd>
+              <p>Esta é a quantidade de memória atribuída para desfazer cada imagem. Se o tamanho do <span class="quote">“<span class="quote">Histórico de desfazer</span>”</span> exceder esse limite, os pontos (estados da imagem) mais antigos são descartados, a menos que isso fizesse com que você tivesse menos passos para desfazer do que o número especificado acima.</p>
+            </dd>
+            <dt>
+              <span class="term">Tamanho do cache de fragmentos</span>
+            </dt>
+            <dd>
+              <p>Esta é a quantidade de memória RAM alocada para dados de imagem do GIMP. Se o GIMP requer mais memória do que esse número, ele começa a usar alternadamente dados no disco, o que pode, na maioria das circunstâncias causar uma lentidão dramática no programa. O processo de instalação do GIMP dá a oportunidade de definir esse número, e você pode alterá-lo aqui. Veja <a class="link" href="gimp-prefs-system-resources.html#gimp-using-setup-tile-cache" title="6.2.3. Como configurar seu cache de fragmentos">Como configurar seu cache de fragmentos</a> para maiores informações. Mas em geral você pode colocar pelo menos a metade do total de memória RAMdo seu computador aqui.</p>
+            </dd>
+            <dt>
+              <span class="term">Tamanho máximo para novas imagens</span>
+            </dt>
+            <dd>
+              <p>Esta não é uma restrição absoluta: se você tentar criar uma nova imagem maior do que o tamanho especificado, o GIMP simplesmente irá abrir um diálogo a mais de confirmação de que você realmente deseja criar uma imagem tão grande. Isso é para evitar que você crie acidentalmente imagens muito maiores do que você pretende, o que poderia travar o GIMP ou seu computador, fazendo com que ele responda muuuuuiiito devagaaaaaaar. Por exemplo, na criação de uma nova imagem, se você colocar o tamanho de uma imagem achando que as unidades são Pixels, mas elas estiverem marcadas como Polegadas, isso poderia resultar numa imagem milhares de vezes maior que a pretendida, esgotando toda a memória do computador.</p>
+            </dd>
+            <dt>
+              <span class="term">Compressão de swap</span>
+            </dt>
+            <dd>
+              <p>Isso define o método de compressão usado para dados de tiles armazenados no swap. A compressão pode reduzir o tamanho do swap e aumentar sua velocidade, minimizando entrada e saída. Os valores são <span class="guilabel">melhor desempenho</span> (o padrão), <span class="guilabel">equilibrado</span> e <span class="guilabel">melhor compressão</span>, ou <span class="guilabel">nenhum</span> para desabilitar a compressão completamente.</p>
+            </dd>
+            <dt>
+              <span class="term">Número de cores</span>
+            </dt>
+            <dd>
+              <p>Multi-threading permite usar múltiplos núcleos para processamento. Nem todos os recursos usam isso por enquanto. Um ponto de interesse é que o multi-threading acontece através do processamento GEGL, mas também no próprio núcleo do GIMP, por exemplo para separar pintura de exibição.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Acesso à rede</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Verificar atualizações</span>
+            </dt>
+            <dd>
+              <p>Quando esta opção está habilitada, o GIMP verificará regularmente na inicialização se uma nova versão está disponível. Se houver, você receberá um alerta de que pode atualizar. Note que esta opção requer que você tenha uma conexão com a internet e que o GIMP tenha permissão para acessar a internet.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Miniatura</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Miniatura da camada</span>
+            </dt>
+            <dd>
+              <p>Esta opção permite que você defina o tamanho das miniaturas mostradas na caixa de diálogo de Abrir arquivo (e também são salvas para possível uso por outros programas). As opções são <span class="quote">“<span class="quote">Sem miniaturas</span>”</span>, <span class="quote">“<span class="quote">normal (128x128)</span>”</span>, e <span class="quote">“<span class="quote">Grande (256x256)</span>”</span>.</p>
+            </dd>
+            <dt>
+              <span class="term">Tamanho máximo dos arquivos para criação miniaturas</span>
+            </dt>
+            <dd>
+              <p>Se um arquivo de imagem é maior do que o tamanho máximo especificado, o GIMP não irá gerar uma miniatura automaticamente para ele. Esta opção permite evitar que o GIMP leve muito tempo criando miniaturas de arquivos de imagem muito grandes, o que poderia deixar o diálogo de arquivos muito lento. (Você pode criar as miniaturas para imagens maiores do que as listadas aqui usando ctrl + click na pré-visualização do diálogo de arquivos).</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Histórico de documentos</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Manter registro dos arquivos utilizados na lista de Documentos Recentes</span>
+            </dt>
+            <dd>
+              <p>
+              When checked, files you have opened will be saved in the
+              Document history. You can access the list of files with the
+              <a class="link" href="gimp-document-dialog.html" title="4.3. Diálogo do histórico de documentos">Document history
+              dialog</a> from the main menu:
+              <span class="guimenu">File</span> → <span class="guisubmenu">Open Recent</span> → <span class="guimenuitem">Document History</span>.
+            </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-using-setup-tile-cache"></a>6.2.3. Como configurar seu cache de fragmentos</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id29783" class="indexterm"></a>
+        <p>Esta seção aborda a configuração <span class="guilabel">Tamanho do cache de tiles</span> sob <a class="link" href="gimp-prefs-system-resources.html" title="6.2. Preferências do sistema de ajuda">Recursos do Sistema</a>.</p>
+        <p>
+    During the data processing and manipulation of images, GIMP can use
+    a lot of memory. The more you have available, the better.
+    <acronym class="acronym">GIMP</acronym> uses available memory and other resources
+    as effectively as possible, striving to let you work on your images
+    without more slowdowns than necessary.
+   </p>
+        <p>
+     If GIMP needs more (RAM) memory than you have, it starts storing parts
+     of the image data needed to work on your image on a hard disk. These
+     parts are called tiles. Access to disk is slower, but at least it allows
+     you to keep working. The disk storage is called a cache and the entire
+     system is called <span class="quote">“<span class="quote">tile cache</span>”</span>.
+  </p>
+        <p>
+    The tile cache value determines when GIMP starts using cache instead
+    of faster RAM memory.
+    A low value for the tile cache means that GIMP sends data to disk more
+    quickly then needed, not making good use of the available RAM. Too high a
+    value for tile cache, and other applications start to have less system
+    resources, forcing them to use swap space and thus slow down, or it may
+    cause some of them to start to malfunction or even terminate due to lack
+    of RAM.
+  </p>
+        <p>Como você escolhe o número para o tamanho do Cache de fragmentos? Aqui seguem algumas dicas que ajudarão você a decidir que valor usar, bem como alguns truques:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A forma mais fácil é simplesmente esquecer tudo isso e simplesmente esperar que os valores padrão funcionem bem. Esse era um método usável quando os computadores tinham pouca memória, e a maioria das pessoas simplesmente fazia imagens pequenas no GIMP enquanto uma ou duas outras aplicações eram executadas ao mesmo tempo. Se você quer algo simples, e só usa o GIMP para criar capturas de tela e logotipos básicos, essa provavelmente é a melhor solução.</p>
+            </li>
+            <li class="listitem">
+              <p>Nos computadores modernos você normalmente vai ter alguns GB de memória RAM, então configurar o cache de fragmentos para mais ou menos metade do total da sua memória trará boa performance para o GIMP na maioria das situações, sem consumir recursos das outras aplicações. Possivelmente até mesmo 3/4 do total de memória que você tem pode funcionar bem. Você não vai precisar se preocupar com cache de fragmentos para uso amador do GIMP se puder colocar 1,5GB. Se estiver usando o GIMP para lidar com imagens que serão impressas em folha inteira em 300dpi, ou fotos de várias dezenas de megapixels, ou ainda com dezenas de camadas, você tem um padrão de uso mais exigente, e no caso de falta de memória a solução é instalar mais RAM — em 2013, 16GB para um sistema pessoal não é muito exagerado — e será o suficiente para os usos mais extremos do GIMP</p>
+            </li>
+            <li class="listitem">
+              <p>Comece mudando o valor um pouco de cada vez, e verifique se fica mais rápido, com uso intenso, com cada aumento, sem o sistema começar a reclamar de falta de memória. Esteja avisado de que algumas vezes a falta de memória acontece de repente, com o sistema ficando lento por conta do uso do espaço de troca do sistema e com algumas aplicações sendo terminadas para liberar espaço para outras.</p>
+            </li>
+            <li class="listitem">
+              <p>Faça algumas contas, e chegue a um valor viável. Possivelmente você terá que ajusta-lo mais tarde, mas talvez você tivesse que reajusta-lo de qualquer forma, mesmo usando os métodos anteriores. Pelo menos você saberá o que está acontecendo, e como extrair o máximo do seu computador,</p>
+            </li>
+          </ul>
+        </div>
+        <p>
+    Let's suppose you prefer the last option, and want to get a good value to
+    start with. First, you need to get some data about your computer. This
+    data is the amount of RAM installed in your system, the operating system's
+    swap space available, and a general idea about the speed of the disks that
+    store the operating system's swap and the directory used for GIMP's swap.
+    You do not need to do disk tests, nor check the RPM of the disks, the
+    thing is to see which one seems clearly faster or slower, or whether all
+    are similar. You can change GIMP's swap directory in the
+    <a class="link" href="gimp-prefs-folders.html" title="6.26. Pastas">Folders</a> page of the
+    Preferences dialog.
+  </p>
+        <p>
+    The next thing to do is to see how much resources you require for other
+    apps you want to run at the same time as GIMP. So start all your tools
+    and do some work with them, except GIMP of course, and check the usage.
+    You can use applications like free, top, or Process Explorer, depending on
+    what OS and what environment you use. The numbers you want is the memory
+    left, including file cache.
+  </p>
+        <p>
+    Linux's <span class="emphasis"><em>free</em></span> command does the maths for you: check
+    the column that says <span class="quote">“<span class="quote">free</span>”</span>, and the line
+    <span class="quote">“<span class="quote">-/+ buffers/cache</span>”</span>. Note down also the free swap.
+  </p>
+        <p>Agora é a hora de decisões e um pouco de matemática simples — o conceito básico é decidir se você quer deixar todo o cache de fragmentos em RAM, ou na RAM mais o espaço de troca do sistema operacional:</p>
+        <div class="procedure">
+          <ol class="procedure" type="1">
+            <li class="step">
+              <p>Você troca muito de aplicações? Ou fica trabalhando no GIMP por muito tempo? Se você fica muito tempo direto no GIMP, você pode considerar a memória livre, mais o espaço de trocas do sistema como memória disponível para o GIMP. Se não, você deve seguir os seguintes passos (na dúvida, confira esses passos): se você troca de aplicação a cada poucos minutos, conte só com a memória RAM física disponível e pule para a decisão final - não há mais nada para checar.</p>
+            </li>
+            <li class="step">
+              <p>O espaço de troca do sistema fica no mesmo dispositivo físico que o espaço de troca do GIMP? Se sim, adicione a memória e o espaço de troca - se não vá para o próximo passo.</p>
+            </li>
+            <li class="step">
+              <p>O disco em que fica o espaço de troca do sistema é mais rápido que o disco que mantém o espaço de trocas do GIMP? Se for mais lento, use apenas a memória livre;Se for mais rápido ou similar, adicione a RAM e a troca.</p>
+            </li>
+            <li class="step">
+              <p>Agora você tem um número: seja só a memória livre, ou a memória livre mais o espaço de troca do sistema. Reduza um pouco esse número - uns 150MB, mais ou menos, para estar seguro, e esse é o tamanho do Cache de fragmentos que você deve usar.</p>
+            </li>
+          </ol>
+        </div>
+        <p>Como você pode ver, é tudo uma questão de checar os recursos disponíveis e decidir se vale apena usar o espaço de troca do sistema ou se isso vai causar mais problemas do que ajudar.</p>
+        <p>Há algumas razões para você querer ajustar esse valor, no entanto. A mais básica é você ter mudanças no seu padrão de uso do computador, ou alterar o hardware. Isso poderia significar que suas suposições sobre como você usa seu computador, ou a velocidade do mesmo, já não são válidas. Isso exigiria uma reavaliação das etapas anteriores, que podem levá-lo para um valor semelhante ou um valor completamente diferente.</p>
+        <p>Outra razão para alterar o valor é porque pode acontecer do GIMP ficar muito lento enquanto que mudar para as outras aplicações é rápido: isso significa que o GIMP poderia usar mais memória, sem prejudicar as outras aplicações. Por outro lado, se você receber avisos de outros aplicativos sobre não ter memória o suficiente, então você pode se beneficiar de não deixar o GIMP usar tanta memória.</p>
+        <p>Se você decidiu usar apenas RAM e o GIMP está lento, você pode tentar aumentar o valor um pouco, mas nunca usar também toda memória de troca livre. Se ocaso é o contrário, você está usando tanto a RAM como a memória de troca, e você tem problemas de falta de de memória, então você deve diminuir a quantidade de memória RAM disponível para o GIMP.</p>
+        <p>
+    Another trick is to put the Swap Dir on a very fast disk, or on a
+    different disk than the one where most of your files
+    reside. Spreading the operating
+    system swap file over multiple disks is also a good way to speed
+    things up, in general. And of course, you might have to buy more RAM
+    or stop using lots of programs at the same time: you can not
+    expect to edit a poster on a computer with insufficient RAM and be fast.
+  </p>
+        <p>
+    You can also check what memory requirements your images have. The larger
+    the images, and the number of undo steps, the more resources you need. This
+    is another way to choose a number, but it is only good if you always work
+    with the same kind of images, and thus the real requirements do not vary.
+    It is also helpful to know if you will require more RAM and/or disk space.
+  </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-prefs-dialog.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-prefs-dialog.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-prefs-debugging.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-prefs-dialog.html">6. Diálogo de definições</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-prefs-debugging.html">6.3. Rotulando</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

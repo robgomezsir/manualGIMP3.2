@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.4. Diálogo de texturas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-content.html" title="3. Diálogos relacionados ao conteúdo da imagem" />
+    <link rel="prev" href="gimp-mypaint-brush-dialog.html" title="3.3. Diálogo de pincéis" />
+    <link rel="next" href="gimp-gradient-dialog.html" title="3.5. Diálogo de degradês" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.4. Diálogo de texturas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-mypaint-brush-dialog.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Diálogos relacionados ao conteúdo da imagem</span>
+        <nav> <a accesskey="n" href="gimp-gradient-dialog.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-pattern-dialog"></a>3.4. Diálogo de texturas</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id24375" class="indexterm"></a>
+      <a id="id24378" class="indexterm"></a>
+      <p>No <acronym class="acronym">GIMP</acronym>, uma <span class="emphasis"><em>textura</em></span> é uma imagem pequena usada para preencher áreas com cópias dela mesma colocadas lado a lado. Veja a seção sobre texturas para informação básica sobre <a class="link" href="gimp-concepts-patterns.html" title="7. Texturas">Texturas</a> e como elas podem ser criadas e utilizadas.</p>
+      <p>Você pode usa-las com a ferramenta de <a class="link" href="gimp-tool-bucket-fill.html" title="3.4. Preenchimento com balde">Preenchimento</a> e de <a class="link" href="gimp-tool-clone.html" title="3.12. Clonagem">Clonar</a> e também diretamente com o comando <a class="link" href="gimp-edit-fill-pattern.html" title="3.15. Preencher com textura">Preencher com textura</a>.</p>
+      <p>O diálogo de <span class="quote">“<span class="quote">Texturas</span>”</span> é usado para selecionar uma textura, clicando-se na visão de lista ou de grade; a textura selecionada se torna visível na área de Pincel/textura/Degradê da Caixa de ferramentas (se a  mesma estiver visível). Algumas dezenas  de texturas escolhidas mais ou menos ao acaso acompanham o GIMP, e você pode facilmente adicionar texturas que você mesmo faça.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-pattern-dialog-activate"></a>3.4.1. Ativando o diálogo</h4>
+            </div>
+          </div>
+        </div>
+        <p>O diálogo de <span class="quote">“<span class="quote">Buffers</span>”</span> é um diálogo de encaixe;veja a  seção <a class="xref" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe">Seção 2.3, “Caixas de diálogo e de encaixe”</a> para mais informações sobre como gerenciá-lo.</p>
+        <p>Você pode acessa-lo:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the Toolbox, by clicking on the pattern symbol in the
+          <a class="link" href="gimp-tools.html#gimp-toolbox-indicator-area" title="1.3.2. Brush/Pattern/Gradient Area">Brush/Pattern/Gradient area</a>
+          (if you have checked the
+          <span class="quote">“<span class="quote">Show active brush, pattern and gradient</span>”</span> option in the
+          <a class="link" href="gimp-prefs-toolbox.html" title="6.13. Caixa de ferramentas">toolbox preferences</a>).
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          from the main menu:
+          <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Dialogs</span> → <span class="guimenuitem">Patterns</span>;
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          from the Tab menu in any dockable dialog by clicking the
+          <a class="link" href="menus.html#tab-menus" title="1.3. Menus de Abas">tab menu button</a>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+          </span> and selecting
+          <span class="guimenu">Add Tab</span> → <span class="guimenuitem">Patterns</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>Do diálogo de Opções de ferramenta para as ferramentas<a class="link" href="gimp-tool-clone.html" title="3.12. Clonagem">Clonar</a> e <a class="link" href="gimp-tool-bucket-fill.html" title="3.4. Preenchimento com balde">Preenchimento</a>, clicando no botão usar textura como fonte, e então na miniatura da textura, surge uma lista flutuante com funcionalidade similar ao diálogo, que permite que você escolha uma textura diretamente da lista; Se você clicar no botão com ícone de baldinho no canto inferior direito dessa lista, você abre o diálogo de texturas real. Perceba que, dependendo da configuração de suas Preferências, uma textura selecionada nessa lista pode afetar apenas a ferramenta ativa, sem modificar as outras ferramentas. Veja a seção de <a class="link" href="gimp-prefs-tool-options.html" title="6.7. Opções">Preferências de opções de ferramentas</a> para maiores informações.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-pattern-dialog-using"></a>3.4.2. Usando o diálogo de texturas</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo de Grade/Lista</span>
+            </dt>
+            <dd>
+              <p>No menu de Guias, você pode escolher entre <span class="guimenuitem">Ver como grade</span> e <span class="guimenuitem">Ver como lista</span>. No modo de Grade, as texturas aparecem numa grade retangular, tornando fácil ver muitas de uma vez e encontrar a que você está buscando. No modo de Lista, as texturas ficam numa lista, com os nomes de cada uma ao lado das miniaturas.</p>
+              <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Tip">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Dica]" src="images/tip.png" />
+                    </td>
+                    <th align="left">Dica</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Independente do tamanho real de uma textura, todas são mostradas do mesmo tamanho no diálogo. Isso significa que para texturas grandes, você vê apenas uma pequena parte das mesmas no diálogo, não importa se ele está no modo de grade ou de lista. Para ver a textura inteira, simplesmente clique em uma das miniaturas, e <span class="emphasis"><em>mantenha o botão do mouse apertado</em></span> por um segundo.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>No menu de Guias, a opção <span class="guilabel">Tamanho da pré-visualização</span> permite que você adapte o tamanho das miniaturas de texturas a seu gosto.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="figure">
+                <a id="id3192"></a>
+                <p class="title">
+                  <strong>Figura 15.30. O diálogo de Texturas</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/patterns-dialog-list.png" alt="O diálogo de Texturas" />
+                    <div class="caption">
+                      <p>Visão em lista</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/dialogs/patterns-dialog-grid.png" alt="O diálogo de Texturas" />
+                    <div class="caption">
+                      <p>Modo de grade</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Usando o diálogo de Texturas  (modo de grade)</span>
+                  </dt>
+                  <dd>
+                    <p>No alto, aparece o modo da textura atualmente selecionada, e sua dimensão em pixels.</p>
+                    <p>No centro, aparece a visão em grade de todas as texturas disponíveis, com a textura selecionada em destaque. Clicar em uma delas configura-a como a textura atual do GIMP, e faz com que ela apareça na opção respectiva das ferramentas que usam textura, e na Caixa de ferramentas se a área de Pincel/Textura/Degradê estiver habilitada nas preferências. Você também pode arrastar e soltar uma miniatura de textura diretamente para a janela de imagens para preencher com a textura imediatamente, sem precisar usar a ferramenta de Preenchimento.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Usando o diálogo de Texturas (visão em lista)</span>
+                  </dt>
+                  <dd>
+                    <p>Nessa visão, ao contrário da grade, você vê uma lista de texturas, cada qual rotulada com seu nome e tamanho. Clicar numa linha da lista faz com que aquela textura se torne a textura ativa do GIMP, como no modo de grade.</p>
+                    <p>Se você der um <span class="emphasis"><em>duplo-clique</em></span> no nome de uma textura, você poderá editar seu nome. No entanto, perceba que você só pode renomear texturas que você mesmo tenha adicionado, não as que vem junto com o GIMP. Se você editar um nome que não tenha permissão de alterar, assim que você pressionar Enter ou mudar para outro campo, o nome será revertido para o nome anterior.</p>
+                    <p>Tudo mais na visão em lista funciona da mesma forma que a visão de grade.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Botões</span>
+            </dt>
+            <dd>
+              <p>
+            The button bar at the bottom offers the following functionality:
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-duplicate.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Duplicar paleta</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <a id="gimp-pattern-duplicate"></a>
+                    <p>Pressionar este botão faz uma cópia do padrão atual. Ele terá o mesmo nome do original com <span class="quote">“<span class="quote">cópia</span>”</span> adicionado a ele.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Remover textura</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <a id="gimp-pattern-delete"></a>
+                    <p>Pressionar este botão remove a textura da lista, e faz com que o arquivo que a representa seja apagado do disco. Note que você não pode remover nenhuma das textura que vem junto com o GIMP e estão instaladas na pasta de texturas do sistema (<code class="filename">patterns</code>); Você só pode remover as texturas que você adicionou em pastas onde você tenha permissão para escrever. </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/view-refresh.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Atualizar texturas</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <a id="gimp-pattern-refresh"></a>
+                    <p>Pressionar este botão faz com que o <acronym class="acronym">GIMP</acronym> busque todas as pastas de texturas configuradas nas suas Preferências, adicionando todas as novas texturas que encontrar à lista. Esse botão é útil quando você adiciona novas texturas a uma pasta e quer torna-las disponíveis sem precisar reiniciar o <acronym class="acronym">GIMP</acronym>.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/document-open.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Abrir textura como imagem</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <a id="gimp-pattern-open-as-image"></a>
+                    <p>Se você clicar nesse botão, a textura atual será aberta em uma nova janela de imagens. Assim você pode editá-la. Se você tentar exportá-la de volta, mesmo com um novo nome, é possível que você tenha um erro de <code class="filename">Permissão negada</code>, por que as texturas do sistema em geral ficam em pastas protegidas em que só o administrador do sistema pode escrever. Mas você pode olhar na sessão de Pastas das preferências qual a pasta de texturas da área de usuário, onde você poderá gravar as suas próprias texturas. Qualquer tipo de arquivo de imagem do GIMP pode ser usado como textura - o tipo .pat foi desenvolvido no passado especialmente para isso, mas a única coisa que ele tem a mais é que pode conter um nome de textura diferente do nome do arquivo.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="gimp-pattern-dialog-menu"></a>3.4.2.1. O menu de contexto de Texturas </h5>
+              </div>
+            </div>
+          </div>
+          <a id="id24515" class="indexterm"></a>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Visão geral</span>
+              </dt>
+              <dd>
+                <p>Você pode chegar no menu de contexto de canais clicando com o botão direito numa miniatura de canal. Este menu tem as mesmas opções que estão disponíveis nos botões do diálogo de canais. A única diferença é em relação as opções de transformação em seleção: cada uma tem sua própria opção de menu, enquanto que existe um único botão que se comporta de forma diferente, dependendo das teclas modificadoras que está pressionadas quando ele é clicado.</p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Abrir textura como imagem, </span>
+                      <span class="term">Remover textura, </span>
+                      <span class="term">Atualizar texturas</span>
+                    </dt>
+                    <dd>
+                      <p>Veja <a class="link" href="gimp-path-dialog.html#gimp-path-raise">Subir vetor</a></p>
+                    </dd>
+                    <dt>
+                      <span class="term">Copiar localização da paleta</span>
+                    </dt>
+                    <dd>
+                      <a id="gimp-pattern-copy-location"></a>
+                      <p><span class="guilabel">Copiar localização da definição de ferramenta</span>: este comando copia o caminho completo do arquivo de definição de ferramenta ativo para a área de transferência.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Mostrar no Gerenciador de Arquivos</span>
+                    </dt>
+                    <dd>
+                      <a id="gimp-pattern-show-in-file-manager"></a>
+                      <p><span class="guilabel">Média</span>: O valor da médio do intervalo, no canal selecionado.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-patterns-dialog-tags"></a>3.4.3. Rotulando</h4>
+            </div>
+          </div>
+        </div>
+        <p>Você pode usar rótulos (tags) para reorganizar a exibição de texturas. Veja  <a class="xref" href="gimp-tagging.html" title="3.7. Rotulando">Seção 3.7, “Rotulando”</a>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="clipboard-pattern"></a>3.4.4. A Textura da área de transferência</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id24549" class="indexterm"></a>
+        <a id="id24551" class="indexterm"></a>
+        <p>
+      When you use the Copy or Cut command, a copy appears as a
+      new pattern as the first entry in the Patterns dialog.
+      This pattern will persist until you use the Copy (or Cut) command again.
+      It will disappear when you close GIMP.
+    </p>
+        <div class="figure">
+          <a id="id3193"></a>
+          <p class="title">
+            <strong>Figura 15.31. Uma nova <span class="quote">“<span class="quote">Textura de área de transferência</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/patterns-dialog-clipboard.png" alt="Uma nova “Textura de área de transferência”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        You can save this clipboard pattern with
+        <span class="guimenu">Edit</span> → <span class="guisubmenu">Paste as</span> → <span class="guimenuitem">Paste as New Pattern…</span>
+        as soon as it appears in the Patterns dialog.
+        See <a class="xref" href="gimp-edit-paste-as.html#script-fu-paste-as-pattern" title="3.10.9. Colar como Nova textura">Seção 3.10.9, “Colar como Nova textura”</a>.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-mypaint-brush-dialog.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-content.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-gradient-dialog.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-mypaint-brush-dialog.html">3.3. Diálogo de pincéis</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-gradient-dialog.html">3.5. Diálogo de degradês</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

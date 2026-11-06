@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-12-31 j.h: updte to v2.10
+  2007-12-02 lexa: created initial version
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-lens-distortion">
+  <title>Distorção de lente</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Distorção de lente</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Distorção de lente</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>Distorção de lente</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-lens-distortion.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Esse filtro permite que você simule, ou então corrija, o efeito típico de distorção introduzido em imagens fotográficas pelas lentes das câmeras.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Lens Distortion…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de <quote>Distorção de lente</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/lens_distortion-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Todas as opções podem variar de -100.0 até mais 100.0</para>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Principal</term>
+        <listitem>
+          <para>A quantidade de correção esférica a introduzir. Valores positivos deixam a imagem convexa, enquanto que valores negativos deixam-na côncava. O efeito total é similar a usar a imagem como estampa em uma esfera, do lado de dentro, ou do lado de fora.</para>
+          <figure>
+            <title>Resultados de exemplo da opção Principal</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-main-low.png"/>
+              </imageobject>
+              <caption>
+                <para>-100.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-original.png"/>
+              </imageobject>
+              <caption>
+                <para>0.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-main-high.png"/>
+              </imageobject>
+              <caption>
+                <para>+100.0</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Bordas</term>
+        <listitem>
+          <para>Especifica a quantidade de correção esférica nas bordas da imagem.</para>
+          <figure>
+            <title>Resultados de exemplo da opção Bordas (Principal configurado para 50.0)</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-edge-low.png"/>
+              </imageobject>
+              <caption>
+                <para>-60.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-original.png"/>
+              </imageobject>
+              <caption>
+                <para>0.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-edge-high.png"/>
+              </imageobject>
+              <caption>
+                <para>+60.0</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Zoom</term>
+        <listitem>
+          <para>Especifica a quantidade de ampliação ou redução da imagem causada pela lente hipotética.</para>
+          <figure>
+            <title>Resultado de exemplo da opção Zoom</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-zoom-low.png"/>
+              </imageobject>
+              <caption>
+                <para>-100.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-original.png"/>
+              </imageobject>
+              <caption>
+                <para>0.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-zoom-high.png"/>
+              </imageobject>
+              <caption>
+                <para>+100.0</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Shift X</term>
+        <term>Shift Y</term>
+        <listitem>
+          <para>Esta opção especifica o desvio da imagem produzido por pares de lentes que não estejam perfeitamente centrados.</para>
+          <para>Da mesma forma que acima, esta opção só produz resultados visíveis se as opções <guilabel>Principal</guilabel> ou <guilabel>Bordas</guilabel> forem diferentes de zero.</para>
+          <figure>
+            <title>Example result of Shift X option (Main set to 70.0)</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-xshift-low.png"/>
+              </imageobject>
+              <caption>
+                <para>-100.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-original.png"/>
+              </imageobject>
+              <caption>
+                <para>0.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-xshift-high.png"/>
+              </imageobject>
+              <caption>
+                <para>+100.0</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Clarear</term>
+        <listitem>
+          <para>A quantidade de <quote>efeito de vinheta</quote>: a luminosidade aumenta ou diminui devido a curvatura da lente, que resulta em uma absorção diferente da luz longe do centro.</para>
+          <para>As opções <guilabel>Principal</guilabel> ou <guilabel>Bordas</guilabel> devem ser diferentes de zero para que esta opção tenha algum resultado perceptível.</para>
+          <figure>
+            <title>Example result of the Brighten option (Main set to 75.0)</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-brighten-low.png"/>
+              </imageobject>
+              <caption>
+                <para>-25.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-original.png"/>
+              </imageobject>
+              <caption>
+                <para>0.0</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/lensdistortion-brighten-high.png"/>
+              </imageobject>
+              <caption>
+                <para>+25.0</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Background color</term>
+        <listitem>
+          <para>
+            The part of the active layer outside the lens will have the
+            background color selected here.
+          </para>
+          <para>
+            You can select the color:
+            <itemizedlist>
+              <listitem>
+                <para>
+                  Click on the color button to open the color selector dialog.
+                </para>
+              </listitem>
+              <listitem>
+                <para>
+                  Click on the eye-drop button on the right to pick a color
+                  from the image.
+                </para>
+              </listitem>
+            </itemizedlist>
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

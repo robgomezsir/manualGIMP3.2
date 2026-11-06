@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-03 j.h: no change for v2.10
+-->
+<sect2 id="plug-in-gflare">
+  <title>Clarão em degradê</title>
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Luz e sombra</secondary>
+    <tertiary>Clarão em degradê</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Clarão em degradê</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro de Clarão em degradê</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/light-taj-gflare.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O efeito Clarão em degradê lembra o que acontece quando você tira uma uma fotografia apontando para uma fonte de luz ofuscante, com um halo e radiações em torno da fonte. A imagem do clarão em degradê  tem três componentes: <emphasis>Luminescência</emphasis>, que é a grande bola de luz central, <emphasis>Raios</emphasis> e <emphasis>clarões secundários</emphasis></para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Light and Shadow</guisubmenu>
+        <guimenuitem>Gradient Flare…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <para>A guia de <emphasis>Configurações</emphasis> permite definir alguns parâmetros de tamanho, direção e posicionamento do clarão enquanto que a guia <emphasis>Seletor</emphasis> permite que você escolha parâmetros pré-configurados em uma lista, e edite vários outros parâmetros para alterar as características dos efeitos de luz criados.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Pré-visualização</term>
+        <listitem>
+          <para>Quando a <guilabel>atualização automática da pré-visualização</guilabel> estiver marcada, os resultados de parametrização são exibidos interativamente na pré-visualização, sem modificar a imagem até que você clique no botão de <guilabel>OK</guilabel>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <sect4>
+      <title>Configurações</title>
+      <figure>
+        <title>Opções para o filtro <quote>Clarão em degradê</quote> (configurações) </title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/gflare-options-1.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Centro</term>
+          <listitem>
+            <para>
+              You can set the <guilabel>X</guilabel> and <guilabel>Y</guilabel>
+              (pixels) coordinates using the input box or by
+              clicking in the preview. The coordinate origin is
+              at the upper left corner.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Parâmetros</term>
+          <listitem>
+            <variablelist>
+              <varlistentry>
+                <term>Raio</term>
+              <listitem>
+                <para>O raio do efeito. O controle deslizante limita a faixa de valores possíveis, mas usando a caixa de entrada, você pode inserir valores maiores.</para>
+              </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Rotação</term>
+                <listitem>
+                  <para>Rotaciona o efeito central - a luminescência e os raios</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Rotação de matiz</term>
+                <listitem>
+                  <para>Altera o matiz (tonalidade de cor) do efeito como um todo</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Ângulo do vetor</term>
+                <listitem>
+                  <para>Rotaciona o eixo dos clarões secundários</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Comprimento do vetor</term>
+                <listitem>
+                  <para>Varia o alcance dos clarões secundários</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Super-amostragem adaptativa</term>
+          <listitem>
+            <para>
+              When enabled, adaptive supersampling, an anti-aliasing technique,
+              is used when rendering the image. See
+              <xref linkend="glossary-supersampling"/> for more information.
+            </para>
+            <para>
+              Enabling this setting activates the following options that
+              can be used to adjust the supersampling.
+            </para>
+            <variablelist>
+              <varlistentry>
+                <term>Max depth</term>
+                <listitem>
+                  <para>
+                    Specifies the maximum depth for supersampling. This
+                    determines the number of samples used. Higher values
+                    may produce better results, but can potentially slow down
+                    the computation.
+                  </para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Threshold</term>
+                <listitem>
+                  <para>
+                    Specifies the lower threshold of pixel difference that stops
+                    supersampling.
+                  </para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Seletor</title>
+      <figure>
+        <title>Opções do filtro <quote>Clarão em degradê</quote> (Seletor)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/gflare-options-2.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>A guia Seletor permite que você selecione um padrão de clarão em degradê, podendo também mudá-lo e salvá-lo.</para>
+      <variablelist>
+        <varlistentry>
+          <term>Novo</term>
+          <listitem>
+            <para>Ao clicar neste botão, você cria um novo padrão de Clarão em degradê. Dê-lhe um nome de sua escolha.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Editar</term>
+          <listitem>
+            <para>Este botão abre o <link linkend="plug-in-gflare-editor">Editor de clarão em degradê</link> (veja abaixo).</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Copiar</term>
+          <listitem>
+            <para>Este botão permite duplicar o padrão de clarão em degradê selecionado.Você pode editar a cópia sem alterar o original.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Excluir</term>
+          <listitem>
+            <para>Este botão exclui o padrão de Clarão em degradê selecionado (só funciona para os padrões criados pelo usuário. Os que vem junto com o GIMP podem ser excluídos)</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+
+  <sect3 id="plug-in-gflare-editor">
+    <title>Editor de clarão em degradê.</title>
+    <para>O editor de clarão em degradê também é organizado em guias:</para>
+
+    <sect4 id="plug-in-gflare-editor-general">
+      <title>Geral</title>
+      <figure>
+        <title>Opções do <quote>Editor do clarão em degradê</quote> (Geral)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/gflare-editor-1.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Opções de pintura da luminescência</term>
+          <listitem>
+            <variablelist>
+              <varlistentry>
+                <term>Opacidade</term>
+                <listitem>
+                  <para>Controles que permitem que você reduza a opacidade da luminescência (0-100).</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Modo de Pintura</term>
+                <listitem>
+                  <para>Você pode escolher entre quatro modos:</para>
+                  <variablelist>
+                    <varlistentry>
+                      <term>Normal</term>
+                      <listitem>
+                        <para>Neste modo, o brilho cobre a imagem sem levar em conta o que está por baixo.</para>
+                      </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                      <term>Adição</term>
+                      <listitem>
+                        <para>Valores RGB da luminescência são adicionados aos valores RGB dos pixels correspondentes na imagem. As cores ficam mais claras e podem aparecer áreas brancas.</para>
+                      </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                      <term>Superposição</term>
+                      <listitem>
+                        <para>(modo de combinação Sobrepor) as áreas de claro e escuro da luminescência vão intensificar as áreas correspondentes de claro e escuro da imagem.</para>
+                      </listitem>
+                    </varlistentry>
+                    <varlistentry>
+                      <term>Tela</term>
+                      <listitem>
+                        <para>(modo de combinação ocultar) As áreas escuras da imagem são iluminadas pelas áreas claras correspondentes da luminescência.  Imagine dois projetores iluminando a mesma tela.</para>
+                      </listitem>
+                    </varlistentry>
+                  </variablelist>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Opções de pintura de raios</term>
+          <listitem>
+            <para>As opções são as mesmas que para <guilabel>Opções de pintura da luminescência</guilabel>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Opções de pintura de clarões secundários</term>
+          <listitem>
+            <para>As opções são as mesmas que para <guilabel>Opções de pintura da luminescência</guilabel>.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4 id="plug-in-gflare-editor-glow">
+      <title>Luminescência</title>
+      <figure>
+        <title>Opções do <quote>Editor do clarão em degradê</quote> (Luminescência)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/gflare-editor-2.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Degradês</term>
+          <listitem>
+            <variablelist>
+              <para>Ao clicar nos botões de seleção, você pode visualizar lver uma longa lista de degradês. Degradês começando com <quote>%</quote> são específicos do editor deste plug-in. Os demais são os degradês normais do GIMP, disponíveis no diálogo de Degradês.</para>
+              <varlistentry>
+                <term>Degradê radial</term>
+                <listitem>
+                  <para>O degradê selecionado é desenhado radialmente, do centro para a borda. São as áreas de transparência nesse degradê que determinam a forma principal da luminescência do clarão.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Degradê angular:</term>
+                <listitem>
+                  <para>O degradê selecionado desenvolve-se em torno do centro, no sentido anti-horário (a partir da posião de três horas se o parâemtro de <guilabel>Rotação</guilabel>  for 0). Os degradês radial e angular são combinados com o modo de combinação <quote>Multiplicar</quote>: as áreas claras são reforçadas e as cores são misturadas de acordo com o sistema de cores CMYK (o da sua impressora). Qualquer área preta (valor zero) deixa tudo como preto.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Degradê de tamanho ângular</term>
+                <listitem>
+                  <para>Este é um degradê do tamanho do raio que se desenvolve angularmente. O raio da luminescência em cada direção é controlado de acordo com a luminosidade do degradê: se a luminosidade é zero (preto), o raio é de 0%. Se a luminosidade é de 100% (branco), o raio é também de 100%. Portanto, se você desejar um clarão simétrico, deve usar um degradê que passe várias vezes pela mesma cor (como o <quote>Four bars</quote>)</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Parâmetros</term>
+          <listitem>
+            <variablelist>
+              <varlistentry>
+                <term>Tamanho (%)</term>
+              <listitem>
+                <!--FIXME: percent of what?-->
+                <para>Tamanho da luminescência em porcentagem (0-200).</para>
+              </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Rotação</term>
+              <listitem>
+                <para>Define a origem do degradê angular (de -180° até +180°).</para>
+              </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Rotação de matiz</term>
+              <listitem>
+                <para>
+                  Sets glow color, according to the HSV color wheel (-180
+                  +180). (Cf. <link linkend="gimp-colorselector-triangle">The
+                  triangle color selector</link>.)
+                </para>
+              </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4 id="plug-in-gflare-editor-rays">
+      <title>Raios</title>
+      <figure>
+        <title>Opções do <quote>Editor do clarão em degradê</quote> (Raios)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/gflare-editor-3.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Degradês</term>
+          <listitem>
+            <para>As opções são as mesmas que para <link linkend="plug-in-gflare-editor-glow">Luminescência</link>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Parâmetros</term>
+          <listitem>
+            <variablelist>
+              <para>As três primeiras opções são as mesmas que na <link linkend="plug-in-gflare-editor-glow">Luminescência</link>. Há duas novas opções:</para>
+              <varlistentry>
+                <term>Nº de pontas:</term>
+                <listitem>
+                  <para>Esta opção determina o número de pontas (de 1 a 300), mas também a sua textura.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Espessura das pontas</term>
+                <listitem>
+                  <para>Quanto mais largas as pontas (1 até 100), mais eles se parecerão com pétalas de flores.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4 id="plug-in-gflare-editor-secondflares">
+      <title>Clarões secundários</title>
+      <figure>
+        <title>Opções do <quote>Editor do clarão em degradê</quote> (Clarões secundários)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/gflare-editor-4.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Degradês</term>
+          <listitem>
+            <para>As opções são as mesmas que para <link linkend="plug-in-gflare-editor-glow">Luminescência</link>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Parâmetros</term>
+          <listitem>
+            <para>As opções são as mesmas que para <link linkend="plug-in-gflare-editor-glow">Luminescência</link>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Forma dos clarões secundários</term>
+          <listitem>
+            <para>Os clarões secundários, que ficam como satélites do brilho principal, podem ter dois tipos de forma: <guilabel>Círculo</guilabel> e <guilabel>Polígono</guilabel>. Você pode selecionar o <emphasis>Número</emphasis> de lados do polígono.  Você pode colocar 1 lado (o filtro desenha uma linha), mas não 2.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Semente aleatória</term>
+          <term>New Seed</term>
+          <listitem>
+            <para>
+              This option controls the randomness of the filter.
+              The <guilabel>Random seed</guilabel> box lets you manually enter
+              a seed for the randomization algorithm used. You can also generate
+              a random seed by pressing the <guibutton>New Seed</guibutton>
+              button. If the same random seed is used in the same situation,
+              the filter produces exactly the same results. A different random
+              seed produces different results.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Randomizar</term>
+          <listitem>
+            <para>Ao clicar neste botão, você produz uma semente aleatória que será usada pelo gerador aleatório. É diferente a cada vez.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+</sect2>

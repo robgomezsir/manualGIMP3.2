@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-05-26 ude: changed (help-)id (old: gimp-image-canvas-size)
+  2009-03-25 j.h: fixed bug #576230
+  2007-11-14 j.h: updated to v2.4. Layers option and examples added.
+  2007-09-25 AntI: Added 'es'
+  2006-07-28 scb: revised 'en'
+  2006-02-25 fixed invalid image reference
+-->
+<sect2 id="gimp-image-resize">
+  <title>Tamanho da tela de pintura</title>
+
+  <indexterm>
+    <primary>Imagem</primary>
+    <secondary>Tamanho da tela de pintura</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Tela de pintura</primary>
+    <secondary>Tamanho</secondary>
+  </indexterm>
+
+  <para>
+    The <quote>canvas</quote> is the visible area of the image. By default
+    the size of the canvas coincides with the size of the layers. The
+    <guimenuitem>Canvas Size…</guimenuitem> command opens the <quote>Set
+    Image Canvas Size</quote> dialog that lets you enlarge or
+    reduce the canvas size. You can, if you want, modify the size of the
+    layers. When you enlarge the canvas, you create free space around
+    the contents of the image. When you reduce it, the visible area is
+    cropped, however the layers still extend beyond the canvas border.
+  </para>
+  <para>Quando você reduz o tamanho da tela, a nova tela de pintura aparece contornada por uma fina linha na pre-visualização. O ponteiro do mouse é uma cruz de mover: você pode clicar e arrastar para posicionar o conteúdo da imagem original nesta moldura.</para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Image</guimenu>
+        <guimenuitem>Canvas Size…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Description of the <quote>Set Image Canvas Size</quote> dialog</title>
+    <figure>
+      <title>The <quote>Set Image Canvas Size</quote> dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/canvas-size.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <title>Tamanho da tela de pintura</title>
+      <varlistentry>
+        <term>Width</term>
+        <term>Height</term>
+        <listitem>
+          <para>
+            You can set the <guilabel>Width</guilabel> and the
+            <guilabel>Height</guilabel> of the canvas. The default
+            units are pixels but you can choose different units, e.g.
+            percent, if you want to set the new dimensions relative to the
+            current dimensions. If the
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-vchain.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Chain to the right of the Width and
+            Height is not broken, both Width and Height keep the same
+            relative size to each other. That is, if you change one of the
+            values, the other one also changes a corresponding amount.
+            If you break the Chain by clicking on it, you can set
+            Width and Height separately.
+          </para>
+          <para>Para qualquer unidade que você escolher, a informação sobre o tamanho em pixels, e a resolução atual da imagem sempre aparecem abaixo dos campos de <emphasis>Largura</emphasis> e <emphasis>Altura</emphasis>. Você não pode mudar a resolução no diálogo de <quote>Ajusta tamanho da tela de imagem</quote>; se desejar fazer isso, use o diálogo de <link linkend="gimp-image-print-size">Tamanho para impressão</link>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Deslocamento</title>
+      <para>Os valores de <guilabel>deslocamento</guilabel> são usados para posicionar a imagem (a imagem toda, não só a camada ativa) na tela de pintura. Você pode ver o tamanho e o conteúdo da tela de pintura na pré-visualização na janela de diálogo. Quando a nova tela de pintura for menor do que o conteúdo da imagem toda, a pré-visualização  exibe os limites como uma moldura com uma borda fina.</para>
+      <varlistentry>
+        <term>X</term>
+        <term>Y</term>
+        <listitem>
+          <para>Os campos <guilabel>X</guilabel> e <guilabel>Y</guilabel> especificam as coordenadas relativas ao canto superior esquerdo da imagem relativamente ao canto da tela de pintura. Eles serão negativos se a tela de pintura for menor que a imagem. Você pode posicionar a imagem de diferentes forma (claro, as coordenadas não podem ultrapassar as bordas da tela de pintura): <itemizedlist>
+              <listitem>
+                <para>por clicar e arrastar a imagem</para>
+              </listitem>
+              <listitem>
+                <para>por digitar valores nas caixas de texto de <guilabel>X</guilabel> e <guilabel>Y</guilabel>,</para>
+              </listitem>
+              <listitem>
+                <para>por clicar nas setinhas. Isso incrementa ou decrementa o valor em um pixel (unidade)</para>
+              </listitem>
+              <listitem>
+                <para>Quando o foco estiver numa caixa de texto, você pode usar as setas <keycap>Cima</keycap> e <keycap>Baixo</keycap>  do teclado para ajustar o valor em um pixel (unidade), ou <keycap>PageUp</keycap> e <keycap>PageDown</keycap> para mudar o valor por 10 pixels (unidades).</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Camadas</term>
+        <listitem>
+          <itemizedlist>
+            <listitem>
+              <para>
+                <guilabel>Resize layers</guilabel>: this drop-down list
+                offers you several possibilities:
+                <itemizedlist>
+                  <listitem>
+                    <para><guilabel>Nenhum</guilabel>:  opção padrão. Nenhuma camada muda de tamanho, somente a tela de pintura.</para>
+                  </listitem>
+                  <listitem>
+                    <para><guilabel>Todas as camadas</guilabel>: todas as camadas são redimensionadas para o tamanho da tela de pintura. </para>
+                  </listitem>
+                  <listitem>
+                    <para><guilabel>Camadas do tamanho da imagem</guilabel>: apenas as camadas com o mesmo tamanho da imagem são redimensionadas para o tamanho da tela de pintura.</para>
+                  </listitem>
+                  <listitem>
+                    <para>
+                      <guilabel>All visible layers</guilabel>: only visible
+                      layers, marked with a
+                      <guiicon>
+                        <inlinemediaobject>
+                          <imageobject>
+                            <imagedata fileref="images/stock-icons/gimp-visible.svg" contentwidth="16px"/>
+                          </imageobject>
+                        </inlinemediaobject>
+                      </guiicon>
+                      icon, in the Layers dialog, are sized to canvas size.
+                    </para>
+                  </listitem>
+                </itemizedlist>
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <guilabel>Fill with</guilabel>: you can fill resized layers with
+                <guilabel>Foreground color</guilabel>,
+                <guilabel>Background color</guilabel>,
+                <guilabel>Middle Gray (CIELAB)</guilabel>,
+                <guilabel>White</guilabel>,
+                <guilabel>Transparency</guilabel> (default),
+                <guilabel>Pattern</guilabel>.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <guilabel>Resize text layers</guilabel>: Resizing text layers will
+                make them uneditable.
+              </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Centralizar</term>
+        <listitem>
+          <para>O botão <guilabel>Centralizar</guilabel>  permite que você centralize a imagem na tela de pintura. Ao clicar no botão Centralizar, os valores de deslocamento são calculados automaticamente e exibidos nos campos respectivos.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <note>
+      <para>Quando você clicar no botão <guilabel>Mudar tamanho</guilabel>, o tamanho da tela de pintura será alterado, mas as informações de pixel e a resolução da imagem permanecem inalterados.</para>
+      <para>
+        If the layers of the image did not extend beyond the borders of
+        the canvas before you changed its size, there are
+        no layers on the part of the canvas that was added by resizing it.
+        Therefore, this part of the canvas is transparent and displayed
+        with a checkered pattern, and it is not immediately available for
+        painting. You can either
+        <link linkend="gimp-image-flatten">flatten</link>
+        the image, in which case you will get an image with a single layer
+        that fits the canvas exactly, or you can use the
+        <link linkend="gimp-layer-resize-to-image">Layers to Image Size</link>
+        command to resize only the active layer, without changing any other
+        layers. You can also create a new layer and fill it with the
+        background you want. By doing this, you create a
+        digital <quote>passe-partout</quote> (a kind of glass mount
+        with a removable back for slipping in a photograph).
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Exemplo</title>
+    <figure>
+      <title>Imagem original</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/canvas-size-ex1-example.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            The background color in the
+            <link linkend="gimp-toolbox-color-area">Foreground/Background Colors
+            area of the Toolbox</link> is set to yellow; Original image with
+            100×100 pixels size.
+          </para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/canvas-size-ex1-dialog.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            We started with a green background layer 100×100 pixels. Then we
+            added a new red layer 80×80 pixels. The active layer limits are
+            marked with a black and yellow dotted line. The red layer does not
+            fill the canvas completely: the unoccupied part is transparent.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Tela de pintura aumentada (camadas sem modificação)</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/canvas-size-ex2-example.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            The canvas has been enlarged to 120×120 pixels. The unoccupied
+            part of the canvas is transparent.
+          </para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/canvas-size-ex2-dialog.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            The layers size remained unchanged.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Tela de pintura aumentada (todas as camadas alteradas)</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/canvas-size-ex3-example.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            The canvas has been enlarged to 120×120 pixels. The undrawn part is
+            transparent in the red layer and yellow (background color in
+            Toolbox) in the green background layer.
+          </para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/canvas-size-ex3-dialog.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            All layers have been enlarged to the canvas size.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+
+  <sect3>
+    <title>Para que o Tamanho da Tela de Pintura é útil?</title>
+    <para>Você pode querer adicionar  mais elementos em volta de sua imagem: aumentar o tamanho da tela de pintura e adicionar uma nova camada com o tamanho da nova tela, e então pintar nessa nova camada. É a operação inversa de cortar a imagem</para>
+
+    <para>Você também pode usar este comando para cortar uma imagem:</para>
+    <figure>
+      <title>Mudando o tamanho da tela</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/canvas-size-ex4.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      Click on the
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/gimp-vchain.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      chain next to Width and Height entries to unlink
+      dimensions. By modifying these dimensions and moving image against
+      canvas, by trial and error, you can crop the part of the image you
+      want. Click on the Center button and then on the Resize button.
+    </para>
+    <figure>
+      <title>Imagem cortada</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/canvas-size-ex5.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <note>
+      <para>Claro que a <link linkend="gimp-tool-crop">Ferramenta de cortar</link> é mais fácil de usar.</para>
+      <!--TODO: so "to crop an image" is not the answer?!-->
+    </note>
+  </sect3>
+</sect2>

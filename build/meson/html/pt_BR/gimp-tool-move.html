@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.3. Mover</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-transform.html" title="4. Ferramentas de transformação" />
+    <link rel="prev" href="gimp-tool-align.html" title="4.2. Distribuir" />
+    <link rel="next" href="gimp-tool-crop.html" title="4.4. Cortar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.3. Mover</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-align.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. Ferramentas de transformação</span>
+        <nav> <a accesskey="n" href="gimp-tool-crop.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-move"></a>4.3. Mover</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id19125" class="indexterm"></a>
+      <a id="id19128" class="indexterm"></a>
+      <p>A ferramenta de Mover é usada para mover camadas, seleções, vetores guias e outros itens na imagem. Ela também funciona em textos.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3041"></a>4.3.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagens, em:<span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de transformação</span> → <span class="guimenuitem">Mover</span></p>
+            </li>
+            <li class="listitem">
+              <p>Ao clicar no ícone da ferramenta: <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-move.svg" width="16" /></span>
+          </span> na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>Ou usando o atalho de teclado <span class="keycap"><strong>Q</strong></span>.</p>
+            </li>
+            <li class="listitem">
+              <p>A ferramenta de Mover é ativada automaticamente quando você cria uma guia.</p>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <a id="id19152" class="indexterm"></a>
+                      <p>
+            If the function of the <span class="keycap"><strong>Space</strong></span> bar is set to
+            <span class="guilabel">Activate the Move tool</span> (which is not the
+            default, but can be changed in your Preferences, see below), then
+            holding down the <span class="keycap"><strong>Space</strong></span> bar temporarily changes the
+            active tool to Move. The Move tool remains active as long as
+            the space bar is held down. The original tool is reactivated
+            after releasing the space bar.
+          </p>
+                      <p>Pressionar a barra de  <span class="keycap"><strong>espaço</strong></span> muda  temporariamente a ferramenta ativa para a ferramenta de mover, voltando à ferramenta anterior em seguida. Para isso, em <span class="guimenu">Editar</span> → <span class="guisubmenu">Preferências</span> → <span class="guisubmenu">Janelas de imagem</span>a opção de <span class="quote">“<span class="quote">Enquanto a barra de espaço estiver pressionada</span>”</span> tem que estar configurada para <span class="quote">“<span class="quote">Mudar para a ferramenta de Mover</span>”</span>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3042"></a>4.3.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3043"></a>
+          <p class="title">
+            <strong>Figura 14.99. Opções de ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-move.png" alt="Opções de ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Mover</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções estão descritas em <a class="link" href="gimp-tools-transform.html#gimp-tool-transform" title="4.1. Funcionalidades em comum">Opções em comum das ferramentas de transformação</a></p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <p>Tenham em mente que essas opções continuam valendo se você sai da ferramenta de Mover.</p>
+            </dd>
+            <dt>
+              <span class="term">Modo da ferramenta (Shift)</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <p class="title">
+                  <strong>
+              
+              <span class="phrase">Se a opção Mover está em <span class="quote">“<span class="quote">Camada</span>”</span></span>
+              <span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/gimp-layer.svg" width="16" /></span>
+              </span>
+            </strong>
+                </p>
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Pegue uma camada ou guia</span>
+                  </dt>
+                  <dd>
+                    <p>Em uma imagem com várias camadas, o ponteiro do mouse vira uma cruz quando ele passa sobre um elemento pertencente à camada ativa. Nesse ponto você pode clicar e arrastá-la. Se o ponteiro do mouse tem o formato de uma mão (mostrando que você <span class="emphasis"><em>não</em></span> vai pegar um elemento da camada ativa), você irá mover uma outra camada, em vez da que está ativa. (Ela se torna a camada ativa enquanto estiver sendo movida).</p>
+                    <p>Se existe uma guia na sua imagem, ela se tornará vermelha quando o ponteiro do mouse passar por cima dela. Nesse momento ela está ativa, e você poderá move-la.</p>
+                    <p>
+                  At the point of intersection of two guides, you can 
+                  click-and-drag to move them together. This is useful when the 
+                  guides are used to mark a point, rather than a pair of lines 
+                  (e.g, as is the case for the mandala symmetry guides, which 
+                  mark the symmetry point of origin).
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Mover a camada atual</span>
+                  </dt>
+                  <dd>
+                    <p>Somente a camada atual (a que está ativa) será movida. Isso é útil quando você quer mover uma camada com áreas transparentes, (por exemplo com texto), em que seria fácil clicar em uma camada errada. Também é a forma de se mover um grupo de camadas -  o outro modo da ferramenta move camadas individualmente, dentro do grupo.</p>
+                    <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Note">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Nota]" src="images/note.png" />
+                          </td>
+                          <th align="left">Nota</th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>Você pode configurar o método padrão de interpolação na guia de <a class="link" href="gimp-prefs-tool-options.html" title="6.7. Opções">Opções de Ferramentas</a> do diálogo de Preferências.</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+              <div class="variablelist">
+                <p class="title">
+                  <strong>
+              
+              <span class="phrase">Se a opção de Mover está em <span class="quote">“<span class="quote">Seleção</span>”</span></span>
+              <span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/gimp-selection.svg" width="16" /></span>
+              </span>
+            </strong>
+                </p>
+                <p>A linha pontilhada da seleção será movida (veja <a class="xref" href="gimp-using-selections.html#gimp-using-selections-moving" title="2.1. Movendo uma seleção">Seção 2.1, “Movendo uma seleção”</a>).</p>
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term"></span>
+                  </dt>
+                  <dd>
+                    <p></p>
+                  </dd>
+                </dl>
+              </div>
+              <div class="variablelist">
+                <p class="title">
+                  <strong>
+              
+              <span class="phrase">Se a opção mover estiver em <span class="quote">“<span class="quote">Vetor</span>”</span></span>
+              <span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/gimp-path.svg" width="16" /></span>
+              </span>
+            </strong>
+                </p>
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Pegar um vetor</span>
+                  </dt>
+                  <dd>
+                    <p>Esta é a opção padrão. O ponteiro do mouse se torna uma pequena mão quando ele está sobre um <a class="link" href="gimp-path-dialog.html#gimp-path-dialog-using" title="2.3.2. Using the Paths Dialog">vetor visível</a>. Então você pode move-lo clicando e arrastando o mesmo na imagem (ele será o vetor ativo enquanto estiver sendo movido)</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Mover o vetor ativo</span>
+                  </dt>
+                  <dd>
+                    <p>Somente o vetor ativo será movido, mesmo que ele não seja visível. Você pode escolher o vetor ativo no <a class="link" href="gimp-path-dialog.html" title="2.3. Diálogo de vetores">Diálogo de vetores</a></p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3044"></a>4.3.3. Sumário das ações da ferramenta Mover</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Movendo uma seleção</span>
+            </dt>
+            <dd>
+              <p>A ferramenta de mover permite que você mova apenas o contorno da seleção (internamente, todos os valores representando a máscara de seleção). Se o modo de Mover estiver em <span class="quote">“<span class="quote">Camada</span>”</span>, você deve manter as teclas <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span> pressionadas.</p>
+              <p>Se o modo de Mover for Seleção, você pode clicar e arrastar em qualquer ponto na tela de pintura para mover a seleção. Você também poderá usar as teclas seta para mover a seleção com precisão. E então, se mantiver a tecla <span class="keycap"><strong>Shift</strong></span> pressionada, o movimento ocorre em incrementos de 25 pixels.</p>
+              <p>Quando você move uma seleção com a ferramenta Mover, o centro da seleção é marcado com uma pequena cruz. Tanto essa cruz quanto as bordas da seleção são atraídas para guias ou linhas da grade, se as opções de <span class="guimenu">Visualizar</span> → <span class="guimenuitem">Atrair para as guias (ou grade)</span> estiverem ligadas. Isso faz com que alinhar seleções seja mais fácil.</p>
+              <p>Consulte <a class="link" href="gimp-using-selections.html#gimp-using-selections-moving" title="2.1. Movendo uma seleção">Movendo seleções</a> para outras possibilidades.</p>
+            </dd>
+            <dt>
+              <span class="term">Movendo uma camada</span>
+            </dt>
+            <dd>
+              <a id="id19262" class="indexterm"></a>
+              <p>O modo de Mover deve estar em <span class="quote">“<span class="quote">Camada</span>”</span>. Então você pode escolher entre <span class="guilabel">Mover a camada ativa</span> e, se você tiver mais de uma camada <span class="guilabel">Pegue uma camada ou guia</span></p>
+            </dd>
+            <dt>
+              <span class="term">Movendo camadas vinculadas</span>
+            </dt>
+            <dd>
+              <p>Se as camadas estiverem vinculadas (com o ícone de corrente, não em um mesmo grupo de camadas), todas serão movidas, não importando qual é a camada ativa. Para camadas no mesmo grupo, o grupo deve estar ativo no diálogo de camadas, e a ferramenta de Mover deve usar o modo de <span class="quote">“<span class="quote">Mover a camada atual</span>”</span></p>
+            </dd>
+            <dt>
+              <span class="term">Movendo uma guia</span>
+            </dt>
+            <dd>
+              <a id="id19277" class="indexterm"></a>
+              <p>Quando você puxa uma guia de uma régua, a ferramenta de Mover é ativada automaticamente (se você não desejar esse efeito, por estar pintando próximo das bordas da janela com outra ferramenta, a solução é desligar temporariamente a visualização das réguas no menu <span class="quote">“<span class="quote">Visualizar</span>”</span>). Se a guia já existe na imagem, para move-la, você deve ativar a ferramenta de mover você mesmo. Quando o ponteiro do mouse passa sobre uma guia, ela fica vermelha, então você pode clicar e arrastar para posicionar a guia na imagem, ou remove-la (bastando move-la para fora da área da tela de pintura).</p>
+            </dd>
+            <dt>
+              <span class="term">Movendo um vetor</span>
+            </dt>
+            <dd>
+              <a id="id19285" class="indexterm"></a>
+              <p>O diálogo da ferramenta de vetores tem sua própria funcionalidade de mover: veja  <a class="xref" href="gimp-tool-path.html" title="5.2. Vetores">Seção 5.2, “Vetores”</a>. Mas você também pode usar a ferramenta de Mover. O modo de Mover deve estar marcado como <span class="quote">“<span class="quote">Vetor</span>”</span>. Note que se você estava editando um vetor, ele fica invisível: torne o visível no Diálogo de vetores. Você pode escolher o vetor a ser movido, ou mover o vetor ativo.</p>
+            </dd>
+            <dt>
+              <span class="term">Movendo texto</span>
+            </dt>
+            <dd>
+              <a id="id19294" class="indexterm"></a>
+              <p>Todo texto criado no GIMP fica em sua própria camada, e pode ser movido como uma camada. Consulte <a class="xref" href="gimp-tool-text.html" title="5.3. Texto">Seção 5.3, “Texto”</a>.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-align.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-transform.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-crop.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-align.html">4.2. Distribuir</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-crop.html">4.4. Cortar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

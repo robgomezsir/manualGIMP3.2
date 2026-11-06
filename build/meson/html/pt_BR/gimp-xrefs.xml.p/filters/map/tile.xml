@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-03-03 j.h: check for v2.10
+  2005-10-24 created en;fr by julien hardelin
+-->
+<sect2 id="plug-in-tile">
+  <title>Mosaico</title>
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Mapeamento</secondary>
+    <tertiary>Mosaico</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Mosaico</primary>
+  </indexterm>
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>A mesma imagem, antes e depois de aplicar o filtro de Mosaico</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/2zinnias.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/map-tile.png"/>
+        </imageobject>
+        <caption>
+          <para>(Nós reduzimos o tamanho da imagem de propósito)</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro faz várias cópias da imagem original, do mesmo tamanho, ou de um tamanho reduzido, para uma nova imagem, maior. Em inglês, o nome desse filtro é <quote>Tile</quote>.Note que ele é bem diferente do filtro de Mosaico que está no menu <menuchoice><guimenu>Filtros</guimenu><guimenuitem>Distorções</guimenuitem></menuchoice></para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Map</guisubmenu>
+        <guimenuitem>Tile…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções para o filtro <quote>Mosaico</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/map/tile.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <title>Criar mosaico em um novo tamanho</title>
+      <varlistentry>
+        <term>New width</term>
+        <term>New height</term>
+        <listitem>
+          <para>
+            Input boxes and their arrow-heads allow you to enter the
+            dimensions for the new image.
+          </para>
+          <para><emphasis>A nova imagem deve ser maior que a imagem original</emphasis>, caso contrário, você terá apenas um pequeno pedaço da imagem como resultado. Escolha tamanhos que sejam múltiplos do tamanho da imagem se você não quiser ter pastilhas truncadas.</para>
+          <para>
+            By default, <guilabel>New width</guilabel> and
+            <guilabel>New height</guilabel> are linked, indicated by the
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-hchain.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            chain symbol below the input boxes. If you want to set them
+            separately, click on that chain symbol to unlink them.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>New image</term>
+        <listitem>
+          <para>
+            Keep this option checked to avoid modifying your original image.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--section history:
+  2018-06-08 j.h Created empty
+  2019-12-20 Elad Shahar - first text version/
+-->
+<sect2 id="python-fu-histogram-export">
+  <title>Exportar Histograma</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Exportar Histograma</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Exportar Histograma</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <para>Exporta o Histograma da imagem para um arquivo de texto para que possa ser utilizado por outros programas e carregado em planilhas. O Histograma é produzido para a área da imagem selecionada. Pixels totalmente transparentes não são contados.</para>
+    <para>O arquivo resultante é um arquivo CSV (Valores Separados por Vírgula), que pode ser importado diretamente pela maioria dos programas de manipulação de planilhas. A primeira linha do arquivo CSV é uma linha de títulos. Uma linha de dados é gerada para cada "Balde". Cada valor de pixel pode estar no intervalo de 0 a 255, e será incluído em um dos baldes dependendo do intervalo do balde.</para>
+    <para>A primeira coluna é intitulada "Início do Intervalo" e contém o valor inicial do balde. As colunas seguintes contêm os valores para diferentes canais. Quais canais serão incluídos depende do tipo de imagem. O significado desses valores em cada uma das colunas de canais depende da opção <guilabel>Formato de Saída</guilabel>.</para>
+    <figure>
+      <title>Exemplo do arquivo exportado com <quote>Exportar Histograma</quote></title>
+      <screen>
+Início do intervalo,   Valor,   Vermelho,   Verde,   Azul
+                  0,     0.0,        0.0,   486.0,    0.0
+                  1,     0.0,        0.0,   300.0,    0.0
+                  2,     0.0,        0.0,   336.0,    0.0
+                  3,     0.0,        0.0,   399.0,    0.0
+                  4,     0.0,        0.0,   510.0,    0.0
+                  ....
+      </screen>
+    </figure>
+    <para>O arquivo de exemplo acima foi gerado para uma imagem RGB, usando o formato de saída <guilabel>Contagem de pixels</guilabel>, e um <guilabel>Tamanho de Balde</guilabel> de 1. A linha iniciada pelo número 3 descreve o quarto balde e incluirá todos os pixels de valor 3 até (sem incluir) 4. O número 399.0 naquela linha pode então ser interpretado como "Há 399 pixels que apresentam um valor de Verde de 3".</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Info</guisubmenu>
+        <guimenuitem>Export Histogram…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+    <sect3>
+    <title>Opções</title>
+    <figure>
+      <title><quote>Export Histogram</quote> options</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/info/histogram-export-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Arquivo do Histograma</term>
+        <listitem>
+          <para>O arquivo para o qual o histograma será exportado.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho de Balde</term>
+        <listitem>
+          <para>O <guilabel>Tamanho de Balde</guilabel> permite controlar o número de valores considerados similares e contados no mesmo <quote>balde</quote> (faixa de cores no histograma). Um tamanho de balde maior produzirá menos baldes, e portanto menos linhas no arquivo exportado. Por exemplo, um Tamanho de Balde de 1 produzirá 256 baldes, enquanto um Tamanho de 16 produzirá 16 baldes.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Amostra da média</term>
+        <listitem>
+          <para>Se <guilabel>Amostra da média</guilabel> estiver ativa, o histograma será gerado para uma imagem obtida pela combinação de todas as camadas visíveis. Se não, o histograma considerará somente a camada atual.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Output format</term>
+        <listitem>
+          <para>Se a opção <guilabel>Contagem de pixels</guilabel> for escolhida, os valores no arquivo gerado refletirão a quantidade de pixels em cada balde. Se <guilabel>Normalizado</guilabel> for escolhida, os valores serão a quantidade de pixels no balde dividida pelo total de pixels. A opção <guilabel>Porcentagem</guilabel> é similar à <guilabel>Normalizado</guilabel>, mas os valores são formatados como porcentagens.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+</sect2>

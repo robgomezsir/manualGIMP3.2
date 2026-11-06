@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-03-16 j.h: reviwed for v2.6. No change
+  2008-04-07 JPL reviewed fr
+  2007-10-21 lexa: reviewed de for GIMP 2.4
+  2007-06-17 kost: added norwegian
+  2006-04-30 added it content by ciampix
+  2006-02-10 en;fr revised by j.h
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-12-06 replaced informalfigure by figure by lexa
+  050522 de reviewed by axel.wernicke
+  -->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-ink">
+  <title>Tinta</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Tinta</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Tinta</primary>
+  </indexterm>
+
+  <para>A ferramenta de tinta simula uma caneta-tinteiro com uma ponta controlável para pintar traços sólidos com bordas suavizadas. O tamanho, o formato e o ângulo da ponta determinam o traço a medida que a ferramenta vai sendo usada para desenhar.</para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>Existem várias formas para ativar a ferramenta:</para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagem: <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de pintura</guisubmenu><guimenuitem>Degradê</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Ícone da ferramenta de clonagem na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>Ao pressionar o atalho de teclado <keycap>C</keycap>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Modificadores de tecla</title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>Essa tecla alterna a ponta para um <link linkend="gimp-tool-color-picker">Coletor de cores</link>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/tool-options-ink.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Opacidade</term>
+        <term>Expand Layers</term>
+        <listitem>
+          <xi:include href="about-common-paint-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ajuste</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Tamanho</term>
+              <listitem>
+                <para>Controla o tamanho aparente da caneta-tinteiro com valores que variam de 0 (muito fino) até 200 (muito grosso).</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Ângulo</term>
+              <listitem>
+                <para>Isso controla o ângulo aparente da ponta da caneta-tinteiro em relação à horizontal.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Sensibilidade</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Tamanho</term>
+              <listitem>
+                <para>Isso controla o tamanho da abertura de tinta na ponta da caneta (portanto, <quote>quanta tinta passa</quote>), do minimo ao máximo. Perceba que o tamanho 0 não resulta numa abertura de tamanho zero, mas sim numa abertura de tamanho mínimo.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Inclinação</term>
+              <listitem>
+                <para>Controla a aparente inclinação da ponta da caneta-tinteiro em relação à horizontal. Esse controle e o controle de ângulo descrito acima são co-relacionados. Fazer experimentos é a melhor maneira para aprender a usá-las.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Velocidade</term>
+              <listitem>
+                <para>Isso controla o tamanho efetivo da ponta em função a velocidade de desenho. Isso é, assim como numa caneta-tinteiro real, quanto mais rápido você desenha, mais fina a linha será.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tipo e forma</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Tipo</term>
+              <listitem>
+                <para>Existem três pontas de caneta para escolher: círculo, quadrado, e diamante.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Forma</term>
+              <listitem>
+                <para>A geometria do tipo da ponta pode ser ajustada ao se manter pressionado o botão 1 do mouse no pequeno quadrado do centro do ícone de forma, movendo-o em volta.</para>
+                <para>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/tool-options/ink-type-circle.png" format="PNG"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

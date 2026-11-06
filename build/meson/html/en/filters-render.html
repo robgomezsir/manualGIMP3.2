@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14. Rendering Filters</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters.html" title="Chapter 17. Filters" />
+    <link rel="prev" href="plug-in-warp.html" title="13.14. Warp" />
+    <link rel="next" href="plug-in-flame.html" title="14.2. Flame" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14. Rendering Filters</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-warp.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>Chapter 17. Filters</span>
+        <nav> <a accesskey="n" href="plug-in-flame.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="filters-render"></a>14. Rendering Filters</h2>
+          </div>
+        </div>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="filters-render-introduction"></a>14.1. Introduction</h3>
+            </div>
+          </div>
+        </div>
+        <a id="id57830" class="indexterm"></a>
+        <a id="id57834" class="indexterm"></a>
+        <p>
+    Most <acronym class="acronym">GIMP</acronym> filters work on a layer by transforming its
+    content, but the filters in the <span class="quote">“<span class="quote">Render</span>”</span> group are a bit
+    different. They create patterns from scratch, in most cases obliterating
+    anything that was previously in the layer. Some create random or noisy
+    patterns, others regular of fractal patterns, and one (Gfig) is a
+    general-purpose (but rather limited) vector graphics tool.
+  </p>
+        <p>
+    This category describes the following filters:
+  </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-flame.html" title="14.2. Flame">Section 14.2, “Flame”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-fractalexplorer.html" title="14.3. Fractal Explorer">Section 14.3, “Fractal Explorer”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-ifscompose.html" title="14.4. IFS Fractal">Section 14.4, “IFS Fractal”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-noise-cell.html" title="14.5. Cell Noise">Section 14.5, “Cell Noise”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-noise-perlin.html" title="14.6. Perlin Noise">Section 14.6, “Perlin Noise”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-plasma.html" title="14.7. Plasma">Section 14.7, “Plasma”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-noise-simplex.html" title="14.8. Simplex Noise">Section 14.8, “Simplex Noise”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-noise-solid.html" title="14.9. Solid Noise">Section 14.9, “Solid Noise”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="script-fu-difference-clouds.html" title="14.10. Difference Clouds">Section 14.10, “Difference Clouds”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-bayer-matrix.html" title="14.11. Bayer Matrix">Section 14.11, “Bayer Matrix”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-checkerboard.html" title="14.12. Checkerboard">Section 14.12, “Checkerboard”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-diffraction-patterns.html" title="14.13. Diffraction Patterns">Section 14.13, “Diffraction Patterns”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-grid.html" title="14.14. Grid">Section 14.14, “Grid”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-linear-sinusoid.html" title="14.15. Linear Sinusoid">Section 14.15, “Linear Sinusoid”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-maze.html" title="14.16. Maze">Section 14.16, “Maze”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-sinus.html" title="14.17. Sinus">Section 14.17, “Sinus”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-spiral.html" title="14.18. Spiral">Section 14.18, “Spiral”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-checkerboard.html" title="14.19. Checkerboard (legacy)">Section 14.19, “Checkerboard (legacy)”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-cml-explorer.html" title="14.20. CML Explorer">Section 14.20, “CML Explorer”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-grid.html" title="14.21. Grid (legacy)">Section 14.21, “Grid (legacy)”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-jigsaw.html" title="14.22. Jigsaw">Section 14.22, “Jigsaw”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-qbist.html" title="14.23. Qbist">Section 14.23, “Qbist”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-spyrogimp.html" title="14.29. Spyrogimp">Section 14.29, “Spyrogimp”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="script-fu-circuit.html" title="14.24. Circuit">Section 14.24, “Circuit”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-gfig.html" title="14.25. Gfig">Section 14.25, “Gfig”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="script-fu-lava.html" title="14.26. Lava">Section 14.26, “Lava”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="script-fu-line-nova.html" title="14.27. Line Nova">Section 14.27, “Line Nova”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-spheredesigner.html" title="14.28. Sphere Designer">Section 14.28, “Sphere Designer”</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-warp.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-flame.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-warp.html">13.14. Warp</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-flame.html">14.2. Flame</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="gimp-filter-antialias">
+  <title>Anti-serrilhamento</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Realçar</secondary>
+    <tertiary>Anti-alias</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Anti-alias</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão Geral</title>
+    <para>
+      This filter reduces alias effects
+      (see <link linkend="glossary-antialiasing">Anti-aliasing</link>)
+      using the Scale3X edge-extrapolation algorithm.
+    </para>
+    <para>Scale3X é derivado do Scale2x, que é um efeito gráfico para aumentar o tamanho de pequenos bitmaps adivinhando os pixels perdidos sem interpolarpixels e sem desfocar as imagens. <footnote><para><xref linkend="bibliography-online-scale2x"/>.</para></footnote> O Scale2x foi originalmente desenvolvido para melhorar a qualidade de jogos antigos de fliperama e de Computadores pessoais com uma resolução de vídeo baixa  jogados em hardware de vídeo  como televisores, monitores de Arcade, monitores de PC e telas de LCD. <footnote><para><xref linkend="bibliography-online-advancemame"/>.</para></footnote></para>
+    <para>
+      The Antialias filter works as follows: for every pixel, the filter
+      expands the original pixel in 9 (3×3) new pixels according to the
+      Scale3X algorithm, using the colors of the pixel and its 8 adjacent
+      pixels (extrapolation); then it subsamples the new pixels to a weighted
+      average pixel.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Enhance</guisubmenu>
+        <guimenuitem>Antialias</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Exemplos</title>
+    <para>Os exemplos seguintes ilustram o efeito de alguns padrões. Cadaquadradinho é um pixel (zoom 16:1).</para>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/filters/enhance/antialias-orig.png"/>
+      </imageobject>
+      <caption>
+        <para>Imagem original (Zoom 16:1)</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/filters/enhance/antialias-applied.png"/>
+      </imageobject>
+      <caption>
+        <para><quote>Anti-Serrilhamento</quote> aplicado (zoom 16:1)</para>
+      </caption>
+    </mediaobject>
+  </sect3>
+</sect2>

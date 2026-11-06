@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>13.11. Mapear objeto</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-map.html" title="13. Filtros de mapeamento" />
+    <link rel="prev" href="gimp-filter-tile-seamless.html" title="13.10. Tile Seamless" />
+    <link rel="next" href="plug-in-small-tiles.html" title="13.12. Mosaico pequeno" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>13.11. Mapear objeto</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-tile-seamless.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>13. Filtros de mapeamento</span>
+        <nav> <a accesskey="n" href="plug-in-small-tiles.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-map-object"></a>13.11. Mapear objeto</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id58527" class="indexterm"></a>
+      <a id="id58531" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4895"></a>13.11.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4896"></a>
+          <p class="title">
+            <strong>Figura 17.317. O filtro <span class="quote">“<span class="quote">Mapear objeto</span>”</span> aplicado a uma fotografia</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="O filtro “Mapear objeto” aplicado a uma fotografia" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/map-taj-map-object.jpg" alt="O filtro “Mapear objeto” aplicado a uma fotografia" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Este filtro mapeia uma imagem para um objeto 3D (plano, esfera, caixa ou cilindro). Enquanto que esse filtro pode ser interessante para efeitos especiais rápidos, o GIMP não tem qualquer capacidade para criar imagens 3D para fins de produção: mesmo deixando o usuário controlar muito pouco do que é necessário num objeto 3D renderizado, esse filtro se torna um dos mais complexos dentro do GIMP, em tempos de opção, e um dos de execução mais demoradas. Se quiser controlar opções de iluminação realista numa imagem 2D, você pode usar esse filtro com a opção de de objeto <span class="quote">“<span class="quote">Plano</span>”</span>, mas ele é mais lento e menos completo que o filtro <span class="quote">“<span class="quote">Efeitos de Iluminação</span>”</span> no menu de Filtros-&gt;Luz e sombra. Se suas necessidades de 3D forem maiores, por favor procure o projeto <span class="quote">“<span class="quote">Blender 3D</span>”</span>, onde você pode fazer uso de imagens 2D criadas no GIMP como texturas, dentro de um programa completo de modelagem e animação. Ainda sobre esse filtro: ele funciona melhor apenas em imagens quadradas. Os objetos criados ficarão distorcidos em imagens retangulares.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in grayscale mode or indexed mode, this menu entry
+        is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4897"></a>13.11.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Map</span> → <span class="guimenuitem">Map Object…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4898"></a>13.11.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4899"></a>13.11.3.1. Pré-visualização</h5>
+              </div>
+            </div>
+          </div>
+          <p>Esta pré-visualização tem várias possibilidades</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Pré-visualização!</span>
+              </dt>
+              <dd>
+                <p>A pré-visualização é automática para algumas das opções, mas você terá que pressionar este botão para atualizar a pré-visualização depois de modificar muitos dos outros parâmetros.</p>
+                <p>Quando o ponteiro do mouse estiver sobre a pé-visualização e a guia de Luz estiver selecionada, ele se torna uma pequena mão que pode pegar o <span class="emphasis"><em>ponto azul</em></span>, que marca a posição da fonte de luz, e move-la. Esse ponto azul pode não estar visível: isso depende das configurações dos parâmetros X e Y na guia de Luz.</p>
+              </dd>
+              <dt>
+                <span class="term">Zoom de afastamento, </span>
+                <span class="term">Zoom de aproximação</span>
+              </dt>
+              <dd>
+                <p>Os botões de zoom permitem que você torne a imagem na pré-visualização mais próxima ou mais afastada. A sua ação é limitada, mas pode ser útil no caso de uma imagem grande.</p>
+              </dd>
+              <dt>
+                <span class="term">Show wireframe</span>
+              </dt>
+              <dd>
+                <p>Põe uma grade sobre a pré-visualização de forma que fique mais fácil criar deslocamentos e rotações. Funciona bem quando se está mapeando para um plano.</p>
+              </dd>
+              <dt>
+                <span class="term">Update preview live</span>
+              </dt>
+              <dd>
+                <p>
+              To have preview working as usual.
+            </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4900"></a>13.11.3.2. Opções gerais</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4901"></a>
+            <p class="title">
+              <strong>Figura 17.318. Opções (gerais) de <span class="quote">“<span class="quote">Mapear objeto</span>”</span> </strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/mapobject-dialog-options.png" alt="Opções (gerais) de “Mapear objeto”" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Mapear para</span>
+              </dt>
+              <dd>
+                <p>Esta lista permite que você escolha uma forma 3D a qual a imagem será mapeada. Pode ser um <span class="emphasis"><em>Plano</em></span>, uma <span class="emphasis"><em>Esfera</em></span>, uma <span class="emphasis"><em>Caixa</em></span> ou um <span class="emphasis"><em>Cilindro</em></span>.</p>
+              </dd>
+              <dt>
+                <span class="term">Fundo transparente</span>
+              </dt>
+              <dd>
+                <p>Esta opção deixa a imagem transparente ao redor do objeto. Se não for selecionada, o fundo será preenchido com a cor de fundo atual da caixa de Ferramentas.</p>
+              </dd>
+              <dt>
+                <span class="term">Ladrilhar a imagem fonte</span>
+              </dt>
+              <dd>
+                <p>Ao mover o objeto do tipo Plano e desloca-lo com as opões da guia de orientação, uma parte da imagem pode ficar vazia. Ao marcar a opção de <span class="guilabel">Ladrilhar a imagem fonte</span>, cópias da mesma serão colocadas para preencher o espaço vazio. Esta opção não tem efeito para os outros tipos de objeto.</p>
+                <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Nota]" src="images/note.png" />
+                      </td>
+                      <th align="left">Nota</th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>Esta opção funciona somente para objetos do tipo <span class="quote">“<span class="quote">Plano</span>”</span>.</p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Criar nova imagem</span>
+              </dt>
+              <dd>
+                <p>
+              When this option is checked, a new image is created with the
+              result of the filter, preserving the original image.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Create new layer</span>
+              </dt>
+              <dd>
+                <p>
+              When this option is checked, a new layer is created with the
+              result of the filter, leaving the original layer unchanged.
+              This has no effect if <span class="guilabel">Create new image</span> is
+              also checked.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Antialiasing</span>
+              </dt>
+              <dd>
+                <p>
+              Enabling this setting allows you to remove or reduce the
+              aliasing effect that can show up on borders. When checked,
+              this enables the following settings:
+            </p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Profundidade</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    Defines the anti-aliasing quality. A higher value gives
+                    better quality at the cost of being slower.
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Limiar</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    Defines anti-aliasing limits. Anti-aliasing stops when the
+                    value difference between pixels becomes lower than the
+                    value set here.
+                  </p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4902"></a>13.11.3.3. Luz</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4903"></a>
+            <p class="title">
+              <strong>Figura 17.319. Opções de <span class="quote">“<span class="quote">Mapear objeto</span>”</span> (Luz)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/mapobject-dialog-light.png" alt="Opções de “Mapear objeto” (Luz)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Configurações para Luz</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Light source type</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    You can select among
+                    <span class="emphasis"><em>Point light</em></span>, <span class="emphasis"><em>Directional
+                    light</em></span> and <span class="emphasis"><em>No light</em></span>.
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Light source color</span>
+                    </dt>
+                    <dd>
+                      <p>Pressione o botão para abrir o diálogo seletor de cores.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Posição</span>
+              </dt>
+              <dd>
+                <p>Se for escolhida a opção de <span class="quote">“<span class="quote">Luz puntiforme</span>”</span>, você pode controlar a <span class="emphasis"><em>Posição</em></span> da fonte de luz (o ponto azul), usando as coordenadas X, Y, e Z (a direção do Z é para fora da tela).</p>
+                <p>Se for escolhida a <span class="quote">“<span class="quote">Luz direcional</span>”</span>, esses parâmetros X,Y, e Z <span class="quote">“<span class="quote">Controlam o vetor de direção</span>”</span> (o efeito não é evidente)</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4904"></a>13.11.3.4. Viewpoint</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4905"></a>
+            <p class="title">
+              <strong>Figura 17.320. <span class="quote">“<span class="quote">Map Object</span>”</span> options (Viewpoint)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/mapobject-dialog-viewpoint.png" alt="“Map Object” options (Viewpoint)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Viewpoint Position</span>
+              </dt>
+              <dd>
+                <p>When <span class="guilabel">Light Source Type</span> is set
+              to "Point Light", changing the X, Y, and Z values moves
+              the "viewer" closer to or further from the object in those
+              directions.
+            </p>
+                <p>Note that this will not visually affect images set
+              to "Plane" in the <span class="guilabel">Map To</span> field.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">First Axis, </span>
+                <span class="term">Second Axis</span>
+              </dt>
+              <dd>
+                <p>When <span class="guilabel">Map To</span> is set
+              to "Plane", changing the X, Y, and Z values
+              simulates the effect of tilting the plane on
+              the Y and Z axes. This impacts how the Material
+              tab settings affect the render.
+            </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4906"></a>13.11.3.5. Orientação</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4907"></a>
+            <p class="title">
+              <strong>Figura 17.321. Opções de <span class="quote">“<span class="quote">Mapear objeto</span>”</span> (Orientação)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/mapobject-dialog-orientation.png" alt="Opções de “Mapear objeto” (Orientação)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Posição</span>
+              </dt>
+              <dd>
+                <p>Esses três controles deslizantes e suas caixas de entrada permitem que você controle a posição do objeto dentro da imagem, de acordo com as coordenadas X, Y e Z do canto superior esquerdo do objeto.</p>
+              </dd>
+              <dt>
+                <span class="term">Rotação</span>
+              </dt>
+              <dd>
+                <p>Esses três controles fazem o objeto girar ao redor dos eixos X, Y ou Z, respectivamente.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4908"></a>13.11.3.6. Material</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4909"></a>
+            <p class="title">
+              <strong>Figura 17.322. Opções para <span class="quote">“<span class="quote">Mapear objeto</span>”</span> (Material)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/mapobject-dialog-material.png" alt="Opções para “Mapear objeto” (Material)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Níveis de intensidade</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Ambiente</span>
+                    </dt>
+                    <dd>
+                      <p>Quantidade de cor a mostrar onde não incide luz diretamente.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Difusão</span>
+                    </dt>
+                    <dd>
+                      <p>Intensidade da cor original quando iluminada por uma fonte de luz.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Reflexividade</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Difusão</span>
+                    </dt>
+                    <dd>
+                      <p>Valores maiores fazem o objeto refletir mais luz (parece mais brilhante).</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Especular</span>
+                    </dt>
+                    <dd>
+                      <p>Controle quanto intensas as áreas serão as áreas de reflexo.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Reflexo brilhante</span>
+                    </dt>
+                    <dd>
+                      <p>Valores mais altos tornam os reflexos mais focalizados (e portanto, menores).</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4910"></a>13.11.3.7. Sphere</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+        This tab appears only when you select the Sphere object.
+      </p>
+          <div class="figure">
+            <a id="id4911"></a>
+            <p class="title">
+              <strong>Figura 17.323. <span class="quote">“<span class="quote">Map Object</span>”</span> options (Sphere)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/mapobject-dialog-sphere.png" alt="“Map Object” options (Sphere)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Tamanho</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Raio</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    The radius ratio in comparison to the image size.
+                  </p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4912"></a>13.11.3.8. Caixa</h5>
+              </div>
+            </div>
+          </div>
+          <p>Esta aba aparece apenas se você selecionar o objeto do tipo Caixa.</p>
+          <div class="figure">
+            <a id="id4913"></a>
+            <p class="title">
+              <strong>Figura 17.324. Opções de <span class="quote">“<span class="quote">Mapear objeto</span>”</span> (Caixa)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/mapobject-dialog-box.png" alt="Opções de “Mapear objeto” (Caixa)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Map Images to Box Faces</span>
+              </dt>
+              <dd>
+                <p>
+              Select an image
+              for every face of the box. These images must be present on your
+              screen when you call the Map Object filter.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Scale X, </span>
+                <span class="term">Scale Y, </span>
+                <span class="term">Scale Z</span>
+              </dt>
+              <dd>
+                <p>Esses controles X, Y e Z permitem que você escolha o tamanho da caixa em cada direção.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4914"></a>13.11.3.9. Cilindro</h5>
+              </div>
+            </div>
+          </div>
+          <p>Esta aba aparece apenas quando você seleciona o objeto do tipo Cilindro.</p>
+          <div class="figure">
+            <a id="id4915"></a>
+            <p class="title">
+              <strong>Figura 17.325. Opções de <span class="quote">“<span class="quote">Mapear objeto</span>”</span> (Cilindro)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/mapobject-dialog-cylinder.png" alt="Opções de “Mapear objeto” (Cilindro)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Imagens para as faces das tampas</span>
+              </dt>
+              <dd>
+                <p>
+              Select an image
+              for every face of the cylinder. Images must be
+              present on your screen when you call the Map Object filter.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Tamanho</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Raio</span>
+                    </dt>
+                    <dd>
+                      <p>Esse controle permite que você manipule o diâmetro do cilindro. Infelizmente, essa configuração atua na imagem mapeada no cilindro e faz uma re-amostragem da mesma para adapta-la ao novo tamanho do cilindro. Seria melhor ter a possibilidade de configurar o tamanho do cilindro antes do mapeamento, de forma que toda uma imagem pudesse ser mapeada.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Cylinder length</span>
+                    </dt>
+                    <dd>
+                      <p>Controla o comprimento do cilindro</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-tile-seamless.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-map.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-small-tiles.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-tile-seamless.html">13.10. Tile Seamless</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-small-tiles.html">13.12. Mosaico pequeno</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

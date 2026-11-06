@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.13. Efeito Xach</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra" />
+    <link rel="prev" href="script-fu-perspective-shadow.html" title="6.12. Perspectiva" />
+    <link rel="next" href="gegl-bevel.html" title="6.14. Bevel" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.13. Efeito Xach</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-perspective-shadow.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Filtros de luz e sombra</span>
+        <nav> <a accesskey="n" href="gegl-bevel.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-xach-effect"></a>6.13. Efeito Xach</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id52683" class="indexterm"></a>
+      <a id="id52687" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4532"></a>6.13.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4533"></a>
+          <p class="title">
+            <strong>Figura 17.149. Exemplo para o filtro <span class="quote">“<span class="quote">Efeito Xach</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo para o filtro “Efeito Xach”" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/light-taj-xach-effect.jpg" alt="Exemplo para o filtro “Efeito Xach”" />
+              <div class="caption">
+                <p><span class="quote">“<span class="quote">Efeito xach</span>”</span> aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Esse filtro adiciona um efeito 3D translucido, bem sútil, demarcando a região selecionada. Este efeito 3D é conseguido através de</p>
+        <div class="orderedlist">
+          <ol class="orderedlist" type="1">
+            <li class="listitem">
+              <p>Um destaque da seleção: uma nova camada (<span class="quote">“<span class="quote">Destaque</span>”</span>) será criada acima da camada ativa, e preenchida com a cor de realce. Em seguida, uma <a class="link" href="gimp-dialogs-structure.html#gimp-layer-mask" title="2.1.4. Máscaras de camada">máscara de camada</a> será adicionada a essa camada tornando os o pixels não mascarados parcialmente transparentes.</p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/xach-effect-layers.png" />
+                <div class="caption">
+                  <p>Camada de destaque com mácara de camada</p>
+                </div>
+              </div>
+            </li>
+            <li class="listitem">
+              <p>E então, é feita uma pintura dos lados esquerdo e do alto da seleção com a cor de realce - a camada de <span class="quote">“<span class="quote">Destaque</span>”</span> será estendida por um pixel em cima e a esquerda. Essas pequenas áreas serão opacas. </p>
+            </li>
+            <li class="listitem">
+              <p>E por fim é aplicado um efeito de <a class="link" href="script-fu-drop-shadow.html" title="6.11. Opacidade da sombra projetada">Sombra projetada</a> no lado inferior direito da seleção.</p>
+            </li>
+          </ol>
+        </div>
+        <p>Você pode variar essas configurações padrão, por exemplo selecionando cores diferentes para destaque ou para a sombra e mudar as direções de deslocamentos.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4534"></a>6.13.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Light and Shadow</span> → <span class="guimenuitem">Xach-Effect…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4535"></a>6.13.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <p>Existem dois grupos de opções, cada um controlando o destaque ou a sombra, e uma caixa de seleção para o comportamento da seleção.</p>
+        <div class="figure">
+          <a id="id4536"></a>
+          <p class="title">
+            <strong>Figura 17.150. Opções para o filtro <span class="quote">“<span class="quote">Efeito-xach</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/light-and-shadow/xach-effect.png" alt="Opções para o filtro “Efeito-xach”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Deslocamento X dos brilhos, </span>
+              <span class="term">Deslocamento Y dos brilhos</span>
+            </dt>
+            <dd>
+              <p>Os lados esquerdo e de cima da seleção são pintados com a cor de destaque. O deslocamento do brilho é o tamanho (largura ou altura) da área respectiva. Se o deslocamento for menor que 0 (isso é o padrão), a área esquerda ou do topo será colorida. Para deslocamentos maiores que 0, as áreas a direita ou abaixo serão coloridas. </p>
+            </dd>
+            <dt>
+              <span class="term">Cor de destaque</span>
+            </dt>
+            <dd>
+              <p>Esta é a cor usada para destacar a área selecionada. O padrão é branco, mas ao clicar no botão um seletor de cores aparece e você pode escolher qualquer outra cor.</p>
+            </dd>
+            <dt>
+              <span class="term">Opacidade dos brilhos</span>
+            </dt>
+            <dd>
+              <p>A seleção será coberta por uma área parcialmente transparente preenchida com a cor de destaque. Esta opção permite que você defina o nível de transparência. Uma vez que uma <a class="link" href="gimp-dialogs-structure.html#gimp-layer-mask" title="2.1.4. Máscaras de camada">máscara de camada</a> será usada, os números válidos são de 0 (totalmente transparente) até 255 (totalmente opaco).</p>
+              <p>O padrões de opacidade para a camada de destaque é 66, o que equivale a 26%.</p>
+            </dd>
+            <dt>
+              <span class="term">Opções para o Sombra projetada </span>
+            </dt>
+            <dd>
+              <p>Essas opções funcionam como as opções respectivas do filtro  <a class="link" href="script-fu-drop-shadow.html" title="6.11. Opacidade da sombra projetada">Sombra projetada</a> (sem redimensionamento). Resumidamente:</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Cor da sombra projetada</span>
+                  </dt>
+                  <dd>
+                    <p>Clique no botão para abrir um seletor de cores.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Opacidade da sombra projetada</span>
+                  </dt>
+                  <dd>
+                    <p>A opacidade (0% - 100%) de a camada que contém a sombra.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Raio de desfoque da Sombra projetada</span>
+                  </dt>
+                  <dd>
+                    <p>O raio usado pelo filtro <a class="link" href="">Desfocagem gaussiana</a>,  que vai ser aplicado à sombra.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Deslocamento X da sombra , </span>
+                    <span class="term">Deslocamento Y da sombra</span>
+                  </dt>
+                  <dd>
+                    <p>Direção e quantidade, pelas quais a sombra será movida, afastando-se da seleção.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Manter seleção</span>
+            </dt>
+            <dd>
+              <p>Se for marcada, a seleção ativa permanecerá ativa quando o filtro foi aplicado.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-perspective-shadow.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-light-and-shadow.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gegl-bevel.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-perspective-shadow.html">6.12. Perspectiva</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gegl-bevel.html">6.14. Bevel</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

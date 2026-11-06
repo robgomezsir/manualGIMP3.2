@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-08-17 Added Spanish translation by AntI
+  2007-04-09 KoSt: added 'no'
+  2005-08-29 de added by axel.wernicke
+-->
+<sect2 id="filters-edges-introduction">
+  <title>Introdução</title>
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Detecção de borda</secondary>
+    <tertiary>Introdução</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Detectar borda</primary>
+  </indexterm>
+  <para>Os filtros de detecção de borda procuram por bordas entre diferentes cores e dessa forma conseguem detectar o contorno de objetos.</para>
+  <para>Eles são usados para fazer seleções e para vários propósitos artisticos.</para>
+
+  <para>
+    This category describes the following filters:
+  </para>
+  <itemizedlist>
+    <listitem>
+      <para><xref linkend="gimp-filter-difference-of-gaussians"/></para>
+    </listitem>
+    <listitem>
+      <para><xref linkend="gimp-filter-edge"/></para>
+    </listitem>
+    <listitem>
+      <para><xref linkend="gimp-filter-edge-laplace"/></para>
+    </listitem>
+    <listitem>
+      <para><xref linkend="gimp-filter-edge-neon"/></para>
+    </listitem>
+    <listitem>
+      <para><xref linkend="gimp-filter-edge-sobel"/></para>
+    </listitem>
+    <listitem>
+      <para><xref linkend="gimp-filter-image-gradient"/></para>
+    </listitem>
+  </itemizedlist>
+
+  <mediaobject>
+    <imageobject>
+      <!--was: images/filters/filters-edgedetect-fig.png-->
+      <imagedata format="PNG" fileref="images/filters/edge-detect/gradient-calculation-fig.png"/>
+    </imageobject>
+  </mediaobject>
+  <para>A maioria deles são baseados em métodos de cálculo de gradiente e dão linhas de bordas grossas. Veja a figura 1, que representa as variações da intensidade de cor. Na esquerda temos um pequeno gradiente de cor que não possui uma borda. Na direita temos uma rápida variação, no qual indica que é uma borda. Agora, nos deixe calcular o gradiente, a variação de velocidade, dessa borda: por exemplo, a primeira derivada (figura 2). Nós decidimos que uma borda é detectaeda quando o gradiente é maior que o valor de começo (a borda exata está no topo da curva, mas esse topo varia de acordo com as bordas). Na maioria do caso, o valor de começo está acima do topo e a borda é grossa.</para>
+  <para>A deteção de borda laplaciana usa a segunda derivada (figura 3). O topo da curva agora está no zero e é facilmente identificável. É por isso que o filtro de laplace gera uma borda fina, de apenas um pixel de largura. Mas essa derivada gera diversos zeros, correspondendo a pequenas trepidações, resultando em bordas falsas.</para>
+  <para>As vezes é necessário borrar um pouco a imagem antes de aplicar o filtro: isso alisa pequenas trepidações e previne falsas bordas.</para>
+</sect2>

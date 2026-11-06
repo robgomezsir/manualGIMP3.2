@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.2. Distribuir</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-transform.html" title="4. Ferramentas de transformação" />
+    <link rel="prev" href="gimp-tools-transform.html" title="4. Ferramentas de transformação" />
+    <link rel="next" href="gimp-tool-move.html" title="4.3. Mover" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.2. Distribuir</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tools-transform.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. Ferramentas de transformação</span>
+        <nav> <a accesskey="n" href="gimp-tool-move.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-align"></a>4.2. Distribuir</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id18854" class="indexterm"></a>
+      <a id="id18856" class="indexterm"></a>
+      <p>
+    Use the Align and Distribute tool to line up layers or paths with each
+    other, or to space them out. When this tool is selected, the mouse pointer
+    turns to a small hand.
+  </p>
+      <p>
+    The <span class="guilabel">Align</span> setting determines what the reference object
+    for alignment is. The <span class="guilabel">Targets</span> settings determine which
+    objects will be distributed or aligned.
+  </p>
+      <p>
+    You use the buttons below the settings to select how you want your objects
+    aligned or distributed.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3033"></a>4.2.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagens, em:<span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de transformação</span> → <span class="guimenuitem">Alinhar</span>,</p>
+            </li>
+            <li class="listitem">
+              <p>Ao clicar no ícone da ferramenta: <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-align.svg" width="16" /></span>
+          </span> na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>Ou usando o atalho de teclado <span class="keycap"><strong>Q</strong></span>.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3034"></a>4.2.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3035"></a>
+          <p class="title">
+            <strong>Figura 14.94. Opções de ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-align.png" alt="Opções de ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Targets</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Mover a camada atual</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When enabled, the layers, selected in the
+                  <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog-using" title="2.1.2. Using the Layers Dialog">Layers Dialog</a>,
+                  will be used as targets.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Use extents of layer contents</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When disabled, aligning and distributing happens based on
+                  the borders of the target layers.
+                  When enabled, it happens based on its content bounding box.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Movendo uma seleção</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The nine little squares display the available control points.
+                  You can change which one is selected by clicking on one of
+                  the squares.
+                  The selected control point determines what location on a
+                  target will be used for alignment or distribution.
+                </p>
+                    <p>
+                  By default, the center control point is selected. For
+                  alignment, this means that the center of each target is
+                  aligned with the reference. It depends on the chosen type
+                  of alignment which side of the reference is used to align
+                  with.
+                </p>
+                    <p>
+                  Choosing one of the other control points changes the point of
+                  alignment on the targets to one of the corners or edges
+                  instead of the center.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Selected paths</span>
+                  </dt>
+                  <dd>
+                    <p>Somente o vetor ativo será movido, mesmo que ele não seja visível. Você pode escolher o vetor ativo no <a class="link" href="gimp-path-dialog.html" title="2.3. Diálogo de vetores">Diálogo de vetores</a></p>
+                  </dd>
+                  <dt>
+                    <span class="term">Nehuma guia</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Guides, when selected, will also be used as targets. To select
+                  a guide as one of the targets, <span class="keycap"><strong>Alt</strong></span>-click
+                  on the guide. To add another guide, or to unselect a
+                  selected guide, use
+                  <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Shift</strong></span>-click on the guide.
+                  Selected guides are displayed in red instead of blue.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Alinhar</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Relativo a:</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  In this drop-down list you select the reference, which is
+                  the object in your image the targets will be aligned with.
+                </p>
+                    <div class="itemizedlist">
+                      <ul class="itemizedlist" style="list-style-type: disc; ">
+                        <li class="listitem">
+                          <p><span class="guilabel">Imagem</span>: a imagem como um todo é usada como alvo.</p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      <span class="guilabel">Selection</span>: the selection is used as
+                      reference with which the target objects will be aligned.
+                      If no selection is active, the image will be used instead.
+                    </p>
+                          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                            <table border="0" summary="Note">
+                              <tr>
+                                <td rowspan="2" align="center" valign="top" width="25">
+                                  <img alt="[Nota]" src="images/note.png" />
+                                </td>
+                                <th align="left">Nota</th>
+                              </tr>
+                              <tr>
+                                <td align="left" valign="top">
+                                  <p>
+                        There is a known issue that choosing
+                        <span class="guilabel">Selection</span> in combination with
+                        <span class="guilabel">Use extents of layer contents</span> is
+                        not working correctly.
+                      </p>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      <span class="guilabel">Picked reference object</span>:
+                      The object to be used as source, relative to which the
+                      other chosen objects will be aligned. This can be a
+                      layer, a path or a guide.
+                    </p>
+                          <p>
+                      You choose the reference object by clicking on the
+                      layer, path or guide in the image. It wil subsequently be
+                      shown with small squares in the corners.
+                    </p>
+                          <p>
+                      The name of the active reference object is displayed
+                      below this setting. When no reference object has been
+                      picked yet, the align buttons will be disabled.
+                    </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Align buttons</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  These buttons become active when a reference object and one
+                  or more targets are selected.
+                  </p>
+                    <div class="itemizedlist">
+                      <ul class="itemizedlist" style="list-style-type: disc; ">
+                        <li class="listitem">
+                          <p>
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-gravity-west.svg" width="16" /></span>
+                        </span>
+                        Align the anchor points of the targets with the left
+                        edge of the reference.
+                      </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-hcenter.svg" width="16" /></span>
+                        </span>
+                        Align the anchor points of the targets with the
+                        horizontal center of the reference.
+                      </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-gravity-east.svg" width="16" /></span>
+                        </span>
+                        Align the anchor points of the targets with the right
+                        edge of the reference.
+                      </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-gravity-north.svg" width="16" /></span>
+                        </span>
+                        Align the anchor points of the targets with the top edge
+                        of the reference.
+                      </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-vcenter.svg" width="16" /></span>
+                        </span>
+                        Align the anchor points of the targets with the
+                        vertical center of the reference.
+                      </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-gravity-south.svg" width="16" /></span>
+                        </span>
+                        Align the anchor points of the targets with the bottom
+                        edge of the reference.
+                      </p>
+                        </li>
+                      </ul>
+                    </div>
+                    <p>
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Exemplo com Cortar</span>
+                  </dt>
+                  <dd>
+                    <div class="figure">
+                      <a id="id3036"></a>
+                      <p class="title">
+                        <strong>Figura 14.95. Example of aligning relative to a selection</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/align-ex-orig-example.png" alt="Example of aligning relative to a selection" />
+                          <div class="caption">
+                            <p>
+                        An image with a transparent background layer, a small
+                        red circle layer, which is selected, and a selection.
+                        The selection is the reference object, as shown by the
+                        squares in the corners.
+                      </p>
+                            <p>
+                        We want the red circle placed in the center of the
+                        selection.
+                      </p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/toolbox/align-ex1.png" alt="Example of aligning relative to a selection" />
+                          <div class="caption">
+                            <p>
+                        We click
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-hcenter.svg" width="16" alt="Example of aligning relative to a selection" /></span>
+                        </span>
+                        to align the layer to the horizontal center of the
+                        selection.
+                      </p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/toolbox/align-ex2.png" alt="Example of aligning relative to a selection" />
+                          <div class="caption">
+                            <p>
+                        Then we click
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-vcenter.svg" width="16" alt="Example of aligning relative to a selection" /></span>
+                        </span>
+                        to align the layer to the vertical center of the
+                        selection.
+                      </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </dd>
+                  <dt>
+                    <span class="term">Exemplo com Cortar</span>
+                  </dt>
+                  <dd>
+                    <div class="figure">
+                      <a id="id3037"></a>
+                      <p class="title">
+                        <strong>Figura 14.96. Example of aligning relative to a guide</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/align-ex-guide-0.png" alt="Example of aligning relative to a guide" />
+                          <div class="caption">
+                            <p>
+                        An image with a transparent background layer, three
+                        small colored layers, which are selected, and a
+                        vertical guide, which is set as reference object, as
+                        shown by the squares at the top and bottom of the guide.
+                      </p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/toolbox/align-ex-guide-1.png" alt="Example of aligning relative to a guide" />
+                          <div class="caption">
+                            <p>
+                        We want to align the left edges of the colored layers
+                        with the guide. We set the left edge anchor point as
+                        target location for alignment.
+                      </p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/toolbox/align-ex-guide-2.png" alt="Example of aligning relative to a guide" />
+                          <div class="caption">
+                            <p>
+                        We click
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-gravity-west.svg" width="16" alt="Example of aligning relative to a guide" /></span>
+                        </span>
+                        to align the left side of the layers to the guide.
+                      </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Distribuir</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Distribuir</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  These buttons allow you to distribute the selected target
+                  objects evenly on your image. Each button uses a different
+                  way to do that distribution. You need a minimum of three
+                  selected targets to enable these buttons.
+                </p>
+                    <div class="itemizedlist">
+                      <ul class="itemizedlist" style="list-style-type: disc; ">
+                        <li class="listitem">
+                          <p>
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-hfill.svg" width="16" /></span>
+                      </span>
+                      Distribute the targets horizontally, based on the
+                      selected anchor point.
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-even-horizontal-gap-symbolic.svg" width="16" /></span>
+                      </span>
+                      Distribute the targets horizontally, with equal gaps
+                      between them.
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-vfill.svg" width="16" /></span>
+                      </span>
+                      Distribute the targets vertically, based on the
+                      selected anchor point.
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-even-vertical-gap-symbolic.svg" width="16" /></span>
+                      </span>
+                      Distribute the targets vertically, with equal gaps
+                      between them.
+                    </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Exemplo com Cortar</span>
+                  </dt>
+                  <dd>
+                    <div class="figure">
+                      <a id="id3038"></a>
+                      <p class="title">
+                        <strong>Figura 14.97. Example of distributing three layers with equal gaps</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/align-ex-guide-0.png" alt="Example of distributing three layers with equal gaps" />
+                          <div class="caption">
+                            <p>
+                        We use the same image as in example 2.
+                      </p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/toolbox/align-ex-distribute-1.png" alt="Example of distributing three layers with equal gaps" />
+                          <div class="caption">
+                            <p>
+                        We want to distribute the colored layers with equal
+                        gaps between them, both horizontally and vertically.
+                      </p>
+                            <p>
+                        We click
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-even-horizontal-gap-symbolic.svg" width="16" alt="Example of distributing three layers with equal gaps" /></span>
+                        </span>
+                        to distribute the layers horizontally, and then
+                        <span class="guiicon">
+                          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-even-vertical-gap-symbolic.svg" width="16" alt="Example of distributing three layers with equal gaps" /></span>
+                        </span>
+                         to do the same vertically.
+                      </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3039"></a>4.2.3. Combined Align and Distribute Example</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3040"></a>
+          <p class="title">
+            <strong>Figura 14.98. Align and Distribute Example</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/align-ex-distrib-1-example.png" alt="Align and Distribute Example" />
+              <div class="caption">
+                <p>
+            An image with four text layers and a background color layer. The
+            text layers are all selected in the Layers dialog.
+          </p>
+                <p>
+            We want the text layers to be in the vertical center of the image,
+            with equal space between each.
+          </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/align-ex-distrib-2.png" alt="Align and Distribute Example" />
+              <div class="caption">
+                <p>
+            We click
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-vcenter.svg" width="16" alt="Align and Distribute Example" /></span>
+            </span>
+            to vertically align the text layers relative to the image.
+          </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/align-ex-distrib-3.png" alt="Align and Distribute Example" />
+              <div class="caption">
+                <p>
+            Then we click
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-even-horizontal-gap-symbolic.svg" width="16" alt="Align and Distribute Example" /></span>
+            </span>
+            to distribute the text, with equal gaps between them.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tools-transform.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-transform.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-move.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tools-transform.html">4. Ferramentas de transformação</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-move.html">4.3. Mover</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

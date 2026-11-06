@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.8. Ferramenta Tesoura</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-selection.html" title="2. Ferramentas de seleção" />
+    <link rel="prev" href="gimp-tool-by-color-select.html" title="2.7. Seleção Por Cor" />
+    <link rel="next" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.8. Ferramenta Tesoura</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-by-color-select.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>2. Ferramentas de seleção</span>
+        <nav> <a accesskey="n" href="gimp-tools-paint.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-iscissors"></a>2.8. Ferramenta Tesoura</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id15588" class="indexterm"></a>
+      <a id="id15591" class="indexterm"></a>
+      <p>A ferramenta Tesoura Inteligente é uma peça do equipamento interessante: tem algumas características em comum com a Laço, algumas características em comum com a ferramenta de Vetores, e algumas características próprias. É útil quando você está tentando selecionar uma região definida por fortes mudanças de cor nas bordas. Para usar a Tesoura, clique para criar um conjunto de <span class="quote">“<span class="quote">nós de controle</span>”</span>, também conhecidos como âncoras ou pontos de controle, nas bordas da região que você está tentando selecionar. A ferramenta produz uma curva contínua passando por estes nós de controle, seguindo todas as bordas de alto contraste que encontrar. Se você tiver sorte, o vetor que a ferramenta encontrar corresponderá ao contorno que você está tentando selecionar.</p>
+      <p>Infelizmente, parece haver alguns problemas com a lógica de seguir a borda desta ferramenta, com o resultado que as seleções que criam tendem a ser muito tremidas em muitos dos casos. Uma boa maneira de limpá-los é mudando para o modo Mascara Rápida, e usar ferramentas de pintura para pintar as partes problemáticas. Em geral, a maioria das pessoas acham a ferramenta de Vetor mais útil do que as tesouras, porque, mesmo que ela não tenha a capacidade de encontrar a borda de forma inteligente, os caminhos que ela produz persistem até você excluí-los, e podem ser alterados a qualquer momento.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2908"></a>2.8.1. Ativando a Ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir da barra de menu <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de Seleção</span> → <span class="guimenuitem">Seleção Livre</span>,</p>
+            </li>
+            <li class="listitem">
+              <p>Ao clicar no ícone da ferramenta: <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-iscissors.svg" width="16" /></span>
+          </span> na caixa de ferramentas,</p>
+            </li>
+            <li class="listitem">
+              <p>
+          By pressing the <span class="keycap"><strong>I</strong></span> keyboard shortcut.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2909"></a>2.8.2. Teclas Modificadoras</h4>
+            </div>
+          </div>
+        </div>
+        <p>O comportamento padrão das teclas <span class="keycap"><strong>Shift</strong></span>, <span class="keycap"><strong>Ctrl</strong></span>, e <span class="keycap"><strong>Alt</strong></span> está descrito em <a class="xref" href="gimp-tools-selection.html#gimp-tools-select-modifiers" title="2.1.1. Teclas Modificadoras">Seção 2.1.1, “Teclas Modificadoras”</a> para todas as ferramentas de seleção.</p>
+        <p>Há, no entanto, um modificador de tecla que tem um comportamento especial, se você usá-lo durante a edição de uma seleção, que é <span class="emphasis"><em>depois</em></span> de ter adicionado o primeiro nó:</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+                <span class="keycap">
+                  <strong>Shift</strong>
+                </span>
+              </span>
+            </dt>
+            <dd>
+              <p>Por padrão, o <span class="emphasis"><em>recurso de atração automática para a borda</em></span> está ativado: sempre que você clicar e arrastar o ponteiro do mouse, a ferramenta Tesoura encontra o ponto do gradiente máximo (onde a mudança de cor é máxima) para a colocação de um novo nó de controle ou mover um nó existente.</p>
+              <p>Mantendo essa tecla pressionada enquanto clica e arrasta desativa esse recurso, e o nó de controle será colocado na posição do ponteiro do mouse.</p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+      <span class="keycap"><strong>Backspace</strong></span> removes last segment drawn, 
+      <span class="keycap"><strong>Escape</strong></span> cancels all selection segments.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2910"></a>2.8.3. Manuseando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2911"></a>
+          <p class="title">
+            <strong>Figura 14.25. Using Scissors Select</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/iscissors-selection.png" alt="Using Scissors Select" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Cada vez que você clicar com o mouse, você cria um novo ponto de controle, que é conectado ao último ponto de controle por uma curva que tenta seguir as bordas do objeto na imagem. Para finalizar, clique no primeiro ponto (o cursor muda para indicar que você está no lugar certo). Você pode ajustar a curva arrastando os nós de controle ou clicando para criar novos nós de controle. Quando estiver satisfeito, clique em qualquer lugar dentro da curva para convertê-lo em uma seleção.</p>
+        <p>Como dito acima, quando você clicar com esta ferramenta você cria pontos. A borda  da seleção é conduzida por esses pontos de controle. Durante a criação, você pode mover cada um deles, clicando e arrastando, exceto o primeiro e o último. A seleção é fechada quando você clicar o último ponto sobre o primeiro. Quando a seleção é fechada, a forma do ponteiro muda de acordo com a sua posição: no interior <span class="guiicon"><img src="images/toolbox/cissors-mouse.png" /></span>, na fronteira <span class="guiicon"><img src="images/toolbox/cissors-plus.png" /></span>, e de fora <span class="guiicon"><img src="images/toolbox/cissors-bad.png" /></span>. Você pode ajustar a seleção, criar novos pontos clicando no limite ou movendo cada ponto de controle (o primeiro e o último ponto combinados). A seleção é validada quando você clicar dentro do contorno criado com a tesoura: nesse momento a seleção passa a ser uma máscara como a criada pelas outras ferramentas de seleção e não pode mais ser editada com a tesoura.</p>
+        <p>Você tem que perceber que você pode obter apenas uma seleção, se você criar uma segunda seleção, a primeiro é apagada quando você valida a segunda.</p>
+        <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Warning">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Atenção]" src="images/warning.png" />
+              </td>
+              <th align="left">Atenção</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Cuidado para não clicar dentro da curva até que você tenha feito o ajuste completamente. Depois de ter convertido em uma seleção, usar o desfazer vai leva-lo de volta a estaca zero, e portanto você vai ter que começar a construir a curva de novo a partir do início, se você precisar modifica-la. Também não se esqueça de não mudar para uma ferramenta diferente, ou todos os seus nós de controle cuidadosamente criados serão perdidos. (Mas você ainda pode transformar a sua seleção em um vetor e trabalhá-la com a ferramenta de Vetores).</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>Para mover a seleção, consulte <a class="link" href="gimp-using-selections.html#gimp-using-selections-moving" title="2.1. Movendo uma seleção">Movendo seleções</a>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2912"></a>2.8.4. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2913"></a>
+          <p class="title">
+            <strong>Figura 14.26. Opções da ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-scissors-select.png" alt="Opções da ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo, </span>
+              <span class="term">Anti-serrilhamento, </span>
+              <span class="term">Enevoar bordas</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Veja <a class="link" href="gimp-tools-selection.html#gimp-tool-select" title="2.1. Características comuns"> Ferramentas de Seleção</a> para obter ajuda com opções que são comuns a todas essas ferramentas. Apenas as opções que são específicas para esta ferramenta são explicadas aqui.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Exibir borda interativa</span>
+            </dt>
+            <dd>
+              <p>Se esta opção estiver ativada, arrastar um nó de controle durante a colocação vai indicar o caminho que será tomado pelo limite da seleção. Se ele não estiver ativado, o nó será mostrado ligado ao nó anterior por uma linha reta, enquanto você o posiciona, e o caminho resultante não será visível até que você solte o botão do ponteiro. Em sistemas muito antigos e lentos, se os seus nós de controle são muito distantes, isso pode aumentar um pouco a velocidade. Em computadores atuais, é melhor sempre deixar esta opção ligada.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-by-color-select.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-selection.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tools-paint.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-by-color-select.html">2.7. Seleção Por Cor</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tools-paint.html">3. Ferramentas de pintura</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

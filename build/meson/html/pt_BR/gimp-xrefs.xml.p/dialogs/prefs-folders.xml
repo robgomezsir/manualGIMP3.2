@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--  section history:
+  2008-07-20 Mr.Dust : added 'ko'
+  2007-01-29 added Spanish content by manuq
+  2006-11-01 lexa: made the file docbook compliant
+  2008-02-04 Vérification + compléments par jpl in french
+-->
+<sect2 id="gimp-prefs-folders">
+  <title>Pastas</title>
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Preferências</secondary>
+    <tertiary>Pastas</tertiary>
+  </indexterm>
+  <figure>
+    <title>Folders Preferences</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/preferences/prefs-folders.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>Esta página permite que você defina os locais para duas pastas importantes usadas pelo GIMP para arquivos temporários. As páginas abaixo permitem que você personalize a localização para pesquisa de recursos como pincéis, etc; veja <link linkend="gimp-prefs-folders-data">Pastas de dados</link> para uma descrição que se aplica a elas. Você pode alterar as pastas aqui editando as entradas, ou pressionando os botões à direita para abrir uma janela de seleção de arquivos.</para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>
+      The preferences dialog can be accessed from the main menu, through
+      <menuchoice>
+       <guimenu>Edit</guimenu>
+       <guimenuitem>Preferences</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <indexterm>
+      <primary>Temporary folder</primary>
+    </indexterm>
+    <indexterm>
+      <primary>Pasta de troca</primary>
+    </indexterm>
+    <variablelist>
+      <varlistentry>
+        <term>Temporary folder</term>
+        <listitem>
+          <para>Esta pasta é usada para arquivos temporários: arquivos criados para armazenamento temporário de dados de trabalho, e, em seguida, eliminados na mesma sessão GIMP. Ela não exige uma grande quantidade de espaço ou de alto desempenho. Por padrão, uma sub-pasta chamada <filename>tmp</filename> na sua pasta pessoal do GIMP é usada, mas se esse disco é muito pequeno para o espaço, ou tem problemas sérios de desempenho, você pode alterá-lo para uma pasta diferente. A pasta deve existir e poder ser escrita por você, ou coisas ruins vão acontecer.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Pasta de troca</term>
+        <listitem>
+          <para>
+            This is the folder used as a <quote>memory bank</quote> when the
+            total size of images and data open in GIMP exceeds the available
+            RAM. If you work
+            with very large images, or images with many layers, or have many
+            images open at once, GIMP can potentially use a considerable amount
+            of swap space, so available disk space and performance are
+            definitely things to think about for this folder. By default, it is
+            set to your personal GIMP directory, but if you have another disk
+            with more free space, or substantially better performance, you may
+            see a significant benefit from moving your swap folder there. The
+            directory must exist and be writable by you.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

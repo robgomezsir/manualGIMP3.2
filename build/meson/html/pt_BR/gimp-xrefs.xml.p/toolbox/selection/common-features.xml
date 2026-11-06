@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-04-12 j.h: update to v-2.10
+-->
+<sect2 id="gimp-tool-select">
+  <title>Características comuns</title>
+
+  <indexterm>
+    <primary>Seleções</primary>
+    <secondary>Características comuns</secondary>
+  </indexterm>
+
+  <para>Ferramentas de seleção são projetadas para selecionar as regiões da camada ativa para que você possa trabalhar com elas sem afetar as áreas não selecionadas. Cada ferramenta tem suas próprias propriedades individuais, mas as ferramentas de seleção também compartilham uma série de opções e características em comum. Essas características comuns são descritas aqui, as variações são explicadas nas seções seguintes para cada ferramenta especificamente. Se precisar de ajuda sobre o que é uma <quote>seleção</quote> no GIMP, e como ela funciona, consulte <link linkend="gimp-concepts-selection">Seleção</link>.</para>
+  <para>This category includes the following tools:</para>
+  <itemizedlist>
+    <listitem>
+      <para>a <link linkend="gimp-tool-rect-select">Seleção Retangular</link>;</para>
+    </listitem>
+    <listitem>
+      <para>a <link linkend="gimp-tool-ellipse-select">Seleção Elíptica</link>;</para>
+    </listitem>
+    <listitem>
+      <para>a <link linkend="gimp-tool-free-select">Seleção Livre (o Laço)</link>;</para>
+    </listitem>
+    <listitem>
+      <para>a <link linkend="gimp-tool-foreground-select">Seleção de Frente</link>.</para>
+    </listitem>
+    <listitem>
+      <para>a <link linkend="gimp-tool-fuzzy-select">Seleção de Regiões Contíguas (a Varinha Mágica)</link>;</para>
+    </listitem>
+    <listitem>
+      <para>a <link linkend="gimp-tool-by-color-select">Seleção por Cor</link>;</para>
+    </listitem>
+    <listitem>
+      <para>a <link linkend="gimp-tool-iscissors"> Seleção de Formas da Imagem (Tesoura Inteligente) </link> e</para>
+    </listitem>
+  </itemizedlist>
+  <para>Em alguns aspectos, a ferramenta de Vetor também pode ser pensada como uma ferramenta de seleção: qualquer caminho fechado pode ser convertido numa seleção. Ele também pode fazer muito mais, porém, não compartilha o mesmo conjunto de opções que as outras ferramentas de seleção.</para>
+
+  <sect3 id="gimp-tools-select-modifiers">
+    <title>Teclas Modificadoras</title>
+    <para>O comportamento das ferramentas de seleção é modificado se você mantém pressionada a tecla <keycap>Ctrl</keycap>, <keycap>Shift</keycap>, e/ou <keycap>Alt</keycap> enquanto você usá-las.</para>
+    <note>
+      <para>Os usuários avançados acham as teclas modificadoras muito valiosas, mas os usuários novatos, muitas vezes acham-nas confusas. Felizmente, é possível para a maioria dos propósitos utilizar os botões de Modo (descritos abaixo), em vez de teclas modificadoras.</para>
+    </note>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>Ao criar uma seleção, mantendo pressionado <keycap>Ctrl</keycap> podem ter duas ações diferentes de acordo com a maneira de usá-lo:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Mantendo pressionada a tecla <emphasis>enquanto desenha</emphasis> a seleção liga a opção <quote>Expandir a partir do centro</quote>.</para>
+            </listitem>
+            <listitem>
+              <para>Se você segurar a tecla <keycap>Ctrl</keycap> <emphasis>antes de desenhar uma seleção</emphasis>, esta nova seleção muda para o modo Subtrair. Assim, esta nova seleção será subtraída de uma já existente, assim que você solta o botão, na medida em que elas têm pixels em comum.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <keycap>Alt</keycap>
+        </term>
+        <listitem>
+          <para>Segurar <keycap>Alt</keycap> pressionado vai permitir o movimento da seleção atual (apenas a sua estrutura, não o seu conteúdo). Se toda a janela de imagem for movida em vez de apenas a seleção, tente <keycombo><keycap>Shift</keycap> <keycap>Alt</keycap></keycombo>. Note que a tecla <keycap>Alt</keycap> às vezes é interceptada pelo sistema de janelas (o que significa que GIMP nunca sabe que foi pressionada), então isso pode não funcionar para todos.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <keycap>Shift</keycap>
+        </term>
+        <listitem>
+          <para>Ao criar uma seleção, manter pressionada a tecla <keycap>Shift</keycap> pode ter duas ações diferentes de acordo com a maneira de usá-la:</para>
+          <itemizedlist>
+            <listitem>
+              <para>Se você mantiver pressionada a tecla <emphasis>antes de clicar</emphasis> para iniciar a seleção, esta seleção será feita  em modo de <emphasis>Adição</emphasis>, enquanto você pressionar a tecla.</para>
+            </listitem>
+            <listitem>
+              <para>Se você mantiver pressionada a tecla <keycap>Shift</keycap> <emphasis>após clicar</emphasis> para iniciar a seleção, o efeito dependerá da ferramenta que você estiver usando: por exemplo, a seleção será um quadrado com a ferramenta de Seleção Retangular.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <keycombo>
+            <keycap>Ctrl</keycap>
+            <keycap>Shift</keycap>
+          </keycombo>
+        </term>
+        <listitem>
+          <para>Usando <keycombo><keycap>Ctrl</keycap><keycap>Shift</keycap></keycombo> juntos podem fazer uma variedade de coisas, dependendo de qual ferramenta é usada. Comum a todas as ferramentas de seleção é que o modo de seleção será comutado para cruzamento, de modo que após a operação ser concluída, a seleção consistirá na intersecção da região traçada com a seleção pré-existente. É um exercício para o leitor a jogar com as várias combinações disponíveis ao realizar seleções, mantendo <keycombo><keycap>Ctrl</keycap><keycap>Shift</keycap></keycombo> e liberando ou um ou ambos antes de soltar o botão do mouse.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Teclas modificadoras para mover seleções</term>
+        <listitem>
+          <para><keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap><mousebutton> junto com clicar earrastar</mousebutton></keycombo> e <keycombo><keycap>Shift</keycap><keycap>Alt</keycap><mousebutton> junto com clicar e arrastar </mousebutton></keycombo> são usados para mover seleções. Veja <xref linkend="gimp-using-selections-moving"/>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Barra de espaço</term>
+        <listitem>
+          <para>Ao pressionar a <keycap>Barra de espaço</keycap> enquanto você estiver usando uma ferramenta  (de seleção ou qualquer outra) transforma esta ferramenta numa cruz de navegação enquanto você pressionar a barra, o que lhe permite deslocar a visualização da imagem em vez de usar as barras de rolagem quando a imagem for maior do que a tela. Esta é a opção padrão: em Preferências / Janelas de Imagem, você pode configurar a barra de espaço para acionar a ferramenta de Mover temporariamente. )</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3 id="gimp-tool-select-options">
+    <title>Opções</title>
+    <para>Aqui nós descrevemos as opções de ferramentas que se aplicam a todas as ferramentas de seleção: opções que se aplicam apenas a algumas ferramentas, ou que afetam cada ferramenta de maneira diferente, são descritas nas seções dedicadas às ferramentas individuais. As configurações atuais para estas opções podem ser vistas na caixa de diálogo Opções da ferramenta, que você deve ter sempre visível quando você estiver usando ferramentas. Para tornar a interface consistente, as mesmas opções são apresentadas para todas as ferramentas de seleção, mesmo que algumas delas não tenham qualquer efeito para algumas das ferramentas.</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <listitem>
+          <indexterm>
+            <primary>Seleção</primary>
+            <secondary>Modos</secondary>
+          </indexterm>
+          <para>Isso determina a forma como a seleção que você cria é combinada com qualquer seleção pré-existente. Note que as funções desempenhadas por estes botões podem ser duplicadas usando teclas modificadoras, como descrito acima. A maior parte, dos usuários avançados usam as teclas modificadoras; para usuários novatos, em geral usar os botões é o modo mais fácil.</para>
+          <variablelist>
+            <varlistentry>
+              <term>
+               <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-selection-replace.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+               </guiicon>
+               <phrase>Replace</phrase>
+              </term>
+              <listitem>
+                <para>Modo Substituir irá destruir ou substituir qualquer seleção existente quando a nova seleção for criada.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+               <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-selection-add.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+               </guiicon>
+               <phrase>Add</phrase>
+              </term>
+              <listitem>
+                <para>Modo Adicionar  fará com que a nova seleção seja adicionada a quaisquer regiões de seleção existentes.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+               <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-selection-subtract.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+               </guiicon>
+               <phrase>Subtract</phrase>
+              </term>
+              <listitem>
+                <para>Modo Subtrair irá remover a nova área de seleção de quaisquer regiões de seleção existentes.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+               <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-selection-intersect.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+               </guiicon>
+               <phrase>Intersect</phrase>
+              </term>
+              <listitem>
+                <para>Modo Interseção fará uma nova seleção da área onde a região de seleção existente e a nova região de seleção se sobreponham.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Anti-serrilhamento</term>
+        <listitem>
+          <para>Esta opção afeta apenas algumas ferramentas de seleção: ela faz com que o limite da seleção seja desenhado de forma mais suave.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Enevoar bordas</term>
+        <listitem>
+          <indexterm>
+            <primary>Enevoando bordas (Seleções)</primary>
+          </indexterm>
+          <para>Esta opção permite que o limite da seleção seja desfocado, de modo que os pontos perto da fronteira fiquem apenas parcialmente selecionados. Para mais informações sobre enevoar, consulte o glossário <link linkend="glossary-feathering">Enevoando</link>.</para>
+          <para>
+            When this option is checked, a <guilabel>Radius</guilabel> option 
+            appears. Default value is 10 pixels: higher image resolution, 
+            higher radius.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

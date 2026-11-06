@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-01-10 j.h: reviewed for v2.6
+
+-->
+<sect2 id="gimp-selection-grow">
+  <title>Aumentar</title>
+
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Aumentar</secondary>
+  </indexterm>
+
+  <para>O comando<guimenuitem>Aumentar</guimenuitem> aumenta o tamanho da seleção da imagem atual em que estamos trabalhando. Ele trabalha da mesma maneira que o comando<link linkend="gimp-selection-shrink">Encolher</link> que reduz o tamanho da seleção.</para>
+
+  <sect3>
+    <title>Ativando o comando.</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Select</guimenu>
+        <guimenuitem>Grow…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Descrição da caixa de diálogo<quote>Aumentar seleção</quote></title>
+    <figure>
+      <title>A caixa de diálogo<quote>Aumentar seleção</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/select/grow.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Aumentar a seleção por</term>
+        <listitem>
+          <para>Entre com um valor na caixa de texto para aumentar o tamanho de sua seleção. A unidade padrão é em pixels, mas você poderá escolher outra unidade no menu suspenso, ou simplesmente digitando a sigla da unidade após o número. (ex: 1cm) </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Uma peculiaridade das seleções retangulares</title>
+    <para>Quando você aumenta uma seleção retangular, o resultado é uma seleção  com cantos arredondados. A razão para isto é mostrada na imagem abaixo:</para>
+    <figure>
+      <title>Por quê aumentar a seleção retangular resulta em cantos arredondados.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/select/grow-at-corners.png"/>
+        </imageobject>
+        <caption/>
+      </mediaobject>
+    </figure>
+    <para>Se você não quiser cantos arredondados, você tem que usar o comando <link linkend="script-fu-selection-rounded-rectangle">Retângulo Arredondado</link>  com um raio de 0%.</para>
+  </sect3>
+</sect2>

@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5. Brushes</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-painting.html" title="Chapter 7. Painting with GIMP" />
+    <link rel="prev" href="gimp-using-paths-and-svg.html" title="4.7. Paths and SVG files" />
+    <link rel="next" href="gimp-using-animated-brushes.html" title="5.2. Creating animated brushes" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5. Brushes</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-paths-and-svg.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>Chapter 7. Painting with GIMP</span>
+        <nav> <a accesskey="n" href="gimp-using-animated-brushes.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-concepts-brushes"></a>5. Brushes</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id7757" class="indexterm"></a>
+      <div class="figure">
+        <a id="id1406"></a>
+        <p class="title">
+          <strong>Figure 7.15. Brush strokes example</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/brush-examples.png" alt="Brush strokes example" />
+            <div class="caption">
+              <p>
+          A number of examples of brushstrokes painted using different brushes
+          from the set supplied with <acronym class="acronym">GIMP</acronym>. All were
+          painted using the Paintbrush tool.
+        </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    A <span class="emphasis"><em>brush</em></span>
+    is a <a class="link" href="glossary.html#glossary-bitmap" title="Bitmap">pixmap</a> or set of pixmaps used
+    for painting. <acronym class="acronym">GIMP</acronym> includes a set of
+    <a class="link" href="gimp-tools-paint.html" title="3. Paint Tools">Paint Tools</a>, which not only
+    perform operations that you would normally think of as painting, but also
+    operations such as erasing, copying, smudging, lightening or darkening,
+    etc.
+  </p>
+      <p>
+    All of the paint tools, except the ink tool, use the same set of
+    brushes. The brush pixmaps represent the marks that are made by single
+    <span class="quote">“<span class="quote">touches</span>”</span> of the brush to the image. A brush stroke, usually
+    made by moving the mouse across the image with the left mouse button held
+    down, produces a series of marks spaced along the trajectory, in a way
+    specified by the characteristics of the brush and the paint tool being
+    used.
+  </p>
+      <p>
+    Brushes can be selected by clicking on an icon in the
+    <a class="link" href="gimp-brush-dialog.html" title="3.2. Brushes Dialog">Brushes dialog</a>.
+    <acronym class="acronym">GIMP</acronym>'s
+    <span class="emphasis"><em>current brush</em></span> is shown in the
+    Brush/Pattern/Gradient area of the Toolbox.  Clicking on the brush
+    symbol there is one way of activating the Brushes dialog.
+  </p>
+      <p>
+    When you install <acronym class="acronym">GIMP</acronym>, it comes with a number of basic
+    brushes, plus a few bizarre ones that serve mainly to give you examples of
+    what is possible (i. e., the "green pepper" brush in the illustration).
+    You can also create new brushes, or download them and install them so that
+    <acronym class="acronym">GIMP</acronym> will recognize them.
+  </p>
+      <p>
+    <acronym class="acronym">GIMP</acronym> can use several different types of brushes. All of
+    them, however, are
+    used in the same way, and for most purposes you don't need to worry about
+    the differences when you paint with them. Here are the available types of
+    brushes:
+  </p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <span class="term">Ordinary brushes</span>
+          </dt>
+          <dd>
+            <a id="id7787" class="indexterm"></a>
+            <p>
+          Most of the brushes supplied with <acronym class="acronym">GIMP</acronym> fall into
+          this category. They
+          are represented in the Brushes dialog by grayscale pixmaps. When you
+          paint using them, the current foreground color (as shown in the
+          Color Area of the Toolbox) is substituted for black, and the pixmap
+          shown in the Brushes dialog represents the mark that the brush makes
+          on the image.
+        </p>
+            <p>
+          To create such a brush: create a grayscale image in gray levels, where
+          black is fully visible, white is transparent, with gray levels in
+          between. Do not use transparency for these brushes. Save it with the
+          .gbr extension. Click on the Refresh button in the Brushes Dialog to
+          get it in preview without it being necessary to restart
+          <acronym class="acronym">GIMP</acronym>.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Color brushes</span>
+          </dt>
+          <dd>
+            <a id="id7797" class="indexterm"></a>
+            <p>
+          Brushes in this category are represented by colored images in the
+          Brushes dialog. They can be pictures or text.  When you paint with
+          them, the colors are used as shown; the current foreground color
+          does not come into play.  Otherwise they work the same way as
+          ordinary brushes.
+        </p>
+            <p>
+          To create such a brush, create a small RGBA image:
+        </p>
+            <p>
+          Select
+          <span class="guimenu">File</span> → <span class="guimenuitem">New…</span> from the main menu.
+        </p>
+            <p>
+          In the <span class="guilabel">Advanced Options</span>, set for example the
+          <span class="guilabel">Color space</span> to
+          <span class="guilabel">RGB color</span> and set
+          <span class="guilabel">Fill with</span> to <span class="guilabel">Transparency</span>.
+        </p>
+            <p>
+          Draw your image. Contrary to grayscale brushes, transparent areas here
+          will be drawn transparent.
+        </p>
+            <p>
+          Select
+          <span class="guimenu">File</span> → <span class="guimenuitem">Save…</span> from the main menu to first save your image as an
+          <code class="filename">.xcf</code> file to keep its properties.
+        </p>
+            <p>
+          Select
+          <span class="guimenu">File</span> → <span class="guimenuitem">Export As…</span> from the main menu to export the image as a brush with
+          the <code class="filename">.gbr</code> extension.
+        </p>
+            <p>
+          In the <a class="link" href="gimp-brush-dialog.html" title="3.2. Brushes Dialog">Brushes Dialog</a>, click on
+          the button <span class="guibutton">Refresh brushes</span>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/view-refresh.svg" width="16" /></span>
+          </span>.
+        </p>
+            <p>
+          Your brush appears among the other brushes. You can use it immediately,
+          without restarting <acronym class="acronym">GIMP</acronym>.
+        </p>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Tip">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Tip]" src="images/tip.png" />
+                  </td>
+                  <th align="left">Tip</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>
+            When you do a Copy or a Cut on a selection, you see the contents
+            of the clipboard (that is the selection) at the first position in
+            the brushes dialog. And you can use it for painting.
+          </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="figure">
+              <a id="id1407"></a>
+              <p class="title">
+                <strong>Figure 7.16. Selection to Brush after Copy or Cut</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/select-to-brush.png" alt="Selection to Brush after Copy or Cut" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+          </dd>
+          <dt>
+            <span class="term">Image hoses / Image pipes</span>
+          </dt>
+          <dd>
+            <a id="id7841" class="indexterm"></a>
+            <a id="id7845" class="indexterm"></a>
+            <p>
+          Brushes in this category can make more than one kind of mark on an
+          image. They are indicated by small red triangles at the lower right
+          corner of the brush symbol in the Brushes dialog. They are sometimes
+          called "animated brushes" because the marks change as you trace out
+          a brushstroke. In principle, image hose brushes can be very
+          sophisticated, especially if you use a tablet, changing shape as a
+          function of pressure, angle, etc. These possibilities have never
+          really been exploited, however; and the ones supplied with
+          <acronym class="acronym">GIMP</acronym> are relatively simple (but still
+          quite useful).
+        </p>
+            <p>
+          You will find an example on how to create such brushes in
+          <a class="link" href="gimp-using-animated-brushes.html" title="5.2. Creating animated brushes">Animated brushes</a>
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Parametric brushes</span>
+          </dt>
+          <dd>
+            <a id="id7854" class="indexterm"></a>
+            <p>
+          These are brushes created using the
+          <a class="link" href="gimp-brush-dialog.html#gimp-brush-editor-dialog" title="3.2.3. Brush Editor">Brush Editor</a>, which
+          allows you to generate a wide variety of brush shapes by using a
+          simple graphical interface.  A nice feature of parametric brushes
+          is that they are <span class="emphasis"><em>resizable</em></span>. It is possible,
+          using the <span class="guimenu">Preferences</span> dialog, to make key
+          presses or mouse wheel rotations cause the current brush to
+          become larger or smaller, if it is a parametric brush.
+        </p>
+          </dd>
+        </dl>
+      </div>
+      <p>
+    Now, all brushes have a variable size. In fact, in the option box of all
+    painting tools there is a slider to enlarge or reduce the size of the
+    active brush. You can do this directly in the image window if you have
+    set correctly your mouse wheel; see
+    <a class="link" href="gimp-using-variable-size-brush.html" title="5.3. Changing brush size">Varying brush size</a>.
+  </p>
+      <p>
+    In addition to the brush pixmap, each <acronym class="acronym">GIMP</acronym> brush has
+    one other important
+    property: the brush <span class="emphasis"><em>Spacing</em></span>.
+    This represents the distance between consecutive brush-marks when a
+    continuous brushstroke is painted. Each brush has an assigned default
+    value for this, which can be modified using the Brushes dialog.
+  </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Note]" src="images/note.png" />
+            </td>
+            <th align="left">Note</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      <acronym class="acronym">GIMP</acronym> can use MyPaint brushes. Please refer to
+      <a class="xref" href="gimp-tool-mypaint-brush.html" title="3.11. MyPaint Brush">Section 3.11, “MyPaint Brush”</a> for more information.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-using-brushes"></a>5.1. Adding New Brushes</h3>
+            </div>
+          </div>
+        </div>
+        <a id="id7872" class="indexterm"></a>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+      There is a quick method to add a new brush:
+        <a class="xref" href="gimp-creating-brush-quickly.html" title="5.4. Creating a brush quickly">Section 5.4, “Creating a brush quickly”</a>.
+    </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+    To add a new brush, after either creating or downloading it, you need to
+    save it in a format GIMP can use. The brush file needs to be placed in the
+    GIMP's brush search path, so that GIMP is able to index and display it in
+    the Brushes dialog. You can hit the <span class="guibutton">Refresh</span>
+    button, which reindexes the brush directory. GIMP uses three file formats
+    for brushes:
+  </p>
+        <div class="variablelist">
+          <a id="brushes-file-formats"></a>
+          <a id="id7881" class="indexterm"></a>
+          <dl class="variablelist">
+            <dt>
+              <a id="file-gbr-export"></a>
+              <span class="term">GBR</span>
+            </dt>
+            <dd>
+              <a id="id7887" class="indexterm"></a>
+              <a id="id7889" class="indexterm"></a>
+              <p>
+          The <code class="filename">.gbr</code> ("<span class="emphasis"><em>g</em></span>imp
+          <span class="emphasis"><em>br</em></span>ush") format is used for ordinary and
+          color brushes.  You can convert many other types of images,
+          including many brushes used by other programs, into GIMP
+          brushes by opening them in GIMP and saving them with file
+          names ending in <code class="filename">.gbr</code>.  This brings up a
+          dialog box in which you can set the default Spacing for the
+          brush.
+        </p>
+              <p>
+          A technical specification of the GBR file format can be found on
+          <a class="ulink" href="https://developer.gimp.org/core/standards/gbr/" target="_top">
+          developer.gimp.org</a>.
+        </p>
+              <div class="figure">
+                <a id="id1408"></a>
+                <p class="title">
+                  <strong>Figure 7.17. 
+            Save a <code class="filename">.gbr</code> brush
+          </strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/file-gbr-export.png" alt="Save a .gbr brush" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">GIH</span>
+            </dt>
+            <dd>
+              <a id="id7907" class="indexterm"></a>
+              <a id="id7909" class="indexterm"></a>
+              <p>
+          The <code class="filename">.gih</code> ("<span class="emphasis"><em>g</em></span>imp
+          <span class="emphasis"><em>i</em></span>mage <span class="emphasis"><em>h</em></span>ose") format
+          is used for animated brushes.  These brushes are constructed
+          from images containing multiple layers:  each layer may
+          contain multiple brush-shapes, arranged in a grid.  When you
+          save an image as a <code class="filename">.gih</code> file, a dialog
+          comes up that allows you to describe the format of the brush.
+          See <a class="xref" href="gimp-using-animated-brushes.html" title="5.2. Creating animated brushes">Section 5.2, “Creating animated brushes”</a> for more
+          information about the dialog.
+        </p>
+              <p>
+          A technical specification of the GIH file format can be found on
+          <a class="ulink" href="https://developer.gimp.org/core/standards/gih/" target="_top">
+          developer.gimp.org</a>.
+        </p>
+            </dd>
+            <dt>
+              <span class="term">VBR</span>
+            </dt>
+            <dd>
+              <a id="id7924" class="indexterm"></a>
+              <a id="id7926" class="indexterm"></a>
+              <p>
+          The <code class="filename">.vbr</code> format is used for parametric
+          brushes, i. e., brushes created using the Brush Editor.
+          There is really no other meaningful way of obtaining files
+          in this format.
+        </p>
+            </dd>
+            <dt>
+              <span class="term">MYB</span>
+            </dt>
+            <dd>
+              <a id="id7934" class="indexterm"></a>
+              <a id="id7936" class="indexterm"></a>
+              <p>
+          The <code class="filename">.myb</code> format is used for MyPaint brushes.
+          Please refer to <a class="xref" href="gimp-tool-mypaint-brush.html" title="3.11. MyPaint Brush">Section 3.11, “MyPaint Brush”</a> for more
+          information.
+        </p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+    To make a brush available, place it in one of the folders in GIMP's brush
+    search path. By default, the brush search path includes two folders, the
+    system <code class="filename">brushes</code> folder, which you should not use or
+    alter, and the <code class="filename">brushes</code> folder inside your personal
+    GIMP directory. You can add new folders to the brush search path using the
+    <a class="link" href="gimp-prefs-folders-data.html" title="6.27. Data Folders">Brush Folders</a>
+    page of the Preferences dialog. Any GBR, GIH, or VBR file included in a
+    folder in the brush search path will show up in the Brushes dialog the
+    next time you start GIMP, or as soon as you press the
+    <span class="guibutton">Refresh</span> button in the Brushes dialog.
+  </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+      When you create a new parametric brush using the Brush Editor, it
+      is automatically saved in your personal
+      <code class="filename">brushes</code> folder.
+    </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+    There are a number of web sites with downloadable collections of GIMP
+    brushes. Rather than supplying a list of links that will soon be out of
+    date, the best advice is to do a search with your favorite search engine
+    for <span class="quote">“<span class="quote">GIMP brushes</span>”</span>.
+    There are also many collections of brushes for other programs with
+    painting functionality. Some can be converted easily into GIMP brushes,
+    some require special conversion utilities, and some cannot be converted at
+    all. Most fancy procedural brush types fall into the last category. If you
+    need to know, look around on the web, and if you don't find anything, look
+    for an expert to ask.
+  </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-paths-and-svg.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-painting.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-animated-brushes.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-paths-and-svg.html">4.7. Paths and <acronym class="acronym">SVG</acronym> files</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-animated-brushes.html">5.2. Creating animated brushes</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

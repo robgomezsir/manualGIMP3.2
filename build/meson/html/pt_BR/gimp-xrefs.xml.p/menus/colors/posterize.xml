@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2017-01-29 Posterize is only in Colors menu now, changed id to plug-in-posterize
+  2008-01-28 j.h: added example
+  2006-02-16 Posterize Levels modified by j.h
+  -->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-posterize">
+  <title>Posterizar</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Posterizar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Posterizar</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+
+    <figure>
+      <title>Exemplo para o filtro <quote>Posterizar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/base-examples/sunflower.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/posterize-ex.png"/>
+        </imageobject>
+
+        <caption>
+          <para><quote>Posterizar</quote> com 3 níveis aplicados</para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <para>Esta ferramenta é projetada para pesar de forma inteligente as cores de pixel da seleção ou camada ativa e reduzir o número de cores enquanto mantém uma semelhança com as características da imagem original.</para>
+  </sect3>
+
+
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guimenuitem>Posterize…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Diálogo do filtro Posterizar</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/posterize.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term>Opções de Mistura</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Níveis de Posterização</term>
+        <listitem>
+          <para>Aqui, <quote>nível</quote> significa <quote>número de cores por canal</quote>.</para>
+          <para>
+            This slider and the <guilabel>+</guilabel> and
+            <guilabel>-</guilabel> buttons allow you
+            to set the number of levels (2-256) in each RGB channel that
+            the tool uses to describe the active layer. The maximum total 
+            number of colors is the combination of these levels. A level of 3
+            will give 3<superscript>3</superscript> = 27 colors.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+</sect2>

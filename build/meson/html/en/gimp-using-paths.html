@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.  Paths</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-painting.html" title="Chapter 7. Painting with GIMP" />
+    <link rel="prev" href="gimp-using-quickmask.html" title="3.3. Using Quick Mask Mode" />
+    <link rel="next" href="gimp-using-paths-properties.html" title="4.2. Path Properties" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4. 
+    
+    <span class="phrase">Paths</span>
+  </div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-quickmask.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>Chapter 7. Painting with GIMP</span>
+        <nav> <a accesskey="n" href="gimp-using-paths-properties.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-using-paths"></a>4. 
+    <a id="gimp-concepts-paths"></a>
+    <span class="phrase">Paths</span>
+  </h2>
+          </div>
+        </div>
+      </div>
+      <a id="id7546" class="indexterm"></a>
+      <a id="id7549" class="indexterm"></a>
+      <p>
+    Paths are curves (known as Bézier-curves). To understand their concepts
+    and mechanism, look at the glossary
+    <a class="link" href="glossary.html#glossary-bezier-curve" title="Bézier curve">Bézier-curve</a> or Wikipedia
+    <a class="xref" href="bibliography.html#bibliography-online-wkpd-bezier" title="Wikipedia - Bézier curve">[<abbr class="abbrev">WKPD-BEZIER</abbr>]</a>.
+    The Paths tool allows you to design complex shapes.
+    When designing a shape, you first use the
+    <a class="link" href="gimp-tool-path.html" title="5.2. Paths">Paths</a> tool in <acronym class="acronym">GIMP</acronym>
+    to create a path. After that you usually stroke or fill the path.
+  </p>
+      <p>
+    In <acronym class="acronym">GIMP</acronym>, the term <span class="quote">“<span class="quote">Stroke path</span>”</span> means to
+    apply a specific style to the path (color, width, pattern, etc).
+  </p>
+      <p>
+    A path can be used in several ways:
+  </p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p>You can convert a closed path to a selection.</p>
+          </li>
+          <li class="listitem">
+            <p>
+        Any path, open or closed, can be <span class="emphasis"><em>stroked</em></span>;
+        that is, painted on the image in a variety of ways.
+      </p>
+          </li>
+          <li class="listitem">
+            <p>
+        A path can be <span class="emphasis"><em>filled</em></span> with a color or pattern.
+        If the path is not closed, it will try to figure out the shape and then
+        fill it. However, this will not work if the path is a straight line.
+      </p>
+          </li>
+        </ul>
+      </div>
+      <div class="figure">
+        <a id="id1401"></a>
+        <p class="title">
+          <strong>Figure 7.10. Illustration of four different paths</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/path-examples.png" alt="Illustration of four different paths" />
+            <div class="caption">
+              <p>
+          Four examples of GIMP paths: one closed and polygonal; one open and
+          polygonal; one closed and curved; one with a mixture of straight and
+          curved segments.
+        </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-using-paths-creating"></a>4.1. Path Creation</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      Start by drawing the outline for your path; the outline
+      can be modified later (see the
+      <a class="link" href="gimp-tool-path.html" title="5.2. Paths">Paths</a> tool).
+      To start, select the Paths tool using one of the following methods:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          Use
+          <span class="guimenu">Tools</span> → <span class="guimenuitem">Paths</span>
+          from the menu.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          Use the relevant icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-path.svg" width="16" /></span>
+          </span> in toolbox.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>Use the <span class="keycap"><strong>B</strong></span> keyboard shortcut.</p>
+            </li>
+          </ul>
+        </div>
+        <p>
+      When the Paths tool is selected, the mouse cursor changes into a
+      crosshair with a curve by default. The actual shape depends on your
+      <a class="link" href="gimp-prefs-input-devices.html" title="6.24. Input Devices">mouse pointer mode setting</a>.
+      Make sure that the Paths <span class="guilabel">Edit Mode</span> in
+      <a class="link" href="gimp-tool-path.html" title="5.2. Paths">Tool Options</a> is set to
+      <span class="guilabel">Design</span>.
+    </p>
+        <p>
+      Left click in the image to create the first point of the path. Move
+      the mouse to a new point and left click to create another
+      point linked to the previous point. Although you can create as many
+      points as you desire, you only need two points to learn about Paths.
+    </p>
+        <p>
+      While adding points, the mouse cursor has a little <span class="quote">“<span class="quote">+</span>”</span>
+      next to the curve, which indicates that clicking will add a new
+      point.
+    </p>
+        <p>
+      When the mouse cursor is close to one of the path points, the
+      <span class="quote">“<span class="quote">+</span>”</span> changes into a cross with arrows; like the move tool.
+      You can then move the existing path point.
+    </p>
+        <p>
+      To close your path, go with the mouse on top of the point you want to
+      connect to, and then click that point. When you are done designing
+      your path, you can press <span class="keycode">Enter</span>. This will turn the
+      path into a Selection. You can also keep adding more points, or start
+      changing the curves of the path.
+    </p>
+        <p>
+      To edit the curves of your path, move the mouse cursor close to a line
+      segment, left-click and drag the line segment. Two events occur.
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>The line segment bends and curves as it is pulled.</p>
+            </li>
+            <li class="listitem">
+              <p>
+          Each line segment has two start points and end points marked by
+          little square rectangles, these are called handles.
+          A <span class="quote">“<span class="quote">direction line</span>”</span> now projects from each start point
+          for the line segment that was moved. This direction line usually has
+          a different color than the lines of the path.
+        </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+      The curved line segment leaves an end point in the same direction that
+      the <span class="quote">“<span class="quote">direction line</span>”</span> leaves the start point. The length of
+      this line controls how far the line segment projects along the
+      <span class="quote">“<span class="quote">direction line</span>”</span> before curving towards the other path point.
+    </p>
+        <p>
+      The handle at the end of each <span class="quote">“<span class="quote">direction line</span>”</span> can be
+      dragged to change the direction and length of the curve. The handles
+      on the other end, where they connect to the path, can be used to move
+      the position of that path point.
+    </p>
+        <div class="figure">
+          <a id="id1402"></a>
+          <p class="title">
+            <strong>Figure 7.11. Appearance of a path while it is manipulated</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/using/path-with-anchors.png" alt="Appearance of a path while it is manipulated" />
+              <div class="caption">
+                <p>
+            Appearance of a path while it is manipulated using the Paths tool.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The path is comprised of two components with both straight and curved
+      segments. Black squares are anchor points, the open circle indicates
+      the selected anchor, and the two open squares are the handles associated
+      with the selected anchor.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-quickmask.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-painting.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-paths-properties.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-quickmask.html">3.3. Using Quick Mask Mode</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-paths-properties.html">4.2. Path Properties</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

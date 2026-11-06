@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-06-14 alex falappa: finished italian translation
+  2007-04-13 alex falappa: started it translation
+  2008-03-12 jpl : french update
+-->
+<sect1 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-using-script-fu-tutorial">
+  <title>Um tutorial de Script-Fu</title>
+  <indexterm>
+    <primary>Script-Fu </primary>
+    <secondary>Tutorial</secondary>
+  </indexterm>
+  <para>Neste treinamento, nós mostraremos a você os fundamentos da linguagem Scheme necessários para fazer uso do Script-Fu, e então vamos construir um script prático que você poderá agregar ao seu arsenal de scripts. O script vai pedir um texto ao usuário, então criará uma imagem do tamanho exato daquele texto. Então nós melhoraremos o script para deixar um pouco de espaço em volta desse texto, e concluiremos com algumas sugestões de formas para melhorar seu conhecimento em Script-fu. </para>
+  <note>
+    <para>Esta seção foi adaptada de um tutorial escrito para o manual do <application><acronym>GIMP</acronym> 1</application>,  por Mike Terry.</para>
+  </note>
+
+  <sect2 id="gimp-using-script-fu-tutorial-scheme">
+    <title>Familiarizando-se com Scheme</title>
+    <sect3>
+      <title>Vamos começar a Schema'tizar</title>
+      <para><ulink url="https://en.wikipedia.org/wiki/Scheme_(programming_language)">Scheme</ulink> é um dialeto da família de linguagens de programação Lisp. O GIMP usa o TinyScheme, que é um interpretador leve de um subconjunto do padrão chamado R5RS.</para>
+      <para>A primeira coisa a aprender é</para>
+      <blockquote>
+        <para>Todo comando em Scheme é colocado dentro de parênteses <quote>( )</quote>.</para>
+      </blockquote>
+      <para>A segunda coisa que você precisa saber é: </para>
+      <blockquote>
+        <para>O nome da função ou operador é sempre o primeiro item dentro dos parênteses, e o restante dos items são parâmetros para aquela função.</para>
+      </blockquote>
+      <para>Entretanto, nem tudo que está entre parênteses é uma função &mdash; eles também podem conter itens de uma lista &mdash; mas vamos ver isso depois. Essa notação normalmente é chamada de notação em prefixo, por que a função prefixa todas as outras coisas. Se você estiver familiarizado com a notação pós-fixa, ou tiver uma calculadora que usa a Notação Polonesa Reversa (como a maioria das calculadoras da HP), você não deve ter nenhum problema em se adaptar para formular as expressões em Scheme.</para>
+      <para>A terceira coisa a saber é: </para>
+      <blockquote>
+        <para>Operadores matemáticos também são considerados funções, e portanto são colocados primeiro quando se estiver escrevendo expressões matemáticas.</para>
+      </blockquote>
+      <para>Isso segue-se logicamente da notação em prefixo que acabamos de mencionar.</para>
+    </sect3>
+
+    <sect3>
+      <title>Exemplos de notação em prefixada, tradicional ("in-fixa") e pós-fixada</title>
+      <para>Aqui seguem alguns exemplos rápidos mostrando as diferenças entre as notações <emphasis>prefixadas</emphasis>, <emphasis>tradicional</emphasis>, e <emphasis>pós fixadas</emphasis> . Vamos adicionar os números 2 e 23:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Notação pré-fixada: <userinput>+ 2 23 </userinput> (da forma que o Scheme pode entender)</para>
+        </listitem>
+        <listitem>
+          <para>Notação tradicional ("in-fixa"): <userinput> 2 + 23 </userinput> (a forma como nós normalmente escrevemos a operação, e que é usada em linguagens como C e Python)</para>
+        </listitem>
+        <listitem>
+          <para>Notação pós-fixada: <userinput> 2 23 +</userinput> (a forma como muitas calculadoras da HP e linguagens como Forth e Postscript querem)</para>
+        </listitem>
+      </itemizedlist>
+    </sect3>
+
+    <sect3>
+      <title>Prática do Scheme</title>
+      <para>
+        In GIMP, select
+        <menuchoice>
+          <guimenu>Filters</guimenu>
+          <guisubmenu>Development</guisubmenu>
+          <guisubmenu>Script-Fu</guisubmenu>
+          <guimenuitem>Script-Fu Console</guimenuitem>
+        </menuchoice> from the main menu.
+        This will start up the Script-Fu Console window, which allows us to
+        work interactively in Scheme.
+      </para>
+    </sect3>
+
+    <sect3 id="gimp-using-script-fu-tutorial-console">
+      <title>A janela de terminal do Script-fu</title>
+      <para>Na parte de baixo dessa janela, há um campo de entrada que teria o título  de <guilabel>Comando atual</guilabel> (mas sem o nome, para deixar mais espaço livre).  Aqui, nós podemos testar comandos simples de Scheme de forma interativa. Vamos começar de forma tranquila, adicionando alguns números:</para>
+      <programlisting>(+ 3 5)</programlisting>
+      <para>Ao digitar isso e apertar <keycap>Enter</keycap>, a resposta esperada, 8, aparece na parte central da janela.</para>
+      <figure>
+        <title>Uso do terminal de Script-fu</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/using/script-fu-console.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>A função <quote>+</quote> pode receber mais argumentos, então podemos somar mais de um número:</para>
+      <programlisting>(+ 3 5 6)</programlisting>
+      <para>Isso também dá a resposta esperada: 14.</para>
+      <para>Até aqui, tudo bem &mdash; nós digitamos um comando de Schema e ele é executado imediatamente no terminal do Script-fu. Agora, uma palavra de precaução...</para>
+    </sect3>
+
+    <sect3>
+      <title>Preste atenção em parênteses extras</title>
+      <para>Se você é como eu, você está acostumado a usar parênteses adicionais sempre que quiser, como quando você está escrevendo uma equação complexa, e você quer separar as partes com parênteses para torna-la mais clara quando for ler a mesma de volta. Em Scheme, você tem que tomar cuidado e não inserir essas parênteses extras de forma incorreta. Por exemplo, vamos dizer que queremos adicionar 3 ao resultado de adicionar 5 e 6 juntos:</para>
+      <programlisting>3 + (5 + 6) + 7 = ?</programlisting>
+      <para>Sabendo que o operador + pode adicionar uma lista de números, você pode ser tentado a converter essa expressão para:</para>
+      <programlisting>(+ 3 (5 6) 7)</programlisting>
+      <para>Entretanto, isso é incorreto &mdash; lembre-se, todo comando em Scheme começa e termina com parênteses, portanto, o interpretador de Scheme vai achar que estamos tentando chamar uma função de nome <quote>5</quote> no segundo grupo de parênteses, ao invés de somar esses dois números antes de adiciona-los ao três.</para>
+      <para>A forma correta de escrever a expressão acima seria:</para>
+      <programlisting>(+ 3 (+ 5 6) 7)</programlisting>
+    </sect3>
+
+    <sect3>
+      <title>Certifique-se de que o espaçamento está correto também!</title>
+      <para>Se você está familiarizado com outras linguagens de programação (C/C++, Perl ou Java você sabe que não precisa de espaço em branco em volta de operadores matemáticos para que eles formem uma expressão apropriada)</para>
+      <programlisting>
+        <literal>3+5, 3 +5, 3+ 5</literal>
+      </programlisting>
+      <para>Todas essas formas são aceitas nas linguagens com sintaxe derivada de C. Entretanto, o mesmo não é verdade para Scheme. Você precisa ter um espaço depois de um operador matemático (ou qualquer outro operador ou nome de função) em Scheme para que o mesmo seja corretamente interpretado pelo interpretador de Scheme.</para>
+      <para>Pratique um pouco com expressões matemáticas simples no terminal do Script-Fu, até que você esteja confortável com esses conceitos iniciais.</para>
+    </sect3>
+  </sect2>
+
+  <sect2 id="gimp-using-script-fu-tutorial-identifier">
+    <title>Varáveis e funções</title>
+    <para>Agora que você sabe que todo comando de Scheme está entre parênteses, e que o nome da função ou operador vem listado primeiro, nós precisamos saber como criar e usar variáveis, e como criar e usar novas funções. Vamos começar pelas variáveis.</para>
+
+    <sect3>
+      <title>Declarando variáveis</title>
+      <para>Embora haja alguns métodos diferentes de declarar variáveis, o método preferido é usando a construção <command>let*</command>. Se você estiver familiarizado com outras linguagens de programação, esta construção é equivalente a definir uma lista de variáveis locais no escopo em que as mesmas estão ativas. Como um exemplo de como você pode declarar duas variáveis, "a" e "b", inicializadas para 1 e 2 respectivamente, você pode escrever:</para>
+      <programlisting>
+        (let*
+           (
+              (a 1)
+              (b 2)
+           )
+           (+ a b)
+        )
+      </programlisting>
+      <para>ou, em uma linha só:</para>
+      <programlisting>(let* ( (a 1) (b 2) ) (+ a b) )</programlisting>
+      <note>
+        <para>Você terá que por tudo isso na mesma linha se você está usando a janela de terminal. Em geral, no entanto, é melhor você adotar uma prática de identação (recuos), similar a que você usa em outras linguagens, para manter seus scripts mais legíveis.</para>
+      </note>
+      <para>Isso declara duas variáveis locais, "a" e "b", as inicializa, e então imprime a soma das duas variáveis.</para>
+    </sect3>
+
+    <sect3>
+      <title>O que é uma Variável Local?</title>
+      <para>Você notará que nós escrevemos a soma <code>(+ a b)</code> dentro dos parênteses do código da expressão <code>let*</code>, e não depois de fecha-los.</para>
+      <para>Isso ocorre por que o comando <code>let*</code> define uma área no seu script em que as variáveis declaradas são usáveis. Se você digitar a expressão <userinput>(+ a b)</userinput> depois de digitar a expressão anterior, você verá um erro - por que as variáveis declaradas só eram válidas no contexto do comando <code>let*</code>; Elas são o que os programadores chamam de variáveis locais.</para>
+    </sect3>
+
+    <sect3>
+      <title>A sintaxe geral do comando <code>let*</code></title>
+      <para>A forma geral de um comando <code>let*</code> é: </para>
+      <programlisting>
+        (let* ( <replaceable>variáveis</replaceable> )
+          <replaceable>expressões</replaceable> )
+      </programlisting>
+      <para>Onde as variáveis são definidas dentro de parênteses, por exemplo <userinput>(a 2)</userinput>, e expressões são quaisquer expressões válidas em Scheme. Lembre-se de que as variáveis declaradas aqui só são válidas dentro do código do <code>let*</code>: elas são variáveis locais.</para>
+    </sect3>
+
+    <sect3>
+      <title>Espaços em branco</title>
+      <para>Previamente, mencionamos o fato de que provavelmente você vai querer usar identação para ajudar a clarear e organizar seus scripts. Isso é uma boa poĺítica, e não é um problema em Scheme &mdash; espaços em branco a mais (incluindo caracteres de tabulação e nova linha) são ignorados pelo interpretador de Scheme, e então podem ser usados liberalmente para tornar o script mais legível. Entretanto, se você está trabalhando na janela interativa do Script-fu, você terá que colocar sempre uma expressão inteira em uma única linha &mdash; isso é,  a abertura e o fechamento dos parenteses mais externos da expressão tem que estar na mesma linha.</para>
+    </sect3>
+
+    <sect3>
+      <title>Atribuindo um novo valor a uma variável</title>
+      <para>Uma vez que você tenha inicializado uma variável, você pode precisar mudar seu valor mais tarde, dentro do script. Use o comando  <code>set!</code>  para mudar o valor da variável:</para>
+      <programlisting>
+        (let* ( (theNum 10) ) (set! theNum (+ theNum theNum)) )
+      </programlisting>
+      <para>Tente adivinhar o que o comando acima vai fazer, e então, vá em frente e digite-o na janela do terminal do Script-Fu</para>
+    </sect3>
+
+    <sect3>
+      <title>Funções</title>
+      <para>Agora que você entendeu como funcionam as variáveis, vamos trabalhar com algumas funções. Você declara uma função com a seguinte sintaxe: </para>
+      <programlisting>
+        (define
+           (
+              <replaceable>nome</replaceable>
+              <replaceable>lista-de-parâmetros</replaceable>
+           )
+           <replaceable>expressões</replaceable>
+        )
+      </programlisting>
+      <para>Onde <replaceable>nome</replaceable> é o nome que você está dando a esta função,  <replaceable>lista-de-parâmetros</replaceable> é uma lista separada por espaços com os nomes dos parâmetros, e <replaceable>expressões</replaceable> é uma série de expressões que a função executa quando é chamada. Por exemplo:</para>
+      <programlisting>(define (Add X Y) (+ X Y) )</programlisting>
+      <para><varname>Add</varname> é o nome da função e <varname>X</varname> e <varname>Y</varname> são as variáveis. Esta função toma dois parâmetros e os soma.</para>
+      <para>Se você já programou em linguagens de tipagem estática (como C/C++, java) você deve notar que algumas coisas estão ausentes nessa declaração de função em comparação com aquelas.</para>
+      <itemizedlist>
+        <listitem>
+          <para>Primeiro, note que os parâmetros não tem <quote>tipos</quote> (isso é, nós não os declaramos como strings, inteiros, etc...). Scheme é uma linguagem sem tipos. Isso é prático e permite a criação de scripts de forma mais rápida.</para>
+        </listitem>
+        <listitem>
+          <para>Segundo, perceba que nós não precisamos nos preocupar em <quote>retornar</quote> o resultado de nossa função &mdash; a última expressão será o valor <quote>retornado</quote> quando essa função for chamada. Digite a função no terminal, e então tente algo como:</para>
+          <programlisting>(Add (Add 5 6) 4)</programlisting>
+        </listitem>
+      </itemizedlist>
+    </sect3>
+  </sect2>
+
+  <sect2 id="gimp-using-script-fu-tutorial-lists">
+    <title>Listas, Listas e mais Listas!</title>
+    <para>Nós explicamos variáveis e funções, e agora vamos adentrar os lodaçais turvos das listas de Scheme.</para>
+
+    <sect3>
+      <title>Definindo uma lista</title>
+      <para>Antes de falar mais sobre listas, é necessário que você entenda a diferença entre valores atômicos e listas.</para>
+      <para>Você já viu valores atômicos quando inicializamos variáveis na lição anterior. Um valor atômico é um único valor. Então, por exemplo, nós podemos atribuir para a variável <quote><varname>x</varname></quote> o valor simples de 42 como o comando seguinte:</para>
+      <programlisting>(let* ( (x 8) ) x)</programlisting>
+      <para>(Nós adicionamos a expressão <varname>x</varname> ao final da expressão para que o valor atribuído a <varname>x</varname> fosse impresso &mdash; normalmente você não precisa fazer isso. Note como o código do <code>let*</code> funciona quase como uma função: o valor da última expressão é o valor retornado.)</para>
+      <para>Uma variável também pode se referir a uma lista de valores, em vez de a um valor simples. Para atribuir  a lista de valores 1, 3, 5 a uma variável  <varname>x</varname> , nós digitaríamos:</para>
+      <programlisting>(let* ( (x '(1 3 5))) x)</programlisting>
+      <para>Digite ambos os comanos no Script-fu e veja como ele responde. Quando você digita o primeiro, ele simplesmente dá o resultado:</para>
+      <programlisting>42</programlisting>
+      <para>Entretanto, quando você digita o segundo comando, ele responde com o seguinte resultado: </para>
+      <programlisting>(1 3 5)</programlisting>
+      <para>Quando ele responde o valor 42, ele está informando você que a variável <varname>x</varname> contém o valor atômico 42. Entretanto, ao responder com <computeroutput>(1 3 5)</computeroutput>, ele está informando você que a <varname>x</varname> não contém um único valor, mas uma lista de valores. Note que não há virgulas em nossa declaração ou atribuição de lista, nem no resultado impresso: os elementos são separados por espaço.</para>
+      <para>A sintaxe para definir uma lista é:</para>
+      <programlisting>'(a b c)</programlisting>
+      <para> Onde <varname>a</varname>, <varname>b</varname>, e <varname>c</varname> são valores literais. Nós usamos o apóstrofe (<code>'</code>)  para indicar que o que se segue entre parênteses é uma lista, e não uma chamada a função ou uma expressão.</para>
+      <para>Uma lista vazia pode ser definida assim:</para>
+      <programlisting>'()</programlisting>
+      <para>Ou simplesmente:</para>
+      <programlisting>()</programlisting>
+      <para>As listas podem conter valores atômicos, como também podem conter outras listas:</para>
+      <programlisting>
+(let*
+   (
+        (x
+           '("O GIMP" (1 2 3) ("é" ("demais" () ) ) )
+        )
+    )
+    x
+)
+      </programlisting>
+      <para>Note que após o primeiro apóstrofo, você não precisa mais usar um apóstrofo ao definir as listas internas. Vá em frente e copie a expressão acima no terminal do Script-fu (lembrando-se de digitar tudo numa linha só) e veja o que ele retorna.</para>
+      <para>
+        You should notice that the result returned is not a list of
+        single, atomic values; rather, it is a list of a literal
+        <code>("GIMP")</code>, the list <code>(1 2 3)</code>, etc.
+      </para>
+    </sect3>
+
+    <sect3>
+      <title>Como pensar sobre as listas</title>
+      <para>É útil pensar nas listas como compostas de uma <quote>cabeça</quote> e uma <quote>cauda</quote>. A cabeça é o primeiro elemento da lista, e a cauda é o restante da lista. Você verá por que isso é importante quando nós discutirmos sobre como acrescentar elementos à listas e como acessar elementos dentro da lista.</para>
+    </sect3>
+
+    <sect3>
+      <title>Criando listas por concatenação (a função <function>cons</function>) </title>
+      <para>Uma das funções mais comuns que você vai encontrar é a função <code>cons</code>. Ela pega um valor, e coloca o mesmo no começo de seu segundo argumento, que deve ser uma lista. Na seção anterior, eu sugeri que você pensasse nas listas como sendo compostas de um elemento (a cabeça), seguida do restante da lista (a cauda). Isso é exatamente como a função <quote>cons</quote> funciona &mdash; ela adiciona um elemento como a cabeça de uma lista. Portanto, você pode criar uma lista dessa forma:</para>
+      <programlisting>(cons 1 '(2 3 4) )</programlisting>
+      <para>O resultado é a lista <code>(1 2 3 4)</code>.</para>
+      <para>Você também pode criar uma lista com um único elemento:</para>
+      <programlisting>(cons 1 () )</programlisting>
+      <para>E, claro, você pode usar variáveis declaradas previamente no lugar de quaisquer literais, como seria de se esperar.</para>
+    </sect3>
+
+    <sect3>
+      <title>Definindo uma lista usando a função <function>list</function></title>
+      <para>Para definir uma lista composta de literais ou de variáveis já declaradas, use a função <function>list</function>:</para>
+      <programlisting>(list 5 4 3 a b c)</programlisting>
+      <para>Isso irá compor e retornar uma lista contendo os valores das variáveis <varname>a</varname>, <varname>b</varname> e <varname>c</varname>. Por exemplo:</para>
+      <programlisting>
+        (let*  (
+                  (a 1)
+                  (b 2)
+                  (c 3)
+               )
+
+               (list 5 4 3 a b c)
+        )
+      </programlisting>
+      <para>Esse código cria a lista <code>(5 4 3 1 2 3)</code>.</para>
+    </sect3>
+
+    <sect3>
+      <title>Acessando valores em uma lista</title>
+      <para>Para acessar valores em uma lista, use as funções <function>car</function> e <function>cdr</function>, que retornam o primeiro elemento de uma lista (cabeça) e o restante da lista (cauda), respectivamente. Essas funções vão quebrar uma lista na construção cabeça::cauda, como eu mencionei anteriormente.</para>
+    </sect3>
+
+    <sect3>
+      <title>A  função <function>car</function> </title>
+      <para>A função <function>car</function> retorna o primeiro elemento da lista (a cabeça da lista). A lista não pode estar vazia. Portanto, a seguinte expressão retorna o primeiro elemento da lista:</para>
+      <programlisting>(car '("primeiro" 2 "terceiro"))</programlisting>
+      <para>Que é</para>
+      <programlisting>"primeiro"</programlisting>
+    </sect3>
+
+    <sect3>
+      <title>A função <function>cdr</function></title>
+      <para>A função <function>cdr</function> retorna o restante da lista depois do primeiro elemento (a cauda da lista). Se só houver um elemento na lista, ela retorna a lista vazia.</para>
+      <programlisting>(cdr '("primeiro" 2 "terceiro"))</programlisting>
+      <para>retorna:</para>
+      <programlisting>(2 "terceiro")</programlisting>
+      <para>Enquanto que o seguinte:</para>
+      <programlisting>(cdr '("um e único"))</programlisting>
+      <para>retorna:</para>
+      <programlisting>()</programlisting>
+    </sect3>
+
+    <sect3>
+      <title>Acessando outros elementos em uma lista</title>
+      <para>Ok, legal, nós temos o primeiro elemento de uma lista, e também o restante da lista, mas como acessamos o segundo, terceiro, ou outros elementos de uma lista? Existem várias funções de <quote>conveniência</quote> para acessar, por exemplo, a cabeça da cabeça da cauda de uma lista (<code>caadr</code>), a cauda da cauda de uma lista (<code>cddr</code>), e assim por diante.</para>
+      <para>A convenção de nomes usados é simples: os a's e d's representam as cabeças e caudas das listas, portanto:</para>
+      <programlisting>(car (cdr (car x) ) )</programlisting>
+      <para>Poderia ser escrito como:</para>
+      <programlisting>(cadar x)</programlisting>
+      <para>Para ganhar alguma prática em funções de acesso a elementos de lista, tente digitar o seguinte (lembre-se que tem que ser numa única linha); Use variações das funções  <function>car</function> e <function>cdr</function> para acessar diferentes elementos da lista:</para>
+      <programlisting>
+        (let* (
+                 (x  '( (1 2 (3 4 5) 6)  7  8  (9 10) )
+                 )
+              )
+              ; Coloque seu código com car/cdr aqui        )
+      </programlisting>
+      <para>Tente acessar o número 3 do conjunto acima usando somente duas chamadas as função. Se você puder fazer isso, você está no caminho certo para se tornar um Mestre de Script-fu!</para>
+      <note>
+        <para>Em Scheme, um ponto e vírgula (<code>;</code>) denota um comentário. Ele, e tudo o que vier depois dele na mesma linha são ignorados pelo interpretador de scripts, então você pode usar isso para adicionar comentários para refrescar sua memória quando você olhar um script mais tarde.</para>
+      </note>
+    </sect3>
+  </sect2>
+
+  <sect2 id="gimp-using-script-fu-tutorial-first-script">
+    <title>Seu primeiro Script de Script-Fu</title>
+    <para>Você precisa parar e recuperar o fôlego? Não? Bem, então vamos proceder a quarta lição &mdash; seu primeiro Script em Script-Fu.</para>
+
+    <sect3>
+      <title>Criando um Script para uma caixa de texto</title>
+      <para>Uma das coisas mais comuns a se fazer no <acronym>GIMP</acronym> é criar uma caixa com algum texto para uma página web, um logotipo, ou para qualquer outra coisa. Entretanto, você nunca sabe de que tamanho criar a imagem inicial quando você começa o trabalho. Você não sabe quanto espaço o texto vai usar com a fonte e tamanho de fonte que você quer usar.</para>
+      <para>O Mestre de Script-Fu (e o aprendiz) podem reconhecer rapidamente que esse problema pode ser resolvido facilmente e automatizado por meio do Script-Fu</para>
+      <para>Nós iremos, portanto, criar um script chamado Caixa de Texto, que cria uma imagem do tamanho correto para conter uma linha de texto digitada pelo usuário. Também deixaremos o usuário escolher a fonte, tamanho da fonte e cor do texto.</para>
+    </sect3>
+
+    <sect3>
+      <title>Editando e guardando seus scripts</title>
+      <para>Até agora, temos trabalhado no Console Script-Fu. Agora, no entanto, vamos mudar para editar arquivos de script. Os arquivos de script devem ser arquivos de texto simples que você pode editar em um editor de texto ou código. O nome que você dá não é tão importante, exceto para poder reconhecer o script. Você deve dar ao seu arquivo de script a extensão <quote>.scm</quote>.</para>
+      <para>Onde você coloca seus scripts é uma questão de preferência. Nas <link linkend="gimp-prefs-folders-scripts">preferências de pastas</link> do GIMP você pode ver em quais pastas o GIMP procura por scripts. Também é possível adicionar uma nova pasta lá. A pasta onde o GIMP armazena seus próprios scripts geralmente não é a melhor escolha para seus scripts, mas para o resto, sinta-se à vontade para escolher o que lhe convier melhor.</para>
+    </sect3>
+
+    <sect3>
+      <title>O básico essencial</title>
+      <para>Todo Script-fu define pelo menos uma função, que é a função principal do Script. É ai que você faz o trabalho.</para>
+      <para>Todo script também precisa se registrar com a base de dados procedural, de forma que ele possa ser acessado de dentro do <acronym>GIMP</acronym>.</para>
+      <para>Primeiro vamos definir nossa função principal:</para>
+      <programlisting>
+        (define (script-fu-text-box inText inFont inFontSize inTextColor))
+      </programlisting>
+      <para>Aqui, nós colocamos o cabeçalho que define uma função chamada <function>script-fu-text-box</function> que recebe 4 parâmetros, que mais tarde irão corresponder a um texto, uma fonte, um tamanho de fonte e uma cor de texto. Exceto a palavra chave <quote>define</quote> os outros nomes foram criados nesse momento, pelo programa. O corpo da função por enquanto não foi criado. Por enquanto tudo bem, nada demais.</para>
+    </sect3>
+
+    <sect3>
+      <title>Convenções para os nomes</title>
+      <para>A convenção de nomes do Scheme prefere nomes em caixa baixa separados por hífen, o que eu segui no nome da função. No entanto, eu não uso a convenção para criar os nomes dos parâmetros. Eu gosto de nomes mais descritivos para os meus parâmetros e variáveis, e portanto eu coloquei o prefixo "in" nos nomes dos parâmetros, de forma que eu possa perceber rapidamente que eles são valores passados ao script, em vez de criados lá dentro. Eu uso o prefixo "the" para variáveis definidas dentro do script.</para>
+      <para>E é uma convenção do <acronym>GIMP</acronym> que sua função de script tenha um nome do tipo <function>script-fu-abc</function>, por que quando elas são listadas na base de dados procedural, elas também aparecem sob <quote>script-fu</quote> quando você está listando as funções. Isso ajuda a distinguir as mesmas de plug-ins.</para>
+    </sect3>
+
+    <sect3>
+      <title>Registrando a função</title>
+      <para>Agora, vamos registrar a função no <acronym>GIMP</acronym>. Isso é feito chamando-se a função <function>script-fu-register</function>. Quando o GIMP lê um script, ele executa esta função, que registra o script com a base de dados procedural. Você pode colocar essa chamada de função onde desejar no seu script, mas eu normalmente a coloco no final, depois de todo o meu código.</para>
+      <para>Aqui está a listagem para registrar esta função (eu vou explicar todos esses parâmetros em um minuto):</para>
+      <programlisting><![CDATA[
+  (script-fu-register
+    "script-fu-text-box"                        ;function name
+    "Text Box"                                  ;menu label
+    "Creates a simple text box, sized to fit\
+      around the user's choice of text,\
+      font, font size, and color."              ;description
+    "Michael Terry"                             ;author
+    "copyright 1997, Michael Terry;\
+      2009, the GIMP Documentation Team"        ;copyright notice
+    "October 27, 1997"                          ;date created
+    ""                                      ;image type that the script works on
+    SF-STRING      "Text"          "Text Box"   ;a string variable
+    SF-FONT        "Font"          "Charter"    ;a font variable
+    SF-ADJUSTMENT  "Font size"     '(50 1 1000 1 10 0 1)
+                                                ;a spin-button
+    SF-COLOR       "Color"         '(0 0 0)     ;color variable
+  )
+  (script-fu-menu-register "script-fu-text-box" "<Image>/Filters/Tutorial")
+      ]]></programlisting>
+      <para>
+        Save these functions in a text file with a
+        <filename class="extension">.scm</filename> suffix in a subdirectory
+        of your script directory, with the same name as your script file, then
+        restart <acronym>GIMP</acronym>.
+        The new script will appear as
+        <menuchoice>
+          <guimenu>Filters</guimenu>
+          <guisubmenu>Tutorial</guisubmenu>
+          <guimenuitem>Text Box</guimenuitem>
+        </menuchoice>.
+      </para>
+      <para>Se você invocar esse novo script, ele não vai fazer nada, claro, mas você já pode ver as entradas que ele cria ao registrar o script. (Em seguida mais informações sobre o que foi que fizemos)</para>
+      <para>Finalmente, se você invocar o navegador de procedimentos,  (<menuchoice><guimenu>Ajuda</guimenu><guimenuitem>Navegador de procedimentos</guimenuitem></menuchoice>), você notará que nosso script aparece no banco de dados.</para>
+    </sect3>
+
+    <sect3>
+      <title>Passos para registrar o script</title>
+      <para>Para registrar nosso script com o <acronym>GIMP</acronym>,  nós chamamos a função <function>script-fu-register</function>, preenchemos os sete parâmetros necessários e adicionamos os parâmetros de nosso próprio script, junto com uma descrição e um valor padrão para cada parâmetro.</para>
+      <itemizedlist>
+        <title>Os parâmetros necessários</title>
+        <listitem>
+          <para>O <emphasis>nome</emphasis> (func name) da função que nós definimos. Essa é a função que será chamada quando nosso script for invocado (o ponto de entrada de nosso script). Isso é necessário por que nós podemos definir funções adicionais no mesmo arquivo, e o <acronym>GIMP</acronym> precisa saber qual chamar. No nosso exemplo, nós definimos apenas uma função, script-fu-text-box, que nós registramos.</para>
+        </listitem>
+        <listitem>
+          <para>
+            The <emphasis>menu label</emphasis> is the name that will be
+            shown in the menu. To specify the location, see
+            <xref linkend="script-fu-adding-menu-location"/>.
+          </para>
+        </listitem>
+        <listitem>
+          <para>Voltando aos parâmetros da chamada de  <quote>script-fu-register</quote>: você passa uma descrição (description) do seu script, que será mostrada no navegador de procedimentos.</para>
+        </listitem>
+        <listitem>
+          <para><emphasis>Seu nome</emphasis>  -  o quarto parâmetro recebe o nome do autor do script. (Michael Terry no exemplo)</para>
+        </listitem>
+        <listitem>
+          <para>O quinto parâmetro contém informações de <emphasis>Copyright</emphasis> (direto de autor). </para>
+        </listitem>
+        <listitem>
+          <para>O sexto parâmetro é a <emphasis>data</emphasis> em que o script foi feito, ou a data da última revisão.</para>
+        </listitem>
+        <listitem>
+          <para>O sétimo parâmetro. de <emphasis>tipos</emphasis> sé é necessário para scripts que vão trabalhar em imagens já existentes. Ele deve ser um desses:  RGB, RGBA, GRAY, GRAYA, INDEXED, INDEXEDA. Ou pode ficar em branco no nosso caso, já que estaremos criando uma imagem nova. Se o seu script aceitar qualquer tipo de imagem, você pode por um <code>"*"</code> aqui.</para>
+        </listitem>
+      </itemizedlist>
+    </sect3>
+
+    <sect3>
+      <title>Registrando os parâmetros do script</title>
+      <para>Uma vez que nós tenhamos listado os parâmetros necessários, então precisamos listar os parâmetros que correspondem ao que o nosso script precisa. Quando listamos esses parâmetros, nós damos dicas de qual tipo cada um deve ser. Com isso, o GIMP constrói um diálogo automaticamente quando o usuário executar nosso script. Nós também damos um valor padrão para cada parâmetro.</para>
+      <para>A seção de registro de parâmetros tem o seguinte formato:</para>
+      <informaltable>
+        <tgroup cols="3">
+          <thead>
+            <row>
+              <entry>
+                <para>Tipo de parâmetro</para>
+              </entry>
+              <entry>
+                <para>Descrição</para>
+              </entry>
+              <entry>
+                <para>Exemplo</para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para><constant>SF-IMAGE</constant></para>
+              </entry>
+              <entry>
+                <para>Se o seu script vai trabalhar numa imagem que já está aberta, esse deve ser o primeiro parâmetro, depois dos parâmetros requeridos. O <acronym>GIMP</acronym> irá passar uma referência para a imagem neste parâmetro.</para>
+              </entry>
+              <entry>
+                <para>3</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para><constant>SF-DRAWABLE</constant></para>
+              </entry>
+              <entry>
+                <para>Se o seu script vai trabalhar numa imagem que já está aberta, esse deve ser o segundo parâmetro, logo depois do parâmetro <constant>SF-IMAGE</constant>. Ele se refere à camada ou outro objeto desenhável ativo (canal, máscara de camada, etc...). O <acronym>GIMP</acronym> passa uma referência à camada ativa neste parâmetro.</para>
+              </entry>
+              <entry>
+                <para>17 </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para><constant>SF-STRING</constant></para>
+              </entry>
+              <entry>
+                <para>Aceita strings (texto)</para>
+              </entry>
+              <entry>
+                <para>"Algum texto"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para><constant>SF-COLOR</constant></para>
+              </entry>
+              <entry>
+                <para>Indica que uma cor é requerida neste parâmetro</para>
+              </entry>
+              <entry>
+                <para>'(0 102 255)</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para><constant>SF-TOGGLE</constant></para>
+              </entry>
+              <entry>
+                <para>É exibido um controle que devolve um valor  Booleano </para>
+              </entry>
+              <entry>
+                <para>TRUE ou FALSE</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </sect3>
+    <xi:include href="script-fu-gui-api.xml"/>
+
+    <sect3 id="script-fu-adding-menu-location">
+      <title>Registrando a função</title>
+      <para>Depois de registrar nosso script, precisamos dizer ao GIMP onde ele deve ser encontrado no menu.</para>
+      <para>A melhor localização de menu do seu script depende de sua função. A maioria dos scripts é encontrada nos menus <guimenu>Filtros</guimenu> e <guimenu>Cores</guimenu>.</para>
+      <para>
+        For the current script, which creates a new image, we choose a submenu
+        of
+        <menuchoice>
+          <guimenu>Filters</guimenu>
+          <guisubmenu>Tutorial</guisubmenu>
+        </menuchoice>.
+        This is what the line with the <code>script-fu-menu-register</code>
+        function does.
+        Thus, we registered our Text Box script here:
+        <menuchoice>
+          <guimenu>Filters</guimenu>
+          <guisubmenu>Tutorial</guisubmenu>
+          <guimenuitem>Text Box</guimenuitem>
+        </menuchoice>.
+      </para>
+      <para>
+        Any submenu that you specify in your script that doesn't exist yet
+        will be automatically created by <acronym>GIMP</acronym>.
+      </para>
+    </sect3>
+  </sect2>
+
+  <sect2 id="gimp-using-script-fu-tutorial-script">
+    <title>Adicionando Funcionalidade Adicional</title>
+    <para>Vamos continuar nosso treinamento e acrescentar alguma funcionalidade ao nosso script.</para>
+
+    <sect3>
+      <title>Criando uma nova imagem</title>
+      <para>Na seção anterior, nós criamos uma função vazia e a registramos no <acronym>GIMP</acronym>. Nesta lição, nós vamos prover funcionalidades ao nosso script &mdash; nós queremos criar uma nova imagem, adicionar o texto do usuário à mesma, e mudar o tamanho da imagem para que fique exatamente do tamanho do texto.</para>
+      <para>Uma vez que você já saiba como definir variáveis, definir funções, e acessar itens dentro de listas, o restante é ladeira abaixo &mdash; tudo o que você precisa é se familiarizar com as funções disponíveis no banco de dados de procedimentos do <acronym>GIMP</acronym>, e chamar aquelas funções diretamente. Então abra o Navegador de procedimentos, no menu de ajuda (<xref linkend="plug-in-dbbrowser"/>) e vamos começar a brincar!</para>
+      <para>Vamos começar criando uma nova imagem. vamos criar uma nova variável com o nome <varname>theImage</varname>, e atribuir a ela o resultado de chamar a função do GIMP <function>gimp-image-new</function>.</para>
+      <para>Como você pode ver no navegador de procedimentos, a função <function>gimp-image-new</function> precisa de 3 parâmetros: a largura da imagem, sua altura e o tipo de imagem. Como nós vamos mudar seu tamanho depois, vamos cria-la como tamanho fixo de 10x10 pixels, no formato  <acronym>RGB</acronym>. Vamos guardar a largura e a altura da imagem em variáveis também, já que vamos nos referir a esses valores e manipula-los mais tarde no script.</para>
+      <programlisting>
+        (define (script-fu-text-box inText inFont inFontSize inTextColor)
+        (let*
+              (
+                 ; definir nossas variáeis locais
+                 (theImageWidth  10)
+                 (theImageHeight 10)
+                 ; criar uma nova imagem:
+                 (theImage (car
+                                (gimp-image-new
+                                 theImageWidth
+                                 theImageHeight
+                                 RGB
+                                )
+                           )
+                 )
+                 (theText)     ;uma declaração para o textot
+                                    ;que vamos criar depois
+      </programlisting>
+      <para>Nota: nós usamos o valor <code>RGB</code> para especificar que a imagem é uma imagem <acronym>RGB</acronym> . Nós também poderíamos ter usado o valor <code>0</code>, mas <acronym>RGB</acronym> é mais descritivo quando nós (e outras pessoas, quando publicarmos o script na internet), formos olhar o código de volta.</para>
+      <para>Você também deve notar que nós pegamos a cabeça do resultado da chamada a função de criar imagem (usando <quote>car</quote>) Isso pode parecer estranho, por que a base de dados de procedimento (PDB) nos diz que ela retorna apenas um valor &mdash; o ID da imagem recém criada. No entanto, todas as funções da PDB do GIMP retornam uma lista para o Script-fu, mesmo que só haja um valor a lista. Então precisamos tomar o primeiro elemento da lista, a cabeça, com uma chamada a car.</para>
+    </sect3>
+
+    <sect3>
+      <title>Adicionando uma nova camada à imagem</title>
+      <para>Agora que temos uma imagem, precisamos adicionar uma camada à mesma. Nós podemos chamar a função <function>gimp-layer-new</function> para criar a nova camada, passando a referência (ID) da imagem que acabamos de criar. (Daqui por diante, em vez de listar a função toda, mostraremos só as linhas que estamos adicionando à mesma. Você pode ver o script completo <link linkend="gimp-using-script-fu-tutorial-result">aqui</link>).</para>
+      <programlisting>
+        ;create a new layer for the image:
+           (theLayer
+                     (car
+                          (gimp-layer-new
+                           theImage
+                           "layer 1"
+                           theImageWidth
+                           theImageHeight
+                           RGB-IMAGE
+                           100
+                           LAYER-MODE-NORMAL
+                          )
+                      )
+            )
+         ) ;end of our local variables
+      </programlisting>
+      <para>Uma vez que tenhamos uma nova camada, precisamos adiciona-la a imagem:</para>
+      <programlisting>
+        (gimp-image-add-layer theImage theLayer 0)
+      </programlisting>
+      <para>Agora, só por diversão, vamos verificar o resultado de nosso trabalho até esse ponto, e adicionar esta linha para exibir a nova imagem, ainda vazia:</para>
+      <programlisting>(gimp-display-new theImage)</programlisting>
+      <para>
+        Save your work, restart <acronym>GIMP</acronym>,
+        run the script and a new image should pop up. It will probably
+        contain garbage (random colors), because we haven't erased
+        it. We'll get to that in a second.
+      </para>
+    </sect3>
+
+    <sect3>
+      <title>Adicionando o texto</title>
+      <para>Vá em frente, e remova a linha para exibir a imagem (ou comente-a colocando um (<code>;</code>) no começo da linha)</para>
+      <para>Antes de adicionar texto a imagem, precisamos configurar a cor de frente e a cor de fundo, de forma que o texto apareça na cor que o usuário especificou. Vamos usar as funções  gimp-context-set-back/foreground:</para>
+      <programlisting>
+        (gimp-context-set-background '(255 255 255) )
+        (gimp-context-set-foreground inTextColor)
+      </programlisting>
+      <para>Com as cores selecionadas, vamos limpar o lixo que existe na imagem preenchendo nossa camada com a cor de fundo:</para>
+      <programlisting>
+        (gimp-drawable-fill theLayer FILL-BACKGROUND)
+      </programlisting>
+      <para>Com a imagem limpa, podemos começar a adicionar algum texto</para>
+      <programlisting>
+        (set! theText
+                      (car
+                           (gimp-text-font
+                            theImage theLayer
+                            0 0
+                            inText
+                            0
+                            TRUE
+                            inFontSize
+                            inFont)
+                       )
+        )
+      </programlisting>
+      <para>Embora seja uma chamada de função longa, com muitos parâmetros, não há nenhuma surpresa se você olhar os parâmetros e compara-los com os que estão listados na entrada para essa função no navegador de procedimentos. Basicamente, estamos criando uma nova camada de texto, e atribuindo a mesma à variável <varname>theText</varname>.</para>
+      <para>Agora que temos o texto, podemos saber sua largura e sua altura, e redimensionar a imagem e sua camada para o tamanho do texto:</para>
+      <programlisting>
+        (set! theImageWidth   (car (gimp-drawable-get-width  theText) ) )
+        (set! theImageHeight  (car (gimp-drawable-get-height theText) ) )
+
+        (gimp-image-resize theImage theImageWidth theImageHeight 0 0)
+
+        (gimp-layer-resize theLayer theImageWidth theImageHeight 0 0)
+      </programlisting>
+      <para>Se você é como eu, provavelmente está se perguntando  o que é um desenhável (drawable) e como é diferente de uma camada (layer). A diferença entre os dois é que um desenhável é qualquer coisa em que se pode desenhar, incluindo camadas, mas isso também inclui canais, máscaras de camada, a seleção, etc...; Uma camada é uma versão mais específica de um desenhável. Na maioria dos casos a distinção não é importante.</para>
+      <para>Com a imagem pronta para ser exibida, podemos acrescentar de volta nossa linha que diz pra imagem ser exibida em uma janela:</para>
+      <programlisting>
+        (gimp-display-new theImage)
+      </programlisting>
+      <para>
+        Save your work, restart <acronym>GIMP</acronym> and give your first
+        script a run!
+      </para>
+    </sect3>
+
+    <sect3>
+      <title>Limpando o marcador de imagem suja (dirty flag)</title>
+      <para>Se você tentar fechar sua imagem criada sem salvar o arquivo antes, o <acronym>GIMP</acronym> vai perguntar se você quer salvar seu arquivo antes de fechar a imagem. Ele faz isso por que a imagem está marcada como <quote>suja</quote>, ou seja &mdash; ela sofreu modificações desde a última vez que foi salva.</para>
+      <para>Para fazer isso, nós limpamos o marcador de sujeira (dirty flag), depois de mostrar a imagem na tela:</para>
+      <programlisting>
+        (gimp-image-clean-all theImage)
+      </programlisting>
+      <para>Isso colocará o contador de sujeira em 0, fazendo a imagem parecer estar <quote>limpa</quote>. </para>
+      <para>Adicionar ou não essa linha é uma questão de gosto pessoal. Eu a uso em scripts que produzem novas imagens, quando os resultados são triviais, como neste caso. Se o seu script for muito complicado, ou se trabalha modificando uma imagem já existente, é melhor não usar essa função. </para>
+    </sect3>
+  </sect2>
+
+  <sect2 id="gimp-using-script-fu-tutorial-extending-text-box">
+    <title>Extendendo o Script de <quote>Text Box</quote></title>
+    <sect3>
+      <title>Tratando os passos de Desfazer corretamente</title>
+      <para>
+        When creating a script, you want to give your users the ability to
+        undo their actions, should they make a mistake. This is easily
+        accomplished by calling the functions
+        <function>gimp-image-undo-group-start</function>
+        and <function>gimp-image-undo-group-end</function>
+        around the code that manipulates the image. You can think of them as
+        matched statements that let <acronym>GIMP</acronym> know when to start
+        and stop recording manipulations on the image, so that those
+        manipulations can later be undone.
+      </para>
+      <para>Se você está criando uma nova imagem, como fazemos aqui, não é tão importante usar essas funções, por que você não está alterando uma imagem que já existe. Ainda assim, sem as mesmas, se o usuário usar a opção de desfazer na imagem do seu script, ela será desfeita passo a passo, o que pode não ser desejável. Entretanto, se o seu seu script atua sobre uma imagem que já existe, você certamente vai querer fazer uso dessas funções.</para>
+      <para>Desfazer um script funciona muito bem se você usar essas funções, com raras exceções, por exemplo, se o script alterar a cor de frente do GIMP sem restaurar o contexto.</para>
+    </sect3>
+
+    <sect3>
+      <title>Estendendo o script um pouco mais</title>
+      <para>Agora que você já tem um script bem legal para criar caixas de texto, vamos adicionar duas funcionalidades ao mesmo:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Atualmente, a imagem é redimensionada exatamente para o tamanho do texto  &mdash; não há espaço para mais nada, como sombras projetadas, ou efeitos especiais (apesar de que muitos dos scripts vão automaticamente redimensionar a imagem conforme for necessário para acomodar seus resultados). Vamos criar um espaço de reserva ao redor do texto, e até mesmo deixar o usuário especificar quanto espaço ele quer adicionar, como uma porcentagem do tamanho do texto resultante.</para>
+        </listitem>
+        <listitem>
+          <para>Este script poderia facilmente ser usado por outros scripts que trabalhem com texto. Vamos estende-lo de forma que ele retorne a imagem e as camadas criadas, de forma que outros scripts possam chama-lo e usar os objetos que nós criamos.</para>
+        </listitem>
+      </itemizedlist>
+    </sect3>
+
+    <sect3>
+      <title>Modificando os parâmetros e a função de registro</title>
+      <para>Para permitir ao usuário especificar a quantidade de espaço, vamos adicionar um parâmetro à nossa função e um à chamada de registro do script:</para>
+      <programlisting>
+  (define (script-fu-text-box inTest inFont inFontSize inTextColor inBufferAmount)
+  (let*
+        (
+           ; define our local variables
+           ; create a new image:
+           (theImageWidth  10)
+           (theImageHeight 10)
+           (theImage (car
+                          (gimp-image-new
+                           theImageWidth
+                           theImageHeight
+                           RGB
+                          )
+                     )
+           )
+           (theText)          ;a declaration for the text
+                              ;we create later
+
+           (theBuffer)        ;<emphasis>added</emphasis>
+
+           (theLayer
+                     (car
+                         (gimp-layer-new
+                          theImage
+                           "layer 1"
+                          theImageWidth
+                          theImageHeight
+                          RGB-IMAGE
+                          100
+                          LAYER-MODE-NORMAL
+                         )
+                     )
+           )
+        ) ;end of our local variables
+
+   <replaceable>[Code here]</replaceable>
+ )
+      </programlisting>
+      <programlisting><![CDATA[
+  (script-fu-register
+    "script-fu-text-box"                        ;function name
+    "Text Box"                                  ;menu label
+    "Creates a simple text box, sized to fit\
+      around the user's choice of text,\
+      font, font size, and color."              ;description
+    "Michael Terry"                             ;author
+    "copyright 1997, Michael Terry;\
+      2009, the GIMP Documentation Team"        ;copyright notice
+    "October 27, 1997"                          ;date created
+    ""                                      ;image type that the script works on
+    SF-STRING      "Text"          "Text Box"   ;a string variable
+    SF-FONT        "Font"          "Charter"    ;a font variable
+    SF-ADJUSTMENT  "Font size"     '(50 1 1000 1 10 0 1)
+                                                ;a spin-button
+    SF-COLOR       "Color"         '(0 0 0)     ;color variable
+    SF-ADJUSTMENT  "Buffer amount" '(35 0 100 1 10 1 0)
+                                                ;a slider
+  )
+  (script-fu-menu-register "script-fu-text-box" "<Image>/Filters/Tutorial")
+      ]]></programlisting>
+    </sect3>
+
+    <sect3>
+      <title>Adicionando o novo código</title>
+      <para>Nós vamos adicionar código em dois lugares: imediatamente antes de redimensionar a imagem, e, ao final do script (para retornar a nova imagem, a camada e o texto).</para>
+      <para>Depois de obter a largura e  altura do texto, nós precisamos recalcular esses valores com base na quantidade de espaço especificada pelo usuário. Nós não faremos nenhuma checagem de erro para ter certeza que o número está na faixa entre 0 e 100% por que não é algo que ameaça nossa vida, e por que não há nenhuma razão de por que o usuário não poderia colocar um valor como <quote>200</quote> como a percentagem de espaço a adicionar.</para>
+      <programlisting>
+        (set! theBuffer (* theImageHeight (/ inBufferAmount 100) ) )
+
+        (set! theImageHeight (+ theImageHeight theBuffer theBuffer) )
+        (set! theImageWidth  (+ theImageWidth  theBuffer theBuffer) )
+      </programlisting>
+      <para>Tudo o que estamos fazendo aqui é configurando o espaço (buffer) baseando-no na altura do texto, e adicionando esse valor multiplicado por dois a altura e a largura de nossa nova imagem. (Nós dobramos o valor por que o espaço tem que ser adicionado dos dois lados do texto &mdash; a esquerda e a direita na horizontal, e em cima e embaixo na vertical)</para>
+      <para>Agora que redimensionamos a imagem para comportar o espaço extra, é necessário centralizar o texto dentro da imagem. Isso é feito movendo se suas coordenadas (x,y) para a posição  (<varname>theBuffer</varname>, <varname>theBuffer</varname>). Eu adicionei essa linha após redimensionar a imagem e a camada:</para>
+      <programlisting>
+        (gimp-layer-set-offsets theText theBuffer theBuffer)
+      </programlisting>
+      <para>
+        Go ahead and save your script, and try it out after restarting
+        <acronym>GIMP</acronym>.
+      </para>
+      <para>Tudo o que resta agora é retornar a nossa imagem, a camada e a camada de texto. Depois de exibir a imagem, nós adicionamos esta linha:</para>
+      <programlisting>(list theImage theLayer theText)</programlisting>
+      <para>Essa é a última linha da função, tornando esta lista disponível para outros scripts que queiram usa-la.</para>
+      <para>Para usar nosso script de caixa de texto a partir de outro script, poderíamos fazer algo como o seguinte:</para>
+      <programlisting>
+        (set! theResult (script-fu-text-box
+                         "Some text"
+                         "Charter" "30"
+                         '(0 0 0)
+                         "35"
+                        )
+        )
+        (gimp-image-flatten (car theResult))
+      </programlisting>
+      <para>Parabéns! Você está indo rumo a sua faixa preta em Script-Fu!</para>
+    </sect3>
+  </sect2>
+
+  <sect2 id="gimp-using-script-fu-tutorial-result">
+    <title>Seu script e seu funcionamento</title>
+    <sect3>
+      <title>O que você escreve</title>
+      <para>Abaixo, o script completo:</para>
+      <programlisting><![CDATA[
+  (script-fu-register
+            "script-fu-text-box"                        ;function name
+            "Text Box"                                  ;menu label
+            "Creates a simple text box, sized to fit\
+              around the user's choice of text,\
+              font, font size, and color."              ;description
+            "Michael Terry"                             ;author
+            "copyright 1997, Michael Terry;\
+              2009, the GIMP Documentation Team"        ;copyright notice
+            "October 27, 1997"                          ;date created
+            ""                              ;image type that the script works on
+            SF-STRING      "Text"          "Text Box"   ;a string variable
+            SF-FONT        "Font"          "Charter"    ;a font variable
+            SF-ADJUSTMENT  "Font size"     '(50 1 1000 1 10 0 1)
+                                                        ;a spin-button
+            SF-COLOR       "Color"         '(0 0 0)     ;color variable
+            SF-ADJUSTMENT  "Buffer amount" '(35 0 100 1 10 1 0)
+                                                        ;a slider
+  )
+  (script-fu-menu-register "script-fu-text-box" "<Image>/Filters/Tutorial")
+  (define (script-fu-text-box inText inFont inFontSize inTextColor inBufferAmount)
+    (let*
+      (
+        ; define our local variables
+        ; create a new image:
+        (theImageWidth  10)
+        (theImageHeight 10)
+        (theImage)
+        (theImage
+                  (car
+                      (gimp-image-new
+                        theImageWidth
+                        theImageHeight
+                        RGB
+                      )
+                  )
+        )
+        (theText)             ;a declaration for the text
+        (theBuffer)           ;create a new layer for the image
+        (theLayer
+                  (car
+                      (gimp-layer-new
+                        theImage
+                        "layer 1"
+                        theImageWidth
+                        theImageHeight
+                        RGB-IMAGE
+                        100
+                        LAYER-MODE-NORMAL
+                      )
+                  )
+        )
+      ) ;end of our local variables
+      (gimp-image-insert-layer theImage theLayer 0 0)
+      (gimp-context-set-background '(255 255 255) )
+      (gimp-context-set-foreground inTextColor)
+      (gimp-drawable-fill theLayer FILL-BACKGROUND)
+      (set! theText
+                    (car
+                          (gimp-text-font
+                          theImage theLayer
+                          0 0
+                          inText
+                          0
+                          TRUE
+                          inFontSize
+                          inFont)
+                      )
+        )
+      (set! theImageWidth   (car (gimp-drawable-get-width  theText) ) )
+      (set! theImageHeight  (car (gimp-drawable-get-height theText) ) )
+      (set! theBuffer (* theImageHeight (/ inBufferAmount 100) ) )
+      (set! theImageHeight (+ theImageHeight theBuffer theBuffer) )
+      (set! theImageWidth  (+ theImageWidth  theBuffer theBuffer) )
+      (gimp-image-resize theImage theImageWidth theImageHeight 0 0)
+      (gimp-layer-resize theLayer theImageWidth theImageHeight 0 0)
+      (gimp-layer-set-offsets theText theBuffer theBuffer)
+      (gimp-floating-sel-to-layer theText)
+      (gimp-display-new theImage)
+      (list theImage theLayer theText)
+    )
+  )
+      ]]></programlisting>
+    </sect3>
+
+    <sect3>
+      <title>O que você obtém</title>
+      <figure>
+        <title>The dialog</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/using/script-fu-example-dialog.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <figure>
+        <title>The resulting image</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/using/script-fu-example-result.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+    </sect3>
+  </sect2>
+</sect1>

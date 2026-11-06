@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>9.3. Distance Map</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-generic.html" title="9. Filtros genéricos" />
+    <link rel="prev" href="gimp-filter-convolution-matrix.html" title="9.2. Matriz de convolução" />
+    <link rel="next" href="gimp-filter-normal-map.html" title="9.4. Normal Map" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>9.3. Distance Map</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-convolution-matrix.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>9. Filtros genéricos</span>
+        <nav> <a accesskey="n" href="gimp-filter-normal-map.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-distance-map"></a>9.3. Distance Map</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id54130" class="indexterm"></a>
+      <a id="id54134" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4624"></a>9.3.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Each pixel in the image is replaced with a gray value dependent on the 
+      distance to the nearest obstacle pixel, generally a boundary pixel. 
+      Different methods can be used to calculate the distance.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4625"></a>9.3.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Generic</span> → <span class="guimenuitem">Distance Map…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4626"></a>9.3.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4627"></a>
+          <p class="title">
+            <strong>Figura 17.189. <span class="quote">“<span class="quote">Distance Map</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/generic/dist_map-dialog.png" alt="“Distance Map” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Metric</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="quote">“<span class="quote">Metric</span>”</span> is a topology term. Three methods are 
+            available:
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Euclidean</span>
+                  </dt>
+                  <dd>
+                    <p>
+        The distance is a straight line.
+      </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Manhattan</span>
+                  </dt>
+                  <dd>
+                    <p>
+        The distance is the sum of the one-dimensional distances
+        along the X and Y axes.
+      </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Chebyshev</span>
+                  </dt>
+                  <dd>
+                    <p>
+        The distance is the maximum of the one-dimensional distances
+        along the X and Y axes.
+      </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Edge handling</span>
+            </dt>
+            <dd>
+              <p>
+            This defines how areas outside the input are considered when
+            calculating distance. Choices are:
+            <span class="guilabel">Below threshold</span> and
+            <span class="guilabel">Above threshold</span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Threshold low</span>
+            </dt>
+            <dd>
+              <p>
+            Default is 0. Increasing this value selects higher lightness pixels
+          </p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/generic/dist_map-orig.png" />
+                <div class="caption">
+                  <p>
+                Original image for examples. Threshold low will be progressively 
+                increased. Lightness: dark red = 0.070; bright red = 0.223; green 
+                = 0.133
+              </p>
+                </div>
+              </div>
+              <div class="figure">
+                <a id="id4628"></a>
+                <p class="title">
+                  <strong>Figura 17.190. <span class="quote">“<span class="quote">Threshold low</span>”</span> example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/generic/dist_map-low-0.png" alt="“Threshold low” example" />
+                    <div class="caption">
+                      <p>
+                  Threshold low = 0: only border distances are visible.
+               </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/generic/dist_map-low-1.png" alt="“Threshold low” example" />
+                    <div class="caption">
+                      <p>
+                  Threshold low = 0.070: <span class="quote">“<span class="quote">dark red</span>”</span> circle appears.
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/generic/dist_map-low-2.png" alt="“Threshold low” example" />
+                    <div class="caption">
+                      <p>
+                  Threshold low = 0.133: <span class="quote">“<span class="quote">green</span>”</span> circle appears.
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/generic/dist_map-low-3.png" alt="“Threshold low” example" />
+                    <div class="caption">
+                      <p>
+                  Threshold low = 0.223: <span class="quote">“<span class="quote">bright red</span>”</span> circle 
+                  appears.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Threshold high</span>
+            </dt>
+            <dd>
+              <p>
+            Default is 1. Decreasing this value makes result darker.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Grayscale Averaging</span>
+            </dt>
+            <dd>
+              <p>
+            Number of computations for grayscale averaging.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Normalize</span>
+            </dt>
+            <dd>
+              <p>
+            This option is checked by default. When checked, all distances are
+            normalized into a range of 0.0 to 1.0.
+          </p>
+              <p>
+            If you uncheck this option, non-obstacle pixels will appear white
+            because their calculated distance will be greater than or equal to
+            1.0.
+          </p>
+              <div class="figure">
+                <a id="id4629"></a>
+                <p class="title">
+                  <strong>Figura 17.191. <span class="quote">“<span class="quote">Normalize</span>”</span> example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/generic/dist_map-low-3.png" alt="“Normalize” example" />
+                    <div class="caption">
+                      <p>
+                  Normalize option checked.
+               </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/generic/dist_map-nonormalize.png" alt="“Normalize” example" />
+                    <div class="caption">
+                      <p>
+                  Normalize option unchecked.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-convolution-matrix.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-generic.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-normal-map.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-convolution-matrix.html">9.2. Matriz de convolução</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-normal-map.html">9.4. Normal Map</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

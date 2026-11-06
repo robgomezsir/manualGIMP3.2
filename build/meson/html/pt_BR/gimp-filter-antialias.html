@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.2. Anti-serrilhamento</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-enhance.html" title="4. Filtros de realce" />
+    <link rel="prev" href="filters-enhance.html" title="4. Filtros de realce" />
+    <link rel="next" href="gimp-filter-deinterlace.html" title="4.3. Desentrelaçar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.2. Anti-serrilhamento</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="filters-enhance.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. Filtros de realce</span>
+        <nav> <a accesskey="n" href="gimp-filter-deinterlace.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-antialias"></a>4.2. Anti-serrilhamento</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id48526" class="indexterm"></a>
+      <a id="id48530" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4288"></a>4.2.1. Visão Geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter reduces alias effects
+      (see <a class="link" href="glossary.html#glossary-antialiasing" title="Anti-aliasing">Anti-aliasing</a>)
+      using the Scale3X edge-extrapolation algorithm.
+    </p>
+        <p>Scale3X é derivado do Scale2x, que é um efeito gráfico para aumentar o tamanho de pequenos bitmaps adivinhando os pixels perdidos sem interpolarpixels e sem desfocar as imagens. <a href="#ftn.id48536" class="footnote" id="id48536"><sup class="footnote">[6]</sup></a> O Scale2x foi originalmente desenvolvido para melhorar a qualidade de jogos antigos de fliperama e de Computadores pessoais com uma resolução de vídeo baixa  jogados em hardware de vídeo  como televisores, monitores de Arcade, monitores de PC e telas de LCD. <a href="#ftn.id48539" class="footnote" id="id48539"><sup class="footnote">[7]</sup></a></p>
+        <p>
+      The Antialias filter works as follows: for every pixel, the filter
+      expands the original pixel in 9 (3×3) new pixels according to the
+      Scale3X algorithm, using the colors of the pixel and its 8 adjacent
+      pixels (extrapolation); then it subsamples the new pixels to a weighted
+      average pixel.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4289"></a>4.2.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Enhance</span> → <span class="guimenuitem">Antialias</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4290"></a>4.2.3. Exemplos</h4>
+            </div>
+          </div>
+        </div>
+        <p>Os exemplos seguintes ilustram o efeito de alguns padrões. Cadaquadradinho é um pixel (zoom 16:1).</p>
+        <div class="mediaobject">
+          <img src="images/filters/enhance/antialias-orig.png" />
+          <div class="caption">
+            <p>Imagem original (Zoom 16:1)</p>
+          </div>
+        </div>
+        <div class="mediaobject">
+          <img src="images/filters/enhance/antialias-applied.png" />
+          <div class="caption">
+            <p><span class="quote">“<span class="quote">Anti-Serrilhamento</span>”</span> aplicado (zoom 16:1)</p>
+          </div>
+        </div>
+      </div>
+      <div class="footnotes">
+        <br />
+        <hr style="width:100; text-align:left;margin-left: 0" />
+        <div id="ftn.id48536" class="footnote">
+          <p><a href="#id48536" class="para"><sup class="para">[6] </sup></a><a class="xref" href="bibliography.html#bibliography-online-scale2x" title="Scale2x">[<abbr class="abbrev">SCALE2X</abbr>]</a>.</p>
+        </div>
+        <div id="ftn.id48539" class="footnote">
+          <p><a href="#id48539" class="para"><sup class="para">[7] </sup></a><a class="xref" href="bibliography.html#bibliography-online-advancemame" title="Projeto AdvanceMAME">[<abbr class="abbrev">AdvanceMAME</abbr>]</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="filters-enhance.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-enhance.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-deinterlace.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="filters-enhance.html">4. Filtros de realce</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-deinterlace.html">4.3. Desentrelaçar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.46. Export Image as Raw image data</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-qoi-export.html" title="5.45. Export Image as Qoi" />
+    <link rel="next" href="file-rgbe-export.html" title="5.47. Export Image as Radiance RGBE" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.46. Export Image as Raw image data</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-qoi-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-rgbe-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-raw-export"></a>5.46. Export Image as Raw image data</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id29105" class="indexterm"></a>
+      <a id="id29107" class="indexterm"></a>
+      <a id="id29109" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3334"></a>5.46.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3335"></a>
+          <p class="title">
+            <strong>Figura 15.89. The Raw image data Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-raw-dialog.png" alt="The Raw image data Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      Raw image data means that the data of an image, i.e. pixels or palette
+      indexes and a palette, is written directly to a file, without further
+      information that exactly describes the organization of the image data.
+    </p>
+        <p>
+      Raw image data export should not be confused with the RAW formats that
+      some digital cameras use for high quality images.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3336"></a>5.46.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Planar configuration</span>
+            </dt>
+            <dd>
+              <p>
+            This setting determines how the color channels will be written
+            to file.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Contiguous</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The image data will be written as contiguous pixels.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Planar</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The image data will be written as separate channels or planes,
+                  i.e. all the red values for each pixel are written first, then
+                  blue, and finally the green and possibly alpha values.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Palette's layout</span>
+            </dt>
+            <dd>
+              <p>
+            Only enabled for indexed images. It determines how the
+            palette will be written.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">R, G, B (normal)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Each palette entry consists of a red, green and blue value,
+                  in that order.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">B, G, R, X (BMP style)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Each palette entry consists of a blue, green, red and
+                  undefined value, in that order. This is the format used
+                  in Windows BMP files.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-qoi-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-rgbe-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-qoi-export.html">5.45. Export Image as Qoi</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-rgbe-export.html">5.47. Export Image as Radiance RGBE</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

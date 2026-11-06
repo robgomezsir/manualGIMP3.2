@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--  section history:
+  2012-04-12 j.h: update to v2.8
+-->
+<sect2 id="gimp-image-window">
+  <title>Janela de Imagem</title>
+
+  <indexterm>
+    <primary>Janelas de Imagem</primary>
+    <secondary>Descrição</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Barra de estado</primary>
+    <secondary>Janela de imagem</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Visualização de navegação </primary>
+  </indexterm>
+  <indexterm>
+    <primary>Visualização</primary>
+    <secondary>Visualização de navegação </secondary>
+  </indexterm>
+
+  <para>A interface do usuário do GIMP está disponível em dois modos: modo multi-janelas (padrão), e o modo de janela única (opcional, através de <menuchoice><guimenu>Janela</guimenu><guimenuitem>Modo de janela única</guimenuitem></menuchoice>. Mas, se você sair do GIMP com esta opção ativada, oGIMP será aberto no modo de janela única na próxima vez).</para>
+  <para>Quando você inicia o <acronym>GIMP</acronym> sem qualquer imagem aberta, a janela de imagem pode parecer estar ausente no modo de janela única, enquanto que, no modo multi janela, existe uma janela de imagem, mesmo que nenhuma imagem esteja aberta.</para>
+
+  <para>Vamos começar com uma breve descrição dos componentes que estão presentes por padrão em uma janela de imagem comum. Alguns dos componentes podem ser removidos usando os comandos no menu <link linkend="gimp-view-menu">Visualizar</link>.</para>
+  <figure>
+    <title>A área da imagem no modo de <quote>Janela única</quote></title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/using/image-window-single.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <figure>
+    <title>A janela de imagem no modo de multi Janelas</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/using/image-window-multi.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <note>
+    <para>Apesar de existir o modo de janela <emphasis>única</emphasis>, vamos utilizar a expressão <quote>janela de imagem</quote> para designar a <quote>área da imagem</quote>.</para>
+  </note>
+
+  <orderedlist>
+    <listitem>
+      <!--1-->
+      <para>
+        <emphasis>Title Bar:</emphasis>
+        The Title Bar in an image window without an image displays
+        <quote>GNU Image Manipulating Program</quote>.
+        An image window with an image displays the image name
+        and its specifications in the title bar according to the settings
+        in <link linkend="gimp-prefs-dialog">Preferences Dialog</link>.
+        The Title Bar is provided by the operating system, not by
+        <acronym>GIMP</acronym>, so its appearance is likely to vary with
+        the operating system, window manager, and/or theme.
+      </para>
+      <para>Se você abriu uma imagem que não era um <filename>xcf</filename>, o nome que aparece é <quote>(importada)</quote>, e seu nome original aparece na barra de estado, na parte inferior da janela de imagem.</para>
+      <para>Quando uma imagem é modificada, aparece um asterisco em frente do título.</para>
+    </listitem>
+
+    <listitem>
+      <!--2-->
+      <para>
+        <emphasis>Main Menu:</emphasis>
+        Directly below the Title Bar appears the Menu bar (unless
+        <link linkend="gimp-view-show-menubar">it has been suppressed</link>).
+        The Main Menu provides access to nearly every
+        operation you can perform on an image. You can also right-click
+        on an image to display a pop-up menu,
+        <footnote><para>Usuários com um Apple Macintosh e um único botão do mouse podem usar <keycombo><keycap>Ctrl</keycap><mousebutton>botão do mouse</mousebutton></keycombo> ao invés disso.</para></footnote>,
+        or by left-clicking on the little <quote>arrow-head</quote> symbol in
+        the upper left corner, called <emphasis>Menu Button</emphasis>,
+        described just below.
+        Many menu commands are also associated with keyboard
+        <emphasis>shortcuts</emphasis> as shown in the menu.
+        You can define your own custom shortcuts for menu actions in the
+        <link linkend="gimp-help-keyboard-shortcuts">Keyboard Shortcuts
+        Dialog</link>.
+      </para>
+    </listitem>
+    <listitem>
+      <!--3-->
+      <anchor id="gimp-image-window-origin"/>
+      <para>
+        <emphasis>Menu Button:</emphasis>
+        Click the Menu Button to display the Main Menu in a column, (essential
+        in full screen mode).
+        If you like to use keyboard shortcuts, use
+        <keycombo><keycap>Shift</keycap><keycap>F10</keycap></keycombo>
+        to open the menu.
+      </para>
+    </listitem>
+    <listitem>
+      <!--4-->
+      <anchor id="gimp-image-window-ruler"/>
+      <para><emphasis>Régua:</emphasis> No layout padrão, as réguas são mostradas acima e à esquerda da imagem. Use as réguas para determinar as coordenadas dentro da imagem. A unidade padrão para as réguas é pixels, use as configurações descritas abaixo para usar uma outra unidade.</para>
+      <para>Uma das utilizações mais importantes das réguas é criar <emphasis>guias</emphasis>. Clique e arraste de uma régua para a imagem para criar uma guia. Uma guia é uma linha que ajuda você a posicionar ou verificar a posição de elementos com precisão, ou verificar que alguma coisa desenhada ou posicionada na imagem está verdadeiramente na horizontal ou na vertical.Clique e arraste uma guia para movê-la. Arraste uma guia para fora da imagem para excluí-la. Você sempre pode arrastar uma outro guia para a imagem. Você pode até usar várias guias ao mesmo tempo.</para>
+      <para>Na área da régua, o ponteiro do mouse é marcado com duas pequenas setas apontando verticalmente e horizontalmente.</para>
+    </listitem>
+    <listitem>
+      <!--5-->
+      <anchor id="quick-mask-toggle"/>
+      <para>
+        <emphasis>Quick Mask Toggle:</emphasis>
+        The small button in the lower left corner of the image toggles the
+        Quick Mask on and off. When the Quick Mask is toggled, the button
+        changes color, or is outlined in red for color icon themes. See
+        <link linkend="gimp-quick-mask">Quick Mask</link>
+        for more details on this highly useful tool.
+      </para>
+    </listitem>
+    <listitem>
+      <!--6-->
+      <para><emphasis>Coordenadas do ponteiro:</emphasis> Quando o ponteiro (cursor do mouse, se você estiver usando um mouse) está dentro dos limites da imagem, a área retangular no canto inferior esquerdo da janela exibe as coordenadas atuais do ponteiro. As unidades são as mesmas que para as réguas. </para>
+    </listitem>
+    <listitem>
+      <!--7-->
+      <para><emphasis>Menu de unidades:</emphasis> Use o Menu de unidades para alterar as unidades utilizadas para as réguas e vários outros fins. A unidade padrão é pixels, mas você pode rapidamente mudar para centimetros (cm), polegadas, ou várias outras possibilidades usando este menu. Note que a definição de <quote>Um ponto por pixel</quote> no menu <guimenu>Visualizar</guimenu> afeta a forma como a exibição é dimensionada: <link linkend="gimp-view-dot-for-dot">Um ponto por pixel</link> para mais informações.</para>
+    </listitem>
+    <listitem>
+      <!--8-->
+      <anchor id="gimp-image-window-zoom"/>
+      <para><emphasis>Botão de zoom:</emphasis> Há várias maneiras de visualizar a imagem aumentada ou diminuida, mas o botão de zoom é talvez o mais simples. Você pode inserir um nível de zoom diretamente na caixa de texto para ter um controle preciso.</para>
+    </listitem>
+    <listitem>
+      <!--9-->
+      <anchor id="gimp-image-window-status-bar"/>
+      <para><emphasis>Area de estado:</emphasis> A área de estado está na parte inferior da janela da imagem. Por padrão, a área de estado exibe o nome original do arquivo, e a quantidade de memória do sistema usado pela imagem. Por favor, use <menuchoice><guimenu>Editar</guimenu> <guisubmenu>Preferências</guisubmenu> <guimenuitem>Janelas de imagem</guimenuitem> <guimenuitem>Título &amp; estado</guimenuitem></menuchoice> para personalizar as informações exibidas na área de estado. Durante operações demoradas, a área de estado mostra a operação funcionando temporariamente e quanto já foi completada.</para>
+      <note>
+        <para>Note que a memória usada pela imagem é muito diferente do tamanho do arquivo de imagem. Por exemplo, uma imagem .PNG de 70Kb pode ocupar 246Kb de memória RAM quando exibida. Há duas razões principais, para a diferença no uso de memória. Primeiro, um Arquivo .PNG é um formato comprimido, e a imagem é reconstituída em memória RAM em forma descompactada. Segundo, o <acronym>GIMP</acronym> usa memória extra, e cópias da imagem, para possibilitar as ações de <quote>Desfazer</quote></para>
+      </note>
+    </listitem>
+    <listitem>
+      <!--10-->
+      <para><emphasis>Botão cancelar:</emphasis> Durante operações complexas e demoradas, geralmente um plug-in, um botão Cancelar aparece no canto inferior direito da janela temporariamente. Se for necessário, use esse botão para interromper a operação.</para>
+      <note>
+        <para>Alguns plug-ins respondem mal ao serem cancelados, às vezes deixando partes corrompidas de imagens para trás. </para>
+      </note>
+    </listitem>
+    <listitem>
+      <!--11-->
+      <anchor id="gimp-image-window-nav-button"/>
+      <indexterm>
+        <primary>Navegação</primary>
+        <secondary>botão de Navegação</secondary>
+      </indexterm>
+      <para>
+        <emphasis>Navigation Control:</emphasis>
+        This is the
+        <guiicon>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/stock-icons/gimp-navigation.svg" contentwidth="16px"/>
+            </imageobject>
+          </inlinemediaobject>
+        </guiicon>
+        button at the lower right corner of the image window.
+        Click and hold (do not release the mouse button)
+        on the navigation control to display the Navigation Preview.
+        The Navigation Preview has a miniature view of the image
+        with the displayed area outlined. Use the Navigation Preview
+        to quickly pan to a different part of the
+        image&mdash;move the mouse while keeping the button pressed.
+        The Navigation Window is often the most convenient way to
+        quickly navigate around a large image with only a small portion
+        displayed. See
+        <link linkend="gimp-navigation-dialog">Navigation Dialog</link>
+        for other ways to access the Navigation Window.
+      </para>
+    </listitem>
+    <listitem>
+      <!--12-->
+      <para><emphasis>Área de preenchimento inativa:</emphasis> Quando as dimensões da imagem são menores do que a janela de imagem, esta área preenchimento separa a visualização da imagem dos outros elementos da janela, então você é capaz de distinguir oque é o que. Você não pode aplicar quaisquer filtros ou operações na área inativa. </para>
+    </listitem>
+    <listitem>
+      <!--13-->
+      <anchor id="imagewindow-display"/>
+      <para>
+        <emphasis>Image Display:</emphasis>
+        The most important part of the image window is, of course, the image
+        display or canvas. It occupies the central area of the window,
+        surrounded by a yellow dotted line showing the image boundary, against
+        a neutral gray background.
+      </para>
+      <para>
+        Besides the Navigation Control mentioned above, you can also pan
+        across the image using a keyboard or mouse directly:
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            Hold the <keycap>Shift</keycap> key, then use the arrow keys to pan
+            the view in that direction.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Use the scroll wheel on your mouse to pan the image vertically
+            (up or down); hold the <keycap>Shift</keycap> key while using
+            the scroll wheel to pan horizontally (left or right) instead.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            If your mouse has a middle-button, click and drag with it to pan across
+            the image.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            Alternatively, you can press and hold <keycap>Spacebar</keycap>
+            in combination with moving the mouse.
+          </para>
+        </listitem>
+      </itemizedlist>
+      <para>
+        You can change the zoom level of the image display in a variety of ways,
+        including using the <link linkend="gimp-image-window-zoom">Zoom
+        Button</link> mentioned above, and the Zoom setting described below.
+        Other ways of adjusting the zoom are using <keycap>Ctrl</keycap>
+        mousewheel, using the <link linkend="gimp-view-zoom">Zoom commands</link>
+        in the <guimenu>View</guimenu> menu, and using the
+        <link linkend="gimp-tool-zoom">Zoom Tool</link>.
+      </para>
+    </listitem>
+    <listitem>
+      <!--14-->
+      <anchor id="gimp-image-window-zoom-follow-button"/>
+      <para><emphasis>Controle de redimensionamento da janela</emphasis>&gt; Sem ligar este recurso, se você mudar o tamanho da janela da imagem, clicando e arrastando as bordas da mesma, o tamanho da imagem e o nível de zoom não mudam. Se você deixar a janela maior, por exemplo, então você vai ver uma área maior da imagem. Se este botão estiver pressionado, no entanto, o fator de zoom da imagem mudaquando a janela é redimensionada , de modo que a mesma parte da imagem é exibida antes e depois da janela mudar de tamanho.</para>
+    </listitem>
+  </orderedlist>
+
+  <tip>
+    <para>Arraste e solte uma imagem de um navegador de arquivos no diálogo Caixa de Ferramentas para abrir a imagem em sua própria janela (ou guia, no modo de janela única).</para>
+    <para>
+      Dragging an image file into the Layers dialog adds it to the image as a
+      new layer.
+    </para>
+  </tip>
+
+  <para>O tamanho da imagem e o tamanho da janela de imagem podem ser diferentes. Você pode fazer a imagem se ajustar à janela, e vice-versa, através de dois atalhos de teclado: <itemizedlist>
+      <listitem>
+        <para><keycombo><keycap>Ctrl</keycap><keycap>J</keycap></keycombo>: este comando mantém o nível de zoom, e adapta o tamanho da janela ao tamanho da imagem. O comando <quote>Visualizar-&gt;Arrumar janela</quote> faz o mesmo.</para>
+      </listitem>
+      <listitem>
+        <para><keycombo><keycap>Ctrl</keycap><keycap>Shift</keycap><keycap>J</keycap></keycombo>: este comando modifica o nível de zoom aplicado à imagem exibida na janela.</para>
+      </listitem>
+    </itemizedlist></para>
+
+</sect2>

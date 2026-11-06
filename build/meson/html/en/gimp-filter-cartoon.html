@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>11.3. Cartoon</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-artistic.html" title="11. Artistic Filters" />
+    <link rel="prev" href="gimp-filter-apply-canvas.html" title="11.2. Apply Canvas" />
+    <link rel="next" href="gimp-filter-cubism.html" title="11.4. Cubism" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>11.3. Cartoon</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-apply-canvas.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>11. Artistic Filters</span>
+        <nav> <a accesskey="n" href="gimp-filter-cubism.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-cartoon"></a>11.3. Cartoon</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id53923" class="indexterm"></a>
+      <a id="id53927" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3418"></a>11.3.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3419"></a>
+          <p class="title">
+            <strong>Figure 17.213. Example for the <span class="quote">“<span class="quote">Cartoon</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for the “Cartoon” filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/artistic-taj-cartoon.jpg" alt="Example for the “Cartoon” filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The Cartoon filter modifies the active layer or selection so that it
+      looks like a cartoon drawing. Its result is similar to a black felt pen
+      drawing subsequently shaded with color. This is achieved by darkening
+      areas that are already distinctly darker than their neighborhood.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3420"></a>11.3.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Artistic</span> → <span class="guimenuitem">Cartoon…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3421"></a>11.3.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3422"></a>
+          <p class="title">
+            <strong>Figure 17.214. <span class="quote">“<span class="quote">Cartoon</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/artistic/cartoon-dialog.png" alt="“Cartoon” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-filters-common.html" title="2. Common Features">Section 2, “Common Features”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Mask radius</span>
+            </dt>
+            <dd>
+              <p>
+            This parameter controls the size of areas the filter works with.
+            Large values result in very thick black areas and much less detail
+            in the resulting image. Small values result in more subtle pen
+            strokes and more details preserved.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Percent black</span>
+            </dt>
+            <dd>
+              <p>
+            This parameter controls the amount of black color added to the
+            image. Small values make the blend from color regions to blackened
+            areas smoother and dark lines themselves thinner and less
+            noticeable. Larger values make the lines thicker, darker and
+            sharper. The maximum value makes the lines aliased. The best, most
+            natural results are usually achieved with an intermediate value.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-apply-canvas.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-artistic.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-cubism.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-apply-canvas.html">11.2. Apply Canvas</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-cubism.html">11.4. Cubism</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

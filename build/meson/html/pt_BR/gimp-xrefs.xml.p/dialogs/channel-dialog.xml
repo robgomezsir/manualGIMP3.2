@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-23 j.h: no change for 2.8
+  2008-12-13 j.h: updated to v2.6
+  2007-08-29 j.h : link to glossary Alpha Channel added
+  2006-03-06 lexa: made docbook compliant
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-channel-dialog">
+  <title>Diálogo de canais</title>
+
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Canais</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Canal</primary>
+    <secondary>Diálogo</secondary>
+  </indexterm>
+
+  <figure>
+    <title>O diálogo de canais</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/channels-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>O diálogo de Canais é a principal interface para editar, modificar e gerenciar seus canais. Há dois tipos distintos de canais no GIMP, e por isso esse diálogo é dividido em duas partes: a primeira parte para os canais de cor, e a segunda parecidos para os canais que podem ser usados como <link linkend="gimp-channel-mask">máscaras de seleção</link> ou de spot-colors.</para>
+  <para><emphasis>Canais de cor</emphasis> se aplicam à imagem e não a uma camada específica. Basicamente, três cores primárias são necessárias para renderizar toda a ampla gama de cores naturais. Como outros softwares digitais, o <acronym>GIMP</acronym> usa Vermelho, Verde e Azul como cores primárias. Os primeiros e principais canais exibem os valores <guilabel>Vermelho</guilabel>, <guilabel>Verde</guilabel> e <guilabel>Azul</guilabel> de cada pixel em sua imagem.</para>
+  <para>Ao lado do nome do canal há uma miniatura exibindo uma representação em escala de cinza de cada canal, onde branco é 100% e preto é 0% da cor primária. Alternativamente, se sua imagem não é colorida, mas uma imagem em Escala de Cinza, há apenas um canal primário chamado <guilabel>Escala de Cinza</guilabel>. Para uma imagem Indexada com um número fixo de cores conhecidas, também há apenas um canal primário chamado <guilabel>Indexado</guilabel>.</para>
+  <para>
+    Then there is an optional channel called <guilabel>Alpha</guilabel>. This
+    channel displays transparency values of each pixel in your image
+    (See <link linkend="glossary-alpha-channel">Alpha Channel</link> in
+    Glossary). In front of this channel is a thumbnail displaying a grayscale
+    representation of the transparency where white is opaque and visible, and
+    black is transparent and invisible. If you create your image without
+    transparency then the Alpha channel is not present, but you can add it
+    from the <link linkend="gimp-layer-dialog">Layers Dialog</link> context
+    menu.
+    Also, if you have more than one layer in your image,
+    <acronym>GIMP</acronym> automatically creates an Alpha channel.
+  </para>
+  <note>
+    <para>O GIMP não suporta os modelos de cor CMYK ou YUV para edição de imagem.</para>
+  </note>
+  <figure>
+    <title>Representação de uma imagem com canais</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/wilber-channels-red.png"/>
+      </imageobject>
+      <caption>
+        <para>Canal vermelho</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/wilber-channels-green.png"/>
+      </imageobject>
+      <caption>
+        <para>Canal verde</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/wilber-channels-blue.png"/>
+      </imageobject>
+      <caption>
+        <para>Canal azul</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/wilber-channels-alpha.png"/>
+      </imageobject>
+      <caption>
+        <para>Canal alfa</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/wilber-channels-combined.png"/>
+      </imageobject>
+      <caption>
+        <para>Todos os canais</para>
+      </caption>
+    </mediaobject>
+  </figure>
+  <para>A imagem da direita está decomposta em três canais de cor (vermelho, verde e azul) e o canal alfa para transparência. Na imagem, a transparência é representada por um quadriculado cinza. No canal de cor, branco sempre aparece como branco, por que todas as cores estão presentes em intensidade máxima. Da mesma forma, preto é sempre preto. O chapéu vermelho é visível no canal vermelho, mas imperceptível nos outros canais, O mesmo acontece para a cor verde sólida e o azul, que só são visíveis em seus respectivos canais.</para>
+
+  <sect3 id="gimp-channel-dialog-calling">
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          From the main menu through
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Channels</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          From the Tab menu in any dockable dialog by clicking on
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Channels</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      In the <guimenu>Windows</guimenu> menu, there is a list of
+      <link linkend="gimp-dockable-menu">detached windows</link> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <quote>Channels</quote> dialog from the main menu:
+      <menuchoice>
+        <guimenu>Windows</guimenu>
+        <guimenuitem>Channels</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="gimp-channel-dialog-using">
+    <title>Using the Channels Dialog</title>
+
+    <variablelist>
+
+      <varlistentry id="gimp-channel-dialog-using-overview">
+        <term>Visão geral</term>
+        <listitem>
+          <para>
+            The Channels Dialog consists of a list of color channels and the
+            optional Alpha channel.
+            Below that is a list of selection mask channels.
+            A right-click in a channel list entry opens the
+            <link linkend="gimp-channel-menu">channel context menu</link>.
+          </para>
+          <para>
+            The color channels are always organized in the same order. They
+            cannot be removed. You can only change their visibility and
+            select or unselect them. By default, all of these channels are
+            visible and selected.
+          </para>
+          <para>
+            To select a channel, click on a color channel in the list.
+            This toggles the selection of the channel, meaning a selected
+            channel will become unselected and vice versa.
+            The selected color channels appear highlighted in the dialog.
+          </para>
+          <caution>
+            <para>
+              Unselecting one of the color channels red, blue, or green has
+              severe consequences. For instance if you disable the blue channel,
+              all pixels from now on added to the image will not have a blue
+              component, and so a white pixel will have the yellow complementary
+              color.
+            </para>
+            <para>
+              Making one of the color channels invisible does not influence how
+              tools work and only changes what is currently displayed on your
+              screen. For example, a brush will continue to paint as usual, and
+              the eraser will change the alpha value of pixels also when the
+              alpha channel is set to be not visible.
+            </para>
+            <para>
+              The selected color channels define which parts of a tool's action
+              are applied to the layer. For example, the eraser will not change
+              your image if the alpha channel is not selected.
+            </para>
+          </caution>
+          <note>
+            <para>
+              The duplicate and selection commands documented below can also
+              be used on the color channels. However, this only works when
+              accessing the command from the right-click context menu, and
+              only for one channel at a time.
+            </para>
+          </note>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Selecting multiple channels</term>
+        <listitem>
+          <para>
+            <acronym>GIMP</acronym> allows you to select multiple selection mask
+            channels and perform actions on them. You can e.g. move them to a
+            different location in the channels stack, and convert them to
+            selections.
+            Selecting multiple channels is done by using the mouse and
+            <keycap>Shift</keycap> key, for adding a range of channels, or
+            <keycap>Ctrl</keycap> key, for adding or removing the clicked
+            channel.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Channel list header</term>
+        <listitem>
+          <para>
+            Directly above the list of selection masks is the header bar. On
+            the left you see the icons that identify the visibility and lock
+            columns. In the middle a text label will tell you how many channels
+            are currently selected if it is more than one.
+          </para>
+          <!-- Searching on channels and paths is temporarily disabled in GIMP.
+               Since it is intended to come back later, we comment it out here.
+          <para>
+            On the right you see the search entry. Clicking here will allow you
+            to search for and select one or more channels. You will also be
+            able to save this search for future use.
+          </para>
+          <para>
+            For more details about searching see
+            <link linkend="gimp-layer-search">Search layers and Saved searches</link>.
+          </para>
+          -->
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-channel-dialog-using-attributes">
+        <term>
+            <!-- Old anchor which is probably not used anymore -->
+            <anchor id="gimp-channel-linked"/>
+          <phrase>Atributos de canal</phrase>
+        </term>
+        <listitem>
+          <para>Cada canal é exibido na lista com seus próprios atributos, que são bastante similares aos <link linkend="gimp-layer-attributes">atributos de camada</link>:</para>
+          <variablelist id="channel-attributes">
+
+            <varlistentry id="gimp-channel-visible">
+              <term>
+                <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-visible.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+                </guiicon>
+                <phrase>Visibilidade do canal</phrase>
+              </term>
+              <listitem>
+                <para>
+                  By default, all color channels are visible, and color mask
+                  channels are invisible.
+                  Clicking on the eye-symbol, or the empty space if the channel
+                  is not visible, will toggle the visibility of the channel.
+                  <keycap>Shift</keycap>-clicking on the icon causes
+                  all <emphasis>other</emphasis> channels to be hidden.
+                </para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry id="gimp-channel-dialog-using-locks">
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-lock.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Atributos de canal</phrase>
+              </term>
+              <listitem>
+                <para>
+                  Each selection mask channel has lock attributes. If one of its
+                  attributes is set, the respective lock icon will show up in front
+                  of the thumbnail.
+                </para>
+                <para>
+                  When multiple attributes are set, a double lock icon will
+                  show here. Clicking in this column allows you to change
+                  these attributes.
+                </para>
+                <variablelist>
+                  <varlistentry id="gimp-channel-lock-pixels">
+                    <term>
+                      <guiicon>
+                        <inlinemediaobject>
+                          <imageobject>
+                            <imagedata fileref="images/stock-icons/gimp-lock-content.svg" contentwidth="16px"/>
+                          </imageobject>
+                        </inlinemediaobject>
+                      </guiicon>
+                      <phrase>Travar pixels</phrase>
+                    </term>
+                    <listitem>
+                      <para>
+                        This icon shows when <quote>lock pixels</quote> is
+                        enabled for the current channel. When this is enabled,
+                        the channel is locked for any action that changes
+                        pixels, meaning there will be no changes done to this
+                        channel.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry id="gimp-channel-lock-position">
+                    <term>
+                      <guiicon>
+                        <inlinemediaobject>
+                          <imageobject>
+                            <imagedata fileref="images/stock-icons/gimp-lock-position.svg" contentwidth="16px"/>
+                          </imageobject>
+                        </inlinemediaobject>
+                      </guiicon>
+                      <phrase>Travar posição e tamanho</phrase>
+                    </term>
+                    <listitem>
+                      <para>
+                        This icon shows when <quote>lock position and size</quote>
+                        is enabled for the current channel. When this is enabled,
+                        the channel is locked for any action that changes its
+                        position or size.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry id="gimp-channel-lock-visibility">
+                    <term>
+                      <guiicon>
+                        <inlinemediaobject>
+                          <imageobject>
+                            <imagedata fileref="images/stock-icons/gimp-lock-visibility.svg" contentwidth="16px"/>
+                          </imageobject>
+                        </inlinemediaobject>
+                      </guiicon>
+                      <phrase>Lock visibility</phrase>
+                    </term>
+                    <listitem>
+                      <para>
+                        This toggle button controls the <quote>Lock</quote>
+                        setting for the visibility of the channel. If this is
+                        enabled, the channel visibility cannot be changed until
+                        you disable the lock.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                </variablelist>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <!--Preview image-->
+              <term>Miniatura</term>
+              <listitem>
+                <para>Um pequeno ícone de pré-visualização representa o efeito do canal. Em uma máscara de seleção, essa pré-visualização pode ser aumentada segurando-se o botão do mouse pressionado sobre a mesma.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Nome do canal</term>
+              <listitem>
+                <para>O nome do canal, que deve ser único em cada imagem. Clicar duas vezes no nome de um canal de máscara de seleção permite que você o edite. Os nomes dos canais primários (Vermelho, Verde, Azul e Alfa) não podem ser mudados.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-channel-dialog-using-managing">
+        <term>Gerenciando canais</term>
+
+        <listitem>
+        <!--TODO: check: do we really need so many indexterms?-->
+        <indexterm>
+          <primary>Canal</primary>
+          <secondary>Editar atributos de canal</secondary>
+        </indexterm>
+        <indexterm>
+          <primary>Canal</primary>
+          <secondary>Criar um novo canal do tipo máscara</secondary>
+        </indexterm>
+        <indexterm>
+          <primary>Canal</primary>
+          <secondary>Mover um canal do tipo máscara</secondary>
+        </indexterm>
+        <indexterm>
+          <primary>Canal</primary>
+          <secondary>Duplicar um canal do tipo máscara</secondary>
+        </indexterm>
+        <indexterm>
+          <primary>Canal</primary>
+          <secondary>Remover um canal do tipo máscara</secondary>
+        </indexterm>
+        <indexterm>
+          <primary>Canal</primary>
+          <secondary>Canal para seleção</secondary>
+        </indexterm>
+
+          <para>
+            The button bar at the bottom offers the following functionality:
+          </para>
+          <variablelist>
+            <varlistentry id="gimp-channel-new">
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Novo canal</phrase>
+              </term>
+              <listitem>
+                <para>
+                  This creates a new channel. A dialog will open where you can set
+                  the <guilabel>Channel name</guilabel>, the
+                  <guilabel>Color tag</guilabel>, the
+                  <link linkend="channel-attributes">channel attributes</link> and
+                  <link linkend="gimp-channel-dialog-using-locks">lock attributes</link>,
+                  and finally the <guilabel>Opacity</guilabel> and color used for
+                  the mask in the image window. A click on the color button
+                  displays the GIMP color selector where you can change the mask
+                  color.
+                </para>
+                <para>
+                  If you press the <keycap>Shift</keycap> key while clicking the
+                  <guibutton>New Channel</guibutton> button, the New Channel
+                  dialog will not be opened. Instead the new channel will be
+                  created with the same settings as used previously.
+                  This new channel is a selection mask applied over the image.
+                  See for more details
+                  <link linkend="gimp-channel-mask">Selection Mask</link>.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-channel-raise">
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/go-up.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Raise Channels</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-channel-raise-to-top"/>
+                <para>
+                  This moves the selected channels up in the list.
+                  Press the <keycap>Shift</keycap> key to move the selected
+                  channels to the top of the list.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-channel-lower">
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/go-down.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Lower Channels</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-channel-lower-to-bottom"/>
+                <para>
+                  This moves selected channels down in the list.
+                  Press the <keycap>Shift</keycap> key to move the selected
+                  channels to the bottom of the list.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-channel-duplicate">
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-duplicate.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Duplicate Channels</phrase>
+              </term>
+              <listitem>
+                <para>
+                  This creates a copy of the selected channels. The name
+                  of the new channels is suffixed with a number.
+                </para>
+                <tip>
+                  <para>
+                    You can also duplicate color channels or the Alpha channel.
+                    It's an easy way to keep a copy of them and to use them later
+                    as a selection in an image.
+                    Note that you can only duplicate one color channel at a
+                    time, and only using the right-click context menu.
+                  </para>
+                </tip>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-channel-selection-replace">
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-selection.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Replace the Selection with Selected Channels</phrase>
+              </term>
+              <listitem>
+                <para>
+                  This transforms the selected channels to become a selection. By
+                  default the selection derived from channels replaces the
+                  active selection. You can change this by using control keys.
+                </para>
+                <itemizedlist>
+                  <listitem id="gimp-channel-selection-add" xreflabel="Adicionar à seleção">
+                    <para><keycap>Shift</keycap>: a seleção derivada do canal é adicionada à seleção previamente existente. A seleção final é a combinação de ambas.</para>
+                  </listitem>
+                  <listitem id="gimp-channel-selection-subtract" xreflabel="Subtrair da seleção">
+                    <para><keycap>Ctrl</keycap>: a seleção final é a subtração da seleção derivada de um canal de uma seleção previamente ativa.</para>
+                  </listitem>
+                  <listitem id="gimp-channel-selection-intersect" xreflabel="Fazer intersecção com a seleção">
+                    <para><keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap></keycombo>: a seleção final é a intersecção da seleção derivada de um canal com a seleção previamente ativa. Somente as partes em comum são mantidas.</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+            <varlistentry id="gimp-channel-delete">
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Delete Channels</phrase>
+              </term>
+              <listitem>
+                <para>
+                  This deletes the selected channels.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+  <xi:include href="channel-menu.xml"/>
+  <xi:include href="channel-selection-mask.xml"/>
+  <xi:include href="qmask.xml"/>
+</sect2>

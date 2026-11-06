@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-28 j.h: update to v2.10
+  2005-09-30 j.h create
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-bump-map">
+  <title>Mapa de relevo</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Mapeamento</secondary>
+    <tertiary>mapa-de-relevo</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Mapa de relevo</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de <quote>Mapa de relevo</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/example-map-bumpmap.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            On the left, the original image that we want to emboss: a solid
+            blue. In the middle, the bump map: a grayscale image, where
+            black pixels will emboss backwards and white pixels will emboss
+            forwards. On the right, the bump-mapped image. The filter adds a
+            shadow effect.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter creates a 3D effect by embossing an image (the card) and
+      then mapping it to another image. Bump height depends on pixel
+      luminosity and you can set light direction. See
+      <link linkend="gimp-filter-emboss">Emboss</link> for more information
+      about embossing. You can bump map any type of image, unlike the Emboss
+      filter.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Map</guisubmenu>
+        <guimenuitem>Bump Map…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Mapa de relevo</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/map/bumpmap-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Height Map</term>
+        <listitem>
+          <para>
+            Clicking on this button opens a small file browser with two panels.
+            On the left panel, images present on your screen are listed: the
+            active image is selected. On the right panel, you see the layers list
+            of the active image: double click on the layer you want to use as a
+            map for bump-mapping; the file browser is closed and a layer
+            thumbnail appears in the Aux Input button.
+          </para>
+          <para>
+            The right panel has a <guilabel>Channels</guilabel> tab: TODO
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Type</term>
+        <listitem>
+          <para>Esta opção permite selecionar o método que será usado ao criar a imagem mapeada:</para>
+          <variablelist>
+            <varlistentry>
+              <term>Linear</term>
+              <listitem>
+                <para>A altura das ondulações é uma função direta da luminosidade.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Spherical</term>
+              <listitem>
+                <para>
+                  Bump height is a spherical function of luminosity.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Sinusoidal </term>
+              <listitem>
+                <para>A altura das ondulações é uma função sinusoidal (aplicação do seno) à luminosidade.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Compensate</term>
+        <listitem>
+          <para>O mapeamento de relevo tende a escurecer a imagem. Você pode compensar o escurecimento marcando esta opção.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Invert</term>
+        <listitem>
+          <para>Por padrão, pixels claros são partes altas do relevo, e pixels escuros são partes fundas. Você pode inverter esse comportamento marcando esta opção.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tiled</term>
+        <listitem>
+          <para>Se você marcar esta opção, caso a imagem de mapa de relevo seja menor que a imagem alvo, será considerado como se houvesse várias cópias dela  colocadaslado a lado, para criar o relevo. Caso contrário, o efeito de relevo será centralizado na imagem de destino, e as partes que ficarem para fora do mapa de relevo permanecerão inalteradas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Azimuth</term>
+        <listitem>
+          <para>Este valor configura a direção da iluminação, como se fosse a direção dada por uma bússola (0° até 360°). Leste (0°) é à esquerda, e aumentar o valor faz a direção girar no sentido anti-horário.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Elevação</term>
+        <listitem>
+          <para>Essa é a altura do horizonte (0,5°) até o zênite (90°). Quanto menor o ângulo, maior o contraste entre luz e sombra na imagem resultante.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Profundidade</term>
+        <listitem>
+          <para>Com esse controle, você pode variar a altura e profundidade das ondulações do relevo. Quanto maior o valor, maior a diferença entre ambos. Os valores vão de 1 até 65. </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Offset X</term>
+        <term>Offset Y</term>
+        <listitem>
+          <para>Com esses controles você pode ajustar a posição da imagem de mapa em relação com a imagem de origem, tanto na horizontal(X) quanto na vertical(Y).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Nível d'água</term>
+        <listitem>
+          <para>Se sua imagem de mapa tem áreas transparentes, elas serão tratadas como áreas escuras, e vão aparecer como áreas afundadas depois do mapeamento. Com esse controle, você pode reduzir o efeito dessas partes baixas, como se o nível do mar estivesse subindo. O afundamento para as áreas transparentes desaparecerá quando esse valor for 255. Se a opção de inverter o relevo estiver marcada, a áreas transparentes serão tratadas como se fossem áreas claras, e então o controle de nível d'água as deixará mais baixas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ambient lighting factor</term>
+        <listitem>
+          <para>Esse controle afeta a intensidade da luz ambiente: a luz que não sofre interferência do relevo. Com valores altos, as sombras e pontos claros do mapa de relevo ficarão menos intensas.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Using Bumpmap filter</title>
+    <para>
+      We shall emboss an image with a text.
+    </para>
+    <orderedlist>
+      <listitem>
+        <para>
+          Open your main image.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Create the map: here a white text on black background.
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/map/bumpmap-ex-1.png"/>
+            </imageobject>
+            <caption>
+              <para>
+                The image and the map
+              </para>
+            </caption>
+          </mediaobject>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <menuchoice><guimenu>Edit</guimenu><guimenuitem>Copy</guimenuitem>
+          </menuchoice> the map. Activate the image and <menuchoice>
+          <guimenu>Edit</guimenu><guisubmenu>Paste as</guisubmenu>
+          <guimenuitem>Paste as Single Layer</guimenuitem>
+          </menuchoice>. Right click on the new layer 
+            and select <guimenuitem>Layers to Image Size</guimenuitem> to make the layer 
+            the same size as the image. 
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The map layer being active, apply a Gaussian Blur. Here, the default 
+          1.5 pixels is used.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Make the map layer invisible and activate the image layer.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Open the <quote>Bump Map</quote> filter. Click on the 
+          <guibutton>Height Map</guibutton> button and double-click on the
+          text layer in the right panel.
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/map/bumpmap-ex-2.png"/>
+            </imageobject>
+            <caption>
+              <para>
+                Bump Map filter applied. Depth = 3. Ambient lighting 
+                factor&nbsp;=&nbsp;0.326.
+              </para>
+            </caption>
+          </mediaobject>
+        </para>
+      </listitem>
+    </orderedlist>
+  </sect3>
+</sect2>

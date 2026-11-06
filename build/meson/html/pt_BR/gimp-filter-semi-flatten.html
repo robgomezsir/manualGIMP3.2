@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>15.3. Semi-Achatar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-web.html" title="15. Filtros para a Web" />
+    <link rel="prev" href="plug-in-imagemap.html" title="15.2. Image Map" />
+    <link rel="next" href="filters-animation.html" title="16. Filtros de animação" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>15.3. Semi-Achatar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-imagemap.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>15. Filtros para a Web</span>
+        <nav> <a accesskey="n" href="filters-animation.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-semi-flatten"></a>15.3. Semi-Achatar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id62278" class="indexterm"></a>
+      <a id="id62282" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5134"></a>15.3.1. Visão Geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>O filtro Semi-achatar ajuda aqueles que precisam de uma solução para imagens indexadas anti-serrilhadas com transparência. O formato GIF suporta transparência indexada completa (0 ou 255 valor alfa), mas não semi-transparência (1-254): pixels semi-transparentes serão transformados em nenhuma transparência ou transparência completa, arruinando o anti-serrilhado aplicado ao logotipo que você quer colocar na sua página web. Até alguns anos atrás esse ajuste em imagens GIF era muito importante — hoje em dia todos os navegadores suportam bem o formato de imagens PNG com transparência parcial, que deve ser usado no lugar do GIF, e você só vai precisar usar este efeito em casos bastante especiais.</p>
+        <p>Antes de aplicar o filtro, é essencial saber a cor de fundo da sua página Web. Use o selecionador de cor para determinar a cor exata que aparece como a cor de primeiro plano da caixa de ferramentas. Inverter cores Frente / Fundo para que a cor de Fundo seja a mesma cor de fundo da Web.</p>
+        <p>O processo de semi-achatar vai combinar a cor de Frente com a cor da camada (logo), proporcionalmente aos correspondente valores alfa, e reconstruirá corretamente o anti-serrilhado. Pixels completamente transparentes não serão coloridos. Pixels bastante transparentes serão tingidos levemente, e pixels pouco transparentes terão bastante da cor de frente.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        It is available if your image holds an Alpha channel
+        (see <a class="xref" href="gimp-layer-alpha-add.html" title="7.36. Adicionar canal alfa">Seção 7.36, “Adicionar canal alfa”</a>).
+        Otherwise, it is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5135"></a>15.3.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Web</span> → <span class="guimenuitem">Semi-Flatten</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5136"></a>15.3.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5137"></a>
+          <p class="title">
+            <strong>Figura 17.429. <span class="quote">“<span class="quote">Semi-Flatten</span>”</span> filter options dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/web/semi-flatten-dialog.png" alt="“Semi-Flatten” filter options dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Color</span>
+            </dt>
+            <dd>
+              <p>
+            This allows you to change the color that is used by this filter to
+            fill in semi transparent areas. You can click the color bar to
+            select a color, or use the color picker to pick a color from your
+            image.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5138"></a>15.3.4. Exemplo</h4>
+            </div>
+          </div>
+        </div>
+        <p>No exemplo abaixo, a cor de fundo da caixa de ferramentas é rosa, e a imagem tem bordas enevoadas em um fundo transparente.</p>
+        <div class="figure">
+          <a id="id5139"></a>
+          <p class="title">
+            <strong>Figura 17.430. Exemplo Semi-Achatado</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/logo-semi-BGcolor.png" alt="Exemplo Semi-Achatado" />
+              <div class="caption">
+                <p>Cor de fundo ativa</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/logo-semi-transp.png" alt="Exemplo Semi-Achatado" />
+              <div class="caption">
+                <p>No nível de zoom de 800%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      Full transparency is kept. Semi-transparent pixels are colored with pink
+      according to their transparency (Alpha value). This image will well
+      merge into the pink background of the new page.
+    </p>
+        <div class="figure">
+          <a id="id5140"></a>
+          <p class="title">
+            <strong>Figura 17.431. Filter applied</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/logo-semi-flatten.png" alt="Filter applied" />
+              <div class="caption">
+                <p>Resultado, em formato GIF, após a aplicação do filtro Semi-achatar.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-imagemap.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-web.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-animation.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-imagemap.html">15.2. Image Map</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-animation.html">16. Filtros de animação</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

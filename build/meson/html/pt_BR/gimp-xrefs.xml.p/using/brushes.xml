@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+
+-->
+<sect2 id="gimp-using-brushes">
+  <title>Adicionando novos pincéis</title>
+  <indexterm>
+    <primary>Pincéis</primary>
+    <secondary>Adicionar novo</secondary>
+  </indexterm>
+
+  <note>
+    <para>Existe um método rápido para adicionar um novo pincel: <xref linkend="gimp-creating-brush-quickly"/>.</para>
+  </note>
+
+  <para>Para adicionar um novo pincel, depois de criar ou baixar um, você precisa salva-lo num formato que o GIMP possa usar. O arquivo de pincel deve ser colocado no caminho de buscas de pincéis do GIMP, de forma que o GIMP possa acha-lo e mostra-lo no diálogo de pincéis. Você pode clicar no botão de <guibutton>atualizar</guibutton>, que reindexa as pastas de pincel. O GIMP usa três formatos de arquivo para pincéis:</para>
+
+  <variablelist id="brushes-file-formats">
+    <indexterm>
+      <primary>Pincéis</primary>
+      <secondary>Formatos de arquivo</secondary>
+    </indexterm>
+    <varlistentry id="file-gbr-export">
+      <term>GBR</term>
+      <listitem>
+        <indexterm>
+          <primary>GBR</primary>
+        </indexterm>
+        <indexterm>
+          <primary>Formatos</primary>
+          <secondary>GBR</secondary>
+        </indexterm>
+        <para>
+          The <filename>.gbr</filename> ("<emphasis>g</emphasis>imp
+          <emphasis>br</emphasis>ush") format is used for ordinary and
+          color brushes.  You can convert many other types of images,
+          including many brushes used by other programs, into GIMP
+          brushes by opening them in GIMP and saving them with file
+          names ending in <filename>.gbr</filename>.  This brings up a
+          dialog box in which you can set the default Spacing for the
+          brush.
+        </para>
+        <para>
+          A technical specification of the GBR file format can be found on
+          <ulink url="https://developer.gimp.org/core/standards/gbr/">
+          developer.gimp.org</ulink>.
+        </para>
+        <figure>
+          <title>Salvar um pincel <filename class="extension">.gbr</filename> </title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/using/file-gbr-export.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>GIH</term>
+      <listitem>
+        <indexterm>
+          <primary>GIH</primary>
+        </indexterm>
+        <indexterm>
+          <primary>Formatos</primary>
+          <secondary>GIH</secondary>
+        </indexterm>
+        <para>
+          The <filename>.gih</filename> ("<emphasis>g</emphasis>imp
+          <emphasis>i</emphasis>mage <emphasis>h</emphasis>ose") format
+          is used for animated brushes.  These brushes are constructed
+          from images containing multiple layers:  each layer may
+          contain multiple brush-shapes, arranged in a grid.  When you
+          save an image as a <filename>.gih</filename> file, a dialog
+          comes up that allows you to describe the format of the brush.
+          See <xref linkend="gimp-using-animated-brushes"/> for more
+          information about the dialog.
+        </para>
+        <para>
+          A technical specification of the GIH file format can be found on
+          <ulink url="https://developer.gimp.org/core/standards/gih/">
+          developer.gimp.org</ulink>.
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>VBR</term>
+      <listitem>
+        <indexterm>
+          <primary>VBR</primary>
+        </indexterm>
+        <indexterm>
+          <primary>Formatos</primary>
+          <secondary>VBR</secondary>
+        </indexterm>
+        <para>O formato <filename>.vbr</filename> é usado para pincéis paramétricos, i.e., pincéis criados usando o editor de pincéis do GIMP. Não há outra forma que valha a pena de se obter arquivos nesse formato (mas você mudar seus parâmetros diretamente com um editor de textos se desejar)</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>MYB</term>
+      <listitem>
+        <indexterm>
+          <primary>MYB</primary>
+        </indexterm>
+        <indexterm>
+          <primary>Formatos</primary>
+          <secondary>MYB</secondary>
+        </indexterm>
+        <para>O formato <filename>.myb</filename> é usado para pincéis MyPaint. Consulte <xref linkend="gimp-tool-mypaint-brush"/> para obter mais informações.</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+  <para>Para tornar um pincel disponível, coloque sob uma das pastas no caminho de busca de pincéis do GIMP. Por padrão, o caminho de busca de pincéis inclui duas pastas, a pasta <filename>brushes</filename> do sistema, que você não deveria usar ou alterar, e a pasta <filename>brushes</filename> na sua pasta pessoal do GIMP. Você pode adicionar novas pastas ao caminho de busca de pincéis, usando a guia <link linkend="gimp-prefs-folders-data">Pastas de pincéis</link> do diálogo de Preferências. Qualquer arquivo do tipo GBR, GIH, ou VBR incluído numa dessas pastas vai aparecer na caixa de pinceis da próxima vez que você iniciar o GIMP, ou assim que você pressionar o botão de <guibutton>Atualizar</guibutton> no diálogo de pinceis.</para>
+  <note>
+    <para>Quando você cria um novo pincel paramétrico com o editor de pincéis, ele é salvo automaticamente na sua pasta de pincéis pessoais (a pasta tem o nome em inglês: <filename>brushes</filename>)</para>
+  </note>
+  <para>Há várias páginas na web com coleções de pincéis do GIMP para baixar. No lugar de suprir uma lista links que logo estaria desatualizada, a sugestão é fazer uma busca em sua página de buscas favorita  com os termos <quote>GIMP brushes</quote> (se você colocar em inglês devem aparecer pincéis de todo o mundo - mas pode tentar procurar por <quote>pincéis do GIMP</quote> também e ver o que aparece). Também há muitas coleções de pincéis de outros programas de pintura. Alguns desses pincéis podem ser convertidos facilmente em pincéis do GIMP, e alguns não poderão ser convertidos de jeito algum. Se você precisar saber, procure na Internet - e se não encontrar algo, peça ajuda a um expert. (Sugestão: pergunte no canal de IRC do GIMP, ou em algum fórum)</para>
+</sect2>

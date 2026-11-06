@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect3 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-04-14 Added Spanish translation by AntI
+  2007-01-22 modified Korean Translation by Dust
+  2006-12-10 lexa: made sectinfo docbook compliant
+  2006-08-19 Added Norwegian translation by KoSt
+  2006-07-22 dust: added ko translation
+-->
+<sect3 id="gimp-using-setup-tile-cache">
+  <title>Como configurar seu cache de fragmentos</title>
+  <indexterm>
+    <primary>Cache de fragmentos</primary>
+  </indexterm>
+  <para>Esta seção aborda a configuração <guilabel>Tamanho do cache de tiles</guilabel> sob <link linkend="gimp-prefs-system-resources">Recursos do Sistema</link>.</para>
+  <para>
+    During the data processing and manipulation of images, GIMP can use
+    a lot of memory. The more you have available, the better.
+    <acronym>GIMP</acronym> uses available memory and other resources
+    as effectively as possible, striving to let you work on your images
+    without more slowdowns than necessary.
+   </para>
+   <para>
+     If GIMP needs more (RAM) memory than you have, it starts storing parts
+     of the image data needed to work on your image on a hard disk. These
+     parts are called tiles. Access to disk is slower, but at least it allows
+     you to keep working. The disk storage is called a cache and the entire
+     system is called <quote>tile cache</quote>.
+  </para>
+  <para>
+    The tile cache value determines when GIMP starts using cache instead
+    of faster RAM memory.
+    A low value for the tile cache means that GIMP sends data to disk more
+    quickly then needed, not making good use of the available RAM. Too high a
+    value for tile cache, and other applications start to have less system
+    resources, forcing them to use swap space and thus slow down, or it may
+    cause some of them to start to malfunction or even terminate due to lack
+    of RAM.
+  </para>
+  <para>Como você escolhe o número para o tamanho do Cache de fragmentos? Aqui seguem algumas dicas que ajudarão você a decidir que valor usar, bem como alguns truques:</para>
+  <itemizedlist>
+    <listitem>
+      <para>A forma mais fácil é simplesmente esquecer tudo isso e simplesmente esperar que os valores padrão funcionem bem. Esse era um método usável quando os computadores tinham pouca memória, e a maioria das pessoas simplesmente fazia imagens pequenas no GIMP enquanto uma ou duas outras aplicações eram executadas ao mesmo tempo. Se você quer algo simples, e só usa o GIMP para criar capturas de tela e logotipos básicos, essa provavelmente é a melhor solução.</para>
+    </listitem>
+    <listitem>
+      <para>Nos computadores modernos você normalmente vai ter alguns GB de memória RAM, então configurar o cache de fragmentos para mais ou menos metade do total da sua memória trará boa performance para o GIMP na maioria das situações, sem consumir recursos das outras aplicações. Possivelmente até mesmo 3/4 do total de memória que você tem pode funcionar bem. Você não vai precisar se preocupar com cache de fragmentos para uso amador do GIMP se puder colocar 1,5GB. Se estiver usando o GIMP para lidar com imagens que serão impressas em folha inteira em 300dpi, ou fotos de várias dezenas de megapixels, ou ainda com dezenas de camadas, você tem um padrão de uso mais exigente, e no caso de falta de memória a solução é instalar mais RAM &mdash; em 2013, 16GB para um sistema pessoal não é muito exagerado &mdash; e será o suficiente para os usos mais extremos do GIMP</para>
+    </listitem>
+    <listitem>
+      <para>Comece mudando o valor um pouco de cada vez, e verifique se fica mais rápido, com uso intenso, com cada aumento, sem o sistema começar a reclamar de falta de memória. Esteja avisado de que algumas vezes a falta de memória acontece de repente, com o sistema ficando lento por conta do uso do espaço de troca do sistema e com algumas aplicações sendo terminadas para liberar espaço para outras.</para>
+    </listitem>
+    <listitem>
+      <para>Faça algumas contas, e chegue a um valor viável. Possivelmente você terá que ajusta-lo mais tarde, mas talvez você tivesse que reajusta-lo de qualquer forma, mesmo usando os métodos anteriores. Pelo menos você saberá o que está acontecendo, e como extrair o máximo do seu computador,</para>
+    </listitem>
+  </itemizedlist>
+  <para>
+    Let's suppose you prefer the last option, and want to get a good value to
+    start with. First, you need to get some data about your computer. This
+    data is the amount of RAM installed in your system, the operating system's
+    swap space available, and a general idea about the speed of the disks that
+    store the operating system's swap and the directory used for GIMP's swap.
+    You do not need to do disk tests, nor check the RPM of the disks, the
+    thing is to see which one seems clearly faster or slower, or whether all
+    are similar. You can change GIMP's swap directory in the
+    <link linkend="gimp-prefs-folders">Folders</link> page of the
+    Preferences dialog.
+  </para>
+  <para>
+    The next thing to do is to see how much resources you require for other
+    apps you want to run at the same time as GIMP. So start all your tools
+    and do some work with them, except GIMP of course, and check the usage.
+    You can use applications like free, top, or Process Explorer, depending on
+    what OS and what environment you use. The numbers you want is the memory
+    left, including file cache.
+  </para>
+  <para>
+    Linux's <emphasis>free</emphasis> command does the maths for you: check
+    the column that says <quote>free</quote>, and the line
+    <quote>-/+ buffers/cache</quote>. Note down also the free swap.
+  </para>
+  <para>Agora é a hora de decisões e um pouco de matemática simples &mdash; o conceito básico é decidir se você quer deixar todo o cache de fragmentos em RAM, ou na RAM mais o espaço de troca do sistema operacional:</para>
+  <procedure>
+    <step>
+      <para>Você troca muito de aplicações? Ou fica trabalhando no GIMP por muito tempo? Se você fica muito tempo direto no GIMP, você pode considerar a memória livre, mais o espaço de trocas do sistema como memória disponível para o GIMP. Se não, você deve seguir os seguintes passos (na dúvida, confira esses passos): se você troca de aplicação a cada poucos minutos, conte só com a memória RAM física disponível e pule para a decisão final - não há mais nada para checar.</para>
+    </step>
+    <step>
+      <para>O espaço de troca do sistema fica no mesmo dispositivo físico que o espaço de troca do GIMP? Se sim, adicione a memória e o espaço de troca - se não vá para o próximo passo.</para>
+    </step>
+    <step>
+      <para>O disco em que fica o espaço de troca do sistema é mais rápido que o disco que mantém o espaço de trocas do GIMP? Se for mais lento, use apenas a memória livre;Se for mais rápido ou similar, adicione a RAM e a troca.</para>
+    </step>
+    <step>
+      <para>Agora você tem um número: seja só a memória livre, ou a memória livre mais o espaço de troca do sistema. Reduza um pouco esse número - uns 150MB, mais ou menos, para estar seguro, e esse é o tamanho do Cache de fragmentos que você deve usar.</para>
+    </step>
+  </procedure>
+  <para>Como você pode ver, é tudo uma questão de checar os recursos disponíveis e decidir se vale apena usar o espaço de troca do sistema ou se isso vai causar mais problemas do que ajudar.</para>
+  <para>Há algumas razões para você querer ajustar esse valor, no entanto. A mais básica é você ter mudanças no seu padrão de uso do computador, ou alterar o hardware. Isso poderia significar que suas suposições sobre como você usa seu computador, ou a velocidade do mesmo, já não são válidas. Isso exigiria uma reavaliação das etapas anteriores, que podem levá-lo para um valor semelhante ou um valor completamente diferente.</para>
+  <para>Outra razão para alterar o valor é porque pode acontecer do GIMP ficar muito lento enquanto que mudar para as outras aplicações é rápido: isso significa que o GIMP poderia usar mais memória, sem prejudicar as outras aplicações. Por outro lado, se você receber avisos de outros aplicativos sobre não ter memória o suficiente, então você pode se beneficiar de não deixar o GIMP usar tanta memória.</para>
+  <para>Se você decidiu usar apenas RAM e o GIMP está lento, você pode tentar aumentar o valor um pouco, mas nunca usar também toda memória de troca livre. Se ocaso é o contrário, você está usando tanto a RAM como a memória de troca, e você tem problemas de falta de de memória, então você deve diminuir a quantidade de memória RAM disponível para o GIMP.</para>
+  <para>
+    Another trick is to put the Swap Dir on a very fast disk, or on a
+    different disk than the one where most of your files
+    reside. Spreading the operating
+    system swap file over multiple disks is also a good way to speed
+    things up, in general. And of course, you might have to buy more RAM
+    or stop using lots of programs at the same time: you can not
+    expect to edit a poster on a computer with insufficient RAM and be fast.
+  </para>
+  <para>
+    You can also check what memory requirements your images have. The larger
+    the images, and the number of undo steps, the more resources you need. This
+    is another way to choose a number, but it is only good if you always work
+    with the same kind of images, and thus the real requirements do not vary.
+    It is also helpful to know if you will require more RAM and/or disk space.
+  </para>
+</sect3>

@@ -1,0 +1,196 @@
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                       "http://www.docbook.org/xml/4.5/docbookx.dtd">
+
+<sect2 id="file-tiff-export" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Export Image as TIFF</title>
+
+  <indexterm>
+    <primary>Export Image as TIFF</primary>
+  </indexterm>
+  <indexterm>
+    <primary>TIFF</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Formats</primary>
+    <secondary>TIFF</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Overview</title>
+    <figure>
+      <title>The TIFF Export dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG"
+            fileref="images/dialogs/export-tiff-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </sect3>
+
+  <sect3>
+    <title>Options</title>
+    <variablelist>
+      <varlistentry>
+        <term>Compression</term>
+        <listitem>
+          <para>
+            This option allows you to specify the algorithm used to
+            compress the image.
+          </para>
+
+          <variablelist>
+            <varlistentry>
+              <term>None</term>
+              <listitem>
+                <para>
+                  No compression is used. This is fast, and lossless, but the
+                  resulting file can be very large.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>LZW</term>
+              <listitem>
+                <para>
+                  The image is compressed using the
+                  <quote>Lempel-Ziv-Welch</quote> algorithm, a lossless
+                  compression technique. This is efficient and fast.
+                  More information at
+                  <xref linkend="bibliography-online-wkpd-lzw"/>.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Pack Bits</term>
+              <listitem>
+                <para>
+                  This is a fast, simple compression scheme for run-length
+                  encoding of data. Apple introduced the PackBits format with
+                  the release of MacPaint on the Macintosh computer.
+                </para>
+                <para>
+                  A PackBits data stream consists of packets of one byte of
+                  header followed by data. (Source:
+                  <xref linkend="bibliography-online-wkpd-packbits"/>)
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Deflate</term>
+              <listitem>
+                <para>
+                  This is a lossless data compression algorithm that uses a
+                  combination of the LZ77 algorithm and Huffman coding. It is
+                  also used in Zip and Gzip files and PNG images. Source:
+                  <xref linkend="bibliography-online-wkpd-deflate"/>.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>JPEG</term>
+              <listitem>
+                <para>
+                  This is a very good compression algorithm but lossy. This is
+                  the same compression as used in JPEG images. Since it is
+                  lossy, you should not use this when image quality is
+                  important. This compression can not be used when your image
+                  is in indexed mode.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>CCITT Group 3 fax</term>
+              <term>CCITT Group 4 fax</term>
+              <listitem>
+                <para>
+                  These are black and white formats developed to transfer
+                  images by FAX.
+                </para>
+                <note>
+                  <para>
+                    These two compression modes can only be selected, if the
+                    image is in indexed mode and reduced to two colors. Use
+                    <menuchoice>
+                        <guimenu>Image</guimenu>
+                        <guisubmenu>Mode</guisubmenu>
+                        <guimenuitem>Indexed</guimenuitem>
+                    </menuchoice>
+                    to convert the image to indexed mode. Make sure that
+                    <quote>Use black and white (1-bit) palette</quote> is
+                    checked.
+                  </para>
+                </note>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Save layers</term>
+        <listitem>
+          <para>
+            When enabled, each layer will be stored as a separate page in the
+            TIFF image, starting from the bottom. When disabled, only the merged
+            result will be stored.
+          </para>
+          <note>
+            <para>
+              Not all image viewers support loading more than the first page of
+              a TIFF image. Since the background layer is what we store first,
+              it may be better to disable this setting if other programs
+              you work with can't handle that.
+            </para>
+          </note>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Crop layers</term>
+        <listitem>
+          <para>
+            When <guilabel>Save layers</guilabel> is checked, this option,
+            which is enabled by default, will resize all layers to the size
+            of the image. TIFF images can not have negative offsets. This
+            option enables you to import the TIFF again without having to
+            change the position of layers that had a different size as the
+            image in the original.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Save color values from transparent pixels</term>
+        <listitem>
+          <para>
+            When this is enabled the color values are saved even if the pixels
+            are completely transparent.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <xi:include href="common-export-as-cmyk-setting.xml"/>
+      <xi:include href="common-metadata-settings.xml"
+        xpointer="xpointer(//variablelist/*)" />
+
+      <varlistentry>
+        <term>Save GeoTIFF data</term>
+        <listitem>
+          <para>
+            When this option is enabled GeoTIFF metadata that was present in
+            the original image will be saved in the exported TIFF image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Save comment</term>
+        <listitem>
+          <para>
+            Here you can enable saving a comment that is associated with the
+            image. The comment can be entered in the text box below this
+            option.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

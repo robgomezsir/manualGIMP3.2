@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-25 j.h: no change for 2.8
+  2008-12-16 j.h: updated to v2.6
+  2006-07-15 created by j.h
+-->
+<sect2 id="gimp-errors-dialog">
+  <title>Terminal de erros</title>
+
+  <indexterm>
+    <primary>Terminal de erros </primary>
+  </indexterm>
+
+  <para>O <guilabel>Terminal de erros</guilabel> oferece mais possibilidades do que uma simples <quote>Mensagem do GIMP</quote>. Esse é um registro de todos os erros ocorrendo enquanto o GIMP está rodando. Você pode salvar todo esse registro ou uma parte selecionada dele.</para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Error Console</guimenuitem>
+          </menuchoice>;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Error Console</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>O diálogo de <quote>Terminal de erros</quote></title>
+    <figure>
+      <title>A <quote>janela d e diálogo</quote> terminal de erros</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/dialogs/error-console.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/edit-clear.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase condition="tag-is-required">Limpar erros</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-errors-clear"/>
+          <para>Este botão limpa todas as mensagens do registro.</para>
+          <warning>
+            <para>Você não pode <quote>desfazer</quote> esta ação.</para>
+          </warning>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/document-save-as.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase condition="tag-is-required">Salvar todos os erros</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-errors-save"/>
+          <para>
+            This button lets you save the error log to a file. A dialog
+            window lets you choose the name and the destination directory
+            of the error log file. See <xref linkend="gimp-save-dialog"/>
+            for more information on saving files.
+          </para>
+          <para>Este botão permite que você salve todas as mensagens do registro. Você também pode selecionar uma parte das mensagens (clicando e arrastando o mouse, ou usando a tecla <keycap>Shift</keycap> junto com as <keycap>Teclas seta</keycap>) e salvar apenas esse trecho selecionado pressionado a tecla <keycap>Shift</keycap> ao apertar o botão.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <tip>
+      <para>Você também pode encontrar as ações desses botões no menu de contexto do diálogo, obtido ao se clicar com o botão direito do mouse na área de registro, ou a partir do menu de guias do diálogo de encaixe.</para>
+    </tip>
+  </sect3>
+
+  <sect3>
+    <title>O menu de contexto de <quote>Pincéis</quote></title>
+    <para>Além das funções mencionadas acima usando os botões, o menu de contexto tem as seguintes ações adicionais. Você pode acessar o menu de contexto clicando com o botão direito no console de erros.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Seleção</term>
+        <listitem>
+          <anchor id="gimp-errors-select-all"/>
+          <para>Este botão limpa todas as mensagens do registro.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <varlistentry>
+        <term>Destacar</term>
+        <listitem>
+          <anchor id="gimp-errors-highlight"/>
+          <para>Este comando permite alterar quais tipos de mensagens destacarão o console de erros. Você pode habilitar ou desabilitar os três seguintes tipos de mensagens: <guilabel>Erros</guilabel>, <guilabel>Avisos</guilabel> e <guilabel>Mensagens</guilabel>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

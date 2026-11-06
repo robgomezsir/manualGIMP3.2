@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-03-11 j.h: revised for v2.6. Added Presets
+  2008-01-05 j.h: updated to v2.4
+  2007-06-06 kost: added 'no'
+  2007-04-15 Added Spanish translation by AntI
+  2007-04-10 de Threshold+Qmask translation by ude
+  2006-06-18 small tutorial Threshold+Qmask added by j.h
+  2005-12-06 replaced simplesect by sect3 by lexa
+  2005-12-06 replaced informalfigure by figure by lexa
+  2005-08-07 de reviewed and restructured by axel.wernicke
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-threshold">
+  <title>Limiar</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Limiar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Limiar</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Limiar</secondary>
+  </indexterm>
+
+  <para>O filtro Limiar transforma a camada ou seleção atual em uma imagem em preto e branco, na qual pixels brancos representam os pixels da imagem em que o valor para o <guilabel>Canal</guilabel> escolhido está dentro do intervalo do limiar, e pixels pretos representam pixels com valor fora deste intervalo.</para>
+  <para>Você pode usá-lo para melhorar uma imagem em preto e branco (texto escaneado, por exemplo) ou para criar máscaras de seleção.</para>
+  <note>
+    <para>Como este filtro cria uma imagem em preto e branco, o antisserrilhamento da imagem original desaparece. Se isto for um problema, use a ferramenta <link linkend="gimp-tool-levels">Níveis</link> no lugar.</para>
+  </note>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          You can access this command from the main menu through
+          <menuchoice>
+            <guimenu>Colors</guimenu>
+            <guimenuitem>Threshold…</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          You can also access it by clicking the tool icon
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-threshold.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          in the Toolbox if Threshold has been enabled as a tool (which is
+          disabled by default). For this,
+          please refer to <xref linkend="gimp-prefs-toolbox"/>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Diálogo do filtro Limiar</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/threshold-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term>Opções de Mistura</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Canal</term>
+        <listitem>
+          <para>Isto lhe permite selecionar qual(is) canal(is) será(ão) usado(s) para aplicar o Limiar. O padrão é <guilabel>Valor</guilabel>, que usará todos os canais de cor, mas você também pode escolher usar um único canal: <guilabel>Vermelho</guilabel>, <guilabel>Verde</guilabel>, <guilabel>Azul</guilabel> e <guilabel>Alfa</guilabel> (disponível apenas quando a camada possui canal alfa), <guilabel>Luminância</guilabel>, ou <guilabel>RGB</guilabel>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-histogram-linear.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          Linear histogram
+        </term>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-histogram-logarithmic.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          Logarithmic histogram
+        </term>
+        <listitem>
+          <para>Estes dois botões à direita da seleção de Canal lhe permitem escolher o tipo de histograma exibido.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Intervalo do limiar</term>
+        <listitem>
+          <para>A ferramenta Limiar providencia um gráfico visual, um histograma, do valor da intensidade da camada ou seleção ativa. Você pode definir o intervalo do limiar usando as caixas de entrada para mínimo e máximo ou clicando e arrastando no gráfico. Isto lhe permite separar uma parte da imagem com uma dada intensidade de um fundo com outra intensidade. Pixels dentro do intervalo são brancos, e os outros são pretos. Ajuste o intervalo para obter a seleção desejada em branco com fundo preto. O botão <guibutton>Automático</guibutton> pode ser usado para automaticamente ajustar o limiar.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Usando Limiar e Máscara Rápida para criar uma máscara de seleção</title>
+    <para>
+      Sometimes an element you want to extract from
+      an image can stand out well against the background. In this case,
+      you can use the Threshold tool to select this element as a whole, and
+      then use a <link linkend="gimp-image-window-quick-mask-button">Quick mask</link>.
+    </para>
+    <procedure>
+      <step>
+        <para>
+          First start decomposing your image into its RGB and HSV components by
+          using the <link linkend="plug-in-decompose">Decompose</link> filter. A
+          new grayscale image is created and the components are displayed as
+          layers in the <link linkend="gimp-layer-dialog">Layers Dialog</link>.
+          These layers come with a thumbnail but
+          it is too small for an easy study. You can, of course, increase the
+          size of this preview with the dialog menu (the small triangular
+          button), but playing with the <quote>eyes</quote> is more simple to
+          display the wanted layer in the decompose image. Select the layer
+          that isolates the element the best.
+        </para>
+        <figure>
+          <title>
+            The original image, the decompose image and its Layers dialog
+          </title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/using/threshold-orig.png" format="PNG"/>
+            </imageobject>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/using/threshold-decomp.png" format="PNG"/>
+            </imageobject>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/using/threshold-layers.png" format="PNG"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </step>
+      <step>
+        <para>Use a ferramenta Limiar na imagem decomposta. Movendo o cursor preto, ajuste o limiar para melhor isolar o elemento que você queira extrair. Isto provavelmente não será perfeito: melhoraremos o resultado com a máscara de seleção que vamos criar.</para>
+        <warning>
+          <para>Certifique-se de ter selecionado a camada certa ao usar a ferramenta Limiar: quando ela estiver aberta, você não poderá trocar para outra camada.</para>
+        </warning>
+        <figure>
+          <title>A camada selecionada após o ajuste do limiar</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/using/threshold-fit.png" format="PNG"/>
+            </imageobject>
+            <caption>
+              <para>Conseguimos o melhor contorno para nossa flor. Há vários objetos vermelhos que precisamos remover.</para>
+            </caption>
+          </mediaobject>
+        </figure>
+      </step>
+      <step>
+        <para>Certifique-se de que a imagem exibindo a camada selecionada está ativa e copie-a para a área de transferência com <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>.</para>
+      </step>
+      <step>
+        <para>
+          Now, make the original image active. Click the
+          <guibutton>Quick Mask</guibutton> button at the bottom-left corner
+          of the image window: the image gets covered with a red (default)
+          translucent mask. This red color does not suit well to our image
+          with much red: go to the Channels dialog, activate the
+          <quote>Quick mask</quote> channel and change this color with the
+          <guibutton>Edit Channel Attributes</guibutton>. Come back to the
+          original image. Press
+          <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo> to
+          paste the previously copied layer.
+        </para>
+        <figure>
+          <title>A máscara</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata align="center" format="PNG" fileref="images/using/threshold-mask.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </step>
+      <step>
+        <para>
+          Voilà. Your selection mask is ready: you can improve the selection
+          as usual. When the selection is ready, disable the Quick mask by
+          clicking its button again: you will see the
+          <link linkend="glossary-marching-ants">marching ants</link>
+          around the selection.
+        </para>
+        <figure>
+          <title>O resultado</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/using/threshold-result.png" format="PNG"/>
+            </imageobject>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/using/threshold-selection.png" format="PNG"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+        <para>Usamos a Ampliação para trabalhar em nível de pixel, <link linkend="gimp-tool-free-select">Seleção Livre</link> para remover grandes áreas indesejadas, o lápis (para obter limites duros), tinta preta para remover áreas selecionadas, tinta branca para adicionar áreas selecionadas, especialmente para o caule.</para>
+      </step>
+    </procedure>
+  </sect3>
+</sect2>

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.4. Cortar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-transform.html" title="4. Ferramentas de transformação" />
+    <link rel="prev" href="gimp-tool-move.html" title="4.3. Mover" />
+    <link rel="next" href="gimp-tool-rotate.html" title="4.5. Rotacionar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.4. Cortar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-move.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. Ferramentas de transformação</span>
+        <nav> <a accesskey="n" href="gimp-tool-rotate.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-crop"></a>4.4. Cortar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id19301" class="indexterm"></a>
+      <a id="id19303" class="indexterm"></a>
+      <a id="id19306" class="indexterm"></a>
+      <p>A ferramenta de Cortar (guilhotinar)  é usada para cortar ou aparar uma imagem. Ela afeta todas as camadas da imagem, visíveis ou não (opcionalmente pode se restringir a uma camada). Esta ferramenta pode ser usada para refazer o enquadramento de uma fotografia,  removendo bordas, eliminando áreas indesejadas e provendo uma imagem com mais foco nos assuntos principais. Também é útil se você precisa de um tamanho específico de imagem que não é o mesmo que as suas dimensões originais.</p>
+      <p>
+    To define the crop area click and drag with the mouse. A highlighted area
+    will appear that shows the crop boundaries. To move the whole crop area,
+    click in the middle and drag the rectangle. Resizing can be done by moving
+    close to the borders. The mouse cursor will change and you can drag either
+    one side, if you are in the middle, or two sides, if you are in a corner.
+    While you are changing the drag area, the size of the cropped area and
+    the aspect ratio will be shown in the status bar.
+  </p>
+      <p>Quando o mouse estiver dentro do retângulo,  você poderá usar as teclas seta para modificar o retângulo: se estiver sobre as alças, elas serão movidas, senão o retângulo todo será movido. Se você segurar a tecla <span class="keycap"><strong>Shift</strong></span> pressionada o movimento acontece em incrementos de 25 pixels.</p>
+      <p>
+    To finalize cropping, click inside the crop rectangle or press the
+    <span class="keycap"><strong>Enter</strong></span> key.
+  </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      By default the image canvas size
+      isn't changed after cropping. The Tool Options of the Crop Tool have a
+      setting <span class="guilabel">Delete cropped pixels</span> that can be checked
+      to make sure the canvas size is also adjusted to the cropped area.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Dica]" src="images/tip.png" />
+            </td>
+            <th align="left">Dica</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Você pode usar as Guias para ajudar a posicionar a área de corte. Certifique-se de que a opção <span class="guimenu">Visualizar</span> → <span class="guimenuitem">Atrair para as guias</span> está ligada.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3045"></a>4.4.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagens, em:<span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de transformação</span> → <span class="guimenuitem">Cortar</span>,</p>
+            </li>
+            <li class="listitem">
+              <p>Ao clicar no ícone da ferramenta: <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-crop.svg" width="16" /></span>
+          </span> na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>Usando o atalho de teclado  <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>P</strong></span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3046"></a>4.4.2. Teclas modificadoras (Padrões)</h4>
+            </div>
+          </div>
+        </div>
+        <p>Quando você mantém o botão do mouse apertado sobre o retângulo, as alças desaparecem e</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>se você mantiver <span class="keycap"><strong>Ctrl</strong></span> pressionado, é ligada a opção de <span class="guilabel">Expandir a partir do centro</span>.</p>
+            </li>
+            <li class="listitem">
+              <p>Se você mantiver a tecla <span class="keycap"><strong>Shift</strong></span> pressionada, a opção  <span class="guilabel">Fixa</span> é ligada, que mantém algumas dimensões fixas (por padrão, a proporção do retângulo).</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3047"></a>4.4.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3048"></a>
+          <p class="title">
+            <strong>Figura 14.100. Opções de ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-crop.png" alt="Opções de ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Selected layers only</span>
+            </dt>
+            <dd>
+              <p>Esta opção fará a ferramenta de corte atuar somente na camada, ou grupo de camadas, ativo.</p>
+            </dd>
+            <dt>
+              <span class="term">Delete cropped pixels</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, the canvas size is adjusted to the cropped area. By
+            default this is not checked, which means that after cropping the
+            layers have been adjusted, but the canvas size is still the same.
+            This is to make sure you don't remove anything by accident.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Permitir crescimento</span>
+            </dt>
+            <dd>
+              <p>Esta opção permite que você estenda o retângulo até além dos limites da imagem, camadas, e mesmo da tela de pintura. Dessa forma, você pode dar o tamanho que desejar à imagem resultante. As áreas além dos limites da imagem serão transparentes. Se você estiver atuando numa camada, o tamanho da camada muda e é preenchido com transparência. Usar a ferramenta de cortar para aumentar tamanho de camadas desta forma pode ser  melhor do que usar o comando de Camada-&gt;Tamanho dos limites da camada, já que esta ferramenta atua direto na imagem.</p>
+              <div class="figure">
+                <a id="id3049"></a>
+                <p class="title">
+                  <strong>Figura 14.101. Exemplo para <span class="quote">“<span class="quote">Permitir crescimento</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/crop-grow-1.png" alt="Exemplo para “Permitir crescimento”" />
+                    <div class="caption">
+                      <p>Uma imagem numa tela grande</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/toolbox/crop-grow-2.png" alt="Exemplo para “Permitir crescimento”" />
+                    <div class="caption">
+                      <p>A opção está ligada. O retângulo de corte se estende para além da tela de pintura.</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/toolbox/crop-grow-3.png" alt="Exemplo para “Permitir crescimento”" />
+                    <div class="caption">
+                      <p>A imagem resultante.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Expandir a partir do centro</span>
+            </dt>
+            <dd>
+              <p>Quando esta opção está ligada, o retângulo de corte cresce simetricamente para todos os lados. O ponto onde você clicou para iniciar o retângulo de corte é usado como centro. Essa opção pode ser liga e desligada dinamicamente, bastando segurar a tecla <span class="keycap"><strong>Ctrl</strong></span> pressionada enquanto se modifica o retângulo.</p>
+            </dd>
+            <dt>
+              <span class="term">Fixa</span>
+            </dt>
+            <dd>
+              <p>Você também pode acessar esta opção mantendo a tecla <span class="keycap"><strong>Shift</strong></span> pressionada enquanto está desenhando o retângulo de corte. Isto oferece algumas opções para fazer com que o crescimento do retângulo de corte respeite algumas dimensões fixas, ou sua proporção:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Proporção</span>: Essa é a configuração padrão. A largura e a altura do retângulo são mantidas com a mesma proporção que tem na imagem original.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Largura/Altura</span>: Somente a largura ou a altura são mantidas fixas. O valor da dimensão que foi fixada pode ser digitado na caixa de texto abaixo; O valor padrão é 100 pixels.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Tamanho</span>: A largura e a altura são mantidas fixas. Seus valores podem ser digitados na caixa de texto abaixo, na forma <span class="quote">“<span class="quote">&lt;largura&gt;X&lt;altura&gt;</span>”</span> (por exemplo: 150x100). O retângulo de corte vai assumir esse tamanho assim que você clicar na imagem. A direita, dois botões permitem que você troque rapidamente esses valores, deixando a área fixa no formato de <span class="guibutton">Paisagem</span> ou <span class="guibutton">Retrato</span>. Esta opção é muito útil quando você tem que exportar várias imagens com um tamanho exato, em geral para alimentar um site ou um aplicativo.</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Posicionada</span>
+            </dt>
+            <dd>
+              <p>
+            These two text fields contain the current horizontal and vertical
+            coordinates of the upper left corner of the selection. You can use
+            these fields to adjust the selection position precisely.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Tamanho</span>
+            </dt>
+            <dd>
+              <p>
+            These two text fields contain the current width and height of
+            the selection. You can use these fields to adjust the selection
+            size precisely.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Destaque</span>
+            </dt>
+            <dd>
+              <p>
+            If you enable this option, the selected area is emphasized by a
+            surrounding mask to make visual selection much easier.
+          </p>
+              <p>
+            The dark area opacity can be set using the <span class="guilabel">Highlight 
+            opacity</span> cursor.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Guias</span>
+            </dt>
+            <dd>
+              <p>
+            With this menu you can select the type of guides that is shown
+            within the selection to make the creation of a selection easier,
+            respecting <span class="emphasis"><em>Photo composition rules</em></span>.
+          </p>
+              <p>
+            Six options are available:
+            </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>Nehuma guia</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Linhas centrais</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Regra dos terços</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Regra dos quintos</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Seções áureas</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Linhas diagonais</p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Encolher automaticamente</span>
+            </dt>
+            <dd>
+              <p>O botão de auto encolher vai tentar localizar uma borda, na camada ativa, a partir da qual ele vai estabelecer as dimensões do retângulo de corte. Esta opção só funciona bem para objetos isolados com alto contraste com o fundo.</p>
+              <div class="figure">
+                <a id="id3050"></a>
+                <p class="title">
+                  <strong>Figura 14.102. Exemplo de inclinar</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/autoshrink-1.png" alt="Exemplo de inclinar" />
+                    <div class="caption">
+                      <p>Uma imagem com um limite bem nítido e um retângulo de corte.</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/toolbox/autoshrink-2.png" alt="Exemplo de inclinar" />
+                    <div class="caption">
+                      <p>Depois de clicar no botão de Encolher automaticamente, o retângulo foi encolhido de forma a conter somente os objetos bem definidos na imagem.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Amostragem combinada</span>
+            </dt>
+            <dd>
+              <p>Esta opção altera o comportamento do botão de Encolher automaticamente. Estando ativada, a ação leva em conta os pixels de todas as camadas <span class="emphasis"><em>visíveis</em></span> para determinar os objetos, não só os da camada ativa.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-move.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-transform.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-rotate.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-move.html">4.3. Mover</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-rotate.html">4.5. Rotacionar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

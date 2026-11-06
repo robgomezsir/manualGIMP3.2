@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>7.6. Dashboard</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-misc.html" title="7. Miscellaneous Dialogs" />
+    <link rel="prev" href="gimp-errors-dialog.html" title="7.5. Error Console" />
+    <link rel="next" href="gimp-sample-point-dialog.html" title="7.7. Sample Points Dialog" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>7.6. Dashboard</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-errors-dialog.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>7. Miscellaneous Dialogs</span>
+        <nav> <a accesskey="n" href="gimp-sample-point-dialog.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-dashboard-dialog"></a>7.6. Dashboard</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id30736" class="indexterm"></a>
+      <p>
+    The Dashboard helps to monitor GIMP resource usage (Cache, Swap, CPU,
+    Memory). This allows you to make more educated decisions about various
+    configuration options, especially
+    <a class="link" href="gimp-prefs-system-resources.html" title="6.2. System Resources">System Resources</a>.
+    It is also used by developers.
+  </p>
+      <div class="figure">
+        <a id="id2208"></a>
+        <p class="title">
+          <strong>Figure 15.138. The Dashboard Dialog window</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/dialogs/dashboard-dialog.png" alt="The Dashboard Dialog window" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2209"></a>7.6.1. Activating the Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This dialog is a dockable dialog; see the
+      section <a class="xref" href="gimp-concepts-docks.html" title="2.3. Dialogs and Docking">Section 2.3, “Dialogs and Docking”</a> for help on manipulating
+      it.
+    </p>
+        <p>
+      You can access it:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          from the main menu:
+          <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Dialogs</span> → <span class="guimenuitem">Dashboard</span>;
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          from the Tab menu in any dockable dialog by clicking the
+          <a class="link" href="menus.html#tab-menus" title="1.3. Tab menus">tab menu button</a>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+          </span> and selecting
+          <span class="guimenu">Add Tab</span> → <span class="guimenuitem">Dashboard</span>.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2210"></a>7.6.2. Using the Dashboard</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The Dashboard consists of five groups that you can monitor:
+      <span class="guilabel">Cache</span> usage, <span class="guilabel">Swap</span> usage,
+      <span class="guilabel">CPU</span> usage, <span class="guilabel">Memory</span> usage, and
+      <span class="guilabel">Misc</span> information. By default the
+      Misc group is hidden and the CPU and Memory groups are collapsed.
+    </p>
+        <p>
+      Each group has a separate <a class="link" href="menus.html#tab-menus" title="1.3. Tab menus">Tab menu</a>
+      where you can change settings related to that group.
+    </p>
+        <p>
+      At the bottom of the Dashboard are two buttons, which will be explained
+      in the Dashboard context menu, where these commands are also available.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Dashboard context menu</span>
+            </dt>
+            <dd>
+              <p>
+            This context menu allows you to change what groups are visible,
+            some other settings related to the Dashboard, as well as
+            a few Dashboard related commands.
+          </p>
+              <div class="figure">
+                <a id="id2211"></a>
+                <p class="title">
+                  <strong>Figure 15.139. The Dashboard context menu</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/dashboard-context-menu.png" alt="The Dashboard context menu" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <a id="gimp-dashboard-groups"></a>
+                    <span class="term">Groups submenu</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The Groups submenu allows you to change what groups are visible.
+                  By default <span class="guimenuitem">Cache</span>,
+                  <span class="guimenuitem">Swap</span>, <span class="guimenuitem">CPU</span>
+                  and <span class="guimenuitem">Memory</span> are visible, and
+                  <span class="guimenuitem">Misc</span> is hidden, but you can choose
+                  to show or hide any of these here.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-dashboard-update-interval"></a>
+                    <span class="term">Update Interval submenu</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The Update Interval submenu allows you to change how often the
+                  information shown in the Dashboard is updated. The default is
+                  0.25 seconds, but you can change this to a longer period up to
+                  4 seconds.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-dashboard-history-duration"></a>
+                    <span class="term">History Duration submenu</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The History Duration submenu allows you to change for what
+                  period of time the information is shown. The default is 60
+                  seconds, but you can choose from values between 15 and 240
+                  seconds.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-dashboard-log-record"></a>
+                    <span class="term">Start/Stop Recording…</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This is also available as a button at the bottom of the
+                  Dashboard.
+                  This allows you to start or stop recording a performance log.
+                  In certain situations the developers may ask you to supply this
+                  log if you are experiencing performance related issues. This
+                  log can help them to figure out the problem.
+                  When you start recording you will be asked to select a
+                  location and filename where the log will be saved.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-dashboard-log-add-marker"></a>
+                    <span class="term">Add Marker…</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If you are recording a performance log, this enables you to
+                  mark a certain event in the log. You will be asked to give a
+                  name to this event. This can make it easier for developers to
+                  find the problem area in your log, because logs can become
+                  fairly large.
+                  This is also available as a button at the bottom of the
+                  Dashboard when you are recording a performance log.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-dashboard-log-add-empty-marker"></a>
+                    <span class="term">Add Empty Marker…</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If you are recording a performance log, this enables you to
+                  mark a certain point in the log. An empty marker will be
+                  added, meaning you won't be asked to give it a name. This can
+                  make it easier for developers to find the problem area in your
+                  log, because logs can become fairly large.
+                  When you are recording you can also use the button at the
+                  bottom of the Dashboard while pressing the
+                  <span class="keycap"><strong>Shift</strong></span> key to add an empty marker.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-dashboard-reset"></a>
+                    <span class="term">Reset</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Reset cumulative data removes the performance data and starts
+                  from zero.
+                  This is also available as a button at the bottom of the
+                  Dashboard when you are not recording a performance log.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-dashboard-low-swap-space-warning"></a>
+                    <span class="term">Low Swap Space Warning…</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If this option is enabled, the Dashboard will be raised to the
+                  top if your swap space is nearing the limit.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <p>
+      We will now explain each group separately.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Cache</span>
+            </dt>
+            <dd>
+              <p>
+            Cache shows what part of the tile cache, the size of which can be
+            set in System Resources preferences, is currently being used.
+            If your cache is often near the maximum, and you have enough
+            available memory, you could consider increasing the cache size.
+          </p>
+              <p>
+            By default this shows the currently occupied part of the Cache,
+            and the maximum cache size as set in preferences. What is shown
+            can be changed in the Cache tab menu by clicking on
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+            </span>.
+            You can choose to show or hide
+            <span class="guilabel">Occupied</span> size, <span class="guilabel">Maximum</span>
+            size used since you started measuring, the cache
+            <span class="guilabel">Limit</span>, the <span class="guilabel">Compression</span>
+            ratio, and <span class="guilabel">Hit/Miss</span> ratio.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Swap</span>
+            </dt>
+            <dd>
+              <p>
+            Swap shows the current size of the on-disk tile swap, and what part
+            of that is currently being used. It also shows the swap size limit.
+            If your swap is often being used, and you have enough available
+            memory, you could consider increasing the cache size.
+          </p>
+              <p>
+            By default this shows the current Swap size and what part is
+            occupied, as well as the Swap size limit.
+            What is shown can be changed in the Swap tab menu by clicking on
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+            </span>.
+            You can choose to show or hide the
+            <span class="guilabel">Occupied</span> size, the current swap file
+            <span class="guilabel">Size</span>, the swap file size
+            <span class="guilabel">Limit</span>, the <span class="guilabel">Queued</span> size
+            (the amount planned to be written to the swap file),
+            <span class="guilabel">Read</span> is the total amount read from the swap
+            file, <span class="guilabel">Written</span> is the total amount written to
+            the swap file, and the <span class="guilabel">Compression</span> ratio of
+            the data written to the swap file.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">CPU</span>
+            </dt>
+            <dd>
+              <p>
+            CPU shows the current CPU usage.
+          </p>
+              <p>
+            By default this shows the current CPU usage.
+            What is shown can be changed in the CPU tab menu by clicking on
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+            </span>.
+            You can choose to
+            show or hide CPU <span class="guilabel">Usage</span>, and the total amount
+            of time the CPU has been <span class="guilabel">Active</span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Memory</span>
+            </dt>
+            <dd>
+              <p>
+            Memory shows the current amount of memory used by GIMP, the
+            amount of available (free) physical memory, and the total size of
+            your physical memory.
+          </p>
+              <p>
+            What is shown can be changed in the Memory tab menu by clicking on
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+            </span>.
+            You can choose to show or hide
+            the occupied tile <span class="guilabel">Cache</span>, the total size of
+            the <span class="guilabel">Tile</span> memory, the amount of memory
+            <span class="guilabel">Used</span>, the size of the
+            <span class="guilabel">Available</span> physical memory, and the physical
+            memory <span class="guilabel">Size</span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Misc</span>
+            </dt>
+            <dd>
+              <p>
+            The Misc group is not shown by default, but has to be enabled in
+            the Dashboard context menu first. It shows extra information
+            mainly useful for developers.
+          </p>
+              <p>
+            By default all settings are shown, but what is shown can be changed
+            in the Misc tab menu by clicking on
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+            </span>.
+            You can choose to show or
+            hide total size of processed <span class="guilabel">Mipmapped</span> data,
+            the number of <span class="guilabel">Assigned</span> worker threads,
+            the number of <span class="guilabel">Active</span> worker threads, the
+            number of <span class="guilabel">Async</span> (asynchronous) operations, the
+            total size of <span class="guilabel">Tile</span> memory, the total size of
+            <span class="guilabel">Scratch</span> memory, and the total size of
+            <span class="guilabel">TempBuf</span> (temporary buffers).
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-errors-dialog.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-misc.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-sample-point-dialog.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-errors-dialog.html">7.5. Error Console</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-sample-point-dialog.html">7.7. Sample Points Dialog</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

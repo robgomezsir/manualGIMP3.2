@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-12-29 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-wind">
+  <title>Vento</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Vento</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Vento</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>Vento</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-wind.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O filtro Vento pode ser usado para criar um borrão de movimento, mas também pode ser usado como um filtro de distorção em geral. O que é característica deste filtro é que ele vai desenhar finas linhas pretas ou brancas. O filtro irá detectar as bordas de sua imagem, e a partir das mesmas traçar linhas finas pretas ou brancas - desta forma você pode criar a ilusão de movimento, por que as bordas são a parte que fica distorcida numa fotografia de um objeto em movimento.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Wind…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Vento</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/distort/wind-dialog.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>A interface é bem simples. Você pode configurar o parâmetro <parameter>Força</parameter> do vento, e um parâmetro de <parameter>Limiar</parameter>. O <parameter>Limiar</parameter> vai restringir o efeito a menos áreas da imagem. A <parameter>Força</parameter> controla a quantidade de vento, então um valor alto irá desenhar uma <quote>tempestade</quote>. Você também pode dar mais ênfase ao efeito colocando o parâmetro de <parameter>Estilo</parameter> em Ventania, o que vai produzir linhas mais grossas do que Vento.</para>
+    <para>Você só pode configurar o vento como vindo de duas direções: da Esquerda ou da Direita. No entanto, você pode controlar de qual borda o vento virá, usando os valores Frente, Rastro ou Ambos. Como Rastro vai criar um vento preto, é um borrão de movimento menos convincente do que Frente, que produz <quote>vento branco</quote>.</para>
+    <para>As ilustrações seguintes são baseadas nesta imagem:</para>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/filters/examples/wind0.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Estilo</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Vento</term>
+              <listitem>
+                <para>Esta opção é a que mais sugere um efeito de movimento: as linhas criadas são finas.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Ventania</term>
+              <listitem>
+                <para>Esta opção sugere uma ventania, como se viesse de uma explosão. As linhas são mais grossas.</para>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/filters/examples/blast1.png"/>
+                  </imageobject>
+                </mediaobject>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Direção</term>
+        <listitem>
+          <para>Você pode selecionar a direção: <guilabel>Esquerda</guilabel> ou <guilabel>Direita</guilabel>, de onde o vento vem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Extremidade afetada</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Frente</term>
+              <listitem>
+                <para>As linhas vão começar da borda da frente de um objeto, caindo sobre o próprio objeto. Sugere que um vento violento está removendo a cor da imagem.</para>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/filters/examples/wind2.png"/>
+                  </imageobject>
+                </mediaobject>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Rastro</term>
+              <listitem>
+                <para>As linhas começam da borda de trás de um objeto.</para>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/filters/examples/wind1.png"/>
+                  </imageobject>
+                </mediaobject>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Ambos</term>
+              <listitem>
+                <para>Combina os dois efeitos.</para>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/filters/examples/wind3.png"/>
+                  </imageobject>
+                </mediaobject>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Limite</term>
+        <listitem>
+          <para>O limiar usado para detectar bordas. Quanto mais alto, menos bordas serão detectadas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Força</term>
+        <listitem>
+          <para>Valores maiores aumentam a força do efeito, com linhas mais longas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Random seed</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

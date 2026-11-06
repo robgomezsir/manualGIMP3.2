@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-05-28 Fixed Auto Follow Active Image by j.h
+  2005-12-18 reviewed by lexa
+-->
+<sect2 id="gimp-concepts-docks">
+  <title>Caixas de diálogo e de encaixe</title>
+
+  <indexterm>
+    <primary>Encaixe</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Dialogo</primary>
+    <secondary>Encaixe</secondary>
+  </indexterm>
+
+  <sect3 id="gimp-dockable-dock-bars">
+    <title>Organizando Diálogos</title>
+
+    <!-- It's not clear whether these two anchors are still being used,
+         but for now let's just add them to this general part of the
+         docks documentation.
+    -->
+    <anchor id="gimp-dock"/>
+    <anchor id="gimp-dock-close"/>
+    <para>O <acronym>GIMP</acronym> tem grande flexibilidade para organização de diálogos na tela. Um <quote>diálogo</quote> é uma janela móvel que contém opções para uma ferramenta ou é dedicado a uma tarefa particular. Um <quote>encaixe</quote> é um recipiente que pode conter uma coleção de diálogos persistentes, como a caixa de diálogo Opções de ferramentas, o diálogo de Pincel, o diálogo de Paletas, etc... Encaixes não podem, no entanto, manter diálogos não persistentes, tais como os diálogo de preferências, uma janela de imagem ou as opções de um filtro.</para>
+    <para>O <acronym>GIMP</acronym> tem três encaixes padrão: <itemizedlist>
+        <listitem>
+          <para>O diálogo de <quote>Opções de ferramenta</quote> no encaixe sob a Caixa de ferramentas, no painel esquerdo,</para>
+        </listitem>
+        <listitem>
+          <para>os diálogos Pincéis, Texturas e Degradês na parte inferior do painel direito,</para>
+        </listitem>
+        <listitem>
+          <para>O encaixe para Camadas, Canais, Caminhos e Desfazer na parte superior do painel direito,</para>
+        </listitem>
+      </itemizedlist> Nesses encaixes, cada diálogo está em sua própria guia.</para>
+    <para>No modo de multi-janela , a caixa de ferramentas é uma <emphasis>janela de utilidades</emphasis> e não um encaixe. Na modo de janela única, ela pertence a única janela.</para>
+    <para>Use <menuchoice><guimenu>Janelas</guimenu><guisubmenu>Diálogos de encaixe</guisubmenu></menuchoice> para ver uma lista de diálogos encaixáveis. Selecione um diálogo de encaixe da lista para exibir o diálogo. Se o diálogo está disponível em um encaixe, então ele se torna visível. Se o diálogo não está em um encaixe, o comportamento é diferente nos modos de janela multi e único: <itemizedlist>
+        <listitem>
+          <para>No modo de janelas multiplas, uma nova janela contendo cada diálogo aparece na tela.</para>
+        </listitem>
+        <listitem>
+          <para>Na modo de janela única, o diálogo é automaticamente acoplado ao encaixe onde estão os diálogos deCamadas/Canais/.../Desfazer como uma guia.</para>
+        </listitem>
+      </itemizedlist></para>
+
+    <para>Você pode clicar e arrastar uma guia e soltá-la no local desejado: <itemizedlist>
+        <listitem>
+          <para>ou na barra de guias de um encaixe, para integrá-lo ao grupo de diálogos ali,</para>
+        </listitem>
+        <listitem>
+          <para>ou em uma barra de encaixe que aparece como uma linha azul quando o ponteiro do mouse passa sobre uma borda do encaixe, para conectar o diálogo ao encaixe.</para>
+        </listitem>
+      </itemizedlist> </para>
+
+    <para>No modo de janelas múltiplas, você também pode clicar no título de diálogo e arrasta-lo para o local desejado.</para>
+
+    <figure>
+      <title>A integração de um novo diálogo a um grupo de diálogos</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/using/dock-integrate-dialog.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Aqui, na modo de multi janelas, o diálogo Histograma foi arrastado para a barra de guias do encaixe de Camadas/.../Desfazer.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Mais simples: o comando <command>Adicionar aba</command> no menu das Guias de encaixe <xref linkend="gimp-dockable-menu"/>.</para>
+
+    <figure>
+      <title>Encaixando um diálogo em uma borda encaixável</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/using/dock-anchor-dialog.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>O diálogo Histograma arrastado para a barra de encaixe vertical a esquerda do painel da direita e o resultado: o diálogo encaixado na borda esquerda do painel direito. Este diálogo agora pertence ao painel da direita.</para>
+          <para>Assim, você pode organizar diálogos em uma exibição de <emphasis>multiplas colunas</emphasis> interessante, se você trabalha com duas telas: uma para os diálogos, o outra para imagens.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <tip>
+      <para>Pressione <keycap>TAB</keycap> em uma janela de imagem para alternar a visibilidade dos encaixes. Isso é útil se os encaixes escondem uma parte da janela da imagem. Você pode ocultar rapidamente todos os encaixes, fazer o seu trabalho, em seguida, apresentar todos as imagens novamente. Pressione <keycap>TAB</keycap> dentro de um diálogo para navegar através do mesmo.</para>
+    </tip>
+  </sect3>
+
+  <sect3 id="gimp-dockable-menu">
+    <title>Menu das Abas (guias)</title>
+
+    <indexterm>
+      <primary>Encaixes</primary>
+      <secondary>Menu das abas</secondary>
+    </indexterm>
+
+    <anchor id="gimp-dock-tab-menu"/>
+    <para>
+      In each dialog, you can access a special menu of tab-related operations by
+      pressing the Tab Menu button
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>.
+      The exact commands shown in the menu depend on the active dialog, but
+      they always include operations for creating new tabs, closing or
+      detaching tabs.
+    </para>
+    <figure>
+      <title>O menu de Guias da caixa de dialogo Camadas</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/using/tab-menu.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>modo multi janela,</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/using/tab-menu-single-window-mode.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Modo de janela única</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O menu de Guias fornece a você acesso aos seguintes comandos:</para>
+    <variablelist>
+      <varlistentry>
+        <term>Menu de contexto</term>
+        <listitem>
+          <indexterm>
+            <primary>Encaixes</primary>
+            <secondary>Menu de contexto</secondary>
+          </indexterm>
+          <para>No topo de cada menu de Guia, uma entrada abre o menu de contexto do diálogo ativo naquele grupo, que contém operações específicas para esse tipo de diálogo. Por exemplo, o menu de contexto da guia Camadas é o <guilabel>Menu de Camadas</guilabel>, que contém um conjunto de operações para manipulação de camadas. O mesmo menu de contexto pode ser aberto clicando-se com o botão direito do mouse dentro do diálogo.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-tab-add">
+        <term>Adicionar guia</term>
+        <listitem>
+          <!--anchor id="gimp-dock-tab-add"/-->
+          <indexterm>
+            <primary>Encaixes</primary>
+            <secondary>Adicionar guia</secondary>
+          </indexterm>
+          <para><guilabel>Adicionar aba</guilabel> abre um submenu permitindo você adicionar uma grande variedade de diálogos encaixáveis como novas guias.</para>
+          <figure>
+            <title>Sub-menu<quote>Adicionar aba</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/using/tab-menu-add-tab.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-tab-close">
+        <term>Fechar aba</term>
+        <listitem>
+          <!--anchor id="gimp-dock-tab-close"/-->
+          <indexterm>
+            <primary>Encaixes</primary>
+            <secondary>Fechar guia</secondary>
+          </indexterm>
+          <para>
+            Close the dockable dialog. Closing the last dialog in a dock
+            causes the dock itself to close.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-tab-detach">
+        <term>Desacoplar aba</term>
+        <listitem>
+          <!--anchor id="gimp-dock-tab-detach"/-->
+          <indexterm>
+            <primary>Encaixes</primary>
+            <secondary>Desacoplar aba</secondary>
+          </indexterm>
+          <para>Separa o diálogo do encaixe, criando um novo encaixe com o diálogo destacado como seu único membro. Tem o mesmo efeito que arrastar a guia para fora do encaixe e liberá-lo em um local onde não possa ser encaixado.</para>
+          <para>É uma maneira paradoxal de se criar janelas adicionais mesmo no modo de janela única!</para>
+          <para>Se a guia está <link linkend="gimp-dock-tab-lock">bloqueada</link>, este item de menu é insensível e cinzento. </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-tab-lock">
+        <term>Bloquear aba na janela de encaixe</term>
+        <listitem>
+          <indexterm>
+            <primary>Encaixes</primary>
+            <secondary>Bloquear Guia</secondary>
+          </indexterm>
+          <para>Evita que o diálogo seja movido ou desencaixado. Quando ativado, a opção <guimenuitem>Desacoplar aba</guimenuitem> fica insensível e cinzenta para este diálogo.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-preview-size">
+        <term>Tamanho da pré-visualização</term>
+        <listitem>
+          <indexterm>
+            <primary>Pré-visualizações</primary>
+            <secondary> Tamanho da pré-visualização na aba</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Camada</primary>
+            <secondary>Taamanho da pré-visualização</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Encaixes</primary>
+            <secondary>Taamanho da pré-visualização</secondary>
+          </indexterm>
+          <para>
+            Many, but not all, dialogs have Tab menus containing a
+            <guilabel>Preview Size</guilabel>
+            option, which opens a submenu giving a list of sizes for the
+            items in the dialog, from small to large.
+            For example, the Brushes dialog shows pictures of all available
+            brushes: the Preview Size determines how large the pictures are.
+            The default is <guilabel>Medium</guilabel> size.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-tab-style">
+        <term>Estilo da guia</term>
+        <listitem>
+          <indexterm>
+            <primary>Encaixes</primary>
+            <secondary>Estilo da aba</secondary>
+          </indexterm>
+          <para>
+            <guilabel>Tab Style</guilabel> opens a submenu allowing you to
+            choose the appearance of the tabs at the top. There are five
+            choices, but not all are enabled for every dialog:
+          </para>
+          <para>
+            <variablelist>
+              <varlistentry>
+                <term>Ícone</term>
+                <listitem>
+                  <para>Usar apenas um ícone para representar o tipo de diálogo.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Estado atual</term>
+                <listitem>
+                  <para>Só está disponível para diálogos que permitem que você selecione alguma coisa, como um, pincel, textura, degradê, etc <guilabel>Estado atual</guilabel> mostra uma representação do item selecionado na parte superior da guia.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Texto</term>
+                <listitem>
+                  <para>Usar um texto para mostrar o tipo de dialogo</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Icone e texto</term>
+                <listitem>
+                  <para>Usar um ícone e texto resulta em abas mais largas.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Estado e texto</term>
+                <listitem>
+                  <para>Mostra o item selecionado e texto com o tipo de diálogo.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-view-as-list">
+        <term>View as List</term>
+        <term>Visualizar como grade</term>
+        <listitem>
+          <anchor id="gimp-dock-view-as-grid" xreflabel="Visualizar como grade"/>
+          <indexterm>
+            <primary>Encaixes</primary>
+            <secondary>Visualizar como Lista/Grade</secondary>
+          </indexterm>
+          <indexterm><primary>Campo de busca na lista</primary></indexterm>
+          <para>Estas entradas são mostradas nas caixas de diálogo que permitem que você selecione um item de um conjunto: pincéis, texturas, fontes, etc... Você pode escolher exibir os itens como uma lista vertical, com o nome ao lado de cada item, ou como uma grade, com representações dos itens, mas não seus nomes. Cada um tem suas vantagens: ver como uma lista lhe dá mais informações, mas ver como uma grade permite que você veja mais possibilidades de uma só vez. O padrão para este varia de acordo com o diálogo: para pincéis e texturas, o padrão é uma grade, para maioria das outras coisas, o padrão é uma lista.</para>
+
+          <para>Quando visualização está no modo <guilabel>Ver como lista</guilabel>, você pode usar Tags. Por favor, veja <xref linkend="gimp-tagging"/>.</para>
+          
+          <para>Você também pode usar um campo de pesquisa na lista: <figure>
+              <title>Campo de pesquisa na lista</title>
+              <mediaobject>
+                <imageobject>
+                  <imagedata format="PNG" fileref="images/using/list-search-field.png"/>
+                </imageobject>
+                <caption>
+                  <para>
+                    Press
+                    <keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo>
+                    to open the list search field, displayed at the bottom.
+                    An item must be selected for this command to be effective.
+                  </para>
+                </caption>
+              </mediaobject>
+            </figure></para>
+          <para>O campo de pesquisa na lista fecha automaticamente depois de cinco segundos, se você não fizer nada.</para>
+          <note>
+            <para>O atalho campo de pesquisa também está disponível para a visualização em árvore que você tem nas opções de <quote>Pincel</quote>, <quote>Fonte</quote>, <quote>Degradê</quote> ou <quote>Textura</quote> de várias ferramentas.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-show-button-bar">
+        <term>Exibir barra de botões</term>
+        <listitem>
+          <para>Algumas caixas de diálogo exibem uma barra de botões na parte inferior da caixa de diálogo, por exemplo os diálogos de Texturas, Pincéis, Degradês e Imagens. Esta opção do menu é selecionável: se estiver marcada, então a barra de botões é exibida.</para>
+          <figure>
+            <title>Barra de botões no diálogo de pincéis.</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/using/dialog-button-bar.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-image-menu">
+        <term>Exibir seleção de imagem</term>
+        <listitem>
+          <para>
+            This option is available in multi-window mode only.
+            This is a toggle. If it is checked, then the active image is shown
+            at the top of the dock:
+            <figure id="figure-highlight-imagemenu">
+              <title>A dock with the Image Menu highlighted.</title>
+              <mediaobject>
+                <imageobject>
+                  <imagedata format="PNG" fileref="images/using/dialog-highlight-imagemenu.png"/>
+                </imageobject>
+              </mediaobject>
+            </figure>
+            It is not available for dialogs docked below the Toolbox. This
+            option is interesting only if you have several open images on your
+            screen.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-dock-auto-button">
+        <term>Acompanhar imagem ativa</term>
+        <listitem>
+          <para>Esta opção está disponível apenas no modo de múltiplas janelas. Ela também só é interessante se você tiver várias imagens abertas em sua tela. Se <guilabel>Seguir automaticamente a imagem ativa</guilabel> estiver desligado, as informações exibidas em um encaixe são sempre da imagem selecionada na lista flutuante de Seleção de imagens. Se a opção estiver ativada, você também pode selecioná-la, ativando a imagem diretamente (clicando em sua barra de título).</para>
+        </listitem>
+      </varlistentry>
+
+<!-- DOCUMENTATION WRITERS: Compare with gimp-view-change-screen -->
+      <varlistentry id="gimp-dock-change-screen">
+        <term>Esconder</term>
+        <listitem>
+          <para>
+            The option <guimenuitem>Open Display…</guimenuitem> is an
+            experimental functionality to choose a different display.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

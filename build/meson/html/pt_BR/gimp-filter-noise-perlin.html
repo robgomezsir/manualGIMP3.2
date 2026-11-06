@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.6. Perlin Noise</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="gimp-filter-noise-cell.html" title="14.5. Cell Noise" />
+    <link rel="next" href="gimp-filter-plasma.html" title="14.7. Plasma" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.6. Perlin Noise</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-noise-cell.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="gimp-filter-plasma.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-noise-perlin"></a>14.6. Perlin Noise</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id59761" class="indexterm"></a>
+      <a id="id59765" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4970"></a>14.6.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter generates a noise texture using the Perlin Noise algorithm. 
+      Results don't depend on the image you opened.
+      </p>
+        <div class="mediaobject">
+          <img src="images/filters/examples/render/perlin_noise-default.png" />
+          <div class="caption">
+            <p>
+            Filter applied with default options: Alpha=1.200  Scale=1.800 
+            Z offset=-1.000  Iterations=3
+          </p>
+          </div>
+        </div>
+        <p>
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4971"></a>14.6.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guisubmenu">Noise</span> → <span class="guimenuitem">Perlin Noise…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4972"></a>14.6.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4973"></a>
+          <p class="title">
+            <strong>Figura 17.354. <span class="quote">“<span class="quote">Perlin Noise</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/perlin_noise-dialog.png" alt="“Perlin Noise” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Alpha</span>
+            </dt>
+            <dd>
+              <p>
+            Low values give sharper noise
+          </p>
+              <div class="figure">
+                <a id="id4974"></a>
+                <p class="title">
+                  <strong>Figura 17.355. <span class="quote">“<span class="quote">Alpha </span>”</span> option examples</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/render/perlin_noise-alpha-1.png" alt="“Alpha ” option examples" />
+                    <div class="caption">
+                      <p>
+                  Alpha = 0.300
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/render/perlin_noise-alpha-2.png" alt="“Alpha ” option examples" />
+                    <div class="caption">
+                      <p>
+                  Alpha = 3.600
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Escala:</span>
+            </dt>
+            <dd>
+              <p>
+            Scale of the noise function: works like a zoom.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Z offset</span>
+            </dt>
+            <dd>
+              <p>
+            Vary noise.
+          </p>
+              <div class="figure">
+                <a id="id4975"></a>
+                <p class="title">
+                  <strong>Figura 17.356. <span class="quote">“<span class="quote">Z offset</span>”</span> option examples</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/render/perlin_noise-z-1.png" alt="“Z offset” option examples" />
+                    <div class="caption">
+                      <p>
+                  Z offset = -1000
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/render/perlin_noise-z-2.png" alt="“Z offset” option examples" />
+                    <div class="caption">
+                      <p>
+                  Z offset = 0.900
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Iterações</span>
+            </dt>
+            <dd>
+              <p>
+            The number of noise octaves.
+          </p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/render/perlin_noise-iter.png" />
+                <div class="caption">
+                  <p>
+                Iterations = 7
+              </p>
+                </div>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-noise-cell.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-plasma.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-noise-cell.html">14.5. Cell Noise</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-plasma.html">14.7. Plasma</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

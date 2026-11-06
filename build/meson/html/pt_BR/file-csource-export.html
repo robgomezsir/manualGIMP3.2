@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.12. Export Image as C-Source</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-colorxhtml-export.html" title="5.11. Export Image as Colored HTML text" />
+    <link rel="next" href="file-cur-export.html" title="5.13. Export Image as Microsoft Windows Cursor" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.12. Export Image as C-Source</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-colorxhtml-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-cur-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-csource-export"></a>5.12. Export Image as C-Source</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id27219" class="indexterm"></a>
+      <a id="id27221" class="indexterm"></a>
+      <a id="id27223" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3257"></a>5.12.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3258"></a>
+          <p class="title">
+            <strong>Figura 15.67. The C-Source Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-c-source-dialog.png" alt="The C-Source Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The C-source export dialog allows you to export your image as a C
+      source file that can be included in a program written in C.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3259"></a>5.12.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Prefixed name</span>
+            </dt>
+            <dd>
+              <p>
+            The name of the variable that will hold the image data.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Comentário</span>
+            </dt>
+            <dd>
+              <p>
+            A comment that will be added to the image data.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save comment to file</span>
+            </dt>
+            <dd>
+              <p>
+            The <span class="guilabel">Comment</span> will only be exported to the C
+            file when this setting is checked.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Use GLib types (guint8*)</span>
+            </dt>
+            <dd>
+              <p>
+            When checked GLib datatypes like <span class="quote">“<span class="quote">guint8</span>”</span> will be
+            used. When unchecked, plain C datatypes will be used instead.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Use macros instead of a struct</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, macros will be used to define the image data. When
+            unchecked, a struct will be used instead.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Use 1-bit Run-Length-Encoding</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, the image data will be encoded using
+            Run-Length-Encoding compression. A function macro called
+            </p>
+              <pre class="programlisting">GIMP_IMAGE_RUN_LENGTH_DECODE</pre>
+              <p>
+            will be added to the source file that can be used to decode the
+            image data.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save alpha channel (RGBA/RGB)</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, the image data will include the alpha channel.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save as RGB565 (16-bit)</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, the image data will be saved in 16-bit RGB565 format,
+            using only two bytes instead of three to store the image data.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Opacidade</span>
+            </dt>
+            <dd>
+              <p>
+            This slider allows you to set the opacity of the image data.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-colorxhtml-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-cur-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-colorxhtml-export.html">5.11. Export Image as Colored HTML text</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-cur-export.html">5.13. Export Image as Microsoft Windows Cursor</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

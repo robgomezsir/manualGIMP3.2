@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-02-19 j.h: update to v2.10 with TODO's
+  2008-12-09 ude: moved "activate filter" paras to separate sect3;
+             use Norwegian example images for other languages too
+  2005-10-22 created by julien hardelin
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-fractal-trace">
+  <title>Traçar com fractal</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Mapeamento</secondary>
+    <tertiary>Traçar com fractal</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Traçar com fractal</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Traçar com fractal</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/kvitveis-orig.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/kvitveis-fractal.png"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro transforma a imagem com o fractal de Mandelbrot: ele mapeia a imagem para o fractal.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Map</guisubmenu>
+        <guimenuitem>Fractal trace…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Traçar com fractal</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/map/fractal_trace-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <title>Opções</title>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fractal type</term>
+        <listitem>
+          <para>
+            You choose between <quote>Mandelbrot</quote> and <quote>Julia</quote>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>X1</term>
+        <term>X2</term>
+        <term>Y1</term>
+        <term>Y2</term>
+        <term>Profundidade</term>
+        <listitem>
+          <para>
+            These parameters are similar to Left, Right, Top, Bottom and 
+            Iterations parameters of the
+            <link linkend="plug-in-fractalexplorer">Fractal Explorer</link>
+            filter. They allow you to vary fractal spreading and detail
+            depth.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>JX</term>
+        <term>JY</term>
+        <listitem>
+          <para>
+            Julia seed X and Y value positions. Only shown when fractal type
+            is Julia.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Bailout length</term>
+        <listitem>
+          <!-- TODO / FIXME: Document Bailout length -->
+          <para>
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Abyss policy</term>
+        <listitem>
+          <para>
+            Mapping image to fractal may reveal empty areas. These options allows 
+            you to set displacement behavior on active layer or selection edges. 
+            They are described in <xref linkend="abyss-policy"/>
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

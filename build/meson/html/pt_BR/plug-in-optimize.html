@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>16.4. Otimizar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-animation.html" title="16. Filtros de animação" />
+    <link rel="prev" href="script-fu-burn-in-anim.html" title="16.3. Queimar" />
+    <link rel="next" href="plug-in-animationplay.html" title="16.5. Reproduzir" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>16.4. Otimizar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-burn-in-anim.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>16. Filtros de animação</span>
+        <nav> <a accesskey="n" href="plug-in-animationplay.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-optimize"></a>16.4. Otimizar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="plug-in-animationoptimize"></a>
+      <a id="plug-in-animationoptimize-diff"></a>
+      <a id="id62502" class="indexterm"></a>
+      <a id="id62506" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5153"></a>16.4.1. Visão Geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>Uma animação pode conter várias camadas, logo seu tamanho pode ser importante. Isso é um problema para uma página Web. Os filtros de otimização permitem que você reduza este tamanho. Muitos elementos são compartilhados com todas as camadas em uma animação; de forma que possa ser salva apenas uma vez ao invés de salvar cada camada, e o que for modificado em cada camada pode ser salvo em uma só.</p>
+        <p>GIMP oferece dois Filtros Otimizar: <span class="guilabel">Otimizar (Diferença)</span>  e <span class="guilabel">Otimizar (GIF)</span>. Seus resultados não são muito diferentes.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5154"></a>16.4.2. Activating the Filters</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <p>
+        You can find these filters in the main menu:
+      </p>
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          <span class="guimenu">Filtros</span> → <span class="guisubmenu">Animação</span> → <span class="guimenuitem">Otimizar (Diferença)</span>
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          <span class="guimenu">Filtros</span> → <span class="guisubmenu">Animação</span> → <span class="guimenuitem">Otimizar (para GIF)</span>
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          <span class="guimenu">Filtros</span> → <span class="guisubmenu">Animação</span> → <span class="guimenuitem">Des-otimizar</span>
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5155"></a>16.4.3. Exemplo para os filtro de Otimizar animação</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5156"></a>
+          <p class="title">
+            <strong>Figura 17.438. Imagem Original</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/optimize-orig-example.png" alt="Imagem Original" />
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/optimize-orig-dialog.png" alt="Imagem Original" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      In this animation, the red ball goes downwards and past vertical bars.
+      File size is 600 kB.
+    </p>
+        <div class="figure">
+          <a id="id5157"></a>
+          <p class="title">
+            <strong>Figura 17.439. Otimizar (Diferença)</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/optimize-diff-example.png" alt="Otimizar (Diferença)" />
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/optimize-diff-dialog.png" alt="Otimizar (Diferença)" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      File size moved to 153 kB. Layers held only the part the background
+      which will be used to remove the trace of the red ball. The common part
+      of layers is transparent.
+    </p>
+        <div class="figure">
+          <a id="id5158"></a>
+          <p class="title">
+            <strong>Figura 17.440. Otimizar (GIF)</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/optimize-gif-example.png" alt="Otimizar (GIF)" />
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/optimize-gif-dialog.png" alt="Otimizar (GIF)" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      File size moved to 154 kB, a bit bigger in the present example, but
+      layer size has been reduced. Layers held only a rectangular selection
+      which includes the part of the background which will be used to remove
+      the trace of the red ball. The common part of layers is transparent.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="plug-in-animationunoptimize"></a>16.4.4. Des-otimizar</h4>
+            </div>
+          </div>
+        </div>
+        <p>O filtro <span class="quote">“<span class="quote">Des-otimizar</span>”</span> remove qualquer otimização na camada-base da animação. Você pose precisar deste comando case queira editar a animação e não seja possível ou não seja funcional <a class="link" href="gimp-concepts-undo.html" title="3. Desfazendo"> desfazer</a> qualquer modificação e queira recomeçar aedição a partir da imagem original.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-burn-in-anim.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-animation.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-animationplay.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-burn-in-anim.html">16.3. Queimar</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-animationplay.html">16.5. Reproduzir</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

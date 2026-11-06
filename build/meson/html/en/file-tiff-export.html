@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.52. Export Image as TIFF</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="file-tga-export.html" title="5.51. Export Image as TarGA" />
+    <link rel="next" href="file-tim-export.html" title="5.53. Export Image as Playstation TIM" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.52. Export Image as TIFF</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-tga-export.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="file-tim-export.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-tiff-export"></a>5.52. Export Image as TIFF</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id28107" class="indexterm"></a>
+      <a id="id28109" class="indexterm"></a>
+      <a id="id28111" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2090"></a>5.52.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2091"></a>
+          <p class="title">
+            <strong>Figure 15.94. The TIFF Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-tiff-dialog.png" alt="The TIFF Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2092"></a>5.52.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Compression</span>
+            </dt>
+            <dd>
+              <p>
+            This option allows you to specify the algorithm used to
+            compress the image.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">None</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  No compression is used. This is fast, and lossless, but the
+                  resulting file can be very large.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">LZW</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The image is compressed using the
+                  <span class="quote">“<span class="quote">Lempel-Ziv-Welch</span>”</span> algorithm, a lossless
+                  compression technique. This is efficient and fast.
+                  More information at
+                  <a class="xref" href="bibliography.html#bibliography-online-wkpd-lzw" title="Wikipedia - LZW">[<abbr class="abbrev">WKPD-LZW</abbr>]</a>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Pack Bits</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This is a fast, simple compression scheme for run-length
+                  encoding of data. Apple introduced the PackBits format with
+                  the release of MacPaint on the Macintosh computer.
+                </p>
+                    <p>
+                  A PackBits data stream consists of packets of one byte of
+                  header followed by data. (Source:
+                  <a class="xref" href="bibliography.html#bibliography-online-wkpd-packbits" title="Wikipedia - PackBits">[<abbr class="abbrev">WKPD-PACKBITS</abbr>]</a>)
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Deflate</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This is a lossless data compression algorithm that uses a
+                  combination of the LZ77 algorithm and Huffman coding. It is
+                  also used in Zip and Gzip files and PNG images. Source:
+                  <a class="xref" href="bibliography.html#bibliography-online-wkpd-deflate" title="Wikipedia - Deflate">[<abbr class="abbrev">WKPD-DEFLATE</abbr>]</a>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">JPEG</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This is a very good compression algorithm but lossy. This is
+                  the same compression as used in JPEG images. Since it is
+                  lossy, you should not use this when image quality is
+                  important. This compression can not be used when your image
+                  is in indexed mode.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">CCITT Group 3 fax, </span>
+                    <span class="term">CCITT Group 4 fax</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  These are black and white formats developed to transfer
+                  images by FAX.
+                </p>
+                    <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Note">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Note]" src="images/note.png" />
+                          </td>
+                          <th align="left">Note</th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>
+                    These two compression modes can only be selected, if the
+                    image is in indexed mode and reduced to two colors. Use
+                    <span class="guimenu">Image</span> → <span class="guisubmenu">Mode</span> → <span class="guimenuitem">Indexed</span>
+                    to convert the image to indexed mode. Make sure that
+                    <span class="quote">“<span class="quote">Use black and white (1-bit) palette</span>”</span> is
+                    checked.
+                  </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Save layers</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, each layer will be stored as a separate page in the
+            TIFF image, starting from the bottom. When disabled, only the merged
+            result will be stored.
+          </p>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+              Not all image viewers support loading more than the first page of
+              a TIFF image. Since the background layer is what we store first,
+              it may be better to disable this setting if other programs
+              you work with can't handle that.
+            </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Crop layers</span>
+            </dt>
+            <dd>
+              <p>
+            When <span class="guilabel">Save layers</span> is checked, this option,
+            which is enabled by default, will resize all layers to the size
+            of the image. TIFF images can not have negative offsets. This
+            option enables you to import the TIFF again without having to
+            change the position of layers that had a different size as the
+            image in the original.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save color values from transparent pixels</span>
+            </dt>
+            <dd>
+              <p>
+            When this is enabled the color values are saved even if the pixels
+            are completely transparent.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Export as CMYK</span>
+            </dt>
+            <dd>
+              <p>
+      If you have a <a class="link" href="glossary.html#glossary-cmyk" title="CMY, CMYK">CMYK</a> profile
+      assigned to your image as soft-proofing profile, this setting can
+      be checked to have your image exported using that CMYK profile.
+      This is sometimes required when you have your image professionally
+      printed. Your printing company will tell you if this is needed.
+    </p>
+              <p>
+      If this setting is disabled, you don't have a soft-proofing profile
+      set for this image yet. See assigning a
+      <a class="link" href="gimp-image-soft-proof-profile-assign.html" title="6.14. Soft-Proof Profile">Soft-Proof
+      Profile</a>.
+    </p>
+              <p>
+      The name of the CMYK profile that is assigned to this image will
+      be shown below this setting.
+    </p>
+            </dd>
+            <dt>
+              <span class="term">Metadata (edit)</span>
+            </dt>
+            <dd>
+              <p>
+        You can click the <span class="quote">“<span class="quote">(edit)</span>”</span> link to open the
+        <a class="link" href="plug-in-metadata-editor.html" title="6.39. Metadata Editor">metadata editor</a>
+        to change or add any metadata that you want to be
+        included in the image. Note: you will also still need to
+        enable the relevant metadata saving options listed below.
+      </p>
+              <p>
+        The metadata settings in the export dialog override the default values
+        set in your <a class="link" href="gimp-prefs-import-export.html#gimp-metadata-export-policies" title="Export Policies">Metadata
+        Export Preferences</a>.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save Exif data</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, EXIF metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save IPTC data</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, IPTC metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save XMP data</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, XMP metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save color profile</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, the color profile will be saved in
+        the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save thumbnail</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled a thumbnail will be saved
+        in the exported image as part of the EXIF metadata. This will also cause
+        certain EXIF tags to be saved, even if you have disabled saving
+        EXIF metadata.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Save GeoTIFF data</span>
+            </dt>
+            <dd>
+              <p>
+            When this option is enabled GeoTIFF metadata that was present in
+            the original image will be saved in the exported TIFF image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save comment</span>
+            </dt>
+            <dd>
+              <p>
+            Here you can enable saving a comment that is associated with the
+            image. The comment can be entered in the text box below this
+            option.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-tga-export.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-tim-export.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-tga-export.html">5.51. Export Image as TarGA</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-tim-export.html">5.53. Export Image as Playstation TIM</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

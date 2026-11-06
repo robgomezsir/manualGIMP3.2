@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-05-14 j.h: update to v2.10.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-motion-blur-circular">
+  <title>Desfoque de Movimento Circular</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Desfocar</secondary>
+    <tertiary>Movimento Circular</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Desfoque de Movimento Circular</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>O filtro Desfoque de Movimento Circular</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/taj_orig.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/blur-taj-circular.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro cria um borrão circular ao redor de um centro. O centro padrão é o centro da camada ou seleção. Você pode definir o centro em algum lugar na camada e este centro é aplicado à camada ou a uma seleção caso exista.</para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Blur</guisubmenu>
+        <guimenuitem>Circular Motion Blur…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+  
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Desfoque de Movimento Circular</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/blur/circular-options.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>X do centro</term>
+        <term>Y do centro</term>
+        <listitem>
+          <para>Aqui, você pode definir o centro de rotação. Botões deslizantes e giratórios controlam a posição do centro de rotação nos eixos horizontal e vertical. Você também pode clicar no botão retangular com uma seta à direita e então clicar na imagem para selecionar coordenadas.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Ângulo</term>
+        <listitem>
+          <para>Ângulo maior resultará em maior desfoque numa direção circular.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Controles direto na tela de pintura</term>
+        <listitem>
+          <para>Esta opção (padrão) lhe permite modificar configurações de desfoque diretamente na tela, para um ajuste visual facilitado das configurações de desfoque. Ela exibe uma linha com alças em ambas as pontas para mover o centro de rotação e transformação.</para>
+          <para>Pressione a tecla <keycap>Alt</keycap> para somente mover o centro de rotação sem transformações.</para>
+          <para>Pressione a tecla <keycap>Ctrl</keycap> para rotacionar em incrementos de 15°.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

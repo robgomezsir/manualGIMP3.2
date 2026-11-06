@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.2. Paths</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-tools-other.html" title="5. Other Tools" />
+    <link rel="prev" href="gimp-tools-other.html" title="5. Other Tools" />
+    <link rel="next" href="gimp-tool-text.html" title="5.3. Text" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.2. Paths</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tools-other.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. Other Tools</span>
+        <nav> <a accesskey="n" href="gimp-tool-text.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-path"></a>5.2. Paths</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id19366" class="indexterm"></a>
+      <a id="id19369" class="indexterm"></a>
+      <a id="id19372" class="indexterm"></a>
+      <p>
+    The Paths tool allows you to create complex geometric shapes called
+    <span class="quote">“<span class="quote">Bézier Curves</span>”</span>, a bit like the
+    <a class="link" href="gimp-tool-free-select.html" title="2.4. Free Selection (Lasso)">Free Selection</a> tool, but with
+    all the adaptability of vectorial curves.
+  </p>
+      <p>
+    You can edit your curve, you can paint with your curve, or even
+    save, import, and export the curve. You can also use paths to create
+    geometrical figures. Paths have their own dialog box: the
+    <a class="link" href="gimp-path-dialog.html" title="2.3. Paths Dialog">Paths Dialog</a>.
+  </p>
+      <p>
+    See also the <a class="link" href="gimp-using-paths.html#gimp-concepts-paths">Paths</a> concept.
+  </p>
+      <p>
+    Paths can be turned into Vector layers. A Vector layer is a special kind of
+    layer that displays a path, possibly consisting of several parts,
+    including their selected fill and stroke attributes.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1853"></a>5.2.1. Activating the Tool</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the main menu:
+          <span class="guimenu">Tools</span> → <span class="guisubmenu">Paths</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By clicking the tool icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-path.svg" width="16" /></span>
+          </span>
+          in the Toolbox.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By pressing the <span class="keycap"><strong>B</strong></span> keyboard shortcut.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1854"></a>5.2.2. Key modifiers</h4>
+            </div>
+          </div>
+        </div>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        The status bar at the bottom of the image window will show relevant
+        tips about the possible modifiers you can use when working with paths.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+                <span class="keycap">
+                  <strong>Shift</strong>
+                </span>
+              </span>
+            </dt>
+            <dd>
+              <p>
+            This key has several functions depending on context. See Options
+            for more details.
+          </p>
+            </dd>
+            <dt>
+              <span class="term"><span class="keycap"><strong>Ctrl</strong></span> ; <span class="keycap"><strong>Alt</strong></span></span>
+            </dt>
+            <dd>
+              <p>
+            Three modes are available to work with the Paths tool:
+            <span class="guilabel">Design</span>,<span class="guilabel">Edit</span>
+            and <span class="guilabel">Move</span>.  <span class="keycap"><strong>Ctrl</strong></span> key
+            toggles between Design and Edit.  <span class="keycap"><strong>Alt</strong></span> (or
+            <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>)
+            key toggles between Design and Move.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-tool-path-options"></a>5.2.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1855"></a>
+          <p class="title">
+            <strong>Figure 14.135. Tool Options Dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-paths.png" alt="Tool Options Dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      Normally, tool options are displayed in a window attached under the
+      Toolbox as soon as you activate a tool. If they are not, you can access
+      them from the main menu through
+      <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Edit Mode</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Design</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  By default, this tool is in <span class="guilabel">Design</span> mode.
+                  You draw the path by clicking successively. You can move
+                  control points by clicking on them and dragging them. Between
+                  control points are segments.
+                </p>
+                    <p>
+                  </p>
+                    <div class="mediaobject">
+                      <img src="images/tool-options/path-stroke.png" />
+                      <div class="caption">
+                        <p>
+                        Numbers are steps to draw a two segments straight path.
+                      </p>
+                      </div>
+                    </div>
+                    <p>
+                </p>
+                    <p>
+                  </p>
+                    <div class="mediaobject">
+                      <img src="images/tool-options/path-curve.png" />
+                      <div class="caption">
+                        <p>
+                        Curved segments are easily built by dragging a segment or a
+                        new node. Blue arrows indicate curve. Two little handles
+                        appear that you can drag to bend the curve.
+                      </p>
+                      </div>
+                    </div>
+                    <p>
+                </p>
+                    <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Tip">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Tip]" src="images/tip.png" />
+                          </td>
+                          <th align="left">Tip</th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>
+                    To quickly close the curve, click on the initial control point.
+                    If you want to reposition the start node, hold <span class="keycap"><strong>Shift</strong></span>
+                    and click to deselect the end node, then move the start node.
+                  </p>
+                            <p>
+                    You can use the
+                    <span class="guibutton">Selection from Path</span> button or
+                    <span class="guiicon">
+                      <span class="inlinemediaobject"><img src="images/stock-icons/gimp-selection.svg" width="16" /></span>
+                    </span>
+                    the <span class="emphasis"><em>Path to Selection</em></span> button
+                    in the Paths dialog to convert the path to a Selection.
+                  </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Tip">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Tip]" src="images/tip.png" />
+                          </td>
+                          <th align="left">Tip</th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>
+                    When you have two handles, they work symmetrically by
+                    default.  Release the pressure on the mouse button to move
+                    handles individually. The <span class="keycap"><strong>Shift</strong></span> key will
+                    force the handles to be symmetrical again.
+                  </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                    <p>Several functions are available in Design mode:</p>
+                    <p>
+                  <span class="emphasis"><em>Inserting a new node</em></span>:
+                  When you press <span class="keycap"><strong>Ctrl</strong></span> and hover the mouse pointer
+                  over the existing path, the mouse pointer changes to the '+'
+                  sign. Clicking will create a new path node in the hovered point
+                  of the path.
+                </p>
+                    <p>
+                  <span class="emphasis"><em>Moving one or several nodes</em></span>: On a node,
+                  the mouse pointer becomes a 4-arrows cross. You can click
+                  and drag it.
+                  You can select several nodes by <span class="keycap"><strong>Shift</strong></span> and
+                  click and move them by click and drag.
+                  Pressing <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt
+                  </strong></span> allows to move all the path, as a
+                  selection.
+                </p>
+                    <p>
+                  <span class="emphasis"><em>Modifying handles</em></span>: You have to Edit a node
+                  first. A handle appears. Drag it to bend the curve.
+                  Pressing <span class="keycap"><strong>Shift</strong></span> toggles to symmetric handles.
+                </p>
+                    <p>
+                  <span class="emphasis"><em>Modify segment</em></span>: When the mouse pointer
+                  moves over a segment, it turns to a 4-arrows cross. Click and drag
+                  it to bend the segment. As soon as you move it, handles appear
+                  at both ends of the segment. Pressing the <span class="keycap"><strong>Shift</strong></span>
+                  key toggles to symmetric handles.
+                </p>
+                    <p>
+                  <span class="emphasis"><em>Adding a new subpath</em></span>:
+                  When you press <span class="keycap"><strong>Shift</strong></span> and hover the mouse pointer
+                  outside the existing path, the mouse pointer starts displaying
+                  a square. Clicking will start a subpath that isn't connected
+                  to other curves, but is considered a part of the path.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Edit (Ctrl)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  <span class="guilabel">Edit</span> performs functions which are not
+                  available in <span class="guilabel">Design</span> mode. With this
+                  mode, you can work only on the existing path. When the mouse
+                  pointer is not on the path, the pointer changes to a small crossed
+                  circle and you can not do any path editing.
+                </p>
+                    <p>
+                  <span class="emphasis"><em>Add a segment between two nodes</em></span>: Click
+                  on a node at one end of the path to activate it. The pointer is
+                  like a union symbol. Click on an other node to link both
+                  nodes. This is useful when you have to link unclosed
+                  components.
+                </p>
+                    <p>
+                  <span class="emphasis"><em>Remove a segment from a path</em></span>: While pressing
+                  <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>
+                  key combination, point to a segment. The mouse pointer turns to a
+                  "-" sign. Click to delete the segment.
+                </p>
+                    <p>
+                  <span class="emphasis"><em>Add a node to a path</em></span>: point to a
+                  segment. Pointer turns to "+"". Click where you want to place
+                  the new control point.
+                </p>
+                    <p><span class="emphasis"><em>Remove a node</em></span>: While pressing
+                  <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>
+                  key combination, point to a node. Pointer turns
+                  to "-"". Click to delete the node.
+                </p>
+                    <p>
+                  <span class="emphasis"><em>Add a handle to a node</em></span>: Point to a
+                  node. Pointer turns to small hand. Drag the node: handle
+                  appears.
+                  Pressing <span class="keycap"><strong>Shift</strong></span> toggles to symmetric
+                  handles.
+                </p>
+                    <p>
+                  <span class="emphasis"><em>Remove a handle from a node</em></span>: While pressing
+                  <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>
+                  key combination, point to a handle. The pointer
+                  doesn't turn to the expected "-"" and remains a hand. Click
+                  to delete the handle.
+                </p>
+                    <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Caution">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Caution]" src="images/caution.png" />
+                          </td>
+                          <th align="left">Caution</th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>
+                    There is no warning before removing a node, segment or a handle.
+                  </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Move (Alt)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  <span class="guilabel">Move</span> mode allows to move one or all
+                  components of a path. Simply click on the path and drag it.
+                </p>
+                    <p>
+                  If you have several components, only the selected one is moved. If
+                  you click and drag outside the path, all components are moved.
+                  Pressing the <span class="keycap"><strong>Shift</strong></span> key toggles between moving all
+                  components and selected components only.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Polygonal</span>
+            </dt>
+            <dd>
+              <p>
+            With this option, segments are linear only. Handles are not
+            available and segments are not bent when moving them.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Selection from Path</span>
+            </dt>
+            <dd>
+              <p>
+            This button allows creation of a selection that is based on
+            the path in its present state. This selection is marked with
+            the <a class="link" href="glossary.html#glossary-marching-ants" title="Marching Ants"><span class="quote">“<span class="quote">marching ants</span>”</span>
+            </a>. Note that the path is still present:
+            the current tool is still the path tool and you can modify this
+            path without modifying the selection that has become independent.
+            If you change tools, the path becomes invisible, but it persists in
+            the <a class="link" href="gimp-path-dialog.html" title="2.3. Paths Dialog">Paths Dialog</a> and you
+            can re-activate it.
+          </p>
+              <p>
+            If the path is not closed, GIMP will close it with a straight line.
+          </p>
+              <p>
+            As the help pop-up tells, pressing <span class="keycap"><strong>Shift</strong></span>
+            when clicking on the button will add the new selection to an
+            already existing one. Pressing <span class="keycap"><strong>Ctrl</strong></span> will
+            subtract the selection from the pre-existing selection, and the
+            <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>
+            key combination will intersect the two selections.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Create New Vector Layer</span>
+            </dt>
+            <dd>
+              <p>
+            This command creates a
+            <a class="link" href="gimp-layer-types.html#gimp-layer-type-vector-layer" title="7.3. Vector Layer">Vector Layer</a>
+            from the current path. A vector layer remembers its stroke and fill
+            settings and can have
+            <a class="link" href="gimp-using-layer-effects.html" title="6. Layer Effects">Layer Effects</a>
+            applied to it.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Enable Fill</span>
+            </dt>
+            <dd>
+              <p>
+            When checked the current path will be filled based on the settings
+            below.
+          </p>
+              <p>
+            This setting only takes effect if the path being edited is attached
+            to a vector layer. For filling paths not connected to a layer
+            use <a class="link" href="gimp-path-fill.html" title="3.17. Fill Paths">Fill Paths</a>.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Solid color</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If this is selected, you can choose what color is used to fill
+                  the path by pressing the color button.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Pattern</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If this is selected, a pattern will be used to fill the path.
+                  You choose another pattern by clicking the resource button or
+                  by typing the name of the pattern.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Antialiasing</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Enabling this setting allows you to remove or reduce the
+                  aliasing effect that can show up on borders.
+                </p>
+                    <p>
+                  For more information, see
+                  <a class="link" href="glossary.html#glossary-antialiasing" title="Anti-aliasing">Anti-aliasing</a> in
+                  the Glossary.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Enable Stroke</span>
+            </dt>
+            <dd>
+              <p>
+            When checked the current path will be stroked based on the settings
+            below.
+          </p>
+              <p>
+            This setting only takes effect if the path being edited is attached
+            to a vector layer. For stroking paths not connected to a layer
+            use <a class="link" href="gimp-path-stroke.html" title="3.19. Stroke Paths">Stroke Paths</a>.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Solid color</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If this is selected, you can choose what color is used to
+                  stroke the path by pressing the color button.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Pattern</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If this is selected, a pattern will be used to stroke the
+                  path. You choose another pattern by clicking the resource
+                  button or by typing the name of the pattern.
+                </p>
+                    <p>
+                  This is distinct from the <span class="guilabel">Dash pattern</span>.
+                  If you select one of the two color options with no dash pattern,
+                  an unbroken line is drawn in the color set in the Toolbox.
+                  If you select Pattern with no dash pattern, an unbroken line
+                  is drawn with the pattern set in the Toolbox. If you select a
+                  line with a dash pattern, the color or pattern is still
+                  determined by the color or pattern set in the Toolbox. That is,
+                  if you have a marbled pattern set in the Toolbox, and select
+                  <span class="guilabel">Pattern</span> and dashed lines as
+                  <span class="guilabel">Dash pattern</span>, the dashes are drawn in the
+                  marbled pattern.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Antialiasing</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Enabling this setting allows you to remove or reduce the
+                  aliasing effect that can show up on borders.
+                </p>
+                    <p>
+                  Curved strokes or strokes drawn at an angle may look jagged
+                  or stair-stepped. The anti-aliasing option smooths them out.
+                </p>
+                    <p>
+                  For more information, see
+                  <a class="link" href="glossary.html#glossary-antialiasing" title="Anti-aliasing">Anti-aliasing</a> in
+                  the Glossary.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Line width</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  You can set the width of the stroke using the text box.
+                  The default unit is pixels, but you can choose another
+                  unit with the drop-down list button.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cap style</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Choose the shape of the ends of an unclosed path, which can
+                  be <span class="guilabel">Butt</span>, <span class="guilabel">Round</span>
+                  or <span class="guilabel">Square</span>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Join style</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  You can choose the shape of the path corners by
+                  clicking on <span class="guilabel">Miter</span>,
+                  <span class="guilabel">Round</span> or <span class="guilabel">Bevel</span>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Miter limit</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When two segments of a path come together, the mitering of
+                  the corner is determined by the Miter Limit. If the strokes
+                  were wide, and no mitering were done, there would be pointed
+                  ends sticking out at the corner. The Miter Limit setting
+                  determines how the gap, formed when the outer edges of the
+                  two lines are extended, will be filled. You can set it to a
+                  value between 0.0 and 100.0, by using the slider or its
+                  <span class="guilabel">+</span> and <span class="guilabel">-</span> buttons.
+                </p>
+                    <div class="figure">
+                      <a id="id1856"></a>
+                      <p class="title">
+                        <strong>Figure 14.136. Example of miter limit</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/menus/edit/stroke-path-miter.png" alt="Example of miter limit" />
+                          <div class="caption">
+                            <p>Left image: Limit=0. Right image: Limit=5.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </dd>
+                  <dt>
+                    <span class="term">Dash pattern</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  On the pixel level, a dashed line is drawn as a series of
+                  tiny boxes. You can modify the pattern of these boxes. The
+                  black area with thin vertical lines represents the pixels of
+                  the dash. If you click on a black pixel, you remove it from
+                  the dash. If you click on a white pixel, you add it to the
+                  dash. The gray areas indicate how the pattern will be
+                  repeated when a dashed line is drawn.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Dash preset</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Instead of making your own dash pattern, you can choose
+                  one from the drop-down box. This pattern will
+                  then be displayed in the <span class="guilabel">Dash pattern</span>
+                  area, so you can get an idea of how it will look.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1857"></a>5.2.4. Context Menu</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      When right-clicking on path elements, like anchors or segments, a
+      context menu will appear, the contents of which depends on the item
+      you clicked on. The following commands may be shown in the context menu.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <a id="gimp-path-path-tool-delete-anchor"></a>
+              <span class="term">Delete Anchor</span>
+            </dt>
+            <dd>
+              <p>
+            This command deletes the selected anchor and connects the segments
+            before and after it.
+          </p>
+            </dd>
+            <dt>
+              <a id="gimp-path-path-tool-shift-start"></a>
+              <span class="term">Shift Start</span>
+            </dt>
+            <dd>
+              <p>
+            This command shifts the start anchor to the selected anchor. The
+            start anchor is where stroking starts. The start anchor has a
+            pointy side indicating the stroking direction. This can be
+            useful when you want to wrap
+            <a class="link" href="gimp-image-text-management.html#gimp-text-tool-text-along-path">Text along Path</a>.
+          </p>
+              <p>
+            Shifting the start anchor on open strokes may insert a new segment
+            connecting the previous endpoints, and removes the segment leading
+            into the new start anchor.
+          </p>
+            </dd>
+            <dt>
+              <a id="gimp-path-path-tool-insert-anchor"></a>
+              <span class="term">Insert Anchor</span>
+            </dt>
+            <dd>
+              <p>
+            This command adds a new anchor on the selected spot on the segment.
+          </p>
+            </dd>
+            <dt>
+              <a id="gimp-path-path-tool-delete-segment"></a>
+              <span class="term">Delete Segment</span>
+            </dt>
+            <dd>
+              <p>
+            This command deletes the selected segment. This will create an
+            opening in your path.
+          </p>
+            </dd>
+            <dt>
+              <a id="gimp-path-path-tool-reverse-stroke"></a>
+              <span class="term">Reverse Stroke</span>
+            </dt>
+            <dd>
+              <p>
+            This reverses the direction of the stroke. The shape of the start
+            anchor will reflect the direction of the stroke. The pointy side
+            is the direction it will go to when stroking.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tools-other.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-other.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-text.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tools-other.html">5. Other Tools</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-text.html">5.3. Text</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

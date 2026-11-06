@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-04-29 j.h: add "Open brush as image" option
+-->
+<sect2 id="gimp-brush-dialog">
+  <title>Diálogo de pincéis</title>
+
+  <indexterm>
+    <primary>Pinceis</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Pinceis</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Pinceis</primary>
+    <secondary>Diálogo</secondary>
+  </indexterm>
+
+  <figure>
+    <title>O diálogo de pincéis</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/brushes-dialog-grid-view.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>
+    The <quote>Brushes</quote> dialog is used to select and manage brushes.
+    These brushes are used by the Paintbrush, Pencil and Airbrush tools.
+    The MyPaint Brush uses its own kind of brushes.
+    <acronym>GIMP</acronym> comes with a wide selection of brushes and more
+    can be added easily. You can also create custom brushes using the
+    <link linkend="gimp-brush-editor-dialog">Brush Editor</link>, or by
+    <link linkend="brushes-file-formats">exporting an image</link> as a brush.
+  </para>
+  <para>
+    See the <link linkend="gimp-concepts-brushes">Brushes</link>
+    section for basic information on brushes and how they are used in GIMP.
+  </para>
+  <para>
+    There can be only one brush active at any time. To make a brush active,
+    select it in the list or grid. The name of the currently active brush is
+    shown directly above the list of brushes. The active brush can also be
+    recognized by a selection rectangle around the preview (which can sometimes
+    be difficult to see, depending on your theme).
+    The size, angle, spacing and several other characteristics of a brush can
+    be set in the
+    <link linkend="gimp-tools-paint-options">Tool Options Dialog</link> when
+    one of the relevant paint tools is active.
+  </para>
+
+  <sect3 id="gimp-brush-dialog-activate">
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          From the main menu select
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Brushes</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          From the Tab menu in any dockable dialog click the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and select
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Brushes</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          If you enabled the <quote>Show active brush, pattern &amp;
+          gradient</quote> option in the
+          <link linkend="gimp-prefs-toolbox">Toolbox Preferences</link>, you
+          can click on the active brush icon in the Brush, Pattern, Gradient
+          area.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          From the Tool Options dialog for the Paintbrush, Pencil and Airbrush
+          tools, by clicking on the Brush icon button. This opens a popup with
+          similar functionality that allows you to quickly choose a brush from
+          the list. To open the actual brush dialog click on the button at
+          the bottom right corner of the popup.
+        </para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/dialogs/brushes-dialog-simple.png" format="PNG"/>
+          </imageobject>
+          <caption>
+            <para>O diálogo de <quote>Pincéis</quote> simplificado</para>
+          </caption>
+        </mediaobject>
+        <itemizedlist>
+          <para>
+            The button bar at the bottom offers the following functionality:
+          </para>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/zoom-out.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+            Smaller previews
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/zoom-in.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+              Larger previews
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-list-symbolic.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+              View as list
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-grid-symbolic.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+              View as grid
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-tool-paintbrush-symbolic.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+              Open the brush selection dialog
+            </para>
+          </listitem>
+        </itemizedlist>
+        <para>
+          Note that, depending on your Preferences, a brush selected with the
+          popup may only apply to the currently active tool, not to other
+          paint tools. See the <link linkend="gimp-prefs-tool-options">Paint
+          Options Shared Between Tools</link> section in the Tool Options
+          Preferences for more information.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3 id="gimp-brush-dialog-using">
+    <title>Usando o diálogo de <quote>Pincéis</quote></title>
+
+    <sect4>
+      <title>Modos de grade/lista</title>
+      <para>
+        In the <link linkend="tab-menus">Tab menu</link>,
+        you can choose between <guimenuitem>View as
+        Grid</guimenuitem> and <guimenuitem>View as List</guimenuitem>. In
+        Grid mode, the brush shapes are laid out in a rectangular array,
+        making it easy to see many at once and find the one you are looking
+        for. In List mode, the shapes are lined up in a list, with the names
+        beside them.
+      </para>
+      <para>
+        In the Tab menu, the option <guilabel>Preview Size</guilabel> allows
+        you to adjust the size of brush previews to your liking.
+      </para>
+      <figure>
+        <title>Ver como grade/lista</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/dialogs/brushes-dialog-grid-view.png"/>
+          </imageobject>
+          <caption>
+            <para>Ver como grade</para>
+          </caption>
+        </mediaobject>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/dialogs/brushes-dialog-list-view.png"/>
+          </imageobject>
+          <caption>
+            <para>Ver como lista</para>
+          </caption>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Modo de grade</term>
+          <listitem>
+            <para>Na parte de cima do diálogo aparece o nome do pincel atualmente selecionado e o tamanho em pincéis.</para>
+            <para>No centro, aparece a visão em grade com todos os pincéis disponíveis, com o pincel atualmente selecionado em destaque.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Modo de lista</term>
+          <listitem>
+            <para>Em quase todos os aspectos, o diálogo se comporta da mesma forma no modo de Grade ou modo de Lista, com uma exceção:</para>
+            <para>Se você der um clique-duplo no <emphasis>nome</emphasis> de um pincel, você poderá editá-lo. Entretanto, em geral, você só pode alterar o nome dos pincéis que você mesmo tenha criado, não os que vêm pré-instalados com o GIMP. Se você tentar mudar o nome de um pincel pré-instalado, você não verá um erro, mas assim que apertar Enter, o nome anterior será restaurado. É uma regra geral que você não pode alterar o nome ou outras propriedades de recursos pré-instalados com o GIMP: Pincéis, texturas, degradês, etc... apenas os que você cria. Isso no entanto não é mágica: se você alterar as permissões do seu sistema operacional onde os recursos são guardados, e alterar as permissões de cada pasta nas Preferências do GIMP, você poderá alterá-los. </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4 id="gimp-brush-dialog-previews">
+      <title>Pré-visualizações de pincel</title>
+      <figure>
+        <title>O diálogo de <quote>Pincéis</quote></title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/dialogs/brushes-dialog-grid-view.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>
+        When you click on a brush preview, it becomes the active brush that
+        will be used when using one of the relevant painting tools.
+        Double-clicking a brush preview, activates the
+        <link linkend="gimp-brush-editor-dialog">Brush Editor</link>.
+      </para>
+      <para>
+        Brushes can be managed in several ways using the buttons at the
+        bottom of the dialog or the right-click context menu.
+      </para>
+      <itemizedlist>
+        <!-- See /app/widgets/gimpviewrendererbrush.c -->
+        <title>
+          Meaning of the symbols at the bottom right corner of a brush
+          preview
+        </title>
+        <listitem>
+          <para>
+            A plus sign indicates that the brush preview is shown at a reduced
+            size. To preview the normal size, left click and hold the preview.
+        </para>
+        </listitem>
+        <listitem>
+          <para>
+            A blue corner indicates the brush is a parametric brush, created
+            with the Brush Editor.
+        </para>
+        </listitem>
+        <listitem>
+          <para>
+            A red corner indicates this is an animated brush. To preview the
+            animation, left click and hold the preview.
+        </para>
+        </listitem>
+      </itemizedlist>
+    </sect4>
+
+    <sect4 id="gimp-brush-dialog-themed-preview">
+      <title>Use theme colors for preview</title>
+      <para>
+        On the right side, next to the filter selection, there is a
+        <guiicon>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/stock-icons/gimp-prefs-theme-symbolic.svg" contentwidth="16px"/>
+            </imageobject>
+          </inlinemediaobject>
+        </guiicon>
+        <guilabel>Use theme colors for preview</guilabel> button.
+      </para>
+      <para>
+        By default, brushes and fonts show a white background for each preview.
+        If you prefer the background to be more in line with your theme, you
+        can toggle that by clicking this button.
+        <acronym>GIMP</acronym> will then use the background color as set by
+        your theme.
+      </para>
+    </sect4>
+
+    <sect4 id="gimp-brush-dialog-tags">
+      <title>Filter, Tags</title>
+      <para>
+        The <quote>filter</quote> drop-down allows you to select one or more
+        tags to filter and reduce the number of brushes shown.
+        The <quote>tags</quote> can be managed below the preview area. For more
+        information on tagging see <xref linkend="gimp-tagging"/>.
+      </para>
+    </sect4>
+
+    <sect4>
+      <title>Espaçamento</title>
+      <para>Esse controle faz com que você possa configurar a distância entre marcas consecutivas do pincel quando você traça uma pincelada com o ponteiro do mouse (ou com uma das opções de editar-&gt;contornar). O espaçamento é uma percentagem da largura do pincel. </para>
+    </sect4>
+
+    <sect4 id="gimp-brush-dialog-buttons">
+      <title>Botões na parte de baixo</title>
+      <para>
+        The button bar at the bottom offers the following functionality:
+      </para>
+      <variablelist>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gtk-edit.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Editar pincel</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-brush-edit"/>
+            <para>
+              This activates the
+              <link linkend="gimp-brush-editor-dialog">Brush Editor</link>.
+              Pressing the button will open the Editor for any brush. It
+              only works, however, for parametric brushes, which can be
+              recognized by the blue bottom right corner in the preview.
+              For other types of brushes the Editor will show you a preview,
+              but not allow you to make any changes.
+            </para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Novo pincel</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-brush-new"/>
+            <para>
+              This creates a new parametric brush, initializes it with a small
+              fuzzy round shape, and opens the Brush Editor so that you can
+              modify it. The new brush is automatically saved in your personal
+              <link linkend="gimp-prefs-folders-data">Brushes Folder</link>.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-duplicate.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Duplicar pincel</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-brush-duplicate"/>
+            <para>
+              This button is only enabled if the currently selected brush is a
+              parametric brush. If so, the brush is duplicated, and the Brush
+              Editor is opened so that you can modify the copy. The result is
+              automatically saved in your personal
+              <link linkend="gimp-prefs-folders-data">Brushes Folder</link>.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Remover pincel</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-brush-delete"/>
+            <para>
+              This option is active for parametric brushes only.
+              This removes all traces of the brush, both from the dialog and
+              the folder where its file is stored, if you have permission to
+              do so. It asks for confirmation before doing anything.
+              The brushes that come with <acronym>GIMP</acronym> can not be
+              removed.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/view-refresh.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Atualizar pincéis</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-brush-refresh"/>
+            <para>
+              If you add brushes to your personal
+              <link linkend="gimp-prefs-folders-data">Brushes Folder</link>
+              or any other folder in your brush search path, by some
+              means other than the Brush Editor, this button causes the list
+              to be reloaded, so that the new entries will be available in the
+              dialog.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/document-open.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Abrir textura como imagem</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-brush-open-as-image"/>
+            <para>
+              Clicking this, opens the selected brush as a regular image that
+              you can edit. It can be turned back into a brush by copying it
+              and selecting
+              <menuchoice>
+                <guimenu>Edit</guimenu>
+                <guisubmenu>Paste as</guisubmenu>
+                <guimenuitem>Paste as New Brush…</guimenuitem>
+              </menuchoice>, or by
+              <link linkend="brushes-file-formats">exporting it</link> as a
+              brush.
+              This is different from
+              <xref linkend="gimp-brush-editor-dialog"/> that allows you to
+              modify an existing parametric brush.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <para>
+        The functions performed by these buttons can also be accessed from the
+        dialog pop-up menu, activated by right-clicking anywhere in the brush
+        grid/list, or by choosing the top item,
+        <guisubmenu>Brushes menu</guisubmenu>, from the
+        <link linkend="tab-menus">tab menu</link>.
+      </para>
+    </sect4>
+
+    <sect4>
+      <title>O menu de contexto de <quote>Pincéis</quote></title>
+      <para>Clicando com o botão direito na visualização de um pincel abre um menu de contexto. A maioria dos comandos deste submenu são descritos nos Botões, exceto os seguintes.</para>
+      <variablelist>
+        <varlistentry>
+          <term>Copiar localização do degradê</term>
+          <listitem>
+            <anchor id="gimp-brush-copy-location"/>
+            <para>Os outros comandos deste menu estão descritos nos Botões do diálogo, exceto a opção <guilabel>Copiar local do pincel</guilabel>, que copia o caminho do arquivo de um pincel para a área de transferência. Ao usar a opção <menuchoice><guimenu>Arquivo</guimenu><guimenuitem>Abrir URL</guimenuitem></menuchoice>, e colando esse caminho lá (CTRL + V), você pode importar o pincel como uma imagem do GIMP.  E por fim, há uma opção que cria novos pincéis no GIMP, ma snão está neste menu - veja Arquivo-&gt;Criar-&gt;Novo pincel a partir de texto para um plug-in que cria um pincel animado com letras de uma frase.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Mostrar no Gerenciador de Arquivos</term>
+          <listitem>
+            <anchor id="gimp-brush-show-in-file-manager"/>
+            <para><guilabel>Mostrar no Gerenciador de Arquivos</guilabel> abre o local do pincel no Gerenciador de Arquivos padrão do seu sistema.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Elliptical, Feathered…</term>
+          <term>Elliptical…</term>
+          <term>Rectangular, Feathered…</term>
+          <term>Rectangular…</term>
+          <listitem>
+            <para>
+              Options to create elliptical and rectangular brushes. These
+              brushes can be feathered, but they are not parametric brushes.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+
+  <sect3 id="gimp-brush-editor-dialog">
+    <title>Editor de pincéis</title>
+    <figure>
+      <title>O diálogo <quote>Editor de pincéis</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/brushes-editor-dialog.png"/>
+        </imageobject>
+        <caption>
+          <para>O Editor de pincéis, ativado para um novo pincel</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O Editor de pincéis permite que você veja os parâmetros de um pincel suprido pelo GIMP, e você pode alterá-los. Você também pode criar um pincel personalizado: clique no botão <guilabel>Novo pincel</guilabel> para ativar as funções do editor de pincéis; Você pode escolher uma forma geométrica, um círculo, um quadrado ou um diamante. Esse editor tem vários elementos:</para>
+    <para><emphasis>The dialog bar</emphasis>:
+      As with all dialog windows, the
+      <link linkend="tab-menus">tab menu button</link>
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/stock-icons/gimp-menu-left.svg"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      opens a menu allowing you to access and set further related options.
+    </para>
+    <para><emphasis>A barra de título</emphasis>: para dar um nome ao seu pincel.</para>
+    <para><emphasis>A área de pré-visualização</emphasis>: alterações no pincel aparecem em tempo real na pré-visualização.</para>
+    <variablelist>
+      <para><emphasis>Configurações</emphasis></para>
+      <varlistentry>
+        <term>Forma</term>
+        <listitem>
+          <para>Um círculo, um quadrado ou um losango são as formas básicas disponíveis. Você poderá modificá-las usando as opções seguintes:</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio</term>
+        <listitem>
+          <para>A distância entre o centro do pincel e a borda, na direção da largura. Um quadrado com raio de 10 pixels terá um lado de 20 pixels. Um losango com raio de 5 pixels, terá uma largura de 10 pixels. A partir do GIMP 2.8 esse tamanho não é mais tão importante, já que é sobrepujado pela opção de <quote>Tamanho</quote> das opções de ferramenta para as  ferramentas de pintura. Ao contrário de pincéis baseados em pixel, que são lidos de arquivos de imagem, os pincéis paramétricos não perdem qualidade se forem usados com um tamanho maior do que o tamanho em que estão salvos.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Pontas</term>
+        <listitem>
+          <para>Ao aumentar o número de pontas para um pincel quadrado, você obtém um polígono com mais lados. Com o pincel em forma de losango, você obtém pincéis em formato de estrela. Para pincéis redondos, com proporção diferente de <quote>1,0</quote>, você obtém formas que lembram flores estilizadas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Dureza</term>
+        <listitem>
+          <para>Esse parâmetro controla o quando a borda do pincel é enevoada. O valor = 1,00 gera um pincel com uma borda nítida (0,00 - 1,00)</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Proporção</term>
+        <listitem>
+          <para>Esse parâmetro controla a proporção entre a largura e a altura do pincel. Um losango com raio de 5 pixels e proporção = 2 aparecerá achatado, com uma largura de 10 pixels e altura de 5 pixels.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ângulo</term>
+        <listitem>
+          <para>
+            This angle is the angle between the brush width direction, which
+            is normally horizontal, and the horizontal direction,
+            clock-wise. When this value increases, the brush width
+            turns clock-wise (0° to 180°).
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Espaçamento</term>
+        <listitem>
+          <para>Quando o  pincel desenha uma linha, o GIMP na verdade carimba a figura do pincel repetidamente na imagem. Quando as marcas estão próximas o suficiente, você tem a impressão de uma linha sólida. Em geral, você tem algo parecendo com uma linha sólida se usar pincéis redondos, um pouco enevoados,e valores pequenos, mas que não precisam ser igual a <quote>1</quote> - esse número é uma porcentagem da largura do pincel: então o espaçamento máximo, de 200, equivale a duas vezes a largura do pincel (1,00 - 200,00).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <sect4 id="gimp-brush-editor-context-menu">
+      <title>Editor de pincéis</title>
+      <para>
+        The Brush Editor has a context menu that can be opened with the
+        <link linkend="tab-menus">tab menu button</link>
+        <guiicon>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+            </imageobject>
+          </inlinemediaobject>
+        </guiicon>
+        and then choosing
+        <guisubmenu>Brush Editor Menu</guisubmenu>. It only has one option.
+      </para>
+      <variablelist>
+        <varlistentry>
+          <term>Editar pincel</term>
+          <listitem>
+            <anchor id="gimp-brush-editor-edit-active"/>
+            <para>Quando habilitado, o editor de pincel carregará automaticamente o pincel atualmente ativo. Se estiver desabilitado, o editor de pincel não mudará quando o pincel ativo mudar.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+
+  <sect3 id="clipboard-brush">
+    <title>O pincel da área de transferência</title>
+    <indexterm>
+      <primary>Pincel da área de transferência</primary>
+    </indexterm>
+    <indexterm>
+      <primary>Pinceis</primary>
+      <secondary>Pincel área de transferência</secondary>
+    </indexterm>
+    <para>Quando você usa o comando Copiar ou Cortar em uma imagem, ou uma seleção, uma cópia do conteúdo copiado aparece no canto superior esquerdo do diálogo de <quote>Pincéis</quote>. Esse pincel vai persistir até que você use o comando de Cópiar novamente. Ele desaparece ao fechar o GIMP.</para>
+    <figure>
+      <title>Um novo <quote>Pincel da área de transferência</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/brushes-dialog-clipboard.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <note>
+      <para>
+        You can save this clipboard brush with
+        <menuchoice>
+          <guimenu>Edit</guimenu>
+          <guisubmenu>Paste as</guisubmenu>
+          <guimenuitem>Paste as New Brush…</guimenuitem>
+        </menuchoice>
+        as soon as it appears in the <quote>Brushes</quote> dialog.
+        See <xref linkend="script-fu-paste-as-brush"/>.
+      </para>
+    </note>
+  </sect3>
+</sect2>

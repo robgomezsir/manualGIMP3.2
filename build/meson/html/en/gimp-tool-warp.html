@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.14. Warp Transform</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-tools-transform.html" title="4. Transform Tools" />
+    <link rel="prev" href="gimp-tool-cage.html" title="4.13. Cage Transform" />
+    <link rel="next" href="gimp-tools-other.html" title="5. Other Tools" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.14. Warp Transform</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-cage.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>4. Transform Tools</span>
+        <nav> <a accesskey="n" href="gimp-tools-other.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-warp"></a>4.14. Warp Transform</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id19177" class="indexterm"></a>
+      <a id="id19180" class="indexterm"></a>
+      <p>
+    Warp Transform is a GEGL based brush-like tool which works directly on
+    the image. You can use an erase mode to partially remove warping you
+    applied. You have available options to adapt strength and size of warping.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1845"></a>4.14.1. Activating the Tool</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the main menu:
+          <span class="guimenu">Tools</span> → <span class="guisubmenu">Transform</span> → <span class="guimenuitem">Warp Transform</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By clicking the tool icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-warp.svg" width="16" /></span>
+          </span>
+          in the Toolbox.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By pressing the <span class="keycap"><strong>W</strong></span> keyboard shortcut.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1846"></a>4.14.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1847"></a>
+          <p class="title">
+            <strong>Figure 14.129. Tool Options Dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-warp-transform.png" alt="Tool Options Dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Move pixels</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="quote">“<span class="quote">Move pixels</span>”</span> is the first item of a drop-down list
+             which contains various warping methods:
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Move pixels</span> is the default method.
+              </p>
+                    <div class="figure">
+                      <a id="id1848"></a>
+                      <p class="title">
+                        <strong>Figure 14.130. Move pixels example</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/warp-ex-move.png" alt="Move pixels example" />
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Grow area</span>
+              </p>
+                    <div class="figure">
+                      <a id="id1849"></a>
+                      <p class="title">
+                        <strong>Figure 14.131. Grow example</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/warp-ex-grow.png" alt="Grow example" />
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Shrink area</span>
+              </p>
+                    <div class="figure">
+                      <a id="id1850"></a>
+                      <p class="title">
+                        <strong>Figure 14.132. Shrink example</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/warp-ex-shrink.png" alt="Shrink example" />
+                          <div class="caption">
+                            <p>
+                      Clicking 5 times at the center of the image with brush
+                      size = image size.
+                    </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Swirl clockwise/counter-clockwise</span>
+              </p>
+                    <div class="figure">
+                      <a id="id1851"></a>
+                      <p class="title">
+                        <strong>Figure 14.133. Swirl example</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/warp-ex-swirl.png" alt="Swirl example" />
+                          <div class="caption">
+                            <p>
+                      Swirling clockwise the whole image (brush size = image
+                      size) with a circular movement of the brush.
+                    </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Erase warping</span> allows you to undo previously
+                made warp strokes.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Smooth warping</span> allows you to smooth
+                previously made warp strokes.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Size</span>
+            </dt>
+            <dd>
+              <p>
+            The size of the brush.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Hardness, </span>
+              <span class="term">Strength</span>
+            </dt>
+            <dd>
+              <p>
+          These control how much of the pixels of the starting location of the
+          warp are moved to the displacement location.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Spacing</span>
+            </dt>
+            <dd>
+              <p>
+            This controls the amount of movement when stroking.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Interpolation</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+              An interpolation method is used during warping.
+              See <a class="xref" href="gimp-tools-transform.html#gimp-tool-interpolation-methods">Interpolation</a> for a
+              description of these methods.
+            </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <a id="abyss-policy"></a>
+              <span class="term">Abyss policy</span>
+            </dt>
+            <dd>
+              <a id="id19278" class="indexterm"></a>
+              <p>
+            <span class="quote">“<span class="quote">Abyss</span>”</span> is a term used by GIMP developers for
+            <span class="quote">“<span class="quote">data outside the input buffer</span>”</span>. The warp tool moves
+            pixels from one point to another.  Some pixels may come from
+            outside the layer boundary.  These pixels don't actually exist
+            anywhere, and therefore don't have any associated color; yet,
+            <span class="emphasis"><em>some</em></span> color must be assigned to them.
+          </p>
+              <p>
+            <span class="quote">“<span class="quote">Abyss policy</span>”</span> has a drop-down list that allows you to
+             fill empty areas in different manners:
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">None</span>: this is the default option. Empty
+                areas are transparent. An alpha layer is necessary for this
+                option.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Clamp</span>: each edge of the transformed layer
+                stretches out indefinitely, so, for example, a pixel to the left
+                of the layer boundary has the same color as the leftmost pixel
+                of the layer with the same y coordinate.  An alternative way to
+                think of it is that each pixel outside the layer boundary has
+                the same color as the closest pixel inside the layer boundary.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Loop</span>: the transformed layer repeats itself
+                in all directions, so that, for example, falling off the right
+                edge of the layer takes you back to the left edge.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="figure">
+                <a id="id1852"></a>
+                <p class="title">
+                  <strong>Figure 14.134. Examples for Abyss policy options</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/warp-ex-abyss.png" alt="Examples for Abyss policy options" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">High quality preview</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="quote">“<span class="quote">preview</span>”</span> is the image window, where you work, before
+            pressing <span class="keycap"><strong>Enter</strong></span> to validate the transformation.
+            With this option checked, preview is more accurate, but slower.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Real-time preview</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, updates the preview immediately in real-time while
+            warping, which can be slow. When disabled, there can be a slight
+            delay in updating the preview.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Stroke</span>
+            </dt>
+            <dd>
+              <p></p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">During motion</span>: applies the warp stroke
+                while the brush is moving.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Periodically</span>: applies the warp stroke
+                periodically. When this is enabled, a <span class="guilabel">Rate</span>
+                slider appears where you can adjust how often it is applied.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Animate</span>
+            </dt>
+            <dd>
+              <p>
+            This option allows you to create an animation by generating several
+            intermediate images between the original image and the final
+            transformation.
+          </p>
+              <p>
+            <span class="guilabel">Frames</span>: this determines the number of frames
+            in the animation.
+          </p>
+              <p>
+            <span class="guibutton">Create Animation</span> button: press this to create
+            the animation in a new image window.
+            You can export this to image formats that support animation, e.g.
+            as a <a class="link" href="file-gif-export.html" title="5.22. Export Image as GIF">GIF image</a> and then
+            enabling the <span class="guilabel">As animation</span> option in the
+            export dialog; or by exporting as
+            <a class="link" href="file-webp-export.html" title="5.54. Export Image as WebP">webp image</a> and enabling
+            the <span class="guilabel">Save animation</span> option.
+          </p>
+              <p>
+            Note that you can only create an animation when the warp transform
+            has not yet been finalized.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-cage.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-transform.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tools-other.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-cage.html">4.13. Cage Transform</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tools-other.html">5. Other Tools</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

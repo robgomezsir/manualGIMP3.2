@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2015-12-21 j.h: fixed bug #691579: save color values from transparent pixels (PNG)
+  2007-10-06 ude: added description for "quality settings from original image"
+  2007-07-15 lexa: added PackBits description
+  2007-03-19 lexa: added description for save dialogs for jpeg gif png and tif
+
+-->
+<sect1 id="gimp-using-fileformats">
+  <title>Arquivos</title>
+
+  <indexterm>
+    <primary>Arquivos</primary>
+  </indexterm>
+
+  <para>O <acronym>GIMP</acronym> é capaz de ler e escrever uma grande variedade de formatos de arquivo. Com exceção de arquivos nativos do GIMP, no formato XCF, o tratamento de arquivos é feito por plug-ins. Então é fácil estender o suporte do <acronym>GIMP</acronym> a novos formatos de arquivo conforme a necessidade aparece.</para>
+
+  <sect2 id="save-export-image">
+    <title>Salvar / Exportar imagens</title>
+    <indexterm>
+      <primary>Salvar/Exportar imagens</primary>
+    </indexterm>
+    <indexterm>
+      <primary>Exportar imagens</primary>
+    </indexterm>
+    <note>
+      <para>Quando você abre uma imagem, digamos no formato de arquivo JPG ou PNG, ela é importada para o próprio formato XCF do <acronym>GIMP</acronym>, como um novo projeto.</para>
+      <para>Nas edições anteriores do <acronym>GIMP</acronym>, quando você abria uma imagem de algum formato, por exemplo, JPG ou PNG, a imagem mantinha esse formato e era salva no mesmo arquivo com o comando <command>Salvar</command>. No <acronym>GIMP</acronym>-2.8, as imagens que não são do tipo XCF são importadas como um novo projeto neste formato. Por exemplo, uma imagem <quote>girassol.png</quote> será carregada como <quote>*[girassol] (importada)-1.0 (Cor indexada, 1 layer)</quote>. O asterisco no início indica que esta imagem foi alterada depois que o projeto foi salvo pela última vez. A imagem será salva num arquivo <quote>girassol.xcf</quote> pelo comando <command>Salvar</command>. Para gravar um arquivo em qualquer formato que não seja o XCF, use o comando <command>Exportar</command>, no menu arquivo.</para>
+    </note>
+    <para>Quando terminar de trabalhar com uma imagem, você salvará os resultados. Na verdade, geralmente é uma boa ideia salvar em estágios intermediários também. O <acronym>GIMP</acronym> é um programa bastante robusto, mas em ocasiões raras falhas aconteceram.</para>
+    <para>O formato nativo XCF do <acronym>GIMP</acronym> é especial. É o único formato que pode armazenar <emphasis>tudo</emphasis> sobre uma imagem (com exceção das informações <quote>desfazer</quote>). Esta é a razão pela qual salvar só pode ser feito neste formato. Isso torna o formato XCF especialmente adequado para armazenar resultados intermediários e para salvar imagens para serem reabertas posteriormente no <acronym>GIMP</acronym>.</para>
+    <para>Os arquivos XCF não são legíveis pela maioria dos outros programas que exibem imagens. Depois de terminar de editar sua imagem, você pode exportá-la para o formato de sua escolha. O <acronym>GIMP</acronym> suporta uma ampla variedade de formatos. A maioria dos formatos de arquivo que podem ser importados também pode ser usada para exportação.</para>
+  </sect2>
+
+  <sect2 id="gimp-using-fileformats-export-dialog">
+    <title>Formatos de arquivo</title>
+    <para>Há vários comandos para <emphasis>salvar</emphasis> ou <emphasis>exportar</emphasis> imagens. Uma listagem e informações sobre como usa-los pode ser vista na seção falando sobre o <link linkend="gimp-file-menu">menu Arquivo</link></para>
+    <para>O <acronym>GIMP</acronym> permite que você salve as imagens que cria numa grande variedade de formatos. É importante ter sempre em mente que o único formato que pode preservar <emphasis>todas</emphasis> as informações de uma imagem, incluindo camadas, transparência, etc... é o formato XCF nativo do GIMP. Todos os outros formatos preservam algumas propriedades da imagem e perdem outras, e a maior parte sequer pode preservar camadas. É importante entender as capacidades do formato que você escolhe para o uso de sua imagem fora do GIMP.</para>
+    <para>Exportar uma imagem não modifica a imagem em si, portanto você não perde nada ao exportar. Veja <link linkend="gimp-export-dialog">Exportar arquivo</link>.</para>
+    <note>
+      <para>
+        When you close an image (possibly by quitting GIMP), you are warned if
+        the image has been changed without subsequently being saved (an asterisk
+        is in front of the image name in the title bar of the main window).
+      </para>
+    </note>
+  </sect2>
+</sect1>

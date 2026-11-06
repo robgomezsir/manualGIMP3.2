@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-03-27 ude: use <simplesect> (rather than nested <variablelist>)
+             for option tabs
+  2007-11-04 AntI: Added "es"
+  2007-05-16 KoSt: added 'no'
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005/10/07 en;fr by j.h
+  2005/09/21 created by axel.wernicke
+-->
+<sect2 id="plug-in-cml-explorer">
+  <title>Explorador CML</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Explorador CML</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Explorador CML</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Explorador CML</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-taj-cmlexplorer.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter is very efficient but also very complex. It uses a
+      mathematical method named Cellular Automata
+      <xref linkend="bibliography-online-wkpd-cellular-automata"/>.
+    </para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guisubmenu>Pattern</guisubmenu>
+        <guimenuitem>CML Explorer…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+
+    <simplesect>
+      <title>Opções Gerais</title>
+      <para>
+        Filter options are distributed among
+        <guilabel>Hue</guilabel>, <guilabel>Saturation</guilabel>,
+        <guilabel>Value</guilabel>, <guilabel>Advanced</guilabel>,
+        <guilabel>Others</guilabel> and <guilabel>Misc</guilabel>
+        tabs. Some more options are available. They will be described
+        in following section.
+      </para>
+      <variablelist>
+        <varlistentry>
+          <term>Pré-visualização</term>
+          <listitem>
+            <para>Esse filtro oferece uma pré-visualização, onde você pode ver o resultado de suas configurações antes de serem aplicados à imagem.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Nova semente</term>
+          <term>Fixar semente</term>
+          <term>Semente aleatória</term>
+          <listitem>
+            <para>Fatores aleatórios desempenham um grande papel na criação de texturas. Com essas opções, você pode influenciar a maneira como os números aleatórios são gerados. Ao clicar no botão <guibutton>Nova Semente</guibutton>, você pode forçar o gerador de números aleatórios a usar uma nova fonte. A pré-visualização irá exibir o resultado. O botão <guibutton>Fixar Semente</guibutton>  permite que você mantenha a mesma semente e assim possa reproduzir exatamente o mesmo efeito com o filtro, em aplicações futuras <guibutton>Semente aleatória</guibutton> gera uma semente ao acaso, que não pode ser re-utilizada.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Abrir</term>
+          <term>Salvar</term>
+          <listitem>
+            <para>Com esses botões de comando, você pode salvar as configurações do filtro em um arquivo, e recuperá-las mais tarde. Assim, se conseguir a criação de texturas interessantes, pode criar uma coleção de parâmetros para re-utilizar.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </simplesect>
+
+    <simplesect>
+      <title>Opções do filtro <quote>Explorador CML</quote> (Matiz)</title>
+      <figure>
+        <title>Guia Matiz</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/render/cmlexplorer1.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Esse filtro opera no modelo de cor<link linkend="glossary-hsv"> HSV </link>. Nessa guia, você pode definir as opções para o canal de Matiz.</para>
+      <variablelist>
+        <varlistentry>
+          <term>Tipo de função</term>
+          <listitem>
+            <para>Nesta lista flutuante, você pode selecionar o método que será usado para tratar a camada atual. Estes métodos são os seguintes:</para>
+            <variablelist>
+              <varlistentry>
+                <term>Mantenha os valores da imagem</term>
+                <listitem>
+                  <para>Com esta opção, os valores de matiz dos pixels da imagem serão mantidos.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Mantenha o primeiro valor</term>
+                <listitem>
+                  <para>Com esta opção, a cor inicial será o ciano padrão.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Completar com o parâmetro k</term>
+                <listitem>
+                  <para>A textura dependerá do parâmetro <parameter>k</parameter>, que você vai configurar mais adiante.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Diversas funções baseadas em  k</term>
+                <listitem>
+                  <para>Veja acima, <quote>Completar com parâmetro k</quote>.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Função delta</term>
+                <term>Função delta por passos</term>
+                <listitem>
+                  <!-- TODO / FIXME: Document Delta function -->
+                  <para>
+                  </para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Função baseada em seno ^ p</term>
+                <term>Seno ^P por passos</term>
+                <listitem>
+                  <para>Estas opções criar padrões em forma de ondas, como uma aurora boreal ou dobras de cortina.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Composição</term>
+          <listitem>
+            <para>Aqui, essas funções referem se ao Matiz. Você pode escolher dentre várias funções, e poderia ser escrito um livro só com os resultados dessas funções. Experimente muda-las!</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Arranjo variado</term>
+          <listitem>
+            <para>Esta lista flutuante lhe oferece vários outros parâmetros. Também seria necessário um livro para explicar todas as possibilidades desses parâmetros.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Usa faixa cíclica</term>
+          <listitem>
+            <!-- TODO / FIXME: Document use cyclic range -->
+            <para>
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Taxa de modulação</term>
+          <listitem>
+            <para>Com este controle você pode definir a taxa de modificação de 0,0 a 1,0. Valores baixos resultam num padrão com linhas verticais.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Sensibilidade de ambiente</term>
+          <listitem>
+            <para>O valor é de 0,0 a 1,0: quanto cada pixel é sensível ao valor de luz do ambiente.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Distância de difusão</term>
+          <listitem>
+            <para>Distância de difusão: de 2 a 10.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Nº de sub-faixas </term>
+          <listitem>
+            <para>
+              Number of sub-ranges: from 1 to 10.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Fator de potência (p)</term>
+          <listitem>
+            <para>Com esta opção você pode influenciar os  <guilabel>Tipos de função </guilabel> usando o parâmetro <parameter>p</parameter>. Os valores vão de 0,0 a 10,0.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Parâmetro k</term>
+          <listitem>
+            <para>Com esta opção você pode influenciar os <guilabel>Tipos de função </guilabel> usando o parâmetro <parameter>k</parameter>. Os valores vão de 0,0 a 10,0.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Faixa baixa</term>
+          <listitem>
+            <para>Definir o limite inferior de matiz que vai ser usada para o cálculo. Os valores vão de 0,0 a 1,0.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Faixa alta</term>
+          <listitem>
+            <para>Definir o limite superior de matiz que vai ser usada para o cálculo. Os valores vão de 0.0 a 1.0: os valores de saída da função são normalizados entre os valores nos parâmetros Faixa baixa e Faixa alta.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Traçar o gráfico das configurações</term>
+          <listitem>
+            <para>Ao clicar neste botão enorme, você pode abrir uma janela que exibe um gráfico com a curva resultante das configurações atuais para  matiz.</para>
+            <figure>
+              <title>Gráfico da função das configurações atuais.</title>
+              <mediaobject>
+                <imageobject>
+                  <imagedata format="PNG" fileref="images/filters/render/cmlexplorer1a.png"/>
+                </imageobject>
+              </mediaobject>
+            </figure>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </simplesect>
+
+    <simplesect>
+      <title>Opções do filtro <quote>Explorador CML</quote> (Saturação)</title>
+      <figure>
+        <title>Guia saturação</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/render/cmlexplorer2.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Nessa guia, você pode definir como o componente de saturação do modelo de cor HSV será criado no cálculo da textura.</para>
+      <para>Estas opções são semelhantes às opções da guia Matiz</para>
+    </simplesect>
+
+    <simplesect>
+      <title>Opções do filtro <quote>Explorador CML</quote> (Valor)</title>
+      <figure>
+        <title>Guia valor</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/render/cmlexplorer3.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Neste guia, você pode definir a forma como o componente de Valor(Luminosidade) do modelo de cor HSV será criado no cálculo da textura.</para>
+      <para>Estas opções são semelhantes às opções da guia Matiz</para>
+    </simplesect>
+
+    <simplesect>
+      <title>Opções do filtro <quote>Explorador CML</quote> (avançada)</title>
+      <figure>
+        <title>Guia Avançada</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/render/cmlexplorer4.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>As configurações desta guia aplicam-se aos três canais de HSV.</para>
+      <variablelist>
+        <varlistentry>
+          <!--Ch. sensitivity-->
+          <term>Sensibilidade do canal</term>
+          <listitem>
+            <!-- TODO / FIXME: Document Channel sensitivity -->
+            <para/>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Taxa de mutação</term>
+          <listitem>
+            <!-- TODO / FIXME: Document Mutation rate -->
+            <para/>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <!--Mutation dist.-->
+          <term>Distância de mutação</term>
+          <listitem>
+            <!-- TODO / FIXME: Document Mutation distance -->
+            <para/>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </simplesect>
+
+    <simplesect>
+      <title>Opções do filtro <quote>Explorador CML</quote> (Outros)</title>
+      <figure>
+        <title>Guia Outros</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/render/cmlexplorer5.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Nessa guia, você pode encontrar vários parâmetros sobre a exibição da imagem e intervenção aleatória.</para>
+      <variablelist>
+        <varlistentry>
+          <term>Valor inicial</term>
+          <listitem>
+            <!-- TODO / FIXME: Document Initial value -->
+            <para/>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Escala de zoom</term>
+          <listitem>
+            <!-- TODO / FIXME: Document Zoom scale -->
+            <para/>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Deslocamento de início</term>
+          <listitem>
+            <!-- TODO / FIXME: Document Start offset -->
+            <para/>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <!--Seed of Random (only for "From Seed" Modes)-->
+          <term>Semente dos números aleatórios</term>
+          <listitem>
+            <!-- TODO / FIXME: Document Seed of Random -->
+            <para/>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </simplesect>
+
+    <simplesect>
+      <title><quote>CML Explorer</quote> filter options (Misc)</title>
+      <figure>
+        <title>Guia de Operações variadas</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/render/cmlexplorer6.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Nesta guia você pode encontrar várias opções sobre cópia e carregamento.</para>
+      <variablelist>
+        <varlistentry>
+          <term>Configurações de cópia</term>
+          <listitem>
+            <para>Estas opções permitem que você transferir a configuração de parâmetros de um dos canais de HSV para outro.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Configurações de carga seletiva</term>
+          <listitem>
+            <para>
+              With the <guibutton>Open</guibutton> button of this
+              filter,  you can load previously saved settings. If you
+              don't want to load all of them, you can select a source
+              and a destination channel here.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </simplesect>
+  </sect3>
+</sect2>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Capítulo 5. Obtendo imagens no GIMP</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="become-a-gimp-wizard.html" title="Parte II. Como posso me tornar um mestre no GIMP?" />
+    <link rel="prev" href="become-a-gimp-wizard.html" title="Parte II. Como posso me tornar um mestre no GIMP?" />
+    <link rel="next" href="gimp-using-fileformats-creating.html" title="2. Criando novos arquivos" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Capítulo 5. Obtendo imagens no GIMP</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="become-a-gimp-wizard.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Parte II. Como posso me tornar um mestre no <acronym class="acronym">GIMP</acronym>?</span>
+        <nav> <a accesskey="n" href="gimp-using-fileformats-creating.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="chapter">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="gimp-images-in"></a>Capítulo 5. Obtendo imagens no GIMP</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Índice</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-images-in.html#gimp-concepts-image-types">1. Tipos de Imagem</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-using-fileformats-creating.html">2. Criando novos arquivos</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-using-fileformats-opening.html">3. Opening Images</a>
+            </span>
+          </dt>
+        </dl>
+      </div>
+      <p>Este capítulo é sobre a obtenção de imagens no GIMP. Ele explica como criar novas imagens, como carregar imagens de arquivos, como digitalizá-las e como fazer capturas de tela.</p>
+      <p>Mas primeiro nos queremos apresentar a você à estrutura geral das imagens noGIMP.</p>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-concepts-image-types"></a>1. Tipos de Imagem</h2>
+            </div>
+          </div>
+        </div>
+        <a id="id8184" class="indexterm"></a>
+        <p>É tentador pensar em uma <span class="emphasis"><em>imagem</em></span> como algo que corresponde a uma janela de exibição única, ou um único arquivo, como um arquivo <a class="link" href="file-jpeg-export.html#file-jpeg-load">JPEG</a>. Na realidade, no entanto, um imagem no <acronym class="acronym">GIMP</acronym> é uma estrutura complicada, que contém uma pilha de camadas e mais vários outros tipos de objetos: a máscara de seleção, um conjunto de canais, um conjunto de caminhos, um <span class="quote">“<span class="quote">histórico de desfazer</span>”</span>, etc. Nesta seção vamos dar uma olhada detalhada dos componentes de uma imagem do <acronym class="acronym">GIMP</acronym>, e as coisas que você pode fazer com eles.</p>
+        <p>A propriedade mais básica de uma imagem é o seu <span class="emphasis"><em>modo</em></span>. Há três modos possíveis: RGB, Tons de cinza, e indexado. RGB é a sigla em inglês para as iniciais das cores "Vermelho", "Verde" e "Azul", e indica que cada ponto da imagem é representado por um nível de <span class="quote">“<span class="quote">vermelho</span>”</span>, um nível de <span class="quote">“<span class="quote">verde</span>”</span>, e um nível de<span class="quote">“<span class="quote">azul</span>”</span>, representando uma imagem colorida. Cada canal de cor tem 256 níveis de intensidade possíveis. Mais detalhes em <a class="link" href="glossary.html#glossary-colormodel" title="Modelo de cor">Modelos de cores</a></p>
+        <p>Em uma imagem em tons de cinza, cada ponto é representado por um valor de brilho, variando de 0 (preto) a 255 (branco), com valores intermediários que representam diferentes níveis de cinza.</p>
+        <div class="figure">
+          <a id="id2641"></a>
+          <p class="title">
+            <strong>Figura 5.1. Componentes dos Modelos de Cores RGB e CMY</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/glossary/color-model-additive.png" alt="Componentes dos Modelos de Cores RGB e CMY" />
+              <div class="caption">
+                <p>O modelo de cor RGB, a mistura das cores vermelho, verde e azul dá branco, que é o que acontece na tela do computador.</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/glossary/color-model-subtractive.png" alt="Componentes dos Modelos de Cores RGB e CMY" />
+              <div class="caption">
+                <p>No modelo de cor CMY (K), misturar Ciano, Magenta e Amarelo dá preto, que é o que acontece quando você imprime em um papel branco. A impressora vai, na verdade, usar o cartucho preto por razões econômicas e por que isso torna as cores melhores.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Conceitualmente, a diferença entre auma imagem em tons de cinza e uma imagem RGB é o número de <span class="quote">“<span class="quote">canais de cores</span>”</span>: uma imagem em tons de cinza tem um, uma imagem RGB tem três. Uma imagem RGB pode ser imaginada como três imagens em tons de cinzasobrepostas, uma que origina a cor vermelha, outra a verde e uma a cor azul.</p>
+        <p>Na verdade, tanto imagens RGB como em tons de cinza podem ter um canal de cor adicional chamado <span class="emphasis"><em>canal alfa</em></span>, que representa opacidade. Quando o valor de alfa em um determinado local numa dada camada é igual a zero, a camada é completamente transparente (você pode ver através dela), e a cor na localização é determinada por aquilo que se encontra por baixo. Quando o valor de alfa é máximo (255), a camada é opaca (não se pode ver através dele), e a cor é determinada pela cor da camada. Os valores intermédios de alfa correspondem a diferentes graus de transparência/opacidade: a cor no local é uma mistura proporcional da cor da camada e da cor da parte de baixo.</p>
+        <div class="figure">
+          <a id="id2642"></a>
+          <p class="title">
+            <strong>Figura 5.2. Exemplo de uma imagem nos modos RGB e Tons de Cinza</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/using/wilber-channel-rgb.png" alt="Exemplo de uma imagem nos modos RGB e Tons de Cinza" />
+              <div class="caption">
+                <p>Uma imagem no modo RGB, com os canais correspondentes ao vermelho, verde e azul.</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/using/wilber-channel-gray.png" alt="Exemplo de uma imagem nos modos RGB e Tons de Cinza" />
+              <div class="caption">
+                <p>Uma imagem no modo Tons de cinza, com o canal correspondente à luminosidade.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    In <acronym class="acronym">GIMP</acronym>, in every color channel, including the alpha
+    channel, possible values have a range depending on the image precision:
+    0 to 255 for a color depth of 8 bits. <acronym class="acronym">GIMP</acronym> can load
+    16 and 32 bits images, and this range can be much larger.
+  </p>
+        <div class="figure">
+          <a id="id2643"></a>
+          <p class="title">
+            <strong>Figura 5.3. Exemplo de uma imagem com canal Alfa</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/wilber-channels-red.png" alt="Exemplo de uma imagem com canal Alfa" />
+              <div class="caption">
+                <p>Canal vermelho</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/dialogs/wilber-channels-green.png" alt="Exemplo de uma imagem com canal Alfa" />
+              <div class="caption">
+                <p>Canal verde</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/dialogs/wilber-channels-blue.png" alt="Exemplo de uma imagem com canal Alfa" />
+              <div class="caption">
+                <p>Canal azul</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/dialogs/wilber-channels-alpha.png" alt="Exemplo de uma imagem com canal Alfa" />
+              <div class="caption">
+                <p>O canal alfa mostra a área da imagem que é transparente.</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/dialogs/wilber-channels-combined.png" alt="Exemplo de uma imagem com canal Alfa" />
+              <div class="caption">
+                <p>Uma imagem colorida no modo RGB com um canal alfa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    The third type, <span class="emphasis"><em>indexed</em></span>
+    images, is a bit more complicated to understand. In an indexed image,
+    only a limited set of discrete colors are used, usually 256 or less (so, 
+    this indexed mode can be applied only to images with 8 bits precision).
+    These colors form the <span class="quote">“<span class="quote">colormap</span>”</span> of the image, and each
+    point in the image is assigned a color from the colormap. Indexed images
+    have the advantage that they can be represented inside a computer in a
+    way which consumes relatively little memory. As time goes on, they
+    are used less and less, but they are still important enough to be worth
+    supporting in <acronym class="acronym">GIMP</acronym>. (Also, there are a few important
+    kinds of image
+    manipulation that are easier to implement with indexed images than with
+    continuous-color RGB images.)
+  </p>
+        <p>
+    Some very commonly used types of files (including
+    <a class="link" href="file-gif-export.html#file-gif-load">GIF</a> and
+    <a class="link" href="file-png-export.html#file-png-load">PNG</a>) produce
+    indexed images when they are opened in <acronym class="acronym">GIMP</acronym>.  Many of
+    <acronym class="acronym">GIMP</acronym>'s
+    tools don't work very well on indexed images–and many filters
+    don't work at all–because of the limited number of colors
+    available.  Because of this, it is usually best to convert an
+    image to RGB mode before working on it.  If necessary, you can
+    convert it back to indexed mode when you are ready to save it.
+  </p>
+        <p>O <acronym class="acronym">GIMP</acronym> torna fácil converter uma imagem de um tipo para outro, usando o comando <a class="link" href="gimp-image-mode.html" title="6.3. “Mode” Submenu">modo</a> no menu Imagem. Alguns tipos de conversão perdem informação, é claro (RGB para tons de cinza ou indexada, por exemplo). Nesses caso a informação de cor é descartada e não pode ser recuperada convertendo a imagem de volta para RGB (só com <span class="quote">“<span class="quote">Desfazer</span>”</span>)</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Se você está tentando usar um filtro em uma imagem, e ele aparece desligado (acinzentado) nos menus, geralmente a causa é que a imagem (ou, mais especificamente, a camada) emque você está trabalhando é do tipo errado. Muitos filtros não podem ser usados em imagens indexadas. Alguns podem ser usadas somente em imagens RGB, ou apenas em tons de cinza. Alguns também exigem a presença ou a ausência de um canal alfa. Normalmente, a forma de poder usar o filtro é converter a imagem para um tipo diferente, mais comumente RGB.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="become-a-gimp-wizard.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="become-a-gimp-wizard.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-fileformats-creating.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="become-a-gimp-wizard.html">Parte II. Como posso me tornar um mestre no <acronym class="acronym">GIMP</acronym>?</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-fileformats-creating.html">2. Criando novos arquivos</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

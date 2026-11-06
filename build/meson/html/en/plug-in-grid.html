@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.21. Grid (legacy)</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-render.html" title="14. Rendering Filters" />
+    <link rel="prev" href="plug-in-cml-explorer.html" title="14.20. CML Explorer" />
+    <link rel="next" href="plug-in-jigsaw.html" title="14.22. Jigsaw" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.21. Grid (legacy)</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-cml-explorer.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>14. Rendering Filters</span>
+        <nav> <a accesskey="n" href="plug-in-jigsaw.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-grid"></a>14.21. Grid (legacy)</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id59721" class="indexterm"></a>
+      <a id="id59725" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3791"></a>14.21.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3792"></a>
+          <p class="title">
+            <strong>Figure 17.390. Applying example for the Grid (legacy) filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Applying example for the Grid (legacy) filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-taj-grid.jpg" alt="Applying example for the Grid (legacy) filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      It renders a Cartesian grid on the active layer, on top of the existing
+      contents. The width, spacing, offsets, and colors of the grid lines can
+      all be set by the user. By default, the lines are black.
+    </p>
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Tip]" src="images/tip.png" />
+              </td>
+              <th align="left">Tip</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        By setting a grid line width to 0 you can disable showing that
+        type of line (horizontal, vertical, intersection).
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3793"></a>14.21.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guisubmenu">Pattern</span> → <span class="guimenuitem">Grid (legacy)…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3794"></a>14.21.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3795"></a>
+          <p class="title">
+            <strong>Figure 17.391. <span class="quote">“<span class="quote">Grid (legacy)</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/grid-legacy.png" alt="“Grid (legacy)” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      There are separate options for controlling horizontal grid lines,
+      vertical grid lines, and intersections. By default, the horizontal and
+      vertical settings are synchronized, so that all changes are applied
+      symmetrically. If you want to change just one of them, click on the
+      <span class="quote">“<span class="quote">chain</span>”</span> symbol below it to disable the synchronization.
+    </p>
+        <p>
+      For each of the first three sets of parameters you can select the unit of
+      measurement for the values you enter. By default pixels is used.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Horizontal width, </span>
+              <span class="term">Vertical width, </span>
+              <span class="term">Intersection width</span>
+            </dt>
+            <dd>
+              <p>
+            Sets the thickness of the grid lines for horizontal, vertical and
+            intersection lines respectively. By default, horizontal and
+            vertical thickness is synchronized, which you can disable by
+            toggling the chain symbol.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Horizontal spacing, </span>
+              <span class="term">Vertical spacing, </span>
+              <span class="term">Intersection spacing</span>
+            </dt>
+            <dd>
+              <p>
+            Sets the distance between grid lines.
+            The <span class="guilabel">Intersection</span> parameter clears the space
+            between the intersection point and the end of the arms of the
+            intersection crosses.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Horizontal offset, </span>
+              <span class="term">Vertical offset, </span>
+              <span class="term">Intersection offset</span>
+            </dt>
+            <dd>
+              <p>
+            Sets the starting offset for grid lines relative to the upper left
+            corner. For intersections, sets the length of the arms of the
+            intersection crosses.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Color Selectors</span>
+            </dt>
+            <dd>
+              <p>
+            The color selectors allow you to change the color of the
+            horizontal, vertical and intersection grid lines separately.
+            Click a color selector button to select a different color.
+            By default, horizontal and vertical line colors are synchronized,
+            which you can disable by toggling the chain symbol.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="figure">
+          <a id="id3796"></a>
+          <p class="title">
+            <strong>Figure 17.392. Intersection parameters</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-grid-detail1.png" alt="Intersection parameters" />
+              <div class="caption">
+                <p>
+            <em class="parameter"><code>Width</code></em> &lt;
+            2 × <em class="parameter"><code>Spacing</code></em>
+          </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-grid-detail2.png" alt="Intersection parameters" />
+              <div class="caption">
+                <p>
+            <em class="parameter"><code>Width</code></em> &gt;
+            2 × <em class="parameter"><code>Spacing</code></em>
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-cml-explorer.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-jigsaw.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-cml-explorer.html">14.20. CML Explorer</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-jigsaw.html">14.22. Jigsaw</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

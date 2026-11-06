@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2010-04-18 ude: changed help-id: plug-in-optimize -> plug-in-animationoptimize
+  2007-06-25 Added Spanish translation by AntI
+  2007-05-25 KoSt: added 'no'
+  2007-01-05 lexa: added de translation
+  2006-12-27 created by j.h
+-->
+<sect2 id="plug-in-optimize">
+  <title>Otimizar</title>
+
+  <anchor id="plug-in-animationoptimize" xreflabel="Otimizar (para GIF)"/>
+  <anchor id="plug-in-animationoptimize-diff" xreflabel="Otimizar (Diferença)"/>
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Animação</secondary>
+    <tertiary>Otimizar</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Animação</primary>
+    <secondary>Otimizar</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão Geral</title>
+    <para>Uma animação pode conter várias camadas, logo seu tamanho pode ser importante. Isso é um problema para uma página Web. Os filtros de otimização permitem que você reduza este tamanho. Muitos elementos são compartilhados com todas as camadas em uma animação; de forma que possa ser salva apenas uma vez ao invés de salvar cada camada, e o que for modificado em cada camada pode ser salvo em uma só.</para>
+    <para>GIMP oferece dois Filtros Otimizar: <guilabel>Otimizar (Diferença)</guilabel>  e <guilabel>Otimizar (GIF)</guilabel>. Seus resultados não são muito diferentes.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filters</title>
+    <itemizedlist>
+      <para>
+        You can find these filters in the main menu:
+      </para>
+      <listitem>
+        <para>
+          <menuchoice>
+            <guimenu>Filtros</guimenu>
+            <guisubmenu>Animação</guisubmenu>
+            <guimenuitem>Otimizar (Diferença)</guimenuitem>
+          </menuchoice>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <menuchoice>
+            <guimenu>Filtros</guimenu>
+            <guisubmenu>Animação</guisubmenu>
+            <guimenuitem>Otimizar (para GIF)</guimenuitem>
+          </menuchoice>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <menuchoice>
+            <guimenu>Filtros</guimenu>
+            <guisubmenu>Animação</guisubmenu>
+            <guimenuitem>Des-otimizar</guimenuitem>
+          </menuchoice>
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Exemplo para os filtro de Otimizar animação</title>
+
+    <figure>
+      <title>Imagem Original</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/optimize-orig-example.png"/>
+        </imageobject>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/optimize-orig-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      In this animation, the red ball goes downwards and past vertical bars.
+      File size is 600 kB.
+    </para>
+
+    <figure>
+      <title>Otimizar (Diferença)</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/optimize-diff-example.png"/>
+        </imageobject>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/optimize-diff-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      File size moved to 153 kB. Layers held only the part the background
+      which will be used to remove the trace of the red ball. The common part
+      of layers is transparent.
+    </para>
+
+    <figure>
+      <title>Otimizar (GIF)</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/optimize-gif-example.png"/>
+        </imageobject>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/optimize-gif-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      File size moved to 154 kB, a bit bigger in the present example, but
+      layer size has been reduced. Layers held only a rectangular selection
+      which includes the part of the background which will be used to remove
+      the trace of the red ball. The common part of layers is transparent.
+    </para>
+  </sect3>
+
+  <sect3 id="plug-in-animationunoptimize">
+    <title>Des-otimizar</title>
+    <para>O filtro <quote>Des-otimizar</quote> remove qualquer otimização na camada-base da animação. Você pose precisar deste comando case queira editar a animação e não seja possível ou não seja funcional <link linkend="gimp-concepts-undo"> desfazer</link> qualquer modificação e queira recomeçar aedição a partir da imagem original.</para>
+  </sect3>
+</sect2>

@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-10-27 j.h: update to v2.10
+  2008-09-17 aprokoudine: fixed bugs
+  2008-01-11 j.h: updated to v2.4 'en;fr'
+  2007-02-23 note added to Key Modifiers by j.h
+  2006-06-07 added link to path concept by j.h
+-->
+<sect2 id="gimp-tool-path">
+  <title>Vetores</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Vetores</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Vetores</primary>
+    <secondary>Ferramenta</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Bézier curve</primary>
+  </indexterm>
+  <para>
+    The Paths tool allows you to create complex geometric shapes called
+    <quote>Bézier Curves</quote>, a bit like the
+    <link linkend="gimp-tool-free-select">Free Selection</link> tool, but with
+    all the adaptability of vectorial curves.
+  </para>
+  <para>
+    You can edit your curve, you can paint with your curve, or even
+    save, import, and export the curve. You can also use paths to create
+    geometrical figures. Paths have their own dialog box: the
+    <link linkend="gimp-path-dialog">Paths Dialog</link>.
+  </para>
+  <para>
+    See also the <link linkend="gimp-concepts-paths">Paths</link> concept.
+  </para>
+  <para>
+    Paths can be turned into Vector layers. A Vector layer is a special kind of
+    layer that displays a path, possibly consisting of several parts,
+    including their selected fill and stroke attributes.
+  </para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          From the main menu:
+          <menuchoice>
+            <guimenu>Tools</guimenu>
+            <guisubmenu>Paths</guisubmenu>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          By clicking the tool icon
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-path.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          in the Toolbox.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          By pressing the <keycap>B</keycap> keyboard shortcut.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Key modifiers</title>
+    <note>
+      <para>
+        The status bar at the bottom of the image window will show relevant
+        tips about the possible modifiers you can use when working with paths.
+      </para>
+    </note>
+    <variablelist>
+      <varlistentry>
+        <term><keycap>Shift</keycap></term>
+        <listitem>
+          <para>Esta tecla tem diversas funções dependendo do seu contexto. Consulte as opções para obter mais detalhes.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><keycap>Ctrl</keycap> ; <keycap>Alt</keycap></term>
+        <listitem>
+          <para>Existem três modos disponíveis para se trabalhar com a ferramenta de vetores: <guilabel>Criação</guilabel>,<guilabel>Edição</guilabel> e <guilabel>Mover</guilabel>. A tecla <keycap>Ctrl</keycap> alterna entre Criação e Edição. Já as teclas <keycap>Alt</keycap> (ou <keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap></keycombo>) alternam o modo entre Criação e Mover.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3 id="gimp-tool-path-options">
+    <title>Opções</title>
+    <figure>
+      <title>Caixa de opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-paths.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>
+      Normally, tool options are displayed in a window attached under the
+      Toolbox as soon as you activate a tool. If they are not, you can access
+      them from the main menu through
+      <menuchoice>
+        <guimenu>Windows</guimenu>
+        <guisubmenu>Dockable Windows</guisubmenu>
+        <guimenuitem>Tool Options</guimenuitem>
+      </menuchoice> which opens the option window of the selected tool.
+    </para>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo de Edição</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Design</term>
+              <listitem>
+                <para>Por padrão, essa ferramenta já estará no modo <guilabel>Criação</guilabel>. Você pode desenhar o vetor ao dar cliques sucessivos. Você pode mover os pontos de controle clicando sobre os mesmos e arrastando. Entre os pontos de controle existem segmentos.</para>
+                <para>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/tool-options/path-stroke.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Os números indicam os passos para desenhar uma linha reta de dois segmentos.</para>
+                    </caption>
+                  </mediaobject>
+                </para>
+                <para>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/tool-options/path-curve.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Segmentos curvos são facilmente construídos ao arrastar um segmento ou clicar e arrastar em novo nó. As setas azuis mostram a curva. Duas pequenas alças quadradas ficarão disponíveis para que você possa alterar a curva.</para>
+                    </caption>
+                  </mediaobject>
+                </para>
+                <tip>
+                  <para>
+                    To quickly close the curve, click on the initial control point.
+                    If you want to reposition the start node, hold <keycap>Shift</keycap>
+                    and click to deselect the end node, then move the start node.
+                  </para>
+                  <para>
+                    You can use the
+                    <guibutton>Selection from Path</guibutton> button or
+                    <guiicon>
+                      <inlinemediaobject>
+                        <imageobject>
+                          <imagedata fileref="images/stock-icons/gimp-selection.svg" contentwidth="16px"/>
+                        </imageobject>
+                      </inlinemediaobject>
+                    </guiicon>
+                    the <emphasis>Path to Selection</emphasis> button
+                    in the Paths dialog to convert the path to a Selection.
+                  </para>
+                </tip>
+                <tip>
+                  <para>Quando você tem duas alças, elas vão se mover simetricamente por padrão. Solte o botão do mouse para movê-las individualmente. A tecla <keycap>Shift</keycap> faz com que as âncoras funcionem simetricamente novamente.</para>
+                </tip>
+                <para>Several functions are available in Design mode:</para>
+                <para>
+                  <emphasis>Inserting a new node</emphasis>:
+                  When you press <keycap>Ctrl</keycap> and hover the mouse pointer
+                  over the existing path, the mouse pointer changes to the '+'
+                  sign. Clicking will create a new path node in the hovered point
+                  of the path.
+                </para>
+                <para>
+                  <emphasis>Moving one or several nodes</emphasis>: On a node,
+                  the mouse pointer becomes a 4-arrows cross. You can click
+                  and drag it.
+                  You can select several nodes by <keycap>Shift</keycap> and
+                  click and move them by click and drag.
+                  Pressing <keycombo><keycap>Ctrl</keycap><keycap>Alt
+                  </keycap></keycombo> allows to move all the path, as a
+                  selection.
+                </para>
+                <para>
+                  <emphasis>Modifying handles</emphasis>: You have to Edit a node
+                  first. A handle appears. Drag it to bend the curve.
+                  Pressing <keycap>Shift</keycap> toggles to symmetric handles.
+                </para>
+                <para>
+                  <emphasis>Modify segment</emphasis>: When the mouse pointer
+                  moves over a segment, it turns to a 4-arrows cross. Click and drag
+                  it to bend the segment. As soon as you move it, handles appear
+                  at both ends of the segment. Pressing the <keycap>Shift</keycap>
+                  key toggles to symmetric handles.
+                </para>
+                <para>
+                  <emphasis>Adding a new subpath</emphasis>:
+                  When you press <keycap>Shift</keycap> and hover the mouse pointer
+                  outside the existing path, the mouse pointer starts displaying
+                  a square. Clicking will start a subpath that isn't connected
+                  to other curves, but is considered a part of the path.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Edit (Ctrl)</term>
+              <listitem>
+                <para>
+                  <guilabel>Edit</guilabel> performs functions which are not
+                  available in <guilabel>Design</guilabel> mode. With this
+                  mode, you can work only on the existing path. When the mouse
+                  pointer is not on the path, the pointer changes to a small crossed
+                  circle and you can not do any path editing.
+                </para>
+                <para><emphasis>Criar um segmento entre dois nós</emphasis>: Clique em um dos nós na ponta do vetor para ativá-lo. O cursor mostrará um símbolo de união. Clique em outro nó para ligar ambos os nós. Isso é muito útil quando você precisa ligar componentes que não estão fechados.</para>
+                <para>
+                  <emphasis>Remove a segment from a path</emphasis>: While pressing
+                  <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap></keycombo>
+                  key combination, point to a segment. The mouse pointer turns to a
+                  "-" sign. Click to delete the segment.
+                </para>
+                <para>
+                  <emphasis>Add a node to a path</emphasis>: point to a
+                  segment. Pointer turns to "+"". Click where you want to place
+                  the new control point.
+                </para>
+                <para><emphasis>Remove a node</emphasis>: While pressing
+                  <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap></keycombo>
+                  key combination, point to a node. Pointer turns
+                  to "-"". Click to delete the node.
+                </para>
+                <para><emphasis>Adicionar uma alça à um nó</emphasis>: Coloque o cursor do mouse sobre um nó. O cursor mostrará um sinal de uma pequena mão. Arraste o nó para que apareça uma âncora. Pressione a tecla <keycap>Shift</keycap> para mudar para âncoras simétricas.</para>
+                <para>
+                  <emphasis>Remove a handle from a node</emphasis>: While pressing
+                  <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap></keycombo>
+                  key combination, point to a handle. The pointer
+                  doesn't turn to the expected "-"" and remains a hand. Click
+                  to delete the handle.
+                </para>
+                <caution>
+                  <para>
+                    There is no warning before removing a node, segment or a handle.
+                  </para>
+                </caution>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Move (Alt)</term>
+              <listitem>
+                <para>O modo <guilabel>Mover</guilabel> permite mover um ou todos os componentes de um vetor. Simplesmente clique no vetor e arraste-o.</para>
+                <para>
+                  If you have several components, only the selected one is moved. If
+                  you click and drag outside the path, all components are moved.
+                  Pressing the <keycap>Shift</keycap> key toggles between moving all
+                  components and selected components only.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Poligonal</term>
+        <listitem>
+          <para>Com essa opção ativada, os segmentos serão apenas retos. As alças não estarão disponíveis e os segmentos não vão se dobrar quando você for movê-los.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Selection from Path</term>
+        <listitem>
+          <para>
+            This button allows creation of a selection that is based on
+            the path in its present state. This selection is marked with
+            the <link linkend="glossary-marching-ants"><quote>marching ants</quote>
+            </link>. Note that the path is still present:
+            the current tool is still the path tool and you can modify this
+            path without modifying the selection that has become independent.
+            If you change tools, the path becomes invisible, but it persists in
+            the <link linkend="gimp-path-dialog">Paths Dialog</link> and you
+            can re-activate it.
+          </para>
+          <para>Se o vetor não estiver fechado, o GIMP irá fechá-lo com uma linha reta ligando as duas extremidades.</para>
+          <para>
+            As the help pop-up tells, pressing <keycap>Shift</keycap>
+            when clicking on the button will add the new selection to an
+            already existing one. Pressing <keycap>Ctrl</keycap> will
+            subtract the selection from the pre-existing selection, and the
+            <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap></keycombo>
+            key combination will intersect the two selections.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Create New Vector Layer</term>
+        <listitem>
+          <para>
+            This command creates a
+            <link linkend="gimp-layer-type-vector-layer">Vector Layer</link>
+            from the current path. A vector layer remembers its stroke and fill
+            settings and can have
+            <link linkend="gimp-using-layer-effects">Layer Effects</link>
+            applied to it.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Enable Fill</term>
+        <listitem>
+          <para>
+            When checked the current path will be filled based on the settings
+            below.
+          </para>
+          <para>
+            This setting only takes effect if the path being edited is attached
+            to a vector layer. For filling paths not connected to a layer
+            use <link linkend="gimp-path-fill">Fill Paths</link>.
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>Solid color</term>
+              <listitem>
+                <para>
+                  If this is selected, you can choose what color is used to fill
+                  the path by pressing the color button.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Pattern</term>
+              <listitem>
+                <para>
+                  If this is selected, a pattern will be used to fill the path.
+                  You choose another pattern by clicking the resource button or
+                  by typing the name of the pattern.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Anti-serrilhamento</term>
+              <listitem>
+                <para>
+                  Enabling this setting allows you to remove or reduce the
+                  aliasing effect that can show up on borders.
+                </para>
+                <para>
+                  For more information, see
+                  <link linkend="glossary-antialiasing">Anti-aliasing</link> in
+                  the Glossary.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Enable Stroke</term>
+        <listitem>
+          <para>
+            When checked the current path will be stroked based on the settings
+            below.
+          </para>
+          <para>
+            This setting only takes effect if the path being edited is attached
+            to a vector layer. For stroking paths not connected to a layer
+            use <link linkend="gimp-path-stroke">Stroke Paths</link>.
+          </para>
+          <variablelist>
+          <!-- FIXME: Most of the below is duplicated from menus/edit/stroke-path.xml -->
+            <varlistentry>
+              <term>Solid color</term>
+              <listitem>
+                <para>
+                  If this is selected, you can choose what color is used to
+                  stroke the path by pressing the color button.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Pattern</term>
+              <listitem>
+                <para>
+                  If this is selected, a pattern will be used to stroke the
+                  path. You choose another pattern by clicking the resource
+                  button or by typing the name of the pattern.
+                </para>
+                <para>
+                  This is distinct from the <guilabel>Dash pattern</guilabel>.
+                  If you select one of the two color options with no dash pattern,
+                  an unbroken line is drawn in the color set in the Toolbox.
+                  If you select Pattern with no dash pattern, an unbroken line
+                  is drawn with the pattern set in the Toolbox. If you select a
+                  line with a dash pattern, the color or pattern is still
+                  determined by the color or pattern set in the Toolbox. That is,
+                  if you have a marbled pattern set in the Toolbox, and select
+                  <guilabel>Pattern</guilabel> and dashed lines as
+                  <guilabel>Dash pattern</guilabel>, the dashes are drawn in the
+                  marbled pattern.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Anti-serrilhamento</term>
+              <listitem>
+                <para>
+                  Enabling this setting allows you to remove or reduce the
+                  aliasing effect that can show up on borders.
+                </para>
+                <para>
+                  Curved strokes or strokes drawn at an angle may look jagged
+                  or stair-stepped. The anti-aliasing option smooths them out.
+                </para>
+                <para>
+                  For more information, see
+                  <link linkend="glossary-antialiasing">Anti-aliasing</link> in
+                  the Glossary.
+                </para>
+              </listitem>
+            </varlistentry>
+
+            <varlistentry>
+              <term>Line width</term>
+              <listitem>
+                <para>
+                  You can set the width of the stroke using the text box.
+                  The default unit is pixels, but you can choose another
+                  unit with the drop-down list button.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Cap style</term>
+              <listitem>
+                <para>
+                  Choose the shape of the ends of an unclosed path, which can
+                  be <guilabel>Butt</guilabel>, <guilabel>Round</guilabel>
+                  or <guilabel>Square</guilabel>.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Join style</term>
+              <listitem>
+                <para>
+                  You can choose the shape of the path corners by
+                  clicking on <guilabel>Miter</guilabel>,
+                  <guilabel>Round</guilabel> or <guilabel>Bevel</guilabel>.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Miter limit</term>
+              <listitem>
+                <para>
+                  When two segments of a path come together, the mitering of
+                  the corner is determined by the Miter Limit. If the strokes
+                  were wide, and no mitering were done, there would be pointed
+                  ends sticking out at the corner. The Miter Limit setting
+                  determines how the gap, formed when the outer edges of the
+                  two lines are extended, will be filled. You can set it to a
+                  value between 0.0 and 100.0, by using the slider or its
+                  <guilabel>+</guilabel> and <guilabel>-</guilabel> buttons.
+                </para>
+                <figure>
+                  <title>Example of miter limit</title>
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/menus/edit/stroke-path-miter.png"/>
+                    </imageobject>
+                    <caption>
+                      <para>Left image: Limit=0. Right image: Limit=5.</para>
+                    </caption>
+                  </mediaobject>
+                </figure>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Dash pattern</term>
+              <listitem>
+                <para>
+                  On the pixel level, a dashed line is drawn as a series of
+                  tiny boxes. You can modify the pattern of these boxes. The
+                  black area with thin vertical lines represents the pixels of
+                  the dash. If you click on a black pixel, you remove it from
+                  the dash. If you click on a white pixel, you add it to the
+                  dash. The gray areas indicate how the pattern will be
+                  repeated when a dashed line is drawn.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Dash preset</term>
+              <listitem>
+                <para>
+                  Instead of making your own dash pattern, you can choose
+                  one from the drop-down box. This pattern will
+                  then be displayed in the <guilabel>Dash pattern</guilabel>
+                  area, so you can get an idea of how it will look.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+    <sect3>
+    <title>Context Menu</title>
+    <para>
+      When right-clicking on path elements, like anchors or segments, a
+      context menu will appear, the contents of which depends on the item
+      you clicked on. The following commands may be shown in the context menu.
+    </para>
+
+    <variablelist>
+      <varlistentry id="gimp-path-path-tool-delete-anchor">
+        <term>Delete Anchor</term>
+        <listitem>
+          <para>
+            This command deletes the selected anchor and connects the segments
+            before and after it.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-path-path-tool-shift-start">
+        <term>Shift Start</term>
+        <listitem>
+          <para>
+            This command shifts the start anchor to the selected anchor. The
+            start anchor is where stroking starts. The start anchor has a
+            pointy side indicating the stroking direction. This can be
+            useful when you want to wrap
+            <link linkend="gimp-text-tool-text-along-path">Text along Path</link>.
+          </para>
+          <para>
+            Shifting the start anchor on open strokes may insert a new segment
+            connecting the previous endpoints, and removes the segment leading
+            into the new start anchor.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-path-path-tool-insert-anchor">
+        <term>Insert Anchor</term>
+        <listitem>
+          <para>
+            This command adds a new anchor on the selected spot on the segment.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-path-path-tool-delete-segment">
+        <term>Delete Segment</term>
+        <listitem>
+          <para>
+            This command deletes the selected segment. This will create an
+            opening in your path.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-path-path-tool-reverse-stroke">
+        <term>Reverse Stroke</term>
+        <listitem>
+          <para>
+            This reverses the direction of the stroke. The shape of the start
+            anchor will reflect the direction of the stroke. The pointy side
+            is the direction it will go to when stroking.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

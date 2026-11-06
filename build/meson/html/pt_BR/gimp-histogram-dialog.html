@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.5. Histogram Dialog</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-structure.html" title="2. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="gimp-indexed-palette-dialog.html" title="2.4. Diálogo do mapa de cores" />
+    <link rel="next" href="gimp-navigation-dialog.html" title="2.6. Diálogo de navegação" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.5. Histogram Dialog</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-indexed-palette-dialog.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>2. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="gimp-navigation-dialog.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-histogram-dialog"></a>2.5. Histogram Dialog</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id23319" class="indexterm"></a>
+      <a id="id23322" class="indexterm"></a>
+      <div class="figure">
+        <a id="id3161"></a>
+        <p class="title">
+          <strong>Figura 15.12. O diálogo de Histograma</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/dialogs/histogram-basic-dialog.png" alt="O diálogo de Histograma" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>O diálogo de histograma mostra informação sobre a distribuição estatística dos valores de cor na camada ou seleção ativas. Esta informação é geralmente útil quando você está tentando <span class="emphasis"><em>equilibrar as cores</em></span> de uma imagem. Entretanto, o diálogo de Histograma é puramente informativo: nada do que você faça nele vai causar alteração na imagem. Se você quiser realizar uma correção de cores baseando-se no histograma, use a ferramenta de <a class="link" href="gimp-tool-levels.html" title="8.10. Níveis">Níveis</a> </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3162"></a>2.5.1. Ativando o diálogo</h4>
+            </div>
+          </div>
+        </div>
+        <p>O diálogo de <span class="quote">“<span class="quote">Buffers</span>”</span> é um diálogo de encaixe;veja a  seção <a class="xref" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe">Seção 2.3, “Caixas de diálogo e de encaixe”</a> para mais informações sobre como gerenciá-lo.</p>
+        <p>Você pode acessa-lo:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          from the main menu:
+          <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Dialogs</span> → <span class="guimenuitem">Histogram</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          from the Tab menu in any dockable dialog by clicking the
+          <a class="link" href="menus.html#tab-menus" title="1.3. Menus de Abas">tab menu button</a>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+          </span> and selecting
+          <span class="guimenu">Add Tab</span> → <span class="guimenuitem">Histogram</span>,
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          from the main menu:
+          <span class="guimenu">Colors</span> → <span class="guisubmenu">Info</span> → <span class="guimenuitem">Histogram</span>.
+        </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+      In the <span class="guimenu">Windows</span> menu, there is a list of
+      <a class="link" href="gimp-concepts-docks.html#gimp-dockable-menu" title="2.3.2. Menu das Abas (guias)">detached windows</a> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <span class="quote">“<span class="quote">Histogram</span>”</span> dialog from the main menu:
+      <span class="guimenu">Windows</span> → <span class="guimenuitem">Histogram</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3163"></a>2.5.2. Sobre Histogramas</h4>
+            </div>
+          </div>
+        </div>
+        <p>No GIMP cada camada de uma imagem pode ser decomposta em um ou mais canais de cores. Para uma imagem RGB, nos canais R (Red - vermelho), G (Green - verde) e B (Blue - azul); para uma imagem em tons de cinza, em um único canal de Valor. Camadas que suportam transparência tem um canal adicional, o canal Alfa. Até o GIMP 2.8, cada canal suporta uma faixa de cores de 0 a 255  (valores inteiros). Portanto, um pixel preto tem o valor 0 em todos os canais de cor; um pixel branco tem o valor 255 em todos os canais. Um pixel transparente tem o valo 0 no canal Alfa, e um pixel opaco tem valor 255 nesse canal. No GIMP 2.9 em diante, para imagens com precisão maior que 8 bits por canal, usam-se valores decimais de 0.0 até 1.0, em vez de valores inteiros de 0 a 255.</p>
+        <p>Para imagens RGB, é conveniente definir um <span class="quote">“<span class="quote">pseudo canal</span>”</span>de Valor. Este não é um canal real de cor: ele não reflete nenhuma informação armazenada diretamente na imagem. Em vez disso, o Valor para um pixel é dado pela equação <code class="code">V = max(R,G,B)</code>. Essencialmente, o Valor é o que você obteria para um pixel se você convertesse a imagem para o modo Tons de cinza</p>
+        <p>Para maiores informações sobre canais, consultar  <a class="xref" href="gimp-images-in.html#gimp-concepts-image-types" title="1. Tipos de Imagem">Seção 1, “Tipos de Imagem”</a>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3164"></a>2.5.3. Usando o diálogo de Histograma</h4>
+            </div>
+          </div>
+        </div>
+        <p>O nome da camada ativa é exibido no alto do diálogo</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Canal</span>
+            </dt>
+            <dd>
+              <p>
+            The drop-down below the active layer name allows you to select which
+            channel to use. The available options depend on the layer type of
+            the active layer. Possible options are:
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Valor</span>
+                  </dt>
+                  <dd>
+                    <p>Para imagens RGB e em Tons de cinza, esta opção exibe a distribuição de brilho na camada. Para uma imagem em Tons de cinza, o valor é lido diretamente dos dados dos pixel. Para uma imagem RGB, eles são tomados do pseudo canal de Valor.</p>
+                    <p>Para uma imagem indexada, o canal <span class="quote">“<span class="quote">Valor</span>”</span> mostra, na verdade, as frequências de cada índice do mapa de cores. Portanto, é um histograma de <span class="quote">“<span class="quote">pseudocor</span>”</span>, e não um histograma real das cores.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Red, </span>
+                    <span class="term">Green, </span>
+                    <span class="term">Blue</span>
+                  </dt>
+                  <dd>
+                    <p>Essas opções só aparecem para camadas de imagens RGB. Elas exibem respectivamente a distribuição dos níveis de intensidade dos canais Vermelho, Verde e Azul.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Alfa</span>
+                  </dt>
+                  <dd>
+                    <p>Essa opção exibe a distribuição dos níveis de opacidade. Se a camada for completamente transparente (alfa = 0), ou completamente opaca (alfa=255), o histograma consistirá de uma única barra no canto esquerdo ou no canto direito.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Luminance</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This shows the distribution of lightness intensity.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RGB</span>
+                  </dt>
+                  <dd>
+                    <div class="figure">
+                      <a id="id3165"></a>
+                      <p class="title">
+                        <strong>Figura 15.13. Histogramas combinados dos canais R, G e B.</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/dialogs/histogram-rgb.png" alt="Histogramas combinados dos canais R, G e B." />
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                    <p>Essa entrada, disponível apenas para camadas RGB, mostra os histogramas dos canais R (vermelho), G (verde) e B (azul) superpostos, de forma que você possa ver toda a informação sobre a distribuição de cores num único lugar.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-space-linear-symbolic.svg" width="16" /></span>
+          </span>
+          Linear
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-space-non-linear-symbolic.svg" width="16" /></span>
+          </span>
+          Non-Linear
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-color-space-perceptual-symbolic.svg" width="16" /></span>
+          </span>
+          Perceptual
+        </span>
+            </dt>
+            <dd>
+              <p>
+            These three buttons determine whether the tone reproduction (TRC)
+            will be displayed using a linear, non-linear, or perceptual X axis.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-histogram-linear.svg" width="16" /></span>
+          </span>
+          Linear histogram
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-histogram-logarithmic.svg" width="16" /></span>
+          </span>
+          Logarithmic histogram
+        </span>
+            </dt>
+            <dd>
+              <p>
+            These two buttons determine whether the histogram will be displayed
+            using a linear or logarithmic Y axis. For images taken from
+            photographs, the linear mode is most commonly useful. For images
+            that contain substantial areas of constant color, though, a linear
+            histogram will often be dominated by a single bar, and a
+            logarithmic histogram will often be more useful.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Configuração de faixas</span>
+            </dt>
+            <dd>
+              <div class="figure">
+                <a id="id3166"></a>
+                <p class="title">
+                  <strong>Figura 15.14. Aspecto do diálogo após configuração de uma faixa.</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/histogram-range.png" alt="Aspecto do diálogo após configuração de uma faixa." />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>Você pode restringir os dados de origem para as estatísticas exibidas na parte de baixo do diálogo a uma faixa limitada de valores, se desejar. Você pode configurar a faixa de valores de três formas diferentes:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>Clicando e arrastando o ponteiro na área em que o histograma está desenhado, do nível mais baixo até o nível mais alto desejado.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Clicando e arrastando os triângulos preto e branco no controle abaixo do histograma.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Usando as entradas numéricas abaixo do controle deslizante (entrada da esquerda: número mínimo da faixa; entrada da direita: número máximo da faixa)</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Estatísticas</span>
+            </dt>
+            <dd>
+              <p>Na parte de baixo do diálogo são exibidas algumas estatísticas básicas descrevendo a distribuição dos valores no canal, restritas à faixa selecionada.</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Média</span>: O valor da médio do intervalo, no canal selecionado.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Desvio padrão</span>: Desvio padrão. Dá uma idéia de quanto homogênea é a distribuição no intervalo selecionado.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Mediana</span>: Por exemplo, o valor do 50º pico num intervalo de 100 valores.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Pixels</span>: O número de pixels na camada ou seleção ativos.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Contagem</span>: O número de pixels em uma barra (quando você clica no histograma) ou no intervalo selecionado.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Percentual</span>: A razão entre o número de pixels no intervalo selecionado e o número total de pixels na camada ou seleção ativa.</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Compute unique colors</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, this computes and shows the amount of unique colors
+            or grayscale values present in your image. When there is a
+            selection, it will only count the colors inside  the selection.
+          </p>
+              <p>
+            This setting does not adjust for a selected range like the
+            statistics above do.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-indexed-palette-dialog.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-structure.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-navigation-dialog.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-indexed-palette-dialog.html">2.4. Diálogo do mapa de cores</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-navigation-dialog.html">2.6. Diálogo de navegação</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-14 j.h update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-edge-sobel">
+  <title>Sobel</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Detecção de borda</secondary>
+    <tertiary>Sobel</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Sobel</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo aplicativo do filtro sobel</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/edge-taj-sobel.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O filtro Sobel detecta bordas horizontais e verticais separadamente em uma imagem em escalas-de-cinza. As cores da imagem são transformadas de RGB para escalas-de-cinza. Assim como com o filtro Laplace, o resultado é uma imagem transparente com linhas pretas e alguns restos de cores.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Edge-Detect</guisubmenu>
+        <guimenuitem>Sobel…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro Sobel</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/edge-detect/sobel-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Horizontal</term>
+        <listitem>
+          <para>Renderiza próximo às bordas horizontais.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Vertical</term>
+        <listitem>
+          <para>Renderiza próximo à bordas verticais</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Keep sign</term>
+        <listitem>
+          <para>Essa opção permite selecionar como o filtro irá atuar caso você tenha selecionado apenas uma direção para usar: um fino relevo com elevações e sombras será criado.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

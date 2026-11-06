@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-05-05 j.h: update to v2.10.10
+  
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-rotate">
+  <title>Rotacionar</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Rotacionar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Rotacionar</primary>
+  </indexterm>
+
+  <para>Esta opção é usada para rotacionar a camada ativa, uma seleção ou um vetor. Quando você clica na imagem ou na seleção com esta ferramenta, um diálogo de <emphasis>informação de Rotação</emphasis> é aberto. Ali, você pode especificar as coordenadas do centro (eixo) da rotação, marcado na imagem com um ponto, e o ângulo de rotação. Você pode fazer as mesmas coisas clicando e arrastando na imagem para rotacionar, ou posicionando diretamente o ponto que marca o centro de rotação.</para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagens, em:<menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de transformação</guisubmenu><guimenuitem>Rotacionar</guimenuitem></menuchoice>,</para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-rotate.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>usando o atalho de teclado <keycombo><keycap>Shift</keycap><keycap>R</keycap></keycombo>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Teclas modificadoras (Padrões)</title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>Se você mantiver a tecla <keycap>Ctrl</keycap> pressionada, o ângulo de rotação vai mudar só de 15 em 15 graus.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-rotate.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Transformar</term>
+        <term>Direção</term>
+        <term>Interpolação</term>
+        <term>Cortar</term>
+        <term>Show image preview</term>
+        <term>Guias</term>
+        <listitem>
+          <xi:include href="about-common-transform-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Direção da transformação</term>
+        <listitem>
+          <para>A direção da transformação diz em que direção a camada será rotacionada. O modo normal vai efetuar a rotação como se espera: se uma camada for rotacionada 10 graus para a direita, a camada será renderizada assim. Esse comportamento é o contrário na rotação Corretiva.</para>
+          <para>A rotação corretiva é usada principalmente para reparar imagens digitais que não estão retas. Se a imagem está inclinada 13 graus, você não precisa tentar criar uma rotação nesse ângulo exato: usando a rotação corretiva com as linhas de grade, você só precisa alinhar a grade com a imagem inclinada (é melhor desligar a pré-visualização nesse modo). Como a rotação é feita ao contrário, o que vai acontecer é que a imagem desalinhada vai ser rotacionada para ficar na mesma posição que as grades estavam inicialmente (na horizontal), corrigindo o erro. </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>15 Degrees (Shift)</term>
+        <listitem>
+          <para><guilabel>15 graus (Ctrl)</guilabel> vai restringir a rotação a ângulos divisíveis por 15 graus. </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>A janela de diálogo de informação de Rotação</title>
+    <figure>
+      <title>A janela de diálogo de informação de Rotação</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/rotate-adjust.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Ângulo</term>
+        <listitem>
+          <para>Aqui você pode especificar o ângulo de rotação diretamente, de  -180° to +180°, dando um total de 360°.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Centro X/Y</term>
+        <listitem>
+          <para>Esta opção permite que você posicione o centro de rotação, representado por uma cruz com um círculo na imagem. Clicar e arrastar esse ponto também permite mover o centro, mesmo para fora da imagem. A unidade de medida padrão é o pixel, mas você pode muda-la na lista flutuante.</para>
+          <figure>
+            <title>O centro de rotação</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/toolbox/transform-guides.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>A camada rotacionada ao redor do centro de rotação situado fora da imagem</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Readjust button</term>
+        <listitem>
+          <para>
+            With this button
+            you can reset the transform handles back to the original square
+            shape, while keeping the current transformation and zoom level.
+            This enables you to create more complex transformations by making
+            the transformation in several steps.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <note>
+      <para>Você também pode rotacionar camadas com o comando <menuchoice><guimenu>Camada</guimenu><guisubmenu>Transformar</guisubmenu><guimenuitem>Rotação livre...</guimenuitem></menuchoice> </para>
+    </note>
+  </sect3>
+</sect2>

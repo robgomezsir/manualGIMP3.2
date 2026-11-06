@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.32. Diálogo de exportar imagem</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-jp2-export.html" title="5.31. Export Image as JPEG 2000" />
+    <link rel="next" href="file-jpegxl-export.html" title="5.33. Export Image as JPEG XL" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.32. Diálogo de exportar imagem</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-jp2-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-jpegxl-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-jpeg-export"></a>5.32. Diálogo de exportar imagem</h3>
+          </div>
+        </div>
+      </div>
+      <a id="file-jpeg-load"></a>
+      <a id="id28407" class="indexterm"></a>
+      <a id="id28409" class="indexterm"></a>
+      <a id="id28411" class="indexterm"></a>
+      <a id="id28413" class="indexterm"></a>
+      <a id="id28415" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3303"></a>5.32.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      JPEG files usually have the extension .jpg or .jpeg. It is a
+      very widely used format, because it compresses images very
+      efficiently, while minimizing the loss of image quality. It does
+      not, however, support transparency, animation or multiple layers.
+    </p>
+        <p>
+      In the past, the jpeg format was considered the best choice when the
+      file size was a concern due to its good compression. However, nowadays
+      there are several other formats that surpass jpeg in reducing file size.
+      Some examples supported by <acronym class="acronym">GIMP</acronym> are
+      <a class="link" href="file-heif-export.html" title="5.25. Diálogo de exportar imagem">HEIF</a>,
+      <a class="link" href="file-jpegxl-export.html" title="5.33. Export Image as JPEG XL">JPEG xl</a> and
+      <a class="link" href="file-webp-export.html" title="5.54. Diálogo de exportar imagem">WebP</a>.
+    </p>
+        <div class="figure">
+          <a id="id3304"></a>
+          <p class="title">
+            <strong>Figura 15.80. O diálogo de Exportar imagem</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-jpeg-dialog.png" alt="O diálogo de Exportar imagem" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The JPEG algorithm is quite complex, which is reflected in its options.
+      Most JPEG specific settings, except Quality, are usually left alone
+      unless you understand what the effects of the setting are.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3305"></a>5.32.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Qualidade</span>
+            </dt>
+            <dd>
+              <p>
+            The Quality level ranges from 0 to 100 and is an indication of
+            the amount of expected artifacts. Because jpeg is a lossy
+            format, there will always be a certain amount of loss of quality.
+            For this reason, it is generally not a good idea to save jpeg
+            images after altering them again and again, because each time
+            you will loose a little more detail.
+          </p>
+              <p>
+            Values above 95, or even 90, are rarely useful and high values
+            significantly increase the size of your jpeg images.
+            The default quality of 85 usually produces excellent results, but
+            in many cases it is possible to set the quality substantially
+            lower without noticeably degrading the image. You can test the
+            effect of different quality settings by checking
+            <span class="guilabel">Show Preview in image window</span>
+            in the JPEG dialog.
+          </p>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Por favor note que os números usados para o nível de qualidade do JPEG tem um significado diferente dependendo do aplicativo usado. Salvar uma imagem com qualidade 80 no GIMP pode ser diferente de fazer o mesmo em uma outra aplicação de imagens.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Utilizar configurações de qualidade da imagem original</span>
+            </dt>
+            <dd>
+              <p>Se uma configuração particular de qualidade (ou da <span class="quote">“<span class="quote">tabela de quantização</span>”</span>) estava salva com a imagem quando ela foi importada, então esta opção permite que você use essas opções em vez das opções padrão.</p>
+              <p>Se você fez apenas algumas modificações na imagem, então re-utilizar a mesma configuração de qualidade vai resultar na mesma qualidade de imagem e tamanho de arquivo que a imagem original. Isso pode minimizar as perdas causadas pelo passo de quantização, comparado com o que aconteceria se você usar uma configuração de qualidade diferente.</p>
+              <p>Se a qualidade que existia no arquivo original não for melhor que a sua configuração padrão de qualidade, então a opção de <span class="quote">“<span class="quote">Utilizar configurações de qualidade da imagem original</span>”</span> vai estar disponível, mas não vai estar ligada por padrão. Isso assegura que você sempre vai ter pelo menos a qualidade especificada por padrão. Se você não fez maiores mudanças na imagem e quiser exporta-la usando a mesma qualidade que a original, então você pode ligar esta opção.</p>
+            </dd>
+            <dt>
+              <span class="term">Pré-visualização na janela de imagem</span>
+            </dt>
+            <dd>
+              <p>Marcar esta opção faz com que cada mudança na Qualidade (ou qualquer outro parâmetro do JPEG) seja exibida na janela de imagem. Isso não altera a imagem: ela é revertida para o estado anterior quando o diálogo de JPEG for fechado. Se você não estiver vendo a imagem, arraste a janela de exportação para um canto da tela, de forma que você possa ver a janela do GIMP onde está sua imagem.</p>
+              <p>
+            Enabling this setting allows you to see an estimate of the
+            file size of the jpeg image. Note this estimate does not include
+            the metadata. If you enabled some or all of the metadata settings,
+            the size will be more than shown, depending on the amount of
+            metadata that was added to your image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Opções avançadas</span>
+            </dt>
+            <dd>
+              <p>Alguma informação sobre as configurações avançadas:</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Uniformização</span>
+                  </dt>
+                  <dd>
+                    <p>A compressão do JPEG cria artefatos — ruído na imagem. Ao usar esta opção, você pode suavizar a imagem ao exportar, reduzindo-os. Mas sua imagem fica um pouco desfocada.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Progressivo</span>
+                  </dt>
+                  <dd>
+                    <p>Com esta opção habilitada, os trechos de imagem são guardados no arquivo  de uma forma que se torna possível um refinamento progressivo quando a imagem é carregada - em geral em uma conexão lenta à Internet. O propósito desta opção é o mesmo que a opção de entrelaçar do GIF. Infelizmente, arquivos JPEG progressivos ficam um pouco maiores do que arquivos sem essa opção.</p>
+                    <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Note">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Nota]" src="images/note.png" />
+                          </td>
+                          <th align="left">Nota</th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>Cuidado que certas TVs e molduras de fotos mais antigas (e talvez outros dispositivos) podem não ser capazes de mostrar imagens jpeg que foram exportadas com a configuração progressiva habilitada (que é o padrão).</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Export as CMYK</span>
+                  </dt>
+                  <dd>
+                    <p>
+      If you have a <a class="link" href="glossary.html#glossary-cmyk" title="CMY, CMYK">CMYK</a> profile
+      assigned to your image as soft-proofing profile, this setting can
+      be checked to have your image exported using that CMYK profile.
+      This is sometimes required when you have your image professionally
+      printed. Your printing company will tell you if this is needed.
+    </p>
+                    <p>
+      If this setting is disabled, you don't have a soft-proofing profile
+      set for this image yet. See assigning a
+      <a class="link" href="gimp-image-soft-proof-profile-assign.html" title="6.14. Soft-Proof Profile">Soft-Proof
+      Profile</a>.
+    </p>
+                    <p>
+      The name of the CMYK profile that is assigned to this image will
+      be shown below this setting.
+    </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Usar codificação aritmética</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  <span class="emphasis"><em>Arithmetic encoding</em></span> is a form of
+                  entropy encoding (a lossless data compression scheme) that
+                  can be used in exporting as JPEG. Images
+                  using arithmetic encoding can be 5 - 10 % smaller. But older
+                  software may have trouble opening these images.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Otimizar</span>
+                  </dt>
+                  <dd>
+                    <p>Se você habilitar esta opção, a otimização dos parâmetros de codificação de entropia será usada. O resultado é um arquivo tipicamente menor, mas que leva mais tempo para ser gerado.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Usar marcadores de reinício</span>
+                  </dt>
+                  <dd>
+                    <p>O arquivo de imagem pode incluir marcadores que permitem que uma imagem seja carregada como segmentos. Se uma conexão for perdida enquanto a imagem estiver sendo carregada numa página Web, o carregamento pode continuar a partir do próximo marcador.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Intervalo (linhas MCU)</span>
+                  </dt>
+                  <dd>
+                    <p>As imagens JPEG são armazenadas como uma série de azulejos quadrados comprimidos chamados MCU (Unidade Mínima de Codificação). Você pode definir o tamanho desses azulejos (em pixels).</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Sub-amostragem</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The human eye is not sensitive in the same way over
+                  the entire color spectrum. The compression
+                  can use this to treat slightly different colors
+                  that the eye perceives as very close, as identical
+                  colors. The following methods are available:
+                </p>
+                    <div class="variablelist">
+                      <dl class="variablelist">
+                        <dt>
+                          <span class="term">4:4:4 (best quality)</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This produces the best quality, preserving borders and
+                        contrasting colors, at the cost of not compressing
+                        as well as the other methods.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">4:2:2 (chroma halved horizontally)</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This is the standard subsampling, which usually
+                        provides a good ratio between image quality and file
+                        size. There are situations, however, in which using no
+                        subsampling (4:4:4) provides a noticeable increase in
+                        the image quality; for example, when the image
+                        contains fine details such as text over a uniform
+                        background, or images with almost-flat colors.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">4:4:0 (chroma halved vertically)</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This is similar to 4:2:2, but chroma is reduced in
+                        the vertical direction.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">4:2:0 (chroma quartered)</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This produces the smallest files. This suits images
+                        with weak borders but tends to denature colors.
+                      </p>
+                        </dd>
+                      </dl>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Método DCT</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  DCT is <span class="quote">“<span class="quote">discrete cosine transform</span>”</span>,
+                  and it is the first step in the JPEG algorithm going
+                  from the spatial to the frequency domain. The choices are:
+                </p>
+                    <div class="variablelist">
+                      <dl class="variablelist">
+                        <dt>
+                          <span class="term">Fast Integer</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This method is much less accurate than the other
+                        methods, but faster.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Integer</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This method is faster than
+                        <span class="guilabel">Floating-Point</span>, but not as
+                        accurate. This is the default.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Floating-Point</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This is slightly more accurate than the integer method,
+                        but is much slower unless your machine has very fast
+                        floating-point hardware. Also note that the results of
+                        the floating-point method may vary slightly across
+                        machines, while the integer methods should give the
+                        same results everywhere.
+                      </p>
+                        </dd>
+                      </dl>
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Metadados (editar)</span>
+            </dt>
+            <dd>
+              <p>
+        You can click the <span class="quote">“<span class="quote">(edit)</span>”</span> link to open the
+        <a class="link" href="plug-in-metadata-editor.html" title="6.39. Metadata Editor">metadata editor</a>
+        to change or add any metadata that you want to be
+        included in the image. Note: you will also still need to
+        enable the relevant metadata saving options listed below.
+      </p>
+              <p>
+        The metadata settings in the export dialog override the default values
+        set in your <a class="link" href="gimp-prefs-import-export.html#gimp-metadata-export-policies" title="Export Policies">Metadata
+        Export Preferences</a>.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar dados de EXIF</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, EXIF metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar dados XMP</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, IPTC metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar dados XMP</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, XMP metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Conta gotas</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, the color profile will be saved in
+        the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Miniatura da camada</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled a thumbnail will be saved
+        in the exported image as part of the EXIF metadata. This will also cause
+        certain EXIF tags to be saved, even if you have disabled saving
+        EXIF metadata.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar imagem</span>
+            </dt>
+            <dd>
+              <p>Você pode encontrar opções de <span class="emphasis"><em>combinar camadas</em></span> tanto no meu de contexto, como no menu <a class="link" href="gimp-layer-menu.html" title="7. O menu “Camada”">Camada</a> da janela de imagem.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-jp2-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-jpegxl-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-jp2-export.html">5.31. Export Image as JPEG 2000</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-jpegxl-export.html">5.33. Export Image as JPEG XL</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

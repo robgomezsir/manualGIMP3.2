@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history
+  2006-11-01 lexa: made the file docbook compliant
+  2008-01-28 jpl: update text & images
+-->
+<sect2 id="gimp-prefs-display">
+  <title>Exibição</title>
+
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Preferências</secondary>
+    <tertiary>Exibição</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Exibição</primary>
+    <secondary>Preferências</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Transparência</primary>
+    <secondary>Representação</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Calibrar o monitor</primary>
+  </indexterm>
+
+  <figure>
+    <title>Preferências de exibição</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/preferences/prefs-display.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>Esta página permite que você personalize a forma que as partes transparentes de uma imagem serão representadas, e permite que você recalibre a resolução do seu monitor.</para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>
+      The preferences dialog can be accessed from the main menu, through
+      <menuchoice>
+       <guimenu>Edit</guimenu>
+       <guimenuitem>Preferences</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="gimp-prefs-display-options">
+    <title>Opções</title>
+    <variablelist>
+      <title>Transparência</title>
+      <varlistentry>
+        <term>Tamanho do xadrez</term>
+        <listitem>
+          <para>Por padrão, o GIMP indica transparência usando um padrão xadrez com quadradinhos em tons de médios de cinza, mas você pode mudar isso se você quiser, seja para um tipo diferente de xadrez, ou preto sólido, branco ou cinza.</para>
+          <para>
+            If you choose <guilabel>Custom checks</guilabel>, two color
+            selection buttons show up that allow you to set your own
+            preferred colors for the checkerboard.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho da imagem</term>
+        <listitem>
+          <para>Aqui você pode alterar o tamanho dos quadrados na textura quadriculada usada para indicar transparência.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Zoom Quality</title>
+      <varlistentry>
+        <term>Zoom Quality</term>
+        <listitem>
+          <para>
+            When zooming out on large images feels sluggish, you can change
+            this setting from <guilabel>High</guilabel> quality to
+            <guilabel>Low</guilabel>. This can improve the speed of displaying
+            the zoomed-out image, at the cost of lowering the quality of the
+            display.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist id="gimp-prefs-monitor" xreflabel="Navegação">
+      <title>Resolução X e Y</title>
+      <para>
+        Monitor Resolution is the ratio of pixels, horizontally and
+        vertically, to inches.  You have three options:
+      </para>
+      <varlistentry>
+        <term>Detect automatically</term>
+        <listitem>
+          <para>
+            Get the monitor resolution from the windowing system
+            (easiest, probably inaccurate)
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+      <term>Enter Manually</term>
+        <listitem>
+          <para>Enter the data manually</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Calibrate…</term>
+        <listitem>
+          <para>Push the <guibutton>Calibrate…</guibutton> button to get
+          the Calibrate Dialog.</para>
+          <figure id="figure-gimp-prefs-monitor">
+            <title>Diálogo de modelos</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/using/ui-calibrate.png" format="PNG"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          <para>
+            Some monitors can be impressively off. You will need a soft ruler.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

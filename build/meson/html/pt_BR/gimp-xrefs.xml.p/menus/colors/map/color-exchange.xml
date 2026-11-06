@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-color-exchange">
+  <title>Troca de cores</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Troca de cores</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Troca de cores</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro<quote>Troca de cores</quote> </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/color-taj-exchange.jpg"/>
+        </imageobject>
+        <caption>
+          <para>
+            Filter applied with <guilabel>From color</guilabel>
+            RGB (122, 149, 199), <guilabel>To color</guilabel>
+            RGB (255, 0, 0), <guilabel>Red threshold</guilabel> 0.106,
+            <guilabel>Green threshold</guilabel> 0.100,
+            <guilabel>Blue threshold</guilabel> 0.190.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro troca uma cor por outra</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Map</guisubmenu>
+        <guimenuitem>Color Exchange…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>The <quote>Color Exchange</quote> Dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/map/exchange.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>A partir de cor</term>
+        <listitem>
+          <para>
+            This is the color you want to replace. To choose a color you can
+            either use the color button to open the Color Picker dialog, or
+            you can use the Color Picker tool to pick a color from your image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Para a cor</term>
+        <listitem>
+          <para>
+            This is the new color you want to use. To choose a color you can
+            either use the color button to open the Color Picker dialog, or
+            you can use the Color Picker tool to pick a color from your image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Red Threshold</term>
+        <term>Green Threshold</term>
+        <term>Blue Threshold</term>
+        <listitem>
+          <para>
+            These sliders allow you to set how sensitive the red, green and
+            blue components are to differences from the <guilabel>From
+            color</guilabel>. The higher the threshold, the more pixels will be
+            affected.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

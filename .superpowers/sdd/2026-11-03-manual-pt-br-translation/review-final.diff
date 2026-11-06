@@ -1,0 +1,697 @@
+# Review package: 42f3ca17a33004b91752a91d9bac8f967fb7aaed..HEAD
+
+## Commits
+ced18e4 docs(pt_BR): traduz artigo de apresentação do GIMP
+e6fd26f docs(pt_BR): adiciona plano inicial de tradução
+6e4cc4a docs(pt_BR): revisa índice do manual
+
+## Files changed
+ .../plans/2026-11-03-manual-pt-br-translation.md   | 128 +++++++
+ po/pt_BR/gimp.po                                   | 408 +++++++++++++--------
+ 2 files changed, 391 insertions(+), 145 deletions(-)
+
+## Diff
+diff --git a/docs/superpowers/plans/2026-11-03-manual-pt-br-translation.md b/docs/superpowers/plans/2026-11-03-manual-pt-br-translation.md
+new file mode 100644
+index 0000000..30e677d
+--- /dev/null
++++ b/docs/superpowers/plans/2026-11-03-manual-pt-br-translation.md
+@@ -0,0 +1,128 @@
++# Tradução inicial do Manual do GIMP — Plano de execução
++
++> **Para agentes executores:** SUB-SKILL OBRIGATÓRIA: use `superpowers:subagent-driven-development` (recomendado) ou `superpowers:executing-plans` para executar o plano tarefa por tarefa. As etapas usam caixas de seleção (`- [ ]`) para acompanhamento.
++
++**Objetivo:** Revisar a página inicial/índice e concluir a tradução atualizada do artigo “Bem-vindo ao GIMP” em PT-BR, validando a navegação e os recursos visuais.
++
++**Arquitetura:** Manter o conteúdo-fonte DocBook e atualizar somente as entradas correspondentes no catálogo gettext existente. Validar o catálogo e compilar a versão `pt_BR` com o ambiente Meson/Ninja já configurado no WSL; cada tópico aprovado recebe seu próprio commit em PT-BR e push para `origin/main`.
++
++**Pilha técnica:** XML DocBook, catálogos gettext `.po`, `msgfmt`, Meson/Ninja, build Linux no WSL e navegador local.
++
++**Especificação:** [2026-11-03-manual-pt-br-translation-design.md](../specs/2026-11-03-manual-pt-br-translation-design.md)
++
++## Restrições globais
++
++- Usar os arquivos de catálogo gettext `.po` existentes em `po/pt_BR/`; não alterar o texto-fonte em XML para contornar uma tradução ausente.
++- Manter IDs, URLs, destinos de links e referências cruzadas, nomes próprios, comandos, código, placeholders e marcação DocBook.
++- Corrigir ou substituir traduções antigas e entradas fuzzy somente depois de compará-las com o XML atual.
++- Para capturas de interface relevantes, usar a interface PT-BR do GIMP sempre que for possível produzir uma captura correta e legível. Guardar a variante em `images/pt_BR/` com a mesma estrutura relativa e o mesmo nome do recurso correspondente em `images/C/`, para que o mecanismo existente de localização por idioma a selecione.
++- Não recriar ilustrações conceituais, mascotes ou exemplos independentes de idioma. Usar a imagem original como fallback quando não houver motivo para uma variante localizada.
++- Se o tópico passar nas verificações, criar um commit com mensagem em PT-BR e enviá-lo para `origin/main`. Não incluir alterações de outros tópicos no mesmo commit.
++- Falhas de build, validação ou envio devem ser reportadas explicitamente e corrigidas antes de declarar o tópico concluído. Não se deve fazer push forçado.
++
++## Foco de revisão
++
++- Entradas `.po` antigas ou fuzzy que não correspondam mais ao XML atual devem ser alinhadas e revisadas antes de compilar.
++- Títulos e textos visíveis dos links devem estar em PT-BR, sem alterar IDs, URLs ou destinos; conferir os links no índice renderizado.
++- Tags DocBook, placeholders, referências e comandos devem manter a mesma estrutura e sequência do texto-fonte.
++- Nomes próprios, nomes de produtos e termos de licença devem permanecer corretos e consistentes.
++- Imagens devem resolver pela variante `pt_BR` quando houver uma captura localizada correspondente; se não houver, o HTML deve exibir a imagem original de fallback sem caminho quebrado.
++
++---
++
++### Task 1: Revisar e finalizar a página inicial/índice
++
++**Arquivos:**
++- Ler: `src/gimp.xml`
++- Modificar: `po/pt_BR/gimp.po`
++- Validar: `po/pt_BR/gimp.po`
++
++**Interfaces:**
++- Consome a hierarquia, os títulos e as referências de capítulos definidos em `src/gimp.xml`.
++- Produz o catálogo atualizado para os títulos e rótulos visíveis do índice em português.
++
++- [ ] **Etapa 1: Comparar o índice-fonte com as traduções atuais**
++
++  Conferir os títulos de livro, partes e capítulos de `src/gimp.xml` com as entradas correspondentes em `po/pt_BR/gimp.po`. Identificar entradas vazias, fuzzy ou antigas que apareçam na página inicial; deixar intactas entradas de outros artigos que não sejam necessárias para alinhar os rótulos do índice.
++
++- [ ] **Etapa 2: Atualizar apenas as traduções necessárias do índice**
++
++  Traduzir ou corrigir os `msgstr` dos rótulos exibidos na página inicial. Preservar cada `msgid`, referência `linkend`, tag e demais marcações. Não alterar a fonte XML.
++
++- [ ] **Etapa 3: Validar o catálogo**
++
++  Executar no PowerShell:
++
++  ```powershell
++  wsl -d Debian -- msgfmt --check -o /dev/null /mnt/c/Users/robgo/GIMP/manualGIMP3.2/po/pt_BR/gimp.po
++  git diff --check
++  ```
++
++  Esperado: `msgfmt` termina sem erro de sintaxe/formatos e `git diff --check` não reporta whitespace inválido.
++
++- [ ] **Etapa 4: Compilar e conferir o índice**
++
++  Copiar o catálogo validado para o clone de build no WSL e compilar:
++
++  ```powershell
++  wsl -d Debian -- bash -lc "cp /mnt/c/Users/robgo/GIMP/manualGIMP3.2/po/pt_BR/gimp.po /root/gimp-help-buildsrc/po/pt_BR/gimp.po && meson compile -C /root/gimp-help-build"
++  ```
++
++  Abrir ou recarregar `http://127.0.0.1:8765/index.html`. Conferir o título da página, títulos e rótulos do índice, e abrir pelo menos o primeiro link para confirmar que a navegação funciona.
++
++- [ ] **Etapa 5: Commitar somente as alterações do índice**
++
++  Se houver correções necessárias:
++
++  ```powershell
++  git add po/pt_BR/gimp.po
++  git commit -m "docs(pt_BR): revisa índice do manual" -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
++  ```
++
++  Esperado: o commit contém somente correções do índice. Depois da revisão independente aprovar a tarefa, o controlador envia esse commit com `git push origin main` e confirma com `git status --short` e `git --no-pager log -1 --oneline`. Se a revisão confirmar que o índice já está completo e não houver diff, não criar commit vazio; registrar que o tópico foi validado e seguir para a próxima tarefa.
++
++---
++
++### Task 2: Atualizar o artigo “Bem-vindo ao GIMP”
++
++**Arquivos:**
++- Ler: `src/introduction.xml`
++- Ler: `src/gimp.xml`
++- Modificar: `po/pt_BR/gimp.po`
++- Imagem de referência: `images/C/using/wilber.png` (reutilizar; não criar variante localizada)
++
++**Interfaces:**
++- Consome o texto, os títulos, as referências e a ilustração definidos em `src/introduction.xml`.
++- Produz traduções PT-BR para as mensagens atuais do artigo, preservando a marcação e os destinos dos links.
++
++- [ ] **Etapa 1: Conferir todas as mensagens atuais do artigo**
++
++  Comparar as mensagens de `src/introduction.xml` com as entradas de `po/pt_BR/gimp.po`, incluindo título, parágrafos, nomes de seções, listas, legendas e links. Reavaliar traduções antigas ou fuzzy com base no texto-fonte atual; não presumir que traduções históricas ainda correspondam ao conteúdo.
++
++- [ ] **Etapa 2: Traduzir e revisar o artigo**
++
++  Atualizar somente as mensagens do artigo “Bem-vindo ao GIMP” em `po/pt_BR/gimp.po`. Usar português brasileiro natural e fiel; preservar nomes, URLs, referências cruzadas, tags DocBook e ordem dos elementos. Manter a ilustração compartilhada de Wilber, pois ela não é uma captura da interface.
++
++- [ ] **Etapa 3: Validar a tradução e a estrutura**
++
++  Executar:
++
++  ```powershell
++  wsl -d Debian -- msgfmt --check -o /dev/null /mnt/c/Users/robgo/GIMP/manualGIMP3.2/po/pt_BR/gimp.po
++  git diff --check
++  ```
++
++  Conferir no diff que a estrutura/tags dos segmentos atualizados corresponde à fonte, que URLs e destinos de referência não mudaram, que nomes próprios e termos de licença correspondem à fonte e que nenhum `msgstr` do artigo está vazio ou marcado como fuzzy.
++
++- [ ] **Etapa 4: Compilar e conferir a página e a ilustração**
++
++  Copiar o catálogo atualizado para `/root/gimp-help-buildsrc/po/pt_BR/gimp.po`, executar `meson compile -C /root/gimp-help-build` no Debian WSL e abrir o artigo pelo índice em `http://127.0.0.1:8765/index.html`. Conferir os textos, links, carregamento da imagem de Wilber e ausência de conteúdo inesperadamente em inglês.
++
++- [ ] **Etapa 5: Commitar somente o artigo**
++
++  ```powershell
++  git add po/pt_BR/gimp.po
++  git commit -m "docs(pt_BR): traduz artigo de apresentação do GIMP" -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
++  ```
++
++  Esperado: o commit contém somente as entradas do artigo. Depois da revisão independente aprovar a tarefa, o controlador envia esse commit com `git push origin main` e confirma com `git status --short` e `git --no-pager log -1 --oneline`. O worktree deve ficar limpo.
+diff --git a/po/pt_BR/gimp.po b/po/pt_BR/gimp.po
+index 96cb02a..926f363 100644
+--- a/po/pt_BR/gimp.po
++++ b/po/pt_BR/gimp.po
+@@ -112,28 +112,40 @@ msgid "Getting Started"
+ msgstr "Primeiros passos"
+ 
+ #: src/gimp.xml:63(title) src/introduction.xml:19(secondary)
+ msgid "Introduction"
+ msgstr "Introdução"
+ 
+ #: src/gimp.xml:68(title)
+ msgid "Fire up the GIMP"
+ msgstr "Iniciando o GIMP"
+ 
++#: src/gimp.xml:62(title)
++msgid "Starting GIMP"
++msgstr "Iniciando o GIMP"
++
+ #: src/gimp.xml:73(title)
+ msgid "First Steps with Wilber"
+ msgstr "Primeiros passos com o Wilber"
+ 
++#: src/gimp.xml:72(title)
++msgid "First Steps with <acronym>GIMP</acronym>"
++msgstr "Primeiros passos com o <acronym>GIMP</acronym>"
++
+ #: src/gimp.xml:81(title)
+ msgid "Getting Unstuck"
+ msgstr "Destravando"
+ 
++#: src/gimp.xml:79(title)
++msgid "What to do if you are stuck"
++msgstr "O que fazer se você ficar travado"
++
+ #: src/gimp.xml:86(title)
+ msgid "How do I Become a <acronym>GIMP</acronym> Wizard?"
+ msgstr "Como posso me tornar um mestre no <acronym>GIMP</acronym>?"
+ 
+ #: src/gimp.xml:90(title)
+ msgid "Getting Images into GIMP"
+ msgstr "Obtendo imagens no GIMP"
+ 
+ #: src/gimp.xml:91(para)
+ msgid ""
+@@ -178,20 +190,24 @@ msgid "Color Management with GIMP"
+ msgstr "Gerenciamento de cor com o GIMP"
+ 
+ #: src/gimp.xml:148(title)
+ msgid "Enrich my GIMP"
+ msgstr "Enriqueça meu GIMP"
+ 
+ #: src/gimp.xml:158(title)
+ msgid "Scripting"
+ msgstr "Criando Scripts"
+ 
++#: src/gimp.xml:154(title)
++msgid "Scripting and writing plug-ins"
++msgstr "Criação de scripts e desenvolvimento de plug-ins"
++
+ #: src/gimp.xml:165(title)
+ msgid "Function Reference"
+ msgstr "Referência das funções"
+ 
+ #: src/gimp.xml:167(title) src/key-reference.xml:37(refentrytitle)
+ #: src/key-reference.xml:40(refname) src/key-reference.xml:46(title)
+ #: src/key-reference.xml:48(title)
+ msgid "Tools"
+ msgstr "Ferramentas"
+ 
+@@ -1312,232 +1328,334 @@ msgid ""
+ "ulink> and let us know."
+ msgstr ""
+ "Encontrou um <emphasis role=\"bold\">erro no conteúdo</emphasis>, ou "
+ "simplesmente "
+ "alguma coisa que não parece estar certa? <ulink id=\"reportbug\" "
+ "url=\"https://bugzilla.gnome.org/enter_bug.cgi?product=GIMP-manual\">Crie "
+ "um relato de erro no Bugzilla</ulink>, para que saibamos sobre ele."
+ 
+ #: src/introduction.xml:15(title)
+ msgid "Welcome to GIMP"
+-msgstr "Bem-vindo ao GIMP"
++msgstr "Boas-vindas ao GIMP"
++
++#: src/introduction.xml:99(None)
++msgid "@@image: 'images/using/wilber.png'; md5=99ac11abd800deaeafdc1f9b398e4a08"
++msgstr "@@image: 'images/using/wilber.png'; md5=99ac11abd800deaeafdc1f9b398e4a08"
+ 
+ #: src/introduction.xml:18(primary)
+ msgid "GIMP"
+ msgstr "GIMP"
+ 
+ #: src/introduction.xml:21(para)
+ msgid ""
+-"<acronym>GIMP</acronym> is a multi-platform photo manipulation tool. "
+-"<acronym>GIMP</acronym> is an acronym for <acronym>GNU</acronym> Image "
+-"Manipulation Program. The <acronym>GIMP</acronym> is suitable for a variety "
+-"of image manipulation tasks, including photo retouching, image composition, "
+-"and image construction."
++"<acronym>GIMP</acronym> is a multi-platform tool to create and edit images "
++"of all kinds. <acronym>GIMP</acronym> is an acronym for <acronym>GNU</"
++"acronym> Image Manipulation Program."
+ msgstr ""
+-"O <acronym>GIMP</acronym> é uma ferramenta multi-plataforma de manipulação "
+-"de fotos. <acronym>GIMP</acronym> é um acrônimo para <acronym>GNU</acronym> "
+-"Image Manipulation Program (Programa de Manipulação de Imagens GNU). "
+-"O <acronym>GIMP</acronym> é adequado para várias tarefas de manipulação de "
+-"imagens, "
+-"incluindo retocar fotos, composição e construção de imagens."
+-
+-#: src/introduction.xml:29(para)
++"O <acronym>GIMP</acronym> é uma ferramenta multiplataforma para criar e "
++"editar imagens de todos os tipos. <acronym>GIMP</acronym> é um acrônimo de "
++"<acronym>GNU</acronym> Image Manipulation Program (Programa de Manipulação "
++"de Imagens GNU)."
++
++#: src/introduction.xml:26(para)
+ msgid ""
+ "<acronym>GIMP</acronym> has many capabilities. It can be used as a simple "
+-"paint program, an expert quality photo retouching program, an online batch "
+-"processing system, a mass production image renderer, an image format "
+-"converter, etc."
++"paint program, an expert quality photo retouching program, a tool to create "
++"digital art, an online batch processing system, a mass production image "
++"renderer, an image format converter, etc."
+ msgstr ""
+-"O <acronym>GIMP</acronym> tem muitos recursos. Ele pode ser usado como um "
+-"programa de pintura simples, um programa de retoques fotográficos de "
+-"qualidade profissional, um sistema de processamento de lote online, um "
+-"processador de imagens para produção em massa, um conversor de formato de "
+-"imagem, etc."
++"O <acronym>GIMP</acronym> tem muitos recursos. Pode ser usado como um "
++"programa simples de pintura, um programa profissional de retoque de fotos, "
++"uma ferramenta para criar arte digital, um sistema on-line de processamento "
++"em lote, um renderizador de imagens para produção em massa, um conversor de "
++"formatos de imagem etc."
+ 
+-#: src/introduction.xml:35(para)
++#: src/introduction.xml:32(para)
+ msgid ""
+ "<acronym>GIMP</acronym> is expandable and extensible. It is designed to be "
+-"augmented with plug-ins and extensions to do just about anything. The "
+-"advanced scripting interface allows everything from the simplest task to the "
+-"most complex image manipulation procedures to be easily scripted."
++"augmented with plug-ins and custom data to do just about anything. The "
++"advanced scripting interface allows everything from the simplest task to "
++"the most complex image manipulation procedures to be scripted."
+ msgstr ""
+-"O <acronym>GIMP</acronym> é expansível e extensível. Ele foi projetado para "
+-"ser aumentado com plug-ins e extensões para fazer praticamente qualquer "
+-"coisa. A interface de programação avançada permite tudo, desde a execução da "
+-"tarefa mais "
+-"simples até os procedimentos de manipulação de imagem mais "
+-"complexos: tudo pode ser facilmente automatizado por meio de scripts."
+-
+-#: src/introduction.xml:42(para)
++"O <acronym>GIMP</acronym> pode ser ampliado e estendido. Ele foi projetado "
++"para receber plug-ins e dados personalizados, permitindo fazer praticamente "
++"qualquer coisa. A interface avançada de scripts permite automatizar desde a "
++"tarefa mais simples até os procedimentos mais complexos de manipulação de "
++"imagens."
++
++#: src/introduction.xml:38(para)
+ msgid ""
+-"One of The <acronym>GIMP</acronym>'s strengths is its free availability from "
+-"many sources for many operating systems. Most <acronym>GNU</acronym>/"
+-"<application>Linux</application> distributions include The <acronym>GIMP</"
+-"acronym> as a standard application. The <acronym>GIMP</acronym> is also "
+-"available for other operating systems such as <productname>Microsoft "
+-"Windows</productname> or Apple's <productname>Mac OS X</productname> "
+-"(<application>Darwin</application>). The <acronym>GIMP</acronym> is a Free "
+-"Software application covered by the General Public License <xref linkend="
+-"\"bibliography-online-gpl\"/>. The <acronym>GPL</acronym> provides users "
+-"with the freedom to access and alter the source code that makes up computer "
+-"programs."
++"<acronym>GIMP</acronym> is a Free Software application covered by the "
++"General Public License version 3 <xref linkend=\"bibliography-online-gpl\"/"
++">. The <acronym>GPL</acronym> provides users with the freedom to access and "
++"alter the source code that makes up computer programs."
+ msgstr ""
+-"Um dos pontos fortes do <acronym>GIMP</acronym> é a sua disponibilidade "
+-"livre para vários sistemas operacionais. A maioria das "
+-"distribuições <acronym>GNU</acronym>/<application>Linux</application> "
+-"incluem o <acronym>GIMP</acronym> como um aplicativo padrão. O "
+-"<acronym>GIMP</acronym> está disponível também para outros sistemas "
+-"operacionais como o <productname>Microsoft Windows</productname> ou o "
+-"<productname>Mac OS X</productname> da Apple  (<application>Darwin<"
+-"/application>). O "
+-"<acronym>GIMP</acronym> é um aplicativo de Software Livre coberto pela "
+-"Licença Pública Geral <xref linkend=\"bibliography-online-gpl\"/>. A "
+-"<acronym>GPL</acronym> oferece aos usuários a liberdade para acessar e "
++"O <acronym>GIMP</acronym> é um aplicativo de Software Livre coberto pela "
++"Licença Pública Geral versão 3 <xref linkend=\"bibliography-online-gpl\"/>. "
++"A <acronym>GPL</acronym> oferece aos usuários liberdade para acessar e "
+ "alterar o código-fonte que compõe os programas de computador."
+ 
+-#: src/introduction.xml:58(title)
+-msgid "Authors"
+-msgstr "Autores"
++#: src/introduction.xml:46(title)
++msgid "Known Platforms"
++msgstr "Plataformas conhecidas"
++
++#: src/introduction.xml:47(para)
++msgid ""
++"One of <acronym>GIMP</acronym>'s strengths is its free availability on a "
++"wide range of operating systems and architectures. Most <acronym>GNU</"
++"acronym> / <application>Linux</application> distributions include "
++"<acronym>GIMP</acronym> as a standard application. <acronym>GIMP</acronym> "
++"is also available for other operating systems such as <productname>Microsoft "
++"Windows</productname> or Apple's <productname>macOS</productname> "
++"(<application>Darwin</application>). The platforms on which <acronym>GIMP</"
++"acronym> has been known to work include:"
++msgstr ""
++"Um dos pontos fortes do <acronym>GIMP</acronym> é estar disponível "
++"gratuitamente em diversos sistemas operacionais e arquiteturas. A maioria "
++"das distribuições <acronym>GNU</acronym> / "
++"<application>Linux</application> inclui o <acronym>GIMP</acronym> como "
++"aplicativo padrão. O <acronym>GIMP</acronym> também está disponível para "
++"outros sistemas, como <productname>Microsoft Windows</productname> e o "
++"<productname>macOS</productname> da Apple "
++"(<application>Darwin</application>). Entre as plataformas nas quais se sabe "
++"que o <acronym>GIMP</acronym> funciona estão:"
++
++#: src/introduction.xml:58(para)
++msgid ""
++"<productname><acronym>GNU</acronym>/Linux</productname>, <productname>Apple "
++"macOS</productname>, <productname>Microsoft Windows</productname>, "
++"<productname>OpenBSD</productname>, <productname>NetBSD</productname>, "
++"<productname>FreeBSD</productname>, <productname>Solaris</productname>, "
++"<productname>SunOS</productname>, <productname>AIX</productname>, "
++"<productname>HP-UX</productname>, <productname>Tru64</productname>, "
++"<productname>Digital UNIX</productname>, <productname>OSF/1</productname>, "
++"<productname>IRIX</productname>, <productname><acronym>GNU</acronym>/Hurd</"
++"productname>, <productname>OS/2</productname>, <productname>BeOS</"
++"productname>, and its successor <productname>Haiku</productname>."
++msgstr ""
++"<productname><acronym>GNU</acronym>/Linux</productname>, "
++"<productname>Apple macOS</productname>, <productname>Microsoft "
++"Windows</productname>, <productname>OpenBSD</productname>, "
++"<productname>NetBSD</productname>, <productname>FreeBSD</productname>, "
++"<productname>Solaris</productname>, <productname>SunOS</productname>, "
++"<productname>AIX</productname>, <productname>HP-UX</productname>, "
++"<productname>Tru64</productname>, <productname>Digital UNIX</productname>, "
++"<productname>OSF/1</productname>, <productname>IRIX</productname>, "
++"<productname><acronym>GNU</acronym>/Hurd</productname>, "
++"<productname>OS/2</productname>, <productname>BeOS</productname> e sua "
++"sucessora, <productname>Haiku</productname>."
++
++#: src/introduction.xml:72(para)
++msgid ""
++"<acronym>GIMP</acronym> is easily ported to other operating systems because "
++"of its source code availability. For further information visit the "
++"<acronym>GIMP</acronym> developers homepage. <xref linkend=\"bibliography-"
++"online-gimp-dev\"/>."
++msgstr ""
++"O <acronym>GIMP</acronym> pode ser facilmente portado para outros sistemas "
++"operacionais graças à disponibilidade de seu código-fonte. Para mais "
++"informações, visite a página dos desenvolvedores do <acronym>GIMP</acronym>. "
++"<xref linkend=\"bibliography-online-gimp-dev\"/>."
++
++#: src/introduction.xml:81(title)
++msgid "History of GIMP"
++msgstr "História do GIMP"
+ 
+-# ** Eeek: since this should be kept up to date, we should leave on Mitch's name here for now
+-#: src/introduction.xml:59(para)
++#: src/introduction.xml:82(para)
+ msgid ""
+-"The first version of the <acronym>GIMP</acronym> was written by Peter Mattis "
+-"and Spencer Kimball. Many other developers have contributed more recently, "
+-"and thousands have provided support and testing. <acronym>GIMP</acronym> "
+-"releases are currently being orchestrated by Sven Neumann and Mitch Natterer "
+-"and the other members of the <acronym>GIMP</acronym>-Team."
++"The first version of <acronym>GIMP</acronym> was written by Peter Mattis and "
++"Spencer Kimball in 1995. Over the years <ulink url=\"https://www.gimp.org/"
++"about/authors.html\">many other people</ulink> have contributed by helping "
++"with development, testing, providing support, translating and writing "
++"documentation. A short history of <acronym>GIMP</acronym> is available "
++"<ulink url=\"https://www.gimp.org/about/#gimp-history\">online</ulink>."
+ msgstr ""
+ "A primeira versão do <acronym>GIMP</acronym> foi escrita por Peter Mattis e "
+-"Spencer Kimball. Muitos outros desenvolvedores têm contribuído mais "
+-"recentemente, e milhares de pessoas prestaram apoio e realizaram testes. "
+-"Lançamentos do <acronym>GIMP</acronym> estão sendo orquestrados por Mitch "
+-"Natterer "
+-"e outros membros da equipe do <acronym>GIMP</acronym>."
++"Spencer Kimball em 1995. Ao longo dos anos, <ulink "
++"url=\"https://www.gimp.org/about/authors.html\">muitas outras pessoas</"
++"ulink> contribuíram com o desenvolvimento, os testes, o suporte, as "
++"traduções e a documentação. Um breve histórico do <acronym>GIMP</acronym> "
++"está disponível <ulink "
++"url=\"https://www.gimp.org/about/#gimp-history\">on-line</ulink>."
+ 
+-#: src/introduction.xml:71(title)
+-msgid "The GIMP Help system"
+-msgstr "O sistema de ajuda do GIMP"
++#: src/introduction.xml:94(title) src/introduction.xml:96(title)
++msgid "Wilber, GIMP's mascot"
++msgstr "Wilber, mascote do GIMP"
+ 
+-#: src/introduction.xml:72(para)
++#: src/introduction.xml:102(para)
++msgid ""
++"Wilber, created by Aryeom in 2024 for <acronym>GIMP</acronym> 3.0. License: "
++"<ulink url=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative "
++"Commons Attribution-ShareAlike 4.0</ulink>."
++msgstr ""
++"Wilber, criado por Aryeom em 2024 para o <acronym>GIMP</acronym> 3.0. "
++"Licença: <ulink "
++"url=\"https://creativecommons.org/licenses/by-sa/4.0/\">Creative Commons "
++"Atribuição-CompartilhaIgual 4.0</ulink>."
++
++#: src/introduction.xml:111(para)
++msgid ""
++"The creature on <acronym>GIMP</acronym>'s icon is called <quote>Wilber</"
++"quote>. It is the official mascot of GIMP and was created by Tuomas "
++"Kuosmanen in 1997. Over the years, the appearance was updated and modernized "
++"several times."
++msgstr ""
++"A criatura que aparece no ícone do <acronym>GIMP</acronym> chama-se "
++"<quote>Wilber</quote>. Ela é a mascote oficial do GIMP e foi criada por "
++"Tuomas Kuosmanen em 1997. Ao longo dos anos, sua aparência foi atualizada e "
++"modernizada várias vezes."
++
++#: src/introduction.xml:117(para)
+ msgid ""
+-"The <acronym>GIMP</acronym> Documentation Team and other users have provided "
+-"you with the information necessary to understand how to use <acronym>GIMP</"
+-"acronym>. The User Manual is an important part of this help. The current "
+-"version is on the web site of the Documentation Team <xref linkend="
+-"\"bibliography-online-gimp-docs\"/> in HTML format. The HTML version is also "
+-"available as context sensitive help (if you installed it) while using "
+-"<acronym>GIMP</acronym> by pressing the <keycap>F1</keycap> key. Help on "
+-"specific menu items can be accessed by pressing the <keycap>F1</keycap> key "
+-"while the mouse pointer is focused on the menu item. Read on to begin your "
+-"<acronym>GIMP</acronym> journey."
++"The most recent version was created by Aryeom, with input from several "
++"others. An overview of all historical Wilber versions is available <ulink "
++"url=\"https://gitlab.gnome.org/GNOME/gimp-data/-/blob/main/images/logo-"
++"log.md\">here</ulink>."
+ msgstr ""
+-"A Equipe de Documentação do <acronym>GIMP</acronym> e outros usuários tem "
+-"fornecido as informações necessárias para entender como usar o "
+-"<acronym>GIMP</acronym>. O Manual do Usuário é uma parte importante dessa "
+-"ajuda. A versão atual está no site da Equipe de Documentação <xref linkend="
+-"\"bibliography-online-gimp-docs\"/> em formato HTML. A versão em HTML também "
+-"está disponível como ajuda sensível ao contexto, "
+-"ao usar o <acronym>GIMP</acronym>, bastando pressionar a tecla <keycap>F1</"
+-"keycap> (se você  instalou o manual). Ajuda para itens de menu específicos "
+-"pode ser acessada pressionando se a"
+-"tecla <keycap>F1</keycap> enquanto o ponteiro do mouse está focado no item "
+-"de menu. Leia mais para começar a sua jornada no <acronym>GIMP</acronym>."
+-
+-#: src/introduction.xml:89(title)
++"A versão mais recente foi criada por Aryeom, com contribuições de várias "
++"outras pessoas. Uma visão geral de todas as versões históricas de Wilber "
++"está disponível <ulink "
++"url=\"https://gitlab.gnome.org/GNOME/gimp-data/-/blob/main/images/logo-"
++"log.md\">aqui</ulink>."
++
++#: src/introduction.xml:125(title)
++msgid "GIMP's Help system"
++msgstr "Sistema de ajuda do GIMP"
++
++#: src/introduction.xml:126(para)
++msgid ""
++"The <acronym>GIMP</acronym> Documentation Team provides the information that "
++"tries to help you understand how to use <acronym>GIMP</acronym>. The User "
++"Manual is an important part of this help. The latest version is always "
++"available on the website of the Documentation Team <xref "
++"linkend=\"bibliography-online-gimp-docs\"/> in HTML format. When using "
++"<acronym>GIMP</acronym>, context sensitive help is available by pressing the "
++"<keycap>F1</keycap> key while the mouse is on top of a menu item or other "
++"part of GIMP's interface. Most dialogs will also show a help button that you "
++"can use to access the relevant part of the manual."
++msgstr ""
++"A Equipe de Documentação do <acronym>GIMP</acronym> fornece informações para "
++"ajudar você a entender como usar o <acronym>GIMP</acronym>. O Manual do "
++"Usuário é uma parte importante dessa ajuda. A versão mais recente está "
++"sempre disponível em HTML no site da Equipe de Documentação <xref "
++"linkend=\"bibliography-online-gimp-docs\"/>. Durante o uso do "
++"<acronym>GIMP</acronym>, a ajuda contextual pode ser acessada pressionando "
++"<keycap>F1</keycap> quando o ponteiro do mouse estiver sobre um item de menu "
++"ou outra parte da interface do GIMP. A maioria das caixas de diálogo também "
++"exibe um botão de ajuda, que leva à parte relevante do manual."
++
++#: src/introduction.xml:138(para)
++msgid ""
++"The manual in HTML format can also be installed locally on your computer. "
++"Installers are <ulink url=\"https://docs.gimp.org/download.html\">available "
++"for Windows</ulink>, and on Linux your package manager may have a gimp-help "
++"package available. Though if your internet speed and bandwidth allow it, "
++"using the online manual is recommended since it is usually more up-to-date. "
++"When installing the local manual, you will have to adjust your <link "
++"linkend=\"gimp-prefs-help\">help preferences</link> to make use of the local "
++"copy."
++msgstr ""
++"O manual em HTML também pode ser instalado localmente no seu computador. "
++"Há <ulink url=\"https://docs.gimp.org/download.html\">instaladores para "
++"Windows</ulink> e, no Linux, talvez o gerenciador de pacotes disponibilize "
++"um pacote gimp-help. Se a velocidade e a franquia da sua conexão permitirem, "
++"recomendamos usar o manual on-line, que geralmente está mais atualizado. "
++"Depois de instalar o manual local, ajuste as <link "
++"linkend=\"gimp-prefs-help\">preferências de ajuda</link> para usar a cópia "
++"local."
++
++#: src/introduction.xml:153(title)
+ msgid "Features and Capabilities"
+-msgstr "Características e Capacidades"
++msgstr "Recursos e funcionalidades"
+ 
+-#: src/introduction.xml:90(para)
++#: src/introduction.xml:154(para)
+ msgid ""
+ "The following list is a short overview of some of the features and "
+ "capabilities which <acronym>GIMP</acronym> offers you:"
+ msgstr ""
+-"A lista a seguir é um breve resumo de alguns dos recursos e capacidades que "
+-"o <acronym>GIMP</acronym> lhe oferece:"
++"A lista a seguir apresenta uma breve visão geral de alguns dos recursos e "
++"funcionalidades oferecidos pelo <acronym>GIMP</acronym>:"
+ 
+-#: src/introduction.xml:96(para)
++#: src/introduction.xml:160(para)
+ msgid ""
+ "A full suite of painting tools including brushes, a pencil, an airbrush, "
+ "cloning, etc."
+ msgstr ""
+-"Um conjunto completo de ferramentas de pintura, incluindo pincéis, um lápis, "
+-"um aerógrafo, clonagem, etc."
++"Um conjunto completo de ferramentas de pintura, incluindo pincéis, lápis, "
++"aerógrafo, clonagem etc."
+ 
+-#: src/introduction.xml:102(para)
++#: src/introduction.xml:166(para)
+ msgid ""
+ "Tile-based memory management, so image size is limited only by available "
+-"disk space"
++"disk space."
+ msgstr ""
+-"Gerenciamento de memória baseado em pedaços da imagem (tiles), assim o "
+-"tamanho da imagem é limitado apenas pelo espaço disponível em disco"
++"Gerenciamento de memória baseado em blocos, de modo que o tamanho da imagem "
++"é limitado apenas pelo espaço disponível em disco."
+ 
+-#: src/introduction.xml:108(para)
+-msgid "Sub-pixel sampling for all paint tools for high-quality anti-aliasing"
++#: src/introduction.xml:172(para)
++msgid "Sub-pixel sampling for all paint tools for high-quality anti-aliasing."
+ msgstr ""
+-"Amostragem de sub-pixel para todas as ferramentas de pintura, obtendo "
+-"uma alta qualidade de anti-serrilhamento"
++"Amostragem subpixel em todas as ferramentas de pintura para obter "
++"antisserrilhamento de alta qualidade."
+ 
+-#: src/introduction.xml:114(para)
+-msgid "Full Alpha channel support for working with transparency"
+-msgstr "Suporte total a canal Alfa para trabalhar com transparência"
++#: src/introduction.xml:178(para)
++msgid "Full Alpha channel support for working with transparency."
++msgstr "Suporte completo ao canal alfa para trabalhar com transparência."
+ 
+-#: src/introduction.xml:119(para)
+-msgid "Layers and channels"
+-msgstr "Camadas e canais"
++#: src/introduction.xml:183(para)
++msgid "Layers and channels."
++msgstr "Camadas e canais."
+ 
+-#: src/introduction.xml:122(para)
++#: src/introduction.xml:186(para)
+ msgid ""
+ "A procedural database for calling internal <acronym>GIMP</acronym> functions "
+-"from external programs, such as Script-Fu"
++"from external programs, such as Script-Fu."
+ msgstr ""
+ "Um banco de dados procedural para chamar funções internas do "
+-"<acronym>GIMP</acronym> a partir de programas externos, como Script-Fu ou "
+-"Python-fu"
++"<acronym>GIMP</acronym> a partir de programas externos, como o Script-Fu."
+ 
+-#: src/introduction.xml:128(para)
+-msgid "Advanced scripting capabilities"
+-msgstr "Pode ser automatizado de forma avançada por scripts e plug-ins"
++#: src/introduction.xml:192(para)
++msgid "Advanced scripting capabilities."
++msgstr "Recursos avançados de criação de scripts."
+ 
+-#: src/introduction.xml:131(para)
+-msgid "Multiple undo/redo (limited only by disk space)"
++#: src/introduction.xml:195(para)
++msgid "Multiple undo/redo (limited only by disk space)."
+ msgstr ""
+-"Múltiplos níveis de desfazer/refazer (limitado apenas pelo espaço em disco)"
++"Vários níveis de desfazer e refazer (limitados apenas pelo espaço em disco)."
+ 
+-#: src/introduction.xml:134(para)
+-msgid "Transformation tools including rotate, scale, shear and flip"
++#: src/introduction.xml:198(para)
++msgid "Transformation tools including rotate, scale, shear and flip."
+ msgstr ""
+-"Ferramentas de transformação incluindo rotacionar, redimensionar, inclinar e "
+-"espelhar"
++"Ferramentas de transformação, incluindo rotação, escala, cisalhamento e "
++"inversão."
+ 
+-#: src/introduction.xml:139(para)
++#: src/introduction.xml:203(para)
+ msgid ""
+-"Support for a wide range of file formats, including GIF, JPEG, PNG, XPM, "
+-"TIFF, TGA, MPEG, PS, PDF, PCX, BMP and many others"
++"Support for a wide range of file formats, including JPEG, PNG, GIF, PSD, "
++"DDS, XPM, TIFF, TGA, MPEG, PS, PDF, PCX, BMP and many others."
+ msgstr ""
+-"Suporte para uma ampla gama de formatos, incluindo GIF, JPEG, PNG, XPM, "
+-"TIFF, TGA, MPEG, PS, PDF, PCX, BMP e muitos outros"
++"Suporte a uma ampla variedade de formatos de arquivo, incluindo JPEG, PNG, "
++"GIF, PSD, DDS, XPM, TIFF, TGA, MPEG, PS, PDF, PCX, BMP e muitos outros."
+ 
+-#: src/introduction.xml:145(para)
++#: src/introduction.xml:209(para)
+ msgid ""
+ "Selection tools, including rectangle, ellipse, free, fuzzy, bezier and "
+-"intelligent scissors"
++"scissors."
+ msgstr ""
+-"Ferramentas de seleção, incluindo retângulo, elipse, livre, fuzzy, bezier e "
+-"tesouras inteligentes"
++"Ferramentas de seleção, incluindo retângulo, elipse, seleção livre, seleção "
++"difusa, Bézier e tesoura."
+ 
+-#: src/introduction.xml:151(para)
++#: src/introduction.xml:215(para)
+ msgid ""
+ "Plug-ins that allow for the easy addition of new file formats and new effect "
+ "filters."
+ msgstr ""
+-"Plug-ins que permitem a fácil adição de novos formatos de arquivo e novos "
++"Plug-ins que permitem adicionar facilmente novos formatos de arquivo e "
+ "filtros de efeitos."
+ 
+ #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+ #: src/introduction.xml:0(None)
+ msgid "translator-credits"
+ msgstr ""
+ "Willer Gomes Júnior <willer@ogomes.com>, 2012 \n"
+ "Enrico Nicoletto <liverig@gmail.com>, 2013, \n"
+ "João S. O. Bueno <gwidion@gmail.com>, 2014 "
+-

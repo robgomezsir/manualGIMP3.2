@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="file-png-export">
+  <title>Diálogo de exportar imagem</title>
+  <anchor id="file-png-load" xreflabel="PNG"/>
+  <anchor id="file-png-export-defaults" xreflabel="PNG"/>
+
+  <indexterm>
+    <primary>Diálogo de exportar imagem</primary>
+  </indexterm>
+  <indexterm>
+    <primary>PNG</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Formatos</primary>
+    <secondary>PNG</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>The PNG Export dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/export-png-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <note>
+      <para>O formato PNG suporta imagens indexadas. Isso usa menos cores, e apenas um byte de informação por pixel, resultando num arquivo menor. Isso é especialmente útil para salvar imagens para Web. Veja <xref linkend="gimp-image-convert-indexed"/>.</para>
+      <para>Computadores trabalham com blocos de 8 bits chamados de <quote>Byte</quote>. Um byte pode guardar informação sobre até 256 cores. Reduzir o número de cores para menos que 256 pode resultar em arquivos menores, mesmo assim, já que a compressão do PNG tira proveito de ter menos cores diferentes para guardar a informação  sobre a imagem — e mais, você pode obter estilos interessantes, a título de efeitos especiais, com imagens com poucas cores. O formato<quote>PNG8</quote>, como o GIF, usa só um bit para marcar a transparência: cada pixel pode ser opaco ou não. A especificação do PNG pode permitir níveis de  transparência em arquivos de PNG indexados, entretanto isso nunca foi implementado no GIMP.</para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <variablelist>
+      <varlistentry>
+        <term>Formatos de arquivo</term>
+        <listitem>
+          <para>Por padrão, sua imagem PNG é exportada em um formato de pixel que se assemelha às configurações da sua imagem no <acronym>GIMP</acronym>. Isso geralmente é o que você quer, mas quando você precisa de um formato de saída específico, pode mudar aqui para 8 ou 16 bits por canal RGB ou Escala de Cinza, com ou sem canal alfa.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Nível de compressão</term>
+        <listitem>
+          <para>Uma vez que a compressão do PNG não tem perdas, a única razão para usar um fator de compressão menor que 9 é se estiver levando muito tempo para salvar um arquivo, num computador lento. Quanto a descompressão: sua velocidade não muda, independente do nível de compressão usado.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Intervalo</term>
+        <listitem>
+          <para>Escolher <quote>entrelaçar</quote> intercala os dados da imagem dentro de um arquivo. Numa conexão lenta de internet, isso pode permitir que o conteúdo da imagem vá aparecendo progressivamente conforme ela vai baixando. Isso pode ser interessante em conexões bem lentas, por que o usuário pode interromper o download se a imagem não for do interesse dele. Isso pouco útil hoje em dia, com conexões mais rápidas à Internet.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Salvar informações de cor dos pixels transparentes</term>
+        <listitem>
+          <para>Quando esta opção está marcada, os valores de cor são salvos mesmo se os pixels estiverem completamente transparentes. Mas isso é possível apenas com uma única camada, não com uma composição mesclada. Quando uma imagem de múltiplas camadas é exportada para um formato de arquivo de camada única, não há como o <acronym>GIMP</acronym> preservar os valores de cor nos pixels transparentes.</para>
+        </listitem>
+      </varlistentry>
+
+      <xi:include href="common-metadata-settings.xml" xpointer="xpointer(//variablelist/*)"/>
+
+      <varlistentry>
+        <term>Salvar cor de fundo</term>
+        <listitem>
+          <para>Se sua imagem tem muitos níveis de transparência, os programas (por exemplo navegadores antigos) que reconhecem apenas dois níveis de transparência em PNG vão usar a cor de fundo que está selecionada na caixa de ferramentas do GIMP, em vez de níveis intermediários de transparência. O Internet Explorer, até a versão 6, não reconhecia esta opção (nem as transparências).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Salvar todos os erros</term>
+        <listitem>
+          <para>Arquivos PNG suportam um valor de deslocamento chamado  <quote>bloco oFFs</quote>, que provê dados de posicionamento. Infelizmente o suporte de PNG no <acronym>GIMP</acronym> não funciona bem, ou pelo menos, é incompatível com outros aplicativos, e isso tem sido assim por bastante tempo. Não ligue esta opção, deixe o GIMP achatar as camadas antes de salvar, e você não vai ter problemas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Save resolution</term>
+        <listitem>
+          <para>Salva a resolução da imagem, em PPI  (Pixels por Polegada)</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Salvar hora da criação</term>
+        <listitem>
+          <para>A data e hora em que o arquivo foi salvo</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Salvar imagem</term>
+        <listitem>
+          <para>Você pode encontrar opções de <emphasis>combinar camadas</emphasis> tanto no meu de contexto, como no menu <link linkend="gimp-layer-menu">Camada</link> da janela de imagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Save Settings</term>
+        <listitem>
+          <para>
+            Click to save the current settings. Later, you can use
+            <guibutton>Load Saved Settings</guibutton> to load the saved
+            settings.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

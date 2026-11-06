@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>12.11. Stencil Chrome</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-decor.html" title="12. Decor Filters" />
+    <link rel="prev" href="script-fu-carve-it.html" title="12.10. Stencil Carve" />
+    <link rel="next" href="filters-map.html" title="13. Map Filters" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>12.11. Stencil Chrome</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-carve-it.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>12. Decor Filters</span>
+        <nav> <a accesskey="n" href="filters-map.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-sota-chrome-it"></a>12.11. Stencil Chrome</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id56054" class="indexterm"></a>
+      <a id="id56058" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3569"></a>12.11.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="script-fu-sota-chrome-it-example"></a>
+          <p class="title">
+            <strong>Figure 17.289. Example for the <span class="quote">“<span class="quote">Stencil Chrome</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_grayscale.jpg" alt="Example for the “Stencil Chrome” filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/decor/taj-chrome-it.jpg" alt="Example for the “Stencil Chrome” filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter provides a chrome effect. The source image must be an image
+      containing a single layer. This layer is used as mask (<span class="quote">“<span class="quote">stencil</span>”</span>) for
+      the chrome effect.
+    </p>
+        <p>
+      The filter creates a new image with the chrome effect applied to the
+      source image or, if a selection exists, to the selection of the source
+      image (a nice background is added too). If no environment map image is
+      specified, a copy of the source image will be used.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3570"></a>12.11.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Decor</span> → <span class="guimenuitem">Stencil Chrome…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3571"></a>12.11.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3572"></a>
+          <p class="title">
+            <strong>Figure 17.290. <span class="quote">“<span class="quote">Stencil Chrome</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/decor/chrome-it.png" alt="“Stencil Chrome” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Chrome saturation, </span>
+              <span class="term">Chrome lightness</span>
+            </dt>
+            <dd>
+              <p>
+            Use this option to control how
+            <a class="link" href="gimp-tool-hue-saturation.html" title="8.5. Hue-Saturation">saturation and
+            lightness</a> of the <span class="quote">“<span class="quote">Chrome</span>”</span> layer are adjusted.
+            Negative values decrease saturation and lightness respectively.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Chrome factor</span>
+            </dt>
+            <dd>
+              <p>
+            This factor lets you adjust offsets, feather radius, and brush
+            size used to construct the <span class="quote">“<span class="quote">Chrome</span>”</span> and
+            <span class="quote">“<span class="quote">Highlight</span>”</span> layer (and the <span class="quote">“<span class="quote">Drop Shadow</span>”</span>
+            as well).
+          </p>
+              <p>
+            Change with caution, decreasing this value may make the chrome
+            effect worse. The default factor 0.75 seems to be a good choice.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Environment map</span>
+            </dt>
+            <dd>
+              <p>
+            The environment map is an image that is added as some kind of
+            <span class="quote">“<span class="quote">noise</span>”</span> to the source. If no image is selected here,
+            the source image will be used.
+          </p>
+              <p>
+            The effect is best to see if you use a simple map with some obvious
+            shapes:
+          </p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-env-example.png" />
+                <div class="caption">
+                  <p>Using a simple environment map</p>
+                </div>
+              </div>
+              <p>
+            The size of the environment map image doesn't matter, it is scaled
+            to the size of the source image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Highlight balance</span>
+            </dt>
+            <dd>
+              <p>
+            This color is used to modify the
+            <a class="link" href="gimp-tool-color-balance.html" title="8.2. Color Balance">color balance</a> of
+            the <span class="quote">“<span class="quote">Highlight</span>”</span> layer: the amount of red, green, and
+            blue colors is increased according to the corresponding values of
+            the specified option.
+          </p>
+              <p>
+            Avoid colors with red, green or blue value &gt; 230.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Chrome balance</span>
+            </dt>
+            <dd>
+              <p>
+            Same as above, but modifies the
+            <a class="link" href="gimp-tool-color-balance.html" title="8.2. Color Balance">color balance</a> of
+            the <span class="quote">“<span class="quote">Chrome</span>”</span> layer.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Chrome white areas</span>
+            </dt>
+            <dd>
+              <p>
+            If checked (this is the default), the source image is used as
+            mask. If unchecked, the <span class="emphasis"><em>inverted</em></span> source image
+            is used.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3573"></a>12.11.4. How to create the chrome effect</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The following section provides a brief and simplified description of how
+      the script (actually this filter is a Script-Fu) creates the chrome
+      effect.
+    </p>
+        <p>
+      If you apply the filter to your source images and then look at the
+      <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Layers Dialog">Layers Dialog</a> of the resulting
+      image, you will see that there are two main layers which make up the
+      chrome effect: the <span class="quote">“<span class="quote">Chrome</span>”</span> layer and the
+      <span class="quote">“<span class="quote">Highlight</span>”</span> layer. These layers are created as follows:
+    </p>
+        <div class="procedure">
+          <ol class="procedure" type="1">
+            <li class="step">
+              <p>
+          The script constructs a somewhat simplified and blurred layer from
+          the source image (from the inverted source image if
+          <span class="guilabel">Chrome white areas</span> is unchecked).
+        </p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step1.png" />
+              </div>
+              <p>
+          The <span class="guilabel">Chrome factor</span> controls the appearance of
+          this layer.
+        </p>
+            </li>
+            <li class="step">
+              <p>
+          The (scaled) environment map is blurred and merged into the above
+          layer with 50% opacity. (Do you spot the cat in the introducing
+          <a class="link" href="script-fu-sota-chrome-it.html#script-fu-sota-chrome-it-example" title="Figure 17.289. Example for the “Stencil Chrome” filter">example</a>?)
+        </p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step2.png" />
+                <div class="caption">
+                  <p>Merging the environment map</p>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <p>
+          The brightness (value) of the layer is modified according to a
+          spline-based intensity curve.
+        </p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step3.png" />
+                <div class="caption">
+                  <p>Modifying the intensity curve</p>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <p>
+          A layer mask is added, initialized with the source image
+          (the <span class="quote">“<span class="quote">Chrome Stencil</span>”</span>). This is the
+          <span class="quote">“<span class="quote">Chrome</span>”</span> layer before the final step.
+        </p>
+              <p>
+          The <span class="quote">“<span class="quote">Highlight</span>”</span> layer is a copy of the
+          <span class="quote">“<span class="quote">Chrome</span>”</span> layer where the layer mask is stroked with a
+          white brush.
+        </p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step4.png" />
+                <div class="caption">
+                  <p>Chrome and Highlight base</p>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <p>
+          For both layers the color balance is modified (according to
+          <span class="guilabel">Highlight balance</span> and
+          <span class="guilabel">Chrome balance</span>), increasing the amount of
+          red, green, and blue, with emphasis on highlights.
+        </p>
+              <p>
+          Additionally, saturation and lightness of the <span class="quote">“<span class="quote">Chrome</span>”</span>
+          layer are modified (controlled by
+          <span class="guilabel">Chrome saturation</span> and
+          <span class="guilabel">Chrome lightness</span>).
+        </p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step5.png" />
+                <div class="caption">
+                  <p>Chrome and Highlight layer</p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <p>
+      Now add a drop shadow and a background layer and you get the
+      <a class="link" href="script-fu-sota-chrome-it.html#script-fu-sota-chrome-it-example" title="Figure 17.289. Example for the “Stencil Chrome” filter">Example image</a>
+      for the <span class="quote">“<span class="quote">Stencil Chrome</span>”</span> filter.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-carve-it.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-decor.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-map.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-carve-it.html">12.10. Stencil Carve</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-map.html">13. Map Filters</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

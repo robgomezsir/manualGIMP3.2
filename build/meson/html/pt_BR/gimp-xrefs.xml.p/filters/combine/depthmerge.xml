@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-07-12 Added Spanish translation by AntI
+  2007-05-27 KoSt: added 'no'
+  2007-01-22 revised it by alessandro falappa
+  2006-12-11 rewrote text; added an example by j.h
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005/09/29 translated to german by axel.wernicke
+-->
+<sect2 id="plug-in-depth-merge">
+  <title>Mapa de profundidade</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Combinar</secondary>
+    <tertiary>Mapa de profundidade</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Mapa de profundidade</primary>
+  </indexterm>
+
+  <para>O mapa de profundidade é um filtro de combinação que é muito útil para combinar duas figuras diferentes ou camadas. Você pode decidir qual parte de cada imagem ou camada continuará visível.</para>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/combine-taj-depthmerge.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Cada imagem é associada com um mapa que funciona como uma máscara. Simplesmente crie este mapa como um degradê de escalas-de-cinza: quando aplicado na imagem, áreas escuras da máscara irão mostrar a imagem subjacente e as áreas claras irão mascarar a imagem.</para>
+    <note>
+      <para>Para trabalhar com este filtro, as imagens e os mapas precisam ter o mesmo tamanho. Todas as imagens a serem selecionadas precisam estar presentes na tela.</para>
+      <para>Você também pode usar este filtro em uma imagem com diversas camadas. Todas as camadas irão aparecer na lista seleção usada para selecionar as imagens. Essas camadas precisão ter o mesmo tamanho.</para>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Combine</guisubmenu>
+        <guimenuitem>Depth Merge…</guimenuitem>
+      </menuchoice>
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>mapa de profundidade</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/combine/depthmerge.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Origem 1</term>
+        <term>Origem 2</term>
+        <listitem>
+          <para>Define a fonte das imagens que serão usadas para a junção.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Depth map 1</term>
+        <term>Depth map 2</term>
+        <listitem>
+          <para>
+            Define the pictures to use as transformation maps for the sources.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Sobreposição</term>
+        <listitem>
+          <para>Cria transições suaves entre as imagens.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Deslocamento</term>
+        <listitem>
+          <para>Essa opção altera o limite de mistura, dando mais ou menos importância a uma imagem em relação à outra.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Escala 1</term>
+        <term>Escala 2</term>
+        <listitem>
+          <para>O mesmo que acima para o deslocamento, mas mais sensível e aplicado para cada mapa separadamente. Quando você usa uma escala com valores baixos, isso irá afetar o valor de mapa de imagem, tornando-o mais escuro. Logo, preto será mais dominante na mistura e você verá mais da imagem.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Exemplo prático</title>
+    <para>
+      Maps are grayscale gradients created with the
+      <link linkend="gimp-tool-gradient">Gradient tool</link> and modified with 
+the
+      <link linkend="gimp-tool-curves">Curve tool</link>.
+    </para>
+    <figure>
+      <title>Imagens de origem e seus mapas</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/depthmerge-source-image1.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem de origem 1</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/depthmerge-source-image2.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem de origem 2</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/depthmerge-source-map1.png"/>
+        </imageobject>
+        <caption>
+          <para>Mapa 1</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/depthmerge-source-map2.png"/>
+        </imageobject>
+        <caption>
+          <para>Mapa 2</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Você pode entender o que está acontecendo. A imagem 1 é tratada pelo mapa 1: o quadrado vermelho é mascarado e o quadrado amarelo continua visível. A imagem 2 é tratada pelo mapa 2: o círculo vermelho é mascarado e o círculo verde continua visível. No geral, o círculo verde e o quadrado amarelo continuam visíveis.</para>
+    <figure>
+      <title>Resultados</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/depthmerge-results-none.png"/>
+        </imageobject>
+        <caption>
+          <para><emphasis>Sem deslocamento e sem sobreposição</emphasis>. O limite entre ambas as imagens é a forma e está situada no meio do degradê de máscaras.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/depthmerge-results-offset.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            <emphasis>Offset</emphasis> = 0.980 : the limit, sharp,
+            is shifted so that the image-2 area is increased.
+          </para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/depthmerge-results-overlap.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            <emphasis>Overlap</emphasis> = 0.520 : the limit is blurred.
+          </para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/depthmerge-results-scale.png"/>
+        </imageobject>
+        <caption>
+          <para><emphasis>Escala 1</emphasis> reduzido a 0.056: assim como no deslocamento, o limite é alterado. A área da imagem 1 é aumentada.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

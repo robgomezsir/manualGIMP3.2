@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Apêndice C. Mapeamento de tons e Recuperação de sombras usando os recursos do GIMP: Cores → Exposição</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="prev" href="apbs04.html" title="4. Trabalhando no Windows" />
+    <link rel="next" href="tone-mapping-example.html" title="2. Um exemplo passo-a-passo mostrando como recuperar a informação de sombras usando o ponto flutuante de grande profundidade de bits do GIMP para a operaçãoCores → Exposição…" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Apêndice C. Mapeamento de tons e Recuperação de sombras usando os recursos do GIMP: <span class="guimenu">Cores</span> → <span class="guimenuitem">Exposição</span></div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="apbs04.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span> </span>
+        <nav> <a accesskey="n" href="tone-mapping-example.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="appendix">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h1 class="title"><a id="tone-mapping-tutorial"></a>Apêndice C. Mapeamento de tons e Recuperação de sombras usando os recursos do GIMP: <span class="guimenu">Cores</span> → <span class="guimenuitem">Exposição</span></h1>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Índice</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="tone-mapping-tutorial.html#tone-mapping-introduction">1. Operação Exposição em ponto flutuante de grande profundidade de bits do GIMP: muito melhor do que Curvas para clarear sombras e tons médios de uma imagem sem estourar os tons claros</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="tone-mapping-example.html">2. Um exemplo passo-a-passo mostrando como recuperar a informação de sombras usando o ponto flutuante de grande profundidade de bits do GIMP para a operação<span class="guimenu">Cores</span> → <span class="guimenuitem">Exposição…</span></a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="tone-mapping-notes.html">3. Notas de uso</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="tone-mapping-conclusion.html">4. Conclusão</a>
+            </span>
+          </dt>
+        </dl>
+      </div>
+      <p>Este tutorial foi retirado de www.gimp.org/tutorials e foi criado por Elle Stone. Ele é apresentado aqui para traduções.</p>
+      <p>Um problema muito comum de edição é como clarear sombras e tons médios de uma imagem mantendo os detalhes de tons claros, uma tarefa algumas vezes referida como “recuperação de sombras” e, de maneira mais geral, como “mapeamento de tons”. Este tutorial passo-a-passo lhe mostrará como usar a operação Exposição em ponto flutuante de grande profundidade de bits do GIMP para adicionar uma ou mais paradas de compensação de exposição positiva às sombras e tons médios de uma imagem enquanto os detalhes de tons claros são mantidos.</p>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="tone-mapping-introduction"></a>1. Operação Exposição em ponto flutuante de grande profundidade de bits do GIMP: muito melhor do que Curvas para clarear sombras e tons médios de uma imagem sem estourar os tons claros</h2>
+            </div>
+          </div>
+        </div>
+        <p>Um problema muito comum de edição é como clarear sombras e tons médios de uma imagem sem estourar os tons claros, muito frequentemente encontrado ao lidar com fotografias de cenas iluminadas diretamente por luz solar. Algoritmos pré-prontos para completar esta tarefa são geralmente referidos como algoritmos de “recuperação de sombras”. Na verdade, estes algoritmos são algoritmos de mapeamento de tons com propósito especial, que algumas vezes funcionam muito bem, outras vezes nem tanto, a depender do algoritmo, da imagem e de suas intenções artísticas para a imagem.</p>
+        <p>Este tutorial passo-a-passo lhe mostrará como usar a operação Exposição de ponto flutuante irrestrito do GIMP para recuperar a informação de sombras—isto é, adicionar uma ou mais paradas de compensação de exposição positiva às sombras e tons médios de uma imagem—sem estourar ou indevidamente comprimir os tons claros da imagem. Este procedimento é completamente “ajustável manualmente” usando máscaras e camadas, e é o mais próximo que você conseguiria de edição de imagem não-destrutiva usando GIMP em grande profundidade de bits.</p>
+        <p><span class="bold"><strong>Figura 1:</strong></span> linhas de energia ao meio-dia</p>
+        <p>Antes e depois do mapeamento de tons (ou “recuperação de sombras”) usando a operação Exposição em ponto flutuante de grande profundidade de bits do GIMP.</p>
+        <div class="mediaobject">
+          <img src="images/tutorials/tone-mapping/before-auto-stretch-contrast.jpg" />
+        </div>
+        <p>
+      <span class="emphasis"><em>Arquivo bruto interpolado por referência a cena.</em></span>
+    </p>
+        <div class="mediaobject">
+          <img src="images/tutorials/tone-mapping/power-lines.jpg" />
+        </div>
+        <p>
+        <span class="emphasis"><em>Após o mapeamento de tons/recuperação de sombras usando Níveis irrestritos do GIMP.</em></span>
+      </p>
+        <p>O GIMP de grande profundidade de bits é o meu editor de imagem primário, e tenho usado o procedimento descrito abaixo pelos últimos anos como meu jeito “corriqueiro” de modificar tonalidade de imagens. O mesmo procedimento geral pode ser usado tanto para escurecer quanto clarear regiões de uma imagem, novamente controlando o efeito usando uma máscara de camada. Isto não é exatamente não-destrutivo porque em algum momento você precisará criar uma camada “Nova a partir do visível”. Mas, diferente do uso de Curvas, utilizar a operação Exposição em ponto flutuante de grande profundidade de bits do GIMP não corta valores dos canais RGB e permite-lhe um ajuste preciso dos resultados por ajustes sucessivos da máscara de camada até você estar satisfeito com a tonalidade resultante.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="apbs04.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right"> <a accesskey="n" href="tone-mapping-example.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="apbs04.html">4. Trabalhando no Windows</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="tone-mapping-example.html">2. Um exemplo passo-a-passo mostrando como recuperar a informação de sombras usando o ponto flutuante de grande profundidade de bits do GIMP para a operação<span class="guimenu">Cores</span> → <span class="guimenuitem">Exposição…</span></a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

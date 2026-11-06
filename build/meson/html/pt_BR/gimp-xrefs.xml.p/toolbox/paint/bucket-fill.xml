@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-04-23 j.h: update to v2.10.10
+  2017-04-29 j.h: added links to Diagonal neighbors and antialiasing
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-bucket-fill">
+  <title>Preenchimento com balde</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Preenchimento com balde</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Preenchimento com balde</primary>
+  </indexterm>
+
+  <para>Essa ferramenta preenche uma seleção com a cor de frente atual. Se você pressionar <keycap>Ctrl</keycap> enquanto clica com a ferramenta de balde ativada, ela irá usar a cor de fundo. Dependendo de como as opções da ferramenta estão definidas, a ferramenta de preenchimento irá tanto preencher inteiramente a seleção, ou apenas as partes em que as cores são similares ao local em que você clicou. As opções da ferramenta também irão afetar a forma como a transparência é tratada..</para>
+  <para>A quantidade de preenchimento depende de qual limiar de preenchimento que você especificou. O limiar de preenchimento determina quanto diferente podem ser as cores para o preenchimento se espalhar (da mesma forma que na ferramenta de seleção contígua — a varinha mágica). O preenchimento começa no ponto onde você clica e espalha para fora até o valor da cor ou alfa se tornar <quote>muito diferente</quote>.</para>
+  <para>Quando você preencher objetos em uma camada transparente (como letras em uma camada de texto) com uma cor diferente que a anterior, você pode descobrir que uma borda com a cor antiga continua a contornar os objetos. Isso acontece devido a um baixo limiar de preenchimento na janela de opções do preenchimento. Com um baixa limiar de preenchimento, a ferramenta de balde não irá preencher pixels semi-transparentes, e eles não serão afetados pelo preenchimento mantendo as suas cores originais.</para>
+  <para>Se você deseja preencher áreas que estão totalmente transparentes, você precisa se certificar de que a opção de <quote>trava</quote> (na janela de camadas) está desmarcada. Se essa opção estiver marcada, apenas as partes não transparentes da camada serão preenchidas.</para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>Existem várias formas para ativar a ferramenta:</para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagem: <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de pintura</guisubmenu><guimenuitem>Degradê</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Ícone da ferramenta de clonagem na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>o usando o atalho de teclado <keycombo><keycap>Shift</keycap><keycap>D</keycap></keycombo>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Modificadores de tecla</title>
+    <itemizedlist>
+      <listitem>
+        <para><keycap>Ctrl</keycap>, semelhante às ferramentas de pintura, permite escolher cores circundantes na tela sem ter que mudar para a ferramenta <emphasis>Seletor de Cores</emphasis>.</para>
+      </listitem>
+      <listitem>
+        <para><keycap>Shift</keycap> alterna entre preencher cores similares ou preencher toda a seleção a qualquer momento.</para>
+      </listitem>
+      <listitem>
+        <para><keycap>Alt</keycap> alterna o tipo de preenchimento entre as cores de primeiro plano e de fundo.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-bucket-fill.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Opacidade</term>
+        <listitem>
+          <para>Veja <link linkend="gimp-tool-brush">ferramentas de pintura</link> para obter ajuda com as opções que são comuns para todas essas ferramentas. Apenas opções que são específicas ao Preenchimento estão descritas aqui.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Tipo de preenchimento</term>
+        <listitem>
+          <para>O <acronym>GIMP</acronym> providencia três tipos de preenchimento:</para>
+          <variablelist>
+            <varlistentry>
+              <term>Preenchimento com cor da Frente</term>
+              <listitem>
+                <para>define a cor de frente selecionada atualmente como a cor de preenchimento.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Preenchimento com cor de fundo</term>
+              <listitem>
+                <para>define a cor de Fundo selecionada atualmente como a cor de preenchimento.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Preenchimento com textura</term>
+              <listitem>
+                <para>define a textura selecionada atualmente como a cor de preenchimento. Você pode selecionar a textura a ser usada em uma lista.</para>
+                <para>Essa lista permite ao usuário selecionar uma das diversas texturas de preenchimento para usar na sua próxima operação de preenchimento. A forma na qual a lista é apresentada é controlada por quatro botões na parte inferior do seletor.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Área afetada</term>
+        <listitem>
+          <itemizedlist>
+            <listitem>
+              <para>Essa opção faz com que o GIMP preencha a seleção pré-existente ou toda a imagem. Uma outra forma de fazer a mesma coisa seria clicar e arrastar a cor de frente, cor de fundo ou textura, para dentro da seleção.</para>
+            </listitem>
+            <listitem>
+              <para>Essa é a configuração padrão: a ferramenta preenche a área que tiver uma cor próxima a do pixel que você clicou inicialmente. A similaridade de cores é definida pelo limiar de brilho, que você pode definir com um valor ou com uma posição do cursor.</para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Preencher por detecção de arte de linha</guilabel>:Este é um novo algoritmo no GIMP-2.10.10 que permite preencher áreas cercadas por <quote>artes de linha</quote>, tentando não deixar pixels não preenchidos perto das linhas, e fechando zonas potenciais.</para>
+              <para>A detecção de arte de linha também é conhecida como Smart Colorization. O autor descreve claramente os problemas que encontrou em <ulink url="https://girinstud.io/news/2019/02/smart-colorization-in-gimp/"/>. As opções são descritas abaixo.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Encontrando cores similares</term>
+        <listitem>
+          <para>Estas opções aparecem quando a opção <guilabel>Preencher cores similares</guilabel> está marcada:</para>
+          <itemizedlist>
+            <listitem>
+              <para>A opção de <guilabel>preencher áreas transparentes</guilabel> oferece a possibilidade de preencher áreas com baixa opacidade.</para>
+            </listitem>
+            <listitem>
+              <para>Se você ativar essa opção, a recuperação não é calculada apenas a partir de valores da camada ativa, mas de todas as camadas visíveis.</para>
+              <para>O reticulado é completamente explicado no <link linkend="glossary-dithering">Glossário</link></para>
+            </listitem>
+            <listitem>
+              <para>Para entender o que são vizinhos diagonais, consulte <link linkend="diagonal-neighbors">Vizinhos-diagonais&gt;</link> na ferramenta Seleção por Cores Similares.</para>
+            </listitem>
+            <listitem>
+              <para>Consulte <link linkend="glossary-antialiasing">Anti-aliasing</link> no Glossário.</para>
+            </listitem>
+            <listitem>
+              <para>O seletor de limiar define o nível em que a ponderação de cor é medida para os calcular os limites de preenchimento. Uma configuração com um valor maior preencherá mais partes de uma imagem multicolorida e o oposto, uma limiar menor irá preencher uma área menor.</para>
+            </listitem>
+            <listitem>
+              <para>Com essa opção você pode escolher qual componente da imagem o GIMP deve usar para calcular a similaridade e determinar as bordas de preenchimento.</para>
+              <para>Os componentes que você pode escolher são <guimenuitem>Composto</guimenuitem>, <guimenuitem>Vermelho</guimenuitem>, <guimenuitem>Verde</guimenuitem>, <guimenuitem>Azul</guimenuitem>, <guimenuitem>Matiz</guimenuitem>, <guimenuitem>Saturação</guimenuitem> e <guimenuitem>Valor</guimenuitem>.</para>
+              <para>Não é fácil de entender essa opção. Você precisa escolher, por exemplo, o canal vermelho. E então você clica em qualquer pixel, e a ferramenta buscará por pixels contíguos similares ao pixel clicado, mas olhando apenas no <emphasis>canal vermelho</emphasis> de todos eles de acordo com a configuração de limiar. Um exemplo:</para>
+              <para>Imagem original: três faixas com degradês de cores puras. Vermelho (255, 0, 0), Verde (0, 255, 0), Azul (0, 0, 255). Nós vamos usar a ferramenta de balde de preenchimento com a cor magenta e o limiar definido em 15.</para>
+              <para>Imagem 1: Preencher por = Composto. Nós clicamos sucessivamente nas três faixas de cores. Cada faixa é preenchida de acordo com o limiar.</para>
+              <para>Imagem 2: Preencher por = Vermelho. Nós clicamos na faixa vermelha. A ferramenta busca por pixels contíguos que possuem um valor similar no canal vermelho, de acordo com o limiar definido. Apenas uma área estreita corresponde a esses padrões. Nas faixas verde e azul, o valor de pixels no canal vermelho é 0, muito diferente do valor de canal vermelho do pixel clicado: a cor não se espalha até eles.</para>
+              <para>Imagem 3: Preencher por = Vermelho. Nós clicamos na faixa verde. Aqui, o valor do pixel clicado no canal vermelho é 0. Todos os pixels nas faixas verde e azul possuem o mesmo valor de canal vermelho (0): todos eles foram pintados.</para>
+              <figure>
+                <title>Exemplo de <quote>preencher por</quote></title>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/toolbox/fill-by-0.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>Imagem original</para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/toolbox/fill-by-1.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>Imagem 1</para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/toolbox/fill-by-2.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>Imagem 2</para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/toolbox/fill-by-3.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>Imagem 3</para>
+                  </caption>
+                </mediaobject>
+              </figure>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Opções da ferramenta de <quote>lápis</quote></term>
+        <listitem>
+          <para>Estas opções aparecem quando a opção <guilabel>Preencher cores similares</guilabel> está marcada:</para>
+          <figure>
+            <title>Exemplo de <quote>Clonagem em perspectiva</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/bucket-fill-ex-origin.png"/>
+              </imageobject>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/bucket-fill-ex-default.png"/>
+              </imageobject>
+              <caption>
+                <para>A ferramenta Balde de tinta aplicada com clique-e-arraste com as opções padrão. Elas não se adaptam bem a esta imagem, especialmente nas sobrancelhas que estão quase apagadas.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <itemizedlist>
+            <listitem>
+              <para>
+                <guilabel>Source</guilabel>: by default, information for line
+                art computation is taken from
+                <guilabel>All visible layers</guilabel>. You can also select
+                the <guilabel>Selected layer</guilabel>, the
+                <guilabel>Layer below the selected one</guilabel>, or the
+                <guilabel>Layer above the selected one</guilabel> as the source.
+              </para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Preencher áreas transparentes</guilabel>: preenche regiões completamente transparentes.</para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Limiar de detecção de arte de linha</guilabel>: limiar para detectar contorno (valores mais altos detectarão mais pixels).</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Line Art Closure</term>
+        <listitem>
+          <para>Estas opções aparecem quando a opção <guilabel>Preencher cores similares</guilabel> está marcada:</para>
+          <itemizedlist>
+            <listitem>
+              <para><guilabel>Comprimento máximo de lacuna</guilabel>: lacuna máxima (em pixels) na arte de linha que pode ser fechada.</para>
+            </listitem>
+            <listitem>
+              <para>
+                <guilabel>Manual closure in fill layer</guilabel>: when
+                enabled, consider pixels of the selected line art source layer
+                that are using the selected fill color as line art closure.
+              </para>
+              <para>
+                This setting is only enabled when the line art source is
+                <guilabel>Layer below the selected one</guilabel>, or
+                <guilabel>Layer above the selected one</guilabel>.
+              </para>
+              <para>
+                When your line art sketch has holes, you can fill these holes
+                with a brush in the fill color on a layer above or below it,
+                before using bucket fill on your color layer. Especially on
+                larger images this can be faster than selecting
+                <guilabel>All visible layers</guilabel> as source.
+              </para>
+              <para>
+                <guilabel>Layer below the selected one</guilabel> would be
+                most useful when you are coloring a scanned sketch, while
+                <guilabel>Layer above the selected one</guilabel> can be used
+                when you are sketching yourself and filling the colors below
+                the sketch.
+              </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Preencher por</term>
+        <listitem>
+          <para>Estas opções aparecem quando a opção <guilabel>Preencher cores similares</guilabel> está marcada:</para>
+          <itemizedlist>
+            <listitem>
+              <para><guilabel>Tamanho máximo de crescimento</guilabel>: número máximo de pixels crescidos sob a arte de linha. Aumentar este valor torna as linhas mais finas.</para>
+              <mediaobject>
+                <imageobject>
+                  <imagedata format="PNG" fileref="images/toolbox/bucket-fill-ex-grow.png"/>
+                </imageobject>
+                <caption>
+                  <para>Para melhorar as sobrancelhas no exemplo, <guilabel>Tamanho máximo de crescimento</guilabel> é reduzido para 1.</para>
+                </caption>
+              </mediaobject>
+            </listitem>
+            <listitem>
+              <para><guilabel>Pressão</guilabel>: Pressione com mais força para tornar o pincel maior.</para>
+              <mediaobject>
+                <imageobject>
+                  <imagedata format="PNG" fileref="images/toolbox/bucket-fill-ex-feather.png"/>
+                </imageobject>
+              </mediaobject>
+            </listitem>
+            <listitem>
+              <para>
+                <guilabel>Stroke borders</guilabel>: stroke fill borders with
+                the stroke options of the paint tool selected in the dropdown
+                below.
+              </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Preencher uma seleção enevoada</title>
+    <para>Ao clicar repetidamente na seleção com bordas enevoadas, você irá progressivamente preencher a borda enevoada:</para>
+    <figure>
+      <title>Exemplo para <quote>preencher uma seleção enevoada</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/fill-feathered-1.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/fill-feathered-2.png"/>
+        </imageobject>
+        <caption>
+          <para>Após clicar 3 vezes mais com a ferramenta de preenchimento</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>13.4. Traçar com fractal</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-map.html" title="13. Filtros de mapeamento" />
+    <link rel="prev" href="gimp-filter-displace.html" title="13.3. Deslocar" />
+    <link rel="next" href="gimp-filter-illusion.html" title="13.5. Ilusão" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>13.4. Traçar com fractal</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-displace.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>13. Filtros de mapeamento</span>
+        <nav> <a accesskey="n" href="gimp-filter-illusion.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-fractal-trace"></a>13.4. Traçar com fractal</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id57875" class="indexterm"></a>
+      <a id="id57879" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4851"></a>13.4.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4852"></a>
+          <p class="title">
+            <strong>Figura 17.299. Traçar com fractal</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/kvitveis-orig.png" alt="Traçar com fractal" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/kvitveis-fractal.png" alt="Traçar com fractal" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Este filtro transforma a imagem com o fractal de Mandelbrot: ele mapeia a imagem para o fractal.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4853"></a>13.4.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Map</span> → <span class="guimenuitem">Fractal trace…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4854"></a>13.4.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4855"></a>
+          <p class="title">
+            <strong>Figura 17.300. Opções do filtro <span class="quote">“<span class="quote">Traçar com fractal</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/map/fractal_trace-dialog.png" alt="Opções do filtro “Traçar com fractal”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <p class="title">
+            <strong>Opções</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Fractal type</span>
+            </dt>
+            <dd>
+              <p>
+            You choose between <span class="quote">“<span class="quote">Mandelbrot</span>”</span> and <span class="quote">“<span class="quote">Julia</span>”</span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">X1, </span>
+              <span class="term">X2, </span>
+              <span class="term">Y1, </span>
+              <span class="term">Y2, </span>
+              <span class="term">Profundidade</span>
+            </dt>
+            <dd>
+              <p>
+            These parameters are similar to Left, Right, Top, Bottom and 
+            Iterations parameters of the
+            <a class="link" href="plug-in-fractalexplorer.html" title="14.3. Explorador de fractais">Fractal Explorer</a>
+            filter. They allow you to vary fractal spreading and detail
+            depth.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">JX, </span>
+              <span class="term">JY</span>
+            </dt>
+            <dd>
+              <p>
+            Julia seed X and Y value positions. Only shown when fractal type
+            is Julia.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Bailout length</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Abyss policy</span>
+            </dt>
+            <dd>
+              <p>
+            Mapping image to fractal may reveal empty areas. These options allows 
+            you to set displacement behavior on active layer or selection edges. 
+            They are described in <a class="xref" href="gimp-tool-warp.html#abyss-policy">Abyss policy</a>
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-displace.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-map.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-illusion.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-displace.html">13.3. Deslocar</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-illusion.html">13.5. Ilusão</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

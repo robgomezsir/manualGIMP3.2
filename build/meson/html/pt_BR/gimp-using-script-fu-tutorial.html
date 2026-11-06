@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3. Um tutorial de Script-Fu</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-scripting.html" title="Capítulo 13. Criação de scripts e desenvolvimento de plug-ins" />
+    <link rel="prev" href="kinds-of-script-fu.html" title="2.4. Diferentes tipos de Script-Fus" />
+    <link rel="next" href="gimp-using-script-fu-tutorial-identifier.html" title="3.2. Varáveis e funções" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3. Um tutorial de Script-Fu</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="kinds-of-script-fu.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 13. Criação de scripts e desenvolvimento de plug-ins</span>
+        <nav> <a accesskey="n" href="gimp-using-script-fu-tutorial-identifier.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-using-script-fu-tutorial"></a>3. Um tutorial de Script-Fu</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id13437" class="indexterm"></a>
+      <p>Neste treinamento, nós mostraremos a você os fundamentos da linguagem Scheme necessários para fazer uso do Script-Fu, e então vamos construir um script prático que você poderá agregar ao seu arsenal de scripts. O script vai pedir um texto ao usuário, então criará uma imagem do tamanho exato daquele texto. Então nós melhoraremos o script para deixar um pouco de espaço em volta desse texto, e concluiremos com algumas sugestões de formas para melhorar seu conhecimento em Script-fu. </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Esta seção foi adaptada de um tutorial escrito para o manual do <span class="application"><acronym class="acronym">GIMP</acronym> 1</span>,  por Mike Terry.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-using-script-fu-tutorial-scheme"></a>3.1. Familiarizando-se com Scheme</h3>
+            </div>
+          </div>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2821"></a>3.1.1. Vamos começar a Schema'tizar</h4>
+              </div>
+            </div>
+          </div>
+          <p><a class="ulink" href="https://en.wikipedia.org/wiki/Scheme_(programming_language)" target="_top">Scheme</a> é um dialeto da família de linguagens de programação Lisp. O GIMP usa o TinyScheme, que é um interpretador leve de um subconjunto do padrão chamado R5RS.</p>
+          <p>A primeira coisa a aprender é</p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <p>Todo comando em Scheme é colocado dentro de parênteses <span class="quote">“<span class="quote">( )</span>”</span>.</p>
+            </blockquote>
+          </div>
+          <p>A segunda coisa que você precisa saber é: </p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <p>O nome da função ou operador é sempre o primeiro item dentro dos parênteses, e o restante dos items são parâmetros para aquela função.</p>
+            </blockquote>
+          </div>
+          <p>Entretanto, nem tudo que está entre parênteses é uma função — eles também podem conter itens de uma lista — mas vamos ver isso depois. Essa notação normalmente é chamada de notação em prefixo, por que a função prefixa todas as outras coisas. Se você estiver familiarizado com a notação pós-fixa, ou tiver uma calculadora que usa a Notação Polonesa Reversa (como a maioria das calculadoras da HP), você não deve ter nenhum problema em se adaptar para formular as expressões em Scheme.</p>
+          <p>A terceira coisa a saber é: </p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <p>Operadores matemáticos também são considerados funções, e portanto são colocados primeiro quando se estiver escrevendo expressões matemáticas.</p>
+            </blockquote>
+          </div>
+          <p>Isso segue-se logicamente da notação em prefixo que acabamos de mencionar.</p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2822"></a>3.1.2. Exemplos de notação em prefixada, tradicional ("in-fixa") e pós-fixada</h4>
+              </div>
+            </div>
+          </div>
+          <p>Aqui seguem alguns exemplos rápidos mostrando as diferenças entre as notações <span class="emphasis"><em>prefixadas</em></span>, <span class="emphasis"><em>tradicional</em></span>, e <span class="emphasis"><em>pós fixadas</em></span> . Vamos adicionar os números 2 e 23:</p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>Notação pré-fixada: <strong class="userinput"><code>+ 2 23 </code></strong> (da forma que o Scheme pode entender)</p>
+              </li>
+              <li class="listitem">
+                <p>Notação tradicional ("in-fixa"): <strong class="userinput"><code> 2 + 23 </code></strong> (a forma como nós normalmente escrevemos a operação, e que é usada em linguagens como C e Python)</p>
+              </li>
+              <li class="listitem">
+                <p>Notação pós-fixada: <strong class="userinput"><code> 2 23 +</code></strong> (a forma como muitas calculadoras da HP e linguagens como Forth e Postscript querem)</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2823"></a>3.1.3. Prática do Scheme</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        In GIMP, select
+        <span class="guimenu">Filters</span> → <span class="guisubmenu">Development</span> → <span class="guisubmenu">Script-Fu</span> → <span class="guimenuitem">Script-Fu Console</span> from the main menu.
+        This will start up the Script-Fu Console window, which allows us to
+        work interactively in Scheme.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="gimp-using-script-fu-tutorial-console"></a>3.1.4. A janela de terminal do Script-fu</h4>
+              </div>
+            </div>
+          </div>
+          <p>Na parte de baixo dessa janela, há um campo de entrada que teria o título  de <span class="guilabel">Comando atual</span> (mas sem o nome, para deixar mais espaço livre).  Aqui, nós podemos testar comandos simples de Scheme de forma interativa. Vamos começar de forma tranquila, adicionando alguns números:</p>
+          <pre class="programlisting">(+ 3 5)</pre>
+          <p>Ao digitar isso e apertar <span class="keycap"><strong>Enter</strong></span>, a resposta esperada, 8, aparece na parte central da janela.</p>
+          <div class="figure">
+            <a id="id2824"></a>
+            <p class="title">
+              <strong>Figura 13.1. Uso do terminal de Script-fu</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/using/script-fu-console.png" alt="Uso do terminal de Script-fu" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>A função <span class="quote">“<span class="quote">+</span>”</span> pode receber mais argumentos, então podemos somar mais de um número:</p>
+          <pre class="programlisting">(+ 3 5 6)</pre>
+          <p>Isso também dá a resposta esperada: 14.</p>
+          <p>Até aqui, tudo bem — nós digitamos um comando de Schema e ele é executado imediatamente no terminal do Script-fu. Agora, uma palavra de precaução...</p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2825"></a>3.1.5. Preste atenção em parênteses extras</h4>
+              </div>
+            </div>
+          </div>
+          <p>Se você é como eu, você está acostumado a usar parênteses adicionais sempre que quiser, como quando você está escrevendo uma equação complexa, e você quer separar as partes com parênteses para torna-la mais clara quando for ler a mesma de volta. Em Scheme, você tem que tomar cuidado e não inserir essas parênteses extras de forma incorreta. Por exemplo, vamos dizer que queremos adicionar 3 ao resultado de adicionar 5 e 6 juntos:</p>
+          <pre class="programlisting">3 + (5 + 6) + 7 = ?</pre>
+          <p>Sabendo que o operador + pode adicionar uma lista de números, você pode ser tentado a converter essa expressão para:</p>
+          <pre class="programlisting">(+ 3 (5 6) 7)</pre>
+          <p>Entretanto, isso é incorreto — lembre-se, todo comando em Scheme começa e termina com parênteses, portanto, o interpretador de Scheme vai achar que estamos tentando chamar uma função de nome <span class="quote">“<span class="quote">5</span>”</span> no segundo grupo de parênteses, ao invés de somar esses dois números antes de adiciona-los ao três.</p>
+          <p>A forma correta de escrever a expressão acima seria:</p>
+          <pre class="programlisting">(+ 3 (+ 5 6) 7)</pre>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2826"></a>3.1.6. Certifique-se de que o espaçamento está correto também!</h4>
+              </div>
+            </div>
+          </div>
+          <p>Se você está familiarizado com outras linguagens de programação (C/C++, Perl ou Java você sabe que não precisa de espaço em branco em volta de operadores matemáticos para que eles formem uma expressão apropriada)</p>
+          <pre class="programlisting">
+        <code class="literal">3+5, 3 +5, 3+ 5</code>
+      </pre>
+          <p>Todas essas formas são aceitas nas linguagens com sintaxe derivada de C. Entretanto, o mesmo não é verdade para Scheme. Você precisa ter um espaço depois de um operador matemático (ou qualquer outro operador ou nome de função) em Scheme para que o mesmo seja corretamente interpretado pelo interpretador de Scheme.</p>
+          <p>Pratique um pouco com expressões matemáticas simples no terminal do Script-Fu, até que você esteja confortável com esses conceitos iniciais.</p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="kinds-of-script-fu.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-scripting.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-script-fu-tutorial-identifier.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="kinds-of-script-fu.html">2.4. Diferentes tipos de Script-Fus</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-script-fu-tutorial-identifier.html">3.2. Varáveis e funções</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

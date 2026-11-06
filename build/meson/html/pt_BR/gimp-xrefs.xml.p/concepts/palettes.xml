@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-04-05 Mr.Dust : reviewed and added 'ko'
+  2007-01-09 manuq: added es translation
+  2006-09-06 added norwegian translation by KoSt
+  2006-08-02 added italian translation by ciampix
+  2006-05-11 added Korean translation by Dust
+  2006-04-30 HdJ: Added dutch translation.
+  2006-03-05 Lexa: added german translation and made docbook compliant
+  2005-11-28 Lexa: replaced informalfigures by figures.
+  2005-05-09 nn: added french translation
+-->
+<sect1 id="gimp-concepts-palettes">
+  <title>Paletas</title>
+  <indexterm>
+    <primary>Paleta</primary>
+    <secondary>Introdução</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Cor</primary>
+    <secondary>Paletas (mapa de cores)</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Paleta indexada</primary>
+  </indexterm>
+
+  <para>A <emphasis>paleta</emphasis> é um conjunto de cores distintas. No <acronym>GIMP</acronym>, as paletas são usadas principalmente para duas finalidades:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Eles permitem que você pinte com um conjunto selecionado de cores, da mesma forma que um artista pintando quadros a óleo trabalha com cores a partir de um número limitado de tubos de tinta.</para>
+    </listitem>
+    <listitem>
+      <para>Elas formam os <quote>mapas de cores</quote> de imagens indexadas. Uma imagem indexada pode utilizar um máximo de 256 cores diferentes, mas estas podem ser quaisquer cores. O mapa de cores de uma imagem indexada é chamado de <quote>paleta indexada</quote> no <acronym>GIMP</acronym>.</para>
+    </listitem>
+  </itemizedlist>
+
+  <para>Na verdade, nenhuma dessas funções são muito usadas no uso corrente do <acronym>GIMP</acronym>: é possível fazer coisas muito sofisticadas no <acronym>GIMP</acronym> sem nunca lidar com paletas. Ainda assim, elas são algo que um usuário avançado deve compreender, e até mesmo um usuário menos avançado pode ter de pensar sobre elas em algumas situações, como por exemplo, quando se trabalha com arquivos GIF.</para>
+
+  <figure>
+    <title>A caixa de diálogo de paletas</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/palettes-list-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>Quando você instala o <acronym>GIMP</acronym>, ele fornece algumas dezenas de paletas pré-definidas, e você também pode criar novas. Algumas das paletas pré-definidas são bastante úteis, tais como a paleta <quote>Web</quote>, que contém o conjunto de cores considerado <quote>seguro para a web</quote> (nos anos 90), e muitas das paletas parecem ter sido escolhidas mais ou menos caprichosamente. Você pode acessar todas as paletas disponíveis usando o <link linkend="gimp-palette-dialog">diálogo de Paletas</link>. Este é também o ponto de partida se você quer criar uma nova paleta.</para>
+
+  <figure>
+    <title>O Editor de Paleta</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/palette-editor-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>Clicar duas vezes em uma paleta no diálogo Paletas traz o <link linkend="gimp-palette-editor-dialog">Editor de paleta</link>, mostrando as cores da paleta em que você clicou. Você pode usar isso para pintar com a paleta: clicando em uma cor para que o <acronym>GIMP</acronym> defina a cor de primeiro plano, como mostrado na área de cor da caixa de ferramentas. Segurando a tecla <keycap>Ctrl</keycap> enquanto clica, por outro lado, <acronym>GIMP</acronym> define que a cor de fundo é a cor que você clicar.</para>
+  <para>Você também pode, como o nome indica, utilizar o editor de paleta para alterar as cores em uma paleta, desde que seja uma paleta que você mesmo criou. Você não pode editar as paletas que são fornecidas com o <acronym>GIMP</acronym>, no entanto você pode duplicá-las e, em seguida, editar as cópias.</para>
+  <para>
+    When you create palettes using the Palette Editor, they are automatically
+    saved as soon as you exit <acronym>GIMP</acronym>, in the
+    <filename>palettes</filename>
+    folder of your personal <acronym>GIMP</acronym> directory.
+    Any palette files in your
+    directory, or in the system <filename>palettes</filename>
+    directory created when <acronym>GIMP</acronym> is installed, are
+    automatically loaded and
+    shown in the Palettes dialog the next time you start
+    <acronym>GIMP</acronym>. You can also
+    add other folders to the palette search path using the
+    <link linkend="gimp-prefs-folders-palettes">Palette Folders</link>
+    page of the Preferences dialog.
+  </para>
+  <para>Paletas do <acronym>GIMP</acronym> são armazenadas usando um formato de arquivo especial, em arquivos com a extensão <filename>. gpl</filename>. É um formato muito simples, e eles são arquivos em texto puro, por isso, se acontecer de você obter paletas de outra fonte, que gostaria de usar no <acronym>GIMP</acronym>, provavelmente não vai ser muito difícil de converte-los: basta dar uma olhada em qualquer arquivo <filename>gpl</filename> e você vai entender o que tem que fazer..</para>
+
+  <sect2>
+    <title>Mapa de cores</title>
+    <para>De forma confusa, o <acronym>GIMP</acronym> faz uso de dois tipos de paletas. O mais usado é do tipo mostrado na janela de paletas: paletas que existem independentemente de qualquer imagem. O segundo tipo, <emphasis>paletas indexadas</emphasis>, formam os <emphasis>mapas de cores</emphasis> de imagens indexadas. Cada imagem tem seu mapa de cores privativo, definindo o conjunto de cores disponíveis na imagem: o número máximo de cores permitidas em uma mapa de cores é 256. Estas paletas são chamadas de <quote>indexadas</quote> porque cada cor está associada a um número de índice. (Na verdade, as cores nas paletas comuns são numeradas também, mas esses números não têm significado funcional algum.)</para>
+    <figure>
+      <title>A caixa mapa de cores</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/colormap-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>O mapa de cores de uma imagem indexada é mostrado no <link linkend="gimp-indexed-palette-dialog">diálogo de mapa de cores</link>, o qual não deve ser confundido com o diálogo de paletas. O diálogo Paletas mostra uma lista de todas as paletas disponíveis, o diálogo de mapa de cores mostra o mapa de cores da imagem que está ativa, se for uma imagem indexada &ndash; caso contrário, não mostra nada.</para>
+    <para>Você pode, entretanto, criar uma paleta normal a partir das cores de uma imagem Indexada&mdash;na verdade, a partir das cores de qualquer imagem. Para fazer isso, escolha <guimenuitem>Importar paleta</guimenuitem> no botão direito do menu pop-up na janela Paletas: isso faz aparecer uma caixa de diálogo que lhe dá várias opções, incluindo a opção de importar a paleta de uma imagem. (Você também pode importar qualquer um dos degradês do <acronym>GIMP</acronym> como uma paleta). Essa possibilidade torna-se importante se você quiser criar um grupo de imagens indexadas que usem todas o mesmo conjunto de cores (para temas de sites web, jogos, etc)</para>
+    <para>Quando você converter uma imagem para modo indexado, uma parte importante do processo é a criação de uma paleta indexada para a imagem. Como isto acontece é descrito em detalhe em <xref linkend="gimp-image-convert-indexed"/>. Resumidamente, há vários métodos à escolha, um dos quais é a utilização de uma paleta especificada do diálogo de <quote>Paletas</quote>.</para>
+    <para>Assim, para resumir, paletas comuns podem ser transformadas em paletas indexadas (mapas de cores) ao converter uma imagem em modo indexado; paletas indexadas podem ser transformadas em paletas comuns importando-as para o diálogo de Paletas.</para>
+  </sect2>
+</sect1>

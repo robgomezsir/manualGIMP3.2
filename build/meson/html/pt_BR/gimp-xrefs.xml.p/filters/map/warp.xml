@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-12-09 ude: moved "activate filter" paras to separate sect3
+  2007-09-05 AntI: added 'es'
+  2007-05-08 KoSt: added 'no'
+  2007-02-11 lexa: translated advanced options to de
+  2007-01-07 j.h: wrote More Advanced Options
+  2006-12-20 n.n.: added it translation
+  2006-12-19 lexa: added de translation
+  2005-11-05: created by julien hardelin
+-->
+<sect2 id="plug-in-warp">
+  <title>Deformar</title>
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Mapeamento</secondary>
+    <tertiary>Deformar</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Deformar</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <para>
+      This filter displaces pixels of active layer or selection according to
+      the gray levels of a <emphasis>Displacement map</emphasis>. Pixels are
+      displaced according to the gradient slope in the displacement map.
+      Pixels corresponding to solid areas are not displaced; the higher the
+      slope, the higher the displacement.
+    </para>
+    <figure>
+      <title>
+        From left to right: original image, displacement map, displaced image
+      </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/example-map-warp1.png"/>
+        </imageobject>
+        <caption>
+          <para>Áreas sólidas na imagem usada como mapa de deslocamento não causam nenhum deslocamento. Um degradê na imagem, que é percebido como um gradiente no sentido matemático: a direção de maior variação das cores, resulta num deslocamento uniforme. A direção de deslocamento é perpendicular a direção do gradiente (ângulo = 90°).</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Com um gradiente não linear</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/example-map-warp2.png"/>
+        </imageobject>
+        <caption>
+          <para>Um gradiente não linear leva a curvas e redemoinhos.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Com um gradiente complexo</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/example-map-warp3.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            And a complex gradient, such as the
+            <link linkend="gimp-filter-noise-solid">Solid Noise</link>
+            filter can create, gives a swirl effect.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Esse filtro oferece a possibilidade de criar uma máscara para uma parte da imagem, para protege-la da ação do próprio filtro.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Map</guisubmenu>
+        <guimenuitem>Warp…</guimenuitem>
+      </menuchoice>.
+      This filter has no Preview.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro Deformar</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/map/warp.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <title>Opções básicas</title>
+      <varlistentry>
+        <term>Tamanho do passo</term>
+        <listitem>
+          <para><quote>Tamanho do passo</quote> é a distância de deslocamento para cada interação do filtro. Um valor de 10 é necessário para resultar num deslocamento de um pixel. Esse valor pode ser negativo para inverter a direção de deslocamento.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Interações</term>
+        <listitem>
+          <para>O número de repetições do efeito ao aplicar o filtro.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Nas bordas</term>
+        <listitem>
+          <para>
+            Because of displacement, a part of pixels are driven over the
+            borders of layer or selection, and, on the opposite side, pixels
+            places are emptying. The four following options allow you to fix
+            this issue:
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>Dar a volta</term>
+              <listitem>
+                <para>O que sai por um lado aparece de volta na imagem entrando pelo lado oposto (essa é a opção padrão).</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Manchar</term>
+              <listitem>
+                <para>
+                  Emptying places are filled with a spreading of the
+                  neighboring image line.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Preto</term>
+              <listitem>
+                <para>Lugares que se tornam vazios são preenchidos com a cor preta.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Cor de frente</term>
+              <listitem>
+                <para>Lugares que estão ficando vazios são preenchidos com a cor de frente conforme selecionada na caixa de ferramentas.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mapa de deslocamento</term>
+        <listitem>
+          <para>
+            To be listed in this file picker, the displacement map, which
+            should be a grayscale image, must be <emphasis>present on your
+            screen when you call this filter and must have the same size as
+            the original image</emphasis>.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Opções avançadas</title>
+      <varlistentry>
+        <term>Tamanho da mistura</term>
+        <listitem>
+          <para>
+            Once all pixels are displaced, this option scatters them randomly,
+            giving grain to the image. The higher this value (0.00-100.00),
+            the thinner the grain.
+          </para>
+          <figure>
+            <title>Com uma mistura de tamanho 3,00:</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/example-map-warp4.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ângulo de rotação</term>
+        <listitem>
+          <para>
+            This option sets the displacement angle of pixels according to the
+            slope direction of the gradient. Previous examples have been
+            created with a vertical gradient and a 90° angle: so, pixels were
+            displaced horizontally and nothing went out of the image borders.
+            Here is an example with a 10° angle and 6 iterations:
+          </para>
+          <figure>
+            <title>Com um ângulo de 10° e seis interações:</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/example-map-warp5.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  Displacement is made according to a 10° angle against
+                  vertical. Pixels going out the lower border on every
+                  iteration are going in through the upper border (Wrap
+                  option checked), giving a dotted line.
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Subpassos</term>
+        <listitem>
+          <!-- CHECK: I'm unsure whether this is (a) makes senses, and
+               (b) is correct... :-| (ude, 2010-07-19) -->
+          <para>Se você especificar um valor &gt; 1, o vetor de deslocamento é computado em vários sub-passos, resultando em um maior controle do processo de deslocamento.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mapa de magnitude</term>
+        <listitem>
+          <para>
+            In addition to displacement map, you can add a Magnitude map. This
+            map should also be a grayscale image, with the same size as the
+            source image and which must be present on your screen when you
+            call the filter. This map gives more or less strength to the
+            filter on some parts of the image, according to the gray levels of
+            this magnitude map. Image areas corresponding to white parts of
+            this map will undergo all the strength of the filter. Image areas
+            corresponding to black parts of the map will be spared by the
+            filter. Intermediate gray levels will lessen the filter action on
+            corresponding areas of the image.
+            <guilabel>Use&nbsp;magnitude&nbsp;map</guilabel> must be checked
+            for that.
+          </para>
+          <figure>
+            <title>Exemplo de mapa de magnitude:</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/example-map-warp6.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  From left to right: original image, displacement map,
+                  magnitude map, after applying <quote>Warp</quote>
+                  filter. You can see that the black areas of the magnitude
+                  map prevent the filter from taking action.
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Mais configurações avançadas</title>
+      <para>Essas opções extras permitem que você adicione dois outros mapas: um mapa de gradiente e/ou um mapa de vetor.</para>
+      <note>
+        <para>Para testar essas opções sozinhas, é melhor usar uma imagem em cor sólida para todos os outros mapas.</para>
+      </note>
+      <varlistentry>
+        <term>Escala de gradiente </term>
+        <listitem>
+          <para>
+            Using a gradient map, (this map should also be a grayscale
+            image), the displacement of pixels depends on the direction of
+            grayscale transitions. The <guilabel>Gradient scale</guilabel>
+            option lets you set how much the grayscale variations will
+            influence the displacement of pixels. On every iteration, the
+            filter works on the whole image, not only on the red object: this
+            explains blurredness.
+          </para>
+          <figure>
+            <title>Exemplo de escala de gradiente</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/example-map-warp7.png"/>
+              </imageobject>
+              <caption>
+                <para>Da esquerda pra direita: Imagem original, mapa de gradiente, filtro aplicado.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>
+            In the example above, <quote>Warp</quote> filter is applied with a
+            gradient map (Gradient scale = 10.0). The gradient is oblique,
+            from top left to right bottom. The part of the image corresponding
+            to the gradient is moved obliquely, 90° rotated (Rotation angle
+            90° in Advanced Options).
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Vector magnitude</term>
+        <listitem>
+          <para>Com esse mapa, o deslocamento depende do ângulo que você configura na caixa de entrada <guilabel>Ângulo</guilabel>. 0° é para cima. Ângulos aumentam no sentido anti-horário. O mapa de controle de <emphasis>vetor de magnitude</emphasis> determina por quantos pixels a imagem será movida em cada interação.</para>
+          <figure>
+            <title>Vector magnitude example</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/example-map-warp8.png"/>
+              </imageobject>
+              <caption>
+                <para>Da esquerda pra direita: imagem original, mapa de deslocamento, filtro aplicado.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>
+            In the above example, <quote>Warp</quote> filter is applied with a
+            Vector magnitude. Gradient is vertical, from top to bottom. Vector
+            angle is 45°. The image is moved obliquely, 45° to the top left
+            corner. The image is blurred because every iteration works on the
+            whole image, and not only on the red bar.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ângulo</term>
+        <listitem>
+          <para>Ângulo para o Vetor de magnitude (veja acima).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

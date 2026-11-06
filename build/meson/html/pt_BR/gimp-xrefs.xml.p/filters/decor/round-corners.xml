@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-10-11 KoSt: added 'no'
+  2007-09-04 AntI: Added 'es'
+  2007-09-04 alex falappa: added it
+  2007-09-03 ude: created en, de
+-->
+<sect2 id="script-fu-round-corners">
+  <title>Arredondar cantos</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Decoração</secondary>
+    <tertiary>Arredondar cantos</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Arredondar cantos</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Arredondar cantos</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/decor-taj-round-corners.png"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro arredonda os cantos de uma imagem, adicionando, opcionalmente, uma camada de fundo e uma sombra.</para>
+    <para>O filtro funciona em imagens RGB e em tons de cinza que contenham uma única camada. Ele cria uma cópia da imagem, ou pode, opcionalmente, atuar na imagem original. Ele usa a cor de fundo atual para criar a camada de fundo.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Decor</guisubmenu>
+        <guimenuitem>Round Corners…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de <quote>Arredondar cantos</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/decor/round-corners.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Raio dos cantos</term>
+        <listitem>
+          <para>O arredondamento dos cantos é feito selecionando-se um quarto de círculo em cada canto, e removendo a área que não está coberta por esta seleção. O <quote>Raio dos cantos</quote> é o raio deste círculo de construção.</para>
+          <para>
+            In the examples below, the filter was applied to a 100×100 pixels
+            image, with varying edge radius. For radius = 50, the four
+            quadrants just form a circle with diameter = 100, which exactly
+            fits into the original image outline. A radius greater than 50 is
+            possible, but look what happens:
+          </para>
+          <figure>
+            <title>Exemplos do raio dos cantos</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/round-corners-rad15.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  A 100×100 pixels image, edge radius: 15 (default).
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/round-corners-rad35.png"/>
+              </imageobject>
+              <caption>
+                <para>Raio dos cantos: 35.</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/round-corners-rad50.png"/>
+              </imageobject>
+              <caption>
+                <para>Raio dos cantos: 50.</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/round-corners-rad65.png"/>
+              </imageobject>
+              <caption>
+                <para>Raio dos cantos: 65. Ups!</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Adicionar sombra de projeção</term>
+        <listitem>
+          <para>Quando esta opção está ligada, o filtro vai criar uma sombra atrás da sua imagem, depois de criar os cantos arredondados.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Deslocamento X/Y da sombra</term>
+        <listitem>
+          <para>Os deslocamentos X e Y determinam onde a sombra será colocada em relação a imagem. O deslocamento é medido em pixels. Valores altos fazem parecer que a sombra está longe, e valores baixos vão  fazer parecer que a sombra está próxima da imagem.</para>
+          <figure>
+            <title>Exemplos de deslocamento da sombra</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/round-corners-shadow1.png"/>
+              </imageobject>
+              <caption>
+                <para>Deslocamento X da sombra: 8, Deslocamento Y: 8 (padrão).</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/round-corners-shadow2.png"/>
+              </imageobject>
+              <caption>
+                <para>Deslocamento X da sombra: 16, Deslocamento Y: 4.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>Note que tanto os deslocamentos da sombra quanto o raio de desfocagem ficam limitados à área de fundo.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio de desfoque</term>
+        <listitem>
+          <para>Quando <guilabel>Adicionar sombra de projeção</guilabel> está ligada, você pode selecionar um raio de desfoque, que será usado pelo filtro de <link linkend="script-fu-drop-shadow">Sombra projetada</link>. A imagem será tornada maior  em ambas as dimensões dependendo das configurações de raio de desfoque e deslocamento da sombra.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Adicionar fundo</term>
+        <listitem>
+          <para>Quando você seleciona esta opção (ela fica ligada por padrão), o filtro irá adicionar uma camada de fundo abaixo da camada existente, preenchida com a cor de fundo atual. O tamanho desta camada dependerá do raio de desfoque e dos deslocamentos da sombra.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Trabalhar em uma cópia</term>
+        <listitem>
+          <para>Se selecionada, o filtro criará uma nova janela contendo uma cópia da imagem com o filtro aplicado. A imagem original permanece inalterada.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

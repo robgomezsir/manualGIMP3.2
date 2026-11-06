@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4. A Python plug-in writing Tutorial</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-scripting.html" title="Capítulo 13. Criação de scripts e desenvolvimento de plug-ins" />
+    <link rel="prev" href="gimp-using-script-fu-tutorial-result.html" title="3.7. Seu script e seu funcionamento" />
+    <link rel="next" href="gimp-function-reference.html" title="Parte III. Referência das funções" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4. A Python plug-in writing Tutorial</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-script-fu-tutorial-result.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 13. Criação de scripts e desenvolvimento de plug-ins</span>
+        <nav> <a accesskey="n" href="gimp-function-reference.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-using-python-plug-in-tutorial"></a>4. A Python plug-in writing Tutorial</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id14114" class="indexterm"></a>
+      <p>
+    This tutorial will teach you the basics about writing a Python plug-in for
+    GIMP 3.0. You are expected to already have some basic knowledge about
+    writing Python in general. If not, there are enough Python courses online,
+    we are not going to duplicate them here.
+  </p>
+      <p>
+    GIMP plug-ins in Python (and other languages too) are called from within
+    GIMP to perform certain actions. To be able to know how to communicate with,
+    and call the plug-in, GIMP needs to know by what name to call it and what
+    functions it supports.
+  </p>
+      <p>
+    There are certain requirements regarding a plug-in's filename and directory
+    name, which have to be the same. For more details see
+    <a class="link" href="gimp-scripting.html#gimp-plugins-install" title="1.3. Installing New Plug-Ins">Installing New Plug-Ins</a>.
+  </p>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-tutorial-python-plug-in-basics"></a>4.1. The basic elements of a plug-in for GIMP</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      We will discuss the basic parts of a plug-in that are required, or at
+      least very common for working with GIMP.
+      </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+            Required on Linux and macOS, and common practice on Windows, is to
+            start with a so-called shebang or hashbang, an encoding, and
+            a copyright notice.
+            The first line is a
+            <a class="ulink" href="https://en.wikipedia.org/wiki/Shebang_(Unix)" target="_top">shebang</a>,
+            which specifies how this script can be executed.
+            The next line specifies the encoding of the
+            Python file. We recommend utf-8. Usually this is followed by several
+            lines specifying the license under which you publish the script and
+            a short description of what the script does. We will not go deeper
+            into this, since this is common to Python in general.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            Importing required modules to get access to GIMP and
+            optionally GEGL functions.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            Declare a class with several pre-defined functions that you need to
+            adjust, so that GIMP knows what functions are available in your
+            plug-in, and what functionality they support. We will go into more
+            detail about this below.
+          </p>
+            </li>
+            <li class="listitem">
+              <p>
+            A call that starts your plug-in, or queries its capabilities,
+            depending on the arguments sent to it by GIMP.
+          </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+    </p>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2860"></a>4.1.1. Required modules</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        To be able to access GIMP functions, we start with
+        <code class="function">import gi</code>. This module can figure out what
+        functions are available in each module defined through <span class="quote">“<span class="quote">object
+        introspection</span>”</span>. What this means for us, is that we import all
+        GIMP related modules that we may need through calls to
+        <code class="function">gi.repository</code>.
+      </p>
+          <p>
+        For basic functionality, only the Gimp and GimpUi modules may be
+        enough. If you want to run your plug-in from the command line, you
+        don't even need GimpUi. Let's start with an example.
+      </p>
+          <pre class="programlisting">
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
+#   GIMP - The GNU Image Manipulation Program
+#   Copyright (C) 1995 Spencer Kimball and Peter Mattis
+#
+#   gimp-tutorial-plug-in.py
+#   sample plug-in to illustrate the Python plug-in writing tutorial
+#   Copyright (C) 2023 Jacob Boerema
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+
+import sys
+
+import gi
+gi.require_version('Gimp', '3.0')
+from gi.repository import Gimp
+gi.require_version('GimpUi', '3.0')
+from gi.repository import GimpUi
+from gi.repository import GLib
+      </pre>
+          <p>
+        We start with importing sys, which we need at the end for access to
+        <code class="function">sys.argv</code>, following that
+        <code class="function">import gi</code> tells Python that it needs to load
+        the gi module. This module is used to enable access to GIMP specific
+        functions through <span class="quote">“<span class="quote">object introspection</span>”</span>.
+      </p>
+          <p>
+        In the next line we tell gi that we require GIMP's API version to
+        be version 3.0. (This plug-in won't work with older versions of
+        GIMP.) The following line requests to import all functions, classes,
+        etc. from the Gimp module.
+      </p>
+          <p>
+        The next two lines, do the same thing for GimpUi. GimpUi contains
+        all the interface related elements for GIMP. If you plan to make
+        a plug-in that is only going to be called from the command line, then
+        you won't need this. We finish with importing GLib, which we need later
+        for access to GLib.Error.
+      </p>
+          <p>
+        There are other optional modules that you can use, too, like Gegl
+        and many others, but we won't go into that here.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2861"></a>4.1.2. Define your plug-in class</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        GIMP needs to knows what functions are available, what functionality
+        they support, and what menu location to use. For that we define a
+        class that is derived from the <code class="function">Gimp.PlugIn</code>
+        class.
+      </p>
+          <p>
+        A minimal plug-in needs at least the following functions defined
+        in this class:
+        </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>
+              A <code class="function">do_query_procedure</code> method, which GIMP calls
+              to find out the names of the procedures that can be called in
+              this plug-in.
+            </p>
+              </li>
+              <li class="listitem">
+                <p>
+              A <code class="function">do_set_i18n</code> method, which GIMP calls to
+              find out if your plug-in supports translations.
+            </p>
+              </li>
+              <li class="listitem">
+                <p>
+              A <code class="function">do_create_procedure</code> method, which GIMP
+              calls to start one of your plug-ins functions.
+              When this is called you should initialize certain information for
+              GIMP. You start by creating a procedure that tells GIMP the name
+              of the Python function to call to start your plug-in. Then you
+              supply additional information, like what types of images your
+              plug-in supports, where in the menu should your plug-in be found,
+              and other optional settings.
+            </p>
+              </li>
+              <li class="listitem">
+                <p>
+              The actual function (called procedure by GIMP) that you specified
+              above. We often call this <code class="function">run</code>, but it can
+              have any name allowed by Python. This function is where you will
+              add your own code to apply your desired effects.
+            </p>
+              </li>
+            </ul>
+          </div>
+          <p>
+      </p>
+          <p>
+        We will go into a little more detail now. Not included below is
+        the first part of the Python code that was shown above. This only
+        shows the basic layout of your class.
+      </p>
+          <pre class="programlisting">
+class MyFirstPlugin (Gimp.PlugIn):
+    def do_query_procedures(self):
+        return [ "jb-plug-in-first-try" ]
+
+    def do_set_i18n (self, name):
+        return False
+
+    def do_create_procedure(self, name):
+        procedure = Gimp.ImageProcedure.new(self, name,
+                                            Gimp.PDBProcType.PLUGIN,
+                                            self.run, None)
+
+        procedure.set_image_types("*")
+
+        procedure.set_menu_label("My first Python plug-in")
+        procedure.add_menu_path('&lt;Image&gt;/Filters/Tutorial/')
+
+        procedure.set_documentation("My first Python plug-in tryout",
+                                    "My first Python 3 plug-in for GIMP 3",
+                                    name)
+        procedure.set_attribution("Your name", "Your name", "2023")
+
+        return procedure
+
+    def run(self, procedure, run_mode, image, drawables, config, run_data):
+        Gimp.message("Hello world!")
+        # do what you want to do, then, in case of success, return:
+        return procedure.new_return_values(Gimp.PDBStatusType.SUCCESS, GLib.Error())
+      </pre>
+          <p>
+        Let's take a closer look at <code class="function">do_query_procedures</code>.
+        In the line <code class="function">return [ "jb-plug-in-first-try" ]</code>
+        we tell GIMP what the name of our procedure is: we call it
+        "jb-plug-in-first-try". This is the name that will be shown in GIMP's
+        <a class="link" href="plug-in-dbbrowser.html" title="12.10. O navegador de procedimentos">Procedure Browser</a>.
+      </p>
+          <p>
+        You can have more than one procedure defined in a plug-in. In that case,
+        you would list all names, separated by a comma.
+      </p>
+          <p>
+        It is good practice to start all your procedures with your initials
+        or some other recognizable and unique tag. This way, it is less
+        likely that your name will be the same as someone elses plug-in,
+        which may confuse GIMP. Besides that, you are free to name it the
+        way you like.
+      </p>
+          <p>
+        Next we tell GIMP that we don't support translations by returning
+        False in the call to <code class="function">do_set_i18n</code>. What to do when
+        you want your plug-in to be translated is beyond the scope of this
+        tutorial.
+      </p>
+          <p>
+        The <code class="function">do_create_procedure</code> method is where most of
+        the initializing for GIMP is done.
+      </p>
+          <div class="procedure">
+            <a id="id14177"></a>
+            <p class="title">
+              <strong>Procedimento 13.1. Setting up do_create_procedure</strong>
+            </p>
+            <ol class="procedure" type="1">
+              <li class="step">
+                <p>
+            If you define more than one procedure in your plug-in, you first
+            need to check the "name" parameter to see which procedure is being
+            called by GIMP. We won't go into that here.
+          </p>
+                <p>
+            To initialize your plug-in procedure, we first need to create it and
+            fill in the name of our Python function that will do the actual
+            work. We do that by calling
+            <a class="ulink" href="https://developer.gimp.org/api/3.0/libgimp/ctor.ImageProcedure.new.html" target="_top">Gimp.ImageProcedure.new</a>.
+          </p>
+                <pre class="programlisting">
+    procedure = Gimp.ImageProcedure.new(self, name,
+                                        Gimp.PDBProcType.PLUGIN,
+                                        self.run, None)
+          </pre>
+                <p>
+            In this case we define the name of our plug-in as
+            <code class="function">self.run</code>. When we qualify our function
+            with "self.", it means that it is a method inside our class.
+            If you prefer, you can also define it as a regular function
+            outside your class, in that case you would omit "self.".
+            Naming it "run" is not required, you can give it any name
+            that Python accepts.
+          </p>
+              </li>
+              <li class="step">
+                <p>
+            Next we will tell GIMP what types of images this plug-in can work
+            with by calling
+            <a class="ulink" href="https://developer.gimp.org/api/3.0/libgimp/method.Procedure.set_image_types.html" target="_top">procedure.set_image_types</a>.
+            In case the type of image doesn't matter, we use "*", which means
+            all types supported by GIMP.
+            Other examples:
+          </p>
+                <div class="orderedlist">
+                  <ol class="orderedlist" type="1">
+                    <li class="listitem">
+                      <p>
+                "RGB*,GRAY*", where the "*" here means we support
+                both the versions with and without A(lpha) channel.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                "INDEXED", plug-in only works on indexed images, without alpha
+                channel.
+              </p>
+                    </li>
+                    <li class="listitem">
+                      <p>
+                "RGBA", plug-in only works on RGB image with alpha channel.
+              </p>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li class="step">
+                <p>
+            Being able to start your plug-in from GIMP's menu is usually a good
+            idea. We start by defining a descriptive label for the menu entry:
+            <a class="ulink" href="https://developer.gimp.org/api/3.0/libgimp/method.Procedure.set_menu_label.html" target="_top">procedure.set_menu_label</a>.
+          </p>
+              </li>
+              <li class="step">
+                <p>
+            Followed by specifying where in the menu it should appear:
+            <a class="ulink" href="https://developer.gimp.org/api/3.0/libgimp/method.Procedure.add_menu_path.html" target="_top">procedure.add_menu_path</a>.
+            In this case we tell it to add our plug-in in the Filters menu,
+            under the Tutorial category (submenu).
+          </p>
+              </li>
+              <li class="step">
+                <p>
+            If you like you can also add an extra help tip, by using
+            <a class="ulink" href="https://developer.gimp.org/api/3.0/libgimp/method.Procedure.set_documentation.html" target="_top">procedure.set_documentation</a>,
+            and you can set your name as author of the plug-in by using
+            <a class="ulink" href="https://developer.gimp.org/api/3.0/libgimp/method.Procedure.set_attribution.html" target="_top">procedure.set_attribution</a>.
+          </p>
+              </li>
+              <li class="step">
+                <p>
+            The last line in create procedure is
+            <code class="function">return procedure</code>, which sends the information
+            added above back to GIMP. Following this, GIMP will call your
+            run procedure.
+          </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2862"></a>4.1.3. Adding the main entry point to your plug-in</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        Every plug-in gets started by a call to <code class="function">Gimp.main</code>.
+      </p>
+          <pre class="programlisting">
+        Gimp.main(MyFirstPlugin.__gtype__, sys.argv)
+      </pre>
+          <p>
+        The only thing you need to change in this line for your plug-in, is the
+        name of your plug-in class, here called <span class="quote">“<span class="quote">MyFirstPlugin</span>”</span>.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2863"></a>4.1.4. The complete Python plug-in</h4>
+              </div>
+            </div>
+          </div>
+          <p>Below we present the entire python script, which should run,
+        provided it is given the correct name in a directory with the same
+        name in a location that GIMP knows of. It will show the message
+        <span class="quote">“<span class="quote">Hello world!</span>”</span> in the error console or in a popup dialog.
+      </p>
+          <pre class="programlisting">
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
+#   GIMP - The GNU Image Manipulation Program
+#   Copyright (C) 1995 Spencer Kimball and Peter Mattis
+#
+#   gimp-tutorial-plug-in.py
+#   sample plug-in to illustrate the Python plug-in writing tutorial
+#   Copyright (C) 2023 Jacob Boerema
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation; either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
+
+import sys
+
+import gi
+gi.require_version('Gimp', '3.0')
+from gi.repository import Gimp
+gi.require_version('GimpUi', '3.0')
+from gi.repository import GimpUi
+
+from gi.repository import GLib
+
+class MyFirstPlugin (Gimp.PlugIn):
+    def do_query_procedures(self):
+        return [ "jb-plug-in-first-try" ]
+
+    def do_set_i18n (self, name):
+        return False
+
+    def do_create_procedure(self, name):
+        procedure = Gimp.ImageProcedure.new(self, name,
+                                            Gimp.PDBProcType.PLUGIN,
+                                            self.run, None)
+
+        procedure.set_image_types("*")
+
+        procedure.set_menu_label("My first Python plug-in")
+        procedure.add_menu_path('&lt;Image&gt;/Filters/Tutorial/')
+
+        procedure.set_documentation("My first Python plug-in tryout",
+                                    "My first Python 3 plug-in for GIMP 3.0",
+                                    name)
+        procedure.set_attribution("Your name", "Your name", "2023")
+
+        return procedure
+
+    def run(self, procedure, run_mode, image, drawables, config, run_data):
+        Gimp.message("Hello world!")
+        # do what you want to do, then, in case of success, return:
+        return procedure.new_return_values(Gimp.PDBStatusType.SUCCESS, GLib.Error())
+
+Gimp.main(MyFirstPlugin.__gtype__, sys.argv)
+      </pre>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-script-fu-tutorial-result.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-scripting.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-function-reference.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-script-fu-tutorial-result.html">3.7. Seu script e seu funcionamento</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-function-reference.html">Parte III. Referência das funções</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

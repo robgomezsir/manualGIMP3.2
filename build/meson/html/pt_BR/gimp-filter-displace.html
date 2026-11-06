@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>13.3. Deslocar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-map.html" title="13. Filtros de mapeamento" />
+    <link rel="prev" href="gimp-filter-bump-map.html" title="13.2. Mapa de relevo" />
+    <link rel="next" href="gimp-filter-fractal-trace.html" title="13.4. Traçar com fractal" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>13.3. Deslocar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-bump-map.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>13. Filtros de mapeamento</span>
+        <nav> <a accesskey="n" href="gimp-filter-fractal-trace.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-displace"></a>13.3. Deslocar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id57624" class="indexterm"></a>
+      <a id="id57628" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4840"></a>13.3.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4841"></a>
+          <p class="title">
+            <strong>Figura 17.293. Exemplos de deslocamento</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/map-displace7a.png" alt="Exemplos de deslocamento" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/map-displace7b.png" alt="Exemplos de deslocamento" />
+              <div class="caption">
+                <p>
+            The displacement map has four gray stripes with values of 210,
+            160, 110, and 60, respectively.
+          </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/map-displace7c.png" alt="Exemplos de deslocamento" />
+              <div class="caption">
+                <p>
+            Horizontal displacement coefficient is 30. Vacated pixels are black.
+            The image areas corresponding to light gray (128) were displaced
+            19 and 8 pixels to the left. The image areas corresponding to dark
+            gray (127) were displaced 4 and 15 pixels to the right.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter uses a <span class="quote">“<span class="quote">displace-map</span>”</span>
+      to displace corresponding pixels of the image. This filter displaces
+      the content of the specified drawable (active layer or selection) by
+      the amounts specified in Horizontal and vertical Displacement multiplied by
+      the intensity of the corresponding pixel in the <span class="quote">“<span class="quote">displace
+      map</span>”</span> drawables.
+      <span class="emphasis"><em>
+        Both Horizontal and Vertical displace maps should be grayscale images
+        and have the same size as the drawable
+      </em></span>. This filter allows interesting distortion effects.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4842"></a>13.3.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Map</span> → <span class="guimenuitem">Displace…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-filter-displace-general-options"></a>13.3.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4843"></a>
+          <p class="title">
+            <strong>Figura 17.294. Opções do filtro deslocar</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/map/displace-dialog.png" alt="Opções do filtro deslocar" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Horizontal/Radial, </span>
+              <span class="term">Vertical/Angular</span>
+            </dt>
+            <dd>
+              <p>
+            Clicking on one of the image buttons opens a small file browser with
+            two panels where you can select a
+            <a class="ulink" href="https://en.wikipedia.org/wiki/Displacement_mapping" target="_top">displacement
+            map</a>. The left panel shows images present on your screen. The
+            right panel shows the layers of the selected image. Double click on
+            the wanted layer to select the map.
+          </p>
+              <p>
+            You can select different maps for Horizontal and Vertical
+            displacements.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Modo de deslocamento</span>
+            </dt>
+            <dd>
+              <p>
+            You can choose working in
+            <a class="link" href="gimp-filter-displace.html#gimp-filter-displace-cartesian" title="13.3.3.1. Modo de deslocamento cartesiano">Cartesian</a>
+            coordinates, where pixels are displaced in Horizontal or Vertical
+            direction, or working in
+            <a class="link" href="gimp-filter-displace.html#gimp-filter-displace-polar" title="13.3.3.2. Modo de deslocamento Polar">Polar</a> coordinates,
+            where the image is pinched and whirled by displacing pixels in
+            radial or tangent direction.
+          </p>
+              <p>Veja as próximas seções para detalhes sobre essas opções.</p>
+            </dd>
+            <dt>
+              <span class="term">Sampler</span>
+            </dt>
+            <dd>
+              <p>
+            Interpolation methods are described in
+              <a class="link" href="gimp-tools-transform.html#gimp-tool-interpolation-methods">Transform
+                tools</a>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Abyss policy</span>
+            </dt>
+            <dd>
+              <p>
+            These options allows you to set displacement behavior on active
+            layer or selection edges. They are described in
+            <a class="xref" href="gimp-tool-warp.html#abyss-policy">Abyss policy</a>
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="gimp-filter-displace-cartesian"></a>13.3.3.1. Modo de deslocamento cartesiano</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4844"></a>
+            <p class="title">
+              <strong>Figura 17.295. Opções do filtro Deslocar (Cartesiano)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/displace-cartesian.png" alt="Opções do filtro Deslocar (Cartesiano)" />
+                <div class="caption">
+                  <p>
+              Horizontal and vertical displacements are 20 pixels
+            </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Em ambos os modos, a direção e quantidade de deslocamento dependem da intensidade do pixel correspondente no mapa de intensidade.</p>
+          <p>O mapa, que é tratado como uma imagem em tons de cinza, mesmo que seja colorida, tem 256 níveis de cinza (de 0 até 255), e o valor médio teórico é 127,5. O filtro desloca pixels na imagem correspondentes a pixels no mapa com valores menores que 127,5 em uma direção, e pixels com valores entre de 128 até 255 na direção oposta.</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Horizontal displacement, </span>
+                <span class="term">Vertical displacement</span>
+              </dt>
+              <dd>
+                <p>
+              If the respective option is activated, image pixels
+              corresponding to pixels from 0 to 127 will be displaced to the
+              right for Horizontal, downwards for Vertical, image pixels
+              corresponding to pixels from 128 to 255 will be displaced to the
+              left for Horizontal, upwards for Vertical.
+            </p>
+                <p>
+              What you enter in input boxes, directly or by using arrow-head
+              buttons, is not the actual displacement. It's a coefficient used
+              in a
+              <span><img src="images/math/displace0.png" /></span>
+              formula, which gives the pixel actual displacement according to
+              the scaled intensity
+              <a href="#ftn.id57721" class="footnote" id="id57721"><sup class="footnote">[11]</sup></a>
+              of the corresponding pixel in map, modulated by the coefficient
+              you enter. Introducing intensity into formula is important: this
+              allows progressive displacement by using a gradient map.
+            </p>
+                <p>Este valor pode ser positivo ou negativo. O valor varia em limites até o dobro das dimensões da imagem.</p>
+                <p>
+              When you click on the drop-down list button, a list appears
+              where you can select a displacement map. To be present in this
+              list, an image must respect two conditions. First, this image
+              must be present on your screen when you call filter. Then, this
+              image must have the same dimensions as the original image. Most
+              often, it will be a duplicate original image, which is
+              transformed to gray scale and modified appropriately, with a
+              gradient. It may be possible to use RGB images, but color
+              luminosity is used making result prevision difficult. Map may be
+              different in horizontal and vertical directions.
+            </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="gimp-filter-displace-polar"></a>13.3.3.2. Modo de deslocamento Polar</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4845"></a>
+            <p class="title">
+              <strong>Figura 17.296. Opções do filtro Deslocar (Polar)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/map/displace-polar.png" alt="Opções do filtro Deslocar (Polar)" />
+                <div class="caption">
+                  <p>
+              Polar mode: Pinch only
+              (<span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/gimp-vchain.svg" width="16" alt="Opções do filtro Deslocar (Polar)" /></span>
+              </span>
+              chain broken)
+            </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Afundar</span>
+              </dt>
+              <dd>
+                <p>Se esta opção estiver ativada, as coordenadas radiais (isso é, a distância de um ponto ao ponto central da imagem, o <span class="quote">“<span class="quote">polo</span>”</span> central) dos pixels serão alteradas. Os pixels correspondentes a pixels no mapa com intensidade entre 0 e 127 se deslocarão para fora, e os pixels mapeados para pontos com intensidade entre 128 e 255 se deslocarão em direção ao centro.</p>
+                <p>
+              For the values and the displacement map see above
+              (<span class="quote">“<span class="quote">Horizontal/Vertical displacement</span>”</span>).
+            </p>
+                <p>O deslocamento é independente da distância polar, todos os pixels são deslocados pela mesma quantia. Então a imagem não será só esticada ou comprimida, mas também distorcida:</p>
+                <div class="mediaobject">
+                  <img src="images/filters/examples/map-displace-pinch.png" />
+                  <div class="caption">
+                    <p>Distorção da imagem pela opção Afundar</p>
+                  </div>
+                </div>
+                <p>
+              A 160×120 pixels image, plain white displacement map, and
+              displacement coefficient 20.0: this results in a 20 pixels
+              displacement towards center. This is a horizontal reduction in
+              size by 25%, vertical by 33%, and diagonal by 20%, so the image
+              will be distorted.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Redemoinho</span>
+              </dt>
+              <dd>
+                <p>Se esta opção for ativada, as coordenadas angulares dos pixels da imagem serão <span class="quote">“<span class="quote">deslocadas</span>”</span> por um valor dependendo dos pixels do mapa. Para um mapa de deslocamento de cor sólida, a imagem será rotacionada. Para mapas mais complexos, o efeito será como na forma de um redemoinho.</p>
+                <p>Os pixels correspondentes a pixels no mapa com intensidade entre 0 e 127 se deslocarão no sentido anti-horário, e os pixels mapeados para pontos com intensidade entre 128 e 255 se deslocarão no sentido horário.</p>
+                <p>Para os valores e o mapa de deslocamento, veja acima.</p>
+              </dd>
+            </dl>
+          </div>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Nota]" src="images/note.png" />
+                </td>
+                <th align="left">Nota</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+          For a plain, non neutral map, if displace mode <span class="quote">“<span class="quote">Polar</span>”</span>
+          is enabled, this filter works like
+          <a class="link" href="gimp-filter-whirl-pinch.html" title="5.16. Redemoinhos e marteladas">Whirl and Pinch</a>.
+        </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4846"></a>13.3.3.3. Center displacement</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+        This option is used with Polar displacement: you can fix the displacement
+        center.
+      </p>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4847"></a>13.3.4. Usando um degradê para curvar um texto</h4>
+            </div>
+          </div>
+        </div>
+        <p>Siga os seguintes passos:</p>
+        <div class="procedure">
+          <ol class="procedure" type="1">
+            <li class="step">
+              <p>Comece criando uma nova imagem, do tamanho que quiser</p>
+            </li>
+            <li class="step">
+              <p>
+          Duplicate this image. Activate this duplicate and make it
+          grayscale
+          (<span class="guimenu">Image</span> → <span class="guisubmenu">Mode</span> → <span class="guimenuitem">Grayscale</span>).
+          Fill it with the wanted gradient. This image will be your
+          <span class="emphasis"><em>Displacement map</em></span>, with the dimensions of
+          original image.
+        </p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/2zinnias-c.png" />
+              </div>
+            </li>
+            <li class="step">
+              <p>
+          Activate original image. Create a <span class="emphasis"><em>Text Layer</em></span>
+          with your text. Set layer to image size: right-click on the layer
+          in Layers dialog and, in the pop-up menu, click on <span class="quote">“<span class="quote">Layers to
+          image size</span>”</span>. Note that letters in text layer lie on a
+          transparent background; now this filter doesn't displace
+          transparent pixels. Only letters will be displaced.
+        </p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/2zinnias-i.png" />
+              </div>
+            </li>
+            <li class="step">
+              <p>Com a camada de texto ativa, abra a janela do filtro de Deslocar. Ajuste os parâmetros — em particular, o coeficiente de deslocamento, de acordo com o resultado na pré-visualização. Clique em <span class="guilabel">OK</span>.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="mediaobject">
+          <img src="images/filters/examples/map-displace5.png" />
+        </div>
+        <p>Esse método pode ser usado com camadas de outras imagens, ou simplesmente em camadas da mesma imagem:</p>
+        <div class="mediaobject">
+          <img src="images/filters/examples/map-displace6.png" />
+        </div>
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Dica]" src="images/tip.png" />
+              </td>
+              <th align="left">Dica</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Para chegar ao degradê desejado, desenhe um degradê de preto para branco, e então use a ferramenta de <a class="link" href="gimp-tool-curves.html" title="8.11. Curvas">Curvas</a> para modificar as intensidades de deslocamento representadas pelo degradê. Lembre-se: Este é um bom exercício para aprender o que é possível fazer com o filtro de deslocamento, mas se você realmente deseja um texto curvo, tente usar o filtro em Filtros-&gt;Distorções-&gt;Dobrar em curva, ou fazer uso do comando  <span class="quote">“<span class="quote">Texto ao longo de vetor</span>”</span> do menu de contexto da ferramenta de texto.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4848"></a>13.3.5. Using Displace filter to fit a text to an uneven surface</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4849"></a>
+          <p class="title">
+            <strong>Figura 17.297. Images example</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/map/displace-ex-1.png" alt="Images example" />
+              <div class="caption">
+                <p>Texture and Text</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/map/displace-ex-2.png" alt="Images example" />
+              <div class="caption">
+                <p>Mapeamento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Siga os seguintes passos:</p>
+        <div class="procedure">
+          <ol class="procedure" type="1">
+            <li class="step">
+              <p>
+          Open the image with an uneven texture.
+        </p>
+            </li>
+            <li class="step">
+              <p>
+          <span class="bold"><strong>Create the map</strong></span>:
+          Duplicate the image. Then select <span class="guimenu">Colors</span> → <span class="guisubmenu">Desaturate</span> → <span class="guimenuitem">Desaturate…</span>.
+        </p>
+            </li>
+            <li class="step">
+              <p>
+          <span class="bold"><strong>Create the text</strong></span> in Texture image. Move
+            it if necessary. Make this text layer the same size as the image
+            via <a class="link" href="gimp-layer-resize-to-image.html" title="7.54. Layers to Image Size">Layers to Image Size</a>.
+        </p>
+            </li>
+            <li class="step">
+              <p>
+          Open the <span class="quote">“<span class="quote">Displace</span>”</span> filter. Click on the
+          <span class="guibutton">Aux</span> button and double-click on the
+          map image thumbnail in the left panel.
+          </p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/map/displace-ex-3.png" />
+                <div class="caption">
+                  <p>Filter applied</p>
+                </div>
+              </div>
+              <p>
+        </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-filter-displace-calculation"></a>13.3.6. Cálculo do deslocamento</h4>
+            </div>
+          </div>
+        </div>
+        <p>A seção seguinte vai lhe mostrar como calcular a quantidade de deslocamento, se você estiver interessado nesses detalhes. Se você não quiser saber mais sobre eles, simplesmente pule esta seção.</p>
+        <p>
+      The overview example showed the horizontal displacement using a coefficient
+      of 30.0: 19, 8, 4, or 15 pixels, depending on the gray level of the
+      displacement map's color.
+    </p>
+        <p>Por que essas quantidades exatas? Isso é fácil:</p>
+        <p>
+      </p>
+        <div class="informalequation">
+          <div>
+            <img src="images/math/displace1.png" />
+          </div>
+        </div>
+        <p>
+    </p>
+        <p>
+      </p>
+        <div class="informalequation">
+          <div>
+            <img src="images/math/displace2.png" />
+          </div>
+        </div>
+        <p>
+    </p>
+        <p>
+      </p>
+        <div class="informalequation">
+          <div>
+            <img src="images/math/displace3.png" />
+          </div>
+        </div>
+        <p>
+    </p>
+        <p>
+      </p>
+        <div class="informalequation">
+          <div>
+            <img src="images/math/displace4.png" />
+          </div>
+        </div>
+        <p>
+    </p>
+        <p>
+      </p>
+        <div class="informalequation">
+          <div>
+            <img src="images/math/displace5.png" />
+          </div>
+        </div>
+        <p>
+    </p>
+        <p>Se você verificar essas equações, você notará que os valores que elas dão não dão os resultados exatos que colocamos no exemplo (usando números que não sejam inteiros, isso não é uma surpresa). Então, os resultados são arredondados para o inteiro mais próximo e os pixels são deslocados pelo número inteiro resultante? Não. Cada pixel é deslocado exatamente pela quantia calculada: um <span class="quote">“<span class="quote">deslocamento por uma distância fracionária</span>”</span> é feito por interpolação. Uma olhada de perto na imagem de exemplo pode ser o suficiente para perceber isso:</p>
+        <div class="figure">
+          <a id="id4850"></a>
+          <p class="title">
+            <strong>Figura 17.298. Uma olhada mais próxima no exemplo de deslocamento</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/map-displace8.png" alt="Uma olhada mais próxima no exemplo de deslocamento" />
+              <div class="caption">
+                <p>Uma pequena área com zoom de 800% </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>O deslocamento faz com que pequenas áreas (de 1 pixel de largura) de cores intermediárias nas bordas das áreas de cores sólidas. Por exemplo,  a área em preto (no detalhe da imagem) é causada por um deslocamento de -4,12, então a cor intermediária é 12% preta e 88% dourada.</p>
+        <p>Portanto, se você selecionar um coeficiente de deslocamento de 30,01 em vez de 30,00, você, de fato, terá uma imagem diferente, embora você não seja possível notar a diferença sem um zoom muito alto, e comparando a diretamente a diferença entre as duas imagens.</p>
+      </div>
+      <div class="footnotes">
+        <br />
+        <hr style="width:100; text-align:left;margin-left: 0" />
+        <div id="ftn.id57721" class="footnote">
+          <p><a href="#id57721" class="para"><sup class="para">[11] </sup></a>
+                  Scaled intensity = (intensity - 127.5) / 127.5;
+                  see <a class="xref" href="gimp-filter-displace.html#gimp-filter-displace-calculation" title="13.3.6. Cálculo do deslocamento">Seção 13.3.6, “Cálculo do deslocamento”</a>.
+                </p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-bump-map.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-map.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-fractal-trace.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-bump-map.html">13.2. Mapa de relevo</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-fractal-trace.html">13.4. Traçar com fractal</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>10.2. Mapa de profundidade</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-combine.html" title="10. Filtros de combinação" />
+    <link rel="prev" href="filters-combine.html" title="10. Filtros de combinação" />
+    <link rel="next" href="plug-in-film.html" title="10.3. Filmstrip" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>10.2. Mapa de profundidade</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="filters-combine.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>10. Filtros de combinação</span>
+        <nav> <a accesskey="n" href="plug-in-film.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-depth-merge"></a>10.2. Mapa de profundidade</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id54809" class="indexterm"></a>
+      <a id="id54813" class="indexterm"></a>
+      <p>O mapa de profundidade é um filtro de combinação que é muito útil para combinar duas figuras diferentes ou camadas. Você pode decidir qual parte de cada imagem ou camada continuará visível.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4657"></a>10.2.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4658"></a>
+          <p class="title">
+            <strong>Figura 17.204. Exemplo de aplicação do filtro</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo de aplicação do filtro" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/combine-taj-depthmerge.jpg" alt="Exemplo de aplicação do filtro" />
+              <div class="caption">
+                <p>Filtro aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Cada imagem é associada com um mapa que funciona como uma máscara. Simplesmente crie este mapa como um degradê de escalas-de-cinza: quando aplicado na imagem, áreas escuras da máscara irão mostrar a imagem subjacente e as áreas claras irão mascarar a imagem.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Para trabalhar com este filtro, as imagens e os mapas precisam ter o mesmo tamanho. Todas as imagens a serem selecionadas precisam estar presentes na tela.</p>
+                <p>Você também pode usar este filtro em uma imagem com diversas camadas. Todas as camadas irão aparecer na lista seleção usada para selecionar as imagens. Essas camadas precisão ter o mesmo tamanho.</p>
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4659"></a>10.2.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Combine</span> → <span class="guimenuitem">Depth Merge…</span>
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4660"></a>10.2.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4661"></a>
+          <p class="title">
+            <strong>Figura 17.205. Opções do filtro <span class="quote">“<span class="quote">mapa de profundidade</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/combine/depthmerge.png" alt="Opções do filtro “mapa de profundidade”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Origem 1, </span>
+              <span class="term">Origem 2</span>
+            </dt>
+            <dd>
+              <p>Define a fonte das imagens que serão usadas para a junção.</p>
+            </dd>
+            <dt>
+              <span class="term">Depth map 1, </span>
+              <span class="term">Depth map 2</span>
+            </dt>
+            <dd>
+              <p>
+            Define the pictures to use as transformation maps for the sources.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Sobreposição</span>
+            </dt>
+            <dd>
+              <p>Cria transições suaves entre as imagens.</p>
+            </dd>
+            <dt>
+              <span class="term">Deslocamento</span>
+            </dt>
+            <dd>
+              <p>Essa opção altera o limite de mistura, dando mais ou menos importância a uma imagem em relação à outra.</p>
+            </dd>
+            <dt>
+              <span class="term">Escala 1, </span>
+              <span class="term">Escala 2</span>
+            </dt>
+            <dd>
+              <p>O mesmo que acima para o deslocamento, mas mais sensível e aplicado para cada mapa separadamente. Quando você usa uma escala com valores baixos, isso irá afetar o valor de mapa de imagem, tornando-o mais escuro. Logo, preto será mais dominante na mistura e você verá mais da imagem.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4662"></a>10.2.4. Exemplo prático</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Maps are grayscale gradients created with the
+      <a class="link" href="gimp-tool-gradient.html" title="3.5. Degradê">Gradient tool</a> and modified with 
+the
+      <a class="link" href="gimp-tool-curves.html" title="8.11. Curvas">Curve tool</a>.
+    </p>
+        <div class="figure">
+          <a id="id4663"></a>
+          <p class="title">
+            <strong>Figura 17.206. Imagens de origem e seus mapas</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/depthmerge-source-image1.png" alt="Imagens de origem e seus mapas" />
+              <div class="caption">
+                <p>Imagem de origem 1</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/depthmerge-source-image2.png" alt="Imagens de origem e seus mapas" />
+              <div class="caption">
+                <p>Imagem de origem 2</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/depthmerge-source-map1.png" alt="Imagens de origem e seus mapas" />
+              <div class="caption">
+                <p>Mapa 1</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/depthmerge-source-map2.png" alt="Imagens de origem e seus mapas" />
+              <div class="caption">
+                <p>Mapa 2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Você pode entender o que está acontecendo. A imagem 1 é tratada pelo mapa 1: o quadrado vermelho é mascarado e o quadrado amarelo continua visível. A imagem 2 é tratada pelo mapa 2: o círculo vermelho é mascarado e o círculo verde continua visível. No geral, o círculo verde e o quadrado amarelo continuam visíveis.</p>
+        <div class="figure">
+          <a id="id4664"></a>
+          <p class="title">
+            <strong>Figura 17.207. Resultados</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/depthmerge-results-none.png" alt="Resultados" />
+              <div class="caption">
+                <p><span class="emphasis"><em>Sem deslocamento e sem sobreposição</em></span>. O limite entre ambas as imagens é a forma e está situada no meio do degradê de máscaras.</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/depthmerge-results-offset.png" alt="Resultados" />
+              <div class="caption">
+                <p>
+            <span class="emphasis"><em>Offset</em></span> = 0.980 : the limit, sharp,
+            is shifted so that the image-2 area is increased.
+          </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/depthmerge-results-overlap.png" alt="Resultados" />
+              <div class="caption">
+                <p>
+            <span class="emphasis"><em>Overlap</em></span> = 0.520 : the limit is blurred.
+          </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/depthmerge-results-scale.png" alt="Resultados" />
+              <div class="caption">
+                <p><span class="emphasis"><em>Escala 1</em></span> reduzido a 0.056: assim como no deslocamento, o limite é alterado. A área da imagem 1 é aumentada.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="filters-combine.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-combine.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-film.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="filters-combine.html">10. Filtros de combinação</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-film.html">10.3. Filmstrip</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

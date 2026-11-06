@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--  section history:
+  2019-12-19 j.h: update to 2.10.14
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-prefs-system-resources">
+  <title>Preferências do sistema de ajuda</title>
+  <indexterm>
+    <primary>Usando</primary>
+    <secondary>Preferências</secondary>
+    <tertiary>Preferências do sistema de ajuda</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Preferências do sistema de ajuda</primary>
+  </indexterm>
+
+  <figure>
+    <title>System Resources Preferences</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/preferences/prefs-system-resources.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>Esta página permite que você personalize a quantidade de memória usada pelo sistema para várias finalidades. Ela também permite que você desabilite os diálogos de confirmação que aparecem quando você fechar as imagens que não foram salvas, e que você defina o tamanho dos arquivos em miniatura que o GIMP produz.</para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>
+      The preferences dialog can be accessed from the main menu, through
+      <menuchoice>
+       <guimenu>Edit</guimenu>
+       <guimenuitem>Preferences</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <variablelist>
+      <title>Consumo de Recursos</title>
+      <varlistentry>
+        <term>Número mínimo de níveis de desfazer</term>
+        <listitem>
+          <para>O GIMP permite desfazer a maioria das ações, mantendo um <quote>Histórico de desfazer</quote> para cada imagem, para o qual uma certa quantidade de memória é alocada. Independentemente do uso de memória, no entanto, o GIMP sempre permite que um número mínimo das ações mais recentes possa ser desfeito: este é o número especificado aqui. Veja <xref linkend="gimp-concepts-undo"/> para mais informações sobre mecanismo de desfazer do GIMP.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Máximo de memória para desfazer</term>
+        <listitem>
+          <para>Esta é a quantidade de memória atribuída para desfazer cada imagem. Se o tamanho do <quote>Histórico de desfazer</quote> exceder esse limite, os pontos (estados da imagem) mais antigos são descartados, a menos que isso fizesse com que você tivesse menos passos para desfazer do que o número especificado acima.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho do cache de fragmentos</term>
+        <listitem>
+          <para>Esta é a quantidade de memória RAM alocada para dados de imagem do GIMP. Se o GIMP requer mais memória do que esse número, ele começa a usar alternadamente dados no disco, o que pode, na maioria das circunstâncias causar uma lentidão dramática no programa. O processo de instalação do GIMP dá a oportunidade de definir esse número, e você pode alterá-lo aqui. Veja <link linkend="gimp-using-setup-tile-cache">Como configurar seu cache de fragmentos</link> para maiores informações. Mas em geral você pode colocar pelo menos a metade do total de memória RAMdo seu computador aqui.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho máximo para novas imagens</term>
+        <listitem>
+          <para>Esta não é uma restrição absoluta: se você tentar criar uma nova imagem maior do que o tamanho especificado, o GIMP simplesmente irá abrir um diálogo a mais de confirmação de que você realmente deseja criar uma imagem tão grande. Isso é para evitar que você crie acidentalmente imagens muito maiores do que você pretende, o que poderia travar o GIMP ou seu computador, fazendo com que ele responda muuuuuiiito devagaaaaaaar. Por exemplo, na criação de uma nova imagem, se você colocar o tamanho de uma imagem achando que as unidades são Pixels, mas elas estiverem marcadas como Polegadas, isso poderia resultar numa imagem milhares de vezes maior que a pretendida, esgotando toda a memória do computador.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Compressão de swap</term>
+        <listitem>
+          <para>Isso define o método de compressão usado para dados de tiles armazenados no swap. A compressão pode reduzir o tamanho do swap e aumentar sua velocidade, minimizando entrada e saída. Os valores são <guilabel>melhor desempenho</guilabel> (o padrão), <guilabel>equilibrado</guilabel> e <guilabel>melhor compressão</guilabel>, ou <guilabel>nenhum</guilabel> para desabilitar a compressão completamente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Número de cores</term>
+        <listitem>
+          <para>Multi-threading permite usar múltiplos núcleos para processamento. Nem todos os recursos usam isso por enquanto. Um ponto de interesse é que o multi-threading acontece através do processamento GEGL, mas também no próprio núcleo do GIMP, por exemplo para separar pintura de exibição.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <title>Acesso à rede</title>
+      <varlistentry>
+        <term>Verificar atualizações</term>
+        <listitem>
+          <para>Quando esta opção está habilitada, o GIMP verificará regularmente na inicialização se uma nova versão está disponível. Se houver, você receberá um alerta de que pode atualizar. Note que esta opção requer que você tenha uma conexão com a internet e que o GIMP tenha permissão para acessar a internet.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    
+    <variablelist>
+      <title>Miniatura</title>
+      <varlistentry>
+        <term>Miniatura da camada</term>
+        <listitem>
+          <para>Esta opção permite que você defina o tamanho das miniaturas mostradas na caixa de diálogo de Abrir arquivo (e também são salvas para possível uso por outros programas). As opções são <quote>Sem miniaturas</quote>, <quote>normal (128x128)</quote>, e <quote>Grande (256x256)</quote>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho máximo dos arquivos para criação miniaturas</term>
+        <listitem>
+          <para>Se um arquivo de imagem é maior do que o tamanho máximo especificado, o GIMP não irá gerar uma miniatura automaticamente para ele. Esta opção permite evitar que o GIMP leve muito tempo criando miniaturas de arquivos de imagem muito grandes, o que poderia deixar o diálogo de arquivos muito lento. (Você pode criar as miniaturas para imagens maiores do que as listadas aqui usando ctrl + click na pré-visualização do diálogo de arquivos).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <title>Histórico de documentos</title>
+      <varlistentry>
+        <term>Manter registro dos arquivos utilizados na lista de Documentos Recentes</term>
+        <listitem>
+          <para>
+              When checked, files you have opened will be saved in the
+              Document history. You can access the list of files with the
+              <link linkend="gimp-document-dialog">Document history
+              dialog</link> from the main menu:
+              <menuchoice>
+                <guimenu>File</guimenu>
+                <guisubmenu>Open Recent</guisubmenu>
+                <guimenuitem>Document History</guimenuitem>
+              </menuchoice>.
+            </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    
+  </sect3>
+  <xi:include href="../using/setup-tile-cache.xml"/>
+</sect2>

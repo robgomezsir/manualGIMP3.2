@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-12-06 j.h: adapted to GEGL
+  2007-10-17 ude: moved here from menus/plug-in-c-astretch.xml ('en','de')
+  2006-09-05 Example added by j.h; text revised by scb
+  2005-11-11 split of from layer-colors.xml by axel.wernicke
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-stretch-contrast">
+  <title>Esticar Contraste</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Esticar contraste</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Esticar Contraste</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Contraste</primary>
+  </indexterm>
+
+  <para>O comando <guimenuitem>Esticar Contraste</guimenuitem> estica automaticamente os valores do histograma da camada ativa. Para cada canal da camada ativa, ele encontra os valores mínimos e máximos e os usa para esticar os histogramas Vermelho, Verde e Azul até os limites do intervalo de contraste. As cores brilhantes se tornam mais brilhantes e as cores escuras se tornam mais escuras, o que aumenta o contraste. <quote>Esticar Contraste</quote> funciona em camadas de imagens RGB, Tons de Cinza e Indexadas. Use <quote>Esticar Contraste</quote> apenas se quiser remover uma tonalidade de cor de uma imagem que deveria conter branco e preto puros.</para>
+  <para>Esse comando é também similar ao comando <link linkend="gimp-layer-white-balance">Equilíbrio de Branco</link>, mas não rejeita nenhum dos pixels muito escuros ou brilhantes, então a cor branca pode sair impura.</para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Auto</guisubmenu>
+        <guimenuitem>Stretch Contrast</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+  
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Configurações do <quote>Esticar Contraste</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/auto/stretch_contrast-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Pré-definições</term>
+        <term>Input Type</term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Keep colors</term>
+        <listitem>
+          <para>Afeta cada canal de cor com a mesma intensidade.</para>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Non-linear components</term>
+        <listitem>
+          <para>Quando marcada, esta opção opera em valores de gama corrigidos em vez de RGB linear.</para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Exemplo do <quote>Esticar Contraste</quote></title>
+    <figure>
+      <title>Imagem original</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/auto/alice.png"/>
+        </imageobject>
+        <caption>
+          <para>A camada e seus histogramas Vermelho, Verde e Azul antes do <quote>Esticar Contraste</quote>.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Imagem após o comando</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/auto/c-stretch.png"/>
+        </imageobject>
+        <caption>
+          <para>A camada e seus histogramas Vermelho, Verde e Azul após o <quote>Esticar Contraste</quote>. As colunas de pixel não chegam à extremidade direita do histograma (255) por causa de alguns pixels muito brilhantes, diferente do <quote>Equilíbrio de Branco</quote>.</para>
+          <para>Esticar o histograma cria lacunas entre as colunas de pixels, dando a ele um visual listrado.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

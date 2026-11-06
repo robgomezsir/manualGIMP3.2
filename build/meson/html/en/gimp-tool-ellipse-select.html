@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.3. Ellipse Selection</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-tools-selection.html" title="2. Selection Tools" />
+    <link rel="prev" href="gimp-tool-rect-select.html" title="2.2. Rectangle Selection" />
+    <link rel="next" href="gimp-tool-free-select.html" title="2.4. Free Selection (Lasso)" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.3. Ellipse Selection</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-rect-select.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>2. Selection Tools</span>
+        <nav> <a accesskey="n" href="gimp-tool-free-select.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-ellipse-select"></a>2.3. Ellipse Selection</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id13679" class="indexterm"></a>
+      <a id="id13682" class="indexterm"></a>
+      <a id="id13685" class="indexterm"></a>
+      <p>
+    The Ellipse Selection tool is designed to select circular and elliptical
+    regions from an image, with high-quality anti-aliasing if you want it. For
+    information on selections and how they are used in GIMP see
+    <a class="link" href="gimp-painting.html#gimp-concepts-selection" title="1. The Selection">Selections</a>;
+    for information on features common to all selection tools see
+    <a class="link" href="gimp-tools-selection.html#gimp-tool-select" title="2.1. Common Features">Selection Tools</a>.
+  </p>
+      <p>
+    This tool is also used for rendering a circle or ellipse on an image. To
+    render a filled ellipse, create an elliptical selection, and then fill it
+    using the <a class="link" href="gimp-tool-bucket-fill.html" title="3.4. Bucket Fill">Bucket Fill tool</a>.
+    To create an elliptical outline, the simplest and most flexible approach
+    is to create an elliptical selection and then
+    <a class="link" href="gimp-selection-stroke.html" title="3.18. Stroke Selection">stroke</a>
+    it. However, the quality of anti-aliasing with this approach is rather
+    crude. A higher quality outline can be obtained by creating two elliptical
+    selections with different sizes, subtracting the inner one from the outer
+    one; however this is not always easy to get right. The command
+    <span class="guimenu">Select</span> → <span class="guimenuitem">Border…</span>
+    makes it easy.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1615"></a>2.3.1. Activating the Tool</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the main menu:
+          <span class="guimenu">Tools</span> → <span class="guisubmenu">Selection Tools</span> → <span class="guimenuitem">Ellipse Select</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By clicking the tool icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-ellipse-select.svg" width="16" /></span>
+          </span>
+          in the Toolbox.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By pressing the <span class="keycap"><strong>E</strong></span> keyboard shortcut.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1616"></a>2.3.2. Key modifiers</h4>
+            </div>
+          </div>
+        </div>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+    See <a class="link" href="gimp-tools-selection.html#gimp-tool-select" title="2.1. Common Features">Selection Tools</a> for
+    help with modifier keys that affect all these tools in the same
+    way.  Only effects options that are specific to this tool are explained
+    here.
+  </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+                <span class="keycap">
+                  <strong>Ctrl</strong>
+                </span>
+              </span>
+            </dt>
+            <dd>
+              <p>
+            Pressing the key after starting your selection, and holding it
+            down until you are finished, causes your starting point to be used
+            as the center of the selected ellipse, instead of a corner of the
+            rectangle that may contain it. Note that if you press the
+            <span class="keycap"><strong>Ctrl</strong></span> key <span class="emphasis"><em>before</em></span>
+            starting to make the selection, the resulting selection will be
+            subtracted from the existing selection.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">
+                <span class="keycap">
+                  <strong>Shift</strong>
+                </span>
+              </span>
+            </dt>
+            <dd>
+              <p>
+            Pressing the <span class="keycap"><strong>Shift</strong></span> key after starting your
+            selection, and holding it down until you are finished, constrains
+            the selection to be a circle. Note that if you press the
+            <span class="keycap"><strong>Shift</strong></span> key <span class="emphasis"><em>before</em></span>
+            starting to make the selection, the resulting selection will be
+            added to the existing selection.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Shift</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>
+            Pressing both keys combines the two effects, giving you a circular
+            selection centered on your starting point.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="tool-ellipse-select-manip"></a>2.3.3. Tool handling</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1617"></a>
+          <p class="title">
+            <strong>Figure 14.10. Example of Ellipse Selection. </strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/ellipse-selection.png" alt="Example of Ellipse Selection." />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      When this tool is selected the mouse pointer comes with a circle icon
+      as soon as it is over the image. A drag-and-drop allows you to
+      get an ellipse (or a circle) within a rectangular box.
+      When the mouse button is relaxed, a dotted line
+      (<a class="link" href="glossary.html#glossary-marching-ants" title="Marching Ants"><span class="quote">“<span class="quote">marching ants</span>”</span></a>)
+      outlines the elliptic selection. It's not necessary to
+      adjust the selection with care; you can resize it easily later.
+    </p>
+        <p>
+      When the pointer is moving on the canvas, the pointer and selection
+      aspects change. You can change the size of the selection by using
+      handles. See
+      <a class="link" href="gimp-tool-rect-select.html#tool-rect-select-manip" title="2.2.3. Tool manipulation">Tool handling</a> within
+      the rectangular chapter.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1618"></a>2.3.4. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1619"></a>
+          <p class="title">
+            <strong>Figure 14.11. Tool Options Dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-ellipse-select.png" alt="Tool Options Dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Mode, </span>
+              <span class="term">Antialiasing, </span>
+              <span class="term">Feather edges</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    See <a class="link" href="gimp-tools-selection.html#gimp-tool-select-options" title="2.1.2. Options">Selection Tools Options</a>
+    for help with options that are common to all these tools. Only
+    options that are specific to this tool are explained here.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Expand from center, </span>
+              <span class="term">Fixed, </span>
+              <span class="term">Position, </span>
+              <span class="term">Size, </span>
+              <span class="term">Highlight, </span>
+              <span class="term">Guides, </span>
+              <span class="term">Auto Shrink, </span>
+              <span class="term">Shrink merged</span>
+            </dt>
+            <dd>
+              <p>
+            These options work exactly the same way they are described
+            for the Rectangle Selection tool. See
+            <a class="xref" href="gimp-tool-rect-select.html#tool-rect-select-options" title="2.2.4. Options">Section 2.2.4, “Options”</a> for details.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-rect-select.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-selection.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-free-select.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-rect-select.html">2.2. Rectangle Selection</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-free-select.html">2.4. Free Selection (Lasso)</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

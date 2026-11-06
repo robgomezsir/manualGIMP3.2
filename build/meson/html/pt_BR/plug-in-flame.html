@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.2. Chama</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="next" href="plug-in-fractalexplorer.html" title="14.3. Explorador de fractais" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.2. Chama</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="filters-render.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="plug-in-fractalexplorer.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-flame"></a>14.2. Chama</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id59172" class="indexterm"></a>
+      <a id="id59176" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4938"></a>14.2.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4939"></a>
+          <p class="title">
+            <strong>Figura 17.339. Exemplo de imagem criada como filtro Chama</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/flame1.png" alt="Exemplo de imagem criada como filtro Chama" />
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-taj-flame.jpg" alt="Exemplo de imagem criada como filtro Chama" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Com o filtro Chama, você pode criar  padrões fractais gerados aleatoriamente. Você não pode controlar os fractais como você pode com o filtro <a class="link" href="plug-in-ifscompose.html" title="14.4. Fractal IFS">Fractal IFS</a> filtro, mas você pode dirigir o gerador aleatório em uma determinada direção e escolher variações de um tema que você goste.</p>
+        <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Warning">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Atenção]" src="images/warning.png" />
+              </td>
+              <th align="left">Atenção</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        Unfortunately, this filter is not working properly for larger images.
+        Sadly, its developer is not around anymore, so there seems no quick
+        fix in sight.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        This plug-in was given to <acronym class="acronym">GIMP</acronym> by Scott Draves in
+        1997. He also holds the copyright for the plug-in. A descriptive page
+        for the plug-in, provided by the author, can be found on the internet
+        <a class="xref" href="bibliography.html#bibliography-online-gimp-plugin-flames" title="Plug-in Flames do GIMP">[<abbr class="abbrev">PLUGIN-FLAMES</abbr>]</a>.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in grayscale mode or indexed mode, this menu entry
+        is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4940"></a>14.2.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guisubmenu">Fractals</span> → <span class="guimenuitem">Flame…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4941"></a>14.2.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4942"></a>
+          <p class="title">
+            <strong>Figura 17.340. Opções para o filtro <span class="quote">“<span class="quote">Chama</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/flame.png" alt="Opções para o filtro “Chama”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      In the main dialog, you can set <span class="guilabel">Rendering</span> and
+      <span class="guilabel">Camera</span> parameters. The first three parameters in the
+      Render display are <span class="guilabel">Brightness</span>,
+      <span class="guilabel">Contrast</span> and <span class="guilabel">Gamma</span>. The result
+      of these options is visible in the Preview window. However, it's generally
+      better to stick to the default values, and correct the rendered image
+      later with tools in the <a class="link" href="gimp-colors-menu.html" title="8. O menu “Cores”">Colors</a> menu.
+    </p>
+        <p>
+      The other three parameters affect the rendering process and
+      don't show in the preview window. <span class="guilabel">Sample Density</span>,
+      which controls the resolution of the rendered pattern, is the most
+      important of these. The Camera parameters allow you to zoom and offset
+      the flame pattern, until you're happy with what you see in the preview.
+      Flame also offers the possibility to store and load your favorite patterns.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Editar</span>
+            </dt>
+            <dd>
+              <p>
+            Pressing this button brings up the Edit Flame dialog:
+          </p>
+              <div class="figure">
+                <a id="id4943"></a>
+                <p class="title">
+                  <strong>Figura 17.341. A caixa de diálogo Editar Chama</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/render/flame-edit.png" alt="A caixa de diálogo Editar Chama" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>O diálogo mostra nove janelas diferentes. O padrão apresentado no centro é o padrão atual, e os oito janelas que o rodeiam são variações aleatórias do mesmo. Ao clicar na imagem central, oito novas variações são criadas. A quantidade de diferenças entre o modelo atual e as variações podem ser ajustadas com o controle de velocidade.  Você seleciona uma variação clicando sobre a mesma, e ela substitui instantaneamente a imagem do  meio. Para escolher uma determinada personalidade ou tema para as variações, você pode escolher entre nove temas diferentes no menu <span class="guilabel">Variação</span>. Você também pode usar o botão <span class="guibutton"> Randomizar</span>, que substitui o padrão atual com um novo padrão aleatório.</p>
+            </dd>
+            <dt>
+              <span class="term">Abrir</span>
+            </dt>
+            <dd>
+              <p>Este botão abre um seletor de arquivos que permite que você abra um arquivo de configurações de Chama salvo anteriormente.</p>
+            </dd>
+            <dt>
+              <span class="term">Salvar</span>
+            </dt>
+            <dd>
+              <p>Este botão abre um diálogo de salvar arquivo, que permite que você salve o modelo e as configurações atuais do plug-in, para que você possa recriá-los mais tarde.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Renderização</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Brilho</span>
+            </dt>
+            <dd>
+              <p>Controla o brilho do objeto chama.</p>
+            </dd>
+            <dt>
+              <span class="term">Contraste</span>
+            </dt>
+            <dd>
+              <p>Controla o contraste entre as partes mais claras e as mais escuras da chama.</p>
+            </dd>
+            <dt>
+              <span class="term">Gama</span>
+            </dt>
+            <dd>
+              <p>Define uma correção de gama para as partes com brilho intermediário.</p>
+            </dd>
+            <dt>
+              <span class="term">Densidade da amostra</span>
+            </dt>
+            <dd>
+              <p>
+            Controls the resolution of the rendered pattern. This does not
+            have any effect on the preview. A high sample density results in
+            soft and smooth rendering (like a spider's web), whereas low density
+            rendering resembles spray or particle clouds.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Super-amostragem espacial</span>
+            </dt>
+            <dd>
+              <p>O que isso faz? Nem os autores do manual sabem!</p>
+            </dd>
+            <dt>
+              <span class="term">Raio do filtro espacial</span>
+            </dt>
+            <dd>
+              <p>O que isso faz? Nem os autores do manual sabem!</p>
+            </dd>
+            <dt>
+              <span class="term">Mapa de cores</span>
+            </dt>
+            <dd>
+              <p>Este menu apresenta várias opções para definir a mistura de cores no padrão da chama:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>O degradê atual, como mostrado na caixa de ferramentas, ou selecionado no diálogo de degradês.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Um certo número de mapas de cores pré-definidos.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>As cores de imagens que estão abertas no <acronym class="acronym">GIMP</acronym>.</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Câmera</strong>
+          </p>
+          <div class="mediaobject">
+            <img src="images/filters/render/flame2.png" />
+          </div>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Zoom</span>
+            </dt>
+            <dd>
+              <p>Permite aproximar ou diminuir o desenho da chama</p>
+            </dd>
+            <dt>
+              <span class="term">X, </span>
+              <span class="term">Y</span>
+            </dt>
+            <dd>
+              <p>Permite que você mova a chama na área da imagem</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="filters-render.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-fractalexplorer.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="filters-render.html">14. Filtros de renderização</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-fractalexplorer.html">14.3. Explorador de fractais</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

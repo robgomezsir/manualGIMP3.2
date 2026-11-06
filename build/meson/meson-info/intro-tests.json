@@ -1,0 +1,98 @@
+[
+  {
+    "cmd": [
+      "/usr/bin/xmllint",
+      "--nonet",
+      "--valid",
+      "--output",
+      "en.xml",
+      "/mnt/c/kilo_build/manualGIMP3.2/build/meson/html/en-lint2.log"
+    ],
+    "env": {},
+    "name": "test-validate-xml-en",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "gimp-help:validate-xml"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "e5e2395@@validate-sed-en@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/xmllint",
+      "--nonet",
+      "--valid",
+      "--output",
+      "pt_BR.xml",
+      "/mnt/c/kilo_build/manualGIMP3.2/build/meson/html/pt_BR-lint2.log"
+    ],
+    "env": {},
+    "name": "test-validate-xml-pt_BR",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "gimp-help:validate-xml"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "e5e2395@@validate-sed-pt_BR@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/usr/bin/xmllint",
+      "--noout",
+      "--valid",
+      "/mnt/c/kilo_build/manualGIMP3.2/build/meson/authors.xml"
+    ],
+    "env": {},
+    "name": "validate-authors",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "gimp-help:validate-xml"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "preface-authors-xml@cus"
+    ],
+    "extra_paths": []
+  },
+  {
+    "cmd": [
+      "/mnt/c/kilo_build/manualGIMP3.2/tools/validate_references.py",
+      "--verbose",
+      "--broken",
+      "--orphaned",
+      "-r",
+      "/mnt/c/kilo_build/manualGIMP3.2",
+      "en",
+      "pt_BR"
+    ],
+    "env": {},
+    "name": "validate-image-references",
+    "workdir": null,
+    "timeout": 30,
+    "suite": [
+      "gimp-help:validate-images"
+    ],
+    "is_parallel": true,
+    "priority": 0,
+    "protocol": "exitcode",
+    "depends": [
+      "copy-to-src-authors@cus"
+    ],
+    "extra_paths": []
+  }
+]

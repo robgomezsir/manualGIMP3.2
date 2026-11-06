@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-color-temperature">
+  <title>Temperatura de Cor</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Temperatura de Cor</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Temperatura de Cor</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Temperatura de Cor</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original, com temperatura de cor estimada em 5.000K</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/color-taj-color-temperature.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem modificada, com temperatura de cor alterada para 6.500K</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O filtro Temperatura de Cor permite ajustar a temperatura da cor da fontes de luz em uma imagem em Kelvin. Isto pode ser usado para corrigir o tom azulado em fotos nubladas, ou mesmo (em algum grau) o tom vermelho em fotos tiradas sob luz incandescente com a câmera definida para luz do dia.</para>
+    <para>Você também pode usar isso para efeitos criativos interessantes.</para>
+    <note>
+      <para>Este comando não funciona em imagens em Tons de Cinza. Se a imagem estiver em Tons de Cinza, a entrada do menu é desativada.</para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guimenuitem>Color Temperature…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de <quote>Temperatura de Cor</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/colors/color-temperature.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term>Opções de Mistura</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Temperatura original</term>
+        <listitem>
+          <para>Esta é a temperatura de cor original estimada da fonte de luz em Kelvin. Você pode mudá-la porque a imagem não necessariamente codifica essa informação corretamente, ou sequer a codifica (e você pode ou não tê-la medido). Além disso, geralmente há uma mistura de fontes de luz (uma janela, um flash de preenchimento, etc). Mas acima de tudo você pode conseguir efeitos criativos interessantes ao alterar isto.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Temperatura pretendida</term>
+        <listitem>
+          <para>Esta é a temperatura de cor desejada da fonte de luz em Kelvin.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <tip>
+      <para>
+        Both original temperature and intended temperature can be set via
+        presets. To access the presets menu, click the
+        <guiicon>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+            </imageobject>
+          </inlinemediaobject>
+        </guiicon>
+        button to the right of either of the two options.
+      </para>
+    </tip>
+  </sect3>
+</sect2>

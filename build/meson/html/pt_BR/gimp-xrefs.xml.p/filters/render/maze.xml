@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-03-10 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-maze">
+  <title>Labirinto</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Labirinto</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Labirinto</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Um exemplo de um labirinto criado.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-taj-maze.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro gera um padrão de labirinto preto e branco aleatório. O resultado substitui completamente o conteúdo anterior da camada ativa. Um exemplo típico é mostrado abaixo. Você pode encontrar a rota a partir do centro para a borda?</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guisubmenu>Pattern</guisubmenu>
+        <guimenuitem>Maze…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções para o filtro <quote>Labirinto</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/maze-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Largura</term>
+        <term>Altura</term>
+        <listitem>
+          <para>
+            These sliders control the size of the paths and walls in the maze.
+            The lower the values for width and height, the more paths you will
+            get. The result won't really look like a maze unless the width and
+            height are equal.
+          </para>
+          <para>
+            By default, width and height are linked, indicated by the
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-vchain.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            chain symbol next to the input boxes. If you want to set width and
+            height separately, click on that chain symbol to unlink them.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Algorithm type</term>
+        <listitem>
+          <para>
+            You can choose between these two algorithms for maze: <emphasis> 
+            Depth first</emphasis> and <emphasis>Prim's algorithm</emphasis>. 
+            Only a computer scientist can tell the difference between them.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ladrilhável</term>
+        <listitem>
+          <para>Se você quiser usá-lo em uma textura, você pode tornar o labirinto encaixável selecionando esta opção.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Semente aleatória</term>
+        <term>Nova semente</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Foreground color</term>
+        <term>Background color</term>
+        <listitem>
+          <para>
+            You can choose colors for the maze and its background. Defaults are 
+            Toolbox colors.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

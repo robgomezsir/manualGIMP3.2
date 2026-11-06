@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5. Grupos de camadas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-image-combining.html" title="Capítulo 8. Combinando imagens" />
+    <link rel="prev" href="gimp-using-layers.html" title="4. Criando novas camadas" />
+    <link rel="next" href="gimp-using-layer-effects.html" title="6. Layer Effects" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5. Grupos de camadas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-layers.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 8. Combinando imagens</span>
+        <nav> <a accesskey="n" href="gimp-using-layer-effects.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-layer-groups"></a>5. Grupos de camadas</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id11967" class="indexterm"></a>
+      <a id="id11969" class="indexterm"></a>
+      <a id="id11971" class="indexterm"></a>
+      <p><span class="quote">“<span class="quote">Grupos de Camadas</span>”</span> permite que você agrupe camadas em uma estrutura hierárquica. Isso facilitará o gerenciamento do seu projeto se você tiver muitas camadas.</p>
+      <div class="mediaobject">
+        <img src="images/dialogs/layer-group.png" />
+      </div>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <span class="term">Criar um grupo de camadas</span>
+          </dt>
+          <dd>
+            <p>
+          You can create a layer group by clicking the
+          <span class="guibutton">New Layer Group</span> button at the bottom of the
+          <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Diálogo de camadas">Layers Dialog</a>,
+          by using the menu command
+          <span class="guimenu">Layer</span> → <span class="guimenuitem">New Layer Group</span>,
+          or through the Layers dialog context menu.
+        </p>
+            <p>Este grupo de camadas vazio aparece logo acima da camada atual. É importante dar-lhe um nome sugestivo (duplo-clique ou <span class="keycap"><strong>F2</strong></span> no nome, ou usar <span class="command"><strong>Editar atributos da camada</strong></span> no menu de contexto que você tem com o botão direito do diálogo de camadas, para editá-lo), senão você pode ficar confuso quando vários grupos forem criados.</p>
+            <p>Você pode criar diversos grupos de camadas e pode<span class="bold"><strong>embuti-los</strong></span>, isto é incluir um grupo de camadas dentro outro.</p>
+          </dd>
+          <dt>
+            <span class="term">Acrescentando camadas a um Grupo de Camadas</span>
+          </dt>
+          <dd>
+            <p>
+          You can add <span class="emphasis"><em>existing layers</em></span> to a layer group
+          by click-and-dragging them. A thin horizontal line marks where the
+          layer will be inserted.
+        </p>
+            <p>
+          To add a <span class="emphasis"><em>new layer</em></span> to the current layer
+          group,
+          click the <span class="guibutton">New Layer…</span> button at the
+          bottom of the Layers dialog, use the
+          <span class="guimenuitem">New Layer…</span> command in the main menu,
+          or press <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>N</strong></span>.
+        </p>
+            <p>
+          When a layer group is not empty, a small icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/pan-end-symbolic.svg" /></span>
+          </span>
+          appears. By clicking it, you can fold or unfold the group.
+          </p>
+            <div class="mediaobject">
+              <img src="images/dialogs/layer-group-fold-unfold.png" />
+            </div>
+            <p>
+        </p>
+            <p>Camadas que pertencem a um grupo de camadas são recuadas para a direita, permitindo que você veja facilmente quais as camadas fazem parte do grupo.</p>
+          </dd>
+          <dt>
+            <span class="term">Visibilidade</span>
+          </dt>
+          <dd>
+            <p>Se um grupo de camadas for tornado invisível usando o ícone do olho, mas permanecer aberto (de modo que as camadas dentro do grupo sejam mostradas na lista), há um olho riscado mostrado ao lado das camadas que estão dentro do grupo para indicar que essas camadas não são exibidas na projeção final da imagem, mas teoricamente visíveis no grupo de camadas.</p>
+            <div class="mediaobject">
+              <img src="images/dialogs/layer-group-visibility.png" />
+            </div>
+          </dd>
+          <dt>
+            <span class="term">Subir e Descer grupos de camadas</span>
+          </dt>
+          <dd>
+            <p>
+          You can raise and lower layer groups in the Layers dialog as you do
+          with normal layers: click-and-dragging, and by using the
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/go-up.svg" width="16" /></span>
+          </span>
+          Up or
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/go-down.svg" width="16" /></span>
+          </span>
+          Down buttons at the bottom of the Layers dialog.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Duplicar um grupo de camadas</span>
+          </dt>
+          <dd>
+            <p>
+          To duplicate a layer group, click the
+          <span class="guibutton">Create a duplicate of the layer</span> button or
+          right-click and select the <span class="command"><strong>Duplicate Layers</strong></span>
+          command in the pop up context menu.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Mover um grupo de camadas</span>
+          </dt>
+          <dd>
+            <p>
+          You can <span class="bold"><strong>move a layer group to another image
+          </strong></span> by click-and-dragging.
+          You can also copy-paste it using <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>
+          and <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>V</strong></span>.
+        </p>
+            <p>
+          You can also <span class="bold"><strong>move a layer group to the
+          canvas</strong></span>: this duplicates the group <span class="emphasis"><em>in</em></span>
+          the group. Select the layer group, and drag it into the image.
+          That's one way to multiply multi-layer objects in an image.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Delete Layer Groups</span>
+          </dt>
+          <dd>
+            <p>
+          To delete one or more layer groups, click the
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" alt="Delete Layers" /></span>
+          </span>
+          icon button on the bottom of the Layers dialog, or drag and drop the
+          selected layer groups on top of that button,
+          or use the <a class="link" href="gimp-layer-delete.html" title="7.9. Delete Layers">Delete Layers</a>
+          command from the main menu or from the Layers dialog context menu.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Embutindo grupos de camadas</span>
+          </dt>
+          <dd>
+            <p>Quando um grupo de camadas é ativado, você pode adicionar um outro grupo dentro dele com o comando <span class="quote">“<span class="quote">Adicionar novo grupo de camada</span>”</span>. Não há limite, exceto o quanto você tem memória, com o número de grupos de camadas que você pode por um dentro do outro.</p>
+          </dd>
+          <dt>
+            <span class="term">Modos de camada e Grupos</span>
+          </dt>
+          <dd>
+            <p>Um modo de camada aplicado a um grupo de camadas atua apenas sobre as camadas que estão neste grupo. Um modo de camada acima de um grupo de camada atua em todas as camadas abaixo, dentro e fora dos grupos de camadas.</p>
+            <div class="mediaobject">
+              <img src="images/dialogs/layer-group-original.png" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="figure">
+              <a id="id2776"></a>
+              <p class="title">
+                <strong>Figura 8.71. Layer Mode in Layer Group</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/dialogs/layer-group-merge-in-dialog.png" alt="Layer Mode in Layer Group" />
+                  <div class="caption">
+                    <p>
+                We added a white layer <span class="emphasis"><em>in</em></span> the layer group
+                with HSL Color mode.
+              </p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/dialogs/layer-group-merge-in-example.png" alt="Layer Mode in Layer Group" />
+                  <div class="caption">
+                    <p>
+                Only the square and triangle turned gray.
+              </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <div class="figure">
+              <a id="id2777"></a>
+              <p class="title">
+                <strong>Figura 8.72. Layer Mode outside Layer Group</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/dialogs/layer-group-merge-out-dialog.png" alt="Layer Mode outside Layer Group" />
+                  <div class="caption">
+                    <p>
+                We added a white layer <span class="emphasis"><em>outside</em></span> and above
+                the layer group with HSL Color mode.
+              </p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/dialogs/layer-group-merge-out-example.png" alt="Layer Mode outside Layer Group" />
+                  <div class="caption">
+                    <p>
+                All layers underneath changed to gray, including the
+                background layer.
+              </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+          Layer groups have a special layer mode: the
+          <span class="guilabel">Pass through</span> mode. This mode exists only if a
+          layer group is active.
+        </p>
+            <p>
+          <span class="guilabel">Pass through</span> mode, is less a blending mode in and
+          of itself than an instruction for the group as a whole: it indicates
+          that layers inside the group are to be rendered in combination with
+          other layers below the group, instead of being rendered separately
+          from them.
+        </p>
+            <p>
+          While with <span class="guilabel">Normal</span> mode, layers within a group
+          are treated as if they were a single layer, which is then blended with
+          other layers below in the stack; a modifier on a layer inside the
+          group blends layers below in the group only.
+        </p>
+            <p>
+          For more details about <span class="guilabel">Pass through</span>, see
+          <a class="xref" href="glossary.html#glossary-pass-through" title="Pass through">
+      <span class="phrase">Pass through</span>
+    </a> in the Glossary.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Opacidade</span>
+          </dt>
+          <dd>
+            <p>Quando um grupo de camadas está ativo, as alterações de opacidade são aplicadas a todas as camadas do grupo.</p>
+          </dd>
+          <dt>
+            <span class="term">Máscara de camada</span>
+          </dt>
+          <dd>
+            <p>
+          Masks are also available on layer groups.
+          They work similarly to ordinary
+          <a class="link" href="gimp-dialogs-structure.html#gimp-layer-mask" title="2.1.4. Máscaras de camada">layer masks</a>, with the
+          following considerations.
+        </p>
+            <p>O tamanho da máscara do grupo de camadas é o mesmo que o tamanho combinado de todos os seus filhos o tempo todo. Quando o tamanho do grupo muda, a máscara é recortada para o novo tamanho — áreas da máscara que ficam fora dos novos limites são descartadas, e áreas recém-adicionadas são preenchidas com preto (e portanto são transparentes por padrão).</p>
+            <div class="mediaobject">
+              <img src="images/dialogs/layer-group-mask-dialog.png" />
+              <div class="caption">
+                <p>
+              We added a black (transparent) layer mask to the layer group.
+            </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/dialogs/layer-group-mask-example.png" />
+              <div class="caption">
+                <p>
+              The layers inside the group became transparent (invisible).
+            </p>
+              </div>
+            </div>
+            <p>Você não pode adicionar uma máscara de camads para um grupo de camadas (a opção correspondente fica desligada). Mas, como com as camadas normais, você pode adicionar máscaras nas camadas dentro do grupo para mascarar uma parte das mesmas.</p>
+          </dd>
+          <dt>
+            <span class="term">Encontrando uma camada</span>
+          </dt>
+          <dd>
+            <p>
+          When working with a lot of layers, finding a particular layer in the
+          list can be difficult. To find the layer to which an image element
+          belongs, use the <span class="emphasis"><em>on-canvas layer selection</em></span> function
+          via <span class="keycap"><strong>Alt</strong></span>+<span class="keycap"><strong>Middle click</strong></span> on the image element.
+          The available layers will be looped through to
+          show the new active layer and the layer name will be temporarily
+          displayed in the status bar.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Tipo de Camada</span>
+          </dt>
+          <dd>
+            <p>O <acronym class="acronym">GIMP</acronym> detecta automaticamente o idioma do sistema. No caso improvável da detecção de idioma falhar, ou se você só quer usar uma linguagem diferente, desde o <acronym class="acronym">GIMP</acronym> 2.8, você pode fazê-lo em: <span class="guimenu">Editar</span> → <span class="guisubmenu">Preferências</span> → <span class="guimenuitem">Interface</span>.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-layers.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-combining.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-layer-effects.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-layers.html">4. Criando novas camadas</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-layer-effects.html">6. Layer Effects</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

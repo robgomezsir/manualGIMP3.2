@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>11.8. Simple Linear Iterative Clustering (SLIC)</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-artistic.html" title="11. Filtros artísticos" />
+    <link rel="prev" href="gimp-filter-photocopy.html" title="11.7. Fotocópia" />
+    <link rel="next" href="gimp-filter-softglow.html" title="11.9. Brilhosuave" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>11.8. Simple Linear Iterative Clustering (SLIC)</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-photocopy.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>11. Filtros artísticos</span>
+        <nav> <a accesskey="n" href="gimp-filter-softglow.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-slic"></a>11.8. Simple Linear Iterative Clustering (SLIC)</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id55485" class="indexterm"></a>
+      <a id="id55489" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4703"></a>11.8.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter creates superpixels based on k-means clustering.
+    </p>
+        <p>
+      <span class="emphasis"><em>Superpixels</em></span> are small cluster of pixels that share 
+      similar properties. Superpixels simplifies images with a great number of 
+      pixels making them more easy to be treated in many domains (computer 
+      vision, pattern recognition and machine intelligence). GIMP's aim is more 
+      humble: create a posterization effect.
+    </p>
+        <p>
+      <span class="emphasis"><em>k-means clustering</em></span> is one of the most used algorithms 
+      to create superpixels. Superpixel color is the mean of pixels color in 
+      the corresponding region.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4704"></a>11.8.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Artistic</span> → <span class="guimenuitem">Simple Linear Iterative Clustering…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4705"></a>11.8.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4706"></a>
+          <p class="title">
+            <strong>Figura 17.223. <span class="quote">“<span class="quote">Simple Linear Iterative Clustering</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/artistic/slic-dialog.png" alt="“Simple Linear Iterative Clustering” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Pré-visuação, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Regions size</span>
+            </dt>
+            <dd>
+              <p>
+            Increasing regions size collects more pixels, and so superpixels size 
+            increases also.
+          </p>
+              <div class="figure">
+                <a id="id4707"></a>
+                <p class="title">
+                  <strong>Figura 17.224. <span class="quote">“<span class="quote">Regions size</span>”</span> example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/artistic/slic-ex-regions16.jpg" alt="“Regions size” example" />
+                    <div class="caption">
+                      <p>
+                  Regions size = 16
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/artistic/slic-ex-default.jpg" alt="“Regions size” example" />
+                    <div class="caption">
+                      <p>
+                  Regions size = 32
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Compactness</span>
+            </dt>
+            <dd>
+              <p>
+            Superpixels borders may be irregular. Increasing this option gives 
+            superpixels more regular border.
+          </p>
+              <div class="figure">
+                <a id="id4708"></a>
+                <p class="title">
+                  <strong>Figura 17.225. <span class="quote">“<span class="quote">Compactness</span>”</span> example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/artistic/slic-ex-compact20.jpg" alt="“Compactness” example" />
+                    <div class="caption">
+                      <p>
+                  Compactness = 20
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/artistic/slic-ex-compact40.jpg" alt="“Compactness” example" />
+                    <div class="caption">
+                      <p>
+                  Compactness = 40: look at the dome.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Iterations</span>
+            </dt>
+            <dd>
+              <p>
+            How many times filter is repeated. Increasing this value gives more 
+            details.
+          </p>
+              <div class="figure">
+                <a id="id4709"></a>
+                <p class="title">
+                  <strong>Figura 17.226. <span class="quote">“<span class="quote">Regions size</span>”</span> example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/artistic/slic-ex-default.jpg" alt="“Regions size” example" />
+                    <div class="caption">
+                      <p>
+                  Iterations = 1 (default)
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/artistic/slic-ex-iter15.jpg" alt="“Regions size” example" />
+                    <div class="caption">
+                      <p>
+                  Iterations = 15
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-photocopy.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-artistic.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-softglow.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-photocopy.html">11.7. Fotocópia</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-softglow.html">11.9. Brilhosuave</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

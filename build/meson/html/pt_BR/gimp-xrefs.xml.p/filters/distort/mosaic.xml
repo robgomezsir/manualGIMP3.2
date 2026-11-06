@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-12-22 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-mosaic">
+  <title>Mosaico</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Mosaico</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Mosaico</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro <quote>Mosaico</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-mosaic.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Corta a camada ou seleção ativa em vários quadradinhos ou polígonos que são pintados para parecer que estão em relevo e separados por juntas, dando o aspecto de um mosaico.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Mosaic…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Mosaico</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/mosaic-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tile geometry</term>
+        <listitem>
+          <para>Permite que você selecione as formas de base para as pastilhas</para>
+          <variablelist>
+            <varlistentry>
+              <term>Quadrados</term>
+              <listitem>
+                <para>Not exactly squares, but 4 edges</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Hexágonos</term>
+              <listitem>
+                <para>seis lados</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Octagons</term>
+              <listitem>
+                <para>8 edges (octa = 8)</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Triângulos</term>
+              <listitem>
+                <para>três lados</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho da pastilha</term>
+        <listitem>
+          <para>
+            Average diameter of each tile (in pixels). Slider and input box 
+            allow you to set the size of tile surface (2-1000).
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Altura das pastilhas</term>
+        <listitem>
+          <para>Isso controla o relevo das pastilhas. O valor é a largura da parte iluminada das pastilhas, em pixels.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Organização das pastilhas</term>
+        <listitem>
+          <para>Quando deixado em 1, as pastilhas terão aproximadamente o mesmo tamanho e a mesma forma. Quanto mais próximo de 0, mais o tamanho e a forma das pastilhas varia.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tile color variation</term>
+        <listitem>
+          <para>Cada pastilha tem apenas uma cor, se a opção média de cor estiver ligada, ou um tom de clareamento/escurecimento no caso de se manter as cores dos pixels originais. Esta opção seleciona quanto as cores vão variar de uma pastilha para outra, independente das cores originais.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Média de cor</term>
+        <listitem>
+          <para>Quando esta opção está desligada, as cores originais da imagem poderão ser vistas nas pastilhas. Caso contrário, cada pastilha terá uma única cor, baseada na média de cores dos pixels daquele pedaço da imagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Rough tile surface</term>
+        <listitem>
+          <para>Com esta opção, as as pastilhas ficam parecendo como se tivessem uma textura áspera.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Allow splitting tiles</term>
+        <listitem>
+          <para>Esta opção divide as áreas das pastilhas em áreas com várias cores, então permite uma maior gradação de cores e mais detalhes nessas áreas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Espaçamento das pastilhas</term>
+        <listitem>
+          <para>A largura da linha entre as pastilhas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Joints color</term>
+        <term>Light color</term>
+        <listitem>
+          <para>
+            Tiles are lit with the foreground color of the toolbox, and shadow 
+            is colored with the background color. Joins have the background 
+            color. You can change these colors using the color buttons or the 
+            color pickers on the right.
+          </para>
+          </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Direção da luz</term>
+        <listitem>
+          <para>
+            By default light comes from the upper left corner
+            (135°). You can change this direction from 0 to 360.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Anti-serrilhamento</term>
+        <listitem>
+          <para>Esta opção reduz o aspecto de escadinha ou serra que poderá aparecer nas bordas das pastilhas.</para>
+        </listitem>
+      </varlistentry>
+       <varlistentry>
+        <term>Random seed</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

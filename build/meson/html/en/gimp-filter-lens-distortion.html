@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.5. Lens Distortion</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-distort.html" title="5. Distort Filters" />
+    <link rel="prev" href="gimp-filter-engrave.html" title="5.4. Engrave" />
+    <link rel="next" href="gimp-filter-kaleidoscope.html" title="5.6. Kaleidoscope" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.5. Lens Distortion</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-engrave.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. Distort Filters</span>
+        <nav> <a accesskey="n" href="gimp-filter-kaleidoscope.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-lens-distortion"></a>5.5. Lens Distortion</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id48307" class="indexterm"></a>
+      <a id="id48311" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3094"></a>5.5.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3095"></a>
+          <p class="title">
+            <strong>Figure 17.63. Example for the <span class="quote">“<span class="quote">Lens Distortion</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for the “Lens Distortion” filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/distort-taj-lens-distortion.jpg" alt="Example for the “Lens Distortion” filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter lets you simulate but also correct the typical distortion
+      effect introduced in photo images by the glasses contained in the camera
+      lenses.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3096"></a>5.5.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Distorts</span> → <span class="guimenuitem">Lens Distortion…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3097"></a>5.5.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3098"></a>
+          <p class="title">
+            <strong>Figure 17.64. <span class="quote">“<span class="quote">Lens Distortion</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/distort/lens_distortion-dialog.png" alt="“Lens Distortion” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The allowed range of all options is from -100.0 to 100.0.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-filters-common.html" title="2. Common Features">Section 2, “Common Features”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Main</span>
+            </dt>
+            <dd>
+              <p>
+            The amount of spherical correction to introduce. Positive values
+            make the image convex while negative ones make it concave. The
+            whole effect is similar to wrapping the image inside or outside a
+            sphere.
+          </p>
+              <div class="figure">
+                <a id="id3099"></a>
+                <p class="title">
+                  <strong>Figure 17.65. Example result of Main option</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-main-low.png" alt="Example result of Main option" />
+                    <div class="caption">
+                      <p>-100.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-original.png" alt="Example result of Main option" />
+                    <div class="caption">
+                      <p>0.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-main-high.png" alt="Example result of Main option" />
+                    <div class="caption">
+                      <p>+100.0</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Edge</span>
+            </dt>
+            <dd>
+              <p>
+            Specifies the amount of additional spherical correction at image
+            edges.
+          </p>
+              <div class="figure">
+                <a id="id3100"></a>
+                <p class="title">
+                  <strong>Figure 17.66. Example result of Edge option (Main set to 50.0)</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-edge-low.png" alt="Example result of Edge option (Main set to 50.0)" />
+                    <div class="caption">
+                      <p>-60.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-original.png" alt="Example result of Edge option (Main set to 50.0)" />
+                    <div class="caption">
+                      <p>0.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-edge-high.png" alt="Example result of Edge option (Main set to 50.0)" />
+                    <div class="caption">
+                      <p>+60.0</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Zoom</span>
+            </dt>
+            <dd>
+              <p>
+            Specifies the amount of the image enlargement or reduction caused
+            by the hypothetical lens.
+          </p>
+              <div class="figure">
+                <a id="id3101"></a>
+                <p class="title">
+                  <strong>Figure 17.67. Example result of Zoom option</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-zoom-low.png" alt="Example result of Zoom option" />
+                    <div class="caption">
+                      <p>-100.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-original.png" alt="Example result of Zoom option" />
+                    <div class="caption">
+                      <p>0.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-zoom-high.png" alt="Example result of Zoom option" />
+                    <div class="caption">
+                      <p>+100.0</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Shift X, </span>
+              <span class="term">Shift Y</span>
+            </dt>
+            <dd>
+              <p>
+            These two options specify the shift of the image produced by not
+            perfectly centered pairs of lenses.
+          </p>
+              <p>
+            As above this option produces visible results only if the
+            <span class="guilabel">Main</span> or <span class="guilabel">Edge</span> options
+            are non zero.
+          </p>
+              <div class="figure">
+                <a id="id3102"></a>
+                <p class="title">
+                  <strong>Figure 17.68. Example result of Shift X option (Main set to 70.0)</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-xshift-low.png" alt="Example result of Shift X option (Main set to 70.0)" />
+                    <div class="caption">
+                      <p>-100.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-original.png" alt="Example result of Shift X option (Main set to 70.0)" />
+                    <div class="caption">
+                      <p>0.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-xshift-high.png" alt="Example result of Shift X option (Main set to 70.0)" />
+                    <div class="caption">
+                      <p>+100.0</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Brighten</span>
+            </dt>
+            <dd>
+              <p>
+            The amount of the <span class="quote">“<span class="quote">vignetting</span>”</span> effect: the brightness
+            decrease/increase due to the lens curvature that produces a
+            different light absorption.
+          </p>
+              <p>
+            The <span class="guilabel">Main</span> or <span class="guilabel">Edge</span> options
+            must be non zero for this option to produce noticeable results.
+          </p>
+              <div class="figure">
+                <a id="id3103"></a>
+                <p class="title">
+                  <strong>Figure 17.69. Example result of the Brighten option (Main set to 75.0)</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-brighten-low.png" alt="Example result of the Brighten option (Main set to 75.0)" />
+                    <div class="caption">
+                      <p>-25.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-original.png" alt="Example result of the Brighten option (Main set to 75.0)" />
+                    <div class="caption">
+                      <p>0.0</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/lensdistortion-brighten-high.png" alt="Example result of the Brighten option (Main set to 75.0)" />
+                    <div class="caption">
+                      <p>+25.0</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Background color</span>
+            </dt>
+            <dd>
+              <p>
+            The part of the active layer outside the lens will have the
+            background color selected here.
+          </p>
+              <p>
+            You can select the color:
+            </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                  Click on the color button to open the color selector dialog.
+                </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                  Click on the eye-drop button on the right to pick a color
+                  from the image.
+                </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-engrave.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-distort.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-kaleidoscope.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-engrave.html">5.4. Engrave</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-kaleidoscope.html">5.6. Kaleidoscope</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

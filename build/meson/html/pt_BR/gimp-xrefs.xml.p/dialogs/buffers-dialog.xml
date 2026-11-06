@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-02-25 j.h: revised for v2.6
+  2007-08-09 revised for v2.4 by j.h
+  2007-05-03 Added Spanish translation by AntI
+  2006-09-03 lexa: added german translation
+  2006-08-21 Added italian translation by ciampix
+  2006-02-26 Several updates to v2.10 by j.h in en
+  2005-11-28 replaced informalfigures by figures by lexa
+-->
+<sect2 id="gimp-buffer-dialog">
+  <title>Diálogo de buffers </title>
+
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Buffers</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Buffers</primary>
+    <secondary>Diálogo</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Buffers</primary>
+    <secondary>Cortar com nome</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Buffers</primary>
+    <secondary>Copiar com nome</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Buffers</primary>
+    <secondary>Colar com nome</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Cortar com nome</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Copiar com nome</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Colar com nome</primary>
+  </indexterm>
+
+  <figure>
+    <title>O diálogo de buffers, como uma lista</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/buffers-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>Buffers são um tipo de armazenamento temporário para dados de imagem, criados quando você recorta ou copia parte de um drawable (uma camada, máscara de camada, etc.). Os seguintes comandos estão disponíveis no menu <guimenu>Editar</guimenu> para salvar uma imagem em um buffer: <variablelist>
+      <varlistentry>
+        <term>Cortar com nome</term>
+        <listitem>
+          <para><menuchoice><guimenu>Editar</guimenu><guisubmenu>Buffer</guisubmenu><guimenuitem>Cortar Nomeado…</guimenuitem></menuchoice> Este comando recorta a parte selecionada do drawable atual (geralmente uma camada) e a coloca em um buffer. Se não houver seleção, todo o drawable será usado. Será solicitado que você dê um nome ao buffer. A imagem será removida da seleção depois disso.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Copiar com nome</term>
+        <listitem>
+          <para><menuchoice><guimenu>Editar</guimenu><guisubmenu>Buffer</guisubmenu><guimenuitem>Copiar Nomeado…</guimenuitem></menuchoice> Este comando copia a parte selecionada do drawable atual (geralmente uma camada) e a coloca em um buffer. Se não houver seleção, todo o drawable será usado. Será solicitado que você dê um nome ao buffer.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Copiar com nome</term>
+        <listitem>
+          <para><menuchoice><guimenu>Editar</guimenu><guisubmenu>Buffer</guisubmenu><guimenuitem>Copiar Visível Nomeado…</guimenuitem></menuchoice> Este comando copia a parte selecionada de todos os drawables visíveis e a coloca em um buffer. Se não houver seleção, toda a imagem será usada. Será solicitado que você dê um nome ao buffer.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Colar com nome</term>
+        <listitem>
+          <para><menuchoice><guimenu>Editar</guimenu><guisubmenu>Buffer</guisubmenu><guimenuitem>Colar Nomeado…</guimenuitem></menuchoice> Este comando de menu abre a <guilabel>Caixa de Diálogo de Buffers</guilabel>. Para colar um buffer de fato, escolha um dos botões desta caixa de diálogo, ou o menu de contexto. Ambos serão explicados abaixo.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist></para>
+  <para>O diálogo de <quote>Buffers</quote> exibe o conteúdo de todos os buffers existentes, e permite que você trabalhe com eles de várias formas. Ele também mostra, no topo, o conteúdo do Buffer global (o que é usado para simplesmente copiar e colar), mas você não pode fazer nada com ele: só pode ver a miniatura de seus coteúdos.</para>
+  <caution>
+    <para>Buffers com nome não são salvos entre sessões do GIMP. A única forma de salvá-los é colá-los em imagens.</para>
+  </caution>
+
+  <sect3 id="gimp-buffer-dialog-activate">
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Do menu da janela de imagem, em <menuchoice><guimenu>Cores</guimenu> <guisubmenu>Informação</guisubmenu><guimenuitem>Histograma</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Do menu da janela de imagens em <menuchoice><guimenu>Janelas</guimenu><guisubmenu>Diálogos de encaixe</guisubmenu><guimenuitem>Buffers</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Buffers</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      In the <guimenu>Windows</guimenu> menu, there is a list of
+      <link linkend="gimp-dockable-menu">detached windows</link> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <quote>Buffers</quote> dialog from the main menu:
+      <menuchoice>
+        <guimenu>Windows</guimenu>
+        <guimenuitem>Buffers</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="gimp-buffer-dialog-using">
+    <title>Usando o diálogo de buffers</title>
+    <para>Clique em um buffer na área principal do diálogo para torná-lo o buffer ativo, isto é, o que será usado para comandos de <quote>Colar</quote> realizados a partir do menu de contexto, ou dos botões na parte de baixo do diálogo. Um click duplo em um buffer faz com que seu conteúdo seja colado na imagem ativa como uma seleção flutuante; Esta é uma forma rápida de executar o comando <quote>Colar buffer</quote></para>
+    <para>Na parte de baixo do diálogo há quatro botões. As ações dos mesmos também podem ser acessadas através do menu de Buffers, que você pode acessar pressionando o botão direito do mouse no diálogo.</para>
+    <figure>
+      <title>O diálogo de Buffers (visão em grade)</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/buffers-dialog-grid.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>No menu de Guia para o diálogo de <quote>Buffers</quote>, você pode escolher entre <guimenuitem>Ver como grade</guimenuitem>e <guimenuitem>Ver como lista</guimenuitem>. No modode grade, as miniaturas dos buffers aparecem em um arranjo regularde ícones. Apenas o nome do buffer selecionado é exibido. No modo de Lista, eles são alinhados um abaixo do outro,e o nome e tamanho em pixels de cada buffer são exibidos.</para>
+    <tip>
+      <para><keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo> abre uma caixa para pesquisas por nome. Para maiores informações sobre o modo de lista, veja <xref linkend="gimp-dock-view-as-list"/>.</para>
+    </tip>
+    <para>Você pode alterar o tamanho das pré-visualizações dos buffers, usando o submenu <quote>Tamanho da pré-visualização</quote> no menu de guia do diálogo.</para>
+
+    <sect4 id="gimp-buffer-dialog-buttons">
+      <title>Botões na parte de baixo</title>
+      <para>
+        The button bar at the bottom offers the following functionality:
+      </para>
+      <variablelist>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/edit-paste-symbolic.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Colar buffer</phrase>
+          </term>
+          <term>
+            <phrase>Colar buffer em</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-buffer-paste"/>
+            <para>Este comando cola o conteúdo do buffer selecionado na imagem ativa, como uma seleção flutuante. A única diferença entre esse comando e o <link linkend="gimp-edit-paste">Colar</link> normal é que ele usa o buffer selecionado em vez do buffer global da área de transferência.</para>
+            <anchor id="gimp-buffer-paste-in-place"/>
+            <para>Com a tecla <keycap>Shift</keycap> pressionada, ele cola o buffer em sua localização original.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-paste-into-symbolic.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Colar buffer em</phrase>
+          </term>
+          <term>
+            <phrase>Colar Buffer na Seleção no Local</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-buffer-paste-into"/>
+            <para>Este comando cola o conteúdo do buffer atual dentro da seleção da imagem ativa. A única diferença entre esse comando e o <link linkend="gimp-edit-paste-into">Colar em</link> normal é que ele usa o buffer selecionado em vez do buffer global da área de transferência.</para>
+            <anchor id="gimp-buffer-paste-into-in-place"/>
+            <para>Com a tecla <keycap>Shift</keycap> pressionada, ele cola o buffer na seleção ativa em sua localização original.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-paste-as-new-symbolic.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Colar buffer como nova</phrase>
+          </term>
+          <term>
+            <!-- TODO / FIXME: Look over title case for "in Place" in GIMP strings after 3.0 -->
+            <phrase>Colar buffer como nova</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-buffer-paste-as-new-layer"/>
+            <para>Este comando cria uma nova imagem, de uma única camada, com o conteúdo do buffer selecionado.  A única diferença entre esse comando e o <link linkend="gimp-edit-paste-as-new">Colar como nova</link> normal é que ele usa o buffer selecionado em vez do buffer global da área de transferência.</para>
+            <anchor id="gimp-buffer-paste-as-new-layer-in-place"/>
+            <para>Com a tecla <keycap>Shift</keycap> pressionada, ele cria a camada na localização original do buffer.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-paste-as-new-symbolic.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Colar buffer como nova</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-buffer-paste-as-new-image"/>
+            <para>Este comando cria uma nova imagem, de uma única camada, com o conteúdo do buffer selecionado.  A única diferença entre esse comando e o <link linkend="gimp-edit-paste-as-new">Colar como nova</link> normal é que ele usa o buffer selecionado em vez do buffer global da área de transferência.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Remover buffer</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-buffer-delete"/>
+            <para>Este comando apaga o buffer selecionado, sem perguntar nada. Você não pode apagar o Buffer global.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4 id="gimp-buffer-dialog-menu">
+      <title>O menu de contexto do diálogo de Definições de ferramentas</title>
+      <para>Estes comandos são os mesmos disponíveis através dos botões na parte inferior da caixa de diálogo e são explicados lá.</para>
+    </sect4>
+  </sect3>
+</sect2>

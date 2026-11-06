@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-08-28 ude: reviewed for v2.6
+  2009-07-01 Liang Tai: deleted buttons that no longer exist
+  2008-01-07 j.h: copy-pasted from menus/xtns-module-manager.xml
+  2008-05-06 ude: changed (help-)id [was: gimp-xtns-module-manager]
+  2008-03-13 ude: enhanced dialog description
+  2005-11-24 split of from menus-toolbox.xml by axel.wernicke
+-->
+<sect2 id="gimp-module-dialog">
+  <title>Módulos</title>
+
+  <indexterm>
+    <primary>Módulos</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Gerenciador de módulos</primary>
+  </indexterm>
+
+  <para>Com o comando de <guimenuitem>Módulos</guimenuitem> você pode exibir todos os módulos de extensão que estão disponíveis e controlar quais deles devem ser carregados. Os módulos executam funções como escolha de cores e filtros para a tela. Quaisquer mudanças que você faça no Gerenciador de módulos entrarão em efeito na próxima vez que você iniciar o <acronym>GIMP</acronym>. Essas mudanças afetarão a funcionalidade do <acronym>GIMP</acronym>, bem como seu tamanho em memória e tempo de inicialização.</para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Edit</guimenu>
+        <guimenuitem>Modules</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Descrição do diálogo <quote>Gerenciador de módulos</quote></title>
+    <figure>
+      <title>A janela de diálogo <quote>Gerenciador de módulos</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/edit/module-manager-dialog.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>A janela do Gerenciador de módulos exibe os módulos carregáveis.</para>
+    <para>Clicando nas caixas na primeira coluna vai marcar ou desmarcar os módulos. Da próxima vez que você iniciar o <acronym>GIMP</acronym>, todos os módulos marcados serão carregados.</para>
+    <para>Você notara a diferença apenas ao tentar usar os módulos. Por exemplo, há vários <link linkend="gimp-color-dialog">Seletores de cor</link> para escolher a cor de frente ou de fundo. Alguns desses seletores são módulos, e só estarão disponíveis se você deixar marcada a opção respectiva no gerenciador de módulos.</para>
+    <figure>
+      <title>Exemplo de módulos carregados: Módulos de seltores de cor.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/edit/module-manager-ex1.png"/>
+        </imageobject>
+        <caption>
+          <para>Módulos seletores de cor carregados</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/edit/module-manager-ex2.png"/>
+        </imageobject>
+        <caption>
+          <para>Módulos seletores de cor desativados</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Na parte de baixo do diálogo são exibidas informações de versão e direito de autor para os módulos que foram carregados na sessão atual do GIMP.</para>
+    <para>Na segunda coluna, para cada módulo carregado, o propósito do módulo é mostrado. Para cada módulo, mesmo os que não foram carregados, o caminho de pastas até o arquivo do módulo é exibido.</para>
+    <para>Quando você clicar no botão de <guibutton>Atualizar</guibutton>, a lista de módulos será atualizada: módulos que não estão mais no disco serão removidos, e novos módulos aparecerão.</para>
+  </sect3>
+</sect2>

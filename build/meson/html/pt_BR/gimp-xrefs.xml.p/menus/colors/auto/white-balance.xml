@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  
+  2006-08-08: created by scb; example by j.h
+-->
+<!-- id is still used by GIMP, do not change! -->
+<sect2 id="gimp-layer-white-balance">
+  <title>Equilíbrio de branco</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Equilíbrio de branco</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Equilíbrio de branco</primary>
+  </indexterm>
+
+  <para>O comando <guimenuitem>Equilíbrio de Branco</guimenuitem> ajusta automaticamente as cores da camada ativa esticando os canais Vermelho, Verde e Azul separadamente. Para fazer isso, ele descarta as cores de pixel em ambas as extremidades do histogramas Vermelho, Verde e Azul que são usadas por apenas 0,05% dos pixels na imagem e estica o intervalo restante tanto quanto possível. O resultado é que as cores de pixel pouco frequentes nas extremidades dos histogramas (talvez pontos de poeira, etc) não influenciam negativamente nos valores mínimos e máximo usados para esticar os histogramas, comparando com <link linkend="gimp-filter-stretch-contrast">Esticar Contraste</link>. Assim como o <quote>Esticar Contraste</quote>, entretanto, é possível haver mudanças de tonalidade na imagem resultante.</para>
+  <para>Esse comando é apropriado para as imagens com pouco nível de branco ou preto. Já que ele tende a criar branco (e preto) puro, pode ser útil, por exemplo, para melhorar fotografias.</para>
+  <note>
+    <para>Este comando funciona somente em imagens RGB. Se a imagem estiver em Tons de Cinza ou for Indexada, a entrada do menu será desativada.</para>
+  </note>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Auto</guisubmenu>
+        <guimenuitem>White Balance</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Exemplo de <quote>Equilíbrio de Branco</quote></title>
+    <figure>
+      <title>Imagem original</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/auto/alice.png"/>
+        </imageobject>
+        <caption>
+          <para>A camada ativa e seus histogramas Vermelho, Verde e Azul antes do <quote>Equilíbrio de Branco</quote>.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Imagem após o comando</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/auto/white-balance.png"/>
+        </imageobject>
+        <caption>
+          <para>A camada ativa e seus histogramas Vermelho, Verde e Azul após o <quote>Equilíbrio de Branco</quote>. Áreas de branco fraco na imagem se tornaram branco puro.</para>
+          <para>Esticar o histograma cria lacunas entre as colunas de pixels, dando a ele um visual listrado.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

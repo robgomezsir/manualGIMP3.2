@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.5. Adicionando Funcionalidade Adicional</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-using-script-fu-tutorial.html" title="3. Um tutorial de Script-Fu" />
+    <link rel="prev" href="gimp-using-script-fu-tutorial-first-script.html" title="3.4. Seu primeiro Script de Script-Fu" />
+    <link rel="next" href="gimp-using-script-fu-tutorial-extending-text-box.html" title="3.6. Extendendo o Script de “Text Box”" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.5. Adicionando Funcionalidade Adicional</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-script-fu-tutorial-first-script.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Um tutorial de Script-Fu</span>
+        <nav> <a accesskey="n" href="gimp-using-script-fu-tutorial-extending-text-box.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-using-script-fu-tutorial-script"></a>3.5. Adicionando Funcionalidade Adicional</h3>
+          </div>
+        </div>
+      </div>
+      <p>Vamos continuar nosso treinamento e acrescentar alguma funcionalidade ao nosso script.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2848"></a>3.5.1. Criando uma nova imagem</h4>
+            </div>
+          </div>
+        </div>
+        <p>Na seção anterior, nós criamos uma função vazia e a registramos no <acronym class="acronym">GIMP</acronym>. Nesta lição, nós vamos prover funcionalidades ao nosso script — nós queremos criar uma nova imagem, adicionar o texto do usuário à mesma, e mudar o tamanho da imagem para que fique exatamente do tamanho do texto.</p>
+        <p>Uma vez que você já saiba como definir variáveis, definir funções, e acessar itens dentro de listas, o restante é ladeira abaixo — tudo o que você precisa é se familiarizar com as funções disponíveis no banco de dados de procedimentos do <acronym class="acronym">GIMP</acronym>, e chamar aquelas funções diretamente. Então abra o Navegador de procedimentos, no menu de ajuda (<a class="xref" href="plug-in-dbbrowser.html" title="12.10. O navegador de procedimentos">Seção 12.10, “O navegador de procedimentos”</a>) e vamos começar a brincar!</p>
+        <p>Vamos começar criando uma nova imagem. vamos criar uma nova variável com o nome <code class="varname">theImage</code>, e atribuir a ela o resultado de chamar a função do GIMP <code class="function">gimp-image-new</code>.</p>
+        <p>Como você pode ver no navegador de procedimentos, a função <code class="function">gimp-image-new</code> precisa de 3 parâmetros: a largura da imagem, sua altura e o tipo de imagem. Como nós vamos mudar seu tamanho depois, vamos cria-la como tamanho fixo de 10x10 pixels, no formato  <acronym class="acronym">RGB</acronym>. Vamos guardar a largura e a altura da imagem em variáveis também, já que vamos nos referir a esses valores e manipula-los mais tarde no script.</p>
+        <pre class="programlisting">
+        (define (script-fu-text-box inText inFont inFontSize inTextColor)
+        (let*
+              (
+                 ; definir nossas variáeis locais
+                 (theImageWidth  10)
+                 (theImageHeight 10)
+                 ; criar uma nova imagem:
+                 (theImage (car
+                                (gimp-image-new
+                                 theImageWidth
+                                 theImageHeight
+                                 RGB
+                                )
+                           )
+                 )
+                 (theText)     ;uma declaração para o textot
+                                    ;que vamos criar depois
+      </pre>
+        <p>Nota: nós usamos o valor <code class="code">RGB</code> para especificar que a imagem é uma imagem <acronym class="acronym">RGB</acronym> . Nós também poderíamos ter usado o valor <code class="code">0</code>, mas <acronym class="acronym">RGB</acronym> é mais descritivo quando nós (e outras pessoas, quando publicarmos o script na internet), formos olhar o código de volta.</p>
+        <p>Você também deve notar que nós pegamos a cabeça do resultado da chamada a função de criar imagem (usando <span class="quote">“<span class="quote">car</span>”</span>) Isso pode parecer estranho, por que a base de dados de procedimento (PDB) nos diz que ela retorna apenas um valor — o ID da imagem recém criada. No entanto, todas as funções da PDB do GIMP retornam uma lista para o Script-fu, mesmo que só haja um valor a lista. Então precisamos tomar o primeiro elemento da lista, a cabeça, com uma chamada a car.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2849"></a>3.5.2. Adicionando uma nova camada à imagem</h4>
+            </div>
+          </div>
+        </div>
+        <p>Agora que temos uma imagem, precisamos adicionar uma camada à mesma. Nós podemos chamar a função <code class="function">gimp-layer-new</code> para criar a nova camada, passando a referência (ID) da imagem que acabamos de criar. (Daqui por diante, em vez de listar a função toda, mostraremos só as linhas que estamos adicionando à mesma. Você pode ver o script completo <a class="link" href="gimp-using-script-fu-tutorial-result.html" title="3.7. Seu script e seu funcionamento">aqui</a>).</p>
+        <pre class="programlisting">
+        ;create a new layer for the image:
+           (theLayer
+                     (car
+                          (gimp-layer-new
+                           theImage
+                           "layer 1"
+                           theImageWidth
+                           theImageHeight
+                           RGB-IMAGE
+                           100
+                           LAYER-MODE-NORMAL
+                          )
+                      )
+            )
+         ) ;end of our local variables
+      </pre>
+        <p>Uma vez que tenhamos uma nova camada, precisamos adiciona-la a imagem:</p>
+        <pre class="programlisting">
+        (gimp-image-add-layer theImage theLayer 0)
+      </pre>
+        <p>Agora, só por diversão, vamos verificar o resultado de nosso trabalho até esse ponto, e adicionar esta linha para exibir a nova imagem, ainda vazia:</p>
+        <pre class="programlisting">(gimp-display-new theImage)</pre>
+        <p>
+        Save your work, restart <acronym class="acronym">GIMP</acronym>,
+        run the script and a new image should pop up. It will probably
+        contain garbage (random colors), because we haven't erased
+        it. We'll get to that in a second.
+      </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2850"></a>3.5.3. Adicionando o texto</h4>
+            </div>
+          </div>
+        </div>
+        <p>Vá em frente, e remova a linha para exibir a imagem (ou comente-a colocando um (<code class="code">;</code>) no começo da linha)</p>
+        <p>Antes de adicionar texto a imagem, precisamos configurar a cor de frente e a cor de fundo, de forma que o texto apareça na cor que o usuário especificou. Vamos usar as funções  gimp-context-set-back/foreground:</p>
+        <pre class="programlisting">
+        (gimp-context-set-background '(255 255 255) )
+        (gimp-context-set-foreground inTextColor)
+      </pre>
+        <p>Com as cores selecionadas, vamos limpar o lixo que existe na imagem preenchendo nossa camada com a cor de fundo:</p>
+        <pre class="programlisting">
+        (gimp-drawable-fill theLayer FILL-BACKGROUND)
+      </pre>
+        <p>Com a imagem limpa, podemos começar a adicionar algum texto</p>
+        <pre class="programlisting">
+        (set! theText
+                      (car
+                           (gimp-text-font
+                            theImage theLayer
+                            0 0
+                            inText
+                            0
+                            TRUE
+                            inFontSize
+                            inFont)
+                       )
+        )
+      </pre>
+        <p>Embora seja uma chamada de função longa, com muitos parâmetros, não há nenhuma surpresa se você olhar os parâmetros e compara-los com os que estão listados na entrada para essa função no navegador de procedimentos. Basicamente, estamos criando uma nova camada de texto, e atribuindo a mesma à variável <code class="varname">theText</code>.</p>
+        <p>Agora que temos o texto, podemos saber sua largura e sua altura, e redimensionar a imagem e sua camada para o tamanho do texto:</p>
+        <pre class="programlisting">
+        (set! theImageWidth   (car (gimp-drawable-get-width  theText) ) )
+        (set! theImageHeight  (car (gimp-drawable-get-height theText) ) )
+
+        (gimp-image-resize theImage theImageWidth theImageHeight 0 0)
+
+        (gimp-layer-resize theLayer theImageWidth theImageHeight 0 0)
+      </pre>
+        <p>Se você é como eu, provavelmente está se perguntando  o que é um desenhável (drawable) e como é diferente de uma camada (layer). A diferença entre os dois é que um desenhável é qualquer coisa em que se pode desenhar, incluindo camadas, mas isso também inclui canais, máscaras de camada, a seleção, etc...; Uma camada é uma versão mais específica de um desenhável. Na maioria dos casos a distinção não é importante.</p>
+        <p>Com a imagem pronta para ser exibida, podemos acrescentar de volta nossa linha que diz pra imagem ser exibida em uma janela:</p>
+        <pre class="programlisting">
+        (gimp-display-new theImage)
+      </pre>
+        <p>
+        Save your work, restart <acronym class="acronym">GIMP</acronym> and give your first
+        script a run!
+      </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2851"></a>3.5.4. Limpando o marcador de imagem suja (dirty flag)</h4>
+            </div>
+          </div>
+        </div>
+        <p>Se você tentar fechar sua imagem criada sem salvar o arquivo antes, o <acronym class="acronym">GIMP</acronym> vai perguntar se você quer salvar seu arquivo antes de fechar a imagem. Ele faz isso por que a imagem está marcada como <span class="quote">“<span class="quote">suja</span>”</span>, ou seja — ela sofreu modificações desde a última vez que foi salva.</p>
+        <p>Para fazer isso, nós limpamos o marcador de sujeira (dirty flag), depois de mostrar a imagem na tela:</p>
+        <pre class="programlisting">
+        (gimp-image-clean-all theImage)
+      </pre>
+        <p>Isso colocará o contador de sujeira em 0, fazendo a imagem parecer estar <span class="quote">“<span class="quote">limpa</span>”</span>. </p>
+        <p>Adicionar ou não essa linha é uma questão de gosto pessoal. Eu a uso em scripts que produzem novas imagens, quando os resultados são triviais, como neste caso. Se o seu script for muito complicado, ou se trabalha modificando uma imagem já existente, é melhor não usar essa função. </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-script-fu-tutorial-first-script.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-using-script-fu-tutorial.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-script-fu-tutorial-extending-text-box.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-script-fu-tutorial-first-script.html">3.4. Seu primeiro Script de Script-Fu</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-script-fu-tutorial-extending-text-box.html">3.6. Extendendo o Script de <span class="quote">“<span class="quote">Text Box</span>”</span></a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

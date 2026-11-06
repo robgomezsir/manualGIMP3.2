@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6. Degradês</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-painting.html" title="Capítulo 7. Pintando com o GIMP" />
+    <link rel="prev" href="gimp-creating-brush-quickly.html" title="5.4. Criando um pincel rapidamente" />
+    <link rel="next" href="gimp-concepts-patterns.html" title="7. Texturas" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6. Degradês</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-creating-brush-quickly.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 7. Pintando com o GIMP</span>
+        <nav> <a accesskey="n" href="gimp-concepts-patterns.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-concepts-gradients"></a>6. Degradês</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id9696" class="indexterm"></a>
+      <div class="figure">
+        <a id="id2675"></a>
+        <p class="title">
+          <strong>Figura 7.22. Alguns exemplos de degradês do GIMP</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/gradient-examples.png" alt="Alguns exemplos de degradês do GIMP" />
+            <div class="caption">
+              <p>
+          Gradients from top to bottom: FG to BG (RGB);
+          Full Saturation Spectrum CCW;
+          Nauseating Headache; Browns; Four Bars
+        </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>Um <span class="emphasis"><em>degradê</em></span> é um conjunto de cores dispostas em uma ordem linear. O uso mais básico de degradês é pela <a class="link" href="">Ferramenta de Mistura</a>, também conhecida como <span class="quote">“<span class="quote">ferramenta de degradê</span>”</span> ou <span class="quote">“<span class="quote">ferramenta de preenchimento com degradê</span>”</span>: funciona preenchendo a seleção com as cores de um degradê. Você tem muitas opções para escolher para controlar a forma como as cores do degradê serão dispostas dentro da seleção. Há também outras maneiras importantes para usar degradês, incluindo:</p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <span class="term">Pintando com um degradê</span>
+          </dt>
+          <dd>
+            <p>Cada ferramenta de pintura do <acronym class="acronym">GIMP</acronym> da a opção de usar as cores de um degradê. Isso permite que você crie pinceladas que mudam de cor conforme vai pintando.</p>
+          </dd>
+          <dt>
+            <span class="term">O filtro Mapear com degradê</span>
+          </dt>
+          <dd>
+            <p>
+           This filter is in the Colors menu, and allows you to
+           <span class="quote">“<span class="quote">colorize</span>”</span>
+           an image, using the color intensity of each point with the
+           corresponding color from the active gradient (the intensity 0, very
+           dark, is replaced by the color at most left end of the gradient,
+           progressively until the intensity is 255, very light, replaced by
+           the most right color of the gradient. See
+           <a class="xref" href="plug-in-gradmap.html" title="8.39. Mapear com degradê">Seção 8.39, “Mapear com degradê”</a> for more information.
+         </p>
+          </dd>
+        </dl>
+      </div>
+      <p>
+    <acronym class="acronym">GIMP</acronym> comes presupplied with a large number of
+    gradients. You can also add new gradients that you create or
+    download from other sources. You can access the full set of available
+    gradients using the
+    <a class="link" href="gimp-gradient-dialog.html" title="3.5. Diálogo de degradês">Gradients dialog</a>,
+    a dockable dialog that you can either activate when you need it, or keep
+    around as a tab in a dock. The <span class="quote">“<span class="quote">current gradient</span>”</span>, used in
+    most gradient-related operations, is shown in the Brush/Pattern/Gradient
+    area of the Toolbox. Clicking on the gradient symbol in the Toolbox is an
+    alternative way of bringing up the Gradients dialog.
+  </p>
+      <p>
+    Some quick examples of working with gradients (for more information
+    see <a class="link" href="gimp-tool-gradient.html" title="3.5. Degradê">Gradient Tool</a>) are:
+  </p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p>Colocar um degradê na seleção:</p>
+            <div class="procedure">
+              <ol class="procedure" type="1">
+                <li class="step">
+                  <p>Escolha um degradê</p>
+                </li>
+                <li class="step">
+                  <p>
+            With the Gradient Tool click and drag with the mouse between
+            two points of a selection.
+          </p>
+                </li>
+                <li class="step">
+                  <p>As cores serão distribuídas perpendicularmente na direção do arrasto do mouse e de acordo com o comprimento do mesmo.</p>
+                </li>
+              </ol>
+            </div>
+            <div class="figure">
+              <a id="id2676"></a>
+              <p class="title">
+                <strong>Figura 7.23. Como utilizar rapidamente um degradê em uma seleção</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/gradient-draw.png" alt="Como utilizar rapidamente um degradê em uma seleção" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+          </li>
+          <li class="listitem">
+            <p>Pintando com um degradê:</p>
+            <p>
+        You can also use a gradient with one of the drawing tools (e.g. Pencil,
+        Paintbrush or Airbrush) if you switch on
+        <span class="guilabel">Enable dynamics</span> and set
+        <span class="guilabel">Dynamics</span> to
+        <span class="guilabel">Color From Gradient</span>. In the next step, set the
+        gradients length and the <span class="guilabel">Repeat</span> style in the
+        <span class="guilabel">Fade Options</span> section, and select a suitable
+        gradient in the <span class="guilabel">Color Options</span> section.
+        <a class="xref" href="gimp-tool-dynamics.html#gimp-tool-dynamic-options" title="3.2.6. Opções de dinâmicas">Seção 3.2.6, “Opções de dinâmicas”</a> describes these
+        parameters in more detail.
+        </p>
+            <p>
+        The following example shows the impact on the Pencil tool.
+      </p>
+            <div class="figure">
+              <a id="id2677"></a>
+              <p class="title">
+                <strong>Figura 7.24. Como utilizar rapidamente um degradê com uma ferramenta de desenho</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/color-gradient-pencil-dialog.png" alt="Como utilizar rapidamente um degradê com uma ferramenta de desenho" />
+                  <div class="caption">
+                    <p>Tool settings</p>
+                  </div>
+                </div>
+                <div class="mediaobject">
+                  <img src="images/using/color-gradient-pencil-example.png" alt="Como utilizar rapidamente um degradê com uma ferramenta de desenho" />
+                  <div class="caption">
+                    <p>Resulting succession of the gradients colors</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+          </li>
+          <li class="listitem">
+            <p>Produções diferentes com o mesmo degradê:</p>
+            <div class="figure">
+              <a id="id2678"></a>
+              <p class="title">
+                <strong>Figura 7.25. Uso de degradês</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/gradient-usage.png" alt="Uso de degradês" />
+                  <div class="caption">
+                    <p>Quatro formas de usar o degradê de <span class="quote">“<span class="quote">Tropical Colors</span>”</span> (cores tropicais): um preenchimento de degradê linear, um preenchimento de degradê usando <span class="quote">“<span class="quote">acompanha forma</span>”</span>, um traço pintado com cores de um degradê, e um traço pintado com um pincel difuso colorido usando o filtro <a class="link" href="plug-in-gradmap.html" title="8.39. Mapear com degradê">Mapear com degradê</a>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+          </li>
+        </ul>
+      </div>
+      <p>Algumas coisas úteis para saber sobre degradês do <acronym class="acronym">GIMP</acronym>:</p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p>
+        The first gradients in the list are special: They use the colors from
+        the <a class="link" href="gimp-tools.html#gimp-toolbox-color-area" title="1.3.1. Foreground/Background Colors Area">Foreground/Background
+        Colors Area in the Toolbox</a>, instead of being fixed.
+      </p>
+            <div class="itemizedlist">
+              <ul class="itemizedlist" style="list-style-type: circle; ">
+                <li class="listitem">
+                  <p>
+            <span class="guilabel">FG to BG (HSV Counter-Clockwise)</span> represents
+            the hue succession in a color wheel from the selected hue to 360°.
+          </p>
+                </li>
+                <li class="listitem">
+                  <p>
+        <span class="guilabel">FG to BG (HSV Clockwise)</span> represents the hue
+        succession in a color wheel from the selected hue to 0°.
+          </p>
+                </li>
+                <li class="listitem">
+                  <p>
+        <span class="guilabel">FG to BG (RGB)</span> is the
+        RGB representation of the gradient from the Foreground color to the
+        Background color in Toolbox.
+          </p>
+                </li>
+                <li class="listitem">
+                  <p>
+          The <span class="guilabel">FG to BG (Hard Edge)</span> gradient
+          generates a gradient from the foreground color to the background color,
+          with hard-edged transitions in between.
+      </p>
+                </li>
+                <li class="listitem">
+                  <p>
+        With <span class="guilabel">FG to Transparent</span>, the selected hue becomes
+        more and more transparent. You
+        can modify these colors by using the Color Selector. Thus, by
+        altering the foreground and background colors, you can make these
+        gradients transition smoothly between any two colors you want.
+          </p>
+                </li>
+                <li class="listitem">
+                  <p>
+            The <span class="guilabel">FG to Transparent (Hard Edge)</span> gradient
+            generates a gradient from the foreground color to transparency,
+            with hard-edged transitions in between.
+          </p>
+                  <p>
+            Using this gradient, you can generate patterns very quickly with the
+            <span class="quote">“<span class="quote">Repeat</span>”</span> option, alternating repetitive colored shapes
+            with full transparency over a given background. Works best
+            with shapes like spiral, radial, square and linear.
+          </p>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="listitem">
+            <p>Degradês podem envolver não apenas as mudanças de cor, mas também mudanças na opacidade. Alguns dos degradês são completamente opacos, outros incluem partes transparentes ou translúcidas. Quando você preencher ou pintar com um degradê não-opaco, o conteúdo pré-existente da camada ira aparecer através da pintura.</p>
+          </li>
+          <li class="listitem">
+            <p>Você pode criar novos degradês<span class="emphasis"><em>personalizados</em></span>, usando o <a class="link" href="gimp-gradient-dialog.html#gimp-gradient-editor-dialog" title="3.5.3. O Editor de degradês">Editor de degradês</a>. Você não pode modificar os degradês que são fornecidos com o <acronym class="acronym">GIMP</acronym>, mas você pode duplicá-los ou criar novos, e depois editá-los.</p>
+          </li>
+        </ul>
+      </div>
+      <p>
+    The gradients that are supplied with <acronym class="acronym">GIMP</acronym> are stored in
+    a system <code class="filename">gradients</code> folder.
+  </p>
+      <p>
+    Gradients that you create are automatically saved in the
+    <code class="filename">gradients</code> folder of your personal
+    <acronym class="acronym">GIMP</acronym> directory. Any gradient files (ending with
+    the extension <code class="filename">.ggr</code>) found in one of these
+    folders, will automatically be loaded when you start
+    <acronym class="acronym">GIMP</acronym>. You can add more directories to the
+    gradient search path, if you want to, in the Gradients tab of the
+    <a class="link" href="gimp-prefs-folders-data.html" title="6.27. Pastas de dados">Data Folders</a>
+    section of the Preferences dialog.
+  </p>
+      <p>
+    <acronym class="acronym">GIMP</acronym> can also load gradient files in SVG format, used
+    by many vector graphics programs. To make <acronym class="acronym">GIMP</acronym> load an
+    SVG gradient file, place it in the
+    <code class="filename">gradients</code> folder of your personal
+    <acronym class="acronym">GIMP</acronym> directory, or any other folder in your gradient
+    search path.
+  </p>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Dica]" src="images/tip.png" />
+            </td>
+            <th align="left">Dica</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      You can find a large number of interesting SVG gradients on the web, in
+      particular at OpenClipArt Gradients
+      <a class="xref" href="bibliography.html#bibliography-online-openclipart-gradients" title="Open Clipart - Degradês">[<abbr class="abbrev">OPENCLIPART-GRADIENT</abbr>]</a>.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-creating-brush-quickly.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-painting.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-concepts-patterns.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-creating-brush-quickly.html">5.4. Criando um pincel rapidamente</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-concepts-patterns.html">7. Texturas</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

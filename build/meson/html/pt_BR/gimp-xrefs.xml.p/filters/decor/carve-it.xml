@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-06-23 j.h: Some changes for better understanding
+  2007-12-16 MikaS: added 'fr'
+  2007-10-01 KoSt: added 'no'
+  2007-09-29 alex falappa: added 'it'
+  2007-09-18 AntI: Added 'es'
+  2007-09-17 ude: created en,de
+-->
+<sect2 id="script-fu-carve-it">
+  <title>Esculpir estêncil</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Decoração</secondary>
+    <tertiary>Esculpir estêncil</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Esculpir estêncil</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Esculpir estêncil</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_grayscale.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/decor-taj-carve-it.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Esse filtro trabalha com duas imagens: origem e alvo. A imagem de origem deve ser uma imagem em tons de cinza, contendo uma única camada e sem canal alfa (ou um objeto desenhável como uma máscara de camada ou canal).  Essa camada é usada como uma máscara de seleção para o efeito de esculpir. A imagem a ser esculpida (a imagem alvo), pode ser uma imagem RGB ou em tons de cinza, também com uma única camada. A imagem de destino deve ter o mesmo tamanho que a imagem de origem.</para>
+    <note>
+      <para>
+        If the image is in RGB mode or indexed mode, this menu entry
+        is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Decor</guisubmenu>
+        <guimenuitem>Stencil Carve…</guimenuitem>
+      </menuchoice>.
+    </para>
+    <tip>
+      <para>
+        If this command remains disabled although the image is grayscale,
+        check for an Alpha channel and delete it.
+      </para>
+    </tip>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de <quote>Esculpir estêncil</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/decor/carve-it.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Mask drawable</term>
+        <listitem>
+          <para>
+            Here you may select the target image and its layer or channel
+            which the carving effect is applied to.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Esculpir áreas em branco</term>
+        <listitem>
+          <para>Se selecionado (padrão), a imagem de origiem é usada como estêncil como descrito acima. Caso contrário, o <emphasis>negativo</emphasis> da imagem de origem é usado como estêncil. Exemplo:</para>
+          <figure>
+            <title>Máscaras de relevo</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/filters/examples/carve-it-mask.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Máscara normal</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/filters/examples/carve-it-invmask.jpg"/>
+              </imageobject>
+              <caption>
+                <para>Máscara invertida</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>No exemplo abaixo, a origem é uma imagem em tons de cinza. O alvo é uma imagem com uma textura de madeira.</para>
+          <para>A esquerda, <guilabel>Esculpir áreas brancas</guilabel> está habilitado. Os pixels da imagem destino correpondendo aos pixels brancos no estêncil (em volta do texto) foram esculpidos. O resultado é um texto gravado em relevo.</para>
+          <para>À direita, <guilabel>Esculpir áreas brancas</guilabel> está desligado. Os pixels da imagem de destino correspondendo aos pixels pretos no estêncil (o texto) foram esculpidos. O resultado é o texto com letras escavadas na nova imagem.</para>
+          <figure>
+            <title>Exemplo com <quote>Esculpir áreas em branco</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/carve-it-normal.png"/>
+              </imageobject>
+              <caption>
+                <para>Áreas em branco esculpidas</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/carve-it-stencil.png"/>
+              </imageobject>
+              <caption>
+                <para>Estêncil</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/carve-it-invers.png"/>
+              </imageobject>
+              <caption>
+                <para>Áreas em preto esculpidas</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

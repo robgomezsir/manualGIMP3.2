@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Chapter 13. Scripting and writing plug-ins</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="become-a-gimp-wizard.html" title="Part II.  How do I Become a GIMP Wizard?" />
+    <link rel="prev" href="customize-splashscreen.html" title="3. Customize Splash-Screen" />
+    <link rel="next" href="gimp-concepts-script-fu.html" title="2. Using Script-Fu Scripts" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Chapter 13. Scripting and writing plug-ins</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="customize-splashscreen.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>Part II. 
+      How do I Become a <acronym class="acronym">GIMP</acronym> Wizard?
+    </span>
+        <nav> <a accesskey="n" href="gimp-concepts-script-fu.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="chapter">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="gimp-scripting"></a>Chapter 13. Scripting and writing plug-ins</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Table of Contents</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-scripting.html#gimp-concepts-plugins">1. Plug-Ins</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-scripting.html#id1553">1.1. Introduction</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-scripting.html#id1554">1.2. Using Plug-Ins</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-scripting.html#gimp-plugins-install">1.3. Installing New Plug-Ins</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-scripting.html#plugins-write">1.4. Writing Plug-ins</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-concepts-script-fu.html">2. Using Script-Fu Scripts</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-concepts-script-fu.html#id1559">2.1. Script-Fu?</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="install-script-fu.html">2.2. Installing Script-Fu scripts</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="common-script-fu-errors.html">2.3. Do's and Don'ts</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="kinds-of-script-fu.html">2.4. Different Kinds Of Script-Fus</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-using-script-fu-tutorial.html">3. A Script-Fu Tutorial</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-script-fu-tutorial.html#gimp-using-script-fu-tutorial-scheme">3.1. Getting Acquainted With Scheme</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-script-fu-tutorial-identifier.html">3.2. Variables And Functions</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-script-fu-tutorial-lists.html">3.3. Lists, Lists And More Lists</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-script-fu-tutorial-first-script.html">3.4. Your First Script-Fu Script</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-script-fu-tutorial-script.html">3.5. Adding Additional Functionality</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-script-fu-tutorial-extending-text-box.html">3.6. Extending The Text Box Script</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-script-fu-tutorial-result.html">3.7. Your script and its working</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-using-python-plug-in-tutorial.html">4. A Python plug-in writing Tutorial</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-python-plug-in-tutorial.html#gimp-tutorial-python-plug-in-basics">4.1. The basic elements of a plug-in for GIMP</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-concepts-plugins"></a>1. Plug-Ins</h2>
+            </div>
+          </div>
+        </div>
+        <a id="id11965" class="indexterm"></a>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id1553"></a>1.1. Introduction</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+      One of the nicest things about <acronym class="acronym">GIMP</acronym> is how easily its
+      functionality can be extended, by using plug-ins.
+      <acronym class="acronym">GIMP</acronym> plug-ins are external programs that run under the
+      control of the main <acronym class="acronym">GIMP</acronym> application and interact
+      with it very closely. Plug-ins can manipulate images in almost any way
+      that users can. Their advantage is that it is much easier to add a
+      capability to <acronym class="acronym">GIMP</acronym> by writing a small plug-in than by
+      modifying the huge mass of complex code that makes up the
+      <acronym class="acronym">GIMP</acronym> core. Many valuable plug-ins have C source code
+      that only comes to 100-200 lines or so.
+    </p>
+          <p>
+      Several dozen plug-ins are included in the main <acronym class="acronym">GIMP</acronym>
+      distribution, and installed automatically along with
+      <acronym class="acronym">GIMP</acronym>. Most of them can be accessed through the
+      <span class="guimenu">Filters</span> menu (in fact, everything in that menu is a
+      plug-in), but a number are located in other menus. In many cases you can
+      use one without ever realizing that it is a plug-in: for example, the
+      "Normalize" function for automatic color correction is actually a
+      plug-in, although there is nothing about the way it works that would tell
+      you this. Even importing and exporting of images is done by plug-ins.
+    </p>
+          <p>
+      Everyone can write a <acronym class="acronym">GIMP</acronym> plug-in and make it available
+      online. There are many useful plug-ins that can be obtained this way. Some
+      of them are described elsewhere in the User's Manual.
+    </p>
+          <p>
+      With this free availability comes a certain degree of risk. The fact that
+      anyone can release plug-ins means that there is no effective quality
+      control. The plug-ins distributed with <acronym class="acronym">GIMP</acronym> have all
+      been tested and tuned by the developers. Additional plug-ins available
+      online, may have been hacked together in a few hours and then
+      abandoned. Some plug-in creators don't care about robustness, and even for
+      those who do, their ability to test on a variety of systems in a variety
+      of situations is often quite limited. Basically, when you download a
+      plug-in, you are getting something for free, and sometimes you get exactly
+      what you pay for. This is not to discourage you, just to make sure you
+      understand that not all plug-ins available online will deliver what you
+      expect from them.
+    </p>
+          <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Warning">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Warning]" src="images/warning.png" />
+                </td>
+                <th align="left">Warning</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        Plug-ins, being full-fledged executable programs, can do all of the
+        things that any other program can do. This includes installing
+        back-doors on your system or otherwise compromise its security. Don't
+        install a plug-in unless it comes from a trusted source.
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Note]" src="images/note.png" />
+                </td>
+                <th align="left">Note</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        <acronym class="acronym">GIMP</acronym> 3.0 needed to change its plug-in API in many
+        places. Because of that, plug-ins written for older versions need to
+        be updated and won't work without changes.
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="id1554"></a>1.2. Using Plug-Ins</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+      For the most part you can use a plug-in like any other
+      <acronym class="acronym">GIMP</acronym> tool, without needing to be aware that it is a
+      plug-in. But there are a few things about plug-ins that are useful to
+      understand.
+    </p>
+          <p>
+      One is that plug-ins are generally not as robust as the
+      <acronym class="acronym">GIMP</acronym> core. When <acronym class="acronym">GIMP</acronym> crashes, it
+      is considered a very serious thing: it can cost the user a lot of
+      trouble and headache. When a plug-in crashes, the consequences are
+      usually not as serious. In most cases you can continue working
+      without worrying about it too much.
+    </p>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Note]" src="images/note.png" />
+                </td>
+                <th align="left">Note</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        Because plug-ins are separate programs, they communicate with
+        <acronym class="acronym">GIMP</acronym> in a special way: The <acronym class="acronym">GIMP</acronym>
+        developers call it <span class="quote">“<span class="quote">talking over a wire</span>”</span>. When a plug-in
+        crashes, the communication breaks down, and you may see an error
+        message about a <span class="quote">“<span class="quote">wire read error</span>”</span>.
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Tip">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Tip]" src="images/tip.png" />
+                </td>
+                <th align="left">Tip</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        When a plug-in crashes, <acronym class="acronym">GIMP</acronym> gives you a very
+        ominous-looking message telling you that the plug-in may have left
+        <acronym class="acronym">GIMP</acronym> in a corrupted state, and you should consider
+        saving your images and exiting. Strictly speaking, this is quite
+        correct, because plug-ins have the power to alter almost anything in
+        <acronym class="acronym">GIMP</acronym>, but for practical purposes, experience has
+        shown that corruption is actually quite rare, and many users just
+        continue working and don't worry about it. Our advice is that you
+        simply think about how much trouble it would cause you if something
+        went wrong, and weigh it against the odds.
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>
+      Because of the way plug-ins communicate with <acronym class="acronym">GIMP</acronym>,
+      they do not have any mechanism for being informed about changes you make
+      to an image after the plug-in has been started. If you start a plug-in,
+      and then alter the image using some other tool, the plug-in may crash.
+      Even if it doesn't, doing this may cause incorrect results. You should
+      avoid running more than one plug-in at a time on an image, and avoid
+      doing anything to the image until the plug-in has finished working on it.
+      If you ignore this advice, not only could you screw up the image, you
+      may also screw up the undo system, so that you won't be able to recover
+      from your mistake.
+    </p>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-plugins-install"></a>1.3. Installing New Plug-Ins</h3>
+              </div>
+            </div>
+          </div>
+          <a id="id12009" class="indexterm"></a>
+          <p>
+      The plug-ins that are distributed with <acronym class="acronym">GIMP</acronym> don't
+      require installation. Plug-ins that you download yourself do.
+      Usually the default location is in <acronym class="acronym">GIMP</acronym>'s user
+      directory in a folder under <code class="filename">/plug-ins</code>, where the
+      folder name needs to be the same as the plug-in filename.
+      You can find the default locations where <acronym class="acronym">GIMP</acronym> searches
+      for plug-ins in the <a class="link" href="gimp-prefs-folders-data.html#gimp-prefs-folders-plug-ins">Data
+      Folders preferences</a>. There you can also add new locations where
+      <acronym class="acronym">GIMP</acronym> should look for plug-ins.
+      There are several scenarios, depending on what OS you are using and how
+      the plug-in is structured.
+    </p>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="id1555"></a>1.3.1. Linux / Unix-like systems</h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        Most plug-ins fall into two categories: small ones whose source
+        code is distributed as a single .c file, and larger ones whose
+        source code is distributed as a directory containing multiple
+        files including a <code class="filename">Makefile</code>.
+      </p>
+            <p>
+        For a simple one-file plug-in, call it <code class="filename">borker.c</code>,
+        installing it is just a matter of running the command
+        <span class="command"><strong>gimptool-3.2 --install borker.c</strong></span>. This command
+        compiles the plug-in and installs it in your personal plug-in directory,
+        <code class="filename">~/gimp-3.2/plug-ins</code> unless you have changed it.
+        This will cause it to be loaded automatically the next time you start
+        <acronym class="acronym">GIMP</acronym>. You don't need to be root to do these things;
+        in fact, you shouldn't be. If the plug-in fails to compile, well, be
+        creative.
+      </p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="id1556"></a>1.3.2. Windows</h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        Most <acronym class="acronym">GIMP</acronym> plug-ins available on Windows supply either
+        an installer, or can be downloaded in a pre-compiled binary format
+        ready to copy to a folder of your choice that is recognized by
+        <acronym class="acronym">GIMP</acronym>.
+      </p>
+            <p>
+        If an installer is available, that should do all the work for you
+        selecting an appropriate folder and copying all relevant files.
+        If not, you may have to check in <acronym class="acronym">GIMP</acronym>'s folder
+        preferences where the plug-ins should be copied to. Remember, each
+        plug-in needs to be in its own folder with the same name as the plug-in.
+      </p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="id1557"></a>1.3.3. Apple Mac OS X</h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        How you install plug-ins on OS X mostly depends on how you installed
+        <acronym class="acronym">GIMP</acronym> itself. If you were one of the brave and
+        installed <acronym class="acronym">GIMP</acronym>
+        through one of the package managers like fink
+        <a class="xref" href="bibliography.html#bibliography-online-fink" title="Fink Package Manager for OS X">[<abbr class="abbrev">FINK</abbr>]</a> or darwinports
+        <a class="xref" href="bibliography.html#bibliography-online-darwinports" title="Darwin Ports Package Manager for OS X">[<abbr class="abbrev">DARWINPORTS</abbr>]</a>, the
+        plug-in installation works exactly the way it is described for the
+        Linux platform already. The only difference is, that a couple of
+        plug-ins might even be available in the repository of your package
+        manager, so give it a try.
+      </p>
+            <p>
+        If, on the other hand, you prefer to use a prebuilt
+        <acronym class="acronym">GIMP</acronym> package, you most likely want
+        a prebuilt plug-in too. You can try to get a prebuilt version of
+        the plug-in of your dreams from the author of the plug-in. Building your
+        own binaries unfortunately involves installing <acronym class="acronym">GIMP</acronym>.
+      </p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="id1558"></a>1.3.4. Running the installed plug-in</h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        Once you have installed the plug-in, how do you activate it? The menu
+        path is determined by the plug-in itself, so to answer this you need to
+        either look at the documentation for the plug-in (if there is any),
+        explore the menus, or use <acronym class="acronym">GIMP</acronym>'s command search
+        function by pressing <span class="keycap"><strong>/</strong></span> and then entering the name of the
+        plug-in. If you know how to read source code you could also check that to
+        see in what menu it registers itself.
+      </p>
+            <p>
+        For more complex plug-ins, organized as a directory with multiple
+        files, there usually is a file inside called either
+        <code class="filename">INSTALL</code> or <code class="filename">README</code>, with
+        instructions. If not, the best advice is to toss the plug-in in the
+        trash and spend your time on something else: any code written with so
+        little concern for the user is likely to be frustrating in myriad
+        ways.
+      </p>
+            <p>
+        If you install a plug-in in your personal plug-in directory that has the
+        same name as one in the system plug-in directory, only one can be
+        loaded, and it will be the one in your home directory. You will
+        receive messages telling you this each time you start
+        <acronym class="acronym">GIMP</acronym>. This is probably a situation best avoided.
+      </p>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="plugins-write"></a>1.4. Writing Plug-ins</h3>
+              </div>
+            </div>
+          </div>
+          <a id="id12053" class="indexterm"></a>
+          <p>
+      If you want to learn how to write a plug-in, you can find plenty of help
+      at the <acronym class="acronym">GIMP</acronym> Developers web site
+      <a class="xref" href="bibliography.html#bibliography-online-gimp-dev-plugin" title="GIMP Plug-In Development">[<abbr class="abbrev">GIMP-DEV-PLUGIN</abbr>]</a>.
+      <acronym class="acronym">GIMP</acronym> is a complex
+      program, but the development team has made strenuous efforts to flatten
+      the learning curve for plug-in writing: there are good instructions and
+      examples, and the main library that plug-ins use to interface with
+      <acronym class="acronym">GIMP</acronym> (called <span class="quote">“<span class="quote">libgimp</span>”</span>) has a
+      well-documented <acronym class="acronym">API</acronym>. Good programmers, learning by
+      modifying existing plug-ins, are often able to accomplish interesting
+      things after just a couple of days of work.
+    </p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="customize-splashscreen.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="become-a-gimp-wizard.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-concepts-script-fu.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="customize-splashscreen.html">3. Customize Splash-Screen</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-concepts-script-fu.html">2. Using Script-Fu Scripts</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

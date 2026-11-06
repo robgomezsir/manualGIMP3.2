@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Capítulo 10. Melhorando fotografias</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="become-a-gimp-wizard.html" title="Parte II. Como posso me tornar um mestre no GIMP?" />
+    <link rel="prev" href="gimp-using-text.html" title="2. Texto" />
+    <link rel="next" href="gimp-imaging-color-management.html" title="Capítulo 11. Gerenciamento de cor com o GIMP" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Capítulo 10. Melhorando fotografias</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-text.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Parte II. Como posso me tornar um mestre no <acronym class="acronym">GIMP</acronym>?</span>
+        <nav> <a accesskey="n" href="gimp-imaging-color-management.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="chapter">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="gimp-imaging-photos"></a>Capítulo 10. Melhorando fotografias</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Índice</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-imaging-photos.html#gimp-using-photography">1. Trabalhando com fotos de câmeras digitais</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-imaging-photos.html#gimp-using-photography-introduction">1.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-imaging-photos.html#gimp-using-photography-improving">1.2. Melhorando a composição</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-imaging-photos.html#gimp-using-photography-colors">1.3. Melhorando as cores</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-imaging-photos.html#gimp-using-photography-sharpness">1.4. Ajustando a nitidez</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-imaging-photos.html#gimp-using-photography-retouching">1.5. Removendo objetos indesejados de uma imagem</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-imaging-photos.html#gimp-using-photography-saving">1.6. Salvando seus resultados</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-using-photography"></a>1. Trabalhando com fotos de câmeras digitais</h2>
+            </div>
+          </div>
+        </div>
+        <a id="id12762" class="indexterm"></a>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-using-photography-introduction"></a>1.1. Introdução</h3>
+              </div>
+            </div>
+          </div>
+          <p>Um dos usos mais comuns do GIMP é arrumar fotos de câmeras digitais que, por alguma razão, não ficaram perfeitas. Talvez a imagem tenha ficado sobre-exposta ou sub-exposta, talvez um pouco inclinada, ou fora de foco: todos esses são problemas comuns para os quais o GIMP possui boas ferramentas. O propósito deste capítulo é propiciar uma visão geral do que são essas ferramentas e das situações em que as mesmas são úteis. Você não vai encontrar tutoriais detalhados aqui: na maioria dos casos é mais fácil entender como as ferramentas funcionam experimentando com as ferramentas do que lendo sobre elas. (E também, cada ferramenta é descrita de forma mais abrangente na sessão de Ajuda devotada à mesma); Você também não vai encontrar nada neste capítulo sobre a quantidade enorme de <span class="quote">“<span class="quote">efeitos especiais</span>”</span> que você pode aplicar em uma imagem usando o GIMP. Você deve estar familiarizado com os conceitos básicos do GIMP antes de ler este capítulo, mas certamente você não precisa ser um expert — se você é, você provavelmente já sabe da maior parte do que está aqui de qualquer forma. E não hesite em experimentar: o poderoso sistema de <span class="quote">“<span class="quote">desfazer</span>”</span> do GIMP permite que você se recupere de praticamente qualquer erro com um simples <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Z</strong></span></p>
+          <p>As coisas que você mais comumente quer arrumar numa foto imperfeita são de quatro tipos: Melhorar a composição; melhorar as cores; melhorar a nitidez e remover defeitos ou outros elementos indesejados da imagem.</p>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-using-photography-improving"></a>1.2. Melhorando a composição</h3>
+              </div>
+            </div>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-rotating"></a>1.2.1. Rotacionando uma imagem</h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        It is easy, when taking a picture, to hold the camera not quite
+        perfectly vertical, resulting in a picture where things are
+        tilted at an angle.  In GIMP, the way to fix this is to use the
+        <a class="link" href="gimp-tool-rotate.html" title="4.5. Rotacionar">Rotate</a> tool.
+        Activate this by clicking its icon
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-rotate.svg" width="16" /></span>
+        </span>
+        in the Toolbox, or by pressing the
+        <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>R</strong></span> while
+        inside the image. Make sure the Tool Options are visible, and at
+        the top, make sure for <span class="quote">“<span class="quote">Transform:</span>”</span> that the left
+        button (<span class="quote">“<span class="quote">Transform Layer</span>”</span>) is selected.  If you then
+        click the mouse inside the image and drag it, you will see the image
+        rotate as you drag. When the image looks right, click
+        <span class="guibutton">Rotate</span> or press <span class="keycap"><strong>Enter</strong></span>, and
+        the image will be rotated.
+      </p>
+            <p>Agora, na verdade, não é tão fácil assim arrumar as coisas com esse método: com frequência você vai perceber que as coisas melhoraram, mas ainda não estão perfeitas. Uma solução é rotacionar mais um pouquinho, mas há uma desvantagem nesse método. Cada vez que você rotaciona uma imagem, pelo fato dos pixels da imagem rotacionada não se alinharem perfeitamente com os pixels originais, a imagem inevitavelmente se torna um pouco desfocada. Para uma única rotação, esse desfoque é bem pequeno, mas duas rotações desfocam o dobro, e não há razões para deixar as coias mais desfocadas do que você precisa. Uma alternativa melhor é desfazer a rotação e fazer uma outra, ajustando o ângulo.</p>
+            <p>
+        Fortunately, GIMP provides another way of doing it that is
+        considerably easier to use: in the Rotate Tool Options, for the
+        Transform Direction you can select "Corrective (Backward)". When you
+        do this, instead of rotating the image to compensate for the error, you
+        can rotate its frame to <span class="emphasis"><em>line up</em></span>
+        with the error. If this seems confusing, try it and you will see that
+        it is quite straightforward.
+      </p>
+            <p>Depois que você rotacionar uma imagem, haverá desagradáveis <span class="quote">“<span class="quote">buracos</span>”</span> triangulares nas bordas. Uma forma de arruma-los é preenche-los com alguma cor de fundo que não seja intrusiva, mas normalmente a melhor solução será cortar (guilhotinar) a imagem. Quanto maior a rotação, maior a área que será cortada, então o melhor mesmo é ter a máquina tão alinhada quanto possível quando você tira a foto.</p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-cropping"></a>1.2.2. Cortando</h4>
+                </div>
+              </div>
+            </div>
+            <p>Quando você tira uma foto com uma câmera digital, você tem controle sobre o que vai aparecer na imagem, mas com frequência não tanto quanto você gostaria: o resultado final poderia ficar melhor com algum recorte. Além disso, normalmente é possível aumentar o impacto de uma imagem recortando-a de forma que os elementos mais importantes fiquem em pontos chave. Como uma regra geral, que não deve se seguida sempre, mas é boa de se ter em mente é  a <span class="quote">“<span class="quote">regra dos terços</span>”</span>, que diz que uma foto tem maior impacto se o objeto de interesse está em localizado numa posição localizada a um terço da imagem, tanto na largura, quanto na altura.</p>
+            <p>Para cortar uma imagem, ative a ferramenta de Cortar na caixa de ferramentas, ou pressionando a tecla <span class="keycap"><strong>C</strong></span> (maiúscula) enquanto estiver na imagem. Com a ferramenta ativa, clicar e arrastar na imagem irá criar um retângulo - e você poderá ajusta-lo com o mouse, ou digitar as dimensões desejadas direto no diálogo de opções de ferramenta. Você pode mover o retângulo em incrementos de um pixel mantendo o cursor dentro das alças de redimensionamento, nos cantos, e usando as setas do teclado na direção desejada. (shift + seta para ir de 10 em 10 pixels). Quando tudo estiver perfeito, pressione <span class="keycap"><strong>Enter</strong></span>, ou simplesmente clique com o botão esquerdo dentro do retângulo (fora das alças de redimensionamento). </p>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-using-photography-colors"></a>1.3. Melhorando as cores</h3>
+              </div>
+            </div>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-automatic"></a>1.3.1. Ferramentas automáticas</h4>
+                </div>
+              </div>
+            </div>
+            <p>Apesar de sistemas de controle de exposição sofisticados, fotografias tiradas com câmeras digitais algumas vezes ficam super ou sub-expostas, ou com desvios de cor devido a imperfeições na iluminação. O GIMP lhe traz várias ferramentas para corrigir cores em uma imagem, indo de ferramentas automáticas que funcionam com um simples clique, até ferramentas altamente sofisticadas que lhe dão muitos parâmetros de controle. Vamos começar com as mais simples primeiro.</p>
+            <p>
+        GIMP gives you several automated color correction
+        tools. Unfortunately they don't usually give you quite the results
+        you are looking for, but they only take a moment to try out, and if
+        nothing else they often give you an idea of some of the
+        possibilities inherent in the image.  Except for "Auto Levels", you
+        can find these tools by following the menu path
+        <span class="guimenu">Colors</span> → <span class="guisubmenu">Auto</span>
+        in the main menu.
+      </p>
+            <p>Aqui estão eles, com umas poucas palavras sobre cada uma: </p>
+            <div class="variablelist">
+              <dl class="variablelist">
+                <dt>
+                  <span class="term">
+            <span class="guimenuitem">Equalizar</span>
+          </span>
+                </dt>
+                <dd>
+                  <p>Este é um ajuste muito poderoso que tenta espalhar as cores na imagem de forma uniforme em toda a faixa de intensidades possíveis. Em alguns casos o efeito é espetacular, fazendo aparecer contrastes que são bem difíceis de se obter de qualquer outra forma; mas geralmente, ele só faz a imagem parecer estranha. Bem, é só um instante para tentar, e se não ficar bom, desfazer!</p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guimenuitem">Equilíbrio de branco</span>
+          </span>
+                </dt>
+                <dd>
+                  <p>Pode melhorar as imagens com pontos ruins de branco ou de preto removendo cores pouco usadas, e esticando a faixa das outras tanto quanto possível.</p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guimenuitem">Esticar contraste</span>
+          </span>
+                </dt>
+                <dd>
+                  <p>Esta ferramenta (na verdade é um plug-in) é útil para imagens sub-expostas. Ela ajusta a imagem uniformemente até que o ponto mais claro esteja no limite de saturação, e o ponto mais escuro seja preto. O lado negativo é que a quantidade de clareamento é determinada inteiramente pelos pontos mais claro e mais escuro da imagem, de forma que um único pixel branco e/ou um único pixel preto tornarão a normalização inefetiva.</p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guimenuitem">Esticar contraste</span>
+          </span>
+                </dt>
+                <dd>
+                  <p>faz o mesmo que <span class="quote">“<span class="quote">Esticar contraste</span>”</span>, mas funciona no espaço de cores HSV, em vez do RGB. Ele preserva o matiz.</p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guimenuitem">Realce de cor...</span>
+          </span>
+                </dt>
+                <dd>
+                  <p>Esse comando aumenta a saturação das cores na camada, sem alterar o brilho ou o matiz. Portanto, ele não funciona em imagens em tons de cinza.</p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guimenuitem">Níveis automáticos</span>
+          </span>
+                </dt>
+                <dd>
+                  <p>
+              This is done by selecting
+              <span class="guimenu">Colors</span> → <span class="guimenuitem">Levels…</span>
+              in the main menu,
+              and then pressing the <span class="guibutton">Auto Input Levels</span> button near
+              the center of the dialog. You will see a preview of the result;
+              you must press <span class="guibutton">Okay</span> for it to take
+              effect. Pressing <span class="guibutton">Cancel</span> instead will
+              cause your image to revert to its previous state.
+            </p>
+                  <p>
+              If you can find a point in the image that ought to be perfect
+              white, and a second point that ought to be perfect black, then
+              you can use the Levels tool to do a semi-automatic adjustment
+              that will often do a good job of fixing both brightness and
+              colors throughout the image. First, bring up the Levels tool as
+              previously described. Now, look down near the bottom of the
+              Levels dialog for three buttons with symbols on them that look
+              like eye-droppers (at least, that is what they are supposed to
+              look like). The one on the left, if you mouse over it, shows its
+              function to be <span class="quote">“<span class="quote">Pick Black Point</span>”</span>.
+              Click on this, then click on a point in the image that ought
+              to be black–really truly perfectly black, not just sort of
+              dark–and watch the image change. Next, click on the rightmost of
+              the three buttons ( <span class="quote">“<span class="quote">Pick White Point</span>”</span>
+              ), and then click a point in the image that ought to be white,
+              and once more watch the image change. If you are happy with the
+              result, click the <span class="guibutton">Okay</span> button otherwise
+              <span class="guibutton">Cancel</span>.
+            </p>
+                </dd>
+              </dl>
+            </div>
+            <p>
+        Those are the automated color adjustments: if you find that none of
+        them quite does the job for you, it is time to try one of the
+        interactive color tools. All of these, except one, can be accessed via
+        <span class="guimenu">Colors</span> → <span class="guimenuitem">Auto</span> in the main menu.
+      </p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-exposure"></a>1.3.2. Problemas de exposição</h4>
+                </div>
+              </div>
+            </div>
+            <p>A ferramenta mais simples de se usar é a de <a class="link" href="gimp-tool-brightness-contrast.html" title="8.9. Brilho-Contraste">Brilho e contraste</a>. Também é a menos poderosa, mas em muitos casos, faz tudo o que você precisa. Esta ferramenta é usada com frequência para imagens que ficaram sub-expostas ou sobre-expostas. Não serve para corrigir desvios de cor. Esta ferramenta tem dois controles deslizantes para serem ajustados, um para o <span class="quote">“<span class="quote">Brilho</span>”</span> e um para o <span class="quote">“<span class="quote">Contraste</span>”</span> Se a opção de Pré-visualização estiver ligada (em geral está), você verá seus ajustes serem refletidos na imagem em tempo real. Quando estiver feliz com os resultados, pressione <span class="guibutton">Ok</span> e eles serão consolidados. Se você não conseguir chegar nos resultados que deseja, pressione <span class="guibutton">Cancelar</span>, ou vá direto para outra ferramenta, clicando em<span class="guibutton">Editar essas configurações como níveis</span>. Isso abrirá a ferramenta de Níveis, mas mantendo os ajustes que você já fez em Brilho/contraste,  embora sem torna-los permanentes ainda, de forma que você possa refinar os parâmetros.</p>
+            <p>Uma ferramenta mais sofisticada, mas um pouco mais complexa, para usar é a ferramenta de Níveis. O diálogo para essa ferramenta parece bastante complicado, mas para os usos básicos que temos em mente aqui, a única coisa com que você vai precisar lidar é a área dos <span class="quote">“<span class="quote">Níveis de entrada</span>”</span>, especificamente os três controles triangulares deslizantes que aparecem abaixo do histograma. Nós vamos direcionar você para a <a class="link" href="gimp-tool-levels.html" title="8.10. Níveis">ajuda da ferramenta de Níveis</a> para instruções, mas na verdade, a forma mais fácil de de aprender a usa-la é movendo esses três controles e vendo que acontece na pré-visualização da imagem. (Certifique-se de que a opção de <span class="quote">“<span class="quote">Pré-visualização</span>”</span> esteja ligada). Como no caso anterior, se você achar que está chegando no caminho certo, mas precisa de um pouco mais de controle sobre o resultado final, pode clicar em <span class="guibutton">Editar essas configurações como curvas</span>.</p>
+            <p>E por fim, uma ferramenta muito poderosa para corrigir problemas de exposição, é a ferramenta de Curvas. Essa ferramenta permite que você clique e arraste em pontos de controle sobre uma curva, de forma a criar uma função que mapeia níveis de brilho de entrada para níveis de brilho de saída. A ferramenta de curvas pode replicar qualquer efeito que você consiga com a ferramenta de Brilho/Contraste ou com a ferramenta de Níveis, então ela é mais poderosa que ambas — e na verdade não há nenhum motivo para você não começar direto pela ferramenta de Curvas para os ajustes, sem nem passar pelas demais. Novamente, nós referimos você para a <a class="link" href="gimp-tool-curves.html" title="8.11. Curvas">ajuda da ferramenta de Curvas</a> para ver instruções detalhadas, mas a forma mais fácil de entender como usa-la é experimentando.</p>
+            <p>A forma mais poderosa de ajustar brilho e contraste de uma imagem, para usuários mais avançados do GIMP, é criar uma camada acima da atual, e deixar o <span class="quote">“<span class="quote">modo de combinação</span>”</span> para essa nova camada em <span class="quote">“<span class="quote">Multiplicar</span>”</span>, no diálogo de Camadas. A nova camada passa a servir como uma camada de  <span class="quote">“<span class="quote">controle de ganho </span>”</span>para a camada abaixo dela, com branco resultando no ganho máximo, e preto resultando em zero (preto). Então, ao pintar na nova camada, você pode ajustar seletivamente o ganho de cada área da imagem, tendo um controle muito fino. Você deve tentar pintar degradês bem suaves, por que mudanças bruscas vão levar a cantos espúrios no resultado (experimente a ferramenta de Aerógrafo). Pinte apenas com tons de cinza, não com cores, a não ser que você queira mudanças de cor na sua imagem.</p>
+            <p>Na verdade, o modo de <span class="quote">“<span class="quote">Multiplicar</span>”</span> não é o único que é útil para controle de ganho. De fato, o modo Multiplicar só pode escurecer partes de uma imagem, nunca clareá-las. Então é mais útil se algumas partes foram super-expostas. Usar o modo de <span class="quote">“<span class="quote">Dividir</span>”</span> tem o efeito oposto: ele pode clarear partes de uma imagem, mas nunca escurece-las. Então aqui segue um truque que frequentemente é útil para ter o máximo de detalhe em todas as áreas de uma imagem:</p>
+            <div class="procedure">
+              <ol class="procedure" type="1">
+                <li class="step">
+                  <p>Duplique a camada (produzindo uma nova camada sobre a mesma).</p>
+                </li>
+                <li class="step">
+                  <p>Tire a saturação dessa cópia (Cores-&gt;dessaturar).</p>
+                </li>
+                <li class="step">
+                  <p>Aplique uma desfocagem gaussiana sobre o resultado, com um raio grande (100 ou mais).</p>
+                </li>
+                <li class="step">
+                  <p>Configure o <span class="quote">“<span class="quote">Modo</span>”</span> no diálogo de camadas para <span class="quote">“<span class="quote">Dividir</span>”</span>.</p>
+                </li>
+                <li class="step">
+                  <p>Controle a quantidade de correção ajustando a opacidade no diálogo de camadas, ou usando uma das ferramentas de Brilho e contraste, Níveis ou de Curvas, nessa nova camada.</p>
+                </li>
+                <li class="step">
+                  <p>Quando você estiver feliz como resultado, você pode usar  a opção de <span class="guibutton">Combinar abaixo</span> do menu de Camadas, para combinar ambas as camadas em uma.</p>
+                </li>
+              </ol>
+            </div>
+            <p>Além dos modos de  <span class="quote">“<span class="quote">Multiplicar</span>”</span> e <span class="quote">“<span class="quote">Dividir</span>”</span>, você pode obter efeitos úteis com outros modos de combinação de camadas, tais como <span class="quote">“<span class="quote">Sub-exposição</span>”</span>, <span class="quote">“<span class="quote">Super-exposição</span>”</span>, ou <span class="quote">“<span class="quote">Luz suave</span>”</span>.  É bem fácil, no entanto, depois que você começa a brincar com essas coisas, tirar os olhos do computador por um momento e descobrir que você acabou de gastar uma hora inteira mexendo nos parâmetros. Fique avisado: quanto mais opções você tiver, mais difícil é tomar uma decisão. De repente, o melhor é usar a ferramenta de Curvas, que pode permitir um bom ajuste em segundos.</p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-hue-saturation"></a>1.3.3. Ajustando o Matiz e a Saturação</h4>
+                </div>
+              </div>
+            </div>
+            <p>Na nossa experiência, se sua imagem tem um desvio da cor—muito vermelho, muito azul, etc— a forma mais simples de ajusta-la é com a ferramenta de Níveis (ou a de Curvas), ajustando os níveis separadamente nos canais de vermelho, verde e azul. Se isso não funcionar para você, pode tentar usar a ferramenta de Equilíbrio de Cores, mas ela é bem mais difícil de se usar efetivamente (tanto ela quanto a ferramenta de Curvas são boas para criar certos tipos de efeitos especiais, no entanto)</p>
+            <p>
+        Sometimes it is hard to tell whether you have adjusted colors
+        adequately. A good, objective technique is to find a point in the
+        image that you know should be either white or a shade of gray.
+        Activate the
+        <a class="link" href="gimp-tool-color-picker.html" title="5.4. Seletor de cores">Color Picker</a>
+        tool (the eyedropper symbol in the Toolbox), and
+        <span class="keycap"><strong>Shift</strong></span>-click on the aforesaid point: this brings up
+        the Color Picker dialog. If the colors are correctly adjusted, then the
+        red, green, and blue components of the reported color should all be
+        equal; if not, then you should see what sort of adjustment you need to
+        make. This technique, when well used, allows even color-blind people
+        to color-correct an image.
+      </p>
+            <p>
+        If your image is washed out—which can easily happen when you take
+        pictures in bright light—try the
+        <a class="link" href="gimp-tool-hue-saturation.html" title="8.5. Matiz-Saturação">Hue/Saturation</a>
+        tool, which gives you three sliders to manipulate, for Hue, Lightness,
+        and Saturation. Raising the saturation will probably make the image
+        look better. In some cases it is useful to adjust the lightness at the
+        same time. ( <span class="quote">“<span class="quote">Lightness</span>”</span> here is similar to
+        <span class="quote">“<span class="quote">Brightness</span>”</span>
+        in the Brightness/Contrast tool, except that they are formed from
+        different combinations of the red, green, and blue channels.) The
+        Hue/Saturation tool gives you the option of adjusting restricted
+        subranges of colors (using the buttons at the top of the dialog), but
+        if you want to get natural-looking colors, in most cases you should
+        avoid doing this.
+      </p>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Tip">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Dica]" src="images/tip.png" />
+                  </td>
+                  <th align="left">Dica</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>Mesmo se uma imagem não parecer estar desbotada, muitas vezes você pode aumentar seu impacto aumentando um pouco a saturação. Veteranos da era da fotografia em filmes, algumas vezes chamam essa técnica de <span class="quote">“<span class="quote">Fujificar</span>”</span>, devido ao filme Fujichrome, que era notório por produzir fotografias bastante saturadas. </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <p>Quando você tira fotos em condições de pouca luz, em alguns casos você tem o problema oposto: muita saturação. Nesse caso, a ferramenta de Matiz e saturação é uma boa opção, só que para reduzir a saturação, em vez de aumenta-la.</p>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-using-photography-sharpness"></a>1.4. Ajustando a nitidez</h3>
+              </div>
+            </div>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-unblurring"></a>1.4.1. Tornando nítida</h4>
+                </div>
+              </div>
+            </div>
+            <p>Se o foco da câmera não estiver ajustado perfeitamente, ou se a câmera estive se movendo quando a foto for tirada, o resultado será uma imagem desfocada. Se estiver muito embaçada, provavelmente não há muita coisa a fazer, com qualquer técnica, mas se for só um tanto moderado, pode ser que você consiga melhorar a imagem.</p>
+            <p>
+        The most generally useful technique for sharpening a fuzzy image is
+        called the <a class="link" href="gimp-filter-unsharp-mask.html" title="4.8. Sharpen (Unsharp Mask)">Sharpen (Unsharp
+        Mask)</a>.
+        In spite of the rather confusing name, which derives from its
+        origins as a technique used by film developers, its result is to make
+        the image sharper, not <span class="quote">“<span class="quote">unsharp</span>”</span>.
+        It is a plug-in, and you can access it via <span class="guimenu">Filters</span> → <span class="guisubmenu">Enhance</span> → <span class="guimenuitem">Sharpen (Unsharp Mask)…</span> in the main menu. There are two parameters,
+        <span class="quote">“<span class="quote">Radius</span>”</span> and <span class="quote">“<span class="quote">Amount</span>”</span>.
+        The default values often work pretty well, so you should try them
+        first. Increasing either the radius or the amount increases the
+        strength of the effect. Don't get carried away, though: if you make
+        the unsharp mask too strong, it will amplify noise in the image and
+        also give rise to visible artifacts where there are sharp edges.
+      </p>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Tip">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Dica]" src="images/tip.png" />
+                  </td>
+                  <th align="left">Dica</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>Algumas vezes o uso da Máscara de desaguçar pode causar distorções de cores onde há grandes contrastes na imagem. Quando isso acontece, você com frequência vai obter melhores resultados decompondo a imagem em camadas separadas de Matiz-Saturação-Luminosidade(HSV), e executando a Máscara de desaguçar somente na camada de Valor (Value). Depois disso, você pode recompor a imagem. Isso funciona por que o olho humano percebe muito mais detalhes relativos à luminosidade do que à cor em si. Veja as seções de <a class="link" href="">Decompor</a> e <a class="link" href="plug-in-compose.html" title="8.25. Compor">Compor</a> para mais informações.</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <p>Em algumas ocasiões, você pode conseguir resultados úteis tornando nítidas partes específicas de uma imagem, usando a ferramenta de <a class="link" href="gimp-tool-convolve.html" title="3.15. Desfocar/Deixar nítido">Desfocar / deixar nítido</a> da caixa de ferramentas, no modo de <span class="quote">“<span class="quote">Deixar nítido</span>”</span>. Isso permite que você aumente a nitidez de áreas da imagem pintando sobre as mesmas com o pincel. Você deve se conter, no entanto, ou os resultados não parecerão muito naturais. Aumentar a nitidez melhora as definições de contornos em uma imagem, mas também amplifica o ruído.</p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-graininess"></a>1.4.2. Reduzindo a granulosidade</h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        When you take pictures in low-light conditions or with a very fast
+        exposure time, the camera does not get enough data to make good
+        estimates of the true color at each pixel, and consequently the
+        resulting image looks grainy. You can <span class="quote">“<span class="quote">smooth out</span>”</span>
+        the graininess by blurring the image, but then you will also lose
+        sharpness. There are a couple of approaches that may give better
+        results. Probably the best, if the graininess is not too bad, is to
+        use the filter called
+        <a class="link" href="gimp-filter-gaussian-blur-selective.html" title="3.8. Desfoque Gaussiano Seletivo">Selective
+        Gaussian Blur</a>, setting the blurring radius to 1 or 2 pixels.
+        The other approach is to use the
+        <a class="link" href="plug-in-despeckle.html" title="4.9. Supressão de manchas">Despeckle</a> filter. This
+        has a nice preview, so you can play with the settings and try to
+        find some that give good results. When graininess is really bad,
+        though, it is often very difficult to fix by anything except
+        heroic measures (i.e., retouching with paint tools).
+      </p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-softening"></a>1.4.3. Suavizando</h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        Every so often you have the opposite problem: an image is
+        <span class="emphasis"><em>too</em></span>
+        crisp. The solution is to blur it a bit: fortunately blurring an image
+        is much easier than sharpening it. Since you probably don't want to
+        blur it very much, the simplest method is to use one of the
+        <span class="quote">“<span class="quote">Blur</span>”</span> filters, accessed via <span class="guimenu">Filters</span> → <span class="guisubmenu">Blur</span> from the main menu. This
+        will soften the focus of the image a little bit. If you want more
+        softening, just repeat until you get the result you desire.
+      </p>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-using-photography-retouching"></a>1.5. Removendo objetos indesejados de uma imagem</h3>
+              </div>
+            </div>
+          </div>
+          <p>Há dois tipos de objetos que você pode querer remover de uma imagem: defeitos causados por coisas como poeira ou cabelo na lente; ou coisas que estavam de fato presentes na imagem, mas atrapalham a qualidade da mesma, tais como fios e postes telefônicos atravessando uma linda fotografia de paisagem das montanhas.</p>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-despeckling"></a>1.5.1. Suprimindo manchas </h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        A good tool for removing dust and other types of lens grunge is the
+        <a class="link" href="plug-in-despeckle.html" title="4.9. Supressão de manchas">Despeckle</a>
+        filter, accessed via <span class="guimenu">Filters</span> → <span class="guisubmenu">Enhance</span> → <span class="guimenuitem">Despeckle…</span> from the main menu.
+        Very important: to use this filter effectively, you must begin by
+        making a small selection containing the artifact and a small area
+        around it. The selection must be small enough so that the artifact
+        pixels are statistically distinguishable from the other pixels inside
+        the selection. If you try to run despeckle on the whole image, you
+        will hardly ever get anything useful. Once you have created a
+        reasonable selection, activate Despeckle, and watch the preview as you
+        adjust the parameters. If you are lucky, you will be able to find a
+        setting that removes the junk while minimally affecting the area
+        around it. The more the junk stands out from the area around it, the
+        better your results are likely to be. If it isn't working for you, it
+        might be worthwhile to cancel the filter, create a different
+        selection, and then try again.
+      </p>
+            <p>Se você tem mais de uma mancha em uma imagem, você precisa aplicar o filtro Suprimir manchas em cada uma delas, individualmente.</p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-garbage"></a>1.5.2. Remoção de objetos</h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        The most useful method for removing unwanted <span class="quote">“<span class="quote">clutter</span>”</span>
+        from an image is the <a class="link" href="gimp-tool-clone.html" title="3.12. Clonagem">Clone</a>
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-clone.svg" width="16" /></span>
+        </span>
+        tool, which allows you to paint over one part of an image using pixel
+        data taken from another part (or even from a different image). The
+        trick to using the clone tool effectively is to be able to find a
+        different part of the image that can be used to
+        <span class="quote">“<span class="quote">copy over</span>”</span>
+        the unwanted part: if the area surrounding the unwanted object is very
+        different from the rest of the image, you won't have much luck. For
+        example, if you have a lovely beach scene, with a nasty human walking
+        across the beach who you would like to teleport away, you will
+        probably be able to find an empty part of the beach that looks similar
+        to the part he is walking across, and use it to clone over him. It is
+        quite astonishing how natural the results can look when this technique
+        works well.
+      </p>
+            <p>Consulte a ajuda da ferramenta de Clonar para instruções mais detalhadas. Clonar é tanto uma ciência quanto uma arte, e quanto mais você pratica-la, melhor você fica. No começo pode parecer impossível chegar a qualquer resultado exceto algumas manchas horríveis, mas a persistência compensa.</p>
+            <p>Uma outra ferramenta que é bem parecida com a ferramenta de clonar, mas mais esperta, é a <a class="link" href="gimp-tool-heal.html" title="3.13. Restaurar">ferramenta de Restauração</a>, que também leva em conta a área ao redor do destino ao clonar. Um uso típico é a remoção de rugas ou outros erros menores em imagens.</p>
+            <p>Em alguns casos, você pode conseguir bons resultados simplesmente cortando o objeto ofensor pra fora da imagem (com editar-&gt;cortar) e então usar um plug-in chamado <span class="quote">“<span class="quote">Resynthesizer</span>”</span> para preencher o espaço vazio. Este plug-in não vem junto com o GIMP padrão, mas pode ser obtido do site do autor <a class="xref" href="bibliography.html#bibliography-online-plugin-resynthesizer" title="Resynthesizer é um plug-in para a síntese de texturas">[<abbr class="abbrev">PLUGIN-RESYNTH</abbr>]</a>. Como sempre, a efetividade dos resultados que você obtém podem variar.</p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-red-eye"></a>1.5.3. Remoção de olhos vermelhos</h4>
+                </div>
+              </div>
+            </div>
+            <a id="id12983" class="indexterm"></a>
+            <p>Quando você tira uma foto com flash de alguém que está olhando diretamente para a câmera, a iris pode refletir a luz do flash de volta para câmera de forma que o olho pode aparecer em um vermelho brilhante: este efeito é chamado de <span class="quote">“<span class="quote">olho vermelho</span>”</span> e fica muito estranho. Muitas câmeras modernas tem modos especiais de flash que diminuem esse efeito, mas  isso só funciona se esses modos estiverem ligados, e mesmo assim, nem sempre eles são perfeitos. É interessante que o mesmo efeito acontece com fotos de animais,  mas os olhos deles podem aparecer de outras cores, tais como verde.</p>
+            <p>
+        GIMP provides a special <a class="link" href="gimp-filter-red-eye-removal.html" title="4.6. Remoção de olho vermelho">remove red eye</a> filter.
+        Make a selection with one of the selection tools of the red part of
+        the eye and then choose the <span class="quote">“<span class="quote">Red Eye Removal</span>”</span> filter.
+        You may have to fiddle around a bit with the threshold slider to
+        get the right color.
+      </p>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-using-photography-saving"></a>1.6. Salvando seus resultados</h3>
+              </div>
+            </div>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-files"></a>1.6.1. Arquivos</h4>
+                </div>
+              </div>
+            </div>
+            <p>Qual formato de arquivo você deve usar para salvar ou exportar seus resultados, e, será que você deve redimensiona-lo? As respostas dependem do que você pretende fazer com a imagem.</p>
+            <div class="itemizedlist">
+              <ul class="itemizedlist" style="list-style-type: disc; ">
+                <li class="listitem">
+                  <p>Se você pretende abrir a imagem no GIMP novamente para trabalhar mais, você deve salva-la no formato XCF nativo do GIMP (isso é, colocar .xcf na extensão de arquivo). Porque esse é único formato que garante que nenhuma informação da imagem é perdida.</p>
+                </li>
+                <li class="listitem">
+                  <p>Se você pretende imprimir a imagem em papel, você deve evitar reduzir o seu tamanho, exceto cortando partes dela (guilhotinando, com a ferramenta <span class="quote">“<span class="quote">Cortar</span>”</span>). A razão para isso é que impressoras tem resoluções muito maiores do que monitores de vídeo — 600 até 3000 dpi <span class="quote">“<span class="quote">Pontos por polegada</span>”</span> (dots per inch), a densidade física — o que vai equivaler a cerca de 300 pixels  por polegada — você precisa de muitos pontos de tinta para criar o equivalente a um pixel, que pode ser de qualquer intensidade de cor. Monitores por outro lado costumam estar na faixa de 75-120 pixels por polegada. Uma imagem de 3000 x 5000-pixels pode parecer gigante num monitor, mas vai ficar do tamanho de uma folha de papel ao ser impressa com qualidade altíssima numa impressora. Em geral, não há razão para aumentar o tamanho de uma imagem também: você não pode aumentar a resolução real desta forma , uma vez que detalhes novos não podem ser criados, e você sempre pode configurar o <span class="quote">“<span class="quote">tamanho para impressão</span>”</span> para o aumento de tamanho acontecer durante a impressão, automaticamente. Quanto ao formato de arquivo, para fotografias em geral está ok usar o formato JPEG com qualidade entre 75 e 90. No caso de imagens criadas no computador, ou com texto inserido, ou capturas de tela, o melhor é usar um formato sem perda como o PNG.</p>
+                </li>
+                <li class="listitem">
+                  <p>Se você pretende exibir a imagem somente na tela, ou usa-la com um projetor de vídeo, tenham em mente que as maiores resoluções que existem estão na faixa de 1920x1080 (HD) - então você não vai ganhar muito se mantiver sua exportação final maior que isso.</p>
+                </li>
+                <li class="listitem">
+                  <p>
+            If you want to put the image on a web page or send it by email, it
+            is a good idea to make every effort to keep the file size as small
+            as possible. First, scale the image down to the smallest size that
+            makes it possible to see the relevant details (bear in mind that
+            other people may be using different sized monitors and/or
+            different monitor resolution settings). Second, export the image as
+            a JPEG file. In the JPEG export dialog, check the option to
+            <span class="quote">“<span class="quote">Preview in image window</span>”</span>,
+            and then adjust the Quality slider to the lowest level that
+            gives you acceptable image quality. (You will see in the image the
+            effects of each change.) Make sure that the image is zoomed at 1:1
+            while you do this, so you are not misled by the effects of
+            zooming.
+          </p>
+                </li>
+              </ul>
+            </div>
+            <p>Veja a seção de <a class="link" href="gimp-images-out.html#gimp-using-fileformats" title="1. Arquivos">Formatos de arquivo</a> para ter maiores informações.</p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-printing"></a>1.6.2. Imprimindo suas fotos</h4>
+                </div>
+              </div>
+            </div>
+            <a id="id13012" class="indexterm"></a>
+            <p>
+        You print photos from the main menu through
+        <span class="guimenu">File</span> → <span class="guisubmenu">Print…</span>.
+        However it is very useful to keep in mind some elementary concepts
+        to prevent some unpleasant surprises when looking at the result, or
+        to fix them if they occur. You must always remember:
+      </p>
+            <div class="itemizedlist">
+              <ul class="itemizedlist" style="list-style-type: disc; ">
+                <li class="listitem">
+                  <p>que a imagem exibida na sua tela está no modo RGB, e a impressão acontece no modo CMYK; Em consequência, as cores que você obtém  na impressão podem não ser exatamente as que você está esperando. Isso depende de usar as tabelas corretas. Para os curiosos, algumas explicações esclarecedoras podem ser vistas nesses links da Wikipedia:</p>
+                  <div class="itemizedlist">
+                    <ul class="itemizedlist" style="list-style-type: circle; ">
+                      <li class="listitem">
+                        <p>Perfis-ICC (ICC-Profile) <a class="xref" href="bibliography.html#bibliography-online-wkpd-icc" title="Wikipedia - Perfil ICC">[<abbr class="abbrev">WKPD-ICC</abbr>]</a></p>
+                      </li>
+                      <li class="listitem">
+                        <p>CMYK <a class="xref" href="bibliography.html#bibliography-online-wkpd-cmyk" title="Wikipedia - CMYK">[<abbr class="abbrev">WKPD-CMYK</abbr>]</a></p>
+                      </li>
+                      <li class="listitem">
+                        <p>Gamut <a class="xref" href="bibliography.html#bibliography-online-wkpd-gamut" title="Wikipedia - Gamut">[<abbr class="abbrev">WKPD-GAMUT</abbr>]</a></p>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="listitem">
+                  <p>que a resolução do monitor está sempre entre 72 e 120 pixels por polegada, que a resolução da impressora, em pontos por polegada, pode ser até 10 vezes maior (ainda que você precise de muitos pontos para ter a cópia exata de um pixel) que a de uma tela, então o tamanho da impressão não corresponde ao tamanho da imagem como é vista na tela, ou ao tamanho da folha de papel.</p>
+                </li>
+              </ul>
+            </div>
+            <p>
+        Consequently, before any printing, go to
+        <span class="guimenu">Image</span> → <span class="guisubmenu">Print Size…</span>
+        and choose a convenient output size in the
+        <span class="quote">“<span class="quote">Print Size</span>”</span> box adjusting either sizes or resolution.
+        The
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-vchain.svg" width="16" /></span>
+        </span>
+        symbol shows that the both values are linked. You can dissociate x
+        and y resolution by clicking on that symbol, but it is risky. Only
+        some printers support different X vs. Y resolutions.
+      </p>
+            <p>
+        Last recommendation: think of checking your margins as well as
+        centering. It would be a pity if a too large margin cuts off some
+        part of your image or if an inappropriate centering damages your work
+        especially if you use a special photo paper.
+      </p>
+          </div>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="gimp-using-photography-exif"></a>1.6.3. Dados EXIF</h4>
+                </div>
+              </div>
+            </div>
+            <p>
+        Digital cameras, when you take a picture, add information to your
+        image about the camera settings and the circumstances under
+        which the picture was taken. This so-called metadata is included in
+        most image files in a structured format called EXIF.
+      </p>
+            <p>
+        <acronym class="acronym">GIMP</acronym> stores all metadata it can handle when loading
+        an image. When exporting your image, you can select which types of
+        metadata you want included. Not all file formats support all types of
+        metadata.
+        For JPEG files, EXIF metadata will be included if enabled in the
+        export dialog. Besides values that directly depend on changes you
+        made to your image (e.g. dimensions) most values will be saved
+        unchanged from when the image was loaded.
+      </p>
+            <p>
+        You can view the contents of the EXIF, XMP and IPTC metadata, by
+        using the <a class="link" href="plug-in-metadata-viewer.html" title="6.40. Metadata Viewer">metadata-viewer</a>
+        plug-in. You can access it via <span class="guimenu">Image</span> → <span class="guisubmenu">Metadata</span> → <span class="guimenuitem">View Metadata</span> from the main menu.
+      </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-text.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="become-a-gimp-wizard.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-imaging-color-management.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-text.html">2. Texto</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-imaging-color-management.html">Capítulo 11. Gerenciamento de cor com o GIMP</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

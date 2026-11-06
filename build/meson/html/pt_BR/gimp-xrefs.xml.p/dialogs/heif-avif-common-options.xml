@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE note PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--
+  This file is meant to be included by the HEIF, AVIF and HEJ2 export dialogs.
+-->
+<sect3>
+  <title>Opções</title>
+  <variablelist>
+    <varlistentry>
+      <term>Sem perda</term>
+      <listitem>
+        <para>Quando marcado, a imagem será exportada com compressão sem perda. Isso criará uma imagem de maior qualidade em troca de um tamanho de arquivo maior.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Qualidade</term>
+      <listitem>
+        <para>Se <guilabel>Sem perda</guilabel> não estiver marcado, este valor determina a qualidade da compressão da imagem. 100 fornece a melhor qualidade de imagem e menor compressão, enquanto 0 fornece a maior compressão e pior qualidade de imagem.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Formatos de arquivo</term>
+      <listitem>
+        <para>Define qual formato de pixel a imagem exportada deve usar para sub-amostragem de cor. Existem três opções:</para>
+        <variablelist>
+          <!-- Thanks to Daniel Novomeský for this information -->
+          <varlistentry>
+            <term>YUV420</term>
+            <listitem>
+              <para>
+                Suitable for photographs with lossy compression. This format is
+                most compatible with other software that uses HEIF and AVIF.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>YUV444</term>
+            <listitem>
+              <para>
+                When used with a high <guilabel>Quality</guilabel> setting, this
+                format exports a visually lossless image.
+              </para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>RGB</term>
+            <listitem>
+              <para>
+                Useful when exporting images with true lossless quality.
+              </para>
+              <para>
+                <guilabel>RGB</guilabel> is not available when exporting
+                as HEJ2.
+              </para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Profundidade de bits</term>
+      <listitem>
+        <para>Determina se os dados de pixel devem ser armazenados usando 8 bits, 10 bits ou 12 bits por canal de cor.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Encoder speed</term>
+      <listitem>
+        <para>
+          The tradeoff between speed and compression. <guilabel>Slow</guilabel>
+          will provide a smaller filesize but takes longer to encode.
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Conta gotas</term>
+      <listitem>
+        <para>Se marcado, o perfil de cor é incorporado na imagem exportada.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Salvar arquivo</term>
+      <listitem>
+        <para>Se marcado, os metadados Exif são incorporados na imagem exportada.</para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Salvar</term>
+      <listitem>
+        <para>Se marcado, os metadados XMP são incorporados na imagem exportada.</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+</sect3>

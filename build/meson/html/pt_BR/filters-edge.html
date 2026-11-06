@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8. Filtros de detecção de borda</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters.html" title="Capítulo 17. Filtros" />
+    <link rel="prev" href="gimp-filter-noise-spread.html" title="7.8. Espalhar" />
+    <link rel="next" href="gimp-filter-difference-of-gaussians.html" title="8.2. Diferença de Gaussianas" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8. Filtros de detecção de borda</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-noise-spread.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 17. Filtros</span>
+        <nav> <a accesskey="n" href="gimp-filter-difference-of-gaussians.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="filters-edge"></a>8. Filtros de detecção de borda</h2>
+          </div>
+        </div>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="filters-edges-introduction"></a>8.1. Introdução</h3>
+            </div>
+          </div>
+        </div>
+        <a id="id53478" class="indexterm"></a>
+        <a id="id53482" class="indexterm"></a>
+        <p>Os filtros de detecção de borda procuram por bordas entre diferentes cores e dessa forma conseguem detectar o contorno de objetos.</p>
+        <p>Eles são usados para fazer seleções e para vários propósitos artisticos.</p>
+        <p>
+    This category describes the following filters:
+  </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-difference-of-gaussians.html" title="8.2. Diferença de Gaussianas">Seção 8.2, “Diferença de Gaussianas”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-edge.html" title="8.3. Bordas">Seção 8.3, “Bordas”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-edge-laplace.html" title="8.4. Laplace">Seção 8.4, “Laplace”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-edge-neon.html" title="8.5. Neon">Seção 8.5, “Neon”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-edge-sobel.html" title="8.6. Sobel">Seção 8.6, “Sobel”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-image-gradient.html" title="8.7. Image Gradient">Seção 8.7, “Image Gradient”</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="mediaobject">
+          <img src="images/filters/edge-detect/gradient-calculation-fig.png" />
+        </div>
+        <p>A maioria deles são baseados em métodos de cálculo de gradiente e dão linhas de bordas grossas. Veja a figura 1, que representa as variações da intensidade de cor. Na esquerda temos um pequeno gradiente de cor que não possui uma borda. Na direita temos uma rápida variação, no qual indica que é uma borda. Agora, nos deixe calcular o gradiente, a variação de velocidade, dessa borda: por exemplo, a primeira derivada (figura 2). Nós decidimos que uma borda é detectaeda quando o gradiente é maior que o valor de começo (a borda exata está no topo da curva, mas esse topo varia de acordo com as bordas). Na maioria do caso, o valor de começo está acima do topo e a borda é grossa.</p>
+        <p>A deteção de borda laplaciana usa a segunda derivada (figura 3). O topo da curva agora está no zero e é facilmente identificável. É por isso que o filtro de laplace gera uma borda fina, de apenas um pixel de largura. Mas essa derivada gera diversos zeros, correspondendo a pequenas trepidações, resultando em bordas falsas.</p>
+        <p>As vezes é necessário borrar um pouco a imagem antes de aplicar o filtro: isso alisa pequenas trepidações e previne falsas bordas.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-noise-spread.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-difference-of-gaussians.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-noise-spread.html">7.8. Espalhar</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-difference-of-gaussians.html">8.2. Diferença de Gaussianas</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

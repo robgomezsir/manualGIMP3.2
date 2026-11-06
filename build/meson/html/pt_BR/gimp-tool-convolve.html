@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.15. Desfocar/Deixar nítido</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+    <link rel="prev" href="gimp-tool-perspective-clone.html" title="3.14. Clonagem em perspectiva" />
+    <link rel="next" href="gimp-tool-smudge.html" title="3.16. Borrar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.15. Desfocar/Deixar nítido</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-perspective-clone.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Ferramentas de pintura</span>
+        <nav> <a accesskey="n" href="gimp-tool-smudge.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-convolve"></a>3.15. Desfocar/Deixar nítido</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id18171" class="indexterm"></a>
+      <a id="id18174" class="indexterm"></a>
+      <p>A ferramenta de desfocar/deixar nítido usa o pincel ativo para desfocar ou deixar sua imagem nítida em locais específicos. Desfocar com essa ferramenta pode ser muito útil caso algum elemento da sua imagem se destaque demais, e você desejar suavizá-lo. Se você deseja desfocar uma camada inteira, ou uma grande parte dela, então pode ser melhor usar um dos <a class="link" href="filters-blur.html" title="3. Filtros de desfocar">Filtros de desfocagem</a>. A direção da pincelada não possui efeito: se você deseja ter uma desfocagem direcional, use a ferramenta de borrar.</p>
+      <p>No modo <span class="quote">“<span class="quote">tornar nítido</span>”</span>, a ferramenta trabalha aumentando o contraste onde o pincel é aplicado. Aplicar um pouco disso pode ser útil, mas um excesso de aplicação criará ruído. Alguns dos <a class="link" href="filters-enhance.html" title="4. Filtros de realce">Filtros de realce</a>, em particular a <a class="link" href="">Máscara de desaguçar</a>, fazem um trabalho muito mais limpo de tornar nítidas áreas de uma camada.</p>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Dica]" src="images/tip.png" />
+            </td>
+            <th align="left">Dica</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Você pode criar um pincel de nitidez mais sofisticado usando a ferramenta de clonagem. Para fazer isso, comece por duplicar a camada na qual você deseja trabalhar, e aplique um filtro de realce, como a máscara de desaguçar, na cópia. Então ative a ferramenta de clonagem, e marque em Origem nas Opções da Ferramenta a opção Imagem e a opção Alinhamento em <span class="quote">“<span class="quote">Registrado</span>”</span>. Coloque a opacidade em um valor modesto, como 10. Então <span class="keycap"><strong>Ctrl</strong></span>-clique na cópia para torná-la a imagem de origem. Se agora você pintar a camada original, então você irá misturar ambas, onde o pincel é aplicado, a versão nítida com a versão desfocada.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>Tanto desfocar como tornar nítido trabalham para: mover o pincel repetidas vezes sobre uma área irá aumentar o efeito em cada passada adicional. O controle de taxa permite determinar o quão rápido as modificações serão acumuladas. O controle de opacidade, entretanto, pode ser usado para limitar a quantidade de desfocagem que pode ser produzida por uma única pincelada, independentemente de quantas passadas você fizer com ela.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3011"></a>3.15.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>Existem várias formas para ativar a ferramenta:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagem: <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de pintura</span> → <span class="guimenuitem">Desfocar/Tornar nítido</span>.</p>
+            </li>
+            <li class="listitem">
+              <p>Ícone da ferramenta de clonagem na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>o usando o atalho de teclado <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>D</strong></span>.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3012"></a>3.15.2. Modificadores de tecla</h4>
+            </div>
+          </div>
+        </div>
+        <p>Veja <a class="link" href="gimp-tools-paint.html#gimp-tool-brush" title="3.1. Características em comum">Características em comum das Ferramentas de Pintura</a> para uma descrição das teclas modificadoras que possuem o mesmo efeito em todas as ferramentas de pintura.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+                <span class="keycap">
+                  <strong>Ctrl</strong>
+                </span>
+              </span>
+            </dt>
+            <dd>
+              <p>Pressionar a tecla <span class="keycap"><strong>Ctrl</strong></span> alterna entre os modos de desfocar e de tornar nítido: inverte a configuração mostrada nas opções da ferramenta.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3013"></a>3.15.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3014"></a>
+          <p class="title">
+            <strong>Figura 14.81. Opções da ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-blur-sharpen.png" alt="Opções da ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo, </span>
+              <span class="term">Opacidade, </span>
+              <span class="term">Pincel, </span>
+              <span class="term">Tamanho, </span>
+              <span class="term">Proporção, </span>
+              <span class="term">Ângulo, </span>
+              <span class="term">Espaçamento, </span>
+              <span class="term">Dureza, </span>
+              <span class="term">Força, </span>
+              <span class="term">Dinâmicas, </span>
+              <span class="term">Opções de dinâmicas, </span>
+              <span class="term">Aplicar espalhamento, </span>
+              <span class="term">Pincelada suave, </span>
+              <span class="term">O tamanho do pincel - curva de esmaecimento, </span>
+              <span class="term">Expand Layers</span>
+            </dt>
+            <dd>Veja <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-options" title="3.1.2. Opções">Opções em comum das ferramentas de pintura</a> para uma descrição das opções da ferramenta que são aplicáveis a todas as ferramentas de pintura.</dd>
+            <dt>
+              <span class="term">Borda dura</span>
+            </dt>
+            <dd>
+              <p>O seletor de <span class="guilabel">Taxa</span> seleciona a dureza do efeito de desfocar/tornar nítido.</p>
+            </dd>
+            <dt>
+              <span class="term">Tipo de convolução</span>
+            </dt>
+            <dd>
+              <p>O modo <span class="emphasis"><em>desfocar</em></span> faz com que cada pixel afetado pelo pincel seja combinado com os pixels vizinhos, com isso aumentando a similaridade dos pixels dentro da área pincelada. O modo <span class="emphasis"><em>Tornar nítido</em></span> faz com que cada pixel seja mais diferente dos seus vizinhos do que era anteriormente: isso aumenta o contraste dentro da área pincelada. Muita nitidez causa um aspecto feio de floculação. Independente da configuração que você escolher aqui, você pode revertê-la a qualquer momento pressionando a tecla <span class="keycap"><strong>Ctrl</strong></span>.</p>
+              <p><span class="quote">“<span class="quote">Convolução</span>”</span> se refere ao método matemático que usa matrizes.</p>
+            </dd>
+            <dt>
+              <span class="term">Taxa</span>
+            </dt>
+            <dd>
+              <p>O seletor de <span class="guilabel">Taxa</span> seleciona a dureza do efeito de desfocar/tornar nítido.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-perspective-clone.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-paint.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-smudge.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-perspective-clone.html">3.14. Clonagem em perspectiva</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-smudge.html">3.16. Borrar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

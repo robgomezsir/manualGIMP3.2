@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="file-jpeg-export">
+  <title>Diálogo de exportar imagem</title>
+  <anchor id="file-jpeg-load" xreflabel="JPEG"/>
+
+  <indexterm>
+    <primary>JPEG</primary>
+  </indexterm>
+  <indexterm>
+    <primary>.jpg</primary>
+  </indexterm>
+  <indexterm>
+    <primary>.jpeg</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Diálogo de exportar imagem</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Formatos</primary>
+    <secondary>JPEG</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <para>
+      JPEG files usually have the extension .jpg or .jpeg. It is a
+      very widely used format, because it compresses images very
+      efficiently, while minimizing the loss of image quality. It does
+      not, however, support transparency, animation or multiple layers.
+    </para>
+    <para>
+      In the past, the jpeg format was considered the best choice when the
+      file size was a concern due to its good compression. However, nowadays
+      there are several other formats that surpass jpeg in reducing file size.
+      Some examples supported by <acronym>GIMP</acronym> are
+      <link linkend="file-heif-export">HEIF</link>,
+      <link linkend="file-jpegxl-export">JPEG xl</link> and
+      <link linkend="file-webp-export">WebP</link>.
+    </para>
+    <figure>
+      <title>O diálogo de Exportar imagem</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/export-jpeg-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      The JPEG algorithm is quite complex, which is reflected in its options.
+      Most JPEG specific settings, except Quality, are usually left alone
+      unless you understand what the effects of the setting are.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <variablelist>
+      <varlistentry>
+        <term>Qualidade</term>
+        <listitem>
+          <para>
+            The Quality level ranges from 0 to 100 and is an indication of
+            the amount of expected artifacts. Because jpeg is a lossy
+            format, there will always be a certain amount of loss of quality.
+            For this reason, it is generally not a good idea to save jpeg
+            images after altering them again and again, because each time
+            you will loose a little more detail.
+          </para>
+          <para>
+            Values above 95, or even 90, are rarely useful and high values
+            significantly increase the size of your jpeg images.
+            The default quality of 85 usually produces excellent results, but
+            in many cases it is possible to set the quality substantially
+            lower without noticeably degrading the image. You can test the
+            effect of different quality settings by checking
+            <guilabel>Show Preview in image window</guilabel>
+            in the JPEG dialog.
+          </para>
+          <note>
+            <para>Por favor note que os números usados para o nível de qualidade do JPEG tem um significado diferente dependendo do aplicativo usado. Salvar uma imagem com qualidade 80 no GIMP pode ser diferente de fazer o mesmo em uma outra aplicação de imagens.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Utilizar configurações de qualidade da imagem original</term>
+        <listitem>
+          <para>Se uma configuração particular de qualidade (ou da <quote>tabela de quantização</quote>) estava salva com a imagem quando ela foi importada, então esta opção permite que você use essas opções em vez das opções padrão.</para>
+          <para>Se você fez apenas algumas modificações na imagem, então re-utilizar a mesma configuração de qualidade vai resultar na mesma qualidade de imagem e tamanho de arquivo que a imagem original. Isso pode minimizar as perdas causadas pelo passo de quantização, comparado com o que aconteceria se você usar uma configuração de qualidade diferente.</para>
+          <para>Se a qualidade que existia no arquivo original não for melhor que a sua configuração padrão de qualidade, então a opção de <quote>Utilizar configurações de qualidade da imagem original</quote> vai estar disponível, mas não vai estar ligada por padrão. Isso assegura que você sempre vai ter pelo menos a qualidade especificada por padrão. Se você não fez maiores mudanças na imagem e quiser exporta-la usando a mesma qualidade que a original, então você pode ligar esta opção.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Pré-visualização na janela de imagem</term>
+        <listitem>
+          <para>Marcar esta opção faz com que cada mudança na Qualidade (ou qualquer outro parâmetro do JPEG) seja exibida na janela de imagem. Isso não altera a imagem: ela é revertida para o estado anterior quando o diálogo de JPEG for fechado. Se você não estiver vendo a imagem, arraste a janela de exportação para um canto da tela, de forma que você possa ver a janela do GIMP onde está sua imagem.</para>
+          <para>
+            Enabling this setting allows you to see an estimate of the
+            file size of the jpeg image. Note this estimate does not include
+            the metadata. If you enabled some or all of the metadata settings,
+            the size will be more than shown, depending on the amount of
+            metadata that was added to your image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Opções avançadas</term>
+        <listitem>
+          <para>Alguma informação sobre as configurações avançadas:</para>
+          <variablelist>
+            <varlistentry>
+              <term>Uniformização</term>
+              <listitem>
+                <para>A compressão do JPEG cria artefatos &mdash; ruído na imagem. Ao usar esta opção, você pode suavizar a imagem ao exportar, reduzindo-os. Mas sua imagem fica um pouco desfocada.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Progressivo</term>
+              <listitem>
+                <para>Com esta opção habilitada, os trechos de imagem são guardados no arquivo  de uma forma que se torna possível um refinamento progressivo quando a imagem é carregada - em geral em uma conexão lenta à Internet. O propósito desta opção é o mesmo que a opção de entrelaçar do GIF. Infelizmente, arquivos JPEG progressivos ficam um pouco maiores do que arquivos sem essa opção.</para>
+                <note>
+                  <para>Cuidado que certas TVs e molduras de fotos mais antigas (e talvez outros dispositivos) podem não ser capazes de mostrar imagens jpeg que foram exportadas com a configuração progressiva habilitada (que é o padrão).</para>
+                </note>
+              </listitem>
+            </varlistentry>
+
+            <xi:include href="common-export-as-cmyk-setting.xml"/>
+
+            <varlistentry>
+              <term>Usar codificação aritmética</term>
+              <listitem>
+                <para>
+                  <emphasis>Arithmetic encoding</emphasis> is a form of
+                  entropy encoding (a lossless data compression scheme) that
+                  can be used in exporting as JPEG. Images
+                  using arithmetic encoding can be 5 - 10 % smaller. But older
+                  software may have trouble opening these images.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Otimizar</term>
+              <listitem>
+                <para>Se você habilitar esta opção, a otimização dos parâmetros de codificação de entropia será usada. O resultado é um arquivo tipicamente menor, mas que leva mais tempo para ser gerado.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Usar marcadores de reinício</term>
+              <listitem>
+                <para>O arquivo de imagem pode incluir marcadores que permitem que uma imagem seja carregada como segmentos. Se uma conexão for perdida enquanto a imagem estiver sendo carregada numa página Web, o carregamento pode continuar a partir do próximo marcador.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Intervalo (linhas MCU)</term>
+              <listitem>
+                <para>As imagens JPEG são armazenadas como uma série de azulejos quadrados comprimidos chamados MCU (Unidade Mínima de Codificação). Você pode definir o tamanho desses azulejos (em pixels).</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Sub-amostragem</term>
+              <listitem>
+                <para>
+                  The human eye is not sensitive in the same way over
+                  the entire color spectrum. The compression
+                  can use this to treat slightly different colors
+                  that the eye perceives as very close, as identical
+                  colors. The following methods are available:
+                </para>
+                <variablelist>
+                  <varlistentry>
+                    <term>4:4:4 (best quality)</term>
+                    <listitem>
+                      <para>
+                        This produces the best quality, preserving borders and
+                        contrasting colors, at the cost of not compressing
+                        as well as the other methods.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>4:2:2 (chroma halved horizontally)</term>
+                    <listitem>
+                      <para>
+                        This is the standard subsampling, which usually
+                        provides a good ratio between image quality and file
+                        size. There are situations, however, in which using no
+                        subsampling (4:4:4) provides a noticeable increase in
+                        the image quality; for example, when the image
+                        contains fine details such as text over a uniform
+                        background, or images with almost-flat colors.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>4:4:0 (chroma halved vertically)</term>
+                    <listitem>
+                      <para>
+                        This is similar to 4:2:2, but chroma is reduced in
+                        the vertical direction.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>4:2:0 (chroma quartered)</term>
+                    <listitem>
+                      <para>
+                        This produces the smallest files. This suits images
+                        with weak borders but tends to denature colors.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                </variablelist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Método DCT</term>
+              <listitem>
+                <para>
+                  DCT is <quote>discrete cosine transform</quote>,
+                  and it is the first step in the JPEG algorithm going
+                  from the spatial to the frequency domain. The choices are:
+                </para>
+                <variablelist>
+                  <varlistentry>
+                    <term>Fast Integer</term>
+                    <listitem>
+                      <para>
+                        This method is much less accurate than the other
+                        methods, but faster.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Integer</term>
+                    <listitem>
+                      <para>
+                        This method is faster than
+                        <guilabel>Floating-Point</guilabel>, but not as
+                        accurate. This is the default.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                    <term>Floating-Point</term>
+                    <listitem>
+                      <para>
+                        This is slightly more accurate than the integer method,
+                        but is much slower unless your machine has very fast
+                        floating-point hardware. Also note that the results of
+                        the floating-point method may vary slightly across
+                        machines, while the integer methods should give the
+                        same results everywhere.
+                      </para>
+                    </listitem>
+                  </varlistentry>
+                </variablelist>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <xi:include href="common-metadata-settings.xml" xpointer="xpointer(//variablelist/*)"/>
+
+      <varlistentry>
+        <term>Salvar imagem</term>
+        <listitem>
+          <para>Você pode encontrar opções de <emphasis>combinar camadas</emphasis> tanto no meu de contexto, como no menu <link linkend="gimp-layer-menu">Camada</link> da janela de imagem.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

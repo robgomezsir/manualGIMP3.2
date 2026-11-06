@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-05-18 KoSt: added 'no'
+  2007-05-01 <guilabel> deleted in all paragraphs (en,fr,it,ru) as already
+  done in the de language, by ciampix
+  2005-12-08 <simplesect> replaced by <sect3> by lexa
+  2005/09/25 created by axel.wernicke
+-->
+<sect2 id="plug-in-spheredesigner">
+  <title>Designer de esferas</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Designer de esferas</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Designer de esferas</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>A mesma imagem, antes e após a aplicação do filtro <quote>Designer de esferas</quote>.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-taj-spheredesigner.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro cria uma esfera tridimensional com diferentes texturas. Ele substitui a imagem original.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guimenuitem>Sphere Designer…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Parâmetros do filtro <quote>Designer de esferas</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/spheredesigner.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <variablelist>
+      <varlistentry>
+        <term>Pré-visualização</term>
+        <listitem>
+          <para>Todas as suas mudanças de configuração serão exibidas na pré-visualização, sem afetar a imagem até que você clique em <guilabel>OK</guilabel>. Note que a pré-visualização exibe a imagem inteira, mesmo que o resultado final vá afetar apenas uma área selecionada.  As atualizações são exibidas na pré-visualização em tempo real.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <title>Texturas</title>
+      <para>
+        The list of textures applied to the sphere. The textures are applied
+        in the order listed. Each item shows the type and the name of the
+        texture.
+      </para>
+      <varlistentry>
+        <term>Novo</term>
+        <listitem>
+          <para>Cria uma nova textura e a adiciona no o final da lista. O nome e as características desta nova textura são os que são exibidos na área de Propriedades de textura, mas você pode alterá-los operando nesta área, desde que a sua nova textura esteja selecionada na lista.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Duplicar</term>
+        <listitem>
+          <para>Cópias a textura selecionada e adiciona a cópia da mesma no final da lista.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Excluir</term>
+        <listitem>
+          <para>Exclui a textura selecionada da lista.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Abrir</term>
+        <term>Salvar</term>
+        <listitem>
+          <para>Permite salvar as configurações atuais ou carregar as configurações salvas anteriormente.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <title>Propriedades</title>
+      <varlistentry>
+        <term>Tipo</term>
+        <listitem>
+          <para>Determina o tipo de ação na esfera.</para>
+          <variablelist>
+            <varlistentry>
+              <term>Textura</term>
+              <listitem>
+                <para>Cobre a esfera com um padrão específico.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Relevo</term>
+              <listitem>
+                <para>Dá um pouco de relevo à textura.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Luz</term>
+              <listitem>
+                <para>Permite definir os parâmetros da luz sobre a esfera.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Textura</term>
+        <listitem>
+          <para>Determina o padrão utilizado pelo tipo de textura. Se a textura aplica-se à luz, então a luz é distorcida por essa textura como se estivesse passando por essa textura antes de ser projetada na esfera. Se a textura se aplica à própria textura, a textura é aplicada diretamente à esfera. Várias opções estão disponíveis.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cores</term>
+        <listitem>
+          <para>Define duas cores para serem utilizadas para uma textura. Ao se pressionar um dos botões de cor aparece uma caixa de diálogo de seleção de cores.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Escala:</term>
+        <listitem>
+          <para>Determina o tamanho de elementos distintos que compõem a textura. Por exemplo, para a textura <quote>Xadrez</quote> este parâmetro determina o tamanho dos quadrados pretos e brancos. A faixa de valores é de 0 a 10.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Turbulência</term>
+        <listitem>
+          <para>Determina o grau de distorção da textura antes de aplicá-la à esfera. A faixa de valores é de 0 a 10. Com valores de até 1.0 você ainda pode perceber os padrões não distorcidos;  para valores maiores que isso, a textura gradualmente se transforma em ruído.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Quantidade</term>
+        <listitem>
+          <para>Determina o grau de influência a textura tem sobre o resultado final. A faixa de valores é de 0 a 1. Com o valor de 0 a textura não afeta o resultado.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <!--Exp.-->
+        <term>Expoente</term>
+        <listitem>
+          <para>
+            With the Wood texture, this option gives an aspect of venetian
+            blind, more or less open.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <title>Transformações</title>
+      <varlistentry>
+        <term>Escala X</term>
+        <term>Escala Y</term>
+        <term>Escala Z</term>
+        <listitem>
+          <para>Determina o grau de alongamento / compressão da textura sobre a esfera ao longo das três direções. A faixa de valores é de 0 a 10.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Rotacionar X</term>
+        <term>Rotacionar Y</term>
+        <term>Rotacionar Z</term>
+        <listitem>
+          <para>Determina o quanto uma textura será girada sobre a esfera, em cada eixo. A faixa de valores é de 0 a 360 graus.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Posição X</term>
+        <term>Posição Y</term>
+        <term>Posição Z</term>
+        <listitem>
+          <para>Determina a posição da textura em relação à esfera. Quando o tipo é Luz, este parâmetro refere-se à posição da luz em relação a esfera.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>O botão <guibutton>Restaurar</guibutton> devolve todos os parâmetros para os valores padrão.</para>
+  </sect3>
+</sect2>

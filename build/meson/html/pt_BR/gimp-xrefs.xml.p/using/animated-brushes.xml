@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+<!ENTITY % entities SYSTEM "../../../stylesheets/entities.xml">
+
+%entities;
+]>
+<!-- section history:
+  2009-07-02 ude: fixed bug #573267 (Angular selection: clockwise)
+  2009-02-17 j.h: reviewed for v2.6
+  2007-05-08 Added Spanish translation by AntI
+-->
+<sect2 id="gimp-using-animated-brushes">
+  <title>Creating animated brushes</title>
+
+  <indexterm>
+    <primary>Animação</primary>
+    <secondary>Criando um pincel animado</secondary>
+  </indexterm>
+
+  <para>
+    Just like for normal brushes, these animated brushes can also be either
+    grayscale or color. For grayscale images, where the actual brush will use
+    the current foreground color, you use white for transparency. For color
+    images, transparent parts are used as such and when making brush strokes,
+    the actual colors will be used instead of the foreground color.
+  </para>
+  <para>
+    To create a new animated brush, create either a grayscale or color image,
+    based on whether you want the brush to use the user's foreground color,
+    or the actual colors in the image.
+    Then create the images for your animation steps.
+    To save the brush into gih format, select
+    <menuchoice>
+      <guimenu>File</guimenu>
+      <guimenuitem>Export As…</guimenuitem>
+    </menuchoice>,
+    name your work with the gih extension, and press the
+    <guibutton>Export</guibutton> button. The following window is displayed:
+  </para>
+
+  <sect3 id="file-gih-export">
+    <title>Export Image as Brush Pipe</title>
+
+    <figure>
+      <title>Dialog to export an image as Brush Pipe</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/using/file-gih-export.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>
+            Dialog to export an image as GIMP image hose
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <para>
+      This dialog box has several options that allow you to select how your brush
+      is animated.
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Espaçamento (Percentagem)</term>
+        <listitem>
+          <para><quote>Espaçamento</quote> é a distância entre marcas de pincel consecutivas quando você traça uma pincelada com o ponteiro do mouse. Você deve considerar o ato de desenhar com o pincel — ou qualquer outra ferramenta de pintura, exceto a ferramenta de Tinta —  como se fosse uma série de carimbos. Se o espaçamento for pequeno, as marcas de carimbo ficam muito próximas e a pincelada parece um traço contínuo. Se o espaçamento for grande, as marcas serão separadas: isso é interessante para um pincel colorido (como pincel de <quote>pimentão</quote>, por exemplo). Os valores variam entre 1 e 200, e essa porcentagem se refere ao <quote>diâmetro</quote> do pincel: 100% equivale a um diâmetro.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Descrição</term>
+        <listitem>
+          <para>É o nome do pincel que vai aparecer no diálogo de pinceis quando o pincel for selecionado.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho da célula</term>
+        <listitem>
+          <para>Este é o tamanho de células que você vai recortar das camadas...o padrão é uma célula por camada, com esse tamanho igual o tamanho da camada. Nesse caso só há um aspecto do pincel por camada.</para>
+          <para>Nós poderíamos ter uma grande camada e recortar as células, que se tornariam diferentes aspectos (quadros) do pincel animado.</para>
+          <para>Por exemplo, se quisermos um pincel de 100x100 pixels com 8 aspectos diferentes, podemos tomar esses 8 aspectos de uma única camada de 400x200 pixels, ou de uma de 300x300 pixels mas que deixaria uma célula sem uso.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Número de células</term>
+        <listitem>
+          <para>Esse é o número de células (uma célula para cada aspecto) que será cortado da imagem. O padrão é o número de camadas da imagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mostrar como</term>
+        <listitem>
+          <para>Essa linha lhe diz como as células estão arranjadas nas camadas. Se, por exemplo, você especificar a largura das células de forma que haja duas células por camada em quatro camadas (8 células no total), o GIMP vai mostrar:<computeroutput>2 linhas de 1 coluna em cada camada</computeroutput>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Dimension</term>
+        <term>Ranks</term>
+        <term>Selection dropdown</term>
+        <listitem>
+          <para>Aqui as coisas começam a se complicar! São necessárias algumas explicações para entender como arranjar as células e camadas</para>
+          <para>
+            GIMP starts retrieving cells from each layer and stacks them into a
+            FIFO stack (First In First Out: the first in is at the top of the
+            stack and so can be first out). In our example 4 layers with 2 cells
+            in each, we'll have, from top to bottom: first cell of first layer,
+            second cell of first layer, first cell of second layer, second cell
+            of second layer, …, second cell of fourth layer. With one cell per
+            layer or with several cells per layer, result is the same. You can
+            see this stack in the <link linkend="gimp-layer-dialog">Layers Dialog</link>
+            of the resulting
+            <filename class="extension">.gih</filename> image file.
+          </para>
+          <para>O GIMP cria uma tabela (um tipo de dado em  <quote>array</quote>, internamente) para essa pilha, com as <guilabel>Dimensões</guilabel> que você configurar. Você pode usar até 4 dimensões.</para>
+          <para>Em ciência da computação, uma matriz (array) tem a forma  <quote>minhamatriz(x,y,z)</quote> para uma matriz de 3 dimensões. É fácil imaginar uma matriz de 2 dimensões: em papel, é uma tabela com linhas e colunas  <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/using/gih-array2D.png" format="PNG"/>
+              </imageobject>
+            </mediaobject>. Com uma matriz tridimensional, nós não falamos em linhas e colunas, mas em <guilabel>Dimensões</guilabel> e <guilabel>Níveis</guilabel>. A primeira dimensão é ao longo do eixo x, a segunda ao longo do eixo y, e a terceira ao longo do eixo z. Cada dimensão tem níveis de células. <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/using/gih-array3D.png" format="PNG"/>
+              </imageobject>
+            </mediaobject></para>
+          <para>Para preencher esta matriz, o GIMP começa tomando células do topo da pilha. A forma como ele faz isso lembra um odômetro: os índices dos níveis mais a direita mudam primeiro, e quando o índice chega ao máximo, os índices dos níveis mais a esquerda mudam. Por exemplo, para uma matriz de (4,2,2) as imagens são pegas para preencher a matriz na seguinte sucessão:  (1,1,1),(1,1,2),(1,2,1),(1,2,2),(2,1,1),(2,1,2),(2,2,2),(3,1,1).... (4,2,2). Nós vamos ver um exemplo mais completo disso adiante.</para>
+          <para>Além do número de níveis que você pode dar a cada dimensão, você também pode atribuir a elas um modo de <guilabel>Seleção</guilabel>. Você tem vários modos que serão aplicados quando se pintar com este pincel. De acordo com o nível selecionado em cada dimensão, será escolhida a célula contendo o <quote>carimbo</quote> para aquela parte da pincelada:</para>
+          <variablelist>
+            <varlistentry>
+              <term>Incremental</term>
+              <listitem>
+                <para>O <acronym>GIMP</acronym> seleciona um nível daquela dimensão de acordo com a ordem dos níveis, em sequência - nível 1, 2, 3, etc...</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Angular </term>
+              <listitem>
+                <para>O <acronym>GIMP</acronym> seleciona um nível para a dimensão em questão de acordo com o ângulo do pincel (direção de pintura)</para>
+                <para>
+                  The first rank is for the direction 0°, upwards. The other
+                  ranks are affected, clockwise, to an angle whose value
+                  is 360/number of ranks. So, with 4 ranks in the concerned
+                  dimension, the angle will move 90° clockwise for each
+                  direction change: second rank will be affected to 90°
+                  (rightwards), third rank to 180° (downwards) and fourth rank to
+                  270° (-90°) (leftwards).
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Random (aleatório)</term>
+              <listitem>
+                <para>O <acronym>GIMP</acronym> seleciona um nível ao acaso (aleatoriamente) da dimensão em questão.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Velocity</term>
+              <term>Pressure</term>
+              <term>X tilt</term>
+              <term>Y tilt</term>
+              <listitem>
+                <para>Essas opções são para desenhos sofisticados feitos com mesas digitalizadoras (tablets) </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Brush Pipe Examples</title>
+    <variablelist>
+      <title>Exemplos</title>
+      <varlistentry>
+        <term>Um tubo de imagens de uma dimensão</term>
+        <listitem>
+          <para>Bem! E tudo isso é útil para que mesmo? Vamos examinar gradualmente com exemplos. Você pode na verdade colocar em cada dimensão configurações que vão lhe dar uma ação particular.</para>
+          <para>Vamos começar com um pincel de uma dimensão (1D) que vai nos ajudar a estudar como funcionam os modos de seleção. Nós podemos imaginar isso: <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/using/gih-array1D.png" format="PNG"/>
+              </imageobject>
+            </mediaobject> - siga esses passos:</para>
+          <procedure>
+            <step>
+              <para>
+                Select
+                <menuchoice>
+                  <guimenu>File</guimenu>
+                  <guimenuitem>New…</guimenuitem>
+                </menuchoice> from the main menu.
+              </para>
+              <para>Defina <guilabel>Largura</guilabel> e <guilabel>Altura</guilabel>, por exemplo, para 30 pixels.</para>
+              <para>Nas <guilabel>Opções Avançadas</guilabel>, defina o <guilabel>Espaço de Cor</guilabel> para <guilabel>Cor RGB</guilabel> e defina <guilabel>Preencher com</guilabel> para <guilabel>Transparência</guilabel>.</para>
+              <para>Abra uma imagem de 30x30 pixels, RGB com transparência. Apague a camada de <quote>fundo</quote>, e com a ferramenta de texto, crie 4 camadas:  <quote>1</quote>, <quote>2</quote>, <quote>3</quote>, <quote>4</quote>.</para>
+            </step>
+            <step>
+              <para>
+                Select
+                <menuchoice>
+                  <guimenu>File</guimenu>
+                  <guimenuitem>Save…</guimenuitem>
+                </menuchoice> from the main menu to first save your image as an
+                <filename class="extension">.xcf</filename> file to keep its properties.
+              </para>
+              <para>
+                Select
+                <menuchoice>
+                  <guimenu>File</guimenu>
+                  <guimenuitem>Export As…</guimenuitem>
+                </menuchoice> from the main menu to export the image as an animated brush
+                with the <filename class="extension">.gih</filename> extension.
+              </para>
+              <para>
+                Export the image with a <filename class="extension">.gbr</filename> extension in the
+                <filename class="directory">brushes</filename> directory located inside
+                <link linkend="gimp-concepts-setup">your personal GIMP configuration folder</link>.
+              </para>
+            </step>
+            <step>
+              <para>
+                In the <guilabel>Export Image as Brush Pipe</guilabel> dialog, provide a <guilabel>Description</guilabel>,
+                set the <guilabel>Spacing (percent)</guilabel> to 100, set the <guilabel>Cell size</guilabel> to 30×30,
+                set <guilabel>Dimension</guilabel> to 1, and set <guilabel>Ranks</guilabel> to 4, and the <guilabel>Selection</guilabel>
+                drop-down to <guilabel>incremental</guilabel>.
+                Then click the <guibutton>Export</guibutton> button.
+              </para>
+            </step>
+            <step>
+              <para>
+                In the <link linkend="gimp-brush-dialog">Brush Dialog</link>, click on
+                the button <guibutton>Refresh brushes</guibutton>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/view-refresh.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>.
+              </para>
+              <para>E veja seu maravilhoso pincel aparecer bem no meio dos outros pinceis. Você pode usa-lo imediatamente, sem reiniciar o GIMP.</para>
+              <para>Selecione seu pincel. Selecione a ferramenta lápis, por exemplo, e clique e segure com ele em uma nova imagem: <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/using/gih1234incr.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>Você vê os números 1, 2, 3 e 4 um após o outro, em ordem.</para>
+                  </caption>
+                </mediaobject></para>
+            </step>
+            <step>
+              <para>
+                Take your <filename class="extension">.xcf</filename> image file
+                back and export it as <filename class="extension">.gih</filename>
+                setting the <guilabel>Selection</guilabel> drop-down to <guilabel>random</guilabel>:
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/using/gih1234rand.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>Os dígitos serão exibidos numa ordem aleatória</para>
+                  </caption>
+                </mediaobject>
+              </para>
+            </step>
+            <step>
+              <para>
+                Now set the <guilabel>Selection</guilabel> drop-down to <guilabel>angular</guilabel>:
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/using/gih1234angl.png"/>
+                  </imageobject>
+                </mediaobject>
+              </para>
+            </step>
+          </procedure>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Um tubo de imagens de 3 dimensões</term>
+        <listitem>
+          <para>Agora vamos criar um pincel animado com 3 dimensões. Sua orientação vai mudar de acordo com a direção do pincel, ele vai alternar as mãos direta e esquerda regularmente e sua cor se alternará ao acaso entre preto e azul.</para>
+          <para>A primeira pergunta que temos que responder é o número de imagens (células) que serão necessárias. Nós reservamos a primeira dimensão (x) para  a direção do pincel (4 direções). A segunda dimensão (y), é para a alternância entre esquerda e direita, e a terceira dimensão (z) para  a variação das cores. Esse pincel será representado internamente numa matriz 3D <quote>minhamatriz(4,2,2)</quote>: <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/using/gih-3Dnum.png" format="PNG"/>
+              </imageobject>
+            </mediaobject>. Há 4 níveis na primeira dimensão, 2 níveis na segunda dimensão (y) e 2 níveis na terceira dimensão(z). Vemos que são 4x3x2 = 16 células. Precisamos então de 16 imagens.</para>
+          <procedure>
+            <step>
+              <title>Criando as imagens da dimensão 1 (x)</title>
+              <para>Abra uma nova imagem de 30x30 pixels, com preenchimento transparente. Usando um fator de zoom conveniente, desenhe uma mão esquerda com os dedo para cima. Salve-a com um nome como <filename>handL0k.xcf</filename>(as letras e números são para você saber o que há em cada arquivo - você pode usar nomes mais descritivos. Este nome (handL0K) é para <quote>Hand Left 0° blacK</quote> - (esquerda, 0 graus, preto)).</para>
+              <para>
+                Open the <link linkend="gimp-layer-dialog">Layers Dialog</link>.
+                Double click on the layer to open the
+                Layer Attributes Dialog and rename it to handL0k.
+              </para>
+              <para>Duplique a camada. Deixe somente a camada duplicada visível, selecione-a e aplique uma rotação de 90° (Camada/Transformar/Rotacionar 90° horário).Renomeie- a para <quote>esquerda-1-preta</quote>.</para>
+              <para>Repita a operação mais duas vezes e crie as camadas <quote>esquerda-180-preta</quote> e <quote>esquerda-270-preta</quote>.</para>
+            </step>
+            <step>
+              <title>Criando as imagens da dimensão 2 (y)</title>
+              <para>Esta dimensão no nosso exemplo tem dois níveis, um para a mão direita, e um para a mão esquerda. As imagens da mão esquerda já existem &mdash; nós criaremos as imagens de mão direita espelhando a mão esquerda.</para>
+              <para>Duplique a camada <quote>esquerda-0-preta</quote>, torne-a a única camada visível. Aplique nela um espelhamento horizontal (Camada/Transformar/Espelhar Horizontalmente) e ponha nela o nome de <quote>direita-0-preta</quote>.</para>
+              <para>Repita nela as mesmas operações feitas com a mão esquerda para criar a mão direita nas quatro direções diferentes, com os nomes apropriados (<quote>direita-90-preta</quote>...)</para>
+              <para>Mude a ordem das camadas, de forma que você tenha, de cima para baixo, uma rotação no sentido horário, alternando as mãos esquerdas e as mãos direitas: esquerda-0-preta, direita-0-preta, esquerda-90-preta, direita-90-preta, ... até direita-270-preta como a última camada.</para>
+            </step>
+            <step>
+              <title>Criando as imagens da dimensão 3 (z)</title>
+              <para><emphasis>Criando imagens da dimensão 3 (z)</emphasis>: A terceira dimensão tem dois níveis: um para a cor preta, e um para a cor azul. O primeiro nível, preto, já está pronto. As imagens do segundo nível serão uma cópia, em azul, das imagens já feitas até a dimensão 2. Então teremos 16 imagens. Mas uma pilha de 16 camadas já começa a  ficar complicada de gerenciar, então usaremos camadas com duas imagens.</para>
+              <para>Selecione a camada <quote>esquerda-0-preta</quote>, e deixe-a como única camada visível. Usando a opção de <quote>Imagem-&gt;tamanho da tela de pintura...</quote>, mude o tamanho de nossa imagem para 60x30 pixels (mantenha as camadas encostadas no lado esquerdo da imagem)</para>
+              <para>
+                Duplicate handL0k layer. On the copy, fill the hand with blue
+                using Bucket Fill tool.
+              </para>
+              <para>Selecione a ferramenta de Mover, e marque nas opções de ferramenta seu modo está em <guilabel>Mover a camada atual</guilabel>. Mova a mão azul para o lado direito da imagem - faça isso de forma precisa, usando <guisubmenu>Zoom</guisubmenu>.</para>
+              <para>
+                Make sure only handL0k and its blue copy are visible. Right
+                click on the Layers dialog: Apply the <guimenuitem>Merge Visible
+                Layers</guimenuitem> command with the option <guilabel>Expand as
+                Necessary</guilabel>. You get a 60×30 pixels layer with the
+                black hand on the left and the blue hand on the right. Rename it
+                to <quote>handsL0</quote>.
+              </para>
+              <para>Repita as mesmas operações (tornar única visível, duplicar, pintar de azul, mover, combinar camadas visíveis, renomear) com as outras 7 camadas.</para>
+            </step>
+            <step>
+              <title>Coloque as camadas em ordem</title>
+              <para>As camadas devem estar na ordem certa de forma que o GIMP possa achar a imagem requerida no momento de usar o pincel. Nossas camadas já estão na ordem correta, mas precisamos entender, de forma mais geral, como é essa ordem. A primeira forma é matemática: O GIMP divide as 16 imagens primeiro em 4 grupos - isso dá 4 grupos de 4 imagens para a primeira dimensão. Cada grupo representa uma direção do pincel. Então, ele divide cada grupo em dois - isso dá dois grupos de duas imagens cada para compor a segunda dimensão(no nosso caso, cada duas imagens estão em uma única camada) - e cada grupo desses representa a alternância entre direita e esquerda para a imagem. E por fim, uma última divisão por dois para a terceira dimensão, para representar uma cor entre o preto e o azul.</para>
+              <para>A outra forma é visual, usando a representação em matriz. A correlação entre os dois métodos é representada na imagem seguinte: <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/using/gih-correlation.png"/>
+                  </imageobject>
+                </mediaobject></para>
+              <para><emphasis>Como o GIMP lê esta matriz</emphasis>:  O GIMP começa com a primeira dimensão, que está programada para ser <quote>angular</quote>, por exemplo, 90°. Nesse nível de 90°, na segunda dimensão, ele escolhe dentre o grupo de imagens dentre Esquerda/Direita de forma <quote>incremental</quote>. Então, na dimensão 3, de forma aleatória, ele escolhe uma cor. Por fim, nossas camadas devem estar nesta ordem: <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/using/gih-hands-layers.png"/>
+                  </imageobject>
+                </mediaobject></para>
+            </step>
+            <step>
+              <para>Voilá. Seu pincel está pronto. Salve-o como uma imagem <filename class="extension">.xcf</filename> antes (senão, se quiser alterar algo depois, não tem como), e então, exporte-o como um arquivo <filename class="extension">.gih</filename> com os seguintes parâmetros:</para>
+              <itemizedlist>
+                <listitem>
+                  <para>Espaçamento: 100</para>
+                </listitem>
+                <listitem>
+                  <para>Descrição: Mãos</para>
+                </listitem>
+                <listitem>
+                  <para>Tamanho da célula: 30x30</para>
+                </listitem>
+                <listitem>
+                  <para>Número de células: 16</para>
+                </listitem>
+                <listitem>
+                  <para>Dimensões: 3</para>
+                  <itemizedlist>
+                    <listitem>
+                      <para>Dimensão 1: 4 Níveis, Seleção: angular</para>
+                    </listitem>
+                    <listitem>
+                      <para>Dimensão 2: 2 Níveis, Seleção: incremental</para>
+                    </listitem>
+                    <listitem>
+                      <para>Dimensão 3: 3 níveis, Seleção: random</para>
+                    </listitem>
+                  </itemizedlist>
+                </listitem>
+              </itemizedlist>
+              <para>Ponha seu arquivo <filename class="extension">.gih</filename> em uma das pastas de pinceis do GIMP (<filename>brushes</filename>), e atualize o diálogo de pincéis. Agora você pode usar seu pincel. <emphasis>Atenção: No GIMP atual você pode conseguir muitos dos mesmos efeitos que pinceis animados sofisticados usando as dinâmicas de pintura</emphasis> — em particular, basta ligar a opção de <quote>Track direction</quote> nas dinâmicas para que as pincelada acompanhem a direção do movimento.</para>
+              <figure>
+                <title>Aqui está o contorno de seleção elíptica usando este pincel, com as opções padrão:</title>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/using/gih-hands-stroke.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>Este pincel alterna as mãos direita e esquerda regularmente, azul e preto ao acaso e a direção de acordo com a direção de pintura.</para>
+                  </caption>
+                </mediaobject>
+              </figure>
+            </step>
+          </procedure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

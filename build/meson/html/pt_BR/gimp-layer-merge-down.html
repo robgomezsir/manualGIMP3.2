@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>7.7. Combinar abaixo</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-layer-menu.html" title="7. O menu “Camada”" />
+    <link rel="prev" href="gimp-layer-anchor.html" title="7.6. Anchor Floating Layer or Mask" />
+    <link rel="next" href="gimp-layer-merge-group.html" title="7.8. Merge Layer Groups" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>7.7. Combinar abaixo</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-layer-anchor.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>7. O menu <span class="quote">“<span class="quote">Camada</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-layer-merge-group.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-layer-merge-down"></a>7.7. Combinar abaixo</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id40221" class="indexterm"></a>
+      <a id="id40225" class="indexterm"></a>
+      <p>
+    The <span class="guimenuitem">Merge Down</span>
+    command merges the active layer with the layer just below it in the stack,
+    taking into account the various properties of the active layer, such as
+    its opacity and layer
+    <a class="link" href="gimp-concepts-layer-modes.html" title="2. Modos de Camada">mode</a>.
+    The resulting merged layer will be in Normal mode, have opacity set to 100%,
+    and will have an alpha channel even if the original layers didn't have one.
+    If the layer below is not opaque, or if it is in some mode other than
+    Normal, then this command will generally change the appearance of the image.
+  </p>
+      <p>O uso mais comum do <span class="guimenuitem">Combinar abaixo</span> é a construção de uma camada, iniciando com uma  <span class="quote">“<span class="quote">camada de base</span>”</span> (geralmente opaca e no modo Normal, para que você possa ver o que você está fazendo), e adicionando uma <span class="quote">“<span class="quote">camada de modificação</span>”</span> acima dela, com qualquer forma, a opacidade e o modo da camada que você desejar. Neste caso, combinar essa camada de modificação irá fundir as duas camadas em uma só, sem alterar a forma como a imagem aparece.</p>
+      <p>
+    The <span class="guimenuitem">Merge Down</span> command is not available when
+    a floating layer is present.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3814"></a>7.7.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Layer</span> → <span class="guimenuitem">Merge Down</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          From the
+          <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Diálogo de camadas">Layers Dialog</a>, you
+          can access it through the <span class="guimenuitem">Merge Down</span> command
+          of its context menu, or by clicking on the
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-merge-down.svg" width="16" alt="Merge Down" /></span>
+          </span>
+          icon button on the bottom of that dialog.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-layer-anchor.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-layer-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-layer-merge-group.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-layer-anchor.html">7.6. Anchor Floating Layer or Mask</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-layer-merge-group.html">7.8. Merge Layer Groups</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

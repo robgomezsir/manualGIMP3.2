@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-10-29 j.h : created
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-median-blur">
+  <title>Desfoque por Mediana</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Desfocar</secondary>
+    <tertiary>Desfoque por Mediana</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Desfoque por Mediana</primary>
+  </indexterm>
+  
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Example for the <quote>Median Blur</quote> filter</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/taj_orig.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/blur-taj-median.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Enquanto o filtro de desfoque <quote>Gaussiano</quote> calcula a média dos pixels vizinhos, o filtro de desfoque por <quote>Mediana</quote> calcula a mediana: <figure>
+        <title>Calculando Mediana</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/examples/blur/median-calcul.png"/>
+          </imageobject>
+          <caption>
+            <para>Uma vizinhança 3×3. Valores em ordem crescente. Mediana contornada em vermelho.</para>
+          </caption>
+        </mediaobject>
+      </figure> Este cálculo não cria um novo valor, e um pixel não-representativo na vizinhança não afetará o resultado. Portanto, este filtro preserva bordas e arredonda cantos. Ele é usado para reduzir ruído, especialmente ruído de impulso, e remove arranhões em fotografias.</para>
+  </sect3>
+  
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Blur</guisubmenu>
+        <guimenuitem>Median Blur…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+  
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Parâmetros do filtro <quote>Mediana</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/blur/median-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Vizinhança</term>
+        <listitem>
+          <para>
+            The shape of the neighborhood. Three options:
+            <guilabel>Square</guilabel>, <guilabel>Circle</guilabel> (default),
+            <guilabel>Diamond</guilabel>. Differences are subtle and not
+            predictable: experiment, on-canvas editing makes this easy.
+          </para>
+          <figure>
+            <title>Vizinhança <quote>mediana</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/blur/median-neighbor.png"/>
+              </imageobject>
+              <caption>
+                <para>Raio=3. Esquerda: Quadrado.</para>
+                <para>Meio: Círculo. Direita: Losango.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Raio</term>
+        <listitem>
+          <para>O raio da vizinhança. Aumentar o raio aumenta o desfoque. Ao contrário do filtro <quote>Gaussiano</quote>, bordas não são borradas. Cantos são arredondados e superfícies convexas são erodidas.</para>
+          <figure>
+            <title>Desfoque por <quote>Mediana</quote> vs desfoque <quote>Gaussiano</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/blur/median-vs-gaussian.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  Left: Original image
+                </para>
+                <para>
+                  Middle: <link linkend="gimp-filter-median-blur">Median Blur</link> filter applied
+                </para>
+                <para>
+                  Right: <link linkend="gimp-filter-gaussian-blur">Gaussian Blur</link> filter applied
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>Aumentar demais o raio pode criar efeitos indesejados:</para>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/blur/median-radius-100.png"/>
+            </imageobject>
+            <caption>
+              <para>Esquerda: Original</para>
+              <para>Direita: Raio=100</para>
+            </caption>
+          </mediaobject>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Percentil</term>
+        <listitem>
+          <para>Por padrão, o filtro Desfoque por Mediana encontra o valor mediano na vizinhança de cada pixel. Apesar do nome, este filtro pode, na verdade, encontrar *qualquer* percentil arbitrário, não apenas a mediana (i.e., o 50º percentil). O parâmetro "Percentil" controla o percentil usado para os componentes de cor. Valores mais baixos deslocam a imagem para tons mais escuros, e valores mais altos, para tons mais claros.</para>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="JPEG" fileref="images/filters/examples/blur/median-percent.jpg"/>
+            </imageobject>
+            <caption>
+              <para>Esquerda: Original</para>
+              <para>Meio: Percentil=0. Imagem é mais escura. Caules são ampliados, mas nítidos.</para>
+              <para>Direita: Percentil=100. Imagem é mais clara e muito borrada.</para>
+            </caption>
+          </mediaobject>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Alpha percentile</term>
+        <listitem>
+          <para>Para ver o efeito deste parâmetro, você precisa de uma imagem com transparência. Se o canal alfa for opaco em todo lugar, o resultado também será totalmente opaco, independentemente do percentil.</para>
+          <para>Valores mais baixos para o parâmetro <quote>Percentil do alfa</quote>alteram a imagem para uma maior transparência, e valores mais altos alteram a imagem para uma maior opacidade, onde um valor de 50% é balanceado. De forma grosseira, valores menores do que 50% tornam as regiões opacas da imagem menores, enquanto valores maiores que 50% aumentam as regiões opacas.</para>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/blur/median-alpha-percent-bw.png"/>
+            </imageobject>
+          </mediaobject>
+          <figure>
+            <title><quote>Alpha percentile</quote> option example</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/blur/median-alpha-percent.png"/>
+              </imageobject>
+              <caption>
+                <para>Esquerda: Original. A imagem tem um canal alfa. Um círculo está transparente.</para>
+                <para>Meio: Percentil=0%. O círculo transparente está maior.</para>
+                <para>Direita: Percentil do alfa=100%. O círculo transparente está reduzido.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Política do Abismo</term>
+        <listitem>
+          <para>Política do Abismo (gerenciamento de bordas) é tratada com <xref linkend="abyss-policy"/>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Alta precisão</term>
+        <listitem>
+          <para>Esta opção evita corte e quantização, mas é mais lenta.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+  
+  <sect3>
+    <title>Usando o Desfoque por Mediana</title>
+    <variablelist>
+      <varlistentry>
+        <term>Redução de ruído de impulso</term>
+        <listitem>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/blur/median-noise.png"/>
+            </imageobject>
+            <caption>
+              <para>Esquerda: original</para>
+              <para>Meio: raio = 1 aplicado duas vezes</para>
+              <para>Direita: raio = 1 aplicado três vezes</para>
+            </caption>
+          </mediaobject>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Redução de arranhões</term>
+        <listitem>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/filters/examples/blur/median-scratch.png"/>
+            </imageobject>
+            <caption>
+              <para>Esquerda: original</para>
+              <para>Meio: raio = 2</para>
+              <para>Direita: raio = 1 aplicado duas vezes. A imagem está menos borrada.</para>
+            </caption>
+          </mediaobject>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

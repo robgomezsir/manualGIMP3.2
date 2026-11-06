@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.53. Paleta suave</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. O menu “Cores”" />
+    <link rel="prev" href="plug-in-borderaverage.html" title="8.52. Média da borda" />
+    <link rel="next" href="gimp-tool-threshold.html" title="8.54. Limiar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.53. Paleta suave</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-borderaverage.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. O menu <span class="quote">“<span class="quote">Cores</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-tool-threshold.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-smooth-palette"></a>8.53. Paleta suave</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id45715" class="indexterm"></a>
+      <a id="id45718" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4133"></a>8.53.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4134"></a>
+          <p class="title">
+            <strong>Figura 16.216. Exemplo do filtro <span class="quote">“<span class="quote">Paleta suave</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo do filtro “Paleta suave”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/color-taj-smoothpalette.jpg" alt="Exemplo do filtro “Paleta suave”" />
+              <div class="caption">
+                <p>Filtro <span class="quote">“<span class="quote">Paleta suave</span>”</span> aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Este efeito cria uma paleta de faixas com cores da camada ativa ou seleção. O propósito principal deste filtro é criar um mapa de cores para ser usado com o filtro <a class="link" href="plug-in-flame.html" title="14.2. Chama">Chama</a>.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Este comando somente funciona em imagens RGB. Se a imagem estiver em Tons de Cinza ou for Indexada, a entrada no menu é desativada.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4135"></a>8.53.2. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Info</span> → <span class="guimenuitem">Smooth Palette…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4136"></a>8.53.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4137"></a>
+          <p class="title">
+            <strong>Figura 16.217. Opções da <span class="quote">“<span class="quote">Paleta suave</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/info/smoothpalette.png" alt="Opções da “Paleta suave”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Width, </span>
+              <span class="term">Height</span>
+            </dt>
+            <dd>
+              <p>
+            You can set palette dimensions for <span class="guilabel">Width</span> and
+            <span class="guilabel">Height</span>. Dimensions are linked when the chain
+            is not broken. You can also select the unit.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Search depth</span>
+            </dt>
+            <dd>
+              <p>
+            Increasing Search depth (1 - 1024) will result in more shades in
+            the palette.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-borderaverage.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-threshold.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-borderaverage.html">8.52. Média da borda</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-threshold.html">8.54. Limiar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

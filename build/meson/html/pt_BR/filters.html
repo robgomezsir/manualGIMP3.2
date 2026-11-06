@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Capítulo 17. Filtros</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-function-reference.html" title="Parte III. Referência das funções" />
+    <link rel="prev" href="gimp-about-dialog.html" title="12.12. Sobre" />
+    <link rel="next" href="gimp-filters-common.html" title="2. Recursos comuns" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Capítulo 17. Filtros</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-about-dialog.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Parte III. Referência das funções</span>
+        <nav> <a accesskey="n" href="gimp-filters-common.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="chapter">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="filters"></a>Capítulo 17. Filtros</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Índice</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="filters.html#filter-introduction">1. Introdução</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-filters-common.html">2. Recursos comuns</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="filters-blur.html">3. Filtros de desfocar</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-blur.html#filters-blur-introduction">3.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-focus-blur.html">3.2. Borrão de Foco</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-gaussian-blur.html">3.3. Desfoque Gaussiano</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-lens-blur.html">3.4. Desfoque de lente</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-mean-curvature-blur.html">3.5. Desfoque de Curvatura Média</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-median-blur.html">3.6. Desfoque por Mediana</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-pixelize.html">3.7. Pixelizar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-gaussian-blur-selective.html">3.8. Desfoque Gaussiano Seletivo</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-variable-blur.html">3.9. Desfoque Variável</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-motion-blur-circular.html">3.10. Desfoque de Movimento Circular</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-motion-blur-linear.html">3.11. Desfoque de Movimento Linear</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-motion-blur-zoom.html">3.12. Desfoque de movimento de aproximação</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-tile-blur.html">3.13. Desfoque de Mosaico</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-enhance.html">4. Filtros de realce</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-enhance.html#filters-enhance-introduction">4.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-antialias.html">4.2. Anti-serrilhamento</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-deinterlace.html">4.3. Desentrelaçar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-high-pass.html">4.4. High Pass</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-reduction.html">4.5. Noise Reduction</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-red-eye-removal.html">4.6. Remoção de olho vermelho</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-snn-mean.html">4.7. Symmetric Nearest Neighbor</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-unsharp-mask.html">4.8. Sharpen (Unsharp Mask)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-despeckle.html">4.9. Supressão de manchas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-nl-filter.html">4.10. Filtro NL</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-wavelet-decompose.html">4.11. Wavelet Decompose</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-distort.html">5. Filtros de distorção</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-distort.html#filters-distort-introduction">5.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-apply-lens.html">5.2. Apply Lens</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-emboss.html">5.3. Esculpir</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-engrave.html">5.4. Entalhar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-lens-distortion.html">5.5. Distorção de lente</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-kaleidoscope.html">5.6. Kaleidoscope</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-mosaic.html">5.7. Mosaico</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-newsprint.html">5.8. Retícula</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-polar-coordinates.html">5.9. Polar Coordinates</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-ripple.html">5.10. Ondulações</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-shift.html">5.11. Empurrar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-spherize.html">5.12. Spherize</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-value-propagate.html">5.13. Propagar valores</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-video-degradation.html">5.14. Video Degradation</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-waves.html">5.15. Ondas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-whirl-pinch.html">5.16. Redemoinhos e marteladas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-wind.html">5.17. Vento</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-blinds.html">5.18. Persianas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-curve-bend.html">5.19. Dobrar em curva</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-pagecurl.html">5.20. Dobra da página</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-light-and-shadow.html">6. Filtros de luz e sombra</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-light-and-shadow.html#filters-light-and-shadow-introduction">6.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-bloom.html">6.2. Bloom</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-supernova.html">6.3. Supernova</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-lens-flare.html">6.4. Clarão de lente</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-gflare.html">6.5. Clarão em degradê</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-lighting.html">6.6. Efeitos de iluminação</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-sparkle.html">6.7. Cintilância</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-drop-shadow.html">6.8. Sombra projetada</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-long-shadow.html">6.9. Sombra projetada</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-vignette.html">6.10. Vinheta</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-drop-shadow.html">6.11. Opacidade da sombra projetada</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-perspective-shadow.html">6.12. Perspectiva</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-xach-effect.html">6.13. Efeito Xach</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gegl-bevel.html">6.14. Bevel</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gegl-inner-glow.html">6.15. Inner Glow</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-noise.html">7. Filtros de ruído</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-noise.html#filters-noise-introduction">7.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-cie-lch.html">7.2. CIE lch Noise</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-hsv.html">7.3. Ruído HSV</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-hurl.html">7.4. Arremesso</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-pick.html">7.5. Escolha</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-rgb.html">7.6. Ruído RGB</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-slur.html">7.7. Mancha</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-spread.html">7.8. Espalhar</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-edge.html">8. Filtros de detecção de borda</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-edge.html#filters-edges-introduction">8.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-difference-of-gaussians.html">8.2. Diferença de Gaussianas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-edge.html">8.3. Bordas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-edge-laplace.html">8.4. Laplace</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-edge-neon.html">8.5. Neon</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-edge-sobel.html">8.6. Sobel</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-image-gradient.html">8.7. Image Gradient</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-generic.html">9. Filtros genéricos</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-generic.html#filters-generic-introduction">9.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-convolution-matrix.html">9.2. Matriz de convolução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-distance-map.html">9.3. Distance Map</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-normal-map.html">9.4. Normal Map</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-dilate.html">9.5. Dilatar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-erode.html">9.6. Erodir</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-gegl-graph.html">9.7. GEGL Graph</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gegl-styles.html">9.8. Text Styling</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-combine.html">10. Filtros de combinação</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-combine.html#filters-combine-introduction">10.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-depth-merge.html">10.2. Mapa de profundidade</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-film.html">10.3. Filmstrip</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-artistic.html">11. Filtros artísticos</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-artistic.html#filters-artistic-introduction">11.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-apply-canvas.html">11.2. Aplicar textura de tela</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-cartoon.html">11.3. Ilustração</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-cubism.html">11.4. Cubismo</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-tile-glass.html">11.5. Glass Tile</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-oilify.html">11.6. Pintura a óleo</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-photocopy.html">11.7. Fotocópia</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-slic.html">11.8. Simple Linear Iterative Clustering (SLIC)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-softglow.html">11.9. Brilhosuave</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-waterpixels.html">11.10. Waterpixels</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-clothify.html">11.11. Aspecto de tecido</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-gimpressionist.html">11.12. GIMPressionista</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-lic.html">11.13. Van Gogh (LIC)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-weave.html">11.14. Traçar</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-decor.html">12. Filtros de decoração</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-decor.html#filters-decor-introduction">12.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-add-bevel.html">12.2. Adicionar chanfro</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-addborder.html">12.3. Adicionar borda</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="python-fu-foggify.html">12.4. Fog</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-fuzzy-border.html">12.5. Borrar borda</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-old-photo.html">12.6. Foto antiga</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-round-corners.html">12.7. Arredondar cantos</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-slide.html">12.8. Slide</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-coffee-stain.html">12.9. Stain</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-carve-it.html">12.10. Esculpir estêncil</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-sota-chrome-it.html">12.11. Estêncil de cromagem</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-map.html">13. Filtros de mapeamento</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-map.html#filters-map-introduction">13.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-bump-map.html">13.2. Mapa de relevo</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-displace.html">13.3. Deslocar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-fractal-trace.html">13.4. Traçar com fractal</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-illusion.html">13.5. Ilusão</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-little-planet.html">13.6. Little Planet</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-panorama-projection.html">13.7. Panorama Projection</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-recursive-transform.html">13.8. Recursive Transform</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-tile-paper.html">13.9. Mosaico de papel</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-tile-seamless.html">13.10. Tile Seamless</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-map-object.html">13.11. Mapear objeto</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-small-tiles.html">13.12. Mosaico pequeno</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-tile.html">13.13. Mosaico</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-warp.html">13.14. Deformar</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-render.html">14. Filtros de renderização</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-render.html#filters-render-introduction">14.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-flame.html">14.2. Chama</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-fractalexplorer.html">14.3. Explorador de fractais</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-ifscompose.html">14.4. Fractal IFS</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-cell.html">14.5. Cell Noise</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-perlin.html">14.6. Perlin Noise</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-plasma.html">14.7. Plasma</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-simplex.html">14.8. Simplex Noise</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-noise-solid.html">14.9. Ruído sólido</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-difference-clouds.html">14.10. Nuvens de diferença</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-bayer-matrix.html">14.11. Bayer Matrix</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-checkerboard.html">14.12. Xadrez</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-diffraction-patterns.html">14.13. Padrões de difração</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-grid.html">14.14. Grade</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-linear-sinusoid.html">14.15. Linear Sinusoid</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-maze.html">14.16. Labirinto</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-sinus.html">14.17. Seno</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-spiral.html">14.18. Spiral</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-checkerboard.html">14.19. Checkerboard (legacy)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-cml-explorer.html">14.20. Explorador CML</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-grid.html">14.21. Grid (legacy)</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-jigsaw.html">14.22. Queba-cabeça</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-qbist.html">14.23. Qbist</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-circuit.html">14.24. Circuito</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-gfig.html">14.25. GFig</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-lava.html">14.26. Lava</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-line-nova.html">14.27. Explosão de linhas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-spheredesigner.html">14.28. Designer de esferas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-spyrogimp.html">14.29. Espirogimp</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-web.html">15. Filtros para a Web</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-web.html#filters-web-introduction">15.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-imagemap.html">15.2. Image Map</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-filter-semi-flatten.html">15.3. Semi-Achatar</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="filters-animation.html">16. Filtros de animação</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="filters-animation.html#filters-animation-introduction">16.1. Introdução</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-blend-anim.html">16.2. Transição</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-burn-in-anim.html">16.3. Queimar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-optimize.html">16.4. Otimizar</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="plug-in-animationplay.html">16.5. Reproduzir</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-ripply-anim.html">16.6. Ondulando</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-spinning-globe.html">16.7. Esfera giratória</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="script-fu-waves-anim.html">16.8. Ondas</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="filter-introduction"></a>1. Introdução</h2>
+            </div>
+          </div>
+        </div>
+        <a id="id47216" class="indexterm"></a>
+        <a id="id47219" class="indexterm"></a>
+        <p>Um filtro é um tipo especial de ferramenta projetada para ter uma imagem ou uma camada de entrada, aplicar um algoritmo matemático na mesma, e devolver a camada ou imagem alteradas num formato modificado. O <acronym class="acronym">GIMP</acronym> usa of filtros para obter uma grande variedade de efeitos, que são discutidos aqui.</p>
+        <div class="itemizedlist">
+          <p>Os filtros são divididos em diversas categorias:</p>
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-blur.html" title="3. Filtros de desfocar">Seção 3, “Filtros de desfocar”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-enhance.html" title="4. Filtros de realce">Seção 4, “Filtros de realce”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-distort.html" title="5. Filtros de distorção">Seção 5, “Filtros de distorção”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra">Seção 6, “Filtros de luz e sombra”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-noise.html" title="7. Filtros de ruído">Seção 7, “Filtros de ruído”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-edge.html" title="8. Filtros de detecção de borda">Seção 8, “Filtros de detecção de borda”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-generic.html" title="9. Filtros genéricos">Seção 9, “Filtros genéricos”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-combine.html" title="10. Filtros de combinação">Seção 10, “Filtros de combinação”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-artistic.html" title="11. Filtros artísticos">Seção 11, “Filtros artísticos”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-decor.html" title="12. Filtros de decoração">Seção 12, “Filtros de decoração”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-map.html" title="13. Filtros de mapeamento">Seção 13, “Filtros de mapeamento”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-render.html" title="14. Filtros de renderização">Seção 14, “Filtros de renderização”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-web.html" title="15. Filtros para a Web">Seção 15, “Filtros para a Web”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="filters-animation.html" title="16. Filtros de animação">Seção 16, “Filtros de animação”</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-about-dialog.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-function-reference.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filters-common.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-about-dialog.html">12.12. Sobre </a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filters-common.html">2. Recursos comuns</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

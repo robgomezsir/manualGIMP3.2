@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-06-09 j.h: update to 2.8
+  2007-11-28 j.h: updated v2.4. Lanczos interpolation added
+  2007-09-26 AntI: Added 'es'
+  2006-07-23 note added about the Scale tool by j.h
+  2005/06/18 en Link added
+-->
+<sect2 id="gimp-image-scale">
+  <title>Redimensionar imagem</title>
+
+  <indexterm>
+    <primary>Redimensionar imagem</primary>
+  </indexterm>
+
+  <para>O comando <guimenuitem>Redimensionar imagem</guimenuitem> aumenta ou diminui o tamanho físico de uma imagem alterando o número de pixels que ela contém. Ele altera o tamanho de todos os conteúdos da imagem e redimensiona a tela de pintura de acordo.</para>
+  <para>Ele opera na imagem toda. Se sua imagem tem camadas de tamanhos diferentes, reduzir a imagem pode encolher algumas delas até não existirem mais, já que uma camada precisa ter pelo menos um pixels de largura e de altura. Se isso ocorrer, você será avisado antes da operação ser realizada.</para>
+  <para>Se você desejar redimensionar apenas uma ou mais camadas em particular, use o comando <link linkend="gimp-layer-scale">Redimensionar camada</link>.</para>
+  <anchor id="gimp-image-scale-warning"/>
+  <note>
+    <para>
+      If scaling would produce an image larger than the
+      <quote>Maximum new image size</quote> set in the
+      <link linkend="gimp-prefs-system-resources">System Resources</link> page
+      of the Preferences dialog (which has a default of 128 MiB), you are
+      warned and asked to confirm the operation before it is performed.
+      You may not experience any problems if you confirm the operation, but
+      you should be aware that very large images consume a lot of resources and
+      extremely large images may take more resources than you have,
+      causing <acronym>GIMP</acronym> to crash or not perform well.
+    </para>
+  </note>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Image</guimenu>
+        <guimenuitem>Scale Image…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>O diálogo <quote>Redimensionar imagem</quote></title>
+    <figure>
+      <title>O diálogo <quote>Redimensionar imagem</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/scale-image.png"/>
+          <!--was: images/dialogs/scale-image.png-->
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Tamanho da imagem</term>
+        <listitem>
+          <para>Você deve ter em mente que uma imagem pode estar em um de quatro lugares: no arquivo de imagem, na memória RAM depois que for aberta, na sua tela quando ela é exibida, ou no papel depois de impressa. Redimensionar a imagem altera o número de pixels (a quantidade de informação) que a imagem contém, e isso afeta diretamente a quantidade de memória necessária para esta imagem (na RAM ou em um arquivo)</para>
+          <para>Entretanto, o tamanho da impressão também depende da resolução da imagem, que essencialmente determina quantos pixels serão impressos em cada centímetro de papel. Se você quer mudar o tamanho da impressão sem redimensionar e mudar o número de pixels de uma imagem, você deve usar o diálogo de <link linkend="gimp-image-print-size">Tamanho para impressão</link>. O tamanho na tela depende não apenas do número de pixels, mas da resolução da tela, o fator de aproximação (zoom) e configuração da opção  <link linkend="gimp-view-dot-for-dot">Um ponto por pixel</link>.</para>
+          <para>
+            If you enlarge an image beyond its original size,
+            <acronym>GIMP</acronym> calculates the missing pixels by
+            interpolation, but it does not add any new detail. The more you
+            enlarge an image, the more blurred it becomes. The appearance of
+            an enlarged image depends upon the interpolation method you
+            choose. You may improve the appearance by using the
+            <link linkend="gimp-filter-unsharp-mask">Sharpen (Unsharp 
+            Mask)</link> filter after you
+            have scaled an image, but it is best to use high resolution when
+            you scan, take digital photographs or produce digital images by
+            other means. Raster images inherently do not scale up well.
+          </para>
+          <para>
+            You may need to reduce your image if you intend to use it on a web
+            page. You have to consider that most internet users have
+            relatively small screens which cannot completely display a large
+            image, for example on mobile devices.
+          </para>
+          <para>Adicionar ou remover pixels é um processo chamado de <quote>Reamostrar</quote></para>
+          <variablelist>
+            <varlistentry>
+              <term>Width</term>
+              <term>Height</term>
+              <listitem>
+                <para>
+                  When you click on the <guimenuitem>Scale</guimenuitem>
+                  command, the dialog displays the dimensions of the
+                  original image in pixels. You can set the
+                  <guilabel>Width</guilabel> and the
+                  <guilabel>Height</guilabel> you want to give to your
+                  image by adding or removing pixels. If the
+                  <guiicon>
+                    <inlinemediaobject>
+                      <imageobject>
+                        <imagedata fileref="images/stock-icons/gimp-vchain.svg" contentwidth="16px"/>
+                      </imageobject>
+                    </inlinemediaobject>
+                  </guiicon>
+                  chain icon next
+                  to the Width and Height boxes is unbroken, the Width and
+                  Height will stay in the same proportion to each other. If
+                  you break the chain by clicking on it, you can set them
+                  independently, but this will distort the image.
+                </para>
+                <para>Entretanto, você não precisa escolher as dimensões em pixels. Você pode optar por unidades diferentes a partir do menu suspenso. Se você escolher porcentagem como unidade, você pode configurar o novo tamanho em relação ao tamanho original. Você também pode usar unidades de medida física, tais como milímetros ou polegadas. Se você fizer isso, deve preencher os campos <guilabel>Resolução X</guilabel> e <guilabel>Resolução Y</guilabel> com os valores apropriados, uma vez que eles são necessários para a conversão entre unidades físicas e dimensões da imagem em pixels.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>X resolution</term>
+              <term>Y resolution</term>
+              <listitem>
+                <para>Você pode configurar a resolução de impressão da imagem nos campos <guilabel>Resolução X</guilabel> e <guilabel>Resolução Y</guilabel>. Você também pode alterar as unidades de medida usando o menu suspenso.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Qualidade</term>
+        <listitem>
+          <para>
+            To change the image size, either some pixels have to be removed
+            or new pixels must be added. The process you use determines the
+            quality of the result. The <guilabel>Interpolation</guilabel>
+            drop-down list provides a selection of available methods of
+            interpolating the color of pixels in a scaled image:
+          </para>
+          <para>
+            Interpolation methods are described in 
+            <xref linkend="gimp-tool-interpolation-methods"/>.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <note>
+      <para>Veja também a <link linkend="gimp-tool-scale">Ferramenta de redimensionar</link>, que permite o redimensionamento de uma camada, uma seleção ou um vetor.</para>
+    </note>
+  </sect3>
+</sect2>

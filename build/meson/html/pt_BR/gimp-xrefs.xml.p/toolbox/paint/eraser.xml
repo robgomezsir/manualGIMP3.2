@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-10-12 j.h Update to v2.10
+  2009-03-16 j.h: reviewed for v2.6
+  2008-02-13 j.h: added tip
+  2008-01-26  PP updating to v2.4
+  2007-10-07 lexa: reviewed de for GIMP 2.4
+  2007-02-10 lexA: fixed bug #396404 for en and de
+
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-eraser">
+  <title>Borracha</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Borracha</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Borracha</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Transparência</primary>
+    <secondary>Ferramenta Borracha</secondary>
+  </indexterm>
+
+  <para>A borracha é usada para remover áreas de cores da camada ativa ou de uma seleção dessa camada. Se a ferramenta de borracha é usada em algo que não suporta transparência (um canal de máscara de seleção, uma máscara de camada, ou o fundo de uma camada que não tenha um canal alfa), apagar vai ser equivalente a usar a ferramenta de pincel (ou lápis) usando a cor de Fundo, que está selecionada na Caixa de ferramentas. Numa camada com canal alfa, a borracha produz transparência total ou parcial, dependendo das configurações das opções da ferramenta. Seu uso é intuitivo, e em termos técnicos, ela funciona como um pincel para o canal alfa. Você pode aprender como adicionar um canal alfa à sua camada em <xref linkend="gimp-layer-alpha-add"/>.</para>
+
+  <figure>
+    <title>Borracha e canal alfa</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/toolbox/eraser-ex1.png" format="PNG"/>
+      </imageobject>
+      <caption>
+        <para>A cor de fundo é branco. A imagem não possui canal alfa. A borracha (com opacidade de 100%) mostra a cor do fundo.</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/toolbox/eraser-ex2.png" format="PNG"/>
+      </imageobject>
+      <caption>
+        <para>A imagem tem um canal alfa. A borracha mostra transparência.</para>
+      </caption>
+    </mediaobject>
+  </figure>
+
+  <para>Se você precisa apagar completamente algum grupo de pixels, sem deixar nenhum traço por trás do seu conteúdo anterior, então você deve marcar a caixa "Borda dura" nas opções da ferramenta. Caso contrário, a substituição de sub-pixels do pincel irá causar um apagamento parcial das bordas da pincelada, mesmo que use um pincel com bordas duras. Esta opção de <quote>Borda dura</quote> faz a borracha funcionar tanto como a ferramenta de pincel (sem borda dura), ou como o lápis.</para>
+
+  <tip>
+    <para>Se você usa o GIMP a partir de um tablet (mesa digitalizadora), então você pode achar conveniente tratar a ponta oposta da sua caneta como uma borracha. Para fazer isso, tudo o que você precisa fazer é clicar com a ponta oposta no ícone de borracha na caixa de ferramentas. Já que cada ponta da caneta é reconhecida como um dispositivo em separado, com isso a ponta oposta continuará a funcionar como uma borracha enquanto você não selecionar uma ferramenta diferente.</para>
+  </tip>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>Existem várias formas para ativar a ferramenta:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Através do menu da janela de imagem em <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de pintura</guisubmenu><guimenuitem>Borracha</guimenuitem></menuchoice>;</para>
+      </listitem>
+      <listitem>
+        <para>Ícone da ferramenta de clonagem na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>o usando o atalho de teclado <keycombo><keycap>Shift</keycap><keycap>D</keycap></keycombo>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Modificadores de tecla</title>
+    <para>Veja <xref linkend="gimp-tool-brush"/> para uma descrição de modificadores de tecla que possuem o mesmo efeito em todas as ferramentas de desenho.</para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>Para a borracha, pressione a tecla <keycap>Ctrl</keycap> e a coloque no modo <quote>seletor de cor</quote>, para selecionar a cor de qualquer pixel que clicar. Entretanto, diferente de outras ferramentas de pincel, a borracha define a cor de <emphasis>fundo</emphasis> ao invés da cor de frente. Isso é mais útil, já que em trabalhos que não suportem transparência, a borracha substitui as áreas apagadas com a cor de fundo atual.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <keycap>Alt</keycap>
+        </term>
+        <listitem>
+          <para>Para a borracha, pressionar a tecla <keycap>Alt</keycap> muda para o modo <quote>anti-borracha</quote>, como descrito na área inferior da seção de opções da ferramenta. Perceba que em alguns sistemas, a tecla <keycap>Alt</keycap> em conjunto com o mouse é capturada pelo gerenciador de janelas. Caso isso aconteça com você, pode usar o atalho <keycombo><keycap>Alt</keycap><keycap>Shift</keycap></keycombo> no lugar de só <keycap>Alt</keycap>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-eraser.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Pincel</term>
+        <term>Tamanho</term>
+        <term>Proporção</term>
+        <term>Ângulo</term>
+        <term>Espaçamento</term>
+        <term>Dureza</term>
+        <term>Força</term>
+        <term>Dinâmicas</term>
+        <term>Opções de dinâmicas</term>
+        <term>Aplicar espalhamento</term>
+        <term>Pincelada suave</term>
+        <term>O tamanho do pincel - curva de esmaecimento</term>
+        <term>Incremental</term>
+        <listitem>
+          <xi:include href="about-common-paint-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Opacidade</term>
+        <listitem>
+          <para>O controle de <guilabel>opacidade</guilabel>, apesar de seu nome, que é comum com as outras ferramentas de pintura, determina a <quote>força</quote> da ferramenta. Portanto, quando você apaga uma camada com um canal alfa, quanto maior a opacidade que você usa, mais transparente ficará!</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Borda dura</term>
+        <listitem>
+          <para>Essa opção evita que se apague parcialmente as bordas da pincelada. Veja acima.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Anti-borracha</term>
+        <listitem>
+          <para>A opção de anti-borracha da ferramenta borracha pode <quote>desapagar</quote> áreas de uma imagem, mesmo que ela esteja completamente transparente. Essa opção só funciona quando usada em camadas com canal alfa. Além da caixa de selecionar nas opções da ferramenta, ela também pode ser ativada a qualquer momento pressionando a tecla <keycap>Alt</keycap> (ou, caso a tecla <keycap>Alt</keycap> estiver bloqueada pelo gerenciador de janelas, basta pressionar <keycombo><keycap>Alt</keycap><keycap>Shift</keycap></keycombo>).</para>
+          <note>
+            <para>Para entender como a <quote>anti-borracha</quote> funciona, você precisa entender que apagar (ou tambem editar-&gt;cortar) afeta apenas o canal alfa, e não os canais RGB que contém informações de imagem. Mesmo que o resultado seja completamente transparente, as informações de RGB continuam lá, você apenas não consegue vê-las. A anti-borracha aumenta o valor de alfa para que você possa ver as informações de RGB novamente. Outros meios no GIMP que afetam o canal Alfa também podem tornar a informação de cor visível novamente &mdash; um exemplo seria usar a ferramenta de Cores&gt;Curvas no canal Alfa, e posiciona a âncora de canto esquerdo em qualquer ponto diferente de 0.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <tip id="change-selection-shape">
+      <indexterm>
+        <primary>Seleção</primary>
+        <secondary>Alterar formato</secondary>
+      </indexterm>
+      <para>Você pode usar a ferramenta borracha para alterar a forma de uma seleção flutuante. Ao apagar, é como se você estivesse recortando as bordas da seleção.</para>
+    </tip>
+  </sect3>
+</sect2>

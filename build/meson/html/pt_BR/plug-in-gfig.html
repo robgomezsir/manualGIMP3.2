@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.25. GFig</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="script-fu-circuit.html" title="14.24. Circuito" />
+    <link rel="next" href="script-fu-lava.html" title="14.26. Lava" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.25. GFig</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-circuit.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="script-fu-lava.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-gfig"></a>14.25. GFig</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id61248" class="indexterm"></a>
+      <a id="id61252" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5073"></a>14.25.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5074"></a>
+          <p class="title">
+            <strong>Figura 17.399. A mesma imagem, antes e depois de usar o GFig</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="A mesma imagem, antes e depois de usar o GFig" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-taj-gfig.jpg" alt="A mesma imagem, antes e depois de usar o GFig" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter is a tool: You can create geometrical figures to add them to
+      the image.
+    </p>
+        <p>Ao utilizar este filtro, elementos inseridos na imagem serão colocados em uma nova camada. Assim, a imagem não será modificada: todas as modificações ocorrem nessa nova camada.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5075"></a>14.25.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guimenuitem">Gfig…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="plug-in-gfig-options"></a>14.25.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5076"></a>
+          <p class="title">
+            <strong>Figura 17.400. Opções do filtro <span class="quote">“<span class="quote">GFig</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/gfig.png" alt="Opções do filtro “GFig”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>A pré-visualização (com uma régua horizontal e uma vertical) no lado esquerdo da janela principal é na verdade a sua área de trabalho, onde você verá suas figuras.</p>
+        <p>Você pode adicionar e modificar figuras usando as ferramentas do GFig (<a class="link" href="plug-in-gfig.html#plug-in-gfig-toolbar" title="14.25.3.1. A barra de ferramentas do GFig">Barra de ferramentas do GFig</a>) e usando as opções apropriadas (<a class="link" href="plug-in-gfig.html#plug-in-gfig-mainwindow" title="14.25.3.2. A janela principal do GFig"> Janela principal do GFig</a>).</p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="plug-in-gfig-toolbar"></a>14.25.3.1. A barra de ferramentas do GFig</h5>
+              </div>
+            </div>
+          </div>
+          <p>Na parte superior da caixa de diálogo, você pode encontrar um conjunto de ícones que representam as funções deste filtro. As dicas flutuantes que aparecem ao parar sobre cada botão ajudam bastante.</p>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Funções para desenhar objetos</strong>
+            </p>
+            <p>Na parte esquerda da barra de ferramentas, você pode encontrar algumas ferramentas para desenhar objetos. Você os ativa clicando no ícone correspondente. Você pode criar os seguintes objetos (note que os <span class="emphasis"><em>Pontos de controle</em></span> são criados ao mesmo tempo que o objeto):</p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-line.svg" width="16" /></span>
+            </span>
+            Create line
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode desenhar linhas. Clique na pré-visualização para marcar o ponto de partida, em seguida, arraste o ponteiro do mouse até o ponto final. (Observe que você poderá ver as alterações na janela de imagem do GIMP enquanto desenha)</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-rectangle.svg" width="16" /></span>
+            </span>
+            Create rectangle
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode desenhar retângulos. Clique na pré-visualização para marcar ponto de partida, em seguida, arraste o ponteiro do mouse para criar o retângulo.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-circle.svg" width="16" /></span>
+            </span>
+            Create circle
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode desenhar círculos. Clique na pré-visualização para marcar o centro, em seguida, arraste o ponteiro do mouse até o tamanho (raio)desejado.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-ellipse.svg" width="16" /></span>
+            </span>
+            Create ellipse
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode desenhar elipses. Clique na pré-visualização para marcar o centro, em seguida, arraste o ponteiro do mouse para obter o tamanho e a forma desejados.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-curve.svg" width="16" /></span>
+            </span>
+            Create arc
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode desenhar arcos de círculos. Clique na pré-visualizaçãopara definir o ponto de início. Clique novamente para definir outro ponto do arco. Clique novamente para marcar o terceiro ponto - quando você soltar o botão do mouse, o ponto final do arco é colocado e um arco que passa por estes três pontos é desenhado.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-polygon.svg" width="16" /></span>
+            </span>
+            Create regular polygon
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode criar um polígono regular. Comece com a configuração do número de lados em <span class="guilabel">Opções de ferramenta</span> à direita da pré-visualização. Em seguida, clique na pré-visualização para marcar o centro e, sem soltar o botão do mouse, arraste o ponteiro para obter o tamanho e orientação desejados.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-star.svg" width="16" /></span>
+            </span>
+            Create star
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode criar uma estrela. Comece com a configuração do número número de pontas (Lados) nas <span class="guilabel">Opções de ferramenta</span> à direita da pré-visualização. Em seguida, clique na pré-visualização para posicionar o centro e, sem soltar o botão do mouse, arraste o ponteiro para obter o tamanho e a orientação desejados.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-spiral.svg" width="16" /></span>
+            </span>
+            Create spiral
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode criar uma espiral. Comece com a configuração do número de voltas (Lados) e orientação das voltas nas <span class="guilabel">Opções de ferramenta</span>  à direita da pré-visualização. Em seguida, clique na pré-visualização para colocar o centro e, sem soltar o botão do mouse, arraste ponteiro para obter o tamanho desejado.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-bezier.svg" width="16" /></span>
+            </span>
+            Create bezier curve
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode criar curvas de Bézier. Clique na pré-visualização para definir o ponto de início e os outros pontos: a curva será criada entre esses pontos. Para finalizar a curva, pressione <span class="keycap"><strong>Shift</strong></span> ao criar o último ponto.</p>
+              </dd>
+            </dl>
+          </div>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Funções para gerenciamento de objetos</strong>
+            </p>
+            <p>No meio da barra de ferramentas, você pode encontrar ferramentas para gerenciar objetos:</p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-move-object.svg" width="16" /></span>
+            </span>
+            Move an object
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode mover o objeto ativo. Para selecionar um objeto, clique em um de seus pontos de controle.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-move-point.svg" width="16" /></span>
+            </span>
+            Move a single point
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode clicar e arrastar um dos pontos de controle do objeto. Cada um desses pontos transforma o objeto de uma forma diferente.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-copy-object.svg" width="16" /></span>
+            </span>
+            Copy an object
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode duplicar um objeto. Clique em um ponto de controle do objeto e arraste-o para o local desejado.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-delete-object.svg" width="16" /></span>
+            </span>
+            Delete an object
+          </span>
+              </dt>
+              <dd>
+                <p>Clique em um ponto de controle do objeto para excluí-lo.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-cursor-symbolic.svg" width="16" /></span>
+            </span>
+            Select an object
+          </span>
+              </dt>
+              <dd>
+                <p>
+              With this tool, you can select an object to activate it. Simply
+              click on one of its control points.
+            </p>
+              </dd>
+            </dl>
+          </div>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Funções para organização dos objetos</strong>
+            </p>
+            <p>À direita da barra de ferramentas, você pode encontrar ferramentas para controlar a sobreposição dos objetos (você também pode obtê-las clicando no botão de lista flutuante se os ícones não estiverem visíveis). Você tem:</p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/go-up.svg" width="16" /></span>
+            </span>
+            Up (Raise selected object)
+          , </span>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/go-down.svg" width="16" /></span>
+            </span>
+            Down (Lower selected object)
+          </span>
+              </dt>
+              <dd>
+                <p>Com esta ferramenta, você pode mover o objeto selecionado um nível para cima ou para baixo.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/go-top-symbolic.svg" width="16" /></span>
+            </span>
+            Top (Raise selected object to top)
+          , </span>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/go-bottom-symbolic.svg" width="16" /></span>
+            </span>
+            Bottom (Lower selected object to bottom)
+          </span>
+              </dt>
+              <dd>
+                <p>Move o objeto selecionado para o topo de todos os outros, ou para trás de todos.</p>
+              </dd>
+            </dl>
+          </div>
+          <div class="variablelist">
+            <p class="title">
+              <strong>Funções para exibição de objetos</strong>
+            </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/go-previous-symbolic.svg" width="16" /></span>
+            </span>
+            Back (Show previous object)
+          , </span>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/go-next-symbolic.svg" width="16" /></span>
+            </span>
+            Forward (Show next object)
+          </span>
+              </dt>
+              <dd>
+                <p>Estas funções permitem exibir um único objeto de cada vez, saltando de um para outro.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gfig-show-all.svg" width="16" /></span>
+            </span>
+            Show all objects
+          </span>
+              </dt>
+              <dd>
+                <p>Esta função mostra todos os objetos novamente, depois de usar as duas funções anteriores.</p>
+              </dd>
+            </dl>
+          </div>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Nota]" src="images/note.png" />
+                </td>
+                <th align="left">Nota</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>Se a sua janela é pequena demais para mostrar todos os ícones, a barra de ferramenta fornece uma lista flutuante contendo as funções que faltam.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="plug-in-gfig-mainwindow"></a>14.25.3.2. A janela principal do GFig</h5>
+              </div>
+            </div>
+          </div>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Detalhes do objeto</span>
+              </dt>
+              <dd>
+                <p>A <span class="guilabel">Posição XY</span> mostra a posição do ponteiro, em cordenadas, em pixels,da pré-visualização (são diferentes das coordenadas na imagem)</p>
+              </dd>
+              <dt>
+                <span class="term">Opções de ferramenta</span>
+              </dt>
+              <dd>
+                <p>Se a ferramenta selecionada oferece opções (como o número de lados), você pode alterá-las aqui.</p>
+              </dd>
+              <dt>
+                <span class="term">Contorno</span>
+              </dt>
+              <dd>
+                <p>Se esta opção estiver marcada, o objeto será desenhado. Estão disponíveis dois botões, para selecionar a cor e o tipo de pincel. Alterações de cor ou pincel também podem afetar objetos já existentes que estejam selecionados.</p>
+              </dd>
+              <dt>
+                <span class="term">Preenchimento</span>
+              </dt>
+              <dd>
+                <p>Com a ajuda da lista flutuante, você poderá decidir se e como o objeto será preenchido: com uma cor, uma textura ou um degradê.</p>
+              </dd>
+              <dt>
+                <span class="term">Mostrar grade</span>
+              </dt>
+              <dd>
+                <p>Se esta opção estiver marcada, uma grade é aplicada na pré-visualização para tornar mais fácil o posicionamento dos objetos.</p>
+              </dd>
+              <dt>
+                <span class="term">Atrais para a grade</span>
+              </dt>
+              <dd>
+                <p>Se esta opção estiver marcada, os objetos vão se alinhar à grade.</p>
+              </dd>
+              <dt>
+                <span class="term">Mostrar imagem</span>
+              </dt>
+              <dd>
+                <p>Quando esta opção estiver marcada, a imagem atual é exibida na pré-visualização (área de trabalho) — caso contrário, só os pontos de controle e linhas usadas como esqueleto dos objetos são mostrados.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-circuit.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-lava.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-circuit.html">14.24. Circuito</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-lava.html">14.26. Lava</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

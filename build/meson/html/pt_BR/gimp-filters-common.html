@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2. Recursos comuns</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters.html" title="Capítulo 17. Filtros" />
+    <link rel="prev" href="filters.html" title="Capítulo 17. Filtros" />
+    <link rel="next" href="filters-blur.html" title="3. Filtros de desfocar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2. Recursos comuns</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="filters.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 17. Filtros</span>
+        <nav> <a accesskey="n" href="filters-blur.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-filters-common"></a>2. Recursos comuns</h2>
+          </div>
+        </div>
+      </div>
+      <p>
+    Most filters are <acronym class="acronym">GEGL</acronym>
+    filters. <acronym class="acronym">GEGL</acronym> is the image processing library used by
+    <acronym class="acronym">GIMP</acronym>. These filters have several options in common,
+    some of which are only shown under certain conditions.
+  </p>
+      <div class="figure">
+        <a id="id4212"></a>
+        <p class="title">
+          <strong>Figura 17.1. Common Options of GEGL Filters</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/filters/common/filter-options-common.png" alt="Common Options of GEGL Filters" />
+            <div class="caption">
+              <p>When a selection is active</p>
+              <p>(Note that <span class="guilabel">Strength</span> is not a common option but
+        an option of the depicted <span class="guilabel">Noise Reduction</span> filter.)</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/filters/common/filter-options-common-clipping.png" alt="Common Options of GEGL Filters" />
+            <div class="caption">
+              <p>When the active layer has an alpha channel and no selection is active</p>
+              <p>(Note that <span class="guilabel">Strength</span> is not a common option but
+        an option of the depicted <span class="guilabel">Noise Reduction</span> filter.)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <a id="gimp-filter-presets"></a>
+            <span class="term">Presets</span>
+          </dt>
+          <dd>
+            <p>
+          Filter presets are similar to tool presets, in that you can save
+          your favorite settings and recall them when needed. They consist
+          of:
+        </p>
+            <div class="itemizedlist">
+              <ul class="itemizedlist" style="list-style-type: disc; ">
+                <li class="listitem">
+                  <p>
+              A <span class="bold"><strong>drop-down list</strong></span> that shows the
+              current preset and lets you choose a different one.
+            </p>
+                </li>
+                <li class="listitem">
+                  <p>
+              <span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/list-add.svg" width="16" /></span>
+              </span>
+              An icon to save the current settings as a named preset.
+            </p>
+                </li>
+                <li class="listitem">
+                  <p>
+              <span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+              </span>
+              An icon that opens a menu with options to import presets from
+              a file, export the current presets to a file, and manage presets.
+            </p>
+                </li>
+              </ul>
+            </div>
+          </dd>
+          <dt>
+            <span class="term">Input Type</span>
+          </dt>
+          <dd>
+            <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Note">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Nota]" src="images/note.png" />
+                  </td>
+                  <th align="left">Nota</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>
+            The input type drop-down list is only visible when a selection
+            is active.
+          </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="itemizedlist">
+              <ul class="itemizedlist" style="list-style-type: disc; ">
+                <li class="listitem">
+                  <p>
+              <span class="guilabel">Use the selection as input</span> If this option is
+              selected, the filter only uses pixels inside the selection as
+              input for the filter.
+            </p>
+                  <div class="mediaobject">
+                    <img src="images/filters/use_selection_only.jpg" />
+                  </div>
+                </li>
+                <li class="listitem">
+                  <p>
+              <span class="guilabel">Use the entire layer as input</span> If this option
+              is selected, the input of the filter is the entire layer. The
+              output will only affect the selection. The layer outside the
+              selection remains unchanged.
+            </p>
+                  <div class="mediaobject">
+                    <img src="images/filters/use_entire_layer.jpg" />
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </dd>
+          <dt>
+            <span class="term">Clipping</span>
+          </dt>
+          <dd>
+            <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Note">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Nota]" src="images/note.png" />
+                  </td>
+                  <th align="left">Nota</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>
+            The clipping drop-down list is only visible when the current layer
+            has an alpha channel, and no selection is active.
+          </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <p>
+          This setting determines what to do when the result of this filter is
+          larger than the original layer.
+        </p>
+            <div class="itemizedlist">
+              <ul class="itemizedlist" style="list-style-type: disc; ">
+                <li class="listitem">
+                  <p>
+              <span class="guilabel">Adjust</span> The layer will be automatically
+              resized as necessary when the filter is applied. This is the
+              default.
+            </p>
+                </li>
+                <li class="listitem">
+                  <p>
+              <span class="guilabel">Clip</span> The result will be clipped to the layer
+              boundary.
+            </p>
+                </li>
+              </ul>
+            </div>
+          </dd>
+          <dt>
+            <span class="term">Blending Options</span>
+          </dt>
+          <dd>
+            <p>
+          When you expand this option by clicking
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/pan-end-symbolic.svg" width="16" /></span>
+          </span>, you can choose the
+          blend <span class="guilabel">Mode</span> to be used when applying the filter,
+          and the <span class="guilabel">Opacity</span>.
+          These work the same as the
+          <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog-paint-mode-menu">layer blending
+          options</a>.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Visualização</span>
+          </dt>
+          <dd>
+            <p>
+          When this option is enabled (default), changes in the filter settings
+          are directly displayed on canvas. They are not applied to the image
+          until you click the <span class="guibutton">OK</span> button.
+        </p>
+          </dd>
+          <dt>
+            <a id="gimp-filter-merge"></a>
+            <span class="term">Merge Filter</span>
+          </dt>
+          <dd>
+            <p>
+          By default, <acronym class="acronym">GEGL</acronym> filters are applied
+          non-destructively as
+          <a class="link" href="gimp-dialogs-structure.html#gimp-layer-effects">layer effects</a>, which means
+          they can still be changed at a later time.
+          When you want to apply the filter immediately to the layer itself,
+          you can enable this option.
+        </p>
+            <p>
+          See <a class="link" href="gimp-using-layer-effects.html" title="6. Layer Effects">Using Layer
+          Effects</a> for more details.
+        </p>
+            <p>
+          This option is remembered, so you only need to change it once if you
+          prefer to always use filters destructively.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Split view</span>
+          </dt>
+          <dd>
+            <p>
+          When this option is enabled, the view of the image is divided in two
+          parts. On the left side it shows the effect of the filter applied,
+          and on the right side it shows the image without filter.
+        </p>
+            <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Note">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Nota]" src="images/note.png" />
+                  </td>
+                  <th align="left">Nota</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>
+            You can click-and-drag the line that divides the preview to move it,
+            and <span class="keycap"><strong>Ctrl</strong></span>-click to make the line horizontal, or
+            to switch it back to vertical.
+          </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="filters.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-blur.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="filters.html">Capítulo 17. Filtros</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-blur.html">3. Filtros de desfocar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

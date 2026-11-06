@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-07-20 Mr.Dust : added 'ko'
+  2007-03-25 KoSt: added 'no'
+  2006-08-25 lexa: enhanced docbook compliance
+-->
+<sect2 id="gimp-prefs-folders-data">
+  <title>Pastas de dados</title>
+  <anchor id="gimp-prefs-folders-brushes"/>
+  <anchor id="gimp-prefs-folders-dynamics"/>
+  <anchor id="gimp-prefs-folders-patterns"/>
+  <anchor id="gimp-prefs-folders-palettes"/>
+  <anchor id="gimp-prefs-folders-gradients"/>
+  <anchor id="gimp-prefs-folders-fonts"/>
+  <anchor id="gimp-prefs-folders-tool-presets"/>
+  <anchor id="gimp-prefs-folders-mypaint-brushes"/>
+  <anchor id="gimp-prefs-folders-plug-ins"/>
+  <anchor id="gimp-prefs-folders-scripts"/>
+  <anchor id="gimp-prefs-folders-modules"/>
+  <anchor id="gimp-prefs-folders-interpreters"/>
+  <anchor id="gimp-prefs-folders-environment"/>
+  <anchor id="gimp-prefs-folders-themes"/>
+  <anchor id="gimp-prefs-folders-icon-themes"/>
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Preferências</secondary>
+    <tertiary>Pastas de dados</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Pastas de dados</primary>
+    <secondary>Preferências</secondary>
+  </indexterm>
+  <figure>
+    <title>Brush Folders Preferences</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/preferences/prefs-folders-brush.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>O GIMP usa vários tipos de recursos - tais como pincéis, texturas, degradês, etc — dos quais um conjunto básico é fornecido com o GIMP quando ele é instalado, e outros que podem ser criados ou baixados pelo usuário. Para cada tipo de recurso, há uma página no diálogo de preferências que permite que você especifique o <emphasis>caminho de busca</emphasis>: o conjunto de pastas nas quais os itens do tipo em questão serão automaticamente carregados ao se iniciar o GIMP. Todas estas páginas são quase idênticas: a página para pincéis é mostrada à direita, como um exemplo.</para>
+  <para>
+    By default, the search path consists of two locations:
+  </para>
+  <variablelist>
+    <varlistentry>
+      <term>System Folder</term>
+      <listitem>
+        <para>
+          The system folder includes items that are
+          included with GIMP by default.
+          You should not alter the content in this folder.
+        </para>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>Personal Folder</term>
+      <listitem>
+        <para>
+          The personal folder is located inside
+          <link linkend="gimp-concepts-setup">your personal GIMP configuration folder</link>.
+          This is where you should place items added by you.
+          If you cannot save items in this folder, make sure that the personal
+          folder is marked as writable.
+        </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+  <para>
+    GIMP uses the first writable folder in this list to save
+    resources. You can customize the search path by using the buttons at the
+    top of the dialog to move a folder up or down in the list.
+  </para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>
+      The preferences dialog can be accessed from the main menu, through
+      <menuchoice>
+       <guimenu>Edit</guimenu>
+       <guimenuitem>Preferences</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <variablelist>
+      <varlistentry>
+        <term>Remover cor</term>
+        <listitem>
+          <para>Se você clicar em uma das pastas na lista, ela será selecionada para qualquer ação que vem a seguir.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Adicionar/Substituir pasta</term>
+        <listitem>
+          <para>
+            If you type the name of a folder in the entry space, or navigate to
+            it using the file chooser button
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/document-open.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            on the right, and then click the
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            button, this will replace the
+            selected folder with the one you have specified. If nothing in the
+            list is selected, the folder will be added to the list.
+          </para>
+          <para>
+            The
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gtk-yes.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon> or
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gtk-no.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            icon to the left of the text entry area informs you whether the
+            folder which you have specified exists. GIMP will not create a new
+            folder for you; you need to do this yourself.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mover para cima/baixo</term>
+        <listitem>
+          <para>
+            If you click on the
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/go-up.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon> or
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/go-down.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            buttons, the selected
+            folder will be changed to the following or preceding one in the
+            list. Since the folders are read in order, using those buttons
+            change the loading precedence of the items located in those folders.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Remover cor</term>
+        <listitem>
+          <para>
+            If you click on the
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            button, the selected folder will be
+            deleted from the list. Note that the folder itself is not affected;
+            it is merely removed from the search path. Deleting the system folder
+            is probably a bad idea, but nothing prevents you from doing it.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

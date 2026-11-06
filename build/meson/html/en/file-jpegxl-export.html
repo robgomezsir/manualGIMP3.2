@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.33. Export Image as JPEG XL</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="file-jpeg-export.html" title="5.32. Export Image as JPEG" />
+    <link rel="next" href="file-mng-export.html" title="5.34. Export Image as MNG" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.33. Export Image as JPEG XL</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-jpeg-export.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="file-mng-export.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-jpegxl-export"></a>5.33. Export Image as JPEG XL</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id27374" class="indexterm"></a>
+      <a id="id27376" class="indexterm"></a>
+      <a id="id27378" class="indexterm"></a>
+      <a id="id27380" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2046"></a>5.33.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      <a class="ulink" href="https://en.wikipedia.org/wiki/JPEG_XL" target="_top">JPEG XL</a>
+      is an image format that supports both lossy and lossless compression.
+      The lossy compression is similar to that of JPEG, but significantly
+      improved. Besides that there is a <span class="quote">“<span class="quote">modular</span>”</span> mode, that can
+      be used for lossless compression similar to PNG, and also as an
+      alternate lossy compression mode.
+    </p>
+        <p>
+      You can export your image in this format when you choose the
+      <span class="quote">“<span class="quote">.jxl</span>”</span> extension, or explicitly choose <span class="quote">“<span class="quote">JPEG XL</span>”</span>
+      as file type in the export dialog.
+    </p>
+        <div class="figure">
+          <a id="id2047"></a>
+          <p class="title">
+            <strong>Figure 15.81. The JPEG XL Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-jpegxl-dialog.png" alt="The JPEG XL Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2048"></a>5.33.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Lossless</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, the image will be exported with lossless
+            compression. This will create a higher quality image at
+            the cost of a larger file size.
+          </p>
+              <p>
+            When unchecked, the image will use a lossy compression technique
+            that can reduce the file size more.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Compression/maxError</span>
+            </dt>
+            <dd>
+              <p>
+            When <span class="guilabel">Lossless</span> is unchecked, this setting
+            influences the amount of compression. Lower values give higher
+            quality. At the minimum value of 1.0 it is visually almost
+            the same as lossless.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Effort/Speed</span>
+            </dt>
+            <dd>
+              <p>
+            This setting determines how much effort the encoder will put into
+            reaching the desired quality, influenced by the
+            <span class="guilabel">Compression/maxError</span> parameter.
+          </p>
+              <p>
+            A higher effort may create more accurate results, but sometimes
+            higher file size in lossy compression mode. A higher effort also
+            consumes more memory too. Usually there is no reason to change
+            the default value (<span class="guilabel">squirrel</span>).
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Bit depth</span>
+            </dt>
+            <dd>
+              <p>
+            Determines if the pixel data should be stored using 8 bits or
+            16 bits per color channel.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Export as CMYK</span>
+            </dt>
+            <dd>
+              <p>
+      If you have a <a class="link" href="glossary.html#glossary-cmyk" title="CMY, CMYK">CMYK</a> profile
+      assigned to your image as soft-proofing profile, this setting can
+      be checked to have your image exported using that CMYK profile.
+      This is sometimes required when you have your image professionally
+      printed. Your printing company will tell you if this is needed.
+    </p>
+              <p>
+      If this setting is disabled, you don't have a soft-proofing profile
+      set for this image yet. See assigning a
+      <a class="link" href="gimp-image-soft-proof-profile-assign.html" title="6.14. Soft-Proof Profile">Soft-Proof
+      Profile</a>.
+    </p>
+              <p>
+      The name of the CMYK profile that is assigned to this image will
+      be shown below this setting.
+    </p>
+            </dd>
+            <dt>
+              <span class="term">Save Exif</span>
+            </dt>
+            <dd>
+              <p>
+            If checked, the Exif metadata is embedded in the exported image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save XMP</span>
+            </dt>
+            <dd>
+              <p>
+            If checked, the XMP metadata is embedded in the exported image.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-jpeg-export.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-mng-export.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-jpeg-export.html">5.32. Export Image as JPEG</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-mng-export.html">5.34. Export Image as MNG</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

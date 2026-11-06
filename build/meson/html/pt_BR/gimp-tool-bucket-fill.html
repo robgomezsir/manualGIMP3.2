@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.4. Preenchimento com balde</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+    <link rel="prev" href="gimp-tools-brush.html" title="3.3. Ferramentas de pincel (lápis, pincel, aerógrafo)" />
+    <link rel="next" href="gimp-tool-gradient.html" title="3.5. Degradê" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.4. Preenchimento com balde</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tools-brush.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Ferramentas de pintura</span>
+        <nav> <a accesskey="n" href="gimp-tool-gradient.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-bucket-fill"></a>3.4. Preenchimento com balde</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id16555" class="indexterm"></a>
+      <a id="id16558" class="indexterm"></a>
+      <p>Essa ferramenta preenche uma seleção com a cor de frente atual. Se você pressionar <span class="keycap"><strong>Ctrl</strong></span> enquanto clica com a ferramenta de balde ativada, ela irá usar a cor de fundo. Dependendo de como as opções da ferramenta estão definidas, a ferramenta de preenchimento irá tanto preencher inteiramente a seleção, ou apenas as partes em que as cores são similares ao local em que você clicou. As opções da ferramenta também irão afetar a forma como a transparência é tratada..</p>
+      <p>A quantidade de preenchimento depende de qual limiar de preenchimento que você especificou. O limiar de preenchimento determina quanto diferente podem ser as cores para o preenchimento se espalhar (da mesma forma que na ferramenta de seleção contígua — a varinha mágica). O preenchimento começa no ponto onde você clica e espalha para fora até o valor da cor ou alfa se tornar <span class="quote">“<span class="quote">muito diferente</span>”</span>.</p>
+      <p>Quando você preencher objetos em uma camada transparente (como letras em uma camada de texto) com uma cor diferente que a anterior, você pode descobrir que uma borda com a cor antiga continua a contornar os objetos. Isso acontece devido a um baixo limiar de preenchimento na janela de opções do preenchimento. Com um baixa limiar de preenchimento, a ferramenta de balde não irá preencher pixels semi-transparentes, e eles não serão afetados pelo preenchimento mantendo as suas cores originais.</p>
+      <p>Se você deseja preencher áreas que estão totalmente transparentes, você precisa se certificar de que a opção de <span class="quote">“<span class="quote">trava</span>”</span> (na janela de camadas) está desmarcada. Se essa opção estiver marcada, apenas as partes não transparentes da camada serão preenchidas.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2943"></a>3.4.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>Existem várias formas para ativar a ferramenta:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagem: <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de pintura</span> → <span class="guimenuitem">Degradê</span>.</p>
+            </li>
+            <li class="listitem">
+              <p>Ícone da ferramenta de clonagem na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>o usando o atalho de teclado <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>D</strong></span>.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2944"></a>3.4.2. Modificadores de tecla</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p><span class="keycap"><strong>Ctrl</strong></span>, semelhante às ferramentas de pintura, permite escolher cores circundantes na tela sem ter que mudar para a ferramenta <span class="emphasis"><em>Seletor de Cores</em></span>.</p>
+            </li>
+            <li class="listitem">
+              <p><span class="keycap"><strong>Shift</strong></span> alterna entre preencher cores similares ou preencher toda a seleção a qualquer momento.</p>
+            </li>
+            <li class="listitem">
+              <p><span class="keycap"><strong>Alt</strong></span> alterna o tipo de preenchimento entre as cores de primeiro plano e de fundo.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2945"></a>3.4.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2946"></a>
+          <p class="title">
+            <strong>Figura 14.50. Opções da ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-bucket-fill.png" alt="Opções da ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo, </span>
+              <span class="term">Opacidade</span>
+            </dt>
+            <dd>
+              <p>Veja <a class="link" href="gimp-tools-paint.html#gimp-tool-brush" title="3.1. Características em comum">ferramentas de pintura</a> para obter ajuda com as opções que são comuns para todas essas ferramentas. Apenas opções que são específicas ao Preenchimento estão descritas aqui.</p>
+            </dd>
+            <dt>
+              <span class="term">Tipo de preenchimento</span>
+            </dt>
+            <dd>
+              <p>O <acronym class="acronym">GIMP</acronym> providencia três tipos de preenchimento:</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Preenchimento com cor da Frente</span>
+                  </dt>
+                  <dd>
+                    <p>define a cor de frente selecionada atualmente como a cor de preenchimento.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Preenchimento com cor de fundo</span>
+                  </dt>
+                  <dd>
+                    <p>define a cor de Fundo selecionada atualmente como a cor de preenchimento.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Preenchimento com textura</span>
+                  </dt>
+                  <dd>
+                    <p>define a textura selecionada atualmente como a cor de preenchimento. Você pode selecionar a textura a ser usada em uma lista.</p>
+                    <p>Essa lista permite ao usuário selecionar uma das diversas texturas de preenchimento para usar na sua próxima operação de preenchimento. A forma na qual a lista é apresentada é controlada por quatro botões na parte inferior do seletor.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Área afetada</span>
+            </dt>
+            <dd>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>Essa opção faz com que o GIMP preencha a seleção pré-existente ou toda a imagem. Uma outra forma de fazer a mesma coisa seria clicar e arrastar a cor de frente, cor de fundo ou textura, para dentro da seleção.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Essa é a configuração padrão: a ferramenta preenche a área que tiver uma cor próxima a do pixel que você clicou inicialmente. A similaridade de cores é definida pelo limiar de brilho, que você pode definir com um valor ou com uma posição do cursor.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Preencher por detecção de arte de linha</span>:Este é um novo algoritmo no GIMP-2.10.10 que permite preencher áreas cercadas por <span class="quote">“<span class="quote">artes de linha</span>”</span>, tentando não deixar pixels não preenchidos perto das linhas, e fechando zonas potenciais.</p>
+                    <p>A detecção de arte de linha também é conhecida como Smart Colorization. O autor descreve claramente os problemas que encontrou em <a class="ulink" href="https://girinstud.io/news/2019/02/smart-colorization-in-gimp/" target="_top">https://girinstud.io/news/2019/02/smart-colorization-in-gimp/</a>. As opções são descritas abaixo.</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Encontrando cores similares</span>
+            </dt>
+            <dd>
+              <p>Estas opções aparecem quando a opção <span class="guilabel">Preencher cores similares</span> está marcada:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>A opção de <span class="guilabel">preencher áreas transparentes</span> oferece a possibilidade de preencher áreas com baixa opacidade.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Se você ativar essa opção, a recuperação não é calculada apenas a partir de valores da camada ativa, mas de todas as camadas visíveis.</p>
+                    <p>O reticulado é completamente explicado no <a class="link" href="glossary.html#glossary-dithering" title="Reticulado">Glossário</a></p>
+                  </li>
+                  <li class="listitem">
+                    <p>Para entender o que são vizinhos diagonais, consulte <a class="link" href="gimp-tool-fuzzy-select.html#diagonal-neighbors">Vizinhos-diagonais&gt;</a> na ferramenta Seleção por Cores Similares.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Consulte <a class="link" href="glossary.html#glossary-antialiasing" title="Anti-aliasing">Anti-aliasing</a> no Glossário.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>O seletor de limiar define o nível em que a ponderação de cor é medida para os calcular os limites de preenchimento. Uma configuração com um valor maior preencherá mais partes de uma imagem multicolorida e o oposto, uma limiar menor irá preencher uma área menor.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Com essa opção você pode escolher qual componente da imagem o GIMP deve usar para calcular a similaridade e determinar as bordas de preenchimento.</p>
+                    <p>Os componentes que você pode escolher são <span class="guimenuitem">Composto</span>, <span class="guimenuitem">Vermelho</span>, <span class="guimenuitem">Verde</span>, <span class="guimenuitem">Azul</span>, <span class="guimenuitem">Matiz</span>, <span class="guimenuitem">Saturação</span> e <span class="guimenuitem">Valor</span>.</p>
+                    <p>Não é fácil de entender essa opção. Você precisa escolher, por exemplo, o canal vermelho. E então você clica em qualquer pixel, e a ferramenta buscará por pixels contíguos similares ao pixel clicado, mas olhando apenas no <span class="emphasis"><em>canal vermelho</em></span> de todos eles de acordo com a configuração de limiar. Um exemplo:</p>
+                    <p>Imagem original: três faixas com degradês de cores puras. Vermelho (255, 0, 0), Verde (0, 255, 0), Azul (0, 0, 255). Nós vamos usar a ferramenta de balde de preenchimento com a cor magenta e o limiar definido em 15.</p>
+                    <p>Imagem 1: Preencher por = Composto. Nós clicamos sucessivamente nas três faixas de cores. Cada faixa é preenchida de acordo com o limiar.</p>
+                    <p>Imagem 2: Preencher por = Vermelho. Nós clicamos na faixa vermelha. A ferramenta busca por pixels contíguos que possuem um valor similar no canal vermelho, de acordo com o limiar definido. Apenas uma área estreita corresponde a esses padrões. Nas faixas verde e azul, o valor de pixels no canal vermelho é 0, muito diferente do valor de canal vermelho do pixel clicado: a cor não se espalha até eles.</p>
+                    <p>Imagem 3: Preencher por = Vermelho. Nós clicamos na faixa verde. Aqui, o valor do pixel clicado no canal vermelho é 0. Todos os pixels nas faixas verde e azul possuem o mesmo valor de canal vermelho (0): todos eles foram pintados.</p>
+                    <div class="figure">
+                      <a id="id2947"></a>
+                      <p class="title">
+                        <strong>Figura 14.51. Exemplo de <span class="quote">“<span class="quote">preencher por</span>”</span></strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/toolbox/fill-by-0.png" alt="Exemplo de “preencher por”" />
+                          <div class="caption">
+                            <p>Imagem original</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/toolbox/fill-by-1.png" alt="Exemplo de “preencher por”" />
+                          <div class="caption">
+                            <p>Imagem 1</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/toolbox/fill-by-2.png" alt="Exemplo de “preencher por”" />
+                          <div class="caption">
+                            <p>Imagem 2</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/toolbox/fill-by-3.png" alt="Exemplo de “preencher por”" />
+                          <div class="caption">
+                            <p>Imagem 3</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Opções da ferramenta de <span class="quote">“<span class="quote">lápis</span>”</span></span>
+            </dt>
+            <dd>
+              <p>Estas opções aparecem quando a opção <span class="guilabel">Preencher cores similares</span> está marcada:</p>
+              <div class="figure">
+                <a id="id2948"></a>
+                <p class="title">
+                  <strong>Figura 14.52. Exemplo de <span class="quote">“<span class="quote">Clonagem em perspectiva</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/toolbox/bucket-fill-ex-origin.png" alt="Exemplo de “Clonagem em perspectiva”" />
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/toolbox/bucket-fill-ex-default.png" alt="Exemplo de “Clonagem em perspectiva”" />
+                    <div class="caption">
+                      <p>A ferramenta Balde de tinta aplicada com clique-e-arraste com as opções padrão. Elas não se adaptam bem a esta imagem, especialmente nas sobrancelhas que estão quase apagadas.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Source</span>: by default, information for line
+                art computation is taken from
+                <span class="guilabel">All visible layers</span>. You can also select
+                the <span class="guilabel">Selected layer</span>, the
+                <span class="guilabel">Layer below the selected one</span>, or the
+                <span class="guilabel">Layer above the selected one</span> as the source.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Preencher áreas transparentes</span>: preenche regiões completamente transparentes.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Limiar de detecção de arte de linha</span>: limiar para detectar contorno (valores mais altos detectarão mais pixels).</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Line Art Closure</span>
+            </dt>
+            <dd>
+              <p>Estas opções aparecem quando a opção <span class="guilabel">Preencher cores similares</span> está marcada:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Comprimento máximo de lacuna</span>: lacuna máxima (em pixels) na arte de linha que pode ser fechada.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Manual closure in fill layer</span>: when
+                enabled, consider pixels of the selected line art source layer
+                that are using the selected fill color as line art closure.
+              </p>
+                    <p>
+                This setting is only enabled when the line art source is
+                <span class="guilabel">Layer below the selected one</span>, or
+                <span class="guilabel">Layer above the selected one</span>.
+              </p>
+                    <p>
+                When your line art sketch has holes, you can fill these holes
+                with a brush in the fill color on a layer above or below it,
+                before using bucket fill on your color layer. Especially on
+                larger images this can be faster than selecting
+                <span class="guilabel">All visible layers</span> as source.
+              </p>
+                    <p>
+                <span class="guilabel">Layer below the selected one</span> would be
+                most useful when you are coloring a scanned sketch, while
+                <span class="guilabel">Layer above the selected one</span> can be used
+                when you are sketching yourself and filling the colors below
+                the sketch.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Preencher por</span>
+            </dt>
+            <dd>
+              <p>Estas opções aparecem quando a opção <span class="guilabel">Preencher cores similares</span> está marcada:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Tamanho máximo de crescimento</span>: número máximo de pixels crescidos sob a arte de linha. Aumentar este valor torna as linhas mais finas.</p>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/bucket-fill-ex-grow.png" />
+                      <div class="caption">
+                        <p>Para melhorar as sobrancelhas no exemplo, <span class="guilabel">Tamanho máximo de crescimento</span> é reduzido para 1.</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Pressão</span>: Pressione com mais força para tornar o pincel maior.</p>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/bucket-fill-ex-feather.png" />
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Stroke borders</span>: stroke fill borders with
+                the stroke options of the paint tool selected in the dropdown
+                below.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2949"></a>3.4.4. Preencher uma seleção enevoada</h4>
+            </div>
+          </div>
+        </div>
+        <p>Ao clicar repetidamente na seleção com bordas enevoadas, você irá progressivamente preencher a borda enevoada:</p>
+        <div class="figure">
+          <a id="id2950"></a>
+          <p class="title">
+            <strong>Figura 14.53. Exemplo para <span class="quote">“<span class="quote">preencher uma seleção enevoada</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/fill-feathered-1.png" alt="Exemplo para “preencher uma seleção enevoada”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/fill-feathered-2.png" alt="Exemplo para “preencher uma seleção enevoada”" />
+              <div class="caption">
+                <p>Após clicar 3 vezes mais com a ferramenta de preenchimento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tools-brush.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-paint.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-gradient.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tools-brush.html">3.3. Ferramentas de pincel (lápis, pincel, aerógrafo)</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-gradient.html">3.5. Degradê</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

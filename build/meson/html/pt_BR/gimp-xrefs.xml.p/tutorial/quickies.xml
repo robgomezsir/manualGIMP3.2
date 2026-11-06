@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--  section history:
+  2019-10-31 Julien: fix issue #187 : rearrange display
+  2015-12-19 Julien: adapted save -> export
+  2011-04-02 Michael: rewrote tutorial
+  2007-05-11 lexa: initial version
+-->
+<sect1 id="gimp-tutorial-quickies">
+  <title>Tarefas comuns</title>
+  <indexterm significance="normal">
+    <primary>Tutorial</primary>
+  </indexterm>
+  <para>Este tutorial é baseado no texto Copyright © 2004 Carol Spears. O tutorial original pode ser encontrado on-line <xref linkend="bibliography-online-tutorial02"/>.</para>
+  <sect2>
+    <title>Intenção</title>
+    <para><acronym>GIMP</acronym> é um programa de edição de imagem poderoso com muitas opções e ferramentas. No entanto, também é bem adequado para tarefas menores. Os tutoriais seguintes são destinados para aqueles que querem alcançar essas tarefas comuns sem ter que aprender todos os meandros do <acronym>GIMP</acronym> e computação gráfica em geral.</para>
+    <para>Felizmente, estes tutoriais não só irão ajudá-lo com a sua tarefa atual, mas também prepará-lo para aprender ferramentas e métodos mais complexas mais tarde, quando você tiver tempo e inspiração.</para>
+
+    <para>Open an image via
+    <menuchoice moreinfo="none">
+      <guimenu moreinfo="none">File</guimenu>
+      <guimenuitem moreinfo="none">Open…</guimenuitem>
+    </menuchoice> from the image window.</para>
+  </sect2>
+
+  <sect2 id="gimp-tutorial-quickie-scale">
+    <title>Trocar o tamanho da imagem para a tela</title>
+    <indexterm significance="normal">
+      <primary>Tutorial</primary>
+    </indexterm>
+    <indexterm significance="normal">
+      <primary>Imagem</primary>
+      <secondary>Redimensionar</secondary>
+    </indexterm>
+
+    <para>Você tem uma imagem enorme, possivelmente de uma câmera digital, e você quer redimensioná-la para que ela seja exibida bem em uma página web, num quadro online ou em uma mensagem de e-mail.</para>
+
+    <para>The first thing that you might notice after opening the image, is that
+    <acronym>GIMP</acronym> opens the image at a logical size for viewing. If
+    your image is very large, like the sample image,
+    <acronym>GIMP</acronym> sets the zoom so that it displays nicely on the
+    screen. The zoom level is shown in the
+    <link linkend="gimp-image-window-zoom">status bar</link> at the bottom of
+    the image window. This does not change the actual image.</para>
+
+    <para>The other thing to look at in the title bar is the mode. If the mode
+    shows as RGB in the title bar, you are fine. If the mode says <guilabel>
+    Indexed</guilabel> or <guilabel>Grayscale</guilabel>, read the
+    <xref linkend="gimp-tutorial-quickie-change-mode"/>.</para>
+
+    <para>Select
+    <menuchoice moreinfo="none">
+      <guimenu moreinfo="none">Image</guimenu>
+      <guimenuitem moreinfo="none">Scale Image…</guimenuitem>
+    </menuchoice>. You can right click on the image to open the menu, or use
+    the menu along the top of the Image window.</para>
+
+    <figure float="0">
+      <title>Dialogo para redimensionamento de imagem em pixels</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/scale-image.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>A unidade de tamanho para o propósito de exibir uma imagem na tela é o pixel. Você pode ver que a caixa de diálogo tem duas seções: uma para <guilabel moreinfo="none">largura</guilabel> e <guilabel moreinfo="none">altura</guilabel> e outro para <guilabel moreinfo="none">resolução</guilabel>. Resolução se aplica apenas a impressão e não tem nenhum efeito sobre o tamanho da imagem, quando ele é exibido em um monitor ou um dispositivo móvel. A razão é que diferentes dispositivos têm diferentes tamanhos de pixels e assim, uma imagem que é exibida em um dispositivo (tal como um smartphone) com um certo tamanho físico, pode ser exibida em outros dispositivos (tal como um projetor LCD) em um outro tamanho. Para o propósito de exibir uma imagem em uma tela, você pode ignorar o parâmetro de resolução. Pela mesma razão, não use qualquer unidade de tamanho que não seja o pixel nos campos de altura / largura.</para>
+
+    <para>If you know the desired width, enter it in the dialog at the top
+    where it says
+    <guilabel moreinfo="none">Width</guilabel>. This is shown in the figure
+    above. If you don't have such a number in mind, choose an appropriate width
+    for the desired use. Common screen sizes range between 600 pixels for simpler
+    phones and 1920 pixels for an HD screen.</para>
+
+    <para>Quando você altera uma das dimensões da imagem, o <acronym>GIMP</acronym> muda a outra dimensão proporcionalmente. Para alterar a outra dimensão, veja <xref linkend="gimp-tutorial-quickie-crop"/>. Tenha em mente que quando você altera as duas dimensões arbitrariamente, a imagem pode ficar esticada ou comprimida.</para>
+  </sect2>
+
+  <sect2 id="gimp-tutorial-quickie-scale-print">
+    <title>Trocar o tamanho de uma imagem para impressão</title>
+    <indexterm significance="normal">
+      <primary>Tutorial</primary>
+    </indexterm>
+    <indexterm significance="normal">
+      <primary>Imagem</primary>
+      <secondary>escala</secondary>
+    </indexterm>
+
+    <para>As discussed before, pixels don't have a set size in the real world.
+    When you set out to print an image on paper,
+    <acronym>GIMP</acronym> needs to know how big each pixel is. We use a
+    parameter called resolution to set the ratio between pixels and real-world
+    units such as inches.</para>
+    <para>By default, most images open with the resolution set to 72. This
+    number was chosen for historical reasons as it was the resolution of
+    screens in the past, and means that when printed, every pixel is 1/72 of an
+    inch wide. When printing images that are taken with modern digital cameras,
+    this produces very large but chunky images with visible pixels. What we
+    want to do is tell <acronym>GIMP</acronym> to print it with the size we
+    have in mind, but not alter the pixel data so as not to lose
+    quality.</para>
+
+    <para>To change the print size, select
+    <menuchoice moreinfo="none">
+      <guimenu moreinfo="none">Image</guimenu>
+      <guimenuitem moreinfo="none">Print Size…</guimenuitem>
+    </menuchoice>. Select a size
+    unit you are comfortable with, such as <quote>inches</quote>. Set one
+    dimension, and let <acronym>GIMP</acronym> change the other one
+    proportionally. Now examine the change in resolution. If the resolution is
+    300 pixels per Inch or more, the printed image's quality will be very high
+    and pixels will not be noticeable. With a resolution of between 200 and
+    150 ppi, pixels will be somewhat noticeable, but the image will be fine as
+    long as its not inspected too closely. Values lower than 100 are visibly
+    coarse and should only be used for material that is seen from a distance,
+    such as signs or large posters.</para>
+
+    <figure float="0">
+      <title>Caixa de diálogo para definição de tamanho de impressão</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/print-size.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </sect2>
+
+  <sect2 id="gimp-tutorial-quickie-jpeg">
+    <title>Comprimindo imagens</title>
+    <indexterm significance="normal">
+      <primary>Tutorial</primary>
+    </indexterm>
+    <indexterm significance="normal">
+      <primary>Imagem</primary>
+      <secondary>salvar</secondary>
+    </indexterm>
+    <figure float="0">
+      <title>Imagem de exemplo para exportar em JPEG</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/tutorials/quickie-jpeg-example.jpg"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>If you have images that take up a large space on disk, you can reduce
+    that space even without changing the image dimensions. One of the best
+    image compressions is achieved by using the <acronym>JPG</acronym> format,
+    but even if the image is already in this format, you can usually still make
+    it take up less space, as the JPG format has an adaptive compression
+    scheme that allows saving in varying levels of compression. The trade-off
+    is that the less space an image takes, the more detail from the original
+    image you lose. You should also be aware that repeated saving in the JPG
+    format causes more and more image degradation.
+    </para>
+
+    <para>
+      Images are loaded and saved as .XCF files. Your JPG
+      image has been loaded as XCF. <acronym>GIMP</acronym> offers you to
+      <menuchoice>
+        <guimenu>File</guimenu>
+        <guimenuitem>Overwrite image-name.jpg</guimenuitem>
+      </menuchoice> or
+      <menuchoice moreinfo="none">
+        <guimenu moreinfo="none">File</guimenu>
+        <guimenuitem moreinfo="none">Export As</guimenuitem>
+      </menuchoice> to open the <quote>Export Image</quote> dialog.</para>
+
+    <figure float="0">
+      <title><quote>Export Image</quote> Dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/export-image-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>
+      The dialog opens with the file name already selected in the
+      <guilabel>Name</guilabel> field, with the default extension.
+      Delete the existing extension and type <quote>.jpg</quote>
+      instead. <acronym>GIMP</acronym> will determine the file type from the
+      extension.
+      Click <guibutton>Export</guibutton>. This opens the
+      <link linkend="file-jpeg-export"><guilabel>Export Image as JPEG</guilabel>
+      dialog</link> that contains the <guilabel>Quality</guilabel> control.
+    </para>
+    
+    <para>The <guilabel>Export Image as JPEG</guilabel> dialog uses default
+    values that reduce size in memory while retaining good visual quality;
+    this is the safest and quickest thing to do.</para>
+    
+    <figure float="0">
+      <title>Exemplo de compressão JPEG moderada</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/tutorials/quickie-jpeg-dialog-preview.png"/>
+        </imageobject>
+        <caption>
+          <para>Quality: 90 (default); Size: 33.7 KiloBytes</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/tutorials/quickie-jpeg-dialog2-preview.png"/>
+        </imageobject>
+        <caption>
+          <para>Quality: 75; Size: 20.1 KiloBytes</para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <para>Reduce the image <guilabel>Quality</guilabel> to make the image even
+    smaller. Reduced quality degrades the image, so be certain to check
+    <quote>Show preview in image window</quote> to visually gauge the
+    degradation. A <guilabel>Quality</guilabel> setting of 10 produces a very
+    poor quality image that uses very little disk space.
+    A quality of 75 produces a reasonable image using
+    much less disk space, which will, in turn, load much faster on a web page.
+    Although the image is somewhat degraded, it is acceptable for the intended
+    purpose.</para>
+
+    <para>Finalmente, aqui está uma comparação da mesma imagem com diferentes graus de compressão:</para>
+
+    <figure float="0">
+      <title>Exemplo de compressão JPEG alta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/tutorials/quickie-jpeg-010.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Qualidade: 10; Tamanho: 3.4 KiloBytes</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/tutorials/quickie-jpeg-040.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Qualidade: 40; Tamanho: 9,3 KiloBytes</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure float="0">
+      <title>Exemplo de compressão JPEG moderada</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/tutorials/quickie-jpeg-070.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Qualidade: 70; Tamanho: 15.2 KiloBytes</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/tutorials/quickie-jpeg-100.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Qualidade: 100; Tamanho: 72.6 KiloBytes</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect2>
+
+  <sect2 id="gimp-tutorial-quickie-crop">
+    <title>Cortar uma imagem</title>
+    <indexterm significance="normal">
+      <primary>Tutorial</primary>
+    </indexterm>
+    <indexterm significance="normal">
+      <primary>Imagem</primary>
+      <secondary>guilhotinar</secondary>
+    </indexterm>
+
+    <figure float="0">
+      <title>Imagem de exemplo para o corte</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/tutorials/quickie-crop-example-source.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem fonte</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/tutorials/quickie-crop-example-result.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem após o corte</para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <para>Há muitas razões para cortar uma imagem, por exemplo, montar uma imagem para preencher uma moldura, a remoção de uma parte de fundo para enfatizar o assunto, etc; Existem dois métodos para ativar a ferramenta de corte. Clique no botão <guiicon moreinfo="none">
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/stock-icons/gimp-tool-crop.svg" contentwidth="16px"/>
+        </imageobject>
+      </inlinemediaobject>
+    </guiicon> na caixa de ferramentas, ou use <menuchoice moreinfo="none"><guimenu moreinfo="none">Ferramentas</guimenu><guisubmenu moreinfo="none">Ferramentas de transformação</guisubmenu><guimenuitem moreinfo="none">Cortar</guimenuitem></menuchoice> na janela da imagem. Isso muda o cursor e permite que você clique e arraste uma forma retangular. O botão na caixa de ferramentas é a maneira mais fácil para chegar a qualquer das ferramentas.</para>
+
+    <figure float="0">
+      <title>Selecionar uma região para corte</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/tutorials/quickie-crop-step1.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>Clique em um canto da área de corte desejada e arraste o mouse para criar o retângulo de corte. Você não tem que ser exato como você pode mudar a forma exata do retângulo mais tarde.</para>
+
+    <figure float="0">
+      <title>Caixa de diálogo para o corte</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-crop.png"/>
+        </imageobject>
+        <caption>
+          Crop tool options with the Fixed Aspect ratio option
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/tutorials/quickie-crop-step2.png"/>
+        </imageobject>
+        <caption>
+          Crop rectangle with a fixed aspect ratio
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <para>After completing the click and drag motion, a rectangle with special
+    regions is shown on the canvas. As the cursor is moved over the different
+    areas of the selected crop area, the cursor changes. You can then drag the
+    rectangle's corners or edges to change the dimensions of the selected area.
+    As shown in the figure above, as the crop area is resized, the dimensions
+    and ratio are shown in the status bar. Double-click inside the rectangle
+    or press <keycap>Enter</keycap> to complete cropping. See
+    <xref linkend="gimp-tool-crop"/> for more information on cropping in
+    <acronym>GIMP</acronym>.</para>
+    <para>If you would like to crop the image in a specific
+    aspect ratio, such as a square, make sure the tool options are visible
+    (<menuchoice moreinfo="none">
+      <guimenu moreinfo="none">Windows</guimenu>
+      <guisubmenu moreinfo="none">Dockable Dialogs</guisubmenu>
+      <guimenuitem moreinfo="none">Tool Options</guimenuitem>
+    </menuchoice>). In the <link linkend="gimp-tool-crop">Tool Options</link>
+    dockable, check the mark next to
+    <guilabel>Fixed Aspect Ratio</guilabel>. Type the desired aspect ratio
+    in the text field below, such as <quote>1:1</quote>.</para>
+    <para>You also have buttons to change the aspect from landscape to
+    portrait. After you set the aspect ratio, drag one of the corners of the
+    crop rectangle to update it. The rectangle changes to the chosen ratio,
+    and when you drag it should maintain that ratio.</para>
+  </sect2>
+
+  <sect2 id="gimp-tutorial-quickie-info">
+    <title>Buscar informações sobre sua imagem</title>
+    <indexterm significance="normal">
+      <primary>Tutorial</primary>
+    </indexterm>
+    <indexterm significance="normal">
+      <primary>Imagem</primary>
+      <secondary>informação</secondary>
+    </indexterm>
+
+    <para>When you need to find out information about your image, select
+    <menuchoice moreinfo="none">
+      <guimenu moreinfo="none">Image</guimenu>
+      <guimenuitem moreinfo="none">Image Properties</guimenuitem>
+    </menuchoice> from the main menu. The <quote>Image Properties</quote>
+    dialog contains information about the image size, resolution, mode
+    and much more.</para>
+    <para>
+      See also <xref linkend="gimp-image-properties"/>.
+    </para>
+
+    <figure float="0">
+      <title>Caixa de diálogo <quote>Propriedades da imagem</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/image/properties.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </sect2>
+
+  <sect2 id="gimp-tutorial-quickie-change-mode">
+    <title>Trocar o Modo</title>
+    <indexterm significance="normal">
+      <primary>Tutorial</primary>
+    </indexterm>
+    <indexterm significance="normal">
+      <primary>Imagem</primary>
+      <secondary>trocar modo</secondary>
+    </indexterm>
+
+    <para>As with anything else, images come in different kinds and serve
+    different purposes. Sometimes, a small size is important (for web sites)
+    and at other times, retaining a high color depth (e.g., a family portrait)
+    is what you want.
+    <acronym>GIMP</acronym> can handle all of this, primarily by converting
+    between three fundamental image modes, via <menuchoice><guimenu>Image</guimenu>
+    <guisubmenu>Mode</guisubmenu></menuchoice> in the main menu.
+    These three available modes are:</para>
+
+    <para>
+    <guilabel>RGB</guilabel>: This is the default mode, used for high-quality
+    images, and able to display millions of colors. This is also the mode for
+    most of your image work including scaling, cropping, and even flipping. In
+    RGB mode, each pixel consists of three different components: R-&gt;Red,
+    G-&gt;Green, B-&gt;Blue. Each of these in turn can have an intensity value
+    of 0-255. What you see at every pixel is an additive combination of these
+    three components.</para>
+
+    <para>
+    <guilabel>Indexed</guilabel>: This is the mode usually used when file size
+    is of concern, or when you are working with images with few colors. It
+    involves using a fixed number of colors (256 or less) for the entire image
+    to represent colors. By default, when you change an image to a paletted
+    image, <acronym>GIMP</acronym> generates an <quote>optimum palette</quote>
+    to best represent your image.</para>
+
+    <figure float="0">
+      <title>The <quote>Convert Image to Indexed Colors</quote> dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/image-mode-indexed.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>As you might expect, since the information needed to represent the
+    color at each pixel is less, the file size is smaller. However, sometimes,
+    there are options in the various menus that are disabled for no apparent
+    reason. This usually means that the filter or option cannot be applied when
+    your image is in its current mode. Changing the mode to RGB, as outlined
+    above, should solve this issue. If RGB mode doesn't work either, perhaps
+    the option you're trying requires your layer to have the ability to be
+    transparent. This can be done just as easily via
+    <menuchoice moreinfo="none">
+      <guimenu moreinfo="none">Layer</guimenu>
+      <guisubmenu moreinfo="none">Transparency</guisubmenu>
+      <guimenuitem moreinfo="none">Add Alpha Channel</guimenuitem>
+    </menuchoice>.</para>
+
+    <para>
+    <guilabel>Grayscale</guilabel>: Grayscale images have only shades of gray.
+    This mode has some specific uses and takes less space on the hard drive in
+    some formats, but is not recommended for general use as reading it is not
+    supported by many applications.</para>
+
+    <para>Não há necessidade de converter uma imagem para um modo específico antes de exporta-la para seu formato favorito, já que o <acronym>GIMP</acronym> é inteligente o suficiente para exportar a imagem corretamente.</para>
+  </sect2>
+
+  <sect2 id="gimp-tutorial-quickie-flip">
+    <title>Espelhar uma Imagem</title>
+    <indexterm significance="normal">
+      <primary>Tutorial</primary>
+    </indexterm>
+    <indexterm significance="normal">
+      <primary>Imagem</primary>
+      <secondary>Espelhar</secondary>
+    </indexterm>
+
+    <para>Use this option when you need the person in the photo looking in the
+    other direction, or you need the top of the image to be the bottom. Select
+    <menuchoice moreinfo="none">
+      <guimenu moreinfo="none">Tools</guimenu>
+      <guisubmenu moreinfo="none">Transform Tools</guisubmenu>
+      <guimenuitem moreinfo="none">Flip</guimenuitem>
+    </menuchoice> from the main menu, or use the
+    <guiicon moreinfo="none">
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/stock-icons/gimp-tool-flip.svg" contentwidth="16px"/>
+        </imageobject>
+      </inlinemediaobject>
+    </guiicon> button on the toolbox. After selecting the flip tool from the
+    toolbox, click inside the canvas. Controls in the Tool Options dockable let
+    you switch between Horizontal and Vertical modes.</para>
+
+    <para>Depois de selecionar a ferramenta Espelhar da caixa de ferramentas, clique dentro da tela. A ferramenta espelha a imagem horizontalmente. Use as opções de diálogo para alternar entre horizontal e vertical. Se ela não estiver sendo exibida no encaixe sob a caixa de ferramentas, clique duas vezes no botão de caixa de ferramentas. Você também pode usar a tecla <keycap moreinfo="none">Ctrl</keycap> para alternar entre horizontal e vertical.</para>
+
+    <para>Nas imagens abaixo, todos os espelhamentos possíveis são demonstrados:</para>
+
+    <figure id="quickie-flip-images" float="0">
+      <title>Imagem de exemplo para espelhar</title>
+      <informalfigure float="0">
+        <mediaobject>
+          <imageobject>
+            <imagedata format="JPG" fileref="images/tutorials/quickie-flip-example-source.jpg"/>
+          </imageobject>
+          <caption>
+            <para>Imagem fonte</para>
+          </caption>
+        </mediaobject>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="JPG" fileref="images/tutorials/quickie-flip-example-horizontal.jpg"/>
+          </imageobject>
+          <caption>
+            <para>Imagem espelhada horizontalmente</para>
+          </caption>
+        </mediaobject>
+      </informalfigure>
+      <informalfigure float="0">
+        <mediaobject>
+          <imageobject>
+            <imagedata format="JPG" fileref="images/tutorials/quickie-flip-example-vertical.jpg"/>
+          </imageobject>
+          <caption>
+            <para>Imagem espelhada verticalmente</para>
+          </caption>
+        </mediaobject>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="JPG" fileref="images/tutorials/quickie-flip-example-horizontal-and-vertical.jpg"/>
+          </imageobject>
+          <caption>
+            <para>Imagem invertida horizontal e verticalmente</para>
+          </caption>
+        </mediaobject>
+      </informalfigure>
+    </figure>
+  </sect2>
+
+  <sect2 id="gimp-tutorial-quickie-rotate">
+    <title>Rotacionar uma Imagem</title>
+    <indexterm significance="normal">
+      <primary>Tutorial</primary>
+    </indexterm>
+    <indexterm significance="normal">
+      <primary>Imagem</primary>
+      <secondary>Rotacionar</secondary>
+    </indexterm>
+
+    <para>Images that are taken with digital cameras sometimes need to be
+    rotated. To do this, select
+    <menuchoice moreinfo="none">
+      <guimenu moreinfo="none">Image</guimenu>
+      <guisubmenu moreinfo="none">Transform</guisubmenu>
+      <guimenuitem moreinfo="none">Rotate 90° clockwise</guimenuitem>
+    </menuchoice> (or counter-clockwise) from the main menu. The images
+    below demonstrate a 90 degrees CCW rotation.</para>
+
+    <figure float="0">
+      <title>Exemplo para <quote>Rotacionar uma imagem</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/tutorials/quickie-rotate-example-source.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/tutorials/quickie-rotate-example-90-CCW.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem rotacionada em 90 graus em sentido anti-horário</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect2>
+
+  <sect2 id="gimp-tutorial-quickie-separate">
+    <title>Separando um objeto do seu plano de fundo</title>
+    <indexterm significance="normal">
+      <primary>Tutorial</primary>
+    </indexterm>
+
+    <figure float="0">
+      <title>Objeto com plano de fundo</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/tutorials/quickie-remove-background-source.jpg"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <para>
+      Sometimes you need to separate the subject of an image from its
+      background. You may want to have the subject on a flat color, or keep the
+      background transparent so you can use it on an existing background, or
+      any other thing you have in mind. To do this, you must first use
+      <acronym>GIMP</acronym>'s selection tools to draw a selection around your
+      subject. This is not an easy task, and selecting the correct tool is
+      crucial. You have several tools to accomplish this:
+      <itemizedlist>
+        <listitem>
+          <para>
+            <emphasis role="bold">The <quote>Free Select
+            Tool</quote></emphasis> allows you to draw a border using either
+            freehand or straight lines. Use this when the subject has a
+            relatively simple shape. Read more about this tool here:
+            <xref linkend="gimp-tool-free-select"/>
+          </para>
+          <figure float="0">
+            <title>Ferramenta de seleção livre</title>
+            <mediaobject>
+              <imageobject>
+          <imagedata fileref="images/stock-icons/gimp-tool-free-select.svg" contentwidth="16px"/>
+              </imageobject>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/tutorials/quickie-background-free-select.jpg"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="bold">The <quote>Scissors Select
+            tool</quote></emphasis> lets you select a freehand border and uses
+            edge-recognition algorithms to better fit the border around the
+            object. Use this when the subject is complex but distinct enough
+            against its current background. Read more about this tool here:
+            <xref linkend="gimp-tool-iscissors"/>
+          </para>
+          <figure float="0">
+            <title>Scissors Select Tool</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-iscissors.svg" contentwidth="16px"/>
+              </imageobject>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/tutorials/quickie-background-scissors.jpg"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis role="bold">The <quote>Foreground Select
+            Tool</quote></emphasis> lets you mark areas as
+            <quote>Foreground</quote> or <quote>Background</quote> and refines
+            the selection automatically. Read more about this tool here:
+            <xref linkend="gimp-tool-foreground-select"/>
+          </para>
+          <figure float="0">
+            <title>Ferramenta de seleção de frente</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-foreground-select.svg" contentwidth="16px"/>
+              </imageobject>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="JPG" fileref="images/tutorials/quickie-background-foreground-select.jpg"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </itemizedlist>
+    </para>
+    <sect3><title>Once you have selected your subject</title>
+    <para>
+      Once you have selected your subject successfully, use
+      <menuchoice moreinfo="none"><guimenu moreinfo="none">Select</guimenu>
+      <guimenuitem moreinfo="none">Invert</guimenuitem></menuchoice>. Now,
+      instead of the subject, the background is selected. What you do now
+      depends on what you intended to do with the background:
+      <itemizedlist>
+        <listitem>
+          <para>Preencher o fundo com uma única cor:</para>
+          <para>Clique na amostra de cor de frente (no canto superior esquerdo dos dois retângulos coloridos sobrepostos) na Caixa de ferramentas e selecione a cor desejada. Em seguida, use a <xref linkend="gimp-tool-bucket-fill"/> para substituir o fundo com a cor escolhida (ou simplesmente arraste a cor para a imagem).</para>
+
+          <figure float="0">
+            <title>Resultado da adição de um fundo com cor lisa</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/tutorials/quickie-background-color-result.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+        <listitem>
+          <para>Para tornar um fundo preto e branco, mantendo o objeto colorido:</para>
+          <para>Use <menuchoice moreinfo="none"><guimenu moreinfo="none">Cores</guimenu><guimenuitem moreinfo="none">Dessaturar</guimenuitem></menuchoice>. Na caixa de diálogo que abrir, alterne entre os modos e selecione o que tenha melhor visual, em seguida, clique em OK.</para>
+
+          <figure float="0">
+            <title>Resultado da dessaturação do fundo</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/tutorials/quickie-background-desaturate-result.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </itemizedlist>
+    </para>
+  </sect3>
+  </sect2>
+</sect1>

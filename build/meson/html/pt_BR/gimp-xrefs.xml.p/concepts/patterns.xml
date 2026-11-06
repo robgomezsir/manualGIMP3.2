@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  
+-->
+<sect1 id="gimp-concepts-patterns">
+  <title>Texturas</title>
+
+  <indexterm>
+    <primary>Texturas</primary>
+    <secondary>Introdução</secondary>
+  </indexterm>
+
+  <para>Uma <emphasis>textura</emphasis> é uma imagem, geralmente pequena, utilizada para preencher regiões ou fundos com <emphasis>ladrilhos</emphasis>, isto é, pela colocação de cópias da textura lado a lado, como ladrihos de cerâmica. Se diz que uma textura é <emphasis>encaixável</emphasis> ou<emphasis>ladrilhável</emphasis> se cópias da mesma podem ser unidas da esquerda para a direita e de cima para baixo sem criar emendas óbvias. Nem todas as texturas úteis são ladrilháveis, mas os padrões ladrilháveis são mais bonitos para muitas finalidades. (Um <emphasis>padrão</emphasis>, por sinal, é a mesma coisa que uma textura.)</para>
+  <figure>
+    <title>Uso de texturas</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/using/patterns-usage.png" format="PNG"/>
+      </imageobject>
+      <caption>
+        <para>Três maneiras de usar a textura <quote>Leopard</quote>: preenchimento de uma seleção, pintando com a ferramenta Clone, e contornando uma seleção com a textura.</para>
+      </caption>
+    </mediaobject>
+  </figure>
+  <para>No GIMP, existem três principais usos para as texturas:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Com a ferramenta <link linkend="gimp-tool-bucket-fill">Preenchimento</link>, você pode optar por preencher uma região com uma textura em vez de uma cor sólida.</para>
+      <figure>
+        <title>The checked box for using a pattern</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/using/pattern-checked.png"/>
+          </imageobject>
+          <caption>
+            <para>A caixa de opção para preenchimento com textura está marcada, e um clique na textura vai exibir todas as texturas disponíveis no modo de tabela.</para>
+          </caption>
+        </mediaobject>
+      </figure>
+    </listitem>
+    <listitem>
+      <para>Com a ferramenta <link linkend="gimp-tool-clone">Clonar</link>, você pode pintar usando uma textura, com uma ampla variedade de pincéis.</para>
+    </listitem>
+    <listitem>
+      <para>Quando você <emphasis>contorna</emphasis> um caminho ou seleção, você pode fazer isso com uma textura em vez de uma cor sólida. Você também pode usar a ferramenta <quote>Clonar</quote> como sua escolha se você contornar a seleção usando uma ferramenta de pintura.</para>
+    </listitem>
+  </itemizedlist>
+  <tip>
+    <para>Nota: As texturas não precisam ser opacas. Se você preencheu ou pintou usando uma textura com áreas translúcidas ou transparentes, então o conteúdo anterior daquela área irá aparecer por trás dele. Esta é uma das muitas maneiras de fazer <quote>sobreposições</quote> no GIMP.</para>
+  </tip>
+  <para>Quando você instalar o <acronym>GIMP</acronym>, vem instaladas algumas dezenas de texturas que que dão a impressão de ter sido escolhidas mais ou menos ao acaso. Em geral, também são muito pequenas para o tamanho das imagens que temos hoje em dia. Isso porque algumas delas remontam ao início do GIMP, quando a capacidade dos computadores, e das imagens que eram criadas no dia a dia, eram muito menores do que hoje. Você também pode adicionar novas texturas, tanto aquelas que você mesmo cria, como texturas que você escolha baixar da Internet.</para>
+  <para> <emphasis>Textura atual</emphasis> do GIMP, usada na maioria das operações relacionadas a texturas, é mostrada na área de <quote>Pincéis, texturas e degradês ativos</quote> da caixa de ferramentas, se essa visualização estiver habilitada em Editar-&gt;Preferências, guia <quote>Caixa de ferramentas</quote>. Ao clicar no símbolo da textura, o <link linkend="gimp-pattern-dialog">diálogo de Texturas</link> é apresentado, que permite que você selecione uma textura diferente. Você também pode acessar a caixa de diálogo Texturas pelo menu, ou encaixá-lo para que ela esteja presente o tempo todo.</para>
+  <para>Para adicionar uma nova textura à coleção, de modo que ela apareça na caixa de diálogo de Texturas, você precisa salvá-la em um formato que o GIMP possa usar, em uma pasta incluída no caminho padrão de texturas do GIMP (veja editar-&gt;Preferências, guia Pastas-&gt;Texturas). Existem diversos formatos de arquivo que você pode usar para as texturas: </para>
+
+  <variablelist>
+    <varlistentry>
+      <term>PAT</term>
+      <listitem>
+        <para>O formato <filename class="extension">.pat</filename> é usado para texturas padrões que foram criadas especificamente para o GIMP. Você pode converter qualquer imagem em um arquivo <filename class="extension">.pat</filename> abrindo-o no GIMP e depois exporta-lo usando um nome de arquivo que termina em <filename class="extension">.pat</filename>.</para>
+        <caution>
+          <!-- see bug #573828 -->
+          <para>Não confunda arquivos <filename class="extension">.pat</filename> gerados pelo <acronym>GIMP</acronym> com arquivos criados por outros programas (por exemplo, o <application>Photoshop</application>) &ndash; A extensão <filename class="extension">.pat</filename> é apenas uma parte de um nome de arquivo, que pôde ser escolhida arbitrariamente.</para>
+          <para>(Entretanto, o <acronym>GIMP</acronym> <emphasis>suporta</emphasis> os arquivos <filename class="extension">.pat</filename> do <application>Photoshop</application> até uma determinada versão.)</para>
+        </caution>
+      </listitem>
+    </varlistentry>
+    <varlistentry>
+      <term>PNG, JPEG, BMP, GIF, TIFF</term>
+      <listitem>
+        <para>Desde o GIMP 2.2 você pode usar arquivos <filename class="extension">.png</filename>, <filename class="extension">.jpg</filename>, <filename class="extension">.bmp</filename>, <filename class="extension">.gif</filename>, ou <filename class="extension">.tiff</filename> como texturas.</para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+
+  <para>
+    To make a pattern available, you place it in one of the folders in GIMP's
+    pattern search path. By default, the pattern search path includes two
+    folders, the system <filename>patterns</filename> folder, which you should
+    not use or alter, and the <filename>patterns</filename>
+    folder inside your personal GIMP directory. You can add new folders to the
+    pattern search path using the
+    <link linkend="gimp-prefs-folders-data">Pattern Folders</link>
+    page of the Preferences dialog. Any PAT file (or any of the
+    other acceptable formats) included in a folder in the pattern search path
+    will show up in the Patterns dialog the next time you start GIMP.
+  </para>
+  <note>
+    <para>Você pode adicionar um novo padrão rapidamente como faz para pincéis. Veja <xref linkend="gimp-creating-brush-quickly"/>.</para>
+  </note>
+  <para>
+    There are countless ways of creating interesting pattern images in GIMP, 
+    using the wide variety of available tools and filters &mdash; particularly
+    the rendering filters. You can find tutorials for this in many locations,
+    including the GIMP home page <xref linkend="bibliography-online-gimp"/>.
+    Some of the filters have options that allows you to make their results
+    tileable. Also, see <xref linkend="script-fu-tile-blur"/>, this
+    filter allows you to blend the edges of an image in order to make it more
+    smoothly tileable.
+  </para>
+</sect1>

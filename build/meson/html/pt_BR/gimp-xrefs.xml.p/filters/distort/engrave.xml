@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-12-31 j.h: update to v2.10
+  2007-12-02 lexa: created initial version
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-engrave">
+  <title>Entalhar</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Entalhar</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Entalhar</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Entalhar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/distort-taj-engrave.png"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro produz um efeito de "entalhe": a imagem se torna preto e branca e algumas linhas horizontais de altura variável são desenhadas, dependendo do valor dos pixels que existiam antes. O resultado se parece a gravuras como são vistas em moedas e algumas ilustrações de livros antigos. (Veja também o filtro <quote>Retícula</quote>, no mesmo submenu)</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Engrave…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de <quote>Entalhar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/engrave-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Altura</term>
+        <listitem>
+          <para>Esta opção especifica a altura das linhas de entalhe. O valor vai de 2 a 16.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Limitar largura da linha</term>
+        <listitem>
+          <para>Se esta opção for ligada, as linhas não serão desenhadas em áreas de cor contínua. Veja a figura abaixo para um exemplo do resultado desta opção.</para>
+          <figure>
+            <title>Exemplo de resultado com a opção de limitar largura da linha</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/engrave_width_limit_original.png"/>
+              </imageobject>
+              <caption>
+                <para>Imagem original</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/engrave_width_limit_yes.png"/>
+              </imageobject>
+              <caption>
+                <para>Opção Limitar largura da linha ligada</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/engrave_width_limit_no.png"/>
+              </imageobject>
+              <caption>
+                <para>Opção Limitar largura da linha desligada</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

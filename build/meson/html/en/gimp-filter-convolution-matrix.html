@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>9.2. Convolution Matrix</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-generic.html" title="9. Generic Filters" />
+    <link rel="prev" href="filters-generic.html" title="9. Generic Filters" />
+    <link rel="next" href="gimp-filter-distance-map.html" title="9.3. Distance Map" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>9.2. Convolution Matrix</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="filters-generic.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>9. Generic Filters</span>
+        <nav> <a accesskey="n" href="gimp-filter-distance-map.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-convolution-matrix"></a>9.2. Convolution Matrix</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id52737" class="indexterm"></a>
+      <a id="id52741" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3353"></a>9.2.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Here is a mathematician's domain. Most of filters are using convolution
+      matrix. With the Convolution Matrix filter, if the fancy takes you, you
+      can build a custom filter.
+    </p>
+        <p>
+      What is a convolution matrix? It's possible to get a rough idea of it
+      without using mathematical tools that only a few ones know. Convolution
+      is the treatment of a matrix by another one which is called
+      <span class="quote">“<span class="quote">kernel</span>”</span>.
+    </p>
+        <p>
+      The Convolution Matrix filter uses a first matrix which is the Image to
+      be treated. The image is a bi-dimensional collection of pixels in
+      rectangular coordinates. The used kernel depends on the effect you want.
+    </p>
+        <p>
+      GIMP uses 5×5 or 3×3 matrices. We will consider only 3×3 matrices, they
+      are the most used and they are enough for all effects you want. If all
+      border values of a kernel are set to zero, then system will consider it
+      as a 3×3 matrix.
+    </p>
+        <p>
+      The filter studies successively every pixel of the image. For each of
+      them, which we will call the <span class="quote">“<span class="quote">initial pixel</span>”</span>, it
+      multiplies the value of this pixel and values of the 8 surrounding
+      pixels by the kernel corresponding value. Then it adds the results,
+      and the initial pixel is set to this final result value.
+    </p>
+        <p>
+      A simple example:
+    </p>
+        <div class="mediaobject">
+          <img src="images/filters/examples/convolution-calculate.png" />
+        </div>
+        <p>
+      On the left is the image matrix: each pixel is marked with its value.
+      The initial pixel has a red border. The kernel action area has a green
+      border. In the middle is the kernel and, on the right is the convolution
+      result.
+    </p>
+        <p>
+      Here is what happened: the filter read successively, from left to right
+      and from top to bottom, all the pixels of the kernel action area. It
+      multiplied the value of each of them by the kernel corresponding value
+      and added results. The initial pixel has become 42:
+      (40*0)+(42*1)+(46*0) + (46*0)+(50*0)+(55*0) + (52*0)+(56*0)+(58*0) = 42.
+      (the filter doesn't work on the image but on a copy). As a graphical
+      result, the initial pixel moved a pixel downwards.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3354"></a>9.2.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Generic</span> → <span class="guimenuitem">Convolution Matrix…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3355"></a>9.2.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3356"></a>
+          <p class="title">
+            <strong>Figure 17.182. <span class="quote">“<span class="quote">Convolution matrix</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/generic/convolution.png" alt="“Convolution matrix” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-filters-common.html" title="2. Common Features">Section 2, “Common Features”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Matrix</span>
+            </dt>
+            <dd>
+              <p>
+            This is the 5×5 kernel matrix: you enter wanted values directly
+            into boxes.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Divisor</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The result of previous calculation will be divided by this
+                  divisor. You will hardly use anything else than 1, which
+                  leaves results unchanged, and 9 or 25 according to matrix size,
+                  which gives the average of pixel values. The divisor can only
+                  be changed when Normalize is unchecked.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Offset</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This value is added to the division result. This is useful
+                  if result may be negative. This offset may be negative. It
+                  can only be changed when Normalize is unchecked.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Channels</span>
+            </dt>
+            <dd>
+              <p>
+            Here you can select which channels the filter should change.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Normalize</span>
+            </dt>
+            <dd>
+              <p>
+            If this option is checked, The Divisor takes the result value of
+            convolution. If this result is equal to zero (it's not possible
+            to divide by zero), then a 128 offset is applied. If it is
+            negative (a negative color is not possible), a 255 offset is
+            applied (inverts result).
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Alpha-weighting</span>
+            </dt>
+            <dd>
+              <p>
+            If this option is not checked, the filter doesn't take in account
+            transparency and this may be cause of some artefacts when
+            blurring.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Border</span>
+            </dt>
+            <dd>
+              <p>
+            When the initial pixel is on a border, a part of the kernel is
+            outside the image. You have to decide what the filter should do:
+          </p>
+              <div class="figure">
+                <a id="id3357"></a>
+                <p class="title">
+                  <strong>Figure 17.183. Border examples</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/generic/convolution-milord.png" alt="Border examples" />
+                    <div class="caption">
+                      <p>
+                Source image
+              </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/generic/convolution-extend.png" alt="Border examples" />
+                    <div class="caption">
+                      <p>
+                  <span class="guilabel">Clamp</span> border
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/generic/convolution-crop.png" alt="Border examples" />
+                    <div class="caption">
+                      <p>
+                  <span class="guilabel">None</span> border
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/generic/convolution-wrap.png" alt="Border examples" />
+                    <div class="caption">
+                      <p>
+                  <span class="guilabel">Loop</span> border
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">None</span>
+                  </dt>
+                  <dd>
+                    <p>This part of the kernel is not taken into account.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Clamp</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Pixels on borders are not modified, but they are cropped.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Loop</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This part of the kernel will be affected by pixels of the
+                  opposite border, so pixels disappearing from one side
+                  reappear on the other side.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Black</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Pixels on borders are changed to black.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">White</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Pixels on borders are changed to white.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3358"></a>9.2.4. Examples</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Design of kernels is based on high levels mathematics. You can find
+      ready-made kernels on the Web. Here are a few examples:
+    </p>
+        <div class="figure">
+          <a id="id3359"></a>
+          <p class="title">
+            <strong>Figure 17.184. Sharpen</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/convolution-sharpen.png" alt="Sharpen" />
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/generic-taj-convmatrix-sharpen.jpg" alt="Sharpen" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id3360"></a>
+          <p class="title">
+            <strong>Figure 17.185. Blur</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/convolution-blur.png" alt="Blur" />
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/generic-taj-convmatrix-blur.jpg" alt="Blur" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id3361"></a>
+          <p class="title">
+            <strong>Figure 17.186. Edge enhance</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/convolution-edge.png" alt="Edge enhance" />
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/generic-taj-convmatrix-edge-enhance.jpg" alt="Edge enhance" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id3362"></a>
+          <p class="title">
+            <strong>Figure 17.187. Edge detect</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/convolution-edge-detect1.png" alt="Edge detect" />
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/generic-taj-convmatrix-edge-detect.jpg" alt="Edge detect" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id3363"></a>
+          <p class="title">
+            <strong>Figure 17.188. Emboss</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/convolution-emboss.png" alt="Emboss" />
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/generic-taj-convmatrix-emboss.jpg" alt="Emboss" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="filters-generic.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-generic.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-distance-map.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="filters-generic.html">9. Generic Filters</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-distance-map.html">9.3. Distance Map</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

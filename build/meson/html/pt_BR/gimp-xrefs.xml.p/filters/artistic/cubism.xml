@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-21 j.h update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-cubism">
+  <title>Cubismo</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Artísticos</secondary>
+    <tertiary>Cubismo</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Cubismo</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo para o <quote>cubismo</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/artistic-taj-cubism.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      The Cubism filter modifies the image so that it appears to be
+      constructed of small squares of semitransparent tissue paper.
+    </para>
+    <tip>
+      <para>Se as possibilidades de configuração deste filtro não forem o bastante para você, veja o filtro <link linkend="plug-in-gimpressionist">GIMPressionista</link> que oferece mais opções.</para>
+    </tip>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Artistic</guisubmenu>
+        <guimenuitem>Cubism…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>cubismo</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/artistic/cubism-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visuação</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho da pastilha</term>
+        <listitem>
+          <para>
+            This variable determines the size, in pixels, of the squares to
+            be used. This is, in effect, the size of the little squares of
+            tissue paper used in generating the new image. The slider can be
+            clicked, the exact pixel size can be entered into the slider, or
+            the <guilabel>+</guilabel> and <guilabel>-</guilabel> buttons can
+            be used.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Saturação das pastilhas</term>
+        <listitem>
+          <para>
+            This variable specifies how intense the color of the squares
+            should be. This affects the opacity of the squares. A high value
+            will render the squares very intensely and does not allow lower
+            squares to show through. A lower value allows the lower squares
+            to be more visible through the higher ones and causes more
+            blending in the colors.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Background color</term>
+        <listitem>
+          <para>
+            This allows you to change the background color that is used by
+            this filter. You can click the color bar to select a color, or
+            use the color picker to pick a color from your image.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Random seed</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <tip>
+      <para>
+        If you are using this to generate background images for web pages and
+        the like, work with a small range of colors painted randomly on a
+        small square. Then apply the Cubism filter with the desired settings.
+        As a last step, try
+        <link linkend="gimp-filter-tile-seamless">Tile Seamless</link>
+        to adjust the image so it will tile seamlessly in your background.
+      </para>
+    </tip>
+  </sect3>
+</sect2>

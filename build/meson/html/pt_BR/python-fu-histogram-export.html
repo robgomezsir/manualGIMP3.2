@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.51. Exportar Histograma</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. O menu “Cores”" />
+    <link rel="prev" href="gimp-colors-info-histogram.html" title="8.50. Histograma" />
+    <link rel="next" href="plug-in-borderaverage.html" title="8.52. Média da borda" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.51. Exportar Histograma</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-colors-info-histogram.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. O menu <span class="quote">“<span class="quote">Cores</span>”</span></span>
+        <nav> <a accesskey="n" href="plug-in-borderaverage.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="python-fu-histogram-export"></a>8.51. Exportar Histograma</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id45583" class="indexterm"></a>
+      <a id="id45586" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4119"></a>8.51.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>Exporta o Histograma da imagem para um arquivo de texto para que possa ser utilizado por outros programas e carregado em planilhas. O Histograma é produzido para a área da imagem selecionada. Pixels totalmente transparentes não são contados.</p>
+        <p>O arquivo resultante é um arquivo CSV (Valores Separados por Vírgula), que pode ser importado diretamente pela maioria dos programas de manipulação de planilhas. A primeira linha do arquivo CSV é uma linha de títulos. Uma linha de dados é gerada para cada "Balde". Cada valor de pixel pode estar no intervalo de 0 a 255, e será incluído em um dos baldes dependendo do intervalo do balde.</p>
+        <p>A primeira coluna é intitulada "Início do Intervalo" e contém o valor inicial do balde. As colunas seguintes contêm os valores para diferentes canais. Quais canais serão incluídos depende do tipo de imagem. O significado desses valores em cada uma das colunas de canais depende da opção <span class="guilabel">Formato de Saída</span>.</p>
+        <div class="figure">
+          <a id="id4120"></a>
+          <p class="title">
+            <strong>Figura 16.209. Exemplo do arquivo exportado com <span class="quote">“<span class="quote">Exportar Histograma</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <pre class="screen">
+Início do intervalo,   Valor,   Vermelho,   Verde,   Azul
+                  0,     0.0,        0.0,   486.0,    0.0
+                  1,     0.0,        0.0,   300.0,    0.0
+                  2,     0.0,        0.0,   336.0,    0.0
+                  3,     0.0,        0.0,   399.0,    0.0
+                  4,     0.0,        0.0,   510.0,    0.0
+                  ....
+      </pre>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>O arquivo de exemplo acima foi gerado para uma imagem RGB, usando o formato de saída <span class="guilabel">Contagem de pixels</span>, e um <span class="guilabel">Tamanho de Balde</span> de 1. A linha iniciada pelo número 3 descreve o quarto balde e incluirá todos os pixels de valor 3 até (sem incluir) 4. O número 399.0 naquela linha pode então ser interpretado como "Há 399 pixels que apresentam um valor de Verde de 3".</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4121"></a>8.51.2. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Info</span> → <span class="guimenuitem">Export Histogram…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4122"></a>8.51.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4123"></a>
+          <p class="title">
+            <strong>Figura 16.210. <span class="quote">“<span class="quote">Export Histogram</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/info/histogram-export-dialog.png" alt="“Export Histogram” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Arquivo do Histograma</span>
+            </dt>
+            <dd>
+              <p>O arquivo para o qual o histograma será exportado.</p>
+            </dd>
+            <dt>
+              <span class="term">Tamanho de Balde</span>
+            </dt>
+            <dd>
+              <p>O <span class="guilabel">Tamanho de Balde</span> permite controlar o número de valores considerados similares e contados no mesmo <span class="quote">“<span class="quote">balde</span>”</span> (faixa de cores no histograma). Um tamanho de balde maior produzirá menos baldes, e portanto menos linhas no arquivo exportado. Por exemplo, um Tamanho de Balde de 1 produzirá 256 baldes, enquanto um Tamanho de 16 produzirá 16 baldes.</p>
+            </dd>
+            <dt>
+              <span class="term">Amostra da média</span>
+            </dt>
+            <dd>
+              <p>Se <span class="guilabel">Amostra da média</span> estiver ativa, o histograma será gerado para uma imagem obtida pela combinação de todas as camadas visíveis. Se não, o histograma considerará somente a camada atual.</p>
+            </dd>
+            <dt>
+              <span class="term">Output format</span>
+            </dt>
+            <dd>
+              <p>Se a opção <span class="guilabel">Contagem de pixels</span> for escolhida, os valores no arquivo gerado refletirão a quantidade de pixels em cada balde. Se <span class="guilabel">Normalizado</span> for escolhida, os valores serão a quantidade de pixels no balde dividida pelo total de pixels. A opção <span class="guilabel">Porcentagem</span> é similar à <span class="guilabel">Normalizado</span>, mas os valores são formatados como porcentagens.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-colors-info-histogram.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-borderaverage.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-colors-info-histogram.html">8.50. Histograma</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-borderaverage.html">8.52. Média da borda</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

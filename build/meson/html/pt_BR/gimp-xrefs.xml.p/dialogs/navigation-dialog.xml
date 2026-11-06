@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-03-03 j.h: update to v2.10
+-->
+<sect2 id="gimp-navigation-dialog">
+  <title>Diálogo de navegação</title>
+  <indexterm>
+    <primary>Navegação</primary>
+    <secondary>Diálogo</secondary>
+  </indexterm>
+
+  <figure>
+    <title>Diálogo de navegação</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/navigation.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>O diálogo de navegação foi criado para oferecer uma forma fácil de se mover dentro da imagem se o fator de zoom for maior do que a janela de imagem pode exibir. Se for o caso, um retângulo de cor invertida aparecerá nesse diálogo, mostrando a localização da área de visualização atual dentro da imagem como um todo.</para>
+  <para>Para alterar a região de visualização: <itemizedlist>
+      <listitem>
+        <para>Clique fora da área retangular com o dedo indicador apontando para a região desejada.</para>
+      </listitem>
+      <listitem>
+        <para>Clicar e arrastar a área retangular</para>
+      </listitem>
+      <listitem>
+        <para>Use a tecla <keycap>Shift</keycap> e  a rodinha do mouse para se mover horizontalmente e a tecla <keycap>Alt</keycap> e  a rodinha do mouse para se mover verticalmente. O ponteiro do mouse deve estar dentro da área retangular, com a  forma de uma mão, ou de uma cruz com quatro setas, como a ferramenta de Mover.</para>
+      </listitem>
+    </itemizedlist></para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Navigation</guimenuitem>
+          </menuchoice>;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Navigation</guimenuitem>
+          </menuchoice>,
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>View</guimenu>
+            <guimenuitem>Navigation window</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+        If you have
+        <link linkend="gimp-view-show-scrollbars">scrollbars enabled</link>,
+          then you can access it more quickly (but without the zoom functions)
+          by clicking on the
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-navigation.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          icon at the right bottom corner of the image window where both
+          scrollbars end.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Usando o diálogo de navegação</title>
+    <variablelist>
+      <varlistentry>
+        <term>O controle deslizante</term>
+        <listitem>
+          <para>Ele permite o controle fácil do nível de zoom da imagem, de forma mais precisa que com o comando de <link linkend="gimp-view-zoom">Zoom</link>. Esse controle também pode ser movido com a rodinha do mouse se o ponteiro estiver sobre o controle deslizante, ou, pressionado-se a tecla <keycap>Ctrl</keycap> em conjunto com o uso da rodinha do mouse quando o ponteiro estiver na área retângular.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Botões</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/zoom-out.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Zoom Out</phrase>,
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/zoom-in.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Zoom In</phrase>,
+                and
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/zoom-original.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Zoom 1:1</phrase>
+              </term>
+              <listitem>
+                <para>
+                These buttons are self explanatory.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/zoom-fit-best.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Ajusta o fator de zoom de forma que a imagem caiba por inteiro na janela</phrase>
+              </term>
+              <listitem>
+                <para>A taxa de zoom é ajustada de forma que a imagem toda se torna visível na janela, do tamanho que ela está.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/view-zoom-fill-symbolic.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Ajusta o fator de zoom de forma que toda a janela seja utilizada</phrase>
+              </term>
+              <listitem>
+                <para>O tamanho da imagem e o fator de zoom são ajustados de forma que a imagem seja mostrada sem margens sobrando, e com ou sua altura, ou sua largura, ocupando toda a extensão da janela.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/view-shrink-wrap-symbolic.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Reduz o tamanho da janela para o tamanho da imagem</phrase>
+              </term>
+              <listitem>
+                <para>Redimensiona o tamanho da janela de imagem de formata permitir que a imagem serja mostrada por inteiro, com o fator de zoom atual. Este comando também está disponível como uma opção de menu.Veja os detalhes em  <xref linkend="gimp-view-shrink-wrap"/></para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

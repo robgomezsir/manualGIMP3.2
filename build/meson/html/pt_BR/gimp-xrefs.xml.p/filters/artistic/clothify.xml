@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2010-04-21 liangtai: created initial version
+-->
+<sect2 id="script-fu-clothify">
+  <title>Aspecto de tecido</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Artísticos</secondary>
+    <tertiary>Aspecto de tecido</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Aspecto de tecido</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo de aspecto de tecido</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/artistic-taj-clothify.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro <quote>aspecto de tecido</quote> aplicado (na seleção)</para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <para>O comando <guimenuitem>aspecto de tecido</guimenuitem> é um script que adiciona uma textura com aspecto de tecido à região selecionada ou canal alfa.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+    <para>Este efeito é conseguido através dos seguintes passos:</para>
+    <procedure>
+      <step>
+        <para>
+          Create an image in the same size as the original image, or selection
+          or region in alpha if it is given, then add a layer to this image
+          filled with white and
+          <link linkend="gimp-filter-noise-rgb">noisified</link> strongly.
+        </para>
+      </step>
+      <step>
+        <para>Uma camada é reproduzida a partir da camada recentemente adicionada e o modo da camada superior é definido como <link linkend="layer-mode-multiply">multiplicar</link>.</para>
+      </step>
+      <step>
+        <para>
+          Apply <link linkend="gimp-filter-gaussian-blur">Gaussian blur</link> in
+          different directions, horizontally on the lower layer by the given
+          parameter <guilabel>Blur X</guilabel> as the radius, and vertically
+          on the upper layer with <guilabel>Blur Y</guilabel>.
+        </para>
+      </step>
+      <step>
+        <para>
+          Merge these two layers into an image and make its contrast
+          <link linkend="gimp-filter-stretch-contrast">expanded as 
+possibly</link>, then
+          slightly noisify again on this working image.
+        </para>
+      </step>
+      <step>
+        <para>
+          Finally do <link linkend="gimp-filter-bump-map">bump map</link> on the
+          original image by the working image with parameters
+          <guilabel>Azimuth</guilabel>, <guilabel>Elevation</guilabel>, and
+          <guilabel>Depth</guilabel>.
+        </para>
+      </step>
+    </procedure>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Artistic</guisubmenu>
+        <guimenuitem>Clothify…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>aspecto de tecido</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/artistic/clothify.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      <guilabel>Azimuth</guilabel>, <guilabel>Elevation</guilabel>, and
+      <guilabel>Depth</guilabel> come from
+      <link linkend="gimp-filter-bump-map">Bump Map</link> filter.
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Desfoc. X</term>
+        <term>Desfoc. Y</term>
+        <listitem>
+          <para>Esses parâmetros alargam as fibras da textura, horizontalmente pelo <guilabel>fator de desfoque X</guilabel>, e verticalmente pelo <guilabel>fator de desfoque y</guilabel>. A variação de valores é entre 3 e 100.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Azimute</term>
+        <listitem>
+          <para>O controlador de <guilabel>azimute</guilabel> controla a orientação da origem da luz de acordo com o ponto do compasso. Tanto o valor mínimo (0,00) e máximo (360,00) são a direção de 3 horas em ponto em um relógio analógico. Aumentar o valor gira em sentido anti-horário.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Elevação</term>
+        <listitem>
+          <para>O controlador de <guilabel>elevação</guilabel> controla a altura da origem da luz. Para o valor mínimo (0,50) a luz parte do horizonte, e para o valor máximo (90,0) a luz parte do zênite.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Profundidade</term>
+        <listitem>
+          <para>O controlador de <guilabel>profundidade</guilabel> controla a distância entre a altura do relevo e a profundidade das depressões. Aumentar o valor causa rasgos mais ásperos. Os valores variam de 1 a 65.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

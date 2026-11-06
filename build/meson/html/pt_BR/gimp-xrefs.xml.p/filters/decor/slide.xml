@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-10-11 KoSt: added 'no'
+  2007-09-29 alex falappa: added 'it'
+  2007-09-13 AntI: Added 'es'
+  2007-09-10 ude: created en, de
+-->
+<sect2 id="script-fu-slide">
+  <title>Slide</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Decoração</secondary>
+    <tertiary>Slide</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Slide</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Slide</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/decor-taj-slide.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro faz sua imagem parecer como se fosse uma foto como se ela estivesse impressa em filme (analógico), adicionando uma moldura preta, furinhos para puxar o filme e rótulos.</para>
+    <para>Se for necessário a imagem será cortada para caber na proporção de 3:2 usada em filmes comerciais. Se a largura for maior que a altura, a moldura preta será adicionada em cima e em baixo da imagem, senão, serão colocadas dos lados direito e esquerdo. Você pode selecionar a cor e a fonte do texto que aparecerá nos quadros. A cor de fundo atual será usada para preencher os furinhos.</para>
+    <note>
+      <para>
+        The filter only works on RGB and grayscale images without an alpha
+        channel. Otherwise, the menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Decor</guisubmenu>
+        <guimenuitem>Slide…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de <quote>Slide</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/decor/slide.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Texto</term>
+        <listitem>
+          <para>
+            A short label that will be displayed in the top (or the left)
+            of the frame. The text must be really short.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Número</term>
+        <listitem>
+          <para>Aqui você pode entrar um texto que simula números consecutivos. Dois números serão mostrados: este número, e o mesmo número seguido da letra <quote>A</quote></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fonte</term>
+        <listitem>
+          <para>Ao clicar nesse botão, se abre um <link linkend="gimp-font-dialog">diálogo de escolha de fonte</link>, onde você poderá escolher uma fonte para o texto na moldura.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Font color</term>
+        <listitem>
+          <para>Ao clicar nesse botão, se abre um diálogo de escolha de cores, onde você pode determinar a cor do texto.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Trabalhar em uma cópia</term>
+        <listitem>
+          <para>
+            If checked, the filter creates a copy of the image with
+            the filter applied. The original image remains unchanged.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

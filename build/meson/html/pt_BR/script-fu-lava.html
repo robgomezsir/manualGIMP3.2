@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.26. Lava</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="plug-in-gfig.html" title="14.25. GFig" />
+    <link rel="next" href="script-fu-line-nova.html" title="14.27. Explosão de linhas" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.26. Lava</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-gfig.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="script-fu-line-nova.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-lava"></a>14.26. Lava</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id61501" class="indexterm"></a>
+      <a id="id61505" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5077"></a>14.26.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5078"></a>
+          <p class="title">
+            <strong>Figura 17.401. Exemplo para o filtro <span class="quote">“<span class="quote">Lava</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo para o filtro “Lava”" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/render/taj-lava.jpg" alt="Exemplo para o filtro “Lava”" />
+              <div class="caption">
+                <p><span class="quote">“<span class="quote">Lava</span>”</span> aplicado (em uma seleção)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+       The lava filter generates a lava-like effect on the current layer or
+       selection.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5079"></a>14.26.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guimenuitem">Lava…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id5080"></a>14.26.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id5081"></a>
+          <p class="title">
+            <strong>Figura 17.402. Opções para <span class="quote">“<span class="quote">Lava</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/lava.png" alt="Opções para “Lava”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Semente</span>
+            </dt>
+            <dd>
+              <p>
+            The lava generator uses randomization to generate the rendered lava.
+            <span class="guilabel">Seed</span> determines the starting value. Using the
+            same seed generates the same lava pattern.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Tamanho</span>
+            </dt>
+            <dd>
+              <p>
+            This determines the size of the lava flows. Higher values create
+            straighter lines.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Aspereza</span>
+            </dt>
+            <dd>
+              <p>
+            This controls the straightness and amount of turns of the lava lines.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Degradê</span>
+            </dt>
+            <dd>
+              <p>
+            This allows you to set the
+            <a class="link" href="gimp-concepts-gradients.html" title="6. Degradês">gradient</a> to be used
+            for the lava effect.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Manter seleção</span>
+            </dt>
+            <dd>
+              <p>
+            If a selection is present, the lava filter only creates lava inside
+            the selection. This setting decides whether to keep the selection
+            after the filter has finished.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Separar camada</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled the lava is created on a new layer; when disabled the
+            lava is added to the current layer.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Use degradê atual</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled this selects the current gradient as set in the
+            <a class="link" href="gimp-tool-gradient.html" title="3.5. Degradê">Gradient tool</a>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-gfig.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-line-nova.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-gfig.html">14.25. GFig</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-line-nova.html">14.27. Explosão de linhas</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

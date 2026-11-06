@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.14. Export Image as DDS</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-cur-export.html" title="5.13. Export Image as Microsoft Windows Cursor" />
+    <link rel="next" href="file-dicom-export.html" title="5.15. Export Image as Dicom" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.14. Export Image as DDS</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-cur-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-dicom-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-dds-export"></a>5.14. Export Image as DDS</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id27327" class="indexterm"></a>
+      <a id="id27329" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3263"></a>5.14.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3264"></a>
+          <p class="title">
+            <strong>Figura 15.69. The DDS Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-dds-dialog.png" alt="The DDS Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The <a class="ulink" href="https://en.wikipedia.org/wiki/DirectDraw_Surface" target="_top">DDS</a>
+      file format is often used in games for storing textures and environment
+      maps. It supports both compressed and uncompressed textures.
+    </p>
+        <p>
+      In most cases game engines require the texture dimensions to be a power
+      of two, but width and height do not need to be the same. Common values
+      are 64, 128, 256, 512, etc.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3265"></a>5.14.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Compressão</span>
+            </dt>
+            <dd>
+              <p>
+            The type of compression to use. When set to
+            <span class="guilabel">None</span>, the non-compressed format can be
+            selected from <span class="guilabel">Format</span>.
+          </p>
+              <p>
+            Usually games only support some of the compressed and non-compressed
+            formats. Check the game documentation which modes they support.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Nenhuma</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The image data is stored uncompressed. The actual format
+                  is determined from the <span class="guilabel">Format</span> setting.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">BC1 / DXT1</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Stores 5 bits of red, 6 bits of green and 5 bits of blue
+                  per color. If there is an alpha channel, only 1 bit of
+                  alpha (either full transparent or full opaque) is stored,
+                  taking away 1 bit of green.
+                </p>
+                    <p>
+                  This format creates the smallest size files. It doesn't
+                  work well on images that have sudden changes in color,
+                  like pixel art.
+                  In general not recommended when you have an alpha channel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">BC2 / DXT3</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Stores colors the same as DXT1, except it also stores full
+                  alpha channels. This format is rarely used.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">BC3 / DXT5</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Stores colors the same as DXT1, but supports full alpha
+                  channels, which it stores pre-multiplied.
+                </p>
+                    <p>
+                  In general preferrable over DXT3 and commonly used where
+                  alpha channels are important.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">BC3nm / DXT5nm</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  A variant of DXT5 used for storing normal maps.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">BC4 / ATI1 (3Dc+)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This is used for storing one color channel only. Only the
+                  red channel in a color image will be stored. The other
+                  channels will be ignored as well as the alpha channel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">BC5 / ATI2 (3Dc)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This is used for storing two color channels. Only the red
+                  and green channels in a color image will be stored. The
+                  blue channel will be ignored as well as the alpha channel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">BC7</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format supports 8-bit RGB and RGBA textures. It provides
+                  the same level of compression as BC3, while retaining higher
+                  quality from the original uncompressed source.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RXGB (DXT5)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  A variant of DXT5. It is rarely used and requires explicit
+                  support by the game that uses it.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Alpha Exponent (DXT5)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  A variant of DXT5 that has a highly compressed alpha channel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">YCoCg (DXT5)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  A special variant of DXT5 that converts the RGB color
+                  channels to YCoCg, which allows high-quality compression
+                  of images. This requires explicit support by the game
+                  that uses it.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">YCoCg scaled (DXT5)</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Same as above, but improves pixel quality at the cost of
+                  longer processing time. This requires explicit support by the
+                  game that uses it.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Use perceptual error metric</span>
+            </dt>
+            <dd>
+              <p>
+            This setting is only enabled when compression is not
+            <span class="guilabel">None</span>.
+            Enabling this setting may enhance visual quality in certain cases.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Format</span>
+            </dt>
+            <dd>
+              <p>
+            This setting determines the color format for non-compressed
+            textures. There exist a wide range of formats, but not all of them
+            are equally well supported by games and image viewers.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Default</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Chooses the best fitting format based on the type of
+                  image.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RGB8</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores 8 bits per channel for red, green and
+                  blue.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RGBA8</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores 8 bits per channel for red, green, blue
+                  and alpha.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">BGR8</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores 8 bits per channel in reverse order for
+                  blue, green and red.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">ABGR8</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores 8 bits per channel in reverse order with
+                  the alpha channel first, then blue, green and red.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">R5G6B5</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores 5 bits of red, 6 bits of green and 5 bits
+                  of blue.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RGBA4</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores 4 bits of red, green, blue and alpha.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RGB5A1</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores 5 bits of red, green and blue, with
+                  one bit of alpha.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RGB10A2</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores 10 bits of red, green and blue, with
+                  two bits of alpha.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">R3G3B2</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores three bits of red and green and two bits
+                  of blue.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">A8</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores a single component of 8 bits. This is
+                  taken from the alpha channel.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">L8</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores a single component of 8 bits. This is
+                  taken from the red or grayscale channel. This is often used
+                  to enhance luminance.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">L8A8</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This format stores two components of 8 bits. This is
+                  taken from the red or grayscale and alpha channels.
+                  This is often used to enhance luminance.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">AEXP</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This stands for <span class="quote">“<span class="quote">Alpha Exponent</span>”</span> and uses the
+                  same algorithm as the
+                  <span class="guilabel">Alpha Exponent (DXT5)</span> compression.
+                </p>
+                    <p>
+                  This is rarely used. Check first if it is supported and
+                  required by your game engine.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">YCOCG</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This uses the same algorithm as the
+                  <span class="guilabel">YCoCg (DXT5)</span> compression.
+                </p>
+                    <p>
+                  This is rarely used. Check first if it is supported and
+                  required by your game engine.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Save type</span>
+            </dt>
+            <dd>
+              <p>
+            This determines how your image will be saved.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Selected layer</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Only the currently selected layer will be exported.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">All visible layers</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  All visible layers will be merged and then exported.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">As cube map</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Your selected layer will be exported as a cube map. A cube
+                  map is a special layout of related textures, where each
+                  layer represents one side of a cube.
+                </p>
+                    <p>
+                  A Cube Map requires six layers that are all the same size,
+                  with or without transparency. Each layer must have one of the
+                  correct identifiers at the end of the layer name.
+                </p>
+                    <p>
+                  These identifiers are <span class="quote">“<span class="quote">Front</span>”</span>, <span class="quote">“<span class="quote">Back</span>”</span>,
+                  <span class="quote">“<span class="quote">Left</span>”</span>, <span class="quote">“<span class="quote">Right</span>”</span>, <span class="quote">“<span class="quote">Top</span>”</span>,
+                  <span class="quote">“<span class="quote">Bottom</span>”</span>.
+                  For example your layers could be named: <span class="quote">“<span class="quote">woodland_front</span>”</span>,
+                  <span class="quote">“<span class="quote">woodland_back</span>”</span>, etc.
+                </p>
+                    <p>
+                  This setting is only enabled when the above conditions are
+                  met.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">As volume map</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Your selected layer will be exported as a volume map. A volume
+                  map is similar to a cube map, but the textures are not
+                  expected to be part of a cube, so no fixed number of layers
+                  are required.
+                </p>
+                    <p>
+                  A Volume Maps also requires all layers to have the same size,
+                  with or without transparency. However, you are not limited to
+                  the number of layers you want to use and no special naming of
+                  layers is required.
+                </p>
+                    <p>
+                  This setting is only enabled when the above conditions are
+                  met.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">As texture array</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Your image will be exported as a texture array. Only layers
+                  that have the same size as the image will be exported.
+                  This stores a collection of textures in one image.
+                </p>
+                    <p>
+                  This setting is only enabled when there are at least two
+                  layers.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Flip image vertically on export</span>
+            </dt>
+            <dd>
+              <p>
+            Some game engines require the image to be turned upside down.
+            Enabling this setting will do that for you.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Mipmaps </span>
+            </dt>
+            <dd>
+              <p>
+            Mipmaps are reduced size versions of the same image where each
+            mipmap is half the width and height of the previous one. Often
+            used in game engines to improve loading in scenes where the object
+            is located far away.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">No mipmaps</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  No mipmaps are added to the exported image.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Generate mipmaps</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  New mipmaps are created and added to the exported image.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Use existing mipmaps</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Already available mipmaps in your image will be reused and
+                  added to the exported image. This will only be enabled if
+                  the correct number of mipmaps using the expected sizes are
+                  available.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Set transparent color</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, this uses the below specified indexed color for
+            setting transparency in the exported image. This setting is only
+            enabled when your image is in indexed mode.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Transparent index</span>
+            </dt>
+            <dd>
+              <p>
+            When the previous setting is checked and enabled, this lets you
+            specify which palette index should be used for transparency in
+            the exported image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Mipmap Options</span>
+            </dt>
+            <dd>
+              <p>
+            The following options are only enabled when you are adding mipmaps
+            to your image.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Filter</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This setting determines which filter will be used for
+                  interpolation when downsizing your image to create a mipmap.
+                </p>
+                    <div class="variablelist">
+                      <dl class="variablelist">
+                        <dt>
+                          <span class="term">Default</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        No filtering is applied to create the mipmap. This can
+                        cause visual anomalies such as excessively sharp edges
+                        and stair-stepping artifacts.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Nearest</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This is a bilinear filter, may enable better
+                        switching between mipmaps.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Box</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This is a polyphase box filter. Outside of the
+                        <span class="guilabel">Lanczos</span> and
+                        <span class="guilabel">Kaiser</span> filters, it’s a good choice
+                        for most cases and also much faster than other filters.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Triângulo</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This uses a triangle filter. The kernel has a larger
+                        width and thus produces blurrier results than the
+                        <span class="guilabel">Box</span> filter.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Quadratic</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This is a gaussian type filter.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">B-Spline</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This is a trilinear filter.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Mitchell</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This filter is used primarily to reduce loss of detail
+                        while upsampling.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Catmull-Rom</span>
+                        </dt>
+                        <dd>
+                          <p>
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Lanczos</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This is similar to the <span class="guilabel">Kaiser</span>
+                        filter. The results are usually indistinguishable
+                        between the two. Lanczos may handle ringing and
+                        artifacts better.
+                        This filter can be further tweaked using the
+                        <span class="guilabel">Wrap mode</span> setting.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Kaiser</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This filter is generally considered the best choice for
+                        downsampling, but in order to obtain best results it is
+                        advisable to experiment with the
+                        <span class="guilabel">Wrap mode</span> setting. Otherwise the
+                        resulting images could suffer from fringing artifacts
+                        or the result may not be as sharp as desired.
+                      </p>
+                        </dd>
+                      </dl>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Wrap mode</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When evaluating the color of texels that are near the border,
+                  most of the filters usually sample outside of the texture.
+                  This setting determines how these samples are handled.
+                </p>
+                    <div class="variablelist">
+                      <dl class="variablelist">
+                        <dt>
+                          <span class="term">Default</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This generally looks good enough. Often better results
+                        can be achieved by explicitly specifying one of the next
+                        modes.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Espelho</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        Mirroring is used for many other image processing
+                        operations, like normal map generation, and is
+                        generally considered the best option. It takes the
+                        data from the other side of the image.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Repeat</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This takes the data outside the edges from the value
+                        just inside it.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Clamp</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This clamps the data outside the edges to the values
+                        at the edges.
+                      </p>
+                        </dd>
+                      </dl>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Apply gamma correction</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When checked, uses gamma correction for mipmap filtering.
+                  This adjusts the reflectiveness of an object while also
+                  making the entire image lighter or darker, depending
+                  on the value used below.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Use sRGB colorspace for gamma correction</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When checked, uses the sRGB color space for gamma correction
+                  of mipmaps.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Gamma</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  You can set the desired <span class="guilabel">Gamma</span> value to
+                  be used for gamma correction here.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Preserve alpha test coverage</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When checked, this preserves alpha test coverage for alpha
+                  channel maps, based on a threshold set below.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Alpha test threshold</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The threshold value to be used for preserving test coverage
+                  of alpha channels.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-cur-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-dicom-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-cur-export.html">5.13. Export Image as Microsoft Windows Cursor</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-dicom-export.html">5.15. Export Image as Dicom</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-11-17 j.h Fix TODO
+  2017-10-12 j.h : some updates
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-gaussian-blur">
+  <title>Desfoque Gaussiano</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Desfocar</secondary>
+    <tertiary>Desfoque Gaussiano</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Desfoque Gaussiano</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Desfoque Gaussiano</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/blur-taj-gauss.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      The Gaussian Blur filter acts on each pixel of the active layer or
+      selection, setting its Value to the average of all pixel Values present
+      in a radius defined in the dialog. A higher Value will produce a higher
+      amount of blur. The blur can be set to act in one direction more than
+      the other by clicking the Chain Button so that it is broken, and
+      altering the radius. GIMP supports two implementations of Gaussian Blur:
+      FIR and IIR. They both produce the same results, but each one can be
+      faster in some cases. They are complemented by the default Auto setting,
+      that automatically picks the optimal choice.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Blur</guisubmenu>
+        <guimenuitem>Gaussian Blur…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Configurações dos parâmetros do filtro <quote>Desfoque Gaussiano</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/blur/gauss-options.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Tamanho X</term>
+        <term>Tamanho Y</term>
+        <listitem>
+          <para>Aqui, você pode definir a intensidade do desfoque. Ao alterar a proporção entre os desfoques horizontal e vertical, você pode criar o efeito de um desfoque de movimento.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Filtro</term>
+        <listitem>
+          <para>
+            Here you can select the filter type.
+          </para>
+
+          <variablelist>
+            <varlistentry>
+              <term>Auto</term>
+              <listitem>
+                <para>
+                  Try to select the best filter automatically. In most cases
+                  this default is best left alone.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>FIR</term>
+              <listitem>
+                <para>Stands for <quote>Finite Impulse Response</quote>.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>IIR</term>
+              <listitem>
+                <para>Stands for <quote>Infinite Impulse Response</quote>.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Política do Abismo</term>
+        <listitem>
+          <para>Política do Abismo (gerenciamento de bordas) é tratada com <xref linkend="abyss-policy"/>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Cortar para a extensão da entrada</term>
+        <listitem>
+          <para>Se a extensão da saída deve ser cortada para os limites da entrada: esta opção remove pixels indesejados criados nas bordas pelo desfoque.</para>
+          <figure>
+            <title>Exemplo</title>
+            <mediaobject>
+              <imageobject>
+              <imagedata format="PNG" fileref="images/filters/blur/clip-orig.png"/>
+              </imageobject>
+              <caption>
+                <para>Canto superior direito da imagem, ampliação x800</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+              <imagedata format="PNG" fileref="images/filters/blur/clip-0.png"/>
+              </imageobject>
+              <caption>
+                <para><quote>Cortar para a extensão da entrada</quote> desmarcado</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+              <imagedata format="PNG" fileref="images/filters/blur/clip-1.png"/>
+              </imageobject>
+              <caption>
+                <para><quote>Cortar para a extensão da entrada</quote> marcado</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>O filtro de Desfoque Gaussiano não preserva bordas na imagem: <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/blur/median-vs-gaussian.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            Left: Original image
+          </para>
+          <para>
+            Middle: <link linkend="gimp-filter-median-blur">Median Blur</link> filter applied
+          </para>
+          <para>
+            Right: <link linkend="gimp-filter-gaussian-blur">Gaussian Blur</link> filter applied
+          </para>
+        </caption>
+      </mediaobject></para>
+  </sect3>
+</sect2>

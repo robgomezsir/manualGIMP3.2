@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--Version history
+  2017-02-19 j.h : update
+-->
+<sect2 id="gimp-prefs-input-devices">
+  <title>Dispositivos de entrada</title>
+  <indexterm>
+    <primary>Preferências</primary>
+    <secondary>Dispositivos de entrada</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Dispositivos de entrada</primary>
+  </indexterm>
+
+  <figure>
+    <title>Input Devices Preferences</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/preferences/input-devices.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>
+      The preferences dialog can be accessed from the main menu, through
+      <menuchoice>
+       <guimenu>Edit</guimenu>
+       <guimenuitem>Preferences</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <variablelist>
+      <title>Pointers and Paint Tools</title>
+      <indexterm>
+        <primary>Mouse pointers</primary>
+      </indexterm>
+      <varlistentry>
+        <term>Pointer mode</term>
+        <listitem>
+          <para>
+            This option has no effect unless <guilabel>Show pointer for paint
+            tools</guilabel> is checked.  If it is, you have three choices:
+            <guilabel>Tool icon</guilabel>, which causes a small iconic
+            representation of the currently active tool to be shown beside
+            the cursor; <guilabel>Tool icon with crosshair</guilabel>, which
+            shows the icon as well as a crosshair indicating the center of
+            the cursor; or <guilabel>Crosshair only</guilabel>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mão do ponteiro</term>
+        <listitem>
+          <para>Esta opção decide a direção do ponteiro. O padrão é <guilabel>Destro</guilabel>. Quando <guilabel>Canhoto</guilabel> é escolhido, o ponteiro é espelhado horizontalmente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mostrar contorno do pincel</term>
+        <listitem>
+          <para>Se esta opção estiver marcada, então, quando você usar uma ferramenta de pintura, o contorno do pincel será mostrado na imagem ao mover o mouse. Em sistemas lentos, se o pincel for muito grande, isso pode, ocasionalmente, causar algum atraso na capacidade do GIMP de seguir seus movimentos: neste caso, desmarcar a opção pode ajudar. Caso contrário, você provavelmente vai achar que é bastante útil. Note que devido a pincéis animados e dinâmicas de pintura, a forma final do pincel só é definida quando se pinta na imagem de fato, então o contorno mostrado nem sempre corresponde ao que vai aparecer.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Snap brush outline to stroke</term>
+        <listitem>
+          <para>
+            This requires <guilabel>Show brush outline</guilabel> to be enabled.
+            When this setting is also enabled, the brush outline will snap to
+            individual dabs when painting. The dabs are where the brush paints
+            on the canvas.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Show pointer for paint tools</term>
+        <listitem>
+          <para>Se esta opção estiver marcada, um cursor será mostrado na tela, independente do contorno do pincel, se o contorno do pincel estiver sendo mostrado. O tipo de cursor é determinado pela próxima opção.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <title>Dispositivos de entrada estendidos</title>
+      <varlistentry>
+        <term>Pointer Input API</term>
+        <listitem>
+          <para>
+            <emphasis role="bold">This setting is only present on Windows.</emphasis>
+            On Windows, when you use a touch screen, or a pen to draw on a tablet,
+            there are two ways for GIMP to interact with it. This setting lets
+            you choose which one to use.
+          </para>
+          <para>
+            In general for newer drawing devices, <guilabel>Windows Ink</guilabel>
+            is the preferred way. If that doesn't work for you, try the older
+            <guilabel>Wintab</guilabel> API.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Compartilhar ferramenta e opções de ferramenta entre dispositivos de entrada</term>
+        <listitem>
+          <para>Quando habilitado, a mesma ferramenta e opções de ferramenta serão usadas para todos os dispositivos de entrada. Nenhuma troca de ferramenta ocorrerá quando o dispositivo de entrada mudar.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Configurações dos dispositivos de entrada estendidos</term>
+        <listitem>
+          <anchor id="gimp-help-input-devices"/>
+          <para>
+            This button opens a dialog that allows you to configure the input
+            devices associated with your computer: tablet, MIDI keyboard, etc.
+            If you have a tablet, you will see a dialog like this:
+          </para>
+          <figure>
+            <title>Preferências para um tablet</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/preferences/input-devices-tablet.png" format="PNG"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          <para>
+            For each of the input devices you can set its
+            <guilabel>Mode</guilabel>. This decides how <acronym>GIMP</acronym>
+            translates the input from the device to your screen.
+            For a mouse this is usually set to <guilabel>disabled</guilabel> and
+            for other devices to <guilabel>Screen</guilabel>.
+          </para>
+          <para>
+            The only other choice for mode is <guilabel>Window</guilabel>.
+            Currently there don't seem to be any differences with
+            <guilabel>Screen</guilabel>.
+            Unless you know what you are doing, this is better left alone.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Salvar configurações de dispositivo de entrada ao sair</term>
+        <listitem>
+          <para>Quando você marcar essa caixa, o GIMP lembra a ferramenta, cor, textura e pincel que você estava usando a última vez que você saiu.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Salvar configurações de dispositivos de entrada agora</term>
+        <listitem>
+          <para>This immediately saves the current input device settings.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Restaurar as configurações de dispositivos de entrada para valores padrão</term>
+        <listitem>
+          <para>Apagar as configurações e restaurar as configurações padrão.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

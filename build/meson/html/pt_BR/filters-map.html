@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>13. Filtros de mapeamento</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters.html" title="Capítulo 17. Filtros" />
+    <link rel="prev" href="script-fu-sota-chrome-it.html" title="12.11. Estêncil de cromagem" />
+    <link rel="next" href="gimp-filter-bump-map.html" title="13.2. Mapa de relevo" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>13. Filtros de mapeamento</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-sota-chrome-it.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 17. Filtros</span>
+        <nav> <a accesskey="n" href="gimp-filter-bump-map.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="filters-map"></a>13. Filtros de mapeamento</h2>
+          </div>
+        </div>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="filters-map-introduction"></a>13.1. Introdução</h3>
+            </div>
+          </div>
+        </div>
+        <a id="id57431" class="indexterm"></a>
+        <p>
+    Map filters use an object named <span class="emphasis"><em>map</em></span> to modify an
+    image: you map the image to the object. So, you can create 3D effects
+    by mapping your image to another previously embossed image
+    (<span class="quote">“<span class="quote">Bumpmap</span>”</span> Filter) or to a sphere (<span class="quote">“<span class="quote">Map Object</span>”</span>
+    filter). You can also map a part of the image elsewhere into the same
+    image (<span class="quote">“<span class="quote">Illusion</span>”</span> and <span class="quote">“<span class="quote">Tile Seamless</span>”</span> filters),
+    bend a text along a curve (<span class="quote">“<span class="quote">Displace</span>”</span> filter), etc.
+  </p>
+        <p>
+    This category describes the following filters:
+  </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-bump-map.html" title="13.2. Mapa de relevo">Seção 13.2, “Mapa de relevo”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-displace.html" title="13.3. Deslocar">Seção 13.3, “Deslocar”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-fractal-trace.html" title="13.4. Traçar com fractal">Seção 13.4, “Traçar com fractal”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-illusion.html" title="13.5. Ilusão">Seção 13.5, “Ilusão”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-little-planet.html" title="13.6. Little Planet">Seção 13.6, “Little Planet”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-panorama-projection.html" title="13.7. Panorama Projection">Seção 13.7, “Panorama Projection”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-recursive-transform.html" title="13.8. Recursive Transform">Seção 13.8, “Recursive Transform”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-tile-paper.html" title="13.9. Mosaico de papel">Seção 13.9, “Mosaico de papel”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="gimp-filter-tile-seamless.html" title="13.10. Tile Seamless">Seção 13.10, “Tile Seamless”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-map-object.html" title="13.11. Mapear objeto">Seção 13.11, “Mapear objeto”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-small-tiles.html" title="13.12. Mosaico pequeno">Seção 13.12, “Mosaico pequeno”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-tile.html" title="13.13. Mosaico">Seção 13.13, “Mosaico”</a>
+              </p>
+            </li>
+            <li class="listitem">
+              <p>
+                <a class="xref" href="plug-in-warp.html" title="13.14. Deformar">Seção 13.14, “Deformar”</a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-sota-chrome-it.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-bump-map.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-sota-chrome-it.html">12.11. Estêncil de cromagem</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-bump-map.html">13.2. Mapa de relevo</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

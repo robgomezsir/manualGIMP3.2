@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>14.10. Nuvens de diferença</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-render.html" title="14. Filtros de renderização" />
+    <link rel="prev" href="gimp-filter-noise-solid.html" title="14.9. Ruído sólido" />
+    <link rel="next" href="gimp-filter-bayer-matrix.html" title="14.11. Bayer Matrix" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>14.10. Nuvens de diferença</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-noise-solid.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>14. Filtros de renderização</span>
+        <nav> <a accesskey="n" href="gimp-filter-bayer-matrix.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-difference-clouds"></a>14.10. Nuvens de diferença</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id60034" class="indexterm"></a>
+      <a id="id60038" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4990"></a>14.10.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4991"></a>
+          <p class="title">
+            <strong>Figura 17.362. Exemplo de Nuvens de diferença</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo de Nuvens de diferença" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/render-taj-diffcloud.jpg" alt="Exemplo de Nuvens de diferença" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      <span class="guimenuitem">Difference Clouds</span> command changes colors
+      partially in cloud-like areas: The filter renders
+      <a class="link" href="gimp-filter-noise-solid.html" title="14.9. Ruído sólido">Solid Noise</a> cloud in an
+      automatically created new layer, and sets the layer mode to
+      <a class="link" href="layer-mode-group-inversion.html#layer-mode-difference">Difference</a>,
+      then merges this layer over the specified image.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4992"></a>14.10.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Render</span> → <span class="guisubmenu">Noise</span> → <span class="guimenuitem">Difference Clouds</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4993"></a>14.10.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4994"></a>
+          <p class="title">
+            <strong>Figura 17.363. <span class="quote">“<span class="quote">Difference Clouds</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/render/difference-clouds-dialog.png" alt="“Difference Clouds” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Semente aleatória</span>
+            </dt>
+            <dd>
+              <p>
+            This option controls the randomness of the filter.
+            The <span class="guilabel">Random seed</span> box lets you manually enter
+            a seed for the randomization algorithm used. A different random
+            seed produces different results.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Levels</span>
+            </dt>
+            <dd>
+              <p>
+            This controls the level of detail in the noise
+            texture. Higher values give a higher level of detail, and
+            the noise seems to be made of spray or small particles,
+            which makes it feel hard. A low value makes it more soft
+            and cloudy.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Ladrilhável</span>
+            </dt>
+            <dd>
+              <p>
+            If you check <span class="guilabel">Tileable</span>, you'll get a noise that
+            can be tiled seamlessly in a grid. The left edge will align
+            seamlessly with the right edge, and the top edge will align
+            seamlessly with the bottom edge. Only the generated noise is
+            tileable. The underlying image is not modified to be tileable.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Turbulento</span>
+            </dt>
+            <dd>
+              <p>Se você marcar esta opção, você vai ter efeitos muito interessantes, muitas vezes algo que se parece muito com o óleo sobre a água, ou nuvens de fumaça, ou tecido vivo, ou uma mancha de Rorschach.</p>
+            </dd>
+            <dt>
+              <span class="term">X, </span>
+              <span class="term">Y</span>
+            </dt>
+            <dd>
+              <p>Estas controlam o tamanho e proporção das formas de ruído nas direções X (horizontal) e Y (vertical) (intervalo de 0,1 a 16,0).</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-noise-solid.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-render.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-bayer-matrix.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-noise-solid.html">14.9. Ruído sólido</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-bayer-matrix.html">14.11. Bayer Matrix</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

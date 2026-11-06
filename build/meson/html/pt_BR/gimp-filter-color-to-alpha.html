@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.57. Cor para Alfa…</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. O menu “Cores”" />
+    <link rel="prev" href="gimp-filter-posterize.html" title="8.56. Posterizar" />
+    <link rel="next" href="gimp-filter-dither.html" title="8.58. Reticular" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.57. Cor para Alfa…</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-posterize.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. O menu <span class="quote">“<span class="quote">Cores</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-filter-dither.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-color-to-alpha"></a>8.57. Cor para Alfa…</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id46004" class="indexterm"></a>
+      <a id="id46007" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4154"></a>8.57.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>O comando Cor para Alfa deixa transparentes todos os pixels da camada ativa que possuem a cor selecionada. Ele tenta preservar a informação de antisserrilhamento usando um algoritmo parcialmente inteligente que substitui informação de cor fraca com informação de alfa fraca. Dessa forma, áreas que contêm um elemento da cor selecionada mantêm uma aparência misturada aos pixels do entorno.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4155"></a>8.57.2. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guimenuitem">Color to Alpha…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4156"></a>8.57.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4157"></a>
+          <p class="title">
+            <strong>Figura 16.226. Diálogo do filtro <span class="quote">“<span class="quote">Cor para Alfa</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/colortoalpha.png" alt="Diálogo do filtro “Cor para Alfa”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Predefinições, </span>
+              <span class="term">Opções de Mistura, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-colors-menu.html#colors-common-features" title="8.1.2. Funcionalidades Comuns de Cores">Seção 8.1.2, “Funcionalidades Comuns de Cores”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Cor</span>
+            </dt>
+            <dd>
+              <p>Clicar na amostra de cor providencia um diálogo de seleção de cor para que você escolha uma. Você também pode selecionar uma cor usando o conta-gotas à direita.</p>
+              <p>
+            <span class="quote">“<span class="quote">Color to alpha</span>”</span> comes with a GEGL option dialog
+            under Toolbox. When the <span class="guilabel">Sample average</span> option
+            is unchecked, color picker picks only one pixel color. When the
+            option is checked, mouse pointer goes with a square limiting a
+            pixel sample that determines a merged sample <span class="quote">“<span class="quote">color</span>”</span>.
+            You can fix the square size directly in the slider, or using the
+            <span class="guilabel">+</span> and <span class="guilabel">-</span> buttons, or the
+            <span class="keycap"><strong>Up</strong></span> and <span class="keycap"><strong>Down</strong></span> keyboard keys.
+          </p>
+              <p>Clicar com o botão direito na amostra de cor exibe um menu onde você pode selecionar as cores Frente e Fundo, Branco ou Preto.</p>
+            </dd>
+            <dt>
+              <span class="term">Transparency threshold, </span>
+              <span class="term">Opacity threshold</span>
+            </dt>
+            <dd>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Transparência</span>: o limite abaixo do qual cores se tornam transparentes.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Opacidade</span>: o limite acima do qual as cores se tornam opacas.</p>
+                  </li>
+                </ul>
+              </div>
+              <p>Cor para Alfa modifica a transparência (e cor) dos pixels baseado na sua distância da cor de fundo selecionada (a opção <span class="quote">“<span class="quote">Cor</span>”</span>) — quanto mais próximos estiverem da cor de fundo, mais transparentes ficarão, com a cor de fundo se tornando totalmente transparente.</p>
+              <p>Os limiares de transparência e opacidade controlam o quão próximas as cores devem estar da cor de fundo antes de se tornarem totalmente transparentes, e quão distantes elas devem estar da cor de fundo antes de permanecerem totalmente opacas, respectivamente. Com os valores padrão de 0 e 1, apenas a cor de fundo se torna totalmente transparente, e somente as cores mais distantes dela permanecem totalmente opacas.</p>
+              <p>Por exemplo, enquanto os valores padrão funcionam bem para remover um fundo branco de um objeto preto, se o objeto em vez disso for cinza [fig. 1], ele se tornará semi-transparente [fig. 2], uma vez que cinza é o meio-termo entre branco e preto. Baixar o limiar de opacidade para 0,5 corrige isso, mantendo todos os pixels que forem cinza ou mais escuros (todos os pixels cuja distância do branco for de 0,5 ou mais, numa escala [0,1]) totalmente opacos [fig. 3].</p>
+              <p>O limiar de transparência funciona de forma similar: aumentá-lo faz com que mais cores na vizinhança da cor de fundo se tornem totalmente transparentes. Isto é mais útil em imagens com muito ruído, nas quais o plano de fundo não é totalmente sólido. No entanto, diferentemente de outros casos, quando o limiar de transparência é maior que zero, recompor o resultado contra a cor de fundo não reproduzirá mais exatamente a mesma imagem.</p>
+              <p>Correndo o risco de ser um pouco técnico, isto pode ser visualizado pensando-se no cubo RGB. A cor de fundo é um ponto dentro do cubo, e os limiares de transparência e opacidade são dois sub-cubos centrados ao redor da cor de fundo. Tudo dentro do cubo do limiar de tranparência se torna totalmente transparente, tudo fora do cubo do limiar de opacidade permanece totalmente opaco, e tudo entre eles gradualmente transita de transparente para opaco. Na imagem [fig. 4] você pode ver a face Vermelho-Verde do cubo RGB. (1) é a cor de fundo (Vermelho = 0,5, Verde = 0,5, Azul = 0,0),(2) é o limiar de transparência (definido como 0,1) e (3) é o limiar de opacidade (definido como 0,4).</p>
+              <div class="figure">
+                <a id="id4158"></a>
+                <p class="title">
+                  <strong>Figura 16.227. Exemplos de Limiares de Cor para Alfa</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex1.png" alt="Exemplos de Limiares de Cor para Alfa" />
+                    <div class="caption">
+                      <p>fig. 1</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex2.png" alt="Exemplos de Limiares de Cor para Alfa" />
+                    <div class="caption">
+                      <p>fig. 2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id4159"></a>
+                <p class="title">
+                  <strong>Figura 16.228. Exemplos de Limiares de Cor para Alfa</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex3.png" alt="Exemplos de Limiares de Cor para Alfa" />
+                    <div class="caption">
+                      <p>fig. 3</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex4.png" alt="Exemplos de Limiares de Cor para Alfa" />
+                    <div class="caption">
+                      <p>fig. 4</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4160"></a>8.57.4. Usando Cor para Alfa</h4>
+            </div>
+          </div>
+        </div>
+        <div class="orderedlist">
+          <ol class="orderedlist" type="1">
+            <li class="listitem">
+              <p>Adicione um canal alfa à sua imagem se necessário pelo menu da janela de imagem em <span class="guimenu">Camada</span> → <span class="guisubmenu">Transparência</span> → <span class="guimenuitem">Adicionar Canal Alfa</span>.</p>
+            </li>
+            <li class="listitem">
+              <p>Abra Cor para alfa.</p>
+              <div class="figure">
+                <a id="id4161"></a>
+                <p class="title">
+                  <strong>Figura 16.229. Cor para alfa aberto com a opções padrão</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex5.png" alt="Cor para alfa aberto com a opções padrão" />
+                    <div class="caption">
+                      <p>Imagem original com canal alfa</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex6.png" alt="Cor para alfa aberto com a opções padrão" />
+                    <div class="caption">
+                      <p>Imagem original com um canal alfa. Cor para alfa com opções padrão: <span class="quote">“<span class="quote">Cor</span>”</span> é branco. Limiar de opacidade = 1,00 é o máximo, e então apenas as cores mais longes da <span class="quote">“<span class="quote">Cor</span>”</span> permanecem totalmente opacas. Limiar de transparência = 0 e então a <span class="quote">“<span class="quote">Cor</span>”</span> é totalmente transparente.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="listitem">
+              <p>Desmarque a opção Pré-visualização.</p>
+            </li>
+            <li class="listitem">
+              <p>Escolha a cor, aqui o céu.</p>
+            </li>
+            <li class="listitem">
+              <p>Remarque a opção Pré-visualização.</p>
+              <div class="mediaobject">
+                <img src="images/menus/colors/ColorToAlpha-ex7.png" />
+                <div class="caption">
+                  <p>
+              <span class="quote">“<span class="quote">Color</span>”</span> from the sky. Default thresholds.
+            </p>
+                </div>
+              </div>
+            </li>
+            <li class="listitem">
+              <p>Adapte os limiares Transparência e Opacidade por meio de tentativa e erro.</p>
+              <div class="mediaobject">
+                <img src="images/menus/colors/ColorToAlpha-ex8-example.png" />
+                <div class="caption">
+                  <p>
+              Only the sky is transparent.
+            </p>
+                </div>
+              </div>
+              <div class="mediaobject">
+                <img src="images/menus/colors/ColorToAlpha-ex8-dialog.png" />
+                <div class="caption">
+                  <p>
+              Opacity threshold was decreased to make
+              farthest colors (monument, trees and road) fully opaque.
+              Transparency threshold was increased to make <span class="quote">“<span class="quote">Color</span>”</span>
+              fully transparent and delete some imperfections in the sky.
+            </p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-posterize.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-dither.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-posterize.html">8.56. Posterizar</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-dither.html">8.58. Reticular</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

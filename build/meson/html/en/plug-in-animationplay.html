@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>16.5. Playback</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-animation.html" title="16. Animation Filters" />
+    <link rel="prev" href="plug-in-optimize.html" title="16.4. Optimize" />
+    <link rel="next" href="script-fu-ripply-anim.html" title="16.6. Rippling" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>16.5. Playback</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-optimize.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>16. Animation Filters</span>
+        <nav> <a accesskey="n" href="script-fu-ripply-anim.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-animationplay"></a>16.5. Playback</h3>
+          </div>
+        </div>
+      </div>
+      <a id="plug-in-playback"></a>
+      <a id="id61324" class="indexterm"></a>
+      <a id="id61328" class="indexterm"></a>
+      <a id="id61331" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3899"></a>16.5.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This plug-in lets you play an animation from a multi-layers image.
+      <acronym class="acronym">GIMP</acronym> supports several formats that allow you to
+      export an <a class="link" href="export-file-formats.html#gimp-exporting-animations" title="5.5.1. Exporting Animations">animation</a>, e.g.
+      <a class="link" href="file-webp-export.html" title="5.54. Export Image as WebP">webp</a>,
+      <a class="link" href="file-gif-export.html" title="5.22. Export Image as GIF">gif</a> and
+      <a class="link" href="file-mng-export.html" title="5.34. Export Image as MNG">mng</a>.
+      In addition to that, GIMP supports loading (but at this time not
+      exporting) apng images.
+      Regular multi-layer formats like GIMP's own XCF as well as PSD, TIFF and
+      PSP also allow you to use multiple layers that can be interpreted by this
+      animation player as an animation.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3900"></a>16.5.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Animation</span> → <span class="guimenuitem">Playback…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3901"></a>16.5.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3902"></a>
+          <p class="title">
+            <strong>Figure 17.441. <span class="quote">“<span class="quote">Playback</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/animation/playback.png" alt="“Playback” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>This dialog has:</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Preview</span>
+            </dt>
+            <dd>
+              <p>
+            The center of the Playback dialog is taken up by a preview of the
+            animation that automatically fits to the frame size.
+            The number of the displayed frame as well as the total number of
+            frames is shown below the preview next to the player controls.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Drop-down lists at the top</span>
+            </dt>
+            <dd>
+              <p>
+            The following drop-down lists and controls are available above
+            the preview:
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Combine/Replace layers</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This can be <span class="guibutton">Cumulative layers
+                  (combine)</span> to show all frames so far on top of
+                  each other, or <span class="guibutton">One frame per layer
+                  (replace)</span> to show only the last frame.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Default framerate</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This allows you to set the number of frames per second used
+                  when playing the animation.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Playback speed</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This allows you to set the speed of the animation.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Zoom</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This allows you to set the zoom level of the animation.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Player Controls at the top right</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/view-refresh.svg" width="16" /></span>
+                </span>
+                Reload the image
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This loads the animation again, useful if changes have
+                  been made.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-detach-symbolic.svg" width="16" /></span>
+                </span>
+                Detach the animation from the dialog window
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This detaches the animation from the window.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/help-browser-symbolic.svg" width="16" /></span>
+                </span>
+                Help
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Show this documentation for Animation Playback.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Player Controls at the bottom</span>
+            </dt>
+            <dd>
+              <p>The following controls are available below the preview:</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/media-playback-start-symbolic.svg" width="16" /></span>
+                </span>
+                Start playback/Stop playback
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This plays or stops the animation.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/media-skip-backward-symbolic.svg" width="16" /></span>
+                </span>
+                Step back to previous frame
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This plays the animation backwards step by step.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/media-skip-forward-symbolic.svg" width="16" /></span>
+                </span>
+                Step to next frame
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This plays the animation step by step.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/media-seek-backward-symbolic.svg" width="16" /></span>
+                </span>
+                Rewind the animation
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This rewinds the animation to the beginning.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-optimize.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-animation.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-ripply-anim.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-optimize.html">16.4. Optimize</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-ripply-anim.html">16.6. Rippling</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

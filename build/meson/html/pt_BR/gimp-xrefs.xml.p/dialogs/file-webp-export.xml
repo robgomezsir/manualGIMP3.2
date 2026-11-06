@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="file-webp-export">
+  <title>Diálogo de exportar imagem</title>
+
+  <indexterm>
+    <primary>Diálogo de exportar imagem</primary>
+  </indexterm>
+  <indexterm>
+    <primary>WebP</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Formatos</primary>
+    <secondary>WebP</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>O diálogo de Exportar imagem</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/export-webp-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <variablelist>
+      <varlistentry>
+        <term>Tipo de origem</term>
+        <listitem>
+          <para>Isso seleciona o tipo de imagem que você está tentando exportar. Presumivelmente isso ajudará a decidir a melhor maneira de comprimir a imagem.</para>
+          <para>As opções são: <guilabel>Padrão</guilabel>, <guilabel>Imagem</guilabel> para fotos digitais, como retratos ou fotos internas, <guilabel>Foto</guilabel> para fotografia ao ar livre com iluminação natural, <guilabel>Desenho</guilabel> para desenho à mão ou linha, com detalhes de alto contraste, <guilabel>Ícone</guilabel> para imagens coloridas de tamanho pequeno, e <guilabel>Texto</guilabel> para imagens que contêm principalmente texto.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Sem perda</term>
+        <listitem>
+          <para>Quando marcado, a imagem será salva de forma a manter a qualidade original. Isso desabilita as configurações <guilabel>Qualidade da imagem</guilabel> e <guilabel>Qualidade do alfa</guilabel>. Quando desmarcado, a imagem será salva com base nas configurações de qualidade abaixo, o que pode causar alguma perda de qualidade, mas em uma melhor taxa de compressão. Este é o padrão.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Image quality</term>
+        <term>Alpha quality</term>
+        <listitem>
+          <para>Estas configurações determinam em que qualidade a imagem será salva. Uma qualidade de imagem mais alta geralmente significa um tamanho de arquivo maior. Quando o tamanho do arquivo é importante, você pode verificar se uma qualidade menor ainda é suficiente para seus propósitos.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Use Sharp YUV</term>
+        <listitem>
+          <para>
+            When checked, a sharper and more accurate RGB to YUV conversion
+            method is used to export the image. This can better preserve fine
+            details like thin lines in the final image. Setting this option
+            can increase the export time for an image, and it is only
+            available when <guilabel>Lossless</guilabel> is not checked.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Save animation</term>
+        <listitem>
+          <para>
+            When enabled, an animation will be created, where each layer is a
+            separate frame in the animation.
+          </para>
+          <para>
+            When working on an animation, the name of the layer can be used
+            to specify certain parameters. For more details see
+            <link linkend="gimp-exporting-animations">exporting animations</link>.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <xi:include href="common-metadata-settings.xml" xpointer="xpointer(//variablelist/*)"/>
+
+      </variablelist>
+  </sect3>
+</sect2>

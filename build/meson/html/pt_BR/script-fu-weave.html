@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>11.14. Traçar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-artistic.html" title="11. Filtros artísticos" />
+    <link rel="prev" href="plug-in-lic.html" title="11.13. Van Gogh (LIC)" />
+    <link rel="next" href="filters-decor.html" title="12. Filtros de decoração" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>11.14. Traçar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-lic.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>11. Filtros artísticos</span>
+        <nav> <a accesskey="n" href="filters-decor.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-weave"></a>11.14. Traçar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id56438" class="indexterm"></a>
+      <a id="id56442" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4765"></a>11.14.1. Visão-geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4766"></a>
+          <p class="title">
+            <strong>Figura 17.256. Exemplo de traçar</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo de traçar" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/artistic-taj-weave.jpg" alt="Exemplo de traçar" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>O comando <span class="guimenuitem">traçar</span> é um script de Script-Fu que cria uma nova camada preenchida com um efeito de traçado e adiciona essa camada à imagem através de uma sobreposição ou mapa de relevo. O resultado da imagem irá parecer como se tivesse sido impresso em fitas traçadas de papel, fitas de madeira, ou bambu cortado.</p>
+        <p>Esse filtro adiciona uma camada no modo <span class="quote">“<span class="quote">multiplicar</span>”</span> acima da camada na qual você ativou o comando. A textura de traçado é criada em tons de cinza.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4767"></a>11.14.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Artistic</span> → <span class="guimenuitem">Weave…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4768"></a>11.14.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4769"></a>
+          <p class="title">
+            <strong>Figura 17.257. Opções do filtro <span class="quote">“<span class="quote">traçar</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/artistic/weave.png" alt="Opções do filtro “traçar”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Para produzir uma textura de faixa grossa, aumente o espaçamento das faixas e/ou diminua a largura das faixas.</p>
+        <p>Para fitas muito tensionadas, diminua a profundidade da sombra.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Largura das faixas</span>
+            </dt>
+            <dd>
+              <p>Com essa opção você pode definir a largura da fita em pixel com valores entre 0,0 e 256,0. Por padrão estão definidos 30,0 pixels.</p>
+            </dd>
+            <dt>
+              <span class="term">Espaçamento das faixas</span>
+            </dt>
+            <dd>
+              <p>Com essa opção você pode definir a distancia à faixa vizinha ou o tamanho do quadrado preto em valores de pixel entre 0,0 e 256,0. Por padrão estão definidos 10 pixels.</p>
+            </dd>
+            <dt>
+              <span class="term">Escuridão da sombra</span>
+            </dt>
+            <dd>
+              <p>Com essa opção você pode definir a escuridão das faixas finas através de uma porcentagem. Valores menores mostram faixas mais claras. O valor padrão definido é 75,0%.</p>
+            </dd>
+            <dt>
+              <span class="term">Profundidade da sombra</span>
+            </dt>
+            <dd>
+              <p>Com essa opção você pode definir o nível de escuridão da sombra nas sobreposições em valores de porcentagem. Valores mais altos mostram fitas mais onduladas, enquanto que valores menores mostram uma superfície mais planas. O efeito, de fato, é limitado pela <span class="guilabel">escuridão da sombra</span>. O valor padrão é de 75%.</p>
+            </dd>
+            <dt>
+              <span class="term">Comprimento dos fios</span>
+            </dt>
+            <dd>
+              <p>Com essa opção você pode definir a regularidade da textura de faixa. Se esse valor é menor que o valor de largura de faixas e o dobro do valor de espaçamento de faixas, então a superfície das faixas tornam-se picotadas. O valor é definido em pixel em uma quantidade entre 0,0 a 256,0. O valor padrão é de 200,0.</p>
+            </dd>
+            <dt>
+              <span class="term">Densidade de fios</span>
+            </dt>
+            <dd>
+              <p>Com essa opção você pode definir a densidade das pequenas fibras paralelas presentes na superfície da faixa. Aumente esse valor para aumentar a quantidade de fios. O valor padrão é de 50%.</p>
+            </dd>
+            <dt>
+              <span class="term">Intensidade de fios</span>
+            </dt>
+            <dd>
+              <p>Com essa opção você pode definir a opacidade da textura da faixa. Pequenos valores mostram fios vagos. Para retirar os fios defina o valor em 0,0%. O valor padrão é de 100,0%.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4770"></a>11.14.4. Outra utilidade</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4771"></a>
+          <p class="title">
+            <strong>Figura 17.258. Adicionando laços entrelaçados usando a textura <span class="quote">“<span class="quote">trançar</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/artistic-weave-as-lattice.jpg" alt="Adicionando laços entrelaçados usando a textura “trançar”" />
+              <div class="caption">
+                <p>Estreite a largura das faixas, aumente espaçamento das faixas, e preencha com a textura de <span class="quote">“<span class="quote">madeira</span>”</span>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Essa textura pode ser entrelaçada de forma que você possa ver a imagem original através dos buracos da malha. Crie uma nova camada transparente acima da camada ativa para fazer o entrelaçamento, e aplique este filtro. Selecione um quadrado preto regular na camada da textura usando a ferramenta de <a class="link" href="gimp-tool-by-color-select.html" title="2.7. Seleção Por Cor">Seleção por cores</a>.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-lic.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-artistic.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-decor.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-lic.html">11.13. Van Gogh (LIC)</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-decor.html">12. Filtros de decoração</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

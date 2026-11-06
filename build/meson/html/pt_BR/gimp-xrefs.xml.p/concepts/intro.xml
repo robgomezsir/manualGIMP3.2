@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+<!ENTITY % entities SYSTEM "../../../stylesheets/entities.xml">
+
+%entities;
+]>
+<!--  section history:
+
+  2009-03-30 j.h: added "GIMP new instance"
+  2008-12-29 j.h: added language selection through GTK Environment
+  2008-03-21 Mr.Dust: reviewed ko
+  2007-09-30 lexa: reviewed for GIMP 2.4
+  2005-12-16: made valid docbook and reviewed by lexa
+-->
+<sect1 id="gimp-concepts-running">
+  <title>Executando o GIMP</title>
+  <indexterm>
+    <primary>Executando o GIMP</primary>
+  </indexterm>
+  <para>Geralmente, você inicia o <acronym>GIMP</acronym> clicando no ícone do <acronym>GIMP</acronym> na área de trabalho (se disponível), selecionando-o em um menu ou digitando <command>gimp</command> na linha de comando. Se houver várias versões do <acronym>GIMP</acronym> instaladas, talvez seja necessário informar o número exato da versão: <command>gimp-&gimp.app.version;</command>.</para>
+  <para>Se quiser, você pode informar na linha de comando, após o nome do programa, uma lista de arquivos de imagem para que o <acronym>GIMP</acronym> os abra automaticamente ao iniciar. Também é possível abrir arquivos pelo próprio <acronym>GIMP</acronym> depois que ele estiver em execução, usando o <link linkend="gimp-open-dialog">diálogo Abrir imagem</link>.</para>
+  <para>A maioria dos sistemas operacionais oferece suporte a associações de arquivos, que vinculam uma classe de arquivos (definida pela extensão do nome, como .jpg) a um aplicativo correspondente (como o <acronym>GIMP</acronym>). Quando os arquivos de imagem estão corretamente <quote>associados</quote> ao <acronym>GIMP</acronym>, basta clicar duas vezes em uma imagem no gerenciador de arquivos para abri-la no <acronym>GIMP</acronym>.</para>
+  <para>Se você instalou a <ulink url="https://flathub.org/apps/org.gimp.GIMP">versão Flatpak do <acronym>GIMP</acronym> pelo flathub.org</ulink>, inicie o <acronym>GIMP</acronym> clicando em um ícone ou digitando <command>flatpak run org.gimp.GIMP//stable</command> na linha de comando.</para>
+
+  <sect2 id="gimp-concepts-running-language">
+    <title>Alterar o idioma</title>
+    <indexterm>
+      <primary>Idiomas</primary>
+    </indexterm>
+    <para>O <acronym>GIMP</acronym> detecta e usa automaticamente o idioma do sistema. Se, excepcionalmente, a detecção falhar ou você quiser usar outro idioma, a maneira mais fácil é alterar o idioma nas <link linkend="gimp-prefs-interface">Preferências da interface</link>: acesse <menuchoice><guimenu>Editar</guimenu><guisubmenu>Preferências</guisubmenu></menuchoice> e abra a seção <guilabel>Interface</guilabel>; a opção <guilabel>Idioma</guilabel> fica no início da página.</para>
+
+    <para>Se preferir alterar o idioma definindo variáveis de ambiente, use as instruções a seguir:</para>
+    <variablelist>
+      <varlistentry>
+        <term>No Linux</term>
+        <listitem>
+          <para><emphasis>No Linux</emphasis>: no terminal, digite <userinput>LANGUAGE=en gimp</userinput> ou <userinput>LANG=en gimp</userinput>, substituindo en por fr, de etc., conforme o idioma desejado. Ao usar <userinput>LANGUAGE=en</userinput>, você define uma variável de ambiente para o programa <userinput>gimp</userinput> executado.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>No Windows</term>
+        <listitem>
+          <para>Na área <quote>Variáveis do sistema</quote>, acesse <menuchoice><guimenu>Painel de Controle</guimenu><guisubmenu>Sistema</guisubmenu><guisubmenu>Avançado</guisubmenu><guimenuitem>Ambiente</guimenuitem></menuchoice> e clique em <guibutton>Adicionar</guibutton>. Informe LANG como nome e fr, de etc. como valor. Atenção: é preciso clicar em <guibutton>OK</guibutton> três vezes seguidas para confirmar a alteração.</para>
+          <para>Se você troca de idioma com frequência, pode criar um arquivo de lote para fazer a alteração. Abra o Bloco de Notas e digite os comandos a seguir (para francês, por exemplo): <literallayout><userinput>set lang=fr
+start gimp-&gimp.app.version;.exe</userinput></literallayout> Salve o arquivo como <filename>GIMP-FR.BAT</filename> (ou com outro nome, mas sempre usando a extensão <filename class="extension">.BAT</filename>). Crie um atalho e arraste-o para a área de trabalho.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>No macOS da Apple</term>
+        <listitem>
+          <para>Em <guilabel>Configurações do Sistema</guilabel>, clique em <guiicon>General</guiicon> na barra lateral. Em seguida, selecione <guilabel>Idioma e Região</guilabel>. O idioma desejado deve ser o primeiro da lista.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Outra instância do GIMP</term>
+        <listitem>
+          <indexterm>
+            <primary>Nova instância</primary>
+          </indexterm>
+          <para>Você pode usar o parâmetro de linha de comando <userinput>-n</userinput> para executar várias instâncias do GIMP. Por exemplo, <userinput>gimp-&gimp.app.version;</userinput> inicia o GIMP no idioma padrão do sistema, enquanto <userinput>LANGUAGE=en gimp-&gimp.app.version; -n</userinput> inicia outra instância do <acronym>GIMP</acronym> em inglês. Isso pode ser muito útil para tradutores.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="gimp-concepts-running-command-line">
+    <title>Argumentos da Linha de Comando</title>
+    <indexterm>
+      <primary>Argumentos da linha de comando</primary>
+    </indexterm>
+    <para>Embora não seja necessário usar argumentos de linha de comando para iniciar o <acronym>GIMP</acronym>, eles podem ser úteis em algumas situações. Em sistemas Unix, use <userinput>man gimp</userinput> para consultar a lista completa.</para>
+    <para>Adicione esses argumentos à linha de comando usada para iniciar o <acronym>GIMP</acronym>, no formato <command>gimp-&gimp.app.version; [OPTION...] [FILE|URI...]</command>, em que <quote>OPTION...</quote> pode corresponder a um ou mais argumentos da lista abaixo, seguidos de um ou mais nomes de arquivos.</para>
+    <variablelist>
+      <varlistentry>
+        <term>-?, -h, --help</term>
+        <listitem>
+          <para>Exibe a lista de todas as opções de linha de comando.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--help-all</term>
+        <listitem>
+          <para>Exibe todas as opções de ajuda, inclusive as do <acronym>GEGL</acronym> e do <acronym>GTK</acronym>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--help-gegl</term>
+        <listitem>
+          <para>Exibe todas as opções do <acronym>GEGL</acronym>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--help-gtk</term>
+        <listitem>
+          <para>Exibe as opções do <acronym>GTK</acronym>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-v, --version</term>
+        <listitem>
+          <para>Imprime a versão do <acronym>GIMP</acronym> e sai.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--license</term>
+        <listitem>
+          <para>Mostrar informações de licença e sai.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--verbose</term>
+        <listitem>
+          <para>Mostrar as mensagens de inicialização em detalhes.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-n, --new-instance</term>
+        <listitem>
+          <para>Iniciar uma nova instância do <acronym>GIMP</acronym>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-a, --as-new</term>
+        <listitem>
+          <para>Abre as imagens como se fossem novas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-i, --no-interface</term>
+        <listitem>
+          <para>Executa sem uma interface de usuário, por exemplo, para se executar um script automaticamente, junto com a função --batch</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-d, --no-data</term>
+        <listitem>
+          <para>Não carrega padrões, degradês, paletas ou pincéis. Essa opção é usada com frequência no modo não interativo para reduzir o tempo de inicialização.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-f, --no-fonts</term>
+        <listitem>
+          <para>Não carrega nenhuma fonte (tipográfica). Isso é útil para carregar o <acronym>GIMP</acronym> mais rápido para os scripts que não utilizam fontes, ou para encontrar problemas relacionados a fontes com problemas que possam fazer o <acronym>GIMP</acronym> travar.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-s, --no-splash</term>
+        <listitem>
+          <para>Não mostra a tela inicial durante a inicialização.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--no-shm</term>
+        <listitem>
+          <para>Não usa memória compartilhada entre o <acronym>GIMP</acronym> e os plug-ins.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--no-cpu-accel</term>
+        <listitem>
+          <para>Não use funções especiais de aceleração de CPU. Útil para encontrar ou desativar bugs das funções aceleradas em hardware.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--session=<replaceable>nome</replaceable></term>
+        <listitem>
+          <para>Usa um arquivo <filename>sessionrc</filename> diferente nesta sessão do <acronym>GIMP</acronym>. O nome informado para a sessão é acrescentado ao nome padrão do arquivo <filename>sessionrc</filename>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-g, --gimprc=<replaceable>nome-do-arquivo</replaceable></term>
+        <listitem>
+          <para>Usa um arquivo <filename>gimprc</filename> alternativo em vez do arquivo padrão. O arquivo <filename>gimprc</filename> registra suas preferências. Isso é útil quando os caminhos dos plug-ins ou as especificações do computador são diferentes.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--system-gimprc=<replaceable>Nome do arquivo</replaceable></term>
+        <listitem>
+          <para>Usa um arquivo <filename>gimprc</filename> de sistema alternativo.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-b, --batch=<replaceable>comandos</replaceable></term>
+        <listitem>
+          <para>Executa o conjunto de comandos sem interação. Normalmente, esses comandos são fornecidos na forma de um script que pode ser executado por um dos interpretadores de scripts do <acronym>GIMP</acronym>. Quando o comando é <userinput>-</userinput>, os comandos são lidos da entrada padrão.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--batch-interpreter=<replaceable>proc</replaceable></term>
+        <listitem>
+          <para>Especificar o procedimento a usar para processar os comandos de lote. O procedimento padrão é o Script-Fu. </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--quit</term>
+        <listitem>
+          <para>Encerra imediatamente após executar as ações solicitadas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>-c, --console-messages</term>
+        <listitem>
+          <para>Não exibe caixas de diálogo quando ocorrem erros ou avisos; em vez disso, mostra as mensagens no console.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--pdb-compat-mode=<replaceable>modo</replaceable></term>
+        <listitem>
+          <para>Modo de compatibilidade do PDB. Os modos são "off", "on", "warn" (desligado, ligado, aviso). O padrão é "aviso".</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--stack-trace-mode=<replaceable>modo</replaceable></term>
+        <listitem>
+          <para>Depurar no caso de uma falha. Os modos são "never", "query", "always" (nunca, consultar, sempre)</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--debug-handlers</term>
+        <listitem>
+          <para>Habilita manipuladores de sinais de depuração não-fatais. Útil para depuração do <acronym>GIMP</acronym>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--g-fatal-warnings</term>
+        <listitem>
+          <para>Trata todos os avisos como erros fatais. Útil para depuração.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--dump-gimprc</term>
+        <listitem>
+          <para>Imprime um arquivo gimprc com as configurações padrão. Útil se você estragou o seu arquivo gimprc.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--show-playground</term>
+        <listitem>
+          <para>Exibe uma <link linkend="gimp-prefs-playground">página de preferências</link> com recursos experimentais.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--show-debug-menu</term>
+        <listitem>
+          <para>Exibe um submenu Depuração no menu Arquivo, com comandos úteis para depurar o <acronym>GIMP</acronym>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>--display=<replaceable>display</replaceable></term>
+        <listitem>
+          <para>Use o display X designado (não se aplica a todas as plataformas).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2 id="gimp-concepts-setup">
+    <title>Pasta de configuração</title>
+
+    <indexterm>
+      <primary>Configuração</primary>
+    </indexterm>
+
+    <para>Na primeira execução, o <acronym>GIMP</acronym> cria uma pasta de configuração, onde armazena todas as informações de configuração. Se você remover ou renomear essa pasta, o <acronym>GIMP</acronym> repetirá o processo de configuração inicial e criará uma nova pasta.</para>
+
+    <para>O local exato da pasta de configuração depende do seu sistema operacional:</para>
+    <variablelist>
+      <varlistentry>
+        <term>No Linux:</term>
+        <listitem>
+          <para>
+            <code>$XDG_CONFIG_HOME</code>
+          </para>
+          <para>Geralmente: <code>$HOME/.config/GIMP/&gimp.app.version;/</code></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>No Microsoft Windows, usando <ulink url="https://en.wikipedia.org/wiki/Environment_variable#DOS,_OS/2_and_Windows">variáveis de ambiente</ulink>:</term>
+        <listitem>
+          <para>
+            <code>%APPDATA%\GIMP\&gimp.app.version;\</code>
+          </para>
+          <para>Geralmente: <code>%USERPROFILE%\AppData\Roaming\GIMP\&gimp.app.version;\</code></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>No macOS da Apple:</term>
+        <listitem>
+          <para>
+            <code>NSApplicationSupportDirectory</code>
+          </para>
+          <para>Geralmente: <code>~/Library/Application Support/GIMP/&gimp.app.version;/</code></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+
+  <sect2>
+    <title>Dicas e truques</title>
+    <para>Algumas sugestões antes de começar: <itemizedlist>
+        <listitem>
+          <para>O <acronym>GIMP</acronym> oferece dicas que você pode consultar a qualquer momento pelo comando de menu <menuchoice><guimenu>Ajuda</guimenu><guimenuitem>Dica do dia</guimenuitem></menuchoice>. Elas trazem informações úteis que nem sempre são fáceis de descobrir por tentativa e erro, por isso vale a pena lê-las. Quando tiver tempo, consulte essas dicas.</para>
+        </listitem>
+        <listitem>
+          <para>Se, ao tentar fazer algo, o <acronym>GIMP</acronym> parecer parar de funcionar de repente, a seção <link linkend="gimp-using-getting-unstuck">Destravando o GIMP</link> pode ajudar.</para>
+        </listitem>
+        <listitem>
+          <para>Não deixe de conferir o <link linkend="gimp-prefs-dialog">diálogo de preferências</link>. O <acronym>GIMP</acronym> permite muitas personalizações, com diversas configurações que você pode ajustar às suas preferências.</para>
+        </listitem>
+      </itemizedlist></para>
+  </sect2>
+</sect1>

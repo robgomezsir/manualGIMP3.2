@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-02 j.h: update to v2.8
+  2009-01-16 j.h: updated to v2.6
+  2007-12-19 ude: renamed id "gimp-view-zoom-fit-to" to "gimp-view-zoom-fill"
+  2005/10/23 reviewed by axel.wernicke
+-->
+<sect2 id="gimp-view-zoom">
+  <title>Zoom</title>
+
+  <indexterm>
+    <primary>Zoom</primary>
+  </indexterm>
+
+  <para>O submenu <guimenuitem>Zoom</guimenuitem> contém vários comandos que controlam a ampliação da imagem na janela de imagem (aproximação). Aumentar uma imagem (aproximar) é útil caso você precise trabalhar com alta precisão, fazendo modificações na imagem a nível de pixel ou seleções precisas. Por outro lado, diminuir uma imagem (afastar) é útil para ter uma impressão geral da imagem e enxergar os resultados de alterações que afetem toda a imagem. Perceba que aproximar e afastar não é uma ação que pode ser desfeita, já que isso não afeta os dados da imagem, apenas o modo como ela é exibida.</para>
+  <tip>
+    <para>Além das entradas deste submenu, também existe um menu de ampliação na parte inferior da borda da janela de imagem (isso caso a <link linkend="gimp-view-show-statusbar">barra de status</link> esteja sendo exibida), onde diversos níveis de zoom pré-definidos estão disponíveis.</para>
+    <para>Você também pode realizar ajustes de zoom na <link linkend="gimp-navigation-dialog">janela de navegação</link>. Você também pode usar a ferramenta de <link linkend="gimp-tool-zoom">Zoom</link> que permite enquadrar, no  zoom, uma área em particular de uma imagem.</para>
+  </tip>
+
+  <sect3>
+    <title>Activating the Submenu</title>
+    <para>
+      You can access this submenu from the main menu through
+      <menuchoice>
+        <guimenu>View</guimenu>
+        <guisubmenu>Zoom</guisubmenu>
+      </menuchoice>.
+      Note that the <quote>Zoom</quote> label on the <quote>View</quote>
+      menu shows the current zoom factor, for example,
+      <guilabel>Zoom (100%)</guilabel>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Conteúdos do submenu de <quote>Zoom</quote></title>
+    <para>Os vários comandos do submenu <quote>Zoom</quote> estão descritos abaixo, juntos com seus atalhos de teclado padrão, caso existam.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Reverter zoom</term>
+        <listitem>
+          <anchor id="gimp-view-zoom-revert"/>
+          <para>
+            (Shortcut: <keycap>`</keycap> [grave
+            accent,<quote>backtick</quote>]) This command will reset the zoom
+            factor to the previous value, which is also shown by this label,
+            for example <guilabel>Revert Zoom (100%)</guilabel>. If you never
+            changed the zoom factor of the active image, this entry is
+            disabled.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Diminuir</term>
+        <listitem>
+          <anchor id="gimp-view-zoom-out"/>
+          <para>(Atalho: <keycap>-</keycap>) Toda vez que o <quote>Diminuir</quote> é usado, o nível de zoom é diminuído em 30%. Existe um valor mínimo de zoom de 0,39%.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Aumentar</term>
+        <listitem>
+          <anchor id="gimp-view-zoom-in"/>
+          <para>(Atalho: <keycap>+</keycap>) Toda vez que o<quote>Aumentar</quote> é usado, o nível de zoom aumenta em cerca de 30%. O valor máximo de zoom possível é de 25600%.</para>
+          <note>
+            <para>O atalho de teclado para <quote>Aumentar</quote> é controverso pois é uma operação muito comum e tanto nos teclados com layout Brasileiro, a tecla <keycap>Shift</keycap> precisa estar pressionada para usa-lo. (Este não é o caso dos teclados europeus.) Se você deseja ter um atalho de teclado diferente, você pode criar um atalho dinâmico; veja a seção de ajuda <link linkend="gimp-prefs-interface">Preferências da interface de usuário</link> para instruções.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ajustar imagem na janela</term>
+        <listitem>
+          <anchor id="gimp-view-zoom-fit-in" xreflabel="Ajustar imagem na janela"/>
+          <para>(Atalho: <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>J</keycap></keycombo>). Este comando aproxima a imagem para que ela seja o maior possível, desde que continue a caber completamente dentro da janela. Normalmente haverá um espaço em dois lados da imagem, mas não nos quatro lados.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fill Window</term>
+        <listitem>
+          <anchor id="gimp-view-zoom-fill" xreflabel="Fill Window"/>
+          <para>Este comando aproxima a imagem o quanto for possível sem que sobre nenhum espaço nas laterais para ser exibido. Isso significa que a imagem passa a caber na janela perfeitamente em uma dimensão (ex. na horizontal), mas normalmente se estende além das bordas da janela em outra dimensão.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Zoom to Selection</term>
+        <listitem>
+          <anchor id="gimp-view-zoom-selection" xreflabel="Zoom to Selection"/>
+          <para>
+            This command zooms the image so that the selection fits the 
+            smallest dimension of the image window.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>A:B (X%)</term>
+        <listitem>
+          <anchor id="gimp-view-zoom-100"/>
+          <para>Com esses comandos, você pode selecionar um dos níveis de pré-definidos de zoom. Cada um dos itens do menu contém uma proporção, assim como um valor percentual. Perceba que cada nível de zoom pré-definido possui seu próprio atalho de teclado. O nível atual de zoom fica marcado com com um grande ponto.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Other zoom factor…</term>
+        <listitem>
+          <anchor id="gimp-view-zoom-other"/>
+          <para>Este comando abre uma janela que permite escolher qualquer nível de zoom que você desejar, com níveis entre 1:256 (0.39%) até 256:1 (25600%).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <tip>
+      <para>Quando você está trabalhando a nível de pixel, você pode usar o comando <link linkend="gimp-view-new">Nova visualização</link>. Isso permite enxergar o que está acontecendo à imagem em seu tamanho normal ao mesmo tempo.</para>
+    </tip>
+  </sect3>
+</sect2>

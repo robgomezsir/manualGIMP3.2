@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="gimp-tool-cage">
+  <title>Transformar</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Transformar</secondary>
+  </indexterm>
+  <indexterm><primary>Gaiola</primary></indexterm>
+
+  <para>A ferramenta de Gaiola é uma ferramenta de transformação especial que permite que você selecione uma área de transformação selecionado vários pontos de âncora a mão livre, de forma parecida com o que é feito com a Seleção a mão livre (ferramenta de laço). A ferramenta não faz nada na imagem até que você confirme a transformação pressionando a tecla <keycap>Enter</keycap>.</para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagens, em: <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de transformação</guisubmenu><guimenuitem>Transformar com gaiola</guimenuitem></menuchoice></para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-cage.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>Usando o atalho de teclado  <keycombo><keycap>Shift</keycap><keycap>P</keycap></keycombo></para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-cage.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Normalmente, as opções de ferramenta aparecem numa caixa de opções sob a Caixa de ferramentas, assim que você ativa uma ferramenta. Se elas não estiverem lá, você pode fazer um clique-duplo no ícone da ferramenta, ou acessa-las em <menuchoice><guimenu>Janelas</guimenu><guisubmenu>Diálogos de encaixe</guisubmenu><guimenuitem>Opções de ferramentas</guimenuitem></menuchoice> (primeiro item no menu)  que abre a janela de opções da ferramenta selecionada.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Criar ou ajustar a gaiola</term>
+        <listitem>
+          <para>Ao ativar a transformação com Gaiola, esta opção está selecionada. Nesse momento você pode clicar na imagem para criar pontos de âncora ao redor da área desejada. Se você precisar adicionar mais pontos de âncora numa fase posterior, clique de volta nesta opção.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Deformar a gaiola para deformar a imagem</term>
+        <listitem>
+          <para>O <acronym>GIMP</acronym> muda para esta opção automaticamente quando os pontos de controle da gaiola estão prontos (i.e. você clica de volta em cima do primeiro ponto de âncora que criou). Você poderá agora arrastar seus pontos de âncora na imagem, e mesmo fora dela para transformar a imagem. A transformação tem efeito cada vez que você solta o botão do mouse, após mover uma âncora.</para>
+          <para>Você pode ativar mais de um ponto de âncora de uma vez segurando <keycap>Shift</keycap> pressionado enquanto clica nos pontos. Você também pode selecionar vários pontos segurando o botão do mouse pressionado enquanto desenha um retângulo ao redor dos pontos desejados.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Preenche a posição original com uma cor</term>
+        <listitem>
+          <para>Se a ação de transformação resultar em áreas vazias, essas áreas serão preenchidas com uma cor se esta opção estiver selecionada. A cor utilizada é mistura das a cores que estiverem na região onde forem colocados os pontos de âncora - podendo ser inclusive a transparência</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Exemplo de uso da ferramenta de <quote>Transformar com gaiola</quote></title>
+    <figure>
+      <title>Exemplo da ferramenta de Gaiola</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/cage-1.png"/>
+        </imageobject>
+        <caption>A área da gaiola selecionada</caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/cage-2.png"/>
+        </imageobject>
+        <caption>Transformada</caption>
+      </mediaobject>
+    </figure>
+
+    <para>Ao clicar no ícone de gaiola na Caixa de ferramentas, a opção de gaiola é colocada em <quote>Criar ou ajustar a gaiola</quote>. Agora você pode desenhar as linhas de uma gaiola na imagem clicando sucessivamente ao redor da área que você deseja transformar. Clique de volta no ponto inicial para terminar a seleção. Nesse ponto o <acronym>GIMP</acronym> faz alguns cálculos para ativar o modo de <quote>Deforme a gaiola para deformar a imagem</quote> que permite que você arraste os pontos na linha para deformar a gaiola e a imagem.</para>
+    <para>O ponto (ou pontos) selecionado se torna um quadrado. Arraste o ponto na imagem para transformá-la. A transformação vai ser calculada todas as vezes que você parar de arrastar um ponto. A transformação pode demorar um pouco, então seja paciente, principalmente se estiver trabalhando em imagens grandes.</para>
+    <para>Se você desejar adicionar mais pontos a linha que você já selecionou, clique de novo no botão de rádio de <quote>Criar ou ajustar a gaiola</quote> no diálogo de opções de ferramentas. Adicione os pontos à linha, e retorne ao modo de <quote>Deformar a gaiola para deformar a imagem</quote> para transformar o objeto desenhável.</para>
+    <para>Quando estiver tudo pronto, pressione a tecla <keycap>Enter</keycap> para confirmar a transformação.</para>
+  </sect3>
+</sect2>

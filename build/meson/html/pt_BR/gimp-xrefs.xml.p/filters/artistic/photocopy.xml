@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-21 j.h update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-photocopy">
+  <title>Fotocópia</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Artísticos</secondary>
+    <tertiary>Fotocópia</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Fotocópia</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>fotocópia</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/artistic-taj-photocopy.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O filtro fotocópia aplicado modifica a camada ativa ou seleção para que ela se pareça com uma fotocópia em preto e branco, como se o tom transferido fosse baseado na relativa escuridão na região em particular. Isso é conseguido ao escurecer áreas da imagem que são tidas com sendo mais escuras que a média da região que se encontra, e configurando os demais pixels como branco.</para>
+    <tip>
+      <para>Você pode usar esse filtro para tornar a sua imagem nítida. Crie uma cópia da camada ativa e use o filtro na cópia. Defina o <link linkend="gimp-concepts-layer-modes">modo de camada</link> para <guilabel>multiplicar</guilabel> e ajuste o seletor de opacidade para obter o melhor resultado.</para>
+    </tip>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Artistic</guisubmenu>
+        <guimenuitem>Photocopy…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>fotocópia</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/artistic/photocopy-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visuação</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio da máscara</term>
+        <listitem>
+          <para>
+            This parameter controls the size of the pixel neighborhood over
+            which the average intensity is computed and then compared to each
+            pixel in the neighborhood to decide whether or not to darken it.
+            Large values result in very thick black areas bordering the
+            regions of white and much less detail for black areas. Small
+            values result in less toner overall and more details everywhere.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Acuidade</term>
+        <listitem>
+          <para>Com essa opção, você pode definir a acuidade da fotocópia, de 0,0 a 1,0.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Porcentagem do preto</term>
+        <listitem>
+          <para>Este parâmetro controla a quantidade de cor preto adicionada à imagem. Pequenos valores produzem uma transição mais suave das regiões de cores às áreas escuras e as linhas escuras se tornam mais finas e menos notáveis. Valores maiores produzem linhas mais grossas, escuras e marcadas. O valor máximo produz linhas pixelizadas. O melhor, e mais natural resultado são normalmente conseguidos com um valor intermediário. Os valores variam de 0,0 a 1,0.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Porcentagem do branco</term>
+        <listitem>
+          <para>Este parâmetro aumenta a porcentagem de pixels branco.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

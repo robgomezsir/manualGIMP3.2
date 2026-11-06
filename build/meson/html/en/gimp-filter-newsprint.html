@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.8. Newsprint</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-distort.html" title="5. Distort Filters" />
+    <link rel="prev" href="gimp-filter-mosaic.html" title="5.7. Mosaic" />
+    <link rel="next" href="gimp-filter-polar-coordinates.html" title="5.9. Polar Coordinates" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.8. Newsprint</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-mosaic.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. Distort Filters</span>
+        <nav> <a accesskey="n" href="gimp-filter-polar-coordinates.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-newsprint"></a>5.8. Newsprint</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id48693" class="indexterm"></a>
+      <a id="id48697" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3114"></a>5.8.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3115"></a>
+          <p class="title">
+            <strong>Figure 17.74. Applying example for the Newsprint filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Applying example for the Newsprint filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/distort-taj-newsprint.jpg" alt="Applying example for the Newsprint filter" />
+              <div class="caption">
+                <p>
+            Filter <span class="quote">“<span class="quote">Newsprint</span>”</span> applied using RGB color mode,
+            PSSquare pattern for all channels, red period 6, green period 8,
+            blue period 10, angle 15 for all channels.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter performs digital halftoning with optional modulations.
+      Halftoning is the process of rendering an image with multiple levels of
+      gray or color (i.e. a continuous tone image) on a device with fewer tones;
+      often a bi-level device such as a printer or typesetter.
+      Be aware that Newsprint is not a filter for generating half-tone screens
+      for print, but for simulating the appearance of printing with them.
+    </p>
+        <p>
+      The basic premise is to trade off resolution for greater apparent tone
+      depth (this is known as spatial dithering).
+    </p>
+        <p>
+      There are many approaches to this, the simplest of which is to throw
+      away the low-order bits of tone information; this is what the posterize
+      filter does. Unfortunately, the results don't look too good. However, no
+      spatial resolution is lost.
+    </p>
+        <p>
+      Imagine a grid super-imposed on the original image. The image is
+      divided into cells by the grid - each cell will ultimately hold a single
+      spot made up of multiple output pixels in order to approximate the
+      darkness of the original image in that cell. Obviously, a large cell
+      size results in a heavy loss in resolution!
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3116"></a>5.8.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Distorts</span> → <span class="guimenuitem">Newsprint…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3117"></a>5.8.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3118"></a>
+          <p class="title">
+            <strong>Figure 17.75. <span class="quote">“<span class="quote">Newsprint</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/distort/newsprint.png" alt="“Newsprint” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-filters-common.html" title="2. Common Features">Section 2, “Common Features”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Channels</span>
+            </dt>
+            <dd>
+              <p>
+            This group controls the channels to use and the settings for each
+            channel.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Color Model</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Select which color inks to use:
+                  <span class="guilabel">White on Black</span>,
+                  <span class="guilabel">Black on White</span>,
+                  <span class="guilabel">RGB</span>, or
+                  <span class="guilabel">CMYK</span>.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">For each color ink or channel</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Settings that can be changed for each color ink or channel
+                  are listed here.
+                </p>
+                    <div class="variablelist">
+                      <dl class="variablelist">
+                        <dt>
+                          <span class="term">Pattern</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        Select the halftoning pattern to use. Choices are
+                        <span class="guilabel">Line</span>, <span class="guilabel">Circle</span>,
+                        <span class="guilabel">Diamond,</span>,
+                        <span class="guilabel">PSSquare (or Euclidean) dot</span>,
+                        <span class="guilabel">Crossing Lines</span>.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Period</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        The number of pixels across one repetition of a base
+                        pattern at base resolution.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Angle</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        The grid angle that should be used. This angle can be
+                        adjusted with the slider, number entry, or using the
+                        angle control by moving the arrow in the circle.
+                      </p>
+                        </dd>
+                        <dt>
+                          <span class="term">Black pullout</span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This setting is only available when
+                        <span class="guilabel">CMYK</span> was chosen as Color Model and
+                        the selected channel is <span class="guilabel">Black</span>.
+                        It regulates how much of common gray to pull out of
+                        CMY.
+                      </p>
+                        </dd>
+                      </dl>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Lock patterns, </span>
+                    <span class="term">Lock periods, </span>
+                    <span class="term">Lock angles</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  These three check boxes, if enabled, lock the settings
+                  mentioned above to be the same for all channels. If
+                  disabled, then these settings can be set individually for
+                  each channel.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Quality</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Anti-alias oversampling factor</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This sets the number of samples that are averaged for
+                  anti-aliasing the result.
+                </p>
+                    <p>
+                  Proper halftoning does not need anti-aliasing: the aim is to
+                  reduce the color depth after all! However, since this
+                  filter is mainly for special effects, the results are
+                  displayed on screen instead of on a printer.
+                  So it is often useful to apply a little anti-aliasing to
+                  simulate ink smearing on paper. If you do want to print the
+                  resulting image then set the anti-aliasing to 1 (i.e., off).
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Effects</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Turbulence</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Color saturation dependent compression of period.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Blocksize</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Number of periods per tile. This tiling avoids high
+                  frequency anomalies that angle boost causes.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Angle Boost</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Multiplication factor for the desired rotation of the local
+                  space for the texture. The way this is computed makes it weak
+                  for desaturated colors and possibly stronger where there is
+                  color.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-mosaic.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-distort.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-polar-coordinates.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-mosaic.html">5.7. Mosaic</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-polar-coordinates.html">5.9. Polar Coordinates</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

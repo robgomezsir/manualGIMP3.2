@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>7.55. Redimensionar camada</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-layer-menu.html" title="7. O menu “Camada”" />
+    <link rel="prev" href="gimp-layer-resize-to-image.html" title="7.54. Layers to Image Size" />
+    <link rel="next" href="gimp-layer-resize-to-selection.html" title="7.56. Resize Layers to Selection" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>7.55. Redimensionar camada</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-layer-resize-to-image.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>7. O menu <span class="quote">“<span class="quote">Camada</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-layer-resize-to-selection.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-layer-scale"></a>7.55. Redimensionar camada</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id41956" class="indexterm"></a>
+      <a id="id41960" class="indexterm"></a>
+      <p>
+    The <span class="guimenuitem">Scale Layer…</span> command opens the
+    <span class="quote">“<span class="quote">Scale Layer</span>”</span> dialog that allows you to resize the layer
+    and its contents. The image loses some of its quality by being scaled.
+    The command displays a dialog where you can set parameters
+    concerning the size of the layer and the image quality.
+  </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      This command only works on a single layer.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Dica]" src="images/tip.png" />
+            </td>
+            <th align="left">Dica</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      Another way to scale a layer is using the
+      <a class="link" href="gimp-tool-scale.html" title="4.6. Redimensionar">Scale</a> tool with the
+      <span class="guilabel">Transform</span> set to <span class="guilabel">Layer</span>.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3907"></a>7.55.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Layer</span> → <span class="guimenuitem">Scale Layer…</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          From the
+          <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Diálogo de camadas">Layers Dialog</a>, you
+          can access it through the <span class="guimenuitem">Scale Layer…</span>
+          command of its context menu.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3908"></a>7.55.2. Definição do diálogo de <span class="quote">“<span class="quote">Redimensionar Camada</span>”</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3909"></a>
+          <p class="title">
+            <strong>Figura 16.119. O diálogo <span class="quote">“<span class="quote">Redimensionar camada</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/layer/scale.png" alt="O diálogo “Redimensionar camada”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Tamanho da camada</span>
+            </dt>
+            <dd>
+              <p>Quando você amplia uma camada, o <acronym class="acronym">GIMP</acronym> tem que calcular os novos pixels a partir dos já existentes. Este procedimento é chamado <span class="quote">“<span class="quote">interpolação</span>”</span>. Não importa qual algoritmo de interpolação seja usado, nenhuma nova informação é adicionada à imagem na interpolação. Se há lugares na camada que não têm detalhes, não haverá nenhum novo detalhe ao redimensiona-los. É muito mais provável que a camada vá ficar um pouco borrada após o redimensionamento. Da mesma forma, quando você reduz uma camada, a imagem perde um pouco da sua qualidade quando pixels são removidos.</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Width, </span>
+                    <span class="term">Height</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The command displays a dialog which shows the dimensions
+                  of the original layer in pixels. You can set the new
+                  <span class="guilabel">Width</span> and
+                  <span class="guilabel">Height</span> for the layer in the two text
+                  boxes. If the adjacent
+                  <span class="guiicon">
+                    <span class="inlinemediaobject"><img src="images/stock-icons/gimp-vchain.svg" width="16" /></span>
+                  </span>
+                  chain icon is unbroken, the width
+                  and height are automatically adjusted to hold their ratio
+                  constant. If you break the chain by clicking on it, you
+                  can set them separately, but this will result in
+                  distorting the layer.
+                </p>
+                    <p>No entanto, você não tem que definir as dimensões em pixels. Você pode escolher diferentes unidades a partir do menu suspenso. Se você escolher percentagem como unidade, você pode definir o tamanho da camada em relação ao seu tamanho original. Você também pode usar unidades físicas, como polegadas ou milímetros. No entanto, se você fizer isso, você deve prestar atenção à <span class="guilabel">resolução X/Y</span> da imagem.</p>
+                    <p>Se você ampliar uma camada, os pixels que faltam são calculados por interpolação, mas nenhum novo detalhe será adicionado. Quanto mais a camada é ampliada, e quanto mais vezes é ampliada, mais turva ela se torna. O resultado exato do aumento depende do método de interpolação que você escolher. Depois de redimensionar, você pode melhorar o resultado usando o filtro <a class="link" href="">Aguçar</a>. Se houver como,  é muito melhor se você partir de uma resolução mais alta ao digitalizar uma imagem com um scanner, tirar uma foto (aumentar a qualidade e o número de megapixels) ou qualquer que seja o meio de produção da imagem digital. Por exemplo, ao importar um arquivo de Postscript, SVG ou PDF, você pode selecionar uma resolução maior, nesse caso, a imagem raster inicial é criada com mais pixels. É uma característica inerente das imagens raster elas não tem como ser ampliadas.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Qualidade</span>
+            </dt>
+            <dd>
+              <p>Para alterar o tamanho da camada, <acronym class="acronym">GIMP</acronym> tem que adicionar ou remover pixels. O método usado para fazer isto tem um impacto considerável na qualidade do resultado. Você pode escolher o método de interpolação de cores dos pixels do Menu suspenso <span class="guilabel">Interpolação</span>.</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Interpolação</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This lets you choose the interpolation method used for
+                  scaling. See for details about each method the
+                  <a class="link" href="gimp-tools-transform.html#gimp-tool-interpolation-methods">Interpolation</a>
+                  documentation of the Transform tools.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-layer-resize-to-image.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-layer-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-layer-resize-to-selection.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-layer-resize-to-image.html">7.54. Layers to Image Size</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-layer-resize-to-selection.html">7.56. Resize Layers to Selection</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

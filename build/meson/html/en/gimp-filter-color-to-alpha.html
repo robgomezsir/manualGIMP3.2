@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.57. Color to Alpha…</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. The “Colors” Menu" />
+    <link rel="prev" href="gimp-filter-posterize.html" title="8.56. Posterize" />
+    <link rel="next" href="gimp-filter-dither.html" title="8.58. Dither" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.57. Color to Alpha…</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-posterize.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>8. The <span class="quote">“<span class="quote">Colors</span>”</span> Menu</span>
+        <nav> <a accesskey="n" href="gimp-filter-dither.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-color-to-alpha"></a>8.57. Color to Alpha…</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id44786" class="indexterm"></a>
+      <a id="id44789" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2894"></a>8.57.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The Color to Alpha command makes transparent all pixels of the active
+      layer that have a selected color. It attempts to preserve
+      anti-aliasing information by using a partially intelligent algorithm that
+      replaces weak color information with weak alpha information. In this
+      way, areas that contain an element of the selected color maintain a
+      blended appearance with their surrounding pixels.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2895"></a>8.57.2. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guimenuitem">Color to Alpha…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2896"></a>8.57.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2897"></a>
+          <p class="title">
+            <strong>Figure 16.226. <span class="quote">“<span class="quote">Color to Alpha</span>”</span> filter dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/colortoalpha.png" alt="“Color to Alpha” filter dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-colors-menu.html#colors-common-features" title="8.1.2. Colors Common Features">Section 8.1.2, “Colors Common Features”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Color</span>
+            </dt>
+            <dd>
+              <p>
+            Clicking the color swatch provides a color selection dialog 
+            where you can select a color. You can also select a color 
+            using the eye dropper on the right.
+          </p>
+              <p>
+            <span class="quote">“<span class="quote">Color to alpha</span>”</span> comes with a GEGL option dialog
+            under Toolbox. When the <span class="guilabel">Sample average</span> option
+            is unchecked, color picker picks only one pixel color. When the
+            option is checked, mouse pointer goes with a square limiting a
+            pixel sample that determines a merged sample <span class="quote">“<span class="quote">color</span>”</span>.
+            You can fix the square size directly in the slider, or using the
+            <span class="guilabel">+</span> and <span class="guilabel">-</span> buttons, or the
+            <span class="keycap"><strong>Up</strong></span> and <span class="keycap"><strong>Down</strong></span> keyboard keys.
+          </p>
+              <p>
+            Right clicking the color swatch displays a menu where you can 
+            select Foreground or Background colors, White or Black.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Transparency threshold, </span>
+              <span class="term">Opacity threshold</span>
+            </dt>
+            <dd>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Transparency</span>: the limit below which colors 
+                become transparent.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Opacity</span>: the limit above which colors 
+                become opaque.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+            Color to Alpha modifies the transparency (and color) of the
+            pixels based on their distance from the selected background
+            color (the <span class="quote">“<span class="quote">Color</span>”</span> option) — the closer they are
+            to the background color, the more transparent they become, with the
+            background color becoming fully transparent.
+          </p>
+              <p>
+            The transparency and opacity thresholds control how close colors 
+            should be to the background color before they become fully 
+            transparent, and how far they should be from the background color 
+            before they remain fully opaque, respectively.  With the default 
+            values of 0 and 1, only the background color becomes fully 
+            transparent, and only the colors farthest away from the background 
+            color remain fully opaque.
+          </p>
+              <p>
+            For example, while the default values work well for removing a 
+            white background from a black object, if the object is gray 
+            instead [fig. 1] it will become semi-transparent [fig. 2], since 
+            gray is midway between white and black.  Lowering the opacity 
+            threshold to 0.5 fixes that, by keeping all pixels that are gray or 
+            darker (all pixels whose distance from white is 0.5 or more, on a 
+            [0,1] scale) fully opaque [fig. 3].
+          </p>
+              <p>
+            The transparency threshold works similarly: raising it causes more
+            colors in the neighborhood of the background color to become 
+            fully transparent. This is mostly useful with noisy images, in 
+            which the background is not fully solid.  However, unlike in other 
+            cases, when the transparency threshold is above 0, recomposing the 
+            result against the background color no longer reproduces the exact 
+            same image.
+          </p>
+              <p>
+            At the risk of being a bit technical, this can be visualized by 
+            thinking of the RGB cube.  The background color is a point within 
+            the cube, and the transparency and opacity thresholds are two 
+            sub-cubes centered around the background color.  Everything 
+            inside the transparency-threshold cube becomes fully transparent, 
+            everything outside the opacity-threshold cube remains fully 
+            opaque, and everything in between gradually transitions from 
+            transparent to opaque.  In image [fig. 4] you can see the Red-Green 
+            face of the RGB cube.  (1) is the background color (Red=0.5, 
+            Green=0.5, Blue=0.0), (2) is the transparency threshold (set to 
+            0.1), and (3) is the opacity threshold (set to 0.4).
+          </p>
+              <div class="figure">
+                <a id="id2898"></a>
+                <p class="title">
+                  <strong>Figure 16.227. Color to Alpha Thresholds examples</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex1.png" alt="Color to Alpha Thresholds examples" />
+                    <div class="caption">
+                      <p>fig. 1</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex2.png" alt="Color to Alpha Thresholds examples" />
+                    <div class="caption">
+                      <p>fig. 2</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id2899"></a>
+                <p class="title">
+                  <strong>Figure 16.228. Color to Alpha Thresholds examples</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex3.png" alt="Color to Alpha Thresholds examples" />
+                    <div class="caption">
+                      <p>fig. 3</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex4.png" alt="Color to Alpha Thresholds examples" />
+                    <div class="caption">
+                      <p>fig. 4</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2900"></a>8.57.4. Using Color to Alpha</h4>
+            </div>
+          </div>
+        </div>
+        <div class="orderedlist">
+          <ol class="orderedlist" type="1">
+            <li class="listitem">
+              <p>
+          Add an alpha channel to your image if necessary in the image window
+          menu under
+          <span class="guimenu">Layer</span> → <span class="guisubmenu">Transparency</span> → <span class="guimenuitem">Add Alpha Channel</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          Open Color to alpha.
+        </p>
+              <div class="figure">
+                <a id="id2901"></a>
+                <p class="title">
+                  <strong>Figure 16.229. Color to alpha open with default options</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex5.png" alt="Color to alpha open with default options" />
+                    <div class="caption">
+                      <p>Original image with alpha channel</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/colors/ColorToAlpha-ex6.png" alt="Color to alpha open with default options" />
+                    <div class="caption">
+                      <p>
+                Original image with an alpha channel. Color to alpha with 
+                default options: <span class="quote">“<span class="quote">Color</span>”</span> is white. Opacity 
+                threshold = 1.00 is maximum, and so only the colors farthest 
+                away from the <span class="quote">“<span class="quote">Color</span>”</span> remain fully opaque. 
+                Transparency threshold = 0 and so the <span class="quote">“<span class="quote">Color</span>”</span> is 
+                fully transparent.
+              </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="listitem">
+              <p>
+          Uncheck Preview option.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          Pick color, here the sky.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          Re-check Preview option.
+        </p>
+              <div class="mediaobject">
+                <img src="images/menus/colors/ColorToAlpha-ex7.png" />
+                <div class="caption">
+                  <p>
+              <span class="quote">“<span class="quote">Color</span>”</span> from the sky. Default thresholds.
+            </p>
+                </div>
+              </div>
+            </li>
+            <li class="listitem">
+              <p>
+          Adapt Transparency and Opacity thresholds proceeding by trial and 
+          error.
+        </p>
+              <div class="mediaobject">
+                <img src="images/menus/colors/ColorToAlpha-ex8-example.png" />
+                <div class="caption">
+                  <p>
+              Only the sky is transparent.
+            </p>
+                </div>
+              </div>
+              <div class="mediaobject">
+                <img src="images/menus/colors/ColorToAlpha-ex8-dialog.png" />
+                <div class="caption">
+                  <p>
+              Opacity threshold was decreased to make
+              farthest colors (monument, trees and road) fully opaque.
+              Transparency threshold was increased to make <span class="quote">“<span class="quote">Color</span>”</span>
+              fully transparent and delete some imperfections in the sky.
+            </p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-posterize.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-dither.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-posterize.html">8.56. Posterize</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-dither.html">8.58. Dither</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

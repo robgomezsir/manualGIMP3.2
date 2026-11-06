@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.41. Sample Colorize</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. The “Colors” Menu" />
+    <link rel="prev" href="plug-in-palettemap.html" title="8.40. Palette Map" />
+    <link rel="next" href="gimp-colors-tone-mapping-menu.html" title="8.42. The “Tone Mapping” Submenu" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.41. Sample Colorize</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-palettemap.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>8. The <span class="quote">“<span class="quote">Colors</span>”</span> Menu</span>
+        <nav> <a accesskey="n" href="gimp-colors-tone-mapping-menu.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-sample-colorize"></a>8.41. Sample Colorize</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id43830" class="indexterm"></a>
+      <a id="id43833" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2823"></a>8.41.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2824"></a>
+          <p class="title">
+            <strong>Figure 16.196. Example for the <span class="quote">“<span class="quote">Sample Colorize</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for the “Sample Colorize” filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/color-taj-sample-colorize.jpg" alt="Example for the “Sample Colorize” filter" />
+              <div class="caption">
+                <p>Filter <span class="quote">“<span class="quote">Sample Colorize</span>”</span> applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter allows you to colorize old black-and-white images by mapping
+      a color source image or a gradient against it.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2825"></a>8.41.2. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Map</span> → <span class="guimenuitem">Sample Colorize…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2826"></a>8.41.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2827"></a>
+          <p class="title">
+            <strong>Figure 16.197. Options of the <span class="quote">“<span class="quote">Sample Colorize</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/map/samplecolorize.png" alt="Options of the “Sample Colorize” filter" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The filter window is divided into two parts: Destination on the left,
+      Sampling on the right.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Destination, </span>
+              <span class="term">Sample</span>
+            </dt>
+            <dd>
+              <p>
+            By default, displayed image previews reproduce the image you
+            invoked the filter from.
+          </p>
+              <p>
+            <span class="guilabel">The sample</span> can be the whole preview, or a
+            selection of this preview. With the drop list, you can select
+            another sample-image among the names of images present on
+            your screen when you called the filter. If you choose
+            <span class="guilabel">From Gradient</span> (or <span class="guilabel">From Inverse
+            Gradient</span>), the selected gradient in Gradient Dialog
+            (or its inverse) will be the sample. It will be displayed into
+            the gradient bar below the sample preview. The sampling preview
+            is grayed out and two cursors allow you to select the gradient
+            range that will be applied to the image or selection.
+          </p>
+              <p>
+            <span class="guilabel">Destination</span> is, by default, the source
+            image. The drop list displays the list of images present on your
+            screen when you evoked the filter and allow you to select
+            another destination image. If there is a selection in this
+            image, it will be grayscale, else the whole preview will be
+            grayscale.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Show selection</span>
+            </dt>
+            <dd>
+              <p>
+            This option toggles between the whole image and the selection,
+            if it exists.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Show color</span>
+            </dt>
+            <dd>
+              <p>
+            This option toggles between colors and grayscale.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Input levels</span>
+            </dt>
+            <dd>
+              <p>
+            Three input boxes and three sliders allow to fix importance of
+            dark tones, mid tones and light tones. Result appears
+            interactively in destination preview.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Output levels</span>
+            </dt>
+            <dd>
+              <p>
+            Two input boxes and two sliders act the same: they limit the
+            color range which will be applied to destination image. You can
+            choose this range accurately. Result appears interactively in
+            destination preview.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Hold intensity</span>
+            </dt>
+            <dd>
+              <p>
+            If this option is checked, the average light intensity of
+            destination image will be the same as that of source image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Original intensity</span>
+            </dt>
+            <dd>
+              <p>
+            If this option is checked, the In levels intensity settings will
+            not be taken in account: original intensity will be preserved.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Get Sample Colors</span>
+            </dt>
+            <dd>
+              <p>
+            When you click on this button, the gradient bar below the
+            sample preview displays colors of the sample. If your sample
+            holds few colors, transitions may be abrupt. Check
+            <span class="guilabel">Smooth samples</span> option to improve them.
+          </p>
+              <p>
+            <span class="guilabel">Use subcolors</span> is more difficult to
+            understand. Let's say first that in a grayscale image there is
+            information only for Value (luminosity, more or less light). In a
+            RGB  image, each pixel has information for the three colors and
+            Value. So, pixels with different color may have the same Value.
+            If this option is checked, colors will be mixed and applied to
+            Destination pixels having that Value. If it is unchecked, then
+            the dominating color will be applied.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-palettemap.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-colors-tone-mapping-menu.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-palettemap.html">8.40. Palette Map</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-colors-tone-mapping-menu.html">8.42. The <span class="quote">“<span class="quote">Tone Mapping</span>”</span> Submenu</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

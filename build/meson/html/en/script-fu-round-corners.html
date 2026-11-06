@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>12.7. Round Corners</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-decor.html" title="12. Decor Filters" />
+    <link rel="prev" href="script-fu-old-photo.html" title="12.6. Old Photo" />
+    <link rel="next" href="script-fu-slide.html" title="12.8. Slide" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>12.7. Round Corners</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-old-photo.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>12. Decor Filters</span>
+        <nav> <a accesskey="n" href="script-fu-slide.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-round-corners"></a>12.7. Round Corners</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id55755" class="indexterm"></a>
+      <a id="id55759" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3545"></a>12.7.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3546"></a>
+          <p class="title">
+            <strong>Figure 17.277. Example for the <span class="quote">“<span class="quote">Round Corners</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for the “Round Corners” filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/decor-taj-round-corners.png" alt="Example for the “Round Corners” filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter rounds the corners of an image, optionally adding a
+      drop-shadow and a background layer.
+    </p>
+        <p>
+      The filter works on RGB and grayscale images that contain only one
+      layer. It creates a copy of the image or can optionally work on the
+      original. It uses the current background color to create a background
+      layer.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3547"></a>12.7.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Decor</span> → <span class="guimenuitem">Round Corners…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3548"></a>12.7.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3549"></a>
+          <p class="title">
+            <strong>Figure 17.278. <span class="quote">“<span class="quote">Round Corners</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/decor/round-corners.png" alt="“Round Corners” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Edge radius</span>
+            </dt>
+            <dd>
+              <p>
+            Rounding corners is done by selecting a quarter of a circle at
+            every corner and removing the area not covered by this selection.
+            The <span class="quote">“<span class="quote">edge radius</span>”</span> is the radius of the constructing
+            circle.
+          </p>
+              <p>
+            In the examples below, the filter was applied to a 100×100 pixels
+            image, with varying edge radius. For radius = 50, the four
+            quadrants just form a circle with diameter = 100, which exactly
+            fits into the original image outline. A radius greater than 50 is
+            possible, but look what happens:
+          </p>
+              <div class="figure">
+                <a id="id3550"></a>
+                <p class="title">
+                  <strong>Figure 17.279. Edge radius examples</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/round-corners-rad15.png" alt="Edge radius examples" />
+                    <div class="caption">
+                      <p>
+                  A 100×100 pixels image, edge radius: 15 (default).
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/round-corners-rad35.png" alt="Edge radius examples" />
+                    <div class="caption">
+                      <p>Edge radius: 35.</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/round-corners-rad50.png" alt="Edge radius examples" />
+                    <div class="caption">
+                      <p>Edge radius: 50.</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/round-corners-rad65.png" alt="Edge radius examples" />
+                    <div class="caption">
+                      <p>Edge radius: 65. Ouch!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Add drop-shadow</span>
+            </dt>
+            <dd>
+              <p>
+            When this option is checked, the filter will cast a shadow behind
+            your image after rounding the image corners.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Shadow X/Y offset</span>
+            </dt>
+            <dd>
+              <p>
+            X and Y offset determine where the shadow will be placed in
+            relation to the image. Offset is measured in pixels. High values
+            make the shadow look like it's far away, and low values will make
+            it look closer to the image.
+          </p>
+              <div class="figure">
+                <a id="id3551"></a>
+                <p class="title">
+                  <strong>Figure 17.280. Shadow offset examples</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/round-corners-shadow1.png" alt="Shadow offset examples" />
+                    <div class="caption">
+                      <p>
+                  Shadow X offset: 8, Y offset: 8 (default).
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/round-corners-shadow2.png" alt="Shadow offset examples" />
+                    <div class="caption">
+                      <p>Shadow X offset: 16, Y offset: 4.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            Note that the shadow offsets as well as the blur radius are
+            limited to background area.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Blur radius</span>
+            </dt>
+            <dd>
+              <p>
+            When <span class="guilabel">Add drop-shadow</span> is checked, you may
+            select a blur radius, which will be used by the
+            <a class="link" href="script-fu-drop-shadow.html" title="6.11. Drop Shadow (legacy)">Drop Shadow</a> filter.
+            The image will be enlarged in both dimensions depending on the
+            blur radius and the shadow offsets.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Add background</span>
+            </dt>
+            <dd>
+              <p>
+            When you check this option (it is checked by default), the filter
+            will add a background layer below the existing layer, filled with
+            the current background color. The size of this new layer depends
+            on the blur radius and the shadow offsets.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Work on copy</span>
+            </dt>
+            <dd>
+              <p>
+            If checked, the filter creates a new window containing a copy of
+            the image with the filter applied. The original image remains
+            unchanged.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-old-photo.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-decor.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-slide.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-old-photo.html">12.6. Old Photo</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-slide.html">12.8. Slide</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

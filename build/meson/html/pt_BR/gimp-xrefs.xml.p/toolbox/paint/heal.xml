@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-05-09 j.h update to v2.10.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-heal">
+  <title>Restaurar</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Restaurar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Restaurar</primary>
+  </indexterm>
+
+  <para>Essa ferramenta foi uma vez descrita como <quote>O pincel de restauração se parece com uma ferramenta de clonagem inteligente com esteroides</quote>. E, de fato, a ferramenta de restauração é muito parecida com a ferramenta de clonagem, mas é mais inteligente para remover falhas em imagens. Um uso típico é a remoção de rugas em fotografias de pessoas. Para fazer isso, os pixels não são simplesmente copiados da origem para o destino, mas a área em volta do destino é levada em conta antes da clonagem ser aplicada. O algoritmo usado para isso é descrito em um artigo cientifico Todor Georgiev <xref linkend="bibliography-online-georgiev"/>.</para>
+  <para>Para usá-la, primeiro escolha um pincel com o tamanho apropriado para o defeito. Então pressione a tecla <keycap>Ctrl</keycap> enquanto clica na área que você deseja reproduzir. Solte a tecla <keycap>Ctrl</keycap>, mova o ponteiro até o defeito, e clique novamente. Clique. Se o defeito é suave, não muito diferente da área a seu redor, então ele será corrigido rapidamente. Você também pode corrigir com repetidos cliques, mas corre o risco de criar uma mancha.</para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>Existem várias formas para ativar a ferramenta:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Através do menu da janela de imagem: <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de pintura</guisubmenu><guimenuitem>Restaurar</guimenuitem></menuchoice>,</para>
+      </listitem>
+      <listitem>
+        <para>Ícone da ferramenta de clonagem na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>Ao pressionar o atalho de teclado <keycap>C</keycap>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Modificadores de tecla</title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>A tecla <keycap>Ctrl</keycap> é usada para selecionar a origem. Você pode restaurar a partir de qualquer camada de qualquer imagem, simplesmente clicando sobre a imagem, com a tecla <keycap>Ctrl</keycap> pressionada, enquanto a camada estiver ativa (como exibida na janela de camadas). Se o alinhamento está selecionado como <quote>Nenhum</quote> ou <quote>Alinhado</quote> nas opções a ferramenta, então o ponto no qual você for clicar se tornará a origem da restauração: os dados da imagem naquele ponto serão usados quando você começar a pintar com a ferramenta de restauração. No modo de seleção de origem, o cursor muda para um símbolo de cruz.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <!-- TRANSLATORS: This is about the Shift key -->
+          <keycap>Shift</keycap>
+        </term>
+        <listitem>
+          <para>Uma vez que se estabelece a fonte de origem, se você pressionar essa tecla, verá uma fina linha conectando o ponto clicado anteriormente ao local atual do cursor. Se clicar novamente, enquanto mantém a tecla <keycap>Shift</keycap> pressionada, a ferramenta irá <quote>restaurar</quote> ao longo dessa linha.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/tool-options-heal.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Opacidade</term>
+        <term>Pincel</term>
+        <term>Tamanho</term>
+        <term>Proporção</term>
+        <term>Ângulo</term>
+        <term>Espaçamento</term>
+        <term>Dureza</term>
+        <term>Força</term>
+        <term>Dinâmicas</term>
+        <term>Opções de dinâmicas</term>
+        <term>Aplicar espalhamento</term>
+        <term>Pincelada suave</term>
+        <term>O tamanho do pincel - curva de esmaecimento</term>
+        <term>Expand Layers</term>
+        <listitem>
+          <xi:include href="about-common-paint-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Borda dura</term>
+        <listitem>
+          <para><guilabel>Pressão</guilabel>: Pressione com mais força para tornar a pincelada menos transparente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Usar amostra combinada</term>
+        <listitem>
+          <para>Se você ativar essa opção, a recuperação não é calculada apenas a partir de valores da camada ativa, mas de todas as camadas visíveis.</para>
+          <para>O reticulado é completamente explicado no <link linkend="glossary-dithering">Glossário</link></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Alinhamento</term>
+        <listitem>
+          <para>Essa opção está descrita em <link linkend="gimp-tool-clone">Ferramenta de clonagem</link>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Restauração não é clonagem</title>
+    <para>Apesar da ferramenta de restauração possuir funcionalidades em comum com a ferramenta de clonagem usada, o resultado é bastante diferente.</para>
+   <figure>
+     <title>Comparando <quote>Clonagem</quote> e <quote>Restauração</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/heal-compar.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Clonagem à esquerda. Todas as cores são transferidas.</para>
+          <para>Cicatrização à direita. As cores são muito menos transferidas, especialmente em bordas onde os pixels circundantes do destino são levados em conta.</para>
+    </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

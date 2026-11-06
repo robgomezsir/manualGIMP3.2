@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-08-12 Added Spanish translation by AntI
+  2007-04-23 KoSt: added 'no'
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  050904 de added by axel.wernicke
+-->
+<sect2 id="plug-in-curve-bend">
+  <title>Dobrar em curva</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Distorções</secondary>
+    <tertiary>Dobrar em curva</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Dobrar em curva</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro Dobrar em curva</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/distort-taj-curve-bend.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro permite que você crie uma curva que será usada para distorcer a camada ou seleção ativa. A distorção será aplicada gradualmente de uma borda da imagem ou seleção até a outra.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Distorts</guisubmenu>
+        <guimenuitem>Curve Bend…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Dobrar em curva</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/distort/curvebend.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Pré-visualização</term>
+        <listitem>
+          <para>Todas as suas mudanças nas configurações aparecerão na pré-visualização, mas não afetarão a imagem até que você clique em <guilabel>Ok</guilabel>.</para>
+          <variablelist>
+            <varlistentry>
+              <term>Pré-visualizar uma vez</term>
+              <listitem>
+                <para>Este botão permite que você atualize a pré-visualização toda vez que precisar da mesma.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Automatic preview</term>
+              <listitem>
+                <para>Com esta opção, a pré-visualização é atualizada em tempo real. Isso precisa de bastante cálculo, mas não deve ser problema para um computador moderno (2014). </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Opções</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Rotacionar</term>
+              <listitem>
+                <para>Aqui, você pode escolher o ângulo de aplicação do filtro (0-360, no sentido anti-horário). 0 é a configuração inicial: o filtro é aplicado nas bordas de cima e de baixo da imagem. Se você colocar a rotação em 90, o filtro será aplicado nas bordas esquerda e direita da imagem.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Uniformizado</term>
+              <term>Anti-serrilhamento</term>
+              <listitem>
+                <para>O processo de distorção pode criar bordas muito nítidas e com degraus (serrilhado). Essas duas opções melhoram esse aspecto.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Trabalhar em uma cópia</term>
+              <listitem>
+                <para>Esta opção cria uma nova camada chamada <quote>Curve_bend_dummy_layer_b</quote>, que se torna a camada ativa, permitindo que você veja as alterações em relação a sua imagem original sem modificar a imagem original.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Modificar curvas</term>
+        <listitem>
+          <para>Nessa grade, você tem uma linha horizontal marcada, com um nó em cada uma das pontas, que reprenta, por padrão, a borda de cima da imagem. Quando você clica nessa curva, um novo nó aparece, e você pode arrasta-lo para modificar a curva como desejar. Você pode criar vários nós na curva.</para>
+          <para>Você só pode ter duas curvas na grade, uma para a borda <quote>Superior</quote> e outra para a borda <quote>Inferior</quote>  - no entanto, devido a possibilidade de Rotacionar a aplicação das curvas esses nomes não correspondem necessariamente aos lados da imagem em que as curas serão aplicadas. Você pode ativar cada uma das curvas clicando nos botões de rádio de <guilabel>Superior</guilabel> e <guilabel>Inferior</guilabel>.</para>
+          <para>
+            If you use the <guilabel>Freehand</guilabel> <emphasis>Curve
+            Type</emphasis> option, the curve you draw will replace the active
+            curve.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Curva para a borda</term>
+        <listitem>
+          <para>Aqui você especifíca se a curva ativa é a que se aplica a borda <guilabel>Superior</guilabel> ou <guilabel>Inferior</guilabel>, de acordo com a rotação.</para>
+          <caution>
+            <para>Lembre-se que a borda da curva depende da rotação. Por exemplo, com <guilabel>Rotacionar</guilabel> =  90°, a curva Superior na verdade será aplicada a borda esquerda da imagem.</para>
+          </caution>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tipo de curva</term>
+        <listitem>
+          <para>
+            With the <guilabel>Smooth</guilabel> option, you get automatically a well
+            rounded curve when you drag a node.
+          </para>
+          <para>
+            The <guilabel>Freehand</guilabel> option allows you to draw a curve
+            freely. It will replace the active curve.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Botões</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Copiar</term>
+              <listitem>
+                <para>Copia a forma da curva ativa para a curva da outra borda.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Espelhar</term>
+              <listitem>
+                <para>Cria uma cópia espelhada da curva ativa na outra curva.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Trocar</term>
+              <listitem>
+                <para>Troca as curvas <guilabel>Superior</guilabel> e <guilabel>Inferior</guilabel>.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Restaurar</term>
+              <listitem>
+                <para>Restaura a curva ativa, deixando-a como uma única linha horizontal com apenas dois nós.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Abrir</term>
+              <listitem>
+                <para>Carrega a curva de um arquivo.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Salvar</term>
+              <listitem>
+                <para>Salva a curva em um arquivo.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

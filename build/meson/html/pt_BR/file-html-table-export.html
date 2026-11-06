@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.27. Export Image as HTML Table</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-heif-hej2-export.html" title="5.26. Export Image as HEJ2" />
+    <link rel="next" href="file-icns-export.html" title="5.28. Export Image as ICNS" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.27. Export Image as HTML Table</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-heif-hej2-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-icns-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-html-table-export"></a>5.27. Export Image as HTML Table</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id28079" class="indexterm"></a>
+      <a id="id28081" class="indexterm"></a>
+      <a id="id28083" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3288"></a>5.27.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3289"></a>
+          <p class="title">
+            <strong>Figura 15.75. The HTML Table Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-html-table-dialog.png" alt="The HTML Table Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The html table export dialog allows you to export your image as an
+      html file where the image is represented by a table of colored squares.
+      A similar exporter is
+      <a class="link" href="file-colorxhtml-export.html" title="5.11. Export Image as Colored HTML text">Colored HTML text</a>.
+    </p>
+        <p>
+      You can export your image in this format when you choose the
+      <span class="quote">“<span class="quote">.htm</span>”</span> extension, or explicitly choose
+      <span class="quote">“<span class="quote">HTML Table</span>”</span> as file type in the export dialog.
+    </p>
+        <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Warning">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Atenção]" src="images/warning.png" />
+              </td>
+              <th align="left">Atenção</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        This generates very large html tables, even for smaller size images.
+        This can slow down or even crash your browser.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3290"></a>5.27.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">HTML Page Options</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Generate full HTML document</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When checked, a complete html document will be generated,
+                  instead of only the html for the table.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Table Creation Options</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Use cellspan</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If enabled, rectangular sections of identically colored
+                  blocks will be replaced by one large cell with
+                  <code class="varname">ROWSPAN</code> and <code class="varname">COLSPAN</code> html tags
+                  set to the correct size.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Compress TD tags</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If enabled, no whitespace will be added between the html
+                  <code class="varname">TD</code> tags and the cell content. This is only
+                  necessary for pixel level positioning control.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Use caption</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  If enabled, a caption will be added above the table.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Caption</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Enter the text of the caption for the html table here.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cell content</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Enter the text or character to be used as cell content. The
+                  default will show up as an empty colored block.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Table Options</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Border</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The size in pixels of the table border.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Width, </span>
+                    <span class="term">Height</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Set the dimensions of each table cell here. You can enter
+                  the number of pixels or a percentage.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cell-padding</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The amount of cell padding.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cell spacing</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The amount of cell spacing.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-heif-hej2-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-icns-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-heif-hej2-export.html">5.26. Export Image as HEJ2</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-icns-export.html">5.28. Export Image as ICNS</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

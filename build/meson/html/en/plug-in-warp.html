@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>13.14. Warp</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-map.html" title="13. Map Filters" />
+    <link rel="prev" href="plug-in-tile.html" title="13.13. Tile" />
+    <link rel="next" href="filters-render.html" title="14. Rendering Filters" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>13.14. Warp</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-tile.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>13. Map Filters</span>
+        <nav> <a accesskey="n" href="filters-render.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-warp"></a>13.14. Warp</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id57675" class="indexterm"></a>
+      <a id="id57679" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3666"></a>13.14.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter displaces pixels of active layer or selection according to
+      the gray levels of a <span class="emphasis"><em>Displacement map</em></span>. Pixels are
+      displaced according to the gradient slope in the displacement map.
+      Pixels corresponding to solid areas are not displaced; the higher the
+      slope, the higher the displacement.
+    </p>
+        <div class="figure">
+          <a id="id3667"></a>
+          <p class="title">
+            <strong>Figure 17.330. 
+        From left to right: original image, displacement map, displaced image
+      </strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/example-map-warp1.png" alt="From left to right: original image, displacement map, displaced image" />
+              <div class="caption">
+                <p>
+            Solid areas of displacement map lead to no displacement. Abrupt
+            transitions give an important displacement. A linear gradient
+            gives a regular displacement. Displacement direction is
+            perpendicular to gradient direction (angle = 90°).
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id3668"></a>
+          <p class="title">
+            <strong>Figure 17.331. With a non-linear gradient</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/example-map-warp2.png" alt="With a non-linear gradient" />
+              <div class="caption">
+                <p>A non-linear gradient leads to curls.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id3669"></a>
+          <p class="title">
+            <strong>Figure 17.332. With a complex gradient:</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/example-map-warp3.png" alt="With a complex gradient:" />
+              <div class="caption">
+                <p>
+            And a complex gradient, such as the
+            <a class="link" href="gimp-filter-noise-solid.html" title="14.9. Solid Noise">Solid Noise</a>
+            filter can create, gives a swirl effect.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter offers the possibility of masking a part of the image to
+      protect it against filter action.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3670"></a>13.14.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Map</span> → <span class="guimenuitem">Warp…</span>.
+      This filter has no Preview.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3671"></a>13.14.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3672"></a>
+          <p class="title">
+            <strong>Figure 17.333. Warp filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/map/warp.png" alt="Warp filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <p class="title">
+            <strong>Basic Options</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Step size</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="quote">“<span class="quote">Step</span>”</span> is displacement distance for every filter
+            iteration. A 10 value is necessary to get a one pixel
+            displacement. This value can be negative to invert
+            displacement direction.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Iterations</span>
+            </dt>
+            <dd>
+              <p>
+            The number of repetitions of effect when applying filter.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">On edges</span>
+            </dt>
+            <dd>
+              <p>
+            Because of displacement, a part of pixels are driven over the
+            borders of layer or selection, and, on the opposite side, pixels
+            places are emptying. The four following options allow you to fix
+            this issue:
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Wrap</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  What goes out on one side is going into the opposite side
+                  (this is the default).
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Smear</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Emptying places are filled with a spreading of the
+                  neighboring image line.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Black</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Emptying places are filled with black color.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Foreground color</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Emptying places are filled with the Foreground color of the
+                  color area in Toolbox.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Displacement map</span>
+            </dt>
+            <dd>
+              <p>
+            To be listed in this file picker, the displacement map, which
+            should be a grayscale image, must be <span class="emphasis"><em>present on your
+            screen when you call this filter and must have the same size as
+            the original image</em></span>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Advanced Options</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Dither size</span>
+            </dt>
+            <dd>
+              <p>
+            Once all pixels are displaced, this option scatters them randomly,
+            giving grain to the image. The higher this value (0.00-100.00),
+            the thinner the grain.
+          </p>
+              <div class="figure">
+                <a id="id3673"></a>
+                <p class="title">
+                  <strong>Figure 17.334. With a 3.00 dither size:</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp4.png" alt="With a 3.00 dither size:" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Rotation angle</span>
+            </dt>
+            <dd>
+              <p>
+            This option sets the displacement angle of pixels according to the
+            slope direction of the gradient. Previous examples have been
+            created with a vertical gradient and a 90° angle: so, pixels were
+            displaced horizontally and nothing went out of the image borders.
+            Here is an example with a 10° angle and 6 iterations:
+          </p>
+              <div class="figure">
+                <a id="id3674"></a>
+                <p class="title">
+                  <strong>Figure 17.335. With a 10° angle and 6 iterations:</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp5.png" alt="With a 10° angle and 6 iterations:" />
+                    <div class="caption">
+                      <p>
+                  Displacement is made according to a 10° angle against
+                  vertical. Pixels going out the lower border on every
+                  iteration are going in through the upper border (Wrap
+                  option checked), giving a dotted line.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Substeps</span>
+            </dt>
+            <dd>
+              <p>
+            If you specify a value &gt; 1, the displacement vector is computed in
+            several substeps, giving you a finer control to the displace
+            process.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Magnitude map</span>
+            </dt>
+            <dd>
+              <p>
+            In addition to displacement map, you can add a Magnitude map. This
+            map should also be a grayscale image, with the same size as the
+            source image and which must be present on your screen when you
+            call the filter. This map gives more or less strength to the
+            filter on some parts of the image, according to the gray levels of
+            this magnitude map. Image areas corresponding to white parts of
+            this map will undergo all the strength of the filter. Image areas
+            corresponding to black parts of the map will be spared by the
+            filter. Intermediate gray levels will lessen the filter action on
+            corresponding areas of the image.
+            <span class="guilabel">Use magnitude map</span> must be checked
+            for that.
+          </p>
+              <div class="figure">
+                <a id="id3675"></a>
+                <p class="title">
+                  <strong>Figure 17.336. Magnitude Map example:</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp6.png" alt="Magnitude Map example:" />
+                    <div class="caption">
+                      <p>
+                  From left to right: original image, displacement map,
+                  magnitude map, after applying <span class="quote">“<span class="quote">Warp</span>”</span>
+                  filter. You can see that the black areas of the magnitude
+                  map prevent the filter from taking action.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>More Advanced Options</strong>
+          </p>
+          <p>
+        These extra options let you add two new maps, a gradient map and/or
+        a vector map.
+      </p>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Note]" src="images/note.png" />
+                </td>
+                <th align="left">Note</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+          To test these options alone, you must use a map with a solid color
+          for all the other maps.
+        </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Gradient scale</span>
+            </dt>
+            <dd>
+              <p>
+            Using a gradient map, (this map should also be a grayscale
+            image), the displacement of pixels depends on the direction of
+            grayscale transitions. The <span class="guilabel">Gradient scale</span>
+            option lets you set how much the grayscale variations will
+            influence the displacement of pixels. On every iteration, the
+            filter works on the whole image, not only on the red object: this
+            explains blurredness.
+          </p>
+              <div class="figure">
+                <a id="id3676"></a>
+                <p class="title">
+                  <strong>Figure 17.337. Gradient scale example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp7.png" alt="Gradient scale example" />
+                    <div class="caption">
+                      <p>
+                  From left to right: original image, Gradient map, filter
+                  applied.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            In the example above, <span class="quote">“<span class="quote">Warp</span>”</span> filter is applied with a
+            gradient map (Gradient scale = 10.0). The gradient is oblique,
+            from top left to right bottom. The part of the image corresponding
+            to the gradient is moved obliquely, 90° rotated (Rotation angle
+            90° in Advanced Options).
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Vector magnitude</span>
+            </dt>
+            <dd>
+              <p>
+            With this map, the displacement depends on the angle you set in
+            the <span class="guilabel">Angle</span> text box. 0° is upwards. Angles go
+            counter-clockwise. The <span class="emphasis"><em>vector control map</em></span>
+            determines by how many pixels the image will move on every
+            iteration.
+          </p>
+              <div class="figure">
+                <a id="id3677"></a>
+                <p class="title">
+                  <strong>Figure 17.338. Vector magnitude example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp8.png" alt="Vector magnitude example" />
+                    <div class="caption">
+                      <p>
+                  From left to right: original image, displacement map,
+                  filter applied.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            In the above example, <span class="quote">“<span class="quote">Warp</span>”</span> filter is applied with a
+            Vector magnitude. Gradient is vertical, from top to bottom. Vector
+            angle is 45°. The image is moved obliquely, 45° to the top left
+            corner. The image is blurred because every iteration works on the
+            whole image, and not only on the red bar.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Angle</span>
+            </dt>
+            <dd>
+              <p>Angle for fixed vector map (see above).</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-tile.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-map.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-render.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-tile.html">13.13. Tile</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-render.html">14. Rendering Filters</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

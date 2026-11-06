@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.6. Extendendo o Script de “Text Box”</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-using-script-fu-tutorial.html" title="3. Um tutorial de Script-Fu" />
+    <link rel="prev" href="gimp-using-script-fu-tutorial-script.html" title="3.5. Adicionando Funcionalidade Adicional" />
+    <link rel="next" href="gimp-using-script-fu-tutorial-result.html" title="3.7. Seu script e seu funcionamento" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.6. Extendendo o Script de <span class="quote">“<span class="quote">Text Box</span>”</span></div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-script-fu-tutorial-script.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Um tutorial de Script-Fu</span>
+        <nav> <a accesskey="n" href="gimp-using-script-fu-tutorial-result.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-using-script-fu-tutorial-extending-text-box"></a>3.6. Extendendo o Script de <span class="quote">“<span class="quote">Text Box</span>”</span></h3>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2852"></a>3.6.1. Tratando os passos de Desfazer corretamente</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+        When creating a script, you want to give your users the ability to
+        undo their actions, should they make a mistake. This is easily
+        accomplished by calling the functions
+        <code class="function">gimp-image-undo-group-start</code>
+        and <code class="function">gimp-image-undo-group-end</code>
+        around the code that manipulates the image. You can think of them as
+        matched statements that let <acronym class="acronym">GIMP</acronym> know when to start
+        and stop recording manipulations on the image, so that those
+        manipulations can later be undone.
+      </p>
+        <p>Se você está criando uma nova imagem, como fazemos aqui, não é tão importante usar essas funções, por que você não está alterando uma imagem que já existe. Ainda assim, sem as mesmas, se o usuário usar a opção de desfazer na imagem do seu script, ela será desfeita passo a passo, o que pode não ser desejável. Entretanto, se o seu seu script atua sobre uma imagem que já existe, você certamente vai querer fazer uso dessas funções.</p>
+        <p>Desfazer um script funciona muito bem se você usar essas funções, com raras exceções, por exemplo, se o script alterar a cor de frente do GIMP sem restaurar o contexto.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2853"></a>3.6.2. Estendendo o script um pouco mais</h4>
+            </div>
+          </div>
+        </div>
+        <p>Agora que você já tem um script bem legal para criar caixas de texto, vamos adicionar duas funcionalidades ao mesmo:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>Atualmente, a imagem é redimensionada exatamente para o tamanho do texto  — não há espaço para mais nada, como sombras projetadas, ou efeitos especiais (apesar de que muitos dos scripts vão automaticamente redimensionar a imagem conforme for necessário para acomodar seus resultados). Vamos criar um espaço de reserva ao redor do texto, e até mesmo deixar o usuário especificar quanto espaço ele quer adicionar, como uma porcentagem do tamanho do texto resultante.</p>
+            </li>
+            <li class="listitem">
+              <p>Este script poderia facilmente ser usado por outros scripts que trabalhem com texto. Vamos estende-lo de forma que ele retorne a imagem e as camadas criadas, de forma que outros scripts possam chama-lo e usar os objetos que nós criamos.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2854"></a>3.6.3. Modificando os parâmetros e a função de registro</h4>
+            </div>
+          </div>
+        </div>
+        <p>Para permitir ao usuário especificar a quantidade de espaço, vamos adicionar um parâmetro à nossa função e um à chamada de registro do script:</p>
+        <pre class="programlisting">
+  (define (script-fu-text-box inTest inFont inFontSize inTextColor inBufferAmount)
+  (let*
+        (
+           ; define our local variables
+           ; create a new image:
+           (theImageWidth  10)
+           (theImageHeight 10)
+           (theImage (car
+                          (gimp-image-new
+                           theImageWidth
+                           theImageHeight
+                           RGB
+                          )
+                     )
+           )
+           (theText)          ;a declaration for the text
+                              ;we create later
+
+           (theBuffer)        ;<span class="emphasis"><em>added</em></span>
+
+           (theLayer
+                     (car
+                         (gimp-layer-new
+                          theImage
+                           "layer 1"
+                          theImageWidth
+                          theImageHeight
+                          RGB-IMAGE
+                          100
+                          LAYER-MODE-NORMAL
+                         )
+                     )
+           )
+        ) ;end of our local variables
+
+   <em class="replaceable"><code>[Code here]</code></em>
+ )
+      </pre>
+        <pre class="programlisting">
+  (script-fu-register
+    "script-fu-text-box"                        ;function name
+    "Text Box"                                  ;menu label
+    "Creates a simple text box, sized to fit\
+      around the user's choice of text,\
+      font, font size, and color."              ;description
+    "Michael Terry"                             ;author
+    "copyright 1997, Michael Terry;\
+      2009, the GIMP Documentation Team"        ;copyright notice
+    "October 27, 1997"                          ;date created
+    ""                                      ;image type that the script works on
+    SF-STRING      "Text"          "Text Box"   ;a string variable
+    SF-FONT        "Font"          "Charter"    ;a font variable
+    SF-ADJUSTMENT  "Font size"     '(50 1 1000 1 10 0 1)
+                                                ;a spin-button
+    SF-COLOR       "Color"         '(0 0 0)     ;color variable
+    SF-ADJUSTMENT  "Buffer amount" '(35 0 100 1 10 1 0)
+                                                ;a slider
+  )
+  (script-fu-menu-register "script-fu-text-box" "&lt;Image&gt;/Filters/Tutorial")
+      </pre>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2855"></a>3.6.4. Adicionando o novo código</h4>
+            </div>
+          </div>
+        </div>
+        <p>Nós vamos adicionar código em dois lugares: imediatamente antes de redimensionar a imagem, e, ao final do script (para retornar a nova imagem, a camada e o texto).</p>
+        <p>Depois de obter a largura e  altura do texto, nós precisamos recalcular esses valores com base na quantidade de espaço especificada pelo usuário. Nós não faremos nenhuma checagem de erro para ter certeza que o número está na faixa entre 0 e 100% por que não é algo que ameaça nossa vida, e por que não há nenhuma razão de por que o usuário não poderia colocar um valor como <span class="quote">“<span class="quote">200</span>”</span> como a percentagem de espaço a adicionar.</p>
+        <pre class="programlisting">
+        (set! theBuffer (* theImageHeight (/ inBufferAmount 100) ) )
+
+        (set! theImageHeight (+ theImageHeight theBuffer theBuffer) )
+        (set! theImageWidth  (+ theImageWidth  theBuffer theBuffer) )
+      </pre>
+        <p>Tudo o que estamos fazendo aqui é configurando o espaço (buffer) baseando-no na altura do texto, e adicionando esse valor multiplicado por dois a altura e a largura de nossa nova imagem. (Nós dobramos o valor por que o espaço tem que ser adicionado dos dois lados do texto — a esquerda e a direita na horizontal, e em cima e embaixo na vertical)</p>
+        <p>Agora que redimensionamos a imagem para comportar o espaço extra, é necessário centralizar o texto dentro da imagem. Isso é feito movendo se suas coordenadas (x,y) para a posição  (<code class="varname">theBuffer</code>, <code class="varname">theBuffer</code>). Eu adicionei essa linha após redimensionar a imagem e a camada:</p>
+        <pre class="programlisting">
+        (gimp-layer-set-offsets theText theBuffer theBuffer)
+      </pre>
+        <p>
+        Go ahead and save your script, and try it out after restarting
+        <acronym class="acronym">GIMP</acronym>.
+      </p>
+        <p>Tudo o que resta agora é retornar a nossa imagem, a camada e a camada de texto. Depois de exibir a imagem, nós adicionamos esta linha:</p>
+        <pre class="programlisting">(list theImage theLayer theText)</pre>
+        <p>Essa é a última linha da função, tornando esta lista disponível para outros scripts que queiram usa-la.</p>
+        <p>Para usar nosso script de caixa de texto a partir de outro script, poderíamos fazer algo como o seguinte:</p>
+        <pre class="programlisting">
+        (set! theResult (script-fu-text-box
+                         "Some text"
+                         "Charter" "30"
+                         '(0 0 0)
+                         "35"
+                        )
+        )
+        (gimp-image-flatten (car theResult))
+      </pre>
+        <p>Parabéns! Você está indo rumo a sua faixa preta em Script-Fu!</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-script-fu-tutorial-script.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-using-script-fu-tutorial.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-script-fu-tutorial-result.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-script-fu-tutorial-script.html">3.5. Adicionando Funcionalidade Adicional</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-script-fu-tutorial-result.html">3.7. Seu script e seu funcionamento</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

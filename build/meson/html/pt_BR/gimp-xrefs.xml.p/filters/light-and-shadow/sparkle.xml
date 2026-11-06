@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-03 j.h: no change for v2.10
+-->
+<sect2 id="plug-in-sparkle">
+  <title>Cintilância</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Luz e sombra</secondary>
+    <tertiary>Cintilância</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Cintilância</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de aplicação do filtro CIntilância</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/light-taj-sparkle.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter adds sparkles to your image. It uses the lightest points
+      determined by the <guilabel>Luminosity threshold</guilabel>. It is
+      difficult to predict the location of the sparkles. You can add white dots
+      on your image where you want the sparkles to appear.
+    </para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Light and Shadow</guisubmenu>
+        <guimenuitem>Sparkle…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções para o filtro <quote>Cintilância</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/light-and-shadow/sparkle.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Pré-visualização</term>
+        <listitem>
+          <para>
+            If checked, the settings are interactively updated in the preview
+            area. Scroll bars allow you to move the image, but you can also
+            drag the visible area with your pointing device.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Limiar de luminosidade</term>
+        <listitem>
+          <para>
+            The higher the threshold, the more areas will get sparkles.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Intensidade do clarão</term>
+        <listitem>
+          <para>
+            This adjusts the strength of the flare.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Comprimento das pontas</term>
+        <listitem>
+          <para>
+            This determines the length of the rays. Reducing this value causes
+            small spikes to decrease first.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Número de pontas</term>
+        <listitem>
+          <para>
+            The number of starting points for spikes. This value is used for
+            both the number of big spikes and small spikes. When this value
+            is odd, small spikes are opposite the big ones. When it is even,
+            big spikes are opposite another big spike.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ângulo das pontas</term>
+        <listitem>
+          <para>
+            This sets the angle of the first big spike. If set to -1, the
+            angle is chosen at random. If a spot has several pixels within
+            the <guilabel>Luminosity threshold</guilabel>, each of them will
+            generate a sparkle. If the angle is positive, they will all be
+            superimposed. With -1, each sparkle will have a random rotation
+            resulting in numerous thin spikes.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Densidade de pontas</term>
+        <listitem>
+          <para>
+            This option determines the number of sparkles on your image. It
+            indicates the percentage of all possible sparkles that will be
+            preserved.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Transparência</term>
+        <listitem>
+          <para>
+            When you increase transparency, sparkles become more
+            transparent and the layer beneath becomes visible. If there is no
+            other layer, sparkle saturation decreases.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Matiz aleatório</term>
+        <listitem>
+          <para>
+            This sets how much the hue of the sparkles should be changed
+            randomly.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Saturação aleatória</term>
+        <listitem>
+          <para>
+            This sets how much the saturation of the sparkles should be
+            changed randomly.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Additional Options</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Preservar luminosidade</term>
+              <listitem>
+                <para>
+                  If set, the central pixels of the sparkle keep the luminosity
+                  of the brightest pixel. This reduces the brightness.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Inverter</term>
+              <listitem>
+                <para>
+                  Instead of selecting the brightest pixels in the image,
+                  Sparkle will select the darkest ones, resulting in dark
+                  sparkles.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Acrescentar borda</term>
+              <listitem>
+                <para>
+                  When enabled, instead of creating sparkles on the brightest
+                  pixels, this creates an image border made up of sparkles.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Color type</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Cor Natural</term>
+              <term>Cor de frente</term>
+              <term>Cor de fundo</term>
+              <listitem>
+                <para>
+                  This selects the color used for the central pixels of the
+                  sparkles. This color will be added in Screen mode (Multiply if
+                  <guilabel>Inverse</guilabel> is checked).
+                  <quote>Natural color</quote> is the color of the pixel
+                  in the image.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

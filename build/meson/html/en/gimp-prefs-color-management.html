@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.4. Color Management</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-prefs-dialog.html" title="6. Preferences Dialog" />
+    <link rel="prev" href="gimp-prefs-debugging.html" title="6.3. Debugging" />
+    <link rel="next" href="gimp-prefs-import-export.html" title="6.5. Image Import and Export" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.4. Color Management</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-prefs-debugging.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>6. Preferences Dialog</span>
+        <nav> <a accesskey="n" href="gimp-prefs-import-export.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-prefs-color-management"></a>6.4. Color Management</h3>
+          </div>
+        </div>
+      </div>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Note]" src="images/note.png" />
+            </td>
+            <th align="left">Note</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      For color profile related actions of an image file, see
+      <a class="xref" href="gimp-image-color-management.html" title="6.8. “Color Management” Submenu">Section 6.8, “<span class="quote">“<span class="quote">Color Management</span>”</span> Submenu”</a>.
+    </p>
+              <p>
+      For color display related view settings, see
+      <a class="xref" href="gimp-view-color-management.html" title="5.13. Color Management">Section 5.13, “Color Management”</a>.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <a id="id28675" class="indexterm"></a>
+      <a id="id28679" class="indexterm"></a>
+      <a id="id28681" class="indexterm"></a>
+      <div class="figure">
+        <a id="id2113"></a>
+        <p class="title">
+          <strong>Figure 15.100. Color Management Preferences</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/preferences/prefs-color-management.png" alt="Color Management Preferences" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    This page lets you customize GIMP color management.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2114"></a>6.4.1. Activating the Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The preferences dialog can be accessed from the main menu, through
+      <span class="guimenu">Edit</span> → <span class="guimenuitem">Preferences</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2115"></a>6.4.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Some of the options let you choose a color profile from a menu. If the
+      desired profile is not present in the menu yet, you can add it by
+      clicking on <span class="guimenuitem">Select color profile from disk…</span>.
+    </p>
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Tip]" src="images/tip.png" />
+              </td>
+              <th align="left">Tip</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        Files containing color profiles are easily recognizable by their
+        <code class="filename">.icc</code> suffix. In addition to that they are
+        usually stored together in only a few places. If you are running
+        GIMP on Mac OS X, you should try
+        <code class="filename">/Library/ColorSync/Profiles/</code> and
+        <code class="filename">Library/Printers/[manufacturer]/Profiles</code>.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="variablelist">
+          <a id="id28702" class="indexterm"></a>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Image display mode</span>
+            </dt>
+            <dd>
+              <p>
+            Using this option, you can decide how GIMP color management
+            operates. There are three modes you can choose from:
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">No color management</span>: Choosing
+                this disables color management in GIMP completely.
+               </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Color managed display</span>:
+                This enables GIMP color management and provides a fully
+                corrected display of the images according to the given color
+                profile for the display.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Soft-proofing</span>: When
+                choosing this option, you enable GIMP color management not
+                only to apply the profile for the display, but also for the
+                selected printer simulation profile. Doing so, you can preview
+                the color results of a print with that printer.
+              </p>
+                    <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Note">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Note]" src="images/note.png" />
+                          </td>
+                          <th align="left">Note</th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>
+                  Please note, that GIMP color management is used to enhance
+                  the display of images and the embedding of profiles to image
+                  files only. More specifically, the options you choose in this
+                  dialog are not used for printing from within GIMP.
+                  This is because printing is a special task done by a
+                  printing engine that is not part of GIMP.
+                </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Color Managed Display</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Monitor profile</span>
+            </dt>
+            <dd>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">None</span>: GIMP uses the colorimetric
+                profile of your monitor.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Select color profile from disk</span>:
+                choose a profile that you have available on your computer.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Try to use the system monitor profile</span>:
+                When enabled, GIMP will try to use the display color profile
+                supplied by the system. The configured monitor profile is
+                then only used as a fallback.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Rendering intent</span>
+            </dt>
+            <dd>
+              <p>
+            This option is about how colors are converted from the color
+            space of your image to your display device. Four modes are
+            available: <span class="quote">“<span class="quote">Perceptual</span>”</span>, <span class="quote">“<span class="quote">Relative
+            colorimetric</span>”</span>, <span class="quote">“<span class="quote">Saturation</span>”</span> and <span class="quote">“<span class="quote">
+            Absolute colorimetric</span>”</span>.
+          </p>
+              <p>
+            Relative colorimetric is usually the best choice (default).
+            Unless you use a LUT monitor profile (most monitor profiles
+            are matrix), choosing perceptual intent actually gives you
+            relative colorimetric. See also
+            <a class="xref" href="glossary.html#glossary-rendering-intent" title="Rendering Intent">
+      <span class="phrase">Rendering Intent</span>
+    </a>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Use black point compensation</span>
+            </dt>
+            <dd>
+              <p>
+            This option is checked by default. Do use black point
+            compensation unless you have a reason not to.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Optimize image display for</span>
+            </dt>
+            <dd>
+              <p>
+            Two options: <span class="guilabel">Speed</span> and
+            <span class="guilabel">Precision / Color Fidelity</span>.
+            <span class="quote">“<span class="quote">Speed</span>”</span> is activated by default. If not,
+            image display might be better at the cost of speed.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <a id="gimp-prefs-soft-proofing"></a>
+          <p class="title">
+            <strong>Soft-Proofing</strong>
+          </p>
+          <p>
+        Soft-proofing is a mechanism that allows you to see on your
+        screen what printing on paper will look like. More in general, it is
+        soft-proofing from the color space of your image to another color
+        space (printer or other output device).
+      </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Optimize soft-proofing for</span>
+            </dt>
+            <dd>
+              <p>
+            Two options: <span class="guilabel">Speed</span> and
+            <span class="guilabel">Precision / Color Fidelity</span>.
+            <span class="quote">“<span class="quote">Speed</span>”</span> is activated by default. If not,
+            soft-proofing might be better at the cost of speed.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Mark out of gamut colors</span>
+            </dt>
+            <dd>
+              <p>
+            When this box is checked, the soft-proofing will mark colors
+            that can not be represented in the target color space.
+            On the right there is a color button that you can click to open a
+            color selector to choose the color you want to be used for marking
+            out of gamut colors.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Preferred profiles</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">RGB profile</span>
+            </dt>
+            <dd>
+              <p>
+            Default is <span class="quote">“<span class="quote">None</span>”</span>, which causes the built-in RGB
+            profile to be used. You can select another RGB working space color
+            profile from disk: it will be offered next to the built-in profile
+            when a color profile can be chosen.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Grayscale profile</span>
+            </dt>
+            <dd>
+              <p>
+            Default is <span class="quote">“<span class="quote">None</span>”</span>, which causes the built-in Grayscale
+            profile to be used. You can select another Grayscale working space
+            color profile from disk: it will be offered next to the
+            built-in profile when a Grayscale profile can be chosen.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">CMYK profile</span>
+            </dt>
+            <dd>
+              <p>
+            Default is <span class="quote">“<span class="quote">None</span>”</span>. You can select a CMYK working
+            space color profile from disk to convert RGB to CMYK.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <a id="gimp-prefs-file-open-policy"></a>
+          <p class="title">
+            <strong>Policies</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">File Open Behavior</span>
+            </dt>
+            <dd>
+              <p>
+            Default is <span class="quote">“<span class="quote">Ask what to do</span>”</span>. You can also select
+            <span class="quote">“<span class="quote">Keep embedded profile</span>”</span>, <span class="quote">“<span class="quote">Convert to
+            built-in sRGB or grayscale profile</span>”</span>, or <span class="quote">“<span class="quote">Convert to
+            preferred RGB or grayscale profile (defaulting to built-in)</span>”</span>
+            to indicate how to treat embedded color profiles when opening an
+            image file.
+          </p>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>For more explanations:</p>
+                      <div class="itemizedlist">
+                        <ul class="itemizedlist" style="list-style-type: disc; ">
+                          <li class="listitem">
+                            <p>
+                  ICC Profiles are explained in Wikipedia
+                  <a class="xref" href="bibliography.html#bibliography-online-wkpd-icc" title="Wikipedia - ICC Profile">[<abbr class="abbrev">WKPD-ICC</abbr>]</a>.
+                </p>
+                          </li>
+                          <li class="listitem">
+                            <p>
+                  See OpenICC project
+                  (<a class="xref" href="bibliography.html#bibliography-online-openicc" title="The OpenICC project">[<abbr class="abbrev">OPENICC</abbr>]</a>) where GIMP and
+                  other great names of free infography contribute to.
+                </p>
+                          </li>
+                        </ul>
+                      </div>
+                      <p>Some online available color profiles:</p>
+                      <div class="itemizedlist">
+                        <ul class="itemizedlist" style="list-style-type: disc; ">
+                          <li class="listitem">
+                            <p>
+                  ICC sRGB Workspace:
+                  <span class="productname">ICCsRGB</span>™
+                  <a class="xref" href="bibliography.html#bibliography-online-iccsrgb" title="ICC sRGB PROFILES">[<abbr class="abbrev">ICCsRGB</abbr>]</a>
+                </p>
+                          </li>
+                          <li class="listitem">
+                            <p>
+                  Adobe RGB98 Workspace:
+                  <span class="productname">Adobe RGB (1998)</span>™
+                  <a class="xref" href="bibliography.html#bibliography-online-adobrgb" title="Adobe RGB (1998) ICC Profile">[<abbr class="abbrev">AdobeRGB</abbr>]</a>
+                </p>
+                          </li>
+                          <li class="listitem">
+                            <p>
+                  ECI (European Color Initiative) Profiles:
+                  <span class="productname">ECI</span>™
+                  <a class="xref" href="bibliography.html#bibliography-online-eci" title="ECI (European Color Initiative) Profiles">[<abbr class="abbrev">ECI</abbr>]</a>
+                </p>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-prefs-debugging.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-prefs-dialog.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-prefs-import-export.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-prefs-debugging.html">6.3. Debugging</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-prefs-import-export.html">6.5. Image Import and Export</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

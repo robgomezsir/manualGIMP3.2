@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.54. Limiar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. O menu “Cores”" />
+    <link rel="prev" href="plug-in-smooth-palette.html" title="8.53. Paleta suave" />
+    <link rel="next" href="gimp-tool-colorize.html" title="8.55. Colorizar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.54. Limiar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-smooth-palette.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. O menu <span class="quote">“<span class="quote">Cores</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-tool-colorize.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-threshold"></a>8.54. Limiar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id45764" class="indexterm"></a>
+      <a id="id45767" class="indexterm"></a>
+      <a id="id45769" class="indexterm"></a>
+      <p>O filtro Limiar transforma a camada ou seleção atual em uma imagem em preto e branco, na qual pixels brancos representam os pixels da imagem em que o valor para o <span class="guilabel">Canal</span> escolhido está dentro do intervalo do limiar, e pixels pretos representam pixels com valor fora deste intervalo.</p>
+      <p>Você pode usá-lo para melhorar uma imagem em preto e branco (texto escaneado, por exemplo) ou para criar máscaras de seleção.</p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Como este filtro cria uma imagem em preto e branco, o antisserrilhamento da imagem original desaparece. Se isto for um problema, use a ferramenta <a class="link" href="gimp-tool-levels.html" title="8.10. Níveis">Níveis</a> no lugar.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4138"></a>8.54.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Colors</span> → <span class="guimenuitem">Threshold…</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          You can also access it by clicking the tool icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-threshold.svg" width="16" /></span>
+          </span>
+          in the Toolbox if Threshold has been enabled as a tool (which is
+          disabled by default). For this,
+          please refer to <a class="xref" href="gimp-prefs-toolbox.html" title="6.13. Caixa de ferramentas">Seção 6.13, “Caixa de ferramentas”</a>.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4139"></a>8.54.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4140"></a>
+          <p class="title">
+            <strong>Figura 16.218. Diálogo do filtro Limiar</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/threshold-dialog.png" alt="Diálogo do filtro Limiar" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Predefinições, </span>
+              <span class="term">Opções de Mistura, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-colors-menu.html#colors-common-features" title="8.1.2. Funcionalidades Comuns de Cores">Seção 8.1.2, “Funcionalidades Comuns de Cores”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Canal</span>
+            </dt>
+            <dd>
+              <p>Isto lhe permite selecionar qual(is) canal(is) será(ão) usado(s) para aplicar o Limiar. O padrão é <span class="guilabel">Valor</span>, que usará todos os canais de cor, mas você também pode escolher usar um único canal: <span class="guilabel">Vermelho</span>, <span class="guilabel">Verde</span>, <span class="guilabel">Azul</span> e <span class="guilabel">Alfa</span> (disponível apenas quando a camada possui canal alfa), <span class="guilabel">Luminância</span>, ou <span class="guilabel">RGB</span>.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-histogram-linear.svg" width="16" /></span>
+          </span>
+          Linear histogram
+        , </span>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-histogram-logarithmic.svg" width="16" /></span>
+          </span>
+          Logarithmic histogram
+        </span>
+            </dt>
+            <dd>
+              <p>Estes dois botões à direita da seleção de Canal lhe permitem escolher o tipo de histograma exibido.</p>
+            </dd>
+            <dt>
+              <span class="term">Intervalo do limiar</span>
+            </dt>
+            <dd>
+              <p>A ferramenta Limiar providencia um gráfico visual, um histograma, do valor da intensidade da camada ou seleção ativa. Você pode definir o intervalo do limiar usando as caixas de entrada para mínimo e máximo ou clicando e arrastando no gráfico. Isto lhe permite separar uma parte da imagem com uma dada intensidade de um fundo com outra intensidade. Pixels dentro do intervalo são brancos, e os outros são pretos. Ajuste o intervalo para obter a seleção desejada em branco com fundo preto. O botão <span class="guibutton">Automático</span> pode ser usado para automaticamente ajustar o limiar.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4141"></a>8.54.3. Usando Limiar e Máscara Rápida para criar uma máscara de seleção</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Sometimes an element you want to extract from
+      an image can stand out well against the background. In this case,
+      you can use the Threshold tool to select this element as a whole, and
+      then use a <a class="link" href="gimp-image-window-quick-mask-button.html" title="3. The Quick Mask">Quick mask</a>.
+    </p>
+        <div class="procedure">
+          <ol class="procedure" type="1">
+            <li class="step">
+              <p>
+          First start decomposing your image into its RGB and HSV components by
+          using the <a class="link" href="plug-in-decompose.html" title="8.26. Decompor">Decompose</a> filter. A
+          new grayscale image is created and the components are displayed as
+          layers in the <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Diálogo de camadas">Layers Dialog</a>.
+          These layers come with a thumbnail but
+          it is too small for an easy study. You can, of course, increase the
+          size of this preview with the dialog menu (the small triangular
+          button), but playing with the <span class="quote">“<span class="quote">eyes</span>”</span> is more simple to
+          display the wanted layer in the decompose image. Select the layer
+          that isolates the element the best.
+        </p>
+              <div class="figure">
+                <a id="id4142"></a>
+                <p class="title">
+                  <strong>Figura 16.219. 
+            The original image, the decompose image and its Layers dialog
+          </strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/threshold-orig.png" alt="The original image, the decompose image and its Layers dialog" />
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/using/threshold-decomp.png" alt="The original image, the decompose image and its Layers dialog" />
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/using/threshold-layers.png" alt="The original image, the decompose image and its Layers dialog" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="step">
+              <p>Use a ferramenta Limiar na imagem decomposta. Movendo o cursor preto, ajuste o limiar para melhor isolar o elemento que você queira extrair. Isto provavelmente não será perfeito: melhoraremos o resultado com a máscara de seleção que vamos criar.</p>
+              <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Warning">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Atenção]" src="images/warning.png" />
+                    </td>
+                    <th align="left">Atenção</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Certifique-se de ter selecionado a camada certa ao usar a ferramenta Limiar: quando ela estiver aberta, você não poderá trocar para outra camada.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="figure">
+                <a id="id4143"></a>
+                <p class="title">
+                  <strong>Figura 16.220. A camada selecionada após o ajuste do limiar</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/threshold-fit.png" alt="A camada selecionada após o ajuste do limiar" />
+                    <div class="caption">
+                      <p>Conseguimos o melhor contorno para nossa flor. Há vários objetos vermelhos que precisamos remover.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="step">
+              <p>Certifique-se de que a imagem exibindo a camada selecionada está ativa e copie-a para a área de transferência com <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>.</p>
+            </li>
+            <li class="step">
+              <p>
+          Now, make the original image active. Click the
+          <span class="guibutton">Quick Mask</span> button at the bottom-left corner
+          of the image window: the image gets covered with a red (default)
+          translucent mask. This red color does not suit well to our image
+          with much red: go to the Channels dialog, activate the
+          <span class="quote">“<span class="quote">Quick mask</span>”</span> channel and change this color with the
+          <span class="guibutton">Edit Channel Attributes</span>. Come back to the
+          original image. Press
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>V</strong></span> to
+          paste the previously copied layer.
+        </p>
+              <div class="figure">
+                <a id="id4144"></a>
+                <p class="title">
+                  <strong>Figura 16.221. A máscara</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject" align="center">
+                    <img src="images/using/threshold-mask.png" align="middle" alt="A máscara" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </li>
+            <li class="step">
+              <p>
+          Voilà. Your selection mask is ready: you can improve the selection
+          as usual. When the selection is ready, disable the Quick mask by
+          clicking its button again: you will see the
+          <a class="link" href="glossary.html#glossary-marching-ants" title="Formigas marchantes">marching ants</a>
+          around the selection.
+        </p>
+              <div class="figure">
+                <a id="id4145"></a>
+                <p class="title">
+                  <strong>Figura 16.222. O resultado</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/threshold-result.png" alt="O resultado" />
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/using/threshold-selection.png" alt="O resultado" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>Usamos a Ampliação para trabalhar em nível de pixel, <a class="link" href="gimp-tool-free-select.html" title="2.4. Seleção Livre (Laço)">Seleção Livre</a> para remover grandes áreas indesejadas, o lápis (para obter limites duros), tinta preta para remover áreas selecionadas, tinta branca para adicionar áreas selecionadas, especialmente para o caule.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-smooth-palette.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-colorize.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-smooth-palette.html">8.53. Paleta suave</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-colorize.html">8.55. Colorizar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

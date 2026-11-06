@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="file-gif-export">
+  <title>Diálogo de exportar imagem</title>
+  <anchor id="file-gif-load" xreflabel="GIF"/>
+
+  <indexterm>
+    <primary>GIF</primary>
+  </indexterm>
+  <indexterm>
+    <primary>.gif</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Diálogo de exportar imagem</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Formatos</primary>
+    <secondary>GIF</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>O diálogo de fontes</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/export-gif-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <warning>
+      <para>
+        The GIF file format does not support some basic image
+        properties such as <emphasis>partial transparency</emphasis> and
+        <emphasis>print resolution</emphasis>.
+      </para>
+      <para>
+        <acronym>GIMP</acronym> also only supports exporting with a maximum of
+        256 colors. For best results, set your image to
+        <link linkend="gimp-image-convert-indexed">indexed mode</link> when you
+        intend to export to GIF.
+        If you care for these properties, use a different file format like
+        <link linkend="file-png-export">PNG</link>.
+      </para>
+    </warning>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <variablelist>
+      <varlistentry>
+        <term>Opções</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Intervalo</term>
+              <listitem>
+                <para>Escolher <quote>entrelaçar</quote> intercala os dados da imagem dentro de um arquivo. Numa conexão lenta de internet, isso pode permitir que o conteúdo da imagem vá aparecendo progressivamente conforme ela vai baixando. Isso pode ser interessante em conexões bem lentas, por que o usuário pode interromper o download se a imagem não for do interesse dele. Isso pouco útil hoje em dia, com conexões mais rápidas à Internet.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Salvar imagem</term>
+              <listitem>
+                <para>Comentários de GIF suportam apenas caracteres ASCII de 7 bits. Se você usar um caractere fora dessa faixa (tal como qualquer letra acentuada, ou ce-cedilha em português), o <acronym>GIMP</acronym> vai exportar essa imagem sem o comentário, e informa-lo que o comentário não foi salvo.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Opções avançadas</term>
+        <listitem>
+          <indexterm>
+            <primary>Ação</primary>
+            <secondary>Opções avançadas</secondary>
+          </indexterm>
+          <para>
+            When working on an animation, the name of the layer can be used
+            to specify certain parameters. For more details see
+            <link linkend="gimp-exporting-animations">exporting animations</link>.
+          </para>
+          <para>
+            Note: exporting a GIF animation does not support layer groups.
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>Navegação</term>
+              <listitem>
+                <para>Quando esta opção está marcada, a imagem será exportada como uma animação. Note que esta opção será desabilitada (e as opções de animação não serão visíveis) se a imagem tiver apenas uma camada.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Número de cores</term>
+              <listitem>
+                <para>Você pode definir quantas vezes a animação repetirá antes de parar. Este valor é ignorado se <guilabel>Repetir para sempre</guilabel> estiver marcado.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Repetir indefinidamente</term>
+              <listitem>
+                <para>Quando esta opção está selecionada, a animação se repetirá indefinidamente, até sair da tela.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Atraso entre os quadros onde não for especificado</term>
+              <listitem>
+                <para>
+                  You can set the delay, in milliseconds, between frames
+                  if it has not been set before. In this case, you can
+                  modify every delay in the Layers dialog. Note that some
+                  operating systems and applications may override with a
+                  lower frame rate due to computer speed, performance, or
+                  other technical limitations.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Disposição do quadro onde não for especificado</term>
+              <listitem>
+                <para>Se você não configurar isso para cada camada, você pode escolher como as camadas serão sobrepostas. Em cada camada, você pode colocar no começo do nome da mesma as opções <quote>(combine)</quote> (combinar)  ou <quote>(replace)</quote> (substituir) - desse jeito, em inglês e entre parênteses.Aqui, há três opções para todos os outros quadros:</para>
+                <itemizedlist mark="opencircle">
+                  <listitem>
+                    <para><guilabel>Não importa</guilabel> Você pode usar esta opção se todas as suas camadas forem opacas e ocuparem a imagem toda. Cada quadro vai sobrepor o que existia antes.</para>
+                  </listitem>
+                  <listitem>
+                    <para><guilabel>Camadas cumulativa (combinar)</guilabel>: os quadros anteriores não serão apagados quando um novo for exibido.</para>
+                  </listitem>
+                  <listitem>
+                    <para><guilabel>Um quadro por camada (substituir)</guilabel>: as camadas anteriores serão apagadas antes de se exibir uma nova camada.</para>
+                  </listitem>
+                </itemizedlist>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Usar o atraso acima para todas as camadas</term>
+              <listitem>
+                <para>O valor <guilabel>Atraso entre quadros quando não especificado</guilabel> será usado para todos os quadros.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Usar a disposição acima para todas as camadas</term>
+              <listitem>
+                <para>O valor <guilabel>Descartar quadro quando não especificado</guilabel> será usado para todos os quadros.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect3 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-03-12 jpl: fr & en update
+  2007-11-27 ude: created (en,de)
+-->
+<sect3 id="gimp-using-script-fu-api">
+  <title>A API de parâmetros do Script-fu</title>
+
+  <note>
+    <para>
+      Beside the above parameter types there are more types for the
+      interactive mode, each of them will create a widget in the control
+      dialog. You will find a list of these parameters with descriptions and
+      examples in the test script
+      <filename>plug-ins/script-fu/scripts/test-sphere-v3.scm</filename>
+      shipped with the <acronym>GIMP</acronym> source code.
+    </para>
+  </note>
+
+  <informaltable>
+    <tgroup cols="2">
+      <thead>
+        <row>
+          <entry>
+            <para>Tipo de parâmetro</para>
+          </entry>
+          <entry>
+            <para>Descrição</para>
+          </entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry>
+            <para><constant>SF-ADJUSTMENT</constant></para>
+          </entry>
+          <entry>
+            <para>Cria um controle de ajuste no diálogo</para>
+            <para>SF-ADJUSTMENT "rótulo" '(value lower upper step_inc page_inc digits type)</para>
+            <segmentedlist>
+              <title>Lista de argumentos do controle</title>
+              <segtitle>Elemento</segtitle>
+              <segtitle>Descrição</segtitle>
+              <seglistitem>
+                <seg>"rótulo"</seg>
+                <seg>O texto impresso antes do controle</seg>
+              </seglistitem>
+              <seglistitem>
+                <seg>value (valor)</seg>
+                <seg>O valor a ser colocado por padrão</seg>
+              </seglistitem>
+              <seglistitem>
+                <seg>lower / upper (limite_inferior / limite_superior)</seg>
+                <seg>Os valores para os limites inferior e superior (faixa de escolha)</seg>
+              </seglistitem>
+              <seglistitem>
+                <seg>step_inc (passo_de_incremento)</seg>
+                <seg>Valor de incremento/decremento</seg>
+              </seglistitem>
+              <seglistitem>
+                <seg>page_inc (incremento_de_pagina)</seg>
+                <seg>valor de incremento/decremento ao usar <keycap>PageUp</keycap> e <keycap>PageDown</keycap></seg>
+              </seglistitem>
+              <seglistitem>
+                <seg>digits (dígitos)</seg>
+                <seg>Número de dígitos após a vírgula (parte decimal)</seg>
+              </seglistitem>
+              <seglistitem>
+                <seg>type (tipo)</seg>
+                <seg>Um dentre:  SF-SLIDER or 0, SF-SPINNER or 1 (muda o tipo de widget apresentado)</seg>
+              </seglistitem>
+            </segmentedlist>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-COLOR</constant></para>
+          </entry>
+          <entry>
+            <para>Cria um botão de seleção de cor no diálogo.</para>
+            <para>SF-COLOR "rótulo" '(red green blue)</para>
+            <para>ou</para>
+            <para>SF-COLOR "rótulo" "color"</para>
+            <segmentedlist>
+              <title>Lista de argumentos do controle</title>
+              <segtitle>Elemento</segtitle>
+              <segtitle>Descrição</segtitle>
+              <seglistitem>
+                <seg>"rótulo"</seg>
+                <seg>O texto impresso antes do controle</seg>
+              </seglistitem>
+              <seglistitem>
+                <seg>'(red green blue)</seg>
+                <seg>Lista de três valores para os componentes vermelho, verde e azul</seg>
+              </seglistitem>
+              <seglistitem>
+                <seg>"color" (cor)</seg>
+                <seg>Nome da cor na notação usada em CSS</seg>
+              </seglistitem>
+            </segmentedlist>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-FONT</constant></para>
+          </entry>
+          <entry>
+            <para>Cria um widget de seleção de fontes no diálogo. Ele retorna um nome de fonte como uma string. Existem dois novos procedimentos de gimp-text para usar com esse parâmetro retornado:</para>
+            <para>(gimp-text-fontname image drawable x-pos y-pos text border antialias size unit font)</para>
+            <para>(gimp-text-get-extents-fontname text size unit font)</para>
+            <para>onde <quote>font</quote> é o nome da fonte que você recebe. O tamanho especificado no nome da fonte é ignorado silenciosamente - ele só é usado no seletor de fontes. Então é pedido a você que escolher um bom valor - para o parâmetro <quote>size</quote> (tamanho) (24 pixels é uma boa escolha)</para>
+            <para>SF-FONT "rótulo" "fontname"</para>
+            <segmentedlist>
+              <title>Lista de argumentos do controle</title>
+              <segtitle>Elemento</segtitle>
+              <segtitle>Descrição</segtitle>
+              <seglistitem>
+                <seg>"rótulo"</seg>
+                <seg>O texto impresso antes do controle</seg>
+              </seglistitem>
+              <seglistitem>
+                <seg>"fontname" (nome da fonte)</seg>
+                <seg>Nome da fonte que será mostrada como padrão.</seg>
+              </seglistitem>
+            </segmentedlist>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-BRUSH</constant></para>
+          </entry>
+          <entry>
+            <para>Irá criar um widget no diálogo de controle do script - este widget consiste numa área de pré-visualização (que quando clicada fará aparecer uma pré-visualização flutuante) e um botão com o rótulo "...". O botão fará aparecer um diálogo onde o usuário pode escolher pincéis e cada uma das características do pincel pode ser modificada.</para>
+            <para>SF-BRUSH "Brush" '("Circle (03)" 100 44 0)</para>
+            <para>Nesse caso, o diálogo de pincéis será aberto com um pincel padrão de "Circle (03)" (esse é o nome do pincel), opacidade 100, espaçamento 44, e modo de pintura Normal (valor 0)</para>
+            <para>Se esta seleção não for modificada, o valor passado para a função como parâmetro será '("Circle (03)" 100 44 0).</para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-PATTERN</constant></para>
+          </entry>
+          <entry>
+            <para>Irá criar um widget no diálogo de controle do script - este widget consiste numa área de pré-visualização (que quando clicada fará aparecer uma pré-visualização flutuante) e um botão com o rótulo "...". O botão fará aparecer um diálogo onde o usuário pode escolher umatexturas entre as disponíveis para o GIMP</para>
+            <para>SF-PATTERN "Textura" "Maple Leaves"</para>
+            <para>O valor de retorno quando o script for chamado é uma string contendo o nome da textura. Se a seleção acima não for alterada, essa string iria conter "Maple Leaves". (o nome da textura como existe por padrão no GIMP)</para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-GRADIENT</constant></para>
+          </entry>
+          <entry>
+            <para>Irá criar um widget no diálogo do script. Este widget consiste em um botão contendo uma pré-visualização do degradê selecionado</para>
+            <para>Se o botão for pressionado, uma seleção de degradês aparecerá num diálogo separado.</para>
+            <para>SF-GRADIENT "Degradê" "Deep Sea"</para>
+            <para>O valor de retorno quando o script for chamado é uma string contendo o nome do Degradê. Se a seleção acima não for alterada, essa string iria conter "Deep Sea". (o nome do degradê como existe por padrão no GIMP)</para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-PALETTE</constant></para>
+          </entry>
+          <entry>
+            <para>Irá criar um widget no diálogo do script. Este widget consiste em um botão contendo o nome da paleta selecionada.</para>
+            <para>Se o botão for pressionado, surgirá um diálogo de seleção de paletas.</para>
+            <para>SF-PALETTE "Palette" "Named Colors"</para>
+            <para>O valor retornado quando o script é chamado é uma string com o nome da paleta. Se a seleção  acima não for alterada, isso será uma string contendo "Named Colors".</para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-FILENAME</constant></para>
+          </entry>
+          <entry>
+            <para>Irá criar um widget no diálogo do script. Este widget consiste em um botão contendo um nome de arquivo.</para>
+            <para>Se o botão for pressionado, surgirá um diálogo de seleção de arquivos.</para>
+            <para>SF-FILENAME "label" (string-append "" gimp-data-directory "/scripts/beavis.jpg")</para>
+            <para>O valor retornado quando o script é chamado é uma string com o nome do arquivo.</para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-DIRNAME</constant></para>
+          </entry>
+          <entry>
+            <para>Só é útil no modo interativo.Muito parecido com SF-FILENAME, mas o widget criado só permite a escolha de uma pasta, em vez de um arquivo.</para>
+            <para>SF-DIRNAME "label" "/var/tmp/images"</para>
+            <para>O valor retornado quando o script é chamado é uma string com o caminho para a pasta.</para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-OPTION</constant></para>
+          </entry>
+          <entry>
+            <para> Irá criar um widget no diálogo do script. Este widget consiste em uma caixa de escolhas mostrando as opções passadas como uma lista.</para>
+            <para>A primeira opção é a escolha selecionada por padrão.</para>
+            <para>SF-OPTION "rótulo" '("option1" "option2")</para>
+            <para>O valor retornado quando o script é chamado é o número da opção escolhida, onde a primeira opção tem é considerada como estando na posição "0".</para>
+          </entry>
+        </row>
+        <row>
+          <entry>
+            <para><constant>SF-ENUM</constant></para>
+          </entry>
+          <entry>
+            <para> Irá criar um widget no diálogo do script. este widget é uma caixa de opções mostrando todos os valores de enumeração para o tipo de enumeração dado. O parâmetro tem que ser o nome de uma enumeração registrada, sem o prefixo "GIMP". O segundo parâmetro especifica o valor padrão, usando o apelido dado na enumeração.</para>
+            <para>SF-ENUM "Interpolação" '("InterpolationType" "linear")</para>
+            <para>O valor retornado quando o script é invocado corresponde ao valor numérico do item de enumeração escolhido·</para>
+          </entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </informaltable>
+</sect3>

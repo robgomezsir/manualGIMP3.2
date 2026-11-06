@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2017-10-14 j.h: some updates
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-gaussian-blur-selective">
+  <title>Desfoque Gaussiano Seletivo</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Desfocar</secondary>
+    <tertiary>Gaussiano Seletivo</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Desfoque Gaussiano Seletivo</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>O filtro Desfoque Gaussiano Seletivo</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/taj_orig.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/filters/examples/blur-taj-selective.jpg" format="JPG"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Ao contrário de outros plug-ins de desfocagem, o plug-in de Desfoque Gaussiano Seletivo não atua sobre todos os pixels: a desfocagem é aplicada apenas se a diferença entre o seu valor e os valores dos pixels vizinhos for menor que o valor do Delta definido. Portanto, os contrastes são preservados devido à grande diferença nos limites do contraste. Ele é usado para desfocar um fundo para que o objeto de frente se destaque mais. Isso pode adicionar uma sensação de profundidade à imagem com uma única operação. Também é bastante eficaz para reduzir imperfeições na pele em fotografias, como pequenas manchas ou rugas, e ainda manter a definição dos contornos na foto.</para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Blur</guisubmenu>
+        <guimenuitem>Selective Gaussian Blur…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Configurações de parâmetros do filtro <quote>Gaussiano Seletivo</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/blur/gaussian-selective-options.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Aux</term>
+        <listitem>
+          <para>Se houver outra imagem na tela, você pode selecioná-la como entrada auxiliar.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio de desfoque</term>
+        <listitem>
+          <para>Aqui, você pode definir a intensidade do desfoque, em pixels.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Delta máx.</term>
+        <listitem>
+          <para>
+            Maximum delta sets the maximum difference (0.0-1.0) between the
+            pixel to be blurred and its surrounding pixels. When the value is
+            above this delta, the blur will not be applied to that pixel.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

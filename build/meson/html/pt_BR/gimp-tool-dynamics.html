@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.2. Dinâmicas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+    <link rel="prev" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+    <link rel="next" href="gimp-tools-brush.html" title="3.3. Ferramentas de pincel (lápis, pincel, aerógrafo)" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.2. Dinâmicas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tools-paint.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Ferramentas de pintura</span>
+        <nav> <a accesskey="n" href="gimp-tools-brush.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-dynamics"></a>3.2. Dinâmicas</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id16161" class="indexterm"></a>
+      <a id="id16164" class="indexterm"></a>
+      <p>As dinâmicas dão a opção de adicionar uma <span class="quote">“<span class="quote">dimensão realista</span>”</span> ao pincel ao conectar um ou mais parâmetros de pintura à maneira de usar o pincel. Pode-se, por exemplo, deixar a largura do lápis variar de acordo com a velocidade da caneta do tablet ou do mouse, fazer a cor variar em relação à pressão da caneta do tablet, fazer a cor se alterar conforme a direção da pincelada, e assim sucessivamente. Você pode escolher entre diversas dinâmicas pré-definidas ou ou criar a sua própria. As dinâmicas são criadas para serem usadas juntamente com tablets de desenho, mas algumas delas também estão disponíveis para o mouse.</p>
+      <p>As dinâmicas podem fazer com que alguns dos comportamentos das ferramentas de pintura pareçam mais com instrumentos físicos <span class="quote">“<span class="quote">de verdade</span>”</span>.</p>
+      <p>A área de dinâmicas na janela de opções da ferramenta mostram da esquerda para a direita: o botão para abrir a lista contendo as dinâmicas pré-definidas disponíveis, um campo exibindo o nome da dinâmica pré-definida atual, e o botão de editar mais a direita. Clique sobre o botão <span class="guiicon"><img src="images/toolbox/stock-tool-folders-dynamics-22.png" /></span> para abrir a janela de diálogo mostrando as dinâmicas pré-definidas disponíveis e selecione outra dinâmica pré-definida.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-dynamics-dialog"></a>3.2.1. O diálogo de seleção de dinâmicas</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2931"></a>
+          <p class="title">
+            <strong>Figura 14.42. O diálogo de seleção de dinâmicas</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/paint-dynamics-select.png" alt="O diálogo de seleção de dinâmicas" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>A janela de dinâmicas de pincel pode ser aberta</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>através do menu da janela de imagem: <span class="guimenu">Janelas</span> → <span class="guisubmenu">Diálogos de encaixe</span> → <span class="guimenuitem">Dinâmicas de pintura</span>,</p>
+            </li>
+            <li class="listitem">
+              <p>ou clicando no botão <span class="guibutton">Abrir o diálogo de seleção de dinâmicas</span> na lista de dinâmicas pré-definidas.</p>
+            </li>
+          </ul>
+        </div>
+        <p>O janela <span class="guilabel">dinâmica de pintura</span> é uma janela de encaixe; por favor veja a seção <a class="xref" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe">Seção 2.3, “Caixas de diálogo e de encaixe”</a> para ajuda e entender a como as mesmas funcionam.</p>
+        <div class="itemizedlist">
+          <p>A partir dessa janela você pode selecionar todas as dinâmicas pré-definidas disponíveis, da mesma forma que na lista de dinâmicas pré-definidas direto na opção de ferramentas. Além disso há cinco botões:</p>
+          <p>
+         The button bar at the bottom offers the following functionality:
+      </p>
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <a id="gimp-dynamics-edit"></a>
+              <p>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gtk-edit.svg" width="16" /></span>
+          </span>
+          <span class="guilabel">Edit this dynamics</span>: Clicking this will open the
+          <a class="link" href="gimp-tool-dynamics.html#gimp-dynamics-editor-dialog" title="3.2.2. Editando dinâmicas de pintura">Paint Dynamics Editor</a> dialog
+          where you will be able to edit the selected dynamics.
+        </p>
+            </li>
+            <li class="listitem">
+              <a id="gimp-dynamics-new"></a>
+              <p>Crie uma nova configuração de dinâmica de pintura: faz exatamente o que diz.</p>
+            </li>
+            <li class="listitem">
+              <a id="gimp-dynamics-duplicate"></a>
+              <p>Cria uma cópia desta dinâmica: faz uma cópia da dinâmica selecionada.</p>
+            </li>
+            <li class="listitem">
+              <a id="gimp-dynamics-delete"></a>
+              <p>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+          </span>
+          <span class="guilabel">Delete this dynamics</span>: Delete the selected
+          dynamics. Note: this button is disabled for the default dynamics
+          that come with GIMP.
+        </p>
+            </li>
+            <li class="listitem">
+              <a id="gimp-dynamics-refresh"></a>
+              <p>Atualiza todas as dinâmicas de pintura: atualiza a lista de dinâmicas.</p>
+            </li>
+          </ul>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="gimp-dynamics-dialog-menu"></a>3.2.1.1. Matriz de dinâmicas</h5>
+              </div>
+            </div>
+          </div>
+          <a id="id16224" class="indexterm"></a>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Overview</span>
+              </dt>
+              <dd>
+                <p>
+              You can get the dynamics context menu by right clicking on a
+              dynamics preset.
+              Most of the operations on dynamics are also available through
+              buttons at the bottom of the dynamics dialog. Those operations are
+              documented <a class="link" href="gimp-tool-dynamics.html#gimp-dynamics-dialog" title="3.2.1. O diálogo de seleção de dinâmicas">there</a>.
+            </p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Editando dinâmicas de pintura, </span>
+                      <span class="term">Dinâmicas, </span>
+                      <span class="term">Dinâmicas de pincel, </span>
+                      <span class="term">Dinâmicas, </span>
+                      <span class="term">Dinâmicas de pincel</span>
+                    </dt>
+                    <dd>
+                      <p>o <a class="link" href="gimp-tool-pencil.html" title="3.6. Lápis">Lápis</a>,</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Opções de dinâmicas</span>
+                    </dt>
+                    <dd>
+                      <a id="gimp-dynamics-copy-location"></a>
+                      <p>
+                    <span class="guilabel">Copy Dynamics Location</span> allows you to
+                    copy the path of the selected Dynamics preset to the
+                    clipboard.
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Show in File Manager</span>
+                    </dt>
+                    <dd>
+                      <a id="gimp-dynamics-show-in-file-manager"></a>
+                      <p>
+                    <span class="guilabel">Show in File Manager</span> opens the
+                    location of the Dynamics preset in the default
+                    File Manager on your system.
+                  </p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-dynamics-editor-dialog"></a>3.2.2. Editando dinâmicas de pintura</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2932"></a>
+          <p class="title">
+            <strong>Figura 14.43. O diálogo de seleção de dinâmicas</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/paint-dynamics-edit.png" alt="O diálogo de seleção de dinâmicas" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="itemizedlist">
+          <p>O editor de dinâmicas de pintura pode ser ativado através:</p>
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>Do botão de edição na janela de opções da ferramenta,</p>
+            </li>
+            <li class="listitem">
+              <p>Da janela de seleção de dinâmicas de pintura ao clicar tanto no botão <span class="guibutton">Editar a dinâmica</span> ou no botão <span class="guibutton">Cria uma nova configuração de dinâmica de pintura</span>.</p>
+            </li>
+          </ul>
+        </div>
+        <p>Você seleciona os comportamentos desejados ao clicar nos pequenos quadrados. Clicar uma segunda vez vai deixar de selecionar a marcação.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>As dinâmicas pré-instaladas aparecem em cinza, o que significa que você não pode alterar as suas configurações. Para editar as opções você precisará trabalhar numa cópia feita da dinâmica pré-instalada ou criar uma nova dinâmica.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2933"></a>3.2.3. A matriz de dinâmicas de pintura</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id16273" class="indexterm"></a>
+        <a id="id16276" class="indexterm"></a>
+        <p>A principal parte da janela de edição é a tabela na qual você pode decidir quais parâmetros de pincel devem ser afetados pela maneira que você usa sua caneta de tablet (mesa digitalizadora) ou o mouse. Você pode ativar quantos parâmetros e combinações de parâmetros quiser, mas normalmente quanto menos melhor para entender o que está acontecendo.</p>
+        <div class="itemizedlist">
+          <p>Cada coluna na tabela representa uma ação de caneta ou mouse exceto as funções <span class="quote">“<span class="quote">aleatório</span>”</span> e de <span class="quote">“<span class="quote">esmaecer</span>”</span>. Todas as funções funcionam em mesas digitalizadoras (tablets) gráficas. Algumas das funções também estão disponíveis através do mouse. Essas funções estão assinaladas com <span class="quote">“<span class="quote">(mouse)</span>”</span> nas listas abaixo. As descrições levam em conta as configurações padrão de todas as funções. Não se preocupe em decorar as listagens: essa é apenas a documentação formal de como cada combinação funciona. Na prática, você pode criar suas próprias dinâmicas de pintura de forma mais intuitiva, sem se preocupar com a descrição exata nas listagens abaixo.</p>
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p><span class="guilabel">Pressão</span>: Permite decidir quais aspectos de ação da ferramenta serão afetados conforme varia a pressão da caneta sobre o tablet. </p>
+            </li>
+            <li class="listitem">
+              <p><span class="guilabel">Velocidade</span>: (mouse) É a velocidade da pincelada</p>
+            </li>
+            <li class="listitem">
+              <p><span class="guilabel">Direção</span>: (mouse) É a direção de movimento do pincel.</p>
+            </li>
+            <li class="listitem">
+              <p><span class="guilabel">Inclinação</span>: O comportamento da função depende da inclinação da caneta.</p>
+            </li>
+            <li class="listitem">
+              <p><span class="guilabel">Rodinha</span>: A saída depende da rotação da caneta ou da configuração da rodinha no aerógrafo da caneta.</p>
+            </li>
+            <li class="listitem">
+              <p><span class="guilabel">Aleatório</span>: (mouse) A opção selecionada mudará de forma aleatória.</p>
+            </li>
+            <li class="listitem">
+              <p><span class="guilabel">Esmaecer</span>: (mouse) A opção selecionada irá esmaecer a partir do começo da pincelada, ou se tornar mais intensa, dependendo das configurações de esmaecimento no menu de opções de dinâmica na janela de opções de ferramentas.</p>
+            </li>
+          </ul>
+        </div>
+        <p>Cada linha mostra um parâmetro de pincel e sete caixas de marcação, uma para cada ação. Você conecta os parâmetros às ações ao clicar nas caixas apropriadas. Clicar em uma caixa já selecionada irá desfazer a conexão.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Opacidade</span>
+            </dt>
+            <dd>
+              <p><span class="guilabel">Pressão</span>: Pressione com mais força para tornar a pincelada menos transparente.</p>
+              <p><span class="guilabel">Velocidade</span>: (mouse) A opacidade diminui conforme a velocidade da caneta aumenta.</p>
+              <p><span class="guilabel">Direção</span>: (mouse) A opacidade depende da direção da caneta ou do mouse. Esse efeito parece possuir um toque de aleatoriedade embutida nele, devido a dificuldade de se saber a direção exata de movimento quando a pincelada se inicia. </p>
+              <p><span class="guilabel">Inclinação</span>: A opacidade depende da inclinação da caneta.</p>
+              <p>
+            <span class="guilabel">Wheel</span>
+          </p>
+              <p><span class="guilabel">Aleatório</span>: (mouse) A opacidade se altera de forma aleatória em um intervalo definido pelo seletor de opacidade na janela de opções da ferramenta.</p>
+              <p><span class="guilabel">Esmaecer</span>: (mouse) Começando com completa transparência e terminando com a opacidade definida no seletor de opacidade na janela de opções da ferramenta.</p>
+            </dd>
+            <dt>
+              <span class="term">Tamanho</span>
+            </dt>
+            <dd>
+              <p><span class="guilabel">Pressão</span>: Pressione com mais força para tornar o pincel maior.</p>
+              <p><span class="guilabel">Velocidade</span>: (mouse) Aumentar a velocidade diminui a grossura do pincel.</p>
+              <p><span class="guilabel">Direção</span>: (mouse) O tamanho do pincel depende da direção de movimento da caneta ou do mouse.</p>
+              <p><span class="guilabel">Inclinação</span>: O tamanho do pincel depende da inclinação da caneta.</p>
+              <p>
+            <span class="guilabel">Wheel</span>
+          </p>
+              <p><span class="guilabel">Aleatório</span>: (mouse) O tamanho do pincel muda aleatoriamente até o máximo selecionado no seletor de tamanho de pincel na janela de opções da ferramenta.</p>
+              <p><span class="guilabel">Esmaecer</span>: (mouse) O traço varia de um pincel fino até o tamanho determinado no seletor de tamanho de pincel na janela de opções de ferramentas.</p>
+            </dd>
+            <dt>
+              <span class="term">Ângulo</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Cor</span>
+            </dt>
+            <dd>
+              <p>Por padrão a cor usada é a cor de frente da caixa de ferramentas. Entretanto, se a cor é ativada no editor de dinâmicas, então a cor passa a ser obtida a partir de um ponto do degradê ativo (que pode ser escolhido na seção de <span class="quote">“<span class="quote">Opções de dinâmica</span>”</span> da janela de opções da ferramenta)</p>
+              <p><span class="guilabel">Velocidade</span>: (mouse) A pequenas velocidades a cor é selecionada do lado direito do degradê. Conforme a velocidade aumenta a cor é escolhida de uma posição cada vez mais para a esquerda do degradê.</p>
+              <p><span class="guilabel">Direção</span>: (mouse) A direção determina de qual ponto do degradê a cor é selecionada. (Veja as curvas de ajuste fino, abaixo, para poder configurar melhor qual cor vai para qual direção)</p>
+              <p><span class="guilabel">Aleatório</span>: (mouse) A cor é selecionada de um ponto aleatório do degradê.</p>
+              <p><span class="guilabel">Esmaecer</span>: (mouse) A cor inicial é coletada do lado esquerdo do degradê e então cada vez mais do lado direito enquanto a pincelada é feita. O comportamento do esmaecimento é definido nas opções de esmaecimento na janela de opções da ferramenta.</p>
+            </dd>
+            <dt>
+              <span class="term">Dureza</span>
+            </dt>
+            <dd>
+              <p>A opção de dureza é útil apenas para pincéis difusos.</p>
+              <p><span class="guilabel">Velocidade</span>: (mouse) Em velocidades reduzidas o pincel é duro e se torna mais suave conforme a velocidade aumenta.</p>
+              <p><span class="guilabel">Aleatório</span>: (mouse) A suavidade do pincel varia aleatoriamente.</p>
+              <p><span class="guilabel">Esmaecer</span>:(mouse) O pincel se torna menos suave durante a pincelada. O comportamento do esmaecimento pode ser selecionado as opções de esmaecimento na janela de opções da ferramenta.</p>
+            </dd>
+            <dt>
+              <span class="term">Força</span>
+            </dt>
+            <dd>
+              <p>
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Proporção</span>
+            </dt>
+            <dd>
+              <p>O seletor de proporção na janela de opções da ferramenta precisa estar configurado em um valor diferente do valor padrão de 0,00 para que essa dinâmica tenha efeito. Se o seletor de aspecto de proporção está marcado para um valor negativo então a largura do pincel irá variar enquanto que a altura do pincel será constante. Se o seletor marca um valor positivo então apenas a altura do pincel irá variar.</p>
+              <p><span class="guilabel">Velocidade</span>: (mouse) A proporção do pincel (largura / altura) varia de acordo com a velocidade do pincel.</p>
+              <p><span class="guilabel">Direção</span>: (mouse) A proporção do pincel irá variar de acordo com a direção do pincel. O efeito parece ter um toque de aleatoriedade embutido.</p>
+              <p><span class="guilabel">Aleatoriedade</span>: (mouse) A proporção do pincel varia aleatoriamente.</p>
+              <p><span class="guilabel">Esmaecer</span>: (mouse) Se o seletor de proporção marca um valor positivo então o pincel irá esmaecer da altura máxima no inicio da pincelada até a altura selecionada no seletor de proporção. Se o seletor marca um valor negativo então o esmaecimento do pincel vai esmaecer da largura máxima até a largura determinada no seletor de proporção. O comportamento do esmaecimento é selecionado nas opções de esmaecimento na janela de opções da ferramenta.</p>
+            </dd>
+            <dt>
+              <span class="term">Espaçamento</span>
+            </dt>
+            <dd>
+              <p>O espaçamento é a distância entre as marcas deixadas pelo pincel ao se desenhar linhas. Com essa opção selecionada o espaçamento é afetado dependendo como a caneta ou mouse é usado. O espaçamento mínimo é o definido no pincel, e as variações aumentam o espaçamento acima desse mínimo.</p>
+              <p><span class="guilabel">Velocidade</span>: (mouse) O espaçamento entre as marcas deixadas pelo pincel aumenta com o aumento da velocidade.</p>
+              <p><span class="guilabel">Direção</span>: (mouse) O espaçamento varia com a direção de movimento do pincel. O efeito parece ter um toque de aleatoriedade embutida.</p>
+              <p><span class="guilabel">Aleatório</span>: (mouse) O espaçamento varia de forma aleatória.</p>
+              <p><span class="guilabel">Esmaecer</span>: (mouse) Começa com um grande espaçamento que gradualmente torna-se menor. O comportamento do esmaecimento pode ser definido nas opções de esmaecimento na janela de opções da ferramenta.</p>
+            </dd>
+            <dt>
+              <span class="term">Taxa</span>
+            </dt>
+            <dd>
+              <p>Essa opção se aplica ao aerógrafo, ferramenta de desfocar, a ferramenta de borrar, e a todas as ferramentas que possuam efeitos baseado no tempo em que estão acionadas, mesmo sem mover o pincel.</p>
+              <p>As ações dessas ferramentas acontecem de forma mais rápida ou mais lenta. O <span class="quote">“<span class="quote">total da taxa</span>”</span> (em inglês: rate) depende da configuração do seletor de taxa na janela de opções da ferramenta.</p>
+            </dd>
+            <dt>
+              <span class="term">Fluxo</span>
+            </dt>
+            <dd>
+              <p>É útil apenas para o aerógrafo: mais ou menos tinta é liberada. A quantidade de fluxo depende da configuração do seletor de fluxo na janela de opções da ferramenta.</p>
+            </dd>
+            <dt>
+              <span class="term">Espalhar</span>
+            </dt>
+            <dd>
+              <p>Normalmente o pincel desenha uma linha <span class="quote">“<span class="quote">carimbando</span>”</span> diversas marcas do pincel em sequência. Adicionar espalhamento significa que as impressões do pincel serão espalhadas ao longo da linha de pintura. A quantidade de espalhamento depende da configuração do seletor de espalhamento na janela de opções da ferramenta.</p>
+              <p><span class="guilabel">Pressão</span>: Com menos pressão as impressões do pincel são alargadas de acordo com o valor selecionado no seletor de espaçamento. Conforme a pressão aumenta o espaçamento diminui.</p>
+              <p><span class="guilabel">Velocidade</span>: (mouse) A pequenas velocidades as impressões do pincel são alargadas de acordo com o valor definido no seletor de espaçamento. Conforme a velocidade aumenta a quantidade de espalhamento diminui.</p>
+              <p><span class="guilabel">Direção</span>: (mouse) O efeito de espaçamento depende da direção do pincel.</p>
+              <p><span class="guilabel">Aleatório</span>: (mouse) O espalhamento varia de forma aleatória.</p>
+              <p><span class="guilabel">Esmaecer</span>: (mouse) Começa com nenhum espalhamento e termina com a quantidade de espalhamento definida no seletor de espalhamento. O comportamento dessa ferramenta é selecionado nas opções de esmaecer na janela de configurações da ferramenta.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2934"></a>3.2.4. Personalizando as dinâmicas</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2935"></a>
+          <p class="title">
+            <strong>Figura 14.44. Personalizando as dinâmicas</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/paint-dynamics-tuning.png" alt="Personalizando as dinâmicas" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Se as opções atuais não satisfazem a sua necessidade, então você pode ajustar as configurações a partir do editor de dinâmicas de pintura. Clique na seta apontada para baixo para abrir o menu de lista e selecione para qual opção alterar.</p>
+        <div class="figure">
+          <a id="id2936"></a>
+          <p class="title">
+            <strong>Figura 14.45. A curva de ajuste fino</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/paint-dynamics-tuning-color.png" alt="A curva de ajuste fino" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Clique em uma das opções para abrir a janela de customização. A parte superior da janela contém uma curva na qual você pode ajustar o comportamento dos parâmetros selecionados na parte inferior da janela. Você pode arrastar a curva posicionando o cursor do mouse sobre a curva, pressionando o botão esquerdo do mouse e movendo a curva para onde você desejar dentro do diagrama.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2937"></a>3.2.5. Exemplos de dinâmica</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2938"></a>
+          <p class="title">
+            <strong>Figura 14.46. Opções de dinâmicas</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/paint-dynamics-fade-example-1.png" alt="Opções de dinâmicas" />
+              <div class="caption">
+                <p>O traçado do pincel</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/paint-dynamics-fade-example-2.png" alt="Opções de dinâmicas" />
+              <div class="caption">
+                <p>O tamanho do pincel - curva de esmaecimento</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/paint-dynamics-fade-example-3.png" alt="Opções de dinâmicas" />
+              <div class="caption">
+                <p>A cor - curva de esmaecimento</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Os exemplos mostrados são breves, mas dão uma ideia de como usar essas funções. Se sinta livre para tentar outras combinações. Nesses exemplos a cor de frente foi selecionada para azul (#0000ff) e a cor de fundo para amarelo (#ffff00). Esmaecimento: 200 pixels. Tamanho do pincel: 72. Todas as outras configurações são valores padrão exceto para esses valores descritos aqui. </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: opencircle; ">
+            <li class="listitem" style="list-style-type: circle">
+              <p>O exemplo 1 mostra o resultado quando o tamanho do pincel é conectado ao esmaecimento. Opções padrão. O tamanho do pincel começa do zero e aumenta até o tamanho definido do seletor de tamanho de pincel na janela de opções da ferramenta. </p>
+            </li>
+            <li class="listitem" style="list-style-type: circle">
+              <p>No exemplo 2 o tamanho do pincel continua conectado à ferramenta de esmaecimento, mas a curva de esmaecimento está configurada como na imagem 5. O pincel começa do zero, esmaece até o tamanho máximo e então esmaece para zero novamente.</p>
+              <p>A largura total de esmaecimento é configurada ao longo do eixo x da esquerda para a direita. O eixo y é determinado pelo tamanho do pincel. Na parte inferior o tamanho do pincel é zero, e na parte superior do diagrama o pincel é configurado no tamanho total de acordo com o tamanho configurado no seletor na janela de opções de pincel. Analise o exemplo e a curva para ver a relação.</p>
+            </li>
+            <li class="listitem" style="list-style-type: circle">
+              <p>No exemplo 3 o tamanho do pincel está desconectado da ferramenta de esmaecimento. A cor é conectada com a opção de esmaecimento com a curva como selecionado na imagem 6. No começo do desenho a cor é selecionada a partir do lado esquerdo do gradiente, e então gradualmente mais a partir do lado direito do gradiente, e então finalmente volta a selecionar a partir do lado esquerdo novamente.</p>
+              <p>Como sempre o eixo x é o tamanho total de esmaecimento. Quando a curva está perto da parte inferior do diagrama a cor é selecionada a partir do lado esquerdo do degradê. Com a curva no torpo do diagrama a cor é selecionada a partie do lado direito do degradê.</p>
+            </li>
+            <li class="listitem" style="list-style-type: circle">
+              <p>O último exemplo mostra uma combinação dessas duas configurações. Ambos os tamanhos do pincel e da cor estão conectadas à função de esmaecimento com as curvas selecionadas como nas imagens 5 e 6.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-tool-dynamic-options"></a>3.2.6. Opções de dinâmicas</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id16463" class="indexterm"></a>
+        <a id="id16466" class="indexterm"></a>
+        <div class="figure">
+          <a id="id2939"></a>
+          <p class="title">
+            <strong>Figura 14.47. Opções de dinâmicas</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/paint-dynamics-options.png" alt="Opções de dinâmicas" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Muitos dos comportamentos das dinâmicas também dependem das configurações das opções de dinâmicas na janela de opções da ferramenta e vice-versa. Por exemplo, o esmaecimento não irá funcionar se ele não estiver marcado na seção de dinâmicas. Uma outra forma bem útil de desenhar a curva, para várias das opções é simplesmente inverte-la para uma reta descendente, em vez de ascendente. Isso vai inverter o comportamento padrão da combinação marcada: por exemplo, numa dinâmica de espalhamento X velocidade, por padrão, o espalhamento é alto com a velocidades baixas, e se estreita com velocidades altas. Se a curva for deixada como uma reta descendente, você terá pouco espalhamento com velocidades baixas, e vice-versa.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Opções de esmaecimento</span>
+            </dt>
+            <dd>
+              <p>Esse seletor determina o tamanho do esmaecimento. O que vai de fato acontecer depende da configuração da dinâmica. Se selecionado para agir na cor, por exemplo, então a cor irá se alterar entre o degradê atual, começando do lado esquerdo do degradê e se movendo até o lado direito do degradê.</p>
+              <p>As opções de esmaecimento possuem uma lista de opções que determina comoo esmaecimento será repetido (se for).</p>
+              <div class="figure">
+                <a id="id2940"></a>
+                <p class="title">
+                  <strong>Figura 14.48. Ilustração dos efeitos das três opções de repetir de degradê, para o degradê <span class="guilabel">Abstract 2</span>.</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/tool-options/brush-gradient-normal.png" alt="Ilustração dos efeitos das três opções de repetir de degradê, para o degradê Abstract 2." />
+                    <div class="caption">
+                      <p>Degradê Abstract2</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/brush-gradient-none.png" alt="Ilustração dos efeitos das três opções de repetir de degradê, para o degradê Abstract 2." />
+                    <div class="caption">
+                      <p>Nenhum</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/brush-gradient-sawtooth.png" alt="Ilustração dos efeitos das três opções de repetir de degradê, para o degradê Abstract 2." />
+                    <div class="caption">
+                      <p>Onda de serra</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/tool-options/brush-gradient-triangular.png" alt="Ilustração dos efeitos das três opções de repetir de degradê, para o degradê Abstract 2." />
+                    <div class="caption">
+                      <p>Onda triangular</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>Essa opção determina o que acontecerá caso uma pincelada se estenda além do comprimento especificado no seletor. Existem três possibilidades:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Nenhum</span> significa que a cor de fim do degradê será usada na parte restante do traçado;</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Onda de serra</span> significa que o degradê será recomeçado do início, o que produzirá uma descontinuidade de cores;</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Onda triangular</span> significa que o degradê será aplicado no  sentido contrário, para depois voltar e seguir adiante até o fim do traçado.</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Opções de cor</span>
+            </dt>
+            <dd>
+              <p>Aqui você pode escolher o degradê a ser usado como cor de origem ao usar o pincel com a opção de cor selecionada nas dinâmicas de pintura. Clique na caixa que mostra o degradê para alterar para outro degradê da lista.</p>
+              <p>Se nenhuma opção de cor estiver selecionada nas dinâmicas usadas atualmente, o pincel usará a cor de frente definida na caixa de ferramentas.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tools-paint.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-paint.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tools-brush.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tools-paint.html">3. Ferramentas de pintura</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tools-brush.html">3.3. Ferramentas de pincel (lápis, pincel, aerógrafo)</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

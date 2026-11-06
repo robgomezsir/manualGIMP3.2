@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>10.7. The “Script-Fu” Submenu</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-filters-menu.html" title="10. The “Filters” Menu" />
+    <link rel="prev" href="gimp-filters-python-fu.html" title="10.6. The “Python-Fu” Submenu" />
+    <link rel="next" href="gimp-windows.html" title="11. The “Windows” Menu" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>10.7. The <span class="quote">“<span class="quote">Script-Fu</span>”</span> Submenu</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filters-python-fu.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>10. The <span class="quote">“<span class="quote">Filters</span>”</span> Menu</span>
+        <nav> <a accesskey="n" href="gimp-windows.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filters-script-fu"></a>10.7. The <span class="quote">“<span class="quote">Script-Fu</span>”</span> Submenu</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id45413" class="indexterm"></a>
+      <p>
+    This  submenu contains some Script-Fu commands, especially the Script-Fu
+    console. <a class="link" href="gimp-concepts-script-fu.html" title="2. Using Script-Fu Scripts">Script-Fu</a> is a
+    language for writing scripts, which allow you to run a series of
+    <acronym class="acronym">GIMP</acronym> commands automatically.
+    
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2924"></a>10.7.1. Activating the Submenu</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this submenu from the main menu through
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Development</span> → <span class="guimenuitem">Script-Fu</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="plug-in-script-fu-console"></a>10.7.2. Script-Fu Console</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The Script-Fu console is a dialog window where you can interactively
+      test Scheme commands.
+    </p>
+        <p>
+      The console consists of a large scrollable main window for output and a
+      text box at the bottom to enter Scheme commands. When you type a Scheme
+      statement and then press the <span class="keycap"><strong>Enter</strong></span> key, the command and
+      its return value will be displayed in the main window.
+    </p>
+        <div class="figure">
+          <a id="id2925"></a>
+          <p class="title">
+            <strong>Figure 16.235. The Script-Fu Console</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/filters/script-fu-console.png" alt="The Script-Fu Console" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      You will find more information about
+      <a class="link" href="gimp-using-script-fu-tutorial.html#gimp-using-script-fu-tutorial-scheme" title="3.1. Getting Acquainted With Scheme">Scheme</a> and
+      examples how to use the
+      <a class="link" href="gimp-using-script-fu-tutorial.html#gimp-using-script-fu-tutorial-console" title="3.1.4. The Script-Fu Console Window">Script-Fu
+        console</a> in <a class="xref" href="gimp-using-script-fu-tutorial.html" title="3. A Script-Fu Tutorial">Section 3, “A Script-Fu Tutorial”</a>.
+    </p>
+        <div class="variablelist">
+          <p class="title">
+            <strong>The Script-Fu Console Buttons</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Browse</span>
+            </dt>
+            <dd>
+              <p>
+            The <span class="guibutton">Browse</span> button is next to the Scheme
+            commands text box. When clicked, the
+            <a class="link" href="plug-in-dbbrowser.html" title="12.10. The Procedure Browser">procedure browser</a> window
+            opens with an additional <span class="guibutton">Apply</span> button.
+          </p>
+              <p>
+            Select a <a class="link" href="glossary.html#glossary-pdb" title="PDB"><acronym class="acronym">PDB</acronym></a>
+            procedure from the list and press the <span class="guibutton">Apply</span>
+            button. The selected procedure and its parameter names will be
+            pasted into the text box of the Script Console.
+          </p>
+              <p>
+            Now you just have to replace the parameter names after the
+            procedure name with actual values. Then you can call the procedure
+            by pressing <span class="keycap"><strong>Enter</strong></span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Close</span>
+            </dt>
+            <dd>
+              <p>
+            Pressing this button closes the Script-Fu console.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Clear</span>
+            </dt>
+            <dd>
+              <p>
+            When you click on this button, the content of the main window will
+            be removed. Note that you can't get back the removed content using
+            the <span class="guilabel">Save</span> command.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Save</span>
+            </dt>
+            <dd>
+              <p>
+            This command lets you save the content of the main window, that is
+            the Script-Fu console output (including the
+            <span class="quote">“<span class="quote"><code class="code">&gt;</code></span>”</span>-characters).
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="plug-in-script-fu-server"></a>10.7.3. Start Server</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This command will start a server, which reads and executes Script-Fu
+      (Scheme) statements you send it via a specified port.
+    </p>
+        <div class="figure">
+          <a id="id2926"></a>
+          <p class="title">
+            <strong>Figure 16.236. The Script-Fu Server Options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/filters/script-fu-server.png" alt="The Script-Fu Server Options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Listen on IP</span>
+            </dt>
+            <dd>
+              <p>
+            The IP address the Script-Fu server will listen on. This is
+            usually 127.0.0.1 (also known as localhost). Only change this if
+            you know what you are doing.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Server Port</span>
+            </dt>
+            <dd>
+              <p>
+            The port number where the Script-Fu server will listen. It is
+            possible to start more than one server, specifying different port
+            numbers, of course.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Server Logfile</span>
+            </dt>
+            <dd>
+              <p>
+            Optionally you can specify the name of a file the server will use
+            to log informational and error messages. If no file is specified,
+            messages will be written to stdout.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="itemizedlist">
+          <p class="title">
+            <strong>The Script-Fu Server Protocol</strong>
+          </p>
+          <p>
+        The protocol used to communicate with the Script-Fu server is very
+        simple:
+      </p>
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          Every message (Script-Fu statement) of length <code class="code">L</code> sent to
+          the server has to be preceded with the following 3 bytes:
+        </p>
+              <div class="table">
+                <a id="id2927"></a>
+                <p class="title">
+                  <strong>Table 16.1. Header format for commands</strong>
+                </p>
+                <div class="table-contents">
+                  <table class="table" summary="Header format for commands" border="1">
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>Byte #</th>
+                        <th>Content</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>0</td>
+                        <td>0x47</td>
+                        <td>Magic byte ('G')</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>L div 256</td>
+                        <td>High byte of <code class="code">L</code></td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>L mod 256</td>
+                        <td>Low byte of <code class="code">L</code></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <br class="table-break" />
+            </li>
+            <li class="listitem">
+              <p>
+          Every response from the server (return value or error message) of
+          length <code class="code">L</code> will be preceded with the following 4 bytes:
+        </p>
+              <div class="table">
+                <a id="id2928"></a>
+                <p class="title">
+                  <strong>Table 16.2. Header format for responses</strong>
+                </p>
+                <div class="table-contents">
+                  <table class="table" summary="Header format for responses" border="1">
+                    <colgroup>
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>Byte #</th>
+                        <th>Content</th>
+                        <th>Description</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>0</td>
+                        <td>0x47</td>
+                        <td>Magic byte ('G')</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>error code</td>
+                        <td>0 on success, 1 on error</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>L div 256</td>
+                        <td>High byte of <code class="code">L</code></td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>L mod 256</td>
+                        <td>Low byte of <code class="code">L</code></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <br class="table-break" />
+            </li>
+          </ul>
+        </div>
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Tip]" src="images/tip.png" />
+              </td>
+              <th align="left">Tip</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If you don't want to get your hands dirty: there is a Python script
+        named <span class="application">servertest.py</span> shipped with the
+        <acronym class="acronym">GIMP</acronym> source code, which you can use as a simple
+        command line shell for the Script-Fu server.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filters-python-fu.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-filters-menu.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-windows.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filters-python-fu.html">10.6. The <span class="quote">“<span class="quote">Python-Fu</span>”</span> Submenu</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-windows.html">11. The <span class="quote">“<span class="quote">Windows</span>”</span> Menu</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

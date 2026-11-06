@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--  section history:
+  2009-08-25 ude: updated again due to the recent Bugzilla upgrade
+  2009-06-25 ude: updated (incl. new screenshots)
+  2006-10-21 lexa: added german translation
+  2006-02-27 no added by kolbjoern stuestoel
+  2005-12-12 moved to the appendix and made it valid docbook by lexa
+-->
+<appendix id="gimp-introduction-bugs">
+  <title>Relatar erros e solicitar melhorias</title>
+
+  <indexterm>
+    <primary>GIMP</primary>
+    <secondary>Erros</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Erros</primary>
+  </indexterm>
+
+  <para>É triste dizer, mas nenhuma versão do <acronym>GIMP</acronym> já lançada foi absolutamente perfeita. Mais triste ainda, provavelmente nenhuma versão jamais será. Apesar dos esforços para garantir que tudo funcione, um programa tão complexo como o <acronym>GIMP</acronym> está fadado a sofrer problemas de vez em quando, ou mesmo travar.</para>
+  <para>Mas o fato de erros serem inevitáveis não significa que eles devam ser aceitos passivamente. Se você encontrar um erro no <acronym>GIMP</acronym>, os desenvolvedores gostarão de saber sobre ele para que possam pelo menos tentar corrigi-lo.</para>
+  <para>Vamos supor, então, que você encontrou um erro, ou ao menos acha que encontrou: você tenta fazer algo, que gera como resultado algo que você não esperava. O que você deveria fazer? Como deveria relatá-lo?</para>
+  <tip>
+    <para>O procedimento para fazer um <emphasis>requerimento de melhoria</emphasis>; isso é, para fazer um pedido aos desenvolvedores para adicionar uma funcionalidade ausente&mdash; é o mesmo procedimento para relatar um erro.</para>
+  </tip>
+  <para>Assim como acontece em vários outros projetos de software livre, o <acronym>GIMP</acronym> usa um mecanismo de relatar erros chamado <emphasis>GitLab</emphasis>. Esse é um sistema baseado na web muito poderoso, capaz de gerenciar milhares de relatórios de erros sem perda de informação. Na verdade, o <acronym>GIMP</acronym> compartilha a sua base de dados do GitLab com todo o projeto Gnome.</para>
+
+  <sect1 id="gimp-bug-confirm">
+    <title>Certificando-se de que é um Erro</title>
+    <para>A primeira coisa que você deverá fazer, antes de reportar o erro, é fazer um esforço para verificar que o que você está vendo realmente <emphasis>é</emphasis> um erro. É difícil descrever um método para fazer isso que seja aplicável em todas as situações, mas ler a documentação é útil, e discutir a questão no IRC ou Discourse pode ser muito útil. Se você estiver vendo um <emphasis>travamento</emphasis>, e não um comportamento imprevisto mais simples, as chances de ser um erro de verdade são grandes: programas bem-escritos não são desenvolvidos para travarem sob <emphasis>qualquer</emphasis> circunstância. De qualquer forma, se você fez o esforço para decidir se é realmente um erro, mas ainda sim não tem certeza, então vá em frente e relate-o: o pior que pode acontecer é gastar um pouco do tempo da equipe de desenvolvimento.</para>
+    <note>
+      <para>Aliás, existem algumas coisas que são conhecidas por causar travamentos no <acronym>GIMP</acronym> mas o trabalho de corrigi-las seria tão grande que não vale a pena. Uma delas é pedir ao <acronym>GIMP</acronym> para fazer algo que requer muita memória, como criar uma imagem de um milhão de pixels de cada lado.</para>
+    </note>
+    <para>Você também precisa verificar se está usando uma versão atualizada do <acronym>GIMP</acronym>: relatar um erro que já foi corrigido é uma perda de tempo para todos. (<acronym>GIMP</acronym> 1 não possui mais suporte, então se você usá-lo e encontrar erros, atualize para <acronym>GIMP</acronym> 2 ou viva com eles.) Inclusive, se você estiver usando uma versão de desenvolvimento do <acronym>GIMP</acronym>, certifique-se de que você pode ver o erro na última versão disponível antes de fazer o relato.</para>
+    <para>Se depois dessas considerações você ainda acreditar que tem um legitimo relatório de erro ou pedido de melhoria, então o próximo passo é ir para a lista de problemas do <acronym>GIMP</acronym> (<ulink url="https://gitlab.gnome.org/GNOME/gimp/issues/"/>), e tentar ver se mais alguém já relatou a mesma coisa.</para>
+
+    <simplesect id="bugzilla-find-specific-bug">
+      <title>Encontrar um erro em específico</title>
+      <para>Informe alguns termos de busca (separados por espaço), como por exemplo <blockquote>
+          <para>
+          <userinput>filter&nbsp;crash</userinput>
+          </para>
+        </blockquote>, na caixa de texto "Buscar ou filtrar resultados..." e aperte Enter. Por padrão, você verá apenas relatórios em aberto; você pode mudar isto clicando em "Tudo" acima do campo de busca.</para>
+      <para>O resultado é ou uma lista de relatórios de erros &ndash; tomara que não muito longa &ndash; ou uma mensagem dizendo <quote>Desculpe, seu filtro não encontrou resultados</quote>. Se você não encontrar um relatório de erros relacionado ao fazer isso, pode valer a pena tentar outra busca com termos distintos. Se, apesar dos seus melhores esforços, você submeter um relatório de erro e ele terminar encerrado como uma duplicata, não se chateie: isto aconteceu repetidamente ao autor desta documentação.</para>
+    </simplesect>
+  </sect1>
+
+  <sect1 id="gimp-bug-report">
+    <title>Relatando o Erro</title>
+    <para>Tudo bem, então você fez tudo o que poderia fazer para ter certeza, e ainda sim acredita que provavelmente é um erro. Você precisa então seguir em frente e fazer um relatório de erro na página do GitLab.</para>
+    <note>
+      <para>Na primeira vez que você submeter um relatório de erro, será pedido para criar uma conta no GitLab. O processo é fácil e sem complicações, e você provavelmente não receberá nenhum e-mail de spam como resultado.</para>
+    </note>
+    <procedure>
+      <step>
+        <title>Submeter um Novo problema</title>
+        <para>Vá para <ulink url="https://gitlab.gnome.org/GNOME/gimp/issues"/>, e selecione <guibutton>New issue</guibutton>.</para>
+        <!-- IMHO a screenshot is not useful here (ude 2009-08-25) -->
+        <para>Caso você não esteja logado, você será automaticamente redirecionado para a página de login. Depois de escrever seu nome de usuário (login) e senha, você voltará para a página de <quote>Novo problema</quote>.</para>
+      </step>
+
+      <step>
+        <title>Preencha o modelo</title>
+        <para>Selecione <guimenu>Escolha um modelo</guimenu> e escolha se você pretende relatar um erro ou requisitar uma funcionalidade. Observe que a maior parte da informação que você submeter pode posteriormente ser alterada pelos desenvolvedores se você cometer algum erro, então tente fazer certo, mas não seja obsessivo em relação a isso.</para>
+        <variablelist>
+          <varlistentry>
+            <term>Título</term>
+            <listitem>
+              <para>Dê um resumo de uma frase que seja descritiva o bastante para que alguém que esteja procurando por erros similares possa encontrar o seu relatório de erro com base nas palavras que o sumário contém.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Descrição</term>
+            <listitem>
+              <para>Descreva o problema. Seja o mais específico que você puder, tente fornecer toda a informação requisitada a você, e inclua toda a informação que você acredite ser relevante. O clássico relatório de erro que não ajuda é, <quote>O GIMP trava. Esse programa não presta</quote>. Não há como os desenvolvedores resolverem um problema se não souberem o que é.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+        <para>Às vezes, é muito útil melhorar um relatório de erro com uma captura de tela ou outro tipo de informação. Se você precisar fazer isso, clique no botão <guibutton>Anexar&nbsp;um&nbsp;arquivo</guibutton>, e siga as instruções. Mas, por favor, não faça isso a menos que você acredite que o anexo realmente será útil&mdash;e se você precisar anexar uma captura de tela, não a faça maior do que o estritamente necessário. Relatórios de erros podem permanecer no sistema por anos, então não faz sentido desperdiçar memória.</para>
+        <para>Após você ter preenchido todas essas coisas, pressione o botão <guibutton>Submeter problema</guibutton> e o seu relatório de erro será enviado. Será atribuído um número, o qual você pode querer anotar; apesar disso, você receberá um e-mail sempre que alguém fizer algum comentário no seu relatório de erro ou caso façam alguma alteração nele, então você receberá lembretes de qualquer forma. Você pode ver o estado atual do seu relatório de erro a qualquer momento indo a <ulink url="https://gitlab.gnome.org/GNOME/gimp/issues/"/>.</para>
+      </step>
+    </procedure>
+  </sect1>
+
+<!--  <sect1 id="gimp-bug-submitted">
+    <title>What Happens to a Bug Report after you Submit it</title>
+    <para>
+      At any time after it is submitted, a bug report has a
+      <quote>Status</quote>
+      that describes how it is currently being handled.  Here are the
+      possible values of <emphasis>Status</emphasis> and what they mean:
+    </para>
+  </sect1>
+-->
+</appendix>

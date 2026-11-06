@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.7. Your script and its working</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-using-script-fu-tutorial.html" title="3. A Script-Fu Tutorial" />
+    <link rel="prev" href="gimp-using-script-fu-tutorial-extending-text-box.html" title="3.6. Extending The Text Box Script" />
+    <link rel="next" href="gimp-using-python-plug-in-tutorial.html" title="4. A Python plug-in writing Tutorial" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.7. Your script and its working</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-script-fu-tutorial-extending-text-box.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>3. A Script-Fu Tutorial</span>
+        <nav> <a accesskey="n" href="gimp-using-python-plug-in-tutorial.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-using-script-fu-tutorial-result"></a>3.7. Your script and its working</h3>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1595"></a>3.7.1. What you write</h4>
+            </div>
+          </div>
+        </div>
+        <p>Below the complete script:</p>
+        <pre class="programlisting">
+  (script-fu-register
+            "script-fu-text-box"                        ;function name
+            "Text Box"                                  ;menu label
+            "Creates a simple text box, sized to fit\
+              around the user's choice of text,\
+              font, font size, and color."              ;description
+            "Michael Terry"                             ;author
+            "copyright 1997, Michael Terry;\
+              2009, the GIMP Documentation Team"        ;copyright notice
+            "October 27, 1997"                          ;date created
+            ""                              ;image type that the script works on
+            SF-STRING      "Text"          "Text Box"   ;a string variable
+            SF-FONT        "Font"          "Charter"    ;a font variable
+            SF-ADJUSTMENT  "Font size"     '(50 1 1000 1 10 0 1)
+                                                        ;a spin-button
+            SF-COLOR       "Color"         '(0 0 0)     ;color variable
+            SF-ADJUSTMENT  "Buffer amount" '(35 0 100 1 10 1 0)
+                                                        ;a slider
+  )
+  (script-fu-menu-register "script-fu-text-box" "&lt;Image&gt;/Filters/Tutorial")
+  (define (script-fu-text-box inText inFont inFontSize inTextColor inBufferAmount)
+    (let*
+      (
+        ; define our local variables
+        ; create a new image:
+        (theImageWidth  10)
+        (theImageHeight 10)
+        (theImage)
+        (theImage
+                  (car
+                      (gimp-image-new
+                        theImageWidth
+                        theImageHeight
+                        RGB
+                      )
+                  )
+        )
+        (theText)             ;a declaration for the text
+        (theBuffer)           ;create a new layer for the image
+        (theLayer
+                  (car
+                      (gimp-layer-new
+                        theImage
+                        "layer 1"
+                        theImageWidth
+                        theImageHeight
+                        RGB-IMAGE
+                        100
+                        LAYER-MODE-NORMAL
+                      )
+                  )
+        )
+      ) ;end of our local variables
+      (gimp-image-insert-layer theImage theLayer 0 0)
+      (gimp-context-set-background '(255 255 255) )
+      (gimp-context-set-foreground inTextColor)
+      (gimp-drawable-fill theLayer FILL-BACKGROUND)
+      (set! theText
+                    (car
+                          (gimp-text-font
+                          theImage theLayer
+                          0 0
+                          inText
+                          0
+                          TRUE
+                          inFontSize
+                          inFont)
+                      )
+        )
+      (set! theImageWidth   (car (gimp-drawable-get-width  theText) ) )
+      (set! theImageHeight  (car (gimp-drawable-get-height theText) ) )
+      (set! theBuffer (* theImageHeight (/ inBufferAmount 100) ) )
+      (set! theImageHeight (+ theImageHeight theBuffer theBuffer) )
+      (set! theImageWidth  (+ theImageWidth  theBuffer theBuffer) )
+      (gimp-image-resize theImage theImageWidth theImageHeight 0 0)
+      (gimp-layer-resize theLayer theImageWidth theImageHeight 0 0)
+      (gimp-layer-set-offsets theText theBuffer theBuffer)
+      (gimp-floating-sel-to-layer theText)
+      (gimp-display-new theImage)
+      (list theImage theLayer theText)
+    )
+  )
+      </pre>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1596"></a>3.7.2. What you obtain</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1597"></a>
+          <p class="title">
+            <strong>Figure 13.2. The dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/using/script-fu-example-dialog.png" alt="The dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id1598"></a>
+          <p class="title">
+            <strong>Figure 13.3. The resulting image</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/using/script-fu-example-result.png" alt="The resulting image" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-script-fu-tutorial-extending-text-box.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-using-script-fu-tutorial.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-python-plug-in-tutorial.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-script-fu-tutorial-extending-text-box.html">3.6. Extending The Text Box Script</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-python-plug-in-tutorial.html">4. A Python plug-in writing Tutorial</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

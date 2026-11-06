@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3. Ferramentas de pintura</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools.html" title="Capítulo 14. Ferramentas" />
+    <link rel="prev" href="gimp-tool-iscissors.html" title="2.8. Ferramenta Tesoura" />
+    <link rel="next" href="gimp-tool-dynamics.html" title="3.2. Dinâmicas" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3. Ferramentas de pintura</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-iscissors.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 14. Ferramentas</span>
+        <nav> <a accesskey="n" href="gimp-tool-dynamics.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-tools-paint"></a>3. Ferramentas de pintura</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id15677" class="indexterm"></a>
+      <a id="id15679" class="indexterm"></a>
+      <a id="id15682" class="indexterm"></a>
+      <p>
+    To access these tools, select <span class="guimenu">Tools</span> → <span class="guisubmenu">Paint Tools</span> from the main menu.
+  </p>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-tool-brush"></a>3.1. Características em comum</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+    The <acronym class="acronym">GIMP</acronym> Toolbox includes fourteen <span class="quote">“<span class="quote">paint
+    tools</span>”</span>. By default they are shown together in five groups, but this
+    can be disabled in
+    <a class="link" href="gimp-prefs-toolbox.html" title="6.13. Caixa de ferramentas">Toolbox Preferences</a> by unchecking
+    <span class="guilabel">Use tool groups</span>.
+  </p>
+        <div class="figure">
+          <a id="id2914"></a>
+          <p class="title">
+            <strong>Figura 14.27. As ferramentas de pintura (caixa de ferramentas)</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/toolbox-paint-tools-grouped.png" alt="As ferramentas de pintura (caixa de ferramentas)" />
+              <div class="caption">
+                <p>
+          The default view groups similar tools together. The paint tools
+          groups are inside the red square.
+        </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/toolbox-paint-tools-ungrouped.png" alt="As ferramentas de pintura (caixa de ferramentas)" />
+              <div class="caption">
+                <p>
+          The paint tools in the toolbox in ungrouped view inside the red area.
+        </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>apesar da noção intuitiva de <span class="quote">“<span class="quote">pintar</span>”</span> com um pincel, as ferramentas lápis, pincel, e aerógrafo são chamadas <span class="quote">“<span class="quote">ferramentas básicas de pintura</span>”</span> ou <a class="link" href="gimp-tools-brush.html" title="3.3. Ferramentas de pincel (lápis, pincel, aerógrafo)">ferramentas de pintura</a>.</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>o <a class="link" href="gimp-tool-pencil.html" title="3.6. Lápis">Lápis</a>,</p>
+            </li>
+            <li class="listitem">
+              <p>o <a class="link" href="gimp-tool-paintbrush.html" title="3.7. Pincel">Pincel</a>,</p>
+            </li>
+            <li class="listitem">
+              <p>o <a class="link" href="gimp-tool-airbrush.html" title="3.9. Aerógrafo">Aerógrafo</a> e</p>
+            </li>
+            <li class="listitem">
+              <p>a <a class="link" href="gimp-tool-ink.html" title="3.10. Tinta">Ferramenta de tinta</a></p>
+            </li>
+            <li class="listitem">
+              <p>o <a class="link" href="gimp-tool-paintbrush.html" title="3.7. Pincel">Pincel</a>,</p>
+            </li>
+          </ul>
+        </div>
+        <p>As outras ferramentas usam o pincel para modificar uma imagem de alguma forma diferente do que seria pintar, propriamente dito:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>a <a class="link" href="gimp-tool-bucket-fill.html" title="3.4. Preenchimento com balde">Ferramenta de preenchimento</a> preenche com uma cor ou textura;</p>
+            </li>
+            <li class="listitem">
+              <p>o <a class="link" href="">Degradê</a> preenche com degradês;</p>
+            </li>
+            <li class="listitem">
+              <p>a <a class="link" href="gimp-tool-eraser.html" title="3.8. Borracha">Borracha</a> apaga;</p>
+            </li>
+            <li class="listitem">
+              <p>a <a class="link" href="gimp-tool-clone.html" title="3.12. Clonagem">Ferramenta de clonagem</a> copia de uma textura, ou imagem;</p>
+            </li>
+            <li class="listitem">
+              <p>a <a class="link" href="gimp-tool-heal.html" title="3.13. Restaurar">Ferramenta de restauração</a> corrige pequenos defeitos;</p>
+            </li>
+            <li class="listitem">
+              <p>a ferramenta de <a class="link" href="gimp-tool-perspective-clone.html" title="3.14. Clonagem em perspectiva">Clonagem em perspectiva</a> copia para uma perspectiva diferente;</p>
+            </li>
+            <li class="listitem">
+              <p>a <a class="link" href="gimp-tool-convolve.html" title="3.15. Desfocar/Deixar nítido">Ferramenta de convolução</a> desfoca ou deixa nítido;</p>
+            </li>
+            <li class="listitem">
+              <p>a <a class="link" href="gimp-tool-smudge.html" title="3.16. Borrar">Ferramenta de borrar</a> borra;</p>
+            </li>
+            <li class="listitem">
+              <p>e a <a class="link" href="gimp-tool-dodge-burn.html" title="3.17. Sub/Super-exposição">Ferramenta de sub/super-exposição</a> clareia ou escurece.</p>
+            </li>
+          </ul>
+        </div>
+        <p>As vantagens de usar o <acronym class="acronym">GIMP</acronym> com uma mesa digitalizadora (tablet) ao invés de um mouse propriamente ficam mais claras com as ferramentas de pincel do que com qualquer outra: o ganho em controle fino é imensurável. Essas ferramentas também possuem opções especiais de <span class="quote">“<span class="quote">sensibilidade de pressão</span>”</span> que apenas são usáveis com uma mesa digitalizadora (tablet). Se você estiver corrigindo fotos, tudo bem usar o mouse. Se você for um ilustrador, considere seriamente adquirir um tablet num futuro próximo, se já não tiver um.</p>
+        <p>Além do método mais comum de <span class="quote">“<span class="quote">por as mãos na massa</span>”</span>, é possível aplicar as ferramentas de pintura de forma automatizada, criando uma seleção ou vetor e então <span class="quote">“<span class="quote">contorná-la</span>”</span>. Você pode contornar com qualquer uma das ferramentas de pintura, incluindo as ferramentas que não são padrão como a borracha, ferramenta de borrar, etc., e qualquer opção de configuração que você escolher para a ferramenta será aplicada. Veja a seção <a class="link" href="gimp-selection-stroke.html" title="3.18. Contornar seleção">Contornar</a> para maioresinformações.</p>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="gimp-tools-paint-modifiers"></a>3.1.1. Modificadores de tecla</h4>
+              </div>
+            </div>
+          </div>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>
+        </span>
+              </dt>
+              <dd>
+                <p>Pressionar a tecla <span class="keycap"><strong>Ctrl</strong></span> tem um efeito diferente em cada ferramenta de pintura. No caso do lápis, pincel, aerógrafo, tinta, e borracha, elas são alteradas para o modo de <span class="quote">“<span class="quote">seleção de cores</span>”</span>, que ao se clicar em um pixel da imagem faz com que a cor se torne a cor de frente do <acronym class="acronym">GIMP</acronym> para a cor da camada ativa naquele ponto (ou, para a borracha, a cor de fundo do <acronym class="acronym">GIMP</acronym>). Para a ferramenta de clonagem, a tecla <span class="keycap"><strong>Ctrl</strong></span> muda para um modo em que clicar define o ponto de referência para a cópia. Para a ferramenta de convolução, a tecla <span class="keycap"><strong>Ctrl</strong></span> muda os modos entre borrar e tornar nítido; para a ferramenta de sub/super-exposição, ela muda entre sub-expor e super-expor.</p>
+              </dd>
+              <dt>
+                <span class="term">
+          
+          <span class="keycap"><strong>Shift</strong></span>
+        </span>
+              </dt>
+              <dd>
+                <a id="id15781" class="indexterm"></a>
+                <p>Pressionar a tecla <span class="keycap"><strong>Shift</strong></span> possui o mesmo efeito na maioria das ferramentas de pintura: ela coloca a ferramenta no modo de <span class="emphasis"><em>linha reta</em></span>. Para criar uma linha reta com uma das ferramentas de pintura, primeiro clique no ponto de inicio, <span class="emphasis"><em>e então</em></span> pressione a tecla <span class="keycap"><strong>Shift</strong></span>. Enquanto você pressioná-la, verá uma fina linha conectando o ponto clicado anteriormente com o local atual do ponteiro. Se clicar novamente, enquanto continua a pressionar a tecla <span class="keycap"><strong>Shift</strong></span>, uma linha reta será desenhada. Você pode continuar esse processo para criar uma série de segmentos de linhas conectadas.</p>
+              </dd>
+              <dt>
+                <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Shift</strong></span>
+        </span>
+              </dt>
+              <dd>
+                <p>Pressionar ambas as teclas coloca a ferramenta no modo de <span class="emphasis"><em>linha reta forçada</em></span>. Isso é similar ao efeito da tecla <span class="keycap"><strong>Shift</strong></span> pressionada sozinha; exceto que a orientação da linha é forçada a ao ângulos mais próximo que seja múltiplo de 15 graus. Use isso se deseja criar linhas perfeitamente horizontais, verticais ou diagonais.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="gimp-tools-paint-options"></a>3.1.2. Opções</h4>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id2915"></a>
+            <p class="title">
+              <strong>Figura 14.28. Opções da ferramenta</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/toolbox/tool-options-paintbrush.png" alt="Opções da ferramenta" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Muitas opções da ferramenta são compartilhadas por diversas ferramentas de pintura: elas estão descritas aqui. Opções que se aplicam apenas a uma ferramenta específica, ou a um pequeno número de ferramentas, estão descritas nas seções dedicadas a essas ferramentas.</p>
+          <div class="variablelist">
+            <a id="gimp-tool-painting-modes"></a>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Modo</span>
+              </dt>
+              <dd>
+                <p>A lista de seleção de modo mostra uma seleção de modos de aplicação de pintura. Assim como a opacidade, a maneira mais fácil de entender o que a configuração de modo faz é imaginar que o efeito é aplicado a uma camada acima da camada na qual você está trabalhando, com o modo de combinação de camadas igual ao modo selecionado. Pode-se obter uma grande variedade de efeitos especiais dessa forma. Utiliza-se a opção de modo apenas para ferramentas que podem adicionar cores à imagem: o lápis, pincel, aerógrafo, tinta, e ferramentas de clonagem. Para as outras ferramentas de pintura, a opção aparece por causa da consistência, mas está sempre desativada. Uma lista de modos podem ser encontrados em <a class="xref" href="gimp-concepts-layer-modes.html" title="2. Modos de Camada">Seção 2, “Modos de Camada”</a>.</p>
+                <p>Nessa lista, alguns dos modos são específicos e são descritos <a class="link" href="gimp-tools-paint.html#gimp-paint-mode-examples" title="3.1.3. Exemplos de modos de pintura">abaixo</a>.</p>
+              </dd>
+              <dt>
+                <span class="term">Opacidade</span>
+              </dt>
+              <dd>
+                <a id="id15816" class="indexterm"></a>
+                <a id="id15819" class="indexterm"></a>
+                <p>O seletor de opacidade define o nível de transparência para a operação do pincel. Para entender como isso funciona, imagine que ao invés de alterar a camada ativa, a ferramenta cria uma camada de transparência acima da camada ativa e atua nessa camada. Alterar a opacidade no opções da ferramenta possui o mesmo efeito que alterar a opacidade na janela de camadas na situação citada anteriormente. Ela controla a <span class="quote">“<span class="quote">intensidade</span>”</span> de todas as ferramentas de pintura, não apenas aquelas desenham na camada ativa. No caso da borracha, isso pode ser um pouco confuso: como a opacidade determina a força da ferramenta, acontece que quanto maior a <span class="quote">“<span class="quote">opacidade</span>”</span>, maior é a transparência que você obtém.</p>
+              </dd>
+              <dt>
+                <span class="term">Pincel</span>
+              </dt>
+              <dd>
+                <p>O pincel determina o quanto da imagem é afetada pela ferramenta, e como ela é afetada, quando você traça uma pincelada com o ponteiro. O <acronym class="acronym">GIMP</acronym> permite usar diversos tipos de pincéis, que são descritos na seção <a class="link" href="gimp-concepts-brushes.html" title="5. Pincéis">Pincel</a>. As mesmas opções de pincel estão disponíveis para todas as ferramentas de pintura exceto a ferramenta de tinta, que usa um tipo único de pincel gerado pelo programa. As cores do pincel apenas aparecem em ferramentas em que fazem sentido: nas ferramentas de lápis, pincel, e aerógrafo. Para outras ferramentas de pintura, apenas a distribuição de intensidade de um pincel é relevante.</p>
+              </dd>
+              <dt>
+                <span class="term">Tamanho</span>
+              </dt>
+              <dd>
+                <p>Essa opção permite modificar precisamente o tamanho de um pincel. Você pode usar as teclas <span class="quote">“<span class="quote">[</span>”</span> e <span class="quote">“<span class="quote">]</span>”</span> para variar o tamanho do pincel em mais ou menos 1 pixel, mesmo estando com a imagem em foco. Se você clicar nesse controle, pode usar as teclas Page-Up e Page-Down para variar entre + e -  10,00.  Você pode obter o mesmo resultado se você definir corretamente a rodinha do mouse nas preferências. Veja <a class="link" href="gimp-using-variable-size-brush.html" title="5.3. Mudando o tamanho do pincel">Como alterar o tamanho do pincel</a></p>
+              </dd>
+              <dt>
+                <span class="term">Proporção</span>
+              </dt>
+              <dd>
+                <p>Isso determina a proporção entre a altura e largura do pincel. O seletor varia de -20,00 até 20,00 com o valor padrão definido em 0,00. Um valor negativo de 0,00 a -20 irá estreitar a altura do pincel enquanto que valores positivos entre 0,00 e 20,00 indicam uma taxa de estreitamento da largura do pincel.</p>
+              </dd>
+              <dt>
+                <span class="term">Ângulo</span>
+              </dt>
+              <dd>
+                <p>Essa opção faz o pincel girar sobre seu próprio centro. O efeito não será perceptível se o pincel for circular. </p>
+              </dd>
+              <dt>
+                <span class="term">Espaçamento</span>
+              </dt>
+              <dd>
+                <p>Esta opção define a distância entre as marcas do pincel em um traço.</p>
+                <div class="figure">
+                  <a id="id2916"></a>
+                  <p class="title">
+                    <strong>Figura 14.29. Espaçamento</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/tool-options/brush-option-spacing-ex.png" alt="Espaçamento" />
+                      <div class="caption">
+                        <p>Diferentes espaçamentos</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+              </dd>
+              <dt>
+                <span class="term">Dureza</span>
+              </dt>
+              <dd>
+                <p>Modifica o tamanho do centro firme do pincel.</p>
+                <div class="figure">
+                  <a id="id2917"></a>
+                  <p class="title">
+                    <strong>Figura 14.30. Dureza</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/tool-options/brush-option-hardness-ex.png" alt="Dureza" />
+                      <div class="caption">
+                        <p>À esquerda: firmeza=50 À direita: firmeza=100.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+              </dd>
+              <dt>
+                <span class="term">Força</span>
+              </dt>
+              <dd>
+                <p>
+            Modifies the <span class="quote">“<span class="quote">gain</span>”</span> of the brush: gain is a secondary
+            Opacity multiplier that can increase or decrease the strength of the
+            brush <span class="emphasis"><em>during</em></span> its operation (distinct from the
+            Opacity setting, which is applied to the operation as a whole). Force
+            values below 50% reduce the brush's effect relative to its preview
+            shown in the Tool Options; values above 50% increase the effect (up
+            to 2x at Force=100%) instead.
+          </p>
+                <p>
+            For standard brush types (i.e. parametric brushes created by the
+            <a class="link" href="gimp-brush-dialog.html#gimp-brush-editor-dialog" title="3.2.3. Editor de pincéis">Brush Editor</a>),
+            Force values above 50% effectively expand the opaque center of that
+            brush similar to (but more subtle than) increasing the Hardness of
+            that brush. (The exact relationship between Force and Hardness in
+            this case is complicated.)
+          </p>
+                <p>
+            For other (raster or image based) brush types, Force values above 50%
+            may show little to no effect depending on the specific brush used, as
+            these brushes often contain maximum opacity to begin with (which cannot
+            be increased further, only decreased).
+          </p>
+                <div class="figure">
+                  <a id="id2918"></a>
+                  <p class="title">
+                    <strong>Figura 14.31. Opções de esmaecimento</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/tool-options/brush-option-force-ex.png" alt="Opções de esmaecimento" />
+                      <div class="caption">
+                        <p>Força é 10%, 20%, 40%, 80%.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+              </dd>
+              <dt>
+                <a id="gimp-tool-brush-dynamics"></a>
+                <span class="term">Dinâmicas</span>
+              </dt>
+              <dd>
+                <p>Dinâmicas de pincel permitem mapear diferentes parâmetros de pincel para diversas dinâmicas de saída. Elas são muito usadas com mesas digitalizadoras gráficas (tablets), mas algumas delas também podem ser usadas com o mouse.</p>
+                <p>Você pode ler mais sobre dinâmicas em <a class="link" href="gimp-tool-dynamics.html" title="3.2. Dinâmicas">Dinâmicas</a></p>
+                <p>Ao contornar vetores e seleções usando a opção de ferramenta de pintura existe uma opção para selecionar <span class="quote">“<span class="quote">Emular dinâmicas de pincel</span>”</span>. Que significa que ao aplicar o contorno, a pressão do pincel e a velocidade irão variar ao longo do comprimento da pincelada. A pressão começa em zero, e sobe à pressão máxima e então desce novamente até não ter nenhuma pressão. A velocidade começa do zero e aumenta até a velocidade máxima até o fim da pincelada.</p>
+              </dd>
+              <dt>
+                <span class="term">Opções de dinâmicas</span>
+              </dt>
+              <dd>
+                <p>Essas opções são descritas em <a class="link" href="gimp-tool-dynamics.html#gimp-tool-dynamic-options" title="3.2.6. Opções de dinâmicas">Opções de dinâmicas</a></p>
+              </dd>
+              <dt>
+                <span class="term">Aplicar espalhamento</span>
+              </dt>
+              <dd>
+                <a id="id15897" class="indexterm"></a>
+                <p>Você conhece o <span class="quote">“<span class="quote">espaçamento</span>”</span> em pinceladas: as pinceladas são produzidas a partir de marcas sucessivas do pincel que, por estarem muito próximas, se parecem com uma linha continua. Aqui, ao invés das marcas de pincéis estarem alinhadas na pincelada, elas ficam espalhadas, próximas do traço. Você pode definir a distância do espalhamento com o seletor de <span class="guimenuitem">Intensidade</span>.</p>
+                <div class="figure">
+                  <a id="id2919"></a>
+                  <p class="title">
+                    <strong>Figura 14.32. Exemplo de <span class="quote">“<span class="quote">espalhamento</span>”</span></strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/tool-options/jitter.png" alt="Exemplo de “espalhamento”" />
+                      <div class="caption">
+                        <p>De cima para baixo: sem espalhamento, espalhamento = 1, espalhamento = 4.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>O espalhamento também está disponível no editor de dinâmicas de pintura, onde você pode vincular a quantidade de espalhamento a vários fatores durante a pintura, como velocidade, direção e pressão, entre outros.</p>
+              </dd>
+              <dt>
+                <span class="term">Pincelada suave</span>
+              </dt>
+              <dd>
+                <p>Essa opção não afeta a representação da pincelada mas sua <span class="quote">“<span class="quote">forma</span>”</span>. Ela altera as oscilações da linha que você está desenhando, o que torna desenhar com um mouse mais fácil.</p>
+                <p>Quando essa opção está marcada, duas áreas de configuração aparecem, <span class="guilabel">Qualidade</span> e <span class="guilabel">Peso</span>. Você pode alterar os valores padrão para adaptá-los a sua habilidade.</p>
+                <p>Um valor alto para o peso torna a pincelada mais firme.</p>
+                <div class="table">
+                  <a id="id2920"></a>
+                  <p class="title">
+                    <strong>Tabela 14.2. Exemplo de <span class="quote">“<span class="quote">pincelada suave</span>”</span></strong>
+                  </p>
+                  <div class="table-contents">
+                    <table class="table" summary="Exemplo de pincelada suave" border="1">
+                      <colgroup>
+                        <col align="center" class="c1" />
+                        <col align="center" class="c2" />
+                        <col align="center" class="c3" />
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th align="center" valign="top">
+                            <p>Exemplo de <span class="quote">“<span class="quote">pincelada suave</span>”</span></p>
+                          </th>
+                          <th align="center" valign="top">
+                            <p>Linha reta</p>
+                          </th>
+                          <th align="center" valign="top">
+                            <p>Sine curve</p>
+                          </th>
+                          <td class="auto-generated"> </td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td align="center" valign="middle">Unchecked</td>
+                          <td align="center">
+                  <div class="mediaobject"><img src="images/tool-options/smooth-stroke-example-straight-unchecked.png" /></div>
+                  </td>
+                          <td align="center">
+                  <div class="mediaobject"><img src="images/tool-options/smooth-stroke-example-curve-unchecked.png" /></div>
+                  </td>
+                          <td class="auto-generated"> </td>
+                        </tr>
+                        <tr>
+                          <td align="center" valign="middle">Default</td>
+                          <td align="center">
+                  <div class="mediaobject"><img src="images/tool-options/smooth-stroke-example-straight-default.png" /></div>
+                  </td>
+                          <td align="center">
+                  <div class="mediaobject"><img src="images/tool-options/smooth-stroke-example-curve-default.png" /></div>
+                  </td>
+                          <td class="auto-generated"> </td>
+                        </tr>
+                        <tr>
+                          <td align="center" valign="middle">Maximum</td>
+                          <td align="center">
+                  <div class="mediaobject"><img src="images/tool-options/smooth-stroke-example-straight-maximum.png" /></div>
+                  </td>
+                          <td align="center">
+                  <div class="mediaobject"><img src="images/tool-options/smooth-stroke-example-curve-maximum.png" /></div>
+                  </td>
+                          <td class="auto-generated"> </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <br class="table-break" />
+              </dd>
+              <dt>
+                <span class="term">O tamanho do pincel - curva de esmaecimento</span>
+              </dt>
+              <dd>
+                <p>Quando você está trabalhando em uma imagem que é maior (em pixels) do que sua tela, você precisa dar muito zoom in e zoom out. Esta opção permite um processo de "refinamento iterativo" muito natural, sem necessidade de pedir repetidamente ao aplicativo para alterar o tamanho do pincel conforme você vai entre traços largos e detalhamento.</p>
+                <p>Se o tamanho do pincel for relativo à tela da imagem (opção desmarcada), dar zoom in também dá zoom no pincel e ele fica maior (ocupa mais pixels na tela). Se você estiver trabalhando com um pincel de 300 pixels de raio e der zoom de 12% para 100%, o pincel agora é metade do tamanho da sua tela! Então você precisa encolher o pincel de volta.</p>
+                <p>Se o tamanho do pincel for relativo à tela (opção marcada), então quando você der zoom, o tamanho do pincel exibido não muda, ele fica menor e assim você pode trabalhar em detalhes minúsculos.</p>
+                <div class="figure">
+                  <a id="id2921"></a>
+                  <p class="title">
+                    <strong>Figura 14.33. Exemplo de <span class="quote">“<span class="quote">pincelada suave</span>”</span></strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/tool-options/lockbrush-orig.png" alt="Exemplo de “pincelada suave”" />
+                      <div class="caption">
+                        <p>
+                  An image displayed at 50% zoom so the whole image is visible.
+                  The <span class="quote">“<span class="quote">Lock brush to view</span>”</span> option is not checked
+                  and the brush size is set to 100 pixels high in the toolbox.
+                </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/tool-options/lockbrush-zoom200-nolock.png" alt="Exemplo de “pincelada suave”" />
+                      <div class="caption">
+                        <p>
+                  Part of the image at 200% zoom. The
+                  <span class="quote">“<span class="quote">Lock brush to view</span>”</span> option is not checked and
+                  the brush size is set to 100 pixels high in the toolbox.
+                  We paint with the pencil and the brush stroke of the selected
+                  pepper brush is displayed as 200 pixels high due to the zoom.
+                </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/tool-options/lockbrush-zoom200-lock.png" alt="Exemplo de “pincelada suave”" />
+                      <div class="caption">
+                        <p>
+                  Part of the image at 200% zoom. The
+                  <span class="quote">“<span class="quote">Lock brush to view</span>”</span> option is checked and the
+                  brush size is set to 100 pixels high in the toolbox. We paint
+                  with the pencil and the brush stroke of the selected pepper
+                  brush is displayed as 100 pixels high due to the setting.
+                </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>"Travar pincel na visualização" também pode ser usado para travar o pincel na rotação da visualização:</p>
+                <div class="figure">
+                  <a id="id2922"></a>
+                  <p class="title">
+                    <strong>Figura 14.34. Exemplo de travar pincel na rotação da visualização</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/tool-options/lockbrush-rotation-nolock.png" alt="Exemplo de travar pincel na rotação da visualização" />
+                      <div class="caption">
+                        <p>
+                  The <span class="quote">“<span class="quote">Lock brush to view</span>”</span> option is checked and we
+                  <a class="link" href="gimp-view-flip-rotate.html#gimp-view-rotate-15" title="5.6.3. Rotate 15° clockwise">rotate the view 15°
+                  clockwise</a>. The brush stroke rotates with the view.
+                </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/tool-options/lockbrush-rotation-lock.png" alt="Exemplo de travar pincel na rotação da visualização" />
+                      <div class="caption">
+                        <p>
+                  The <span class="quote">“<span class="quote">Lock brush to view</span>”</span> option is not checked
+                  and we <a class="link" href="gimp-view-flip-rotate.html#gimp-view-rotate-15" title="5.6.3. Rotate 15° clockwise">rotate the view
+                  15° clockwise</a>. The brush stroke does not rotate with
+                  the view.
+                </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+              </dd>
+              <dt>
+                <span class="term">Incremental</span>
+              </dt>
+              <dd>
+                <p>Aplica o efeito incrementalmente à medida que o ponteiro do mouse se move.</p>
+                <p>A caixa de seleção Incremental parece não funcionar como todos esperam. Quando desativada (valor padrão) o efeito máximo de uma simples pincelada é determinado pela opacidade definida no seletor de opacidade. Se a opacidade é definida para menos que 100, mover o pincel sobre o mesmo ponto aumentará a opacidade caso o pincel seja levantado durante o movimento. Desenhar com a mesma força não possui tal efeito. Caso o Incremental esteja ativo, o pincel poderá pintar com opacidade total independente da configuração do seletor, bastando passar várias vezes o pincel no mesmo ponto. Essa opção está disponível para todas as ferramentas de pintura, exceto aquelas que possuem um controlador de <span class="quote">“<span class="quote">taxa</span>”</span>, que implica automaticamente no efeito incremental. Veja também <a class="xref" href="gimp-concepts-layer-modes.html" title="2. Modos de Camada">Seção 2, “Modos de Camada”</a>.</p>
+              </dd>
+              <dt>
+                <a id="gimp-tools-paint-expand-layers"></a>
+                <span class="term">Expand Layers</span>
+              </dt>
+              <dd>
+                <p>
+            When enabled, this automatically enlarges the layer when painting
+            outside the borders of the layer. If it is enabled, several
+            additional settings appear below it.
+          </p>
+                <p>
+            Note that this doesn't allow you to extend a layer beyond the size
+            of the image canvas. To change the size of the canvas see
+            <a class="link" href="gimp-image-resize.html" title="6.20. Tamanho da tela de pintura">Canvas Size</a>.
+          </p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">
+                Amount
+              </span>
+                    </dt>
+                    <dd>
+                      <p>
+                  The amount of pixels to add in the direction you
+                  are painting.
+                </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Preenchido com textura</span>
+                    </dt>
+                    <dd>
+                      <p>
+                  Here you can select how the new expanded area of the layer
+                  is filled. These are the same choices as in the
+                  <a class="link" href="gimp-layer-new.html#gimp-new-layer-dialog" title="7.2.2. Descrição do Diálogo de “Nova camada”">New Layer Dialog</a>.
+                </p>
+                    </dd>
+                    <dt>
+                      <span class="term">
+                Fill Layer Mask With
+              </span>
+                    </dt>
+                    <dd>
+                      <p>
+                  If the layer you are painting on has a layer mask, that
+                  mask will also be extended. This option gives you a choice
+                  how to fill the new area of the layer mask.
+                  You have a choice between <span class="guilabel">White (full
+                  opacity)</span> and <span class="guilabel">Black (full
+                  transparency)</span>.
+                </p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="gimp-paint-mode-examples"></a>3.1.3. Exemplos de modos de pintura</h4>
+              </div>
+            </div>
+          </div>
+          <p>Os seguintes exemplos demonstram algum dos modos de pintura do <acronym class="acronym">GIMP</acronym>:</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Dissolver</span>
+              </dt>
+              <dd>
+                <div class="figure">
+                  <a id="id2923"></a>
+                  <p class="title">
+                    <strong>Figura 14.35. Exemplo do modo dissolver</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/dissolve-mode-example.png" alt="Exemplo do modo dissolver" />
+                      <div class="caption">
+                        <p>Duas pinceladas criadas com o aerógrafo, usando o mesmo pincel circular ondulado. Esquerda: modo normal. Direita: Modo dissolver</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>Para qualquer ferramenta de pintura com opacidade abaixo de 100%, esse modo muito útil não desenha transparência, mas usa o valor de transparência para determinar a possibilidade de aplicar a pintura em cada pixel. Isso pode gerar ótimas texturas de pontos para pinceladas ou preenchimento.</p>
+                <div class="figure">
+                  <a id="id2924"></a>
+                  <p class="title">
+                    <strong>Figura 14.36. Pintando no modo dissolver</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/mode-dissolve.png" alt="Pintando no modo dissolver" />
+                      <div class="caption">
+                        <p>Essa imagem possui apenas a camada de fundo e nenhum canal alfa. A cor de fundo é a sky blue (céu azul). Três pinceladas com o lápis e várias opacidades: 100%, 50%, 25%. Pixels na cor de frente ficam espalhados ao longo da pincelada.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+              </dd>
+              <dt>
+                <span class="term">Atrás</span>
+              </dt>
+              <dd>
+                <a id="id16060" class="indexterm"></a>
+                <a id="id16063" class="indexterm"></a>
+                <div class="figure">
+                  <a id="id2925"></a>
+                  <p class="title">
+                    <strong>Figura 14.37. Exemplo de modo de camada <span class="quote">“<span class="quote">Atrás</span>”</span></strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/glossary/modes-normal2.png" alt="Exemplo de modo de camada “Atrás”" />
+                      <div class="caption">
+                        <p>O Wilber atrás de uma camada de fundo azul</p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/using/wilber-layers.png" alt="Exemplo de modo de camada “Atrás”" />
+                      <div class="caption">
+                        <p>Diálogos de camada</p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/modes-behind.png" alt="Exemplo de modo de camada “Atrás”" />
+                      <div class="caption">
+                        <p>Preenchido com textura</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>Esse modo aplica pintura apenas nas áreas transparentes da camada: quando menor a opacidade, mais tinta é aplicada. Inclusive, pintar áreas opacas não gera efeito nenhum; pintar áreas transparentes têm o mesmo efeito que no modo normal. O resultado é sempre um aumento na opacidade. Claro que nenhum desses casos tem qualquer resultado em uma camada que não possua um canal alfa.</p>
+                <p>Na imagem de exemplo acima, o Wilber está na camada mais alta, cercado de transparência. A camada mais baixa é um azul claro sólido. A ferramenta de preenchimento foi usada, com a opção de <span class="guilabel">Preencher toda a seleção</span> marcada e com toda a camada selecionada. Uma textura foi usada para pintar com a ferramenta de preenchimento.</p>
+                <div class="figure">
+                  <a id="id2926"></a>
+                  <p class="title">
+                    <strong>Figura 14.38. Pintando no modo <span class="quote">“<span class="quote">Atrás</span>”</span></strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/mode-behind-dialog.png" alt="Pintando no modo “Atrás”" />
+                      <div class="caption">
+                        <p>A próxima imagem (abaixo) possui duas camadas. A camada superior está ativa. Três pinceladas com o lápis, na cor vermelha em 100%, 50% ou 25%: apenas os pixels transparentes ou semi-transparentes da camada são afetados.</p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/mode-behind-example.png" alt="Pintando no modo “Atrás”" />
+                      <div class="caption">
+                        <p>
+                  Resulting image.
+                </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+              </dd>
+              <dt>
+                <span class="term">Apagar cor</span>
+              </dt>
+              <dd>
+                <a id="id16100" class="indexterm"></a>
+                <a id="id16103" class="indexterm"></a>
+                <div class="figure">
+                  <a id="id2927"></a>
+                  <p class="title">
+                    <strong>Figura 14.39. Exemplo do modo de camada <span class="quote">“<span class="quote">Apagar cor</span>”</span></strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/glossary/modes-normal2.png" alt="Exemplo do modo de camada “Apagar cor”" />
+                      <div class="caption">
+                        <p>O Wilber atrás de uma camada de fundo azul</p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/modes-colorerase.png" alt="Exemplo do modo de camada “Apagar cor”" />
+                      <div class="caption">
+                        <p>Cor de frente branca apagada</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>Este modo apaga a cor de frente, substituindo-a com um transparente parcial. Esse modo age como o filtro <a class="link" href="">Cor para alfa</a>, aplicado a uma área sob a pincelada. Perceba que isso apenas funciona em camadas que possuem um canal alfa; caso contrário, esse modo funcionará da mesma forma que o Normal.</p>
+                <p>No exemplo de imagem acima, a cor da ferramenta de preenchimento era branco, com isso partes brancas do Wilber foram apagadas e o fundo azul ficou a mostra.</p>
+                <p>Essa imagem abaixo possui apenas uma camada, a camada de fundo. A cor de fundo é de céu azul. Três pinceladas com o lápis:</p>
+                <div class="orderedlist">
+                  <ol class="orderedlist" type="1">
+                    <li class="listitem">
+                      <p>Com a mesma cor da área azul: apenas esse tom de azul é apagado.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>Com a mesma cor da área vermelha. Apenas esse tom de vermelho é apagado, independente da transparência. Áreas apagadas ficam transparentes.</p>
+                    </li>
+                    <li class="listitem">
+                      <p>Com a cor de céu azul da camada de fundo: apenas essa cor é apagada.</p>
+                    </li>
+                  </ol>
+                </div>
+                <div class="figure">
+                  <a id="id2928"></a>
+                  <p class="title">
+                    <strong>Figura 14.40. Pintando no modo <span class="quote">“<span class="quote">Apagar cor</span>”</span></strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/mode-erase.png" alt="Pintando no modo “Apagar cor”" />
+                      <div class="caption">
+                        <p>
+                  Vertical brush strokes painted in blue (on the left), in red
+                  (in the middle), in the background color (on the right).
+                </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+              </dd>
+              <dt>
+                <span class="term">Overwrite</span>
+              </dt>
+              <dd>
+                <a id="id16138" class="indexterm"></a>
+                <a id="id16141" class="indexterm"></a>
+                <div class="figure">
+                  <a id="id2929"></a>
+                  <p class="title">
+                    <strong>Figura 14.41. Pintando no modo <span class="quote">“<span class="quote">Atrás</span>”</span></strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/mode-overwrite-example.png" alt="Pintando no modo “Atrás”" />
+                      <div class="caption">
+                        <p>
+                  Example image with two layers: the upper layer contains a
+                  blue gradient with different brushstrokes painted across them,
+                  in Normal mode (top) and Overwrite mode (middle, bottom).
+                </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>
+            This mode entirely foregoes the usual concept of opacity and
+            instead treats it as simply another <span class="quote">“<span class="quote">color</span>”</span> channel
+            to be painted: uniquely, it can replace fully opaque areas with
+            semi-transparent colors.
+          </p>
+                <p>
+            When used with the Pencil tool (or a tool with the
+            <span class="quote">“<span class="quote">Hard Edge</span>”</span> toggle enabled), Overwrite will effectively
+            ignore any pre-existing content under the brushstroke.
+            It can similarly be used to paint a selected region with a Pattern
+            or Gradient fill without regard for (or blending with) previous content.
+          </p>
+                <p>
+            In the above example, the image has a patterned background layer,
+            with a blue gradient layer above it. The topmost red stroke is
+            drawn with the Paintbrush tool at 25% Tool Opacity and Normal mode,
+            which blends with the blue gradient to yield a purple result.
+          </p>
+                <p>
+            The lower two strokes are also drawn wih 25% Tool Opacity, but
+            in Overwrite mode instead: they <span class="quote">“<span class="quote">cut through</span>”</span> the
+            blue gradient in its entirety and allow the background pattern
+            to be visible through their transparency alone, even in regions
+            where the gradient is fully opaque.
+          </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id2930"></a>3.1.4. Informação adicional</h4>
+              </div>
+            </div>
+          </div>
+          <p>Usuários avançados podem estar interessados em saber que as ferramentas de pintura na verdade operam no nível de sub-pixel, com a finalidade de evitar resultados com aparência serrilhada. Uma das consequências disso é que mesmo que você esteja trabalhando com um pincel de bordas duras, como um dos pincéis de círculo, os pixels da borda da pincelada serão afetados apenas parcialmente. Se você precisa de efeitos de tudo ou nada (que  podem ser necessários para obter uma boa seleção, ou para cortar e colar, ou para trabalhar num nível de zoom alto o bastante para trabalhar em pixel por pixel), use a ferramenta de lápis, que faz com que todos os pincéis sejam completamente duros e desabilita o anti-serrilhamento em sub-pixel.</p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-iscissors.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-dynamics.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-iscissors.html">2.8. Ferramenta Tesoura</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-dynamics.html">3.2. Dinâmicas</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

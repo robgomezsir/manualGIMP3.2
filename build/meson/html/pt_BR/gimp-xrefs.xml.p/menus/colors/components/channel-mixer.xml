@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-channel-mixer">
+  <title>Misturador de Canais</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Componentes</secondary>
+    <tertiary>Misturador de canais</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Misturador de Canais</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Panorama</title>
+    <figure>
+      <title>Exemplo do filtro<quote>Misturador de Canais</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem Original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/color-taj-channelmixer.jpg"/>
+        </imageobject>
+        <caption>
+          <para><quote>Misturador de canais</quote> aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This command combines values of the RGB channels. It works with images
+      with or without an alpha channel.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Components</guisubmenu>
+        <guimenuitem>Channel Mixer…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do comando <quote>Misturador de Canais</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/components/channelmixer.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Red Channel</term>
+        <term>Green Channel</term>
+        <term>Blue Channel</term>
+        <listitem>
+          <para>
+            Each of these has three sliders, which set the contribution of the
+            red, green and blue input channels in the output channel.
+            The sliders go from -2 to 2. They represent the multiplication
+            factor of the input channel that will be attributed to the output
+            channel.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Preserve luminosity</term>
+        <listitem>
+          <para>
+            The mixing can result in an image where some of the colors are too
+            light. This option lessens the luminosity of the color channels
+            while keeping a good visual ratio between them. So, you can change
+            the relative weight of the colors without changing the overall
+            luminosity.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Como o Misturador de Canais funciona?</title>
+    <para>
+      Each of the output channels is based on the values you set for the three
+      RGB input channels. By default each output channel is based for 100%
+      on the corresponding input channel. This is the one set to 1.0, and the
+      others are set to 0.0. You can change each of the sliders from -2 to +2.
+    </para>
+    <para>
+      The three RGB input sliders let you give a percentage to every channel.
+      For every pixel in the image, the sum of the calculated values for
+      every channel from these percentages will be given to the output
+      channel. Here is an example:
+    </para>
+    <figure>
+      <title>A imagem original e seus canais.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/components/channel-mixer-ex1.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            RGB values of the pixels in red, green, blue, gray squares
+            are displayed. The black rectangle is special, because black
+            (0;0;0) is not affected by the command (0 multiplied by any
+            percentage always gives 0). The result can't exceed 255 nor
+            be negative.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Canal de saída vermelho. Canal Verde +50</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/components/channel-mixer-ex2.png"/>
+        </imageobject>
+        <caption>
+          <para>No quadrado vermelho, os valores dos pixels são 230;10;10. Os valores relativos são 1; 0,5; 0. O resultado do cálculo é 230*1+ 10*0,5 + 10*0 = 235. O mesmo raciocínio se aplica para os quadrados verdes e azuis.</para>
+          <para>No quadrado cinza, que contém a cor vermelha, o cálculo resulta num valor acima de 255. Ele é reduzido para 255. Um valor negativo seria reduzido a zero.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Canal de saída vermelho. O canal verde +50%. Opção de preservar a luminosidade selecionada.</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/components/channel-mixer-ex3.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            The values attributed to the Red Output channel are lower,
+            preventing a too bright image.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

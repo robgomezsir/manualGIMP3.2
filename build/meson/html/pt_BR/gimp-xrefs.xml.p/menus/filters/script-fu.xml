@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+     2009-08-24 ude: moved to filters/ and changed id
+     2008-06-07 ude: added new sections: Refresh, Console, Server
+     2005-11-24 split of from menus-toolbox.xml by axel.wernicke
+-->
+<sect2 id="gimp-filters-script-fu">
+  <title>O Submenu <quote>Script-Fu</quote> </title>
+
+  <indexterm>
+    <primary>Script-Fu</primary>
+    <secondary>Sub-menu</secondary>
+  </indexterm>
+
+  <para>Este submenu contém alguns comandos Script-Fu, especialmente o console Script-Fu. <link linkend="gimp-concepts-script-fu">Script-Fu</link> é uma linguagem para escrever scripts, que permite que você execute uma série de comandos do <acronym>GIMP</acronym> automaticamente.</para>
+
+  <sect3>
+    <title>Activating the Submenu</title>
+    <para>
+      You can access this submenu from the main menu through
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Development</guisubmenu>
+        <guimenuitem>Script-Fu</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="plug-in-script-fu-console">
+    <title>Console Script-Fu</title>
+    <para>O console Script-Fu é uma janela de diálogo onde você pode testar e executarinterativamente comandos de Scheme - a linguagem do Script-fu.</para>
+    <para>
+      The console consists of a large scrollable main window for output and a
+      text box at the bottom to enter Scheme commands. When you type a Scheme
+      statement and then press the <keycap>Enter</keycap> key, the command and
+      its return value will be displayed in the main window.
+    </para>
+    <figure>
+      <title>O Console Script-Fu</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/filters/script-fu-console.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Você vai encontrar mais informações sobre <link linkend="gimp-using-script-fu-tutorial-scheme">Scheme</link> e exemplos de como usar o <link linkend="gimp-using-script-fu-tutorial-console">console Script-Fu</link> em <xref linkend="gimp-using-script-fu-tutorial"/>.</para>
+    <variablelist>
+      <title>Os Botões do Console de Script-Fu</title>
+      <varlistentry>
+        <term>Procurar</term>
+        <listitem>
+          <para>
+            The <guibutton>Browse</guibutton> button is next to the Scheme
+            commands text box. When clicked, the
+            <link linkend="plug-in-dbbrowser">procedure browser</link> window
+            opens with an additional <guibutton>Apply</guibutton> button.
+          </para>
+          <para>
+            Select a <link linkend="glossary-pdb"><acronym>PDB</acronym></link>
+            procedure from the list and press the <guibutton>Apply</guibutton>
+            button. The selected procedure and its parameter names will be
+            pasted into the text box of the Script Console.
+          </para>
+          <para>
+            Now you just have to replace the parameter names after the
+            procedure name with actual values. Then you can call the procedure
+            by pressing <keycap>Enter</keycap>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Fechar</term>
+        <listitem>
+          <para>Ao pressionar este botão o console Script-Fu será fechado.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Limpar</term>
+        <listitem>
+          <para>
+            When you click on this button, the content of the main window will
+            be removed. Note that you can't get back the removed content using
+            the <guilabel>Save</guilabel> command.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Salvar</term>
+        <listitem>
+          <para>Este comando permite que você salve o conteúdo da janela principal, que é a saída do console Script-Fu (incluindo os caracteres <quote><code>&gt;&gt;</code></quote>). O conteúdo é salvo como um arquivo de texto, apenas como referência. Você pode copiar e colar trechos do arquivo para criar seu próprio Script-fu depois. Note que não há uma opção para carregar um arquivo salvo desta janela (e uma vez que o arquivo não é só a listagem dos comandos executados, mas os comandos e sua resposta, carregar o arquivo nem faria muito sentido).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3 id="plug-in-script-fu-server">
+    <title>Iniciar Servidor</title>
+    <para>
+      This command will start a server, which reads and executes Script-Fu
+      (Scheme) statements you send it via a specified port.
+    </para>
+    <figure>
+      <title>Opções do Servidor Script-Fu</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/filters/script-fu-server.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Listen on IP</term>
+        <listitem>
+          <para>
+            The IP address the Script-Fu server will listen on. This is
+            usually 127.0.0.1 (also known as localhost). Only change this if
+            you know what you are doing.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Porta do Servidor</term>
+        <listitem>
+          <para>O número da porta que servidor Script-Fu vai ouvir. É possível iniciar mais de um servidor, especificando números de porta diferentes, é claro.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Arquivo de registros (logfile) do Servidor</term>
+        <listitem>
+          <para>
+            Optionally you can specify the name of a file the server will use
+            to log informational and error messages. If no file is specified,
+            messages will be written to stdout.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <itemizedlist>
+      <title>O Protocolo do Servidor Script-Fu.</title>
+      <para>O protocolo usado para comunicações com o servidor Script-Fu é muito simples:</para>
+      <listitem>
+        <para>Cada mensagem (instrução Script-Fu) de comprimento <code>L</code> enviado para o servidor tem que ser precedido pelos 3 bytes seguintes:</para>
+        <table>
+          <title>Formato de cabeçalho para comandos</title>
+          <tgroup cols="3">
+            <thead>
+              <row>
+                <entry>Byte #</entry>
+                <entry>Conteúdo</entry>
+                <entry>Descrição</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>0</entry>
+                <entry>0x47</entry>
+                <entry>byte Mágico ('G')</entry>
+              </row>
+              <row>
+                <entry>1</entry>
+                <entry>L div 256</entry>
+                <entry>Byte alto de <code>L</code></entry>
+              </row>
+              <row>
+                <entry>2</entry>
+                <entry>L mod 256</entry>
+                <entry>Byte baixo de <code>L</code></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </listitem>
+      <listitem>
+        <para>Cada resposta do servidor (valor de retorno ou mensagem de erro) de comprimento <code>L</code> será precedida pelos 4 bytes seguintes:</para>
+        <table>
+          <title>Formato de cabeçalho para respostas</title>
+          <tgroup cols="3">
+            <thead>
+              <row>
+                <entry>Byte #</entry>
+                <entry>Conteúdo</entry>
+                <entry>Descrição</entry>
+              </row>
+            </thead>
+            <tbody>
+              <row>
+                <entry>0</entry>
+                <entry>0x47</entry>
+                <entry>byte Mágico ('G')</entry>
+              </row>
+              <row>
+                <entry>1</entry>
+                <entry>código de erro</entry>
+                <entry>0 em caso de sucesso, 1 em caso de erro </entry>
+              </row>
+              <row>
+                <entry>2</entry>
+                <entry>L div 256</entry>
+                <entry>Byte alto de <code>L</code></entry>
+              </row>
+              <row>
+                <entry>3</entry>
+                <entry>L mod 256</entry>
+                <entry>Byte baixo de <code>L</code></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </listitem>
+    </itemizedlist>
+    <tip>
+      <para>Se você não quiser sujar as mãos: existe um script Python chamado <application>servertest.py</application> fornecido com o código-fonte <acronym>GIMP</acronym>, que pode ser usado como um simples comando de linha shell para o servidor Script-Fu.</para>
+    </tip>
+  </sect3>
+</sect2>

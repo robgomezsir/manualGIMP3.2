@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-10-01 KoSt: added 'no'
+  2007-09-02 ciampix: added it
+  2007-09-02 AntI: Added 'es'
+  2007-08-28 ude: created en, de
+-->
+<sect2 id="script-fu-fuzzy-border">
+  <title>Borrar borda</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Decoração</secondary>
+    <tertiary>Borrar borda</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Borrar borda</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>Borrar borda</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/decor-taj-fuzzyborder.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Esse filtro cria uma borda que se esmaece de forma bem interessante: a borda da imagem vai parecer irregular e borrada, como se fosse papel rasgado colado sobre outra folha. Você pode especificar a cor e a espessura da borda. Opcionalmente, você pode adicionar uma sombra a imagem.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Decor</guisubmenu>
+        <guimenuitem>Fuzzy Border…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do <quote>Borrar borda</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/decor/fuzzyborder.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Cor</term>
+        <listitem>
+          <para>Ao clicar nesse botão, aparece um diálogo de seleção de cores para que você escolha a cor da borda.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho da borda</term>
+        <listitem>
+          <para>Aqui você pode especificar a espessura da borda borrada, em pixels. O máximo é 300 pixels, não importa qual a altura ou largura da imagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Desfocar borda</term>
+        <listitem>
+          <para>Se selecionada, a borda resultante será desfocada. O exemplo abaixo mostra o efeito desse desfocamento</para>
+          <figure>
+            <title>Exemplo de <quote>Borrar borda</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-blur.png"/>
+              </imageobject>
+              <caption>
+                <para><quote>Blur border</quote> checked</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-noblur.png"/>
+              </imageobject>
+              <caption>
+                <para><quote>Blur border</quote> unchecked</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <figure>
+            <title><quote>Borrar borda</quote> com zoom (1600%)</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-blurx16.png"/>
+              </imageobject>
+              <caption>
+                <para><quote>Blur border</quote> checked</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-noblurx16.png"/>
+              </imageobject>
+              <caption>
+                <para><quote>Blur border</quote> unchecked</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Granularidade</term>
+        <listitem>
+          <para>A granularidade da borda representa o tamanho dos blocos de pixel espalhados para criar o efeito de uma borda irregular.</para>
+          <figure>
+            <title>Exemplo de granularidade (sem desfocar)</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-gran1.png"/>
+              </imageobject>
+              <caption>
+                <para>Granularidade 1 (minímo)</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-gran4.png"/>
+              </imageobject>
+              <caption>
+                <para>Granularidade 4 (padrão)</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-gran16.png"/>
+              </imageobject>
+              <caption>
+                <para>Granularidade 16 (máximo)</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Adicionar sombra</term>
+        <listitem>
+          <para>Se selecionado, o filtro também vai criar uma sombra na borda.</para>
+          <figure>
+            <title>Exemplo da opção <quote>Adicionar sombra</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-shadow100.png"/>
+              </imageobject>
+              <caption>
+                <para><quote>Adicionar sombra</quote> selecionado, Quantidade de sombra em 100% (quantidade de sombra padrão)</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-shadow10.png"/>
+              </imageobject>
+              <caption>
+                <para><quote>Adicionar sombra</quote>, com quantidade de sombra em 10%</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/fuzzyborder-noshadow.png"/>
+              </imageobject>
+              <caption>
+                <para><quote>Adicionar sombra</quote> não selecionado (opção padrão)</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Quantidade de sombra</term>
+        <listitem>
+          <para>Se <guilabel>Adicionar sombra</guilabel> estiver selecionada, você pode configurar a opacidade da sombra aqui. O padrão é 100% (opacidade total)</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Trabalhar em uma cópia</term>
+        <listitem>
+          <para>Se selecionada, o filtro criará uma nova janela contendo uma cópia da imagem com o filtro aplicado. A imagem original permanece inalterada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Achatar imagem</term>
+        <listitem>
+          <para>Se não for selecionada, mantém as camadas adicionais usadas para criar a borda e a sombra (se houver). O padrão é combinar todas as camadas (inclusive outras camadas da imagem, não relacionadas diretamente com o filtro)</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

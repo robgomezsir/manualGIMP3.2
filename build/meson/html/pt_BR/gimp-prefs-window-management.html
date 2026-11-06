@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.17. Gerenciamento de camadas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-prefs-dialog.html" title="6. Diálogo de definições" />
+    <link rel="prev" href="gimp-prefs-display.html" title="6.16. Exibição" />
+    <link rel="next" href="gimp-prefs-canvas-interaction.html" title="6.18. Canvas Interaction" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.17. Gerenciamento de camadas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-prefs-display.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Diálogo de definições</span>
+        <nav> <a accesskey="n" href="gimp-prefs-canvas-interaction.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-prefs-window-management"></a>6.17. Gerenciamento de camadas</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id30715" class="indexterm"></a>
+      <a id="id30719" class="indexterm"></a>
+      <div class="figure">
+        <a id="id3411"></a>
+        <p class="title">
+          <strong>Figura 15.115. Preferências de gerenciamento de janela</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/preferences/prefs-window-management.png" alt="Preferências de gerenciamento de janela" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>Esta página permite que você personalize a forma como as janelas são tratadas no GIMP. Você deve ter notado que o GIMP não manipula as janelas diretamente, em vez disso, envia solicitações para o gerenciador de janelas (ou seja, para o Windows, se você estiver executando no Windows, para o Metacity se você estiver executando em uma configuração padrão do Gnome no Linux; etc). Existem muitos gerenciadores de janelas, e nem todos eles são bem comportados, por isto não se pode garantir que as funções descritas aqui vão realmente funcionar como descrito. No entanto, se você estiver usando um gerenciador de janelas moderno e compatível com os padrões, elas deveriam.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3412"></a>6.17.1. Ativando o diálogo</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The preferences dialog can be accessed from the main menu, through
+      <span class="guimenu">Edit</span> → <span class="guimenuitem">Preferences</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3413"></a>6.17.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Dicas de gerenciamento de janelas</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Hint for docks and toolbox</span>
+            </dt>
+            <dd>
+              <p>As escolhas que você faz aqui determinam como a caixa de ferramentas, e as janelas de diálogo encaixáveis, serão tratados. Você tem três possibilidades:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>Se você escolher <span class="guilabel">Janela Normal</span>, elas serão tratadas como quaisquer outras janelas.</p>
+                  </li>
+                  <li class="listitem">
+                    <p>Se você escolher a <span class="guilabel">Janela de utilidade</span>, o botão de minimizar na barra de título estará ausente e os encaixes ficarão permanentemente na tela.</p>
+                    <div class="figure">
+                      <a id="id3414"></a>
+                      <p class="title">
+                        <strong>Figura 15.116. Barra de título de uma janela de utilidades</strong>
+                      </p>
+                      <div class="figure-contents">
+                        <div class="mediaobject">
+                          <img src="images/preferences/normal-title-bar.png" alt="Barra de título de uma janela de utilidades" />
+                          <div class="caption">
+                            <p>Barra de título normal</p>
+                          </div>
+                        </div>
+                        <div class="mediaobject">
+                          <img src="images/preferences/utility-title-bar.png" alt="Barra de título de uma janela de utilidades" />
+                          <div class="caption">
+                            <p>A <span class="quote">“<span class="quote">janela d e diálogo</span>”</span> terminal de erros</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <br class="figure-break" />
+                  </li>
+                  <li class="listitem">
+                    <p>Se você escolher <span class="guilabel">Manter acima</span>, elas serão mantidas à frente de todas as outras janelas o tempo todo.</p>
+                  </li>
+                </ul>
+              </div>
+              <p>Note que as alterações feitas aqui não terão efeito até a próxima vez que você iniciar o <acronym class="acronym">GIMP</acronym>.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Foco</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Ativar o diálogo</span>
+            </dt>
+            <dd>
+              <p>Normalmente, quando você foca uma janela de imagem (normalmente indicado por uma mudança na cor nas bordas), torna a imagem <span class="quote">“<span class="quote">ativa</span>”</span> para o GIMP, e, portanto, o destino de todas as ações relacionadas à imagem que você executar. Algumas pessoas, no entanto, preferem estabelecer seus gerenciadores de janelas de tal forma que qualquer janela em que você passar o mouse por cima ganha o foco automaticamente. Se você usa essa opção, você pode achar que é inconveniente que as imagens focadas se tornarem ativas automaticamente, e pode ser mais feliz se desmarcar esta opção. De qualquer forma, não faz diferença no modo de janela única, só no modo de multi-janelas.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Posições das janelas</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Salvar posições das janelas ao sair</span>
+            </dt>
+            <dd>
+              <p>Se esta opção estiver marcada, a próxima vez que você iniciar o GIMP, você verá o mesmo conjunto de janelas de diálogo, nas mesmas posições que ocupavam da última vez que saiu.</p>
+            </dd>
+            <dt>
+              <span class="term">Open windows on the same monitor they were open before</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, <acronym class="acronym">GIMP</acronym> will try to restore windows
+            on the same monitor they were used previously. When disabled,
+            windows will appear on the currently used monitor.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar as posições das janelas agora</span>
+            </dt>
+            <dd>
+              <p>Este botão só é útil se <span class="quote">“<span class="quote">Salvar as posições das janelas ao sair</span>”</span> estiver desmarcado. Ele permite que você configure suas janelas da maneira que você gosta, clique no botão, e então elas devem estar nessa mesma disposição cada vez que você iniciar o GIMP.</p>
+            </dd>
+            <dt>
+              <span class="term">Restaurar posições salvas das janelas para os valores padrão</span>
+            </dt>
+            <dd>
+              <p>Se você decidir que está insatisfeito com a disposição das janelas que salvou, e preferia voltar para a disposição padrão do que gastar o tempo movimentando-as, pode fazê-lo pressionando esse botão.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-prefs-display.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-prefs-dialog.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-prefs-canvas-interaction.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-prefs-display.html">6.16. Exibição</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-prefs-canvas-interaction.html">6.18. Canvas Interaction</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

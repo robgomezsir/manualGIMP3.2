@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.5. Combinando modos de camadas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-concepts-layer-modes.html" title="2. Modos de Camada" />
+    <link rel="prev" href="layer-mode-group-contrast.html" title="2.4. Modos de Camada" />
+    <link rel="next" href="layer-mode-group-hsv.html" title="2.6. Modos de Camada de Componentes HSV" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.5. Combinando modos de camadas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="layer-mode-group-contrast.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>2. Modos de Camada</span>
+        <nav> <a accesskey="n" href="layer-mode-group-hsv.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="layer-mode-group-inversion"></a>2.5. Combinando modos de camadas</h3>
+          </div>
+        </div>
+      </div>
+      <p>O grupo <span class="quote">“<span class="quote">Inversão</span>”</span> contém modos de camada que invertem as cores de uma forma ou de outra.</p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <a id="layer-mode-difference"></a>
+            <span class="term">Diferença</span>
+          </dt>
+          <dd>
+            <a id="id10973" class="indexterm"></a>
+            <a id="id10976" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2718"></a>
+              <p class="title">
+                <strong>Figura 8.31. Exemplo para o modo de camada <span class="quote">“<span class="quote">Diferença</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-difference.jpg" alt="Exemplo para o modo de camada “Diferença”" />
+                  <div class="caption">
+                    <p>Exemplo para o modo de camada <span class="quote">“<span class="quote">Diferença</span>”</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Diferença</span>subtrai o valor do pixel da camada superior da camada inferior e, em seguida, toma o valor absoluto do resultado. Não importa a aparência das duas primeiras camadas, o resultado pode parecer bastante estranho. Você pode usá-lo para inverter os elementos de uma imagem, criando uma camada completamente branca no modo <span class="quote">“<span class="quote">Diferença</span>”</span> por cima, por exemplo.</p>
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-exclusion"></a>
+            <span class="term">Exclusão</span>
+          </dt>
+          <dd>
+            <a id="id10993" class="indexterm"></a>
+            <a id="id10996" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2719"></a>
+              <p class="title">
+                <strong>Figura 8.32. Exemplo para o modo de camada <span class="quote">“<span class="quote">Super-exposição</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-exclusion.jpg" alt="Exemplo para o modo de camada “Super-exposição”" />
+                  <div class="caption">
+                    <p>Camada superior em 100% de opacidade usando o modo <span class="quote">“<span class="quote">Exclusão</span>”</span>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Exclusão</span> causa inversão na outra camada para regiões claras, regiões muito escuras não alteram nada. Desta forma, este modo se assemelha ao modo Diferença. No entanto, valores de cinza médio diminuem muito o contraste da outra camada respectiva, em casos extremos até zero.</p>
+            <p>Este modo é comutativo; não importa a ordem das duas camadas.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-subtract"></a>
+            <span class="term">Subtrair</span>
+          </dt>
+          <dd>
+            <a id="id11012" class="indexterm"></a>
+            <a id="id11015" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2720"></a>
+              <p class="title">
+                <strong>Figura 8.33. Exemplo para o modo de camada <span class="quote">“<span class="quote">Subtrair</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-subtract.jpg" alt="Exemplo para o modo de camada “Subtrair”" />
+                  <div class="caption">
+                    <p>Exemplo para o modo de camada <span class="quote">“<span class="quote">Subtrair</span>”</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Subtrair</span> subtrai os valores de pixel da camada superior dos valores de pixel da camada inferior. A imagem resultante é, normalmente, mais escura. Você pode ter um monte de preto ou uma imagem resultante quase preta. A equação pode resultar em valores negativos para as cores mais escuras, portanto, elas serão ajustadas para o valor mínimo de 0.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-grain-extract"></a>
+            <span class="term">Extrair grãos</span>
+          </dt>
+          <dd>
+            <a id="id11030" class="indexterm"></a>
+            <a id="id11033" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2721"></a>
+              <p class="title">
+                <strong>Figura 8.34. Exemplo para a camada de modo <span class="quote">“<span class="quote">Extrair grãos</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-grain-extract.jpg" alt="Exemplo para a camada de modo “Extrair grãos”" />
+                  <div class="caption">
+                    <p>Exemplo para a camada de modo <span class="quote">“<span class="quote">Extrair grãos</span>”</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O Modo <span class="guilabel">Extrair grãos</span> poderia extrair os <span class="quote">“<span class="quote">grãos do filme</span>”</span> de uma camada para a criação de uma nova camada que é composta só de grãos, mas também pode ser útil para dar as imagens uma aparência de relevo. Ele subtrai o valor do pixel da camada superior do pixel na camada inferior e adiciona 128.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-grain-merge"></a>
+            <span class="term">Mesclar grãos</span>
+          </dt>
+          <dd>
+            <a id="id11049" class="indexterm"></a>
+            <a id="id11052" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2722"></a>
+              <p class="title">
+                <strong>Figura 8.35. Exemplo para o modo de camada <span class="quote">“<span class="quote">Mesclar grãos</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-grain-merge.jpg" alt="Exemplo para o modo de camada “Mesclar grãos”" />
+                  <div class="caption">
+                    <p>Exemplo para o modo de camada <span class="quote">“<span class="quote">Mesclar grãos</span>”</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Mesclar grãos</span> combina uma camada de grãos (possivelmente criada a partir do Modo <span class="quote">“<span class="quote">Extrair grãos</span>”</span> ) na camada atual, deixando uma versão granulada da camada original. Ele faz exatamente o oposto de <span class="quote">“<span class="quote">Extrair de grãos</span>”</span>. Ele adiciona os valores de pixels das camadas superior e inferior e subtrai 128.</p>
+          </dd>
+          <dt>
+            <a id="layer-mode-divide"></a>
+            <span class="term">Dividir</span>
+          </dt>
+          <dd>
+            <a id="id11069" class="indexterm"></a>
+            <a id="id11072" class="indexterm"></a>
+            <div class="figure">
+              <a id="id2723"></a>
+              <p class="title">
+                <strong>Figura 8.36. Exemplo para o modo de camada <span class="quote">“<span class="quote">Dividir</span>”</span></strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/default-layer-mode-divide.jpg" alt="Exemplo para o modo de camada “Dividir”" />
+                  <div class="caption">
+                    <p>Exemplo para o modo de camada <span class="quote">“<span class="quote">Dividir</span>”</span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>O modo <span class="guilabel">Dividir</span> multiplica cada valor de pixel na camada inferior por 256 e depois divide pelo valor do pixel correspondente da camada superior mais um. (Ao adicionar um ao denominador evita-se a divisão por zero.) A imagem resultante é muitas vezes mais clara, e às vezes parece <span class="quote">“<span class="quote">queimada</span>”</span>.</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="layer-mode-group-contrast.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-concepts-layer-modes.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="layer-mode-group-hsv.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="layer-mode-group-contrast.html">2.4. Modos de Camada</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="layer-mode-group-hsv.html">2.6. Modos de Camada de Componentes HSV</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

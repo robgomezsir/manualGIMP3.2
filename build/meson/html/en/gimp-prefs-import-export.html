@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.5. Image Import and Export</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-prefs-dialog.html" title="6. Preferences Dialog" />
+    <link rel="prev" href="gimp-prefs-color-management.html" title="6.4. Color Management" />
+    <link rel="next" href="gimp-prefs-playground.html" title="6.6. Experimental Playground" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.5. Image Import and Export</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-prefs-color-management.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>6. Preferences Dialog</span>
+        <nav> <a accesskey="n" href="gimp-prefs-playground.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-prefs-import-export"></a>6.5. Image Import and Export</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id28822" class="indexterm"></a>
+      <a id="id28826" class="indexterm"></a>
+      <div class="figure">
+        <a id="id2116"></a>
+        <p class="title">
+          <strong>Figure 15.101. Image Import and Export Preferences</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/preferences/prefs-import-export.png" alt="Image Import and Export Preferences" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    This page lets you customize settings related to importing and
+    exporting images.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2117"></a>6.5.1. Activating the Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The preferences dialog can be accessed from the main menu, through
+      <span class="guimenu">Edit</span> → <span class="guimenuitem">Preferences</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2118"></a>6.5.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Import Policies</strong>
+          </p>
+          <a id="id28841" class="indexterm"></a>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Promote imported images to floating point precision</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, all imported images have their <a class="link" href="gimp-image-encoding.html#gimp-image-precision">precision</a> changed to
+            32-bit floating point.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Dither images when promoting to floating point</span>
+            </dt>
+            <dd>
+              <p>
+            When the previous setting is enabled, this setting allows you to
+            choose whether
+            <a class="link" href="gimp-image-encoding.html#gimp-image-convert-dithering">dithering</a> should
+            be applied when a lower precision image is changed to 32-bit floating
+            point.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Add an alpha channel to imported images</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, an alpha channel is automatically added to any imported
+            image that doesn't have one yet. This can be useful if you usually
+            require an alpha channel to be present for your workflow.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Color profile policy</span>
+            </dt>
+            <dd>
+              <p>
+            When importing an image that has a color profile attached to it,
+            you can choose here what action needs to be taken. See
+            <a class="link" href="gimp-prefs-color-management.html#gimp-prefs-file-open-policy" title="Policies">File Open Behavior</a>
+            in the Color Management preferences.
+          </p>
+            </dd>
+            <dt>
+              <a id="gimp-image-metadata-rotation-import"></a>
+              <span class="term">Metadata rotation policy</span>
+            </dt>
+            <dd>
+              <p>
+            When importing an image that has metadata about the rotation of the
+            image attached to it, you can choose here what action needs to be
+            taken.
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Ask what to do</span> This is the default. Every
+                time you open an image with rotation metadata, a dialog opens
+                that asks you whether to rotate the image according to the
+                metadata.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Discard metadata without rotating</span> When
+                selecting this, rotation metadata will be ignored when opening
+                an image.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Rotate the image then discard metadata</span> When
+                selecting this, an image will always be rotated according to the
+                metadata when it is opened. After that is done, the rotation
+                metadata is discarded and replaced by default values for the
+                rotation metadata.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <a id="gimp-metadata-export-policies"></a>
+          <p class="title">
+            <strong>Export Policies</strong>
+          </p>
+          <a id="id28878" class="indexterm"></a>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Note]" src="images/note.png" />
+                </td>
+                <th align="left">Note</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+          The following export policies define the
+          <span class="bold"><strong>default</strong></span> values when exporting an
+          image. Most formats have image export dialogs where, among other things,
+          you can further adjust the relevant setting for that specific format.
+          These per format settings are remembered across restarts.
+        </p>
+                  <p>
+          Not all image formats support all of the below settings. They are only
+          relevant for image formats that support the setting.
+        </p>
+                  <p>
+          It is good to be aware of the implications of including certain
+          metadata. Metadata can contain sensitive personal information that you
+          may want to review first before deciding to include it or not.
+          Examples are GPS metadata that can show an exact location, or name and
+          address of the creator of the image.
+        </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Export the image's color profile by default</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, the default for exporting images is to include the
+            color profile.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Export the image's comment by default</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, the default for exporting images is to include the
+            comment.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Export the image's thumbnail by default</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, the default for exporting images is to include the
+            thumbnail.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Export exif metadata by default when available</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, the default for exporting images is to include
+            exif metadata.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Export XMP metadata by default when available</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, the default for exporting images is to include
+            XMP metadata.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Export IPTC metadata by default when available</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, the default for exporting images is to include
+            IPTC metadata.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Update metadata automatically</span>
+            </dt>
+            <dd>
+              <p>
+            When enabled, <acronym class="acronym">GIMP</acronym> adds and updates metadata
+            automatically. When disabled, only the minimum necessary metadata
+            changes are made, without changing e.g. modification date,
+            synchronizing comment and other tags, or updating the software and
+            change history metadata.
+          </p>
+              <p>
+            Even when disabled, you can still change metadata by using the
+            <a class="link" href="plug-in-metadata-editor.html" title="6.39. Metadata Editor">Metadata Editor</a>.
+            Changes made there will be included in your exported image, unless
+            you disabled exporting metadata.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Export File Type</strong>
+          </p>
+          <a id="id28918" class="indexterm"></a>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Default export file type</span>
+            </dt>
+            <dd>
+              <p>
+            This setting allows you to select what file format should be used
+            by default when exporting an image, without explicitly choosing an
+            extension of a known image file format.
+          </p>
+              <p>
+            Note that this is only relevant when exporting a new image created
+            in <acronym class="acronym">GIMP</acronym>.
+            When exporting an image that was previously imported,
+            <acronym class="acronym">GIMP</acronym> uses the extension of that imported image.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Raw Image Importer</strong>
+          </p>
+          <a id="id28929" class="indexterm"></a>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Plug-in</span>
+            </dt>
+            <dd>
+              <p>
+            This setting shows a list of known plug-ins that can be used for
+            opening and processing RAW image formats. Most common apps used here
+            are Darktable and RawTherapee. If no plug-in is registered, GIMP
+            will show a placeholder value here.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-prefs-color-management.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-prefs-dialog.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-prefs-playground.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-prefs-color-management.html">6.4. Color Management</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-prefs-playground.html">6.6. Experimental Playground</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

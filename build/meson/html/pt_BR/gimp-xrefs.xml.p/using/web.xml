@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-02-09 lexa: fixed de bug #515187 "german translation of internet"
+  2007-03-25 lexa: reviewed de
+  2006-09-19 added norwegian translation by KoSt
+  2006-08-27 Added Korean Translation by Mr.Dust
+  2005-11-30 replaced informalfigure by axel.wernicke
+  050930 de replaced informalfigure by axel.wernicke
+  050829 de added by axel.wernicke
+-->
+<sect1 id="gimp-using-web">
+  <title>Preparando suas imagens para a Web</title>
+
+  <indexterm>
+    <primary>Web</primary>
+    <secondary>Imagens para a Web</secondary>
+  </indexterm>
+
+  <para>Um dos usos mais comuns para o <acronym>GIMP</acronym> é preparar imagens para páginas Web. Isso significa que as imagens devem ficar tão bonitas quanto possível, ao mesmo tempo que seu tamanho de arquivo fique tão pequeno quanto possível. Este guia passo-a-passo demonstra como criar arquivos de imagens pequenos com a mínima perda de qualidade.</para>
+
+  <sect2 id="gimp-using-web-size-vs-quality">
+    <title>Imagens coma relação ótima entre tamanho e qualidade</title>
+    <para>
+      An optimal image for the web depends upon the image type and the file
+      format. Use <link linkend="file-jpeg-export">JPEG</link> for
+      Photographs because they usually have many colors and great detail.
+      An image with fewer colors, such as a button, icon, or screenshot, is
+      better suited to the
+      <link linkend="file-png-load">PNG</link>
+      format.
+    </para>
+    <procedure>
+      <step>
+        <para>
+          First, open the image as usual.
+        </para>
+        <figure>
+          <title>Image of Wilber (the GIMP mascot) opened in RGBA mode</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/using/preparing_for_web1.png" format="PNG"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </step>
+      <step>
+        <para>A imagem agora está no modo RGB, com um <link linkend="glossary-alpha">canal Alfa</link> adicional (RGBA). Em geral não é necessário ter um canal alfa para sua imagem Web (a não ser que você queira fazer uso da transparência, combinando diferentes cores e elementos de fundo para a mesma). Você pode remover o canal alfa <link linkend="gimp-image-flatten">achatando a imagem</link>.</para>
+        <para>Uma fotografia raramente tem um canal alfa, então a imagem já será aberta no modo RGB, em vez de RGBA, e você não terá que remover o canal alfa.</para>
+        <note>
+          <para>
+            If the image has a soft transition into the transparent areas, you
+            should not remove the alpha channel, since the information
+            used for the transition will not be saved in the file.
+            To export an image with transparent areas that do not have a
+            soft transition, (similar to
+            <link linkend="file-gif-export">GIF</link>),
+            remove the alpha channel.
+          </para>
+        </note>
+      </step>
+      <step>
+        <para>
+          After you have flattened the image,
+          <link linkend="gimp-file-export">export the image</link>
+          in the <link linkend="file-png-export-defaults">PNG format</link>
+          for your web site.
+        </para>
+        <note>
+          <para>
+            You can export your image in the PNG format with the default settings.
+            Always using maximum compression when creating the image.
+            Maximum compression has no effect on image quality or the time
+            required to display the image, but it does take longer to export.
+            A <link linkend="file-jpeg-export">JPEG</link> image, however,
+            loses quality as the compression is increased.
+            If your image is a photograph with lots of colors, you should
+            use jpeg. The main thing is to find the best
+            tradeoff between quality and compression. You can find more
+            information about this topic in <xref linkend="file-jpeg-export"/>.
+          </para>
+        </note>
+      </step>
+    </procedure>
+  </sect2>
+
+  <sect2 id="gimp-using-web-reducing-file-size">
+    <title>Reduzindo o tamanho do arquivo ainda mais</title>
+    <para>Se você quer reduzir o tamanho da sua imagem mais um pouco, você pode converte-la para o modo indexado. Isso implica que o número máximo de cores distintas na imagem será 256. Não converta imagens com transições suaves de cores ou degradês para o modo indexado, por que as transições originais tipicamente são convertidas em várias faixas com uma única tonalidade que agrupa tons parecidos do original. Também não é um modo muito recomendado para fotografias, por que após a conversão, as imagens ficam tipicamente com uma aparência granulada. Mas experimente, se não gostar, desfaça a ação.</para>
+    <figure>
+      <title>A imagem indexada</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/using/preparing_for_web2.png"/>
+        </imageobject>
+        <caption>
+          <para>Uma imagem indexada pode parecer um pouco granulada. A imagem a esquerda é o Wilber em seu tamanho original, a imagem a direita está aproximada com um fator de zoom de 300%</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <procedure>
+      <step>
+        <para>Use o comando descrito em <xref linkend="gimp-image-mode"/> para converter uma imagem RGB para o modo indexado.</para>
+      </step>
+      <step>
+        <para>
+          After you convert an image to indexed mode, you are once
+          again able to <link linkend="gimp-file-export">export</link> the
+          image in <link linkend="file-png-export-defaults">PNG
+          format</link>.
+        </para>
+      </step>
+    </procedure>
+  </sect2>
+
+  <sect2 id="gimp-using-web-transparency">
+    <title>Exportando imagens com transparência</title>
+    <indexterm>
+      <primary>Transparência</primary>
+      <secondary>Exportando imagens com transparência</secondary>
+    </indexterm>
+    <para>
+      There are two different approaches used by graphic file formats
+      for supporting transparent image areas: simple binary transparency
+      and alpha transparency. Simple binary transparency is supported
+      in the <link linkend="file-gif-export">GIF</link> format; one color
+      from the indexed color palette is marked as the transparent color.
+      Alpha transparency is supported in the
+      <link linkend="file-png-export-defaults">PNG</link> format; the
+      transparency information is stored in a separate channel, the
+      <link linkend="glossary-alpha">Alpha channel</link>.
+    </para>
+    <note>
+      <para>O formato GIF é usado raramente, por que o PNG suporta quase todas as características do GIF, com algumas coisas a mais (por exemplo, transparência alfa) &mdash; e os arquivos PNG, desde que no modo indexado, ficam menores. Entretanto, o formato GIF é bastante usado  para animações.</para>
+    </note>
+    <procedure>
+      <title>Criando uma imagem com áreas transparentes (Transparência alfa)</title>
+      <step>
+        <para>Primeiro, usaremos a mesma imagem que nos tutoriais anteriores, Wilber, o mascote do GIMP.</para>
+        <figure>
+          <title>A imagem do Wilber aberta no modo RGBA</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/using/preparing_for_web1.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </step>
+      <step>
+        <para>
+          To export an image with alpha transparency, you must have an alpha
+          channel. To check if the image has an alpha channel, go to the
+          <link linkend="gimp-channel-dialog">Channels Dialog</link> and
+          verify that an entry for <quote>Alpha</quote> exists, besides
+          Red, Green and Blue. If this is not the case,
+          <link linkend="gimp-layer-alpha-add">add a new alpha channel</link>
+          from the layers menu;
+          <menuchoice><guimenu>Layer</guimenu><guimenu>Transparency</guimenu>
+          <guimenuitem>Add Alpha Channel</guimenuitem></menuchoice>.
+        </para>
+      </step>
+      <step>
+        <para>O arquivo XCF original contém camadas de fundo que você pode remover. O <acronym>GIMP</acronym> vem por padrão com filtros que permitem criar degradês. Veja em <menuchoice><guimenu>Filtros</guimenu><guimenu>Sombra e luz</guimenu></menuchoice>. O único limite é sua imaginação. Para mostrar as possibilidades com a transparência alfa mostramos um brilho suave no fundo, ao redor do Wilber.</para>
+      </step>
+      <step>
+        <para>
+          After you're done with your image, you can
+          <link linkend="gimp-file-export">export</link> it in
+          <link linkend="file-png-export-defaults">PNG format</link>.
+        </para>
+      </step>
+    </procedure>
+    <figure>
+      <title>A imagem do Wilber com transparência</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/using/preparing_for_web-alphatransparency.png"/>
+        </imageobject>
+        <caption>
+          <para>O xadrez de meio tom que aparece na camada de fundo, enquanto você está no <acronym>GIMP</acronym>, representa a região que será transparente na imagem exportada.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect2>
+</sect1>

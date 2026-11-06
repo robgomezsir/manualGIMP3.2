@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.2. Janela de Imagem</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-concepts-main-windows.html" title="2. Janelas principais" />
+    <link rel="prev" href="gimp-concepts-main-windows.html" title="2. Janelas principais" />
+    <link rel="next" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.2. Janela de Imagem</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-concepts-main-windows.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>2. Janelas principais</span>
+        <nav> <a accesskey="n" href="gimp-concepts-docks.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-image-window"></a>2.2. Janela de Imagem</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id6980" class="indexterm"></a>
+      <a id="id6983" class="indexterm"></a>
+      <a id="id6986" class="indexterm"></a>
+      <a id="id6988" class="indexterm"></a>
+      <p>A interface do usuário do GIMP está disponível em dois modos: modo multi-janelas (padrão), e o modo de janela única (opcional, através de <span class="guimenu">Janela</span> → <span class="guimenuitem">Modo de janela única</span>. Mas, se você sair do GIMP com esta opção ativada, oGIMP será aberto no modo de janela única na próxima vez).</p>
+      <p>Quando você inicia o <acronym class="acronym">GIMP</acronym> sem qualquer imagem aberta, a janela de imagem pode parecer estar ausente no modo de janela única, enquanto que, no modo multi janela, existe uma janela de imagem, mesmo que nenhuma imagem esteja aberta.</p>
+      <p>Vamos começar com uma breve descrição dos componentes que estão presentes por padrão em uma janela de imagem comum. Alguns dos componentes podem ser removidos usando os comandos no menu <a class="link" href="gimp-view-menu.html" title="5. O menu “Visualizar”">Visualizar</a>.</p>
+      <div class="figure">
+        <a id="id2603"></a>
+        <p class="title">
+          <strong>Figura 3.4. A área da imagem no modo de <span class="quote">“<span class="quote">Janela única</span>”</span></strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/image-window-single.png" alt="A área da imagem no modo de “Janela única”" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="figure">
+        <a id="id2604"></a>
+        <p class="title">
+          <strong>Figura 3.5. A janela de imagem no modo de multi Janelas</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/image-window-multi.png" alt="A janela de imagem no modo de multi Janelas" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Apesar de existir o modo de janela <span class="emphasis"><em>única</em></span>, vamos utilizar a expressão <span class="quote">“<span class="quote">janela de imagem</span>”</span> para designar a <span class="quote">“<span class="quote">área da imagem</span>”</span>.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="orderedlist">
+        <ol class="orderedlist" type="1">
+          <li class="listitem">
+            <p>
+        <span class="emphasis"><em>Title Bar:</em></span>
+        The Title Bar in an image window without an image displays
+        <span class="quote">“<span class="quote">GNU Image Manipulating Program</span>”</span>.
+        An image window with an image displays the image name
+        and its specifications in the title bar according to the settings
+        in <a class="link" href="gimp-prefs-dialog.html" title="6. Diálogo de definições">Preferences Dialog</a>.
+        The Title Bar is provided by the operating system, not by
+        <acronym class="acronym">GIMP</acronym>, so its appearance is likely to vary with
+        the operating system, window manager, and/or theme.
+      </p>
+            <p>Se você abriu uma imagem que não era um <code class="filename">xcf</code>, o nome que aparece é <span class="quote">“<span class="quote">(importada)</span>”</span>, e seu nome original aparece na barra de estado, na parte inferior da janela de imagem.</p>
+            <p>Quando uma imagem é modificada, aparece um asterisco em frente do título.</p>
+          </li>
+          <li class="listitem">
+            <p>
+        <span class="emphasis"><em>Main Menu:</em></span>
+        Directly below the Title Bar appears the Menu bar (unless
+        <a class="link" href="gimp-view-show-menubar.html" title="5.33. Exibir barra de menu">it has been suppressed</a>).
+        The Main Menu provides access to nearly every
+        operation you can perform on an image. You can also right-click
+        on an image to display a pop-up menu,
+        <a href="#ftn.id7028" class="footnote" id="id7028"><sup class="footnote">[1]</sup></a>,
+        or by left-clicking on the little <span class="quote">“<span class="quote">arrow-head</span>”</span> symbol in
+        the upper left corner, called <span class="emphasis"><em>Menu Button</em></span>,
+        described just below.
+        Many menu commands are also associated with keyboard
+        <span class="emphasis"><em>shortcuts</em></span> as shown in the menu.
+        You can define your own custom shortcuts for menu actions in the
+        <a class="link" href="gimp-help-keyboard-shortcuts.html" title="7.10. Caixa de Diálogo de Atalhos de Teclado">Keyboard Shortcuts
+        Dialog</a>.
+      </p>
+          </li>
+          <li class="listitem">
+            <a id="gimp-image-window-origin"></a>
+            <p>
+        <span class="emphasis"><em>Menu Button:</em></span>
+        Click the Menu Button to display the Main Menu in a column, (essential
+        in full screen mode).
+        If you like to use keyboard shortcuts, use
+        <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>F10</strong></span>
+        to open the menu.
+      </p>
+          </li>
+          <li class="listitem">
+            <a id="gimp-image-window-ruler"></a>
+            <p><span class="emphasis"><em>Régua:</em></span> No layout padrão, as réguas são mostradas acima e à esquerda da imagem. Use as réguas para determinar as coordenadas dentro da imagem. A unidade padrão para as réguas é pixels, use as configurações descritas abaixo para usar uma outra unidade.</p>
+            <p>Uma das utilizações mais importantes das réguas é criar <span class="emphasis"><em>guias</em></span>. Clique e arraste de uma régua para a imagem para criar uma guia. Uma guia é uma linha que ajuda você a posicionar ou verificar a posição de elementos com precisão, ou verificar que alguma coisa desenhada ou posicionada na imagem está verdadeiramente na horizontal ou na vertical.Clique e arraste uma guia para movê-la. Arraste uma guia para fora da imagem para excluí-la. Você sempre pode arrastar uma outro guia para a imagem. Você pode até usar várias guias ao mesmo tempo.</p>
+            <p>Na área da régua, o ponteiro do mouse é marcado com duas pequenas setas apontando verticalmente e horizontalmente.</p>
+          </li>
+          <li class="listitem">
+            <a id="quick-mask-toggle"></a>
+            <p>
+        <span class="emphasis"><em>Quick Mask Toggle:</em></span>
+        The small button in the lower left corner of the image toggles the
+        Quick Mask on and off. When the Quick Mask is toggled, the button
+        changes color, or is outlined in red for color icon themes. See
+        <a class="link" href="gimp-channel-dialog.html#gimp-quick-mask" title="2.2.5. Máscara rápida">Quick Mask</a>
+        for more details on this highly useful tool.
+      </p>
+          </li>
+          <li class="listitem">
+            <p><span class="emphasis"><em>Coordenadas do ponteiro:</em></span> Quando o ponteiro (cursor do mouse, se você estiver usando um mouse) está dentro dos limites da imagem, a área retangular no canto inferior esquerdo da janela exibe as coordenadas atuais do ponteiro. As unidades são as mesmas que para as réguas. </p>
+          </li>
+          <li class="listitem">
+            <p><span class="emphasis"><em>Menu de unidades:</em></span> Use o Menu de unidades para alterar as unidades utilizadas para as réguas e vários outros fins. A unidade padrão é pixels, mas você pode rapidamente mudar para centimetros (cm), polegadas, ou várias outras possibilidades usando este menu. Note que a definição de <span class="quote">“<span class="quote">Um ponto por pixel</span>”</span> no menu <span class="guimenu">Visualizar</span> afeta a forma como a exibição é dimensionada: <a class="link" href="gimp-view-dot-for-dot.html" title="5.4. Um ponto por pixel">Um ponto por pixel</a> para mais informações.</p>
+          </li>
+          <li class="listitem">
+            <a id="gimp-image-window-zoom"></a>
+            <p><span class="emphasis"><em>Botão de zoom:</em></span> Há várias maneiras de visualizar a imagem aumentada ou diminuida, mas o botão de zoom é talvez o mais simples. Você pode inserir um nível de zoom diretamente na caixa de texto para ter um controle preciso.</p>
+          </li>
+          <li class="listitem">
+            <a id="gimp-image-window-status-bar"></a>
+            <p><span class="emphasis"><em>Area de estado:</em></span> A área de estado está na parte inferior da janela da imagem. Por padrão, a área de estado exibe o nome original do arquivo, e a quantidade de memória do sistema usado pela imagem. Por favor, use <span class="guimenu">Editar</span> → <span class="guisubmenu">Preferências</span> → <span class="guimenuitem">Janelas de imagem</span> → <span class="guimenuitem">Título &amp; estado</span> para personalizar as informações exibidas na área de estado. Durante operações demoradas, a área de estado mostra a operação funcionando temporariamente e quanto já foi completada.</p>
+            <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Note">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Nota]" src="images/note.png" />
+                  </td>
+                  <th align="left">Nota</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>Note que a memória usada pela imagem é muito diferente do tamanho do arquivo de imagem. Por exemplo, uma imagem .PNG de 70Kb pode ocupar 246Kb de memória RAM quando exibida. Há duas razões principais, para a diferença no uso de memória. Primeiro, um Arquivo .PNG é um formato comprimido, e a imagem é reconstituída em memória RAM em forma descompactada. Segundo, o <acronym class="acronym">GIMP</acronym> usa memória extra, e cópias da imagem, para possibilitar as ações de <span class="quote">“<span class="quote">Desfazer</span>”</span></p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </li>
+          <li class="listitem">
+            <p><span class="emphasis"><em>Botão cancelar:</em></span> Durante operações complexas e demoradas, geralmente um plug-in, um botão Cancelar aparece no canto inferior direito da janela temporariamente. Se for necessário, use esse botão para interromper a operação.</p>
+            <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Note">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Nota]" src="images/note.png" />
+                  </td>
+                  <th align="left">Nota</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>Alguns plug-ins respondem mal ao serem cancelados, às vezes deixando partes corrompidas de imagens para trás. </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </li>
+          <li class="listitem">
+            <a id="gimp-image-window-nav-button"></a>
+            <a id="id7089" class="indexterm"></a>
+            <p>
+        <span class="emphasis"><em>Navigation Control:</em></span>
+        This is the
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/gimp-navigation.svg" width="16" /></span>
+        </span>
+        button at the lower right corner of the image window.
+        Click and hold (do not release the mouse button)
+        on the navigation control to display the Navigation Preview.
+        The Navigation Preview has a miniature view of the image
+        with the displayed area outlined. Use the Navigation Preview
+        to quickly pan to a different part of the
+        image—move the mouse while keeping the button pressed.
+        The Navigation Window is often the most convenient way to
+        quickly navigate around a large image with only a small portion
+        displayed. See
+        <a class="link" href="gimp-navigation-dialog.html" title="2.6. Diálogo de navegação">Navigation Dialog</a>
+        for other ways to access the Navigation Window.
+      </p>
+          </li>
+          <li class="listitem">
+            <p><span class="emphasis"><em>Área de preenchimento inativa:</em></span> Quando as dimensões da imagem são menores do que a janela de imagem, esta área preenchimento separa a visualização da imagem dos outros elementos da janela, então você é capaz de distinguir oque é o que. Você não pode aplicar quaisquer filtros ou operações na área inativa. </p>
+          </li>
+          <li class="listitem">
+            <a id="imagewindow-display"></a>
+            <p>
+        <span class="emphasis"><em>Image Display:</em></span>
+        The most important part of the image window is, of course, the image
+        display or canvas. It occupies the central area of the window,
+        surrounded by a yellow dotted line showing the image boundary, against
+        a neutral gray background.
+      </p>
+            <p>
+        Besides the Navigation Control mentioned above, you can also pan
+        across the image using a keyboard or mouse directly:
+      </p>
+            <div class="itemizedlist">
+              <ul class="itemizedlist" style="list-style-type: disc; ">
+                <li class="listitem">
+                  <p>
+            Hold the <span class="keycap"><strong>Shift</strong></span> key, then use the arrow keys to pan
+            the view in that direction.
+          </p>
+                </li>
+                <li class="listitem">
+                  <p>
+            Use the scroll wheel on your mouse to pan the image vertically
+            (up or down); hold the <span class="keycap"><strong>Shift</strong></span> key while using
+            the scroll wheel to pan horizontally (left or right) instead.
+          </p>
+                </li>
+                <li class="listitem">
+                  <p>
+            If your mouse has a middle-button, click and drag with it to pan across
+            the image.
+          </p>
+                </li>
+                <li class="listitem">
+                  <p>
+            Alternatively, you can press and hold <span class="keycap"><strong>Spacebar</strong></span>
+            in combination with moving the mouse.
+          </p>
+                </li>
+              </ul>
+            </div>
+            <p>
+        You can change the zoom level of the image display in a variety of ways,
+        including using the <a class="link" href="gimp-image-window.html#gimp-image-window-zoom">Zoom
+        Button</a> mentioned above, and the Zoom setting described below.
+        Other ways of adjusting the zoom are using <span class="keycap"><strong>Ctrl</strong></span>
+        mousewheel, using the <a class="link" href="gimp-view-zoom.html" title="5.5. Zoom">Zoom commands</a>
+        in the <span class="guimenu">View</span> menu, and using the
+        <a class="link" href="gimp-tool-zoom.html" title="5.6. Zoom">Zoom Tool</a>.
+      </p>
+          </li>
+          <li class="listitem">
+            <a id="gimp-image-window-zoom-follow-button"></a>
+            <p><span class="emphasis"><em>Controle de redimensionamento da janela</em></span>&gt; Sem ligar este recurso, se você mudar o tamanho da janela da imagem, clicando e arrastando as bordas da mesma, o tamanho da imagem e o nível de zoom não mudam. Se você deixar a janela maior, por exemplo, então você vai ver uma área maior da imagem. Se este botão estiver pressionado, no entanto, o fator de zoom da imagem mudaquando a janela é redimensionada , de modo que a mesma parte da imagem é exibida antes e depois da janela mudar de tamanho.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Dica]" src="images/tip.png" />
+            </td>
+            <th align="left">Dica</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Arraste e solte uma imagem de um navegador de arquivos no diálogo Caixa de Ferramentas para abrir a imagem em sua própria janela (ou guia, no modo de janela única).</p>
+              <p>
+      Dragging an image file into the Layers dialog adds it to the image as a
+      new layer.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>O tamanho da imagem e o tamanho da janela de imagem podem ser diferentes. Você pode fazer a imagem se ajustar à janela, e vice-versa, através de dois atalhos de teclado: </p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p><span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>J</strong></span>: este comando mantém o nível de zoom, e adapta o tamanho da janela ao tamanho da imagem. O comando <span class="quote">“<span class="quote">Visualizar-&gt;Arrumar janela</span>”</span> faz o mesmo.</p>
+          </li>
+          <li class="listitem">
+            <p><span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>J</strong></span>: este comando modifica o nível de zoom aplicado à imagem exibida na janela.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="footnotes">
+        <br />
+        <hr style="width:100; text-align:left;margin-left: 0" />
+        <div id="ftn.id7028" class="footnote">
+          <p><a href="#id7028" class="para"><sup class="para">[1] </sup></a>Usuários com um Apple Macintosh e um único botão do mouse podem usar <span class="keycap"><strong>Ctrl</strong></span>+<span class="mousebutton">botão do mouse</span> ao invés disso.</p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-concepts-main-windows.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-concepts-main-windows.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-concepts-docks.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-concepts-main-windows.html">2. Janelas principais</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-concepts-docks.html">2.3. Caixas de diálogo e de encaixe</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

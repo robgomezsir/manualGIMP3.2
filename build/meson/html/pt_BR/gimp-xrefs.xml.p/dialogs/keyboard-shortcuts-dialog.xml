@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="gimp-help-keyboard-shortcuts">
+  <title>Caixa de Diálogo de Atalhos de Teclado</title>
+
+  <indexterm>
+    <primary>Atalhos de teclado</primary>
+    <secondary>Diálogo</secondary>
+  </indexterm>
+
+  <para>A Caixa de Diálogo de Atalhos de Teclado permite que você mude ou adicione um atalho de teclado para um comando de menu, uma ferramenta, filtro, etc.</para>
+
+  <figure>
+    <title>O diálogo de Definições de ferramentas</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/keyboard-shortcuts-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>Você pode acessa-lo a partir de: <itemizedlist>
+        <listitem>
+          <para>A partir do menu da janela de imagens em <menuchoice><guimenu>Selecionar</guimenu><guimenuitem>Ligar/desl.  máscara rápida</guimenuitem></menuchoice>.</para>
+        </listitem>
+        <listitem>
+          <para>
+            or, from the
+            <link linkend="gimp-prefs-interface">User Interface Preferences</link>:
+            click the <guilabel>Configure Keyboard Shortcuts…</guilabel> button.
+          </para>
+        </listitem>
+      </itemizedlist></para>
+  </sect3>
+
+  <sect3>
+    <title>Usando o diálogo de definições de ferramentas</title>
+    <para>Se você já souber para qual comando deseja mudar o atalho de teclado, então você pode usar o campo <guilabel>Pesquisar</guilabel> para digitá-lo. Isso encurtará a lista de comandos possíveis para apenas aqueles que contêm o texto que você pesquisou.</para>
+    <para>
+      The center area of the dialog shows the action categories on the left.
+      You can expand a category by pressing the
+      <guiicon>
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/stock-icons/pan-end-symbolic.svg" contentwidth="16px"/>
+          </imageobject>
+        </inlinemediaobject>
+      </guiicon>
+      icon in front of it,
+      and collapse it by pressing the icon again. Each expanded
+      action category will show a list of available actions.
+      The middle column shows which Shortcut is assigned to each action, or
+      <quote>Disabled</quote> when the action doesn't have a Shortcut. The
+      <quote>Name</quote> column shows the name by which GIMP knows the
+      action.
+    </para>
+    <para>
+      All actions that can be assigned a shortcut are divided into categories.
+      Each menu has a category that corresponds with its name, and all scripts
+      and plug-ins are sorted into categories based on the first part of their
+      name.
+    </para>
+    <tip>
+      <para>
+        To increase the amount of visible actions, you can resize the dialog
+        to your liking.
+      </para>
+    </tip>
+    <figure>
+      <title>Atribuindo um atalho de teclado</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/keyboard-shortcuts-assign.png"/>
+        </imageobject>
+        <caption>
+          <para>O texto <quote>Novo acelerador…</quote> na coluna de Atalhos mostra que o GIMP está esperando que um novo atalho seja digitado para a ação <guilabel>Adicionar Canal Alfa</guilabel>.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      When you have found the action you want to set a shortcut for, click
+      on the line that shows the action details. To change the shortcut, click
+      again on the Shortcut column. The column
+      <guilabel>Shortcut</guilabel> for that line will change to
+      <guilabel>New accelerator…</guilabel>.
+      GIMP is now waiting for you to use a keyboard shortcut. As soon as you
+      enter a key combination, the shortcut is added to that action. Unless the
+      shortcut you entered was already assigned to another action. In that case
+      it will tell you what action the key combination is used for and ask you
+      what to do. You can either choose to assign the shortcut anyway, or
+      cancel the change.
+    </para>
+    <para>
+      If you made a mistake, and don't want to change that shortcut, press
+      <keycap>Esc</keycap>.
+    </para>
+    <para>
+      You can also remove an existing shortcut from an action. To do this
+      select the line of the action, click on the Shortcut column, and then
+      press <keycap>Backspace</keycap> to clear the shortcut.
+    </para>
+    <para>
+      Note that the categories themselves let you enter a shortcut. However,
+      it will disappear after pressing a key, since a category doesn't have
+      a command attached to it, so it can never be used. Select a command
+      in the desired category before trying to assign a shortcut.
+    </para>
+    <para>Na parte inferior da caixa de diálogo há uma opção (marcada por padrão) que informa ao GIMP se <guilabel>Salvar atalhos de teclado ao sair</guilabel>. Se habilitado, todos os atalhos alterados serão salvos quando você sair do GIMP. Se estiver desabilitado, os atalhos serão salvos apenas se você usou o botão <guibutton>Salvar</guibutton> antes de fechar a caixa de diálogo.</para>
+    <para>Na parte de baixo do diálogo, aparecem 4 botões: <itemizedlist>
+        <listitem>
+          <para><guilabel>Branco</guilabel>, usado com maior frequência</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Salvar</guilabel>: salvará quaisquer alterações que você fez nos atalhos sem fechar a caixa de diálogo.</para>
+        </listitem>
+        <listitem>
+          <para><guilabel>Fechar</guilabel>: fechará a caixa de diálogo sem salvar as configurações no disco, mas quaisquer atalhos alterados ainda estarão ativos até o GIMP ser fechado. O que acontece depois que o GIMP for fechado depende da configuração <guilabel>Salvar atalhos de teclado ao sair</guilabel> mencionada acima.</para>
+        </listitem>
+      </itemizedlist></para>
+  </sect3>
+
+</sect2>

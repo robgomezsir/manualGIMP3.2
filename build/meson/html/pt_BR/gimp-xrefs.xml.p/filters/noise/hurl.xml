@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-13 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-noise-hurl">
+  <title>Arremesso</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Ruído</secondary>
+    <tertiary>Arremesso</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Arremesso</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>Arremesso</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/noise-taj-hurl.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O filtro de Arremesso muda o pixel afetado para uma cor aleatória, de forma que produz um <emphasis>ruído aleatório</emphasis> real. Todos os canais de cores, incluindo o canal alfa (se estiver presente) serão afetados. Todos os valores de cores tem a mesma probabilidade. Os valores originais não são levados em conta. Todos ou somente alguns pixels da camada ou seleção ativa são afetados, a percentagem de pixels afetados será determinada pela opção <guilabel>Randomização (%)</guilabel>.</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Noise</guisubmenu>
+        <guimenuitem>Hurl…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Arremesso</quote></title>
+      <mediaobject>
+        <imageobject>
+         <imagedata format="PNG" fileref="images/filters/noise/hurl-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Randomização (%)</term>
+        <listitem>
+          <para>Este marcador representa a percentagem de pixels da camada ou seleção ativa que será afetada. Quando maior o valor, mais pixels serão <quote>arremessados</quote>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Repetir</term>
+        <listitem>
+          <para>Isto representa o número de vezes que o filtro será aplicado. Essa opção não é muito útil no caso do filtro Arremesso, pois o mesmo resultado pode ser obtido de forma mais rápida usando um nível alto de <guilabel>Randomização (%)</guilabel>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Semente aleatória</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

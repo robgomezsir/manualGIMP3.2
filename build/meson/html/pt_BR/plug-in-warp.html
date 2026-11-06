@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>13.14. Deformar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-map.html" title="13. Filtros de mapeamento" />
+    <link rel="prev" href="plug-in-tile.html" title="13.13. Mosaico" />
+    <link rel="next" href="filters-render.html" title="14. Filtros de renderização" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>13.14. Deformar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-tile.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>13. Filtros de mapeamento</span>
+        <nav> <a accesskey="n" href="filters-render.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-warp"></a>13.14. Deformar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id58919" class="indexterm"></a>
+      <a id="id58923" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4926"></a>13.14.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter displaces pixels of active layer or selection according to
+      the gray levels of a <span class="emphasis"><em>Displacement map</em></span>. Pixels are
+      displaced according to the gradient slope in the displacement map.
+      Pixels corresponding to solid areas are not displaced; the higher the
+      slope, the higher the displacement.
+    </p>
+        <div class="figure">
+          <a id="id4927"></a>
+          <p class="title">
+            <strong>Figura 17.330. 
+        From left to right: original image, displacement map, displaced image
+      </strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/example-map-warp1.png" alt="From left to right: original image, displacement map, displaced image" />
+              <div class="caption">
+                <p>Áreas sólidas na imagem usada como mapa de deslocamento não causam nenhum deslocamento. Um degradê na imagem, que é percebido como um gradiente no sentido matemático: a direção de maior variação das cores, resulta num deslocamento uniforme. A direção de deslocamento é perpendicular a direção do gradiente (ângulo = 90°).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id4928"></a>
+          <p class="title">
+            <strong>Figura 17.331. Com um gradiente não linear</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/example-map-warp2.png" alt="Com um gradiente não linear" />
+              <div class="caption">
+                <p>Um gradiente não linear leva a curvas e redemoinhos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id4929"></a>
+          <p class="title">
+            <strong>Figura 17.332. Com um gradiente complexo</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/example-map-warp3.png" alt="Com um gradiente complexo" />
+              <div class="caption">
+                <p>
+            And a complex gradient, such as the
+            <a class="link" href="gimp-filter-noise-solid.html" title="14.9. Ruído sólido">Solid Noise</a>
+            filter can create, gives a swirl effect.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Esse filtro oferece a possibilidade de criar uma máscara para uma parte da imagem, para protege-la da ação do próprio filtro.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4930"></a>13.14.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Map</span> → <span class="guimenuitem">Warp…</span>.
+      This filter has no Preview.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4931"></a>13.14.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4932"></a>
+          <p class="title">
+            <strong>Figura 17.333. Opções do filtro Deformar</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/map/warp.png" alt="Opções do filtro Deformar" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <p class="title">
+            <strong>Opções básicas</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Tamanho do passo</span>
+            </dt>
+            <dd>
+              <p><span class="quote">“<span class="quote">Tamanho do passo</span>”</span> é a distância de deslocamento para cada interação do filtro. Um valor de 10 é necessário para resultar num deslocamento de um pixel. Esse valor pode ser negativo para inverter a direção de deslocamento.</p>
+            </dd>
+            <dt>
+              <span class="term">Interações</span>
+            </dt>
+            <dd>
+              <p>O número de repetições do efeito ao aplicar o filtro.</p>
+            </dd>
+            <dt>
+              <span class="term">Nas bordas</span>
+            </dt>
+            <dd>
+              <p>
+            Because of displacement, a part of pixels are driven over the
+            borders of layer or selection, and, on the opposite side, pixels
+            places are emptying. The four following options allow you to fix
+            this issue:
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Dar a volta</span>
+                  </dt>
+                  <dd>
+                    <p>O que sai por um lado aparece de volta na imagem entrando pelo lado oposto (essa é a opção padrão).</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Manchar</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Emptying places are filled with a spreading of the
+                  neighboring image line.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Preto</span>
+                  </dt>
+                  <dd>
+                    <p>Lugares que se tornam vazios são preenchidos com a cor preta.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cor de frente</span>
+                  </dt>
+                  <dd>
+                    <p>Lugares que estão ficando vazios são preenchidos com a cor de frente conforme selecionada na caixa de ferramentas.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Mapa de deslocamento</span>
+            </dt>
+            <dd>
+              <p>
+            To be listed in this file picker, the displacement map, which
+            should be a grayscale image, must be <span class="emphasis"><em>present on your
+            screen when you call this filter and must have the same size as
+            the original image</em></span>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Opções avançadas</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Tamanho da mistura</span>
+            </dt>
+            <dd>
+              <p>
+            Once all pixels are displaced, this option scatters them randomly,
+            giving grain to the image. The higher this value (0.00-100.00),
+            the thinner the grain.
+          </p>
+              <div class="figure">
+                <a id="id4933"></a>
+                <p class="title">
+                  <strong>Figura 17.334. Com uma mistura de tamanho 3,00:</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp4.png" alt="Com uma mistura de tamanho 3,00:" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Ângulo de rotação</span>
+            </dt>
+            <dd>
+              <p>
+            This option sets the displacement angle of pixels according to the
+            slope direction of the gradient. Previous examples have been
+            created with a vertical gradient and a 90° angle: so, pixels were
+            displaced horizontally and nothing went out of the image borders.
+            Here is an example with a 10° angle and 6 iterations:
+          </p>
+              <div class="figure">
+                <a id="id4934"></a>
+                <p class="title">
+                  <strong>Figura 17.335. Com um ângulo de 10° e seis interações:</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp5.png" alt="Com um ângulo de 10° e seis interações:" />
+                    <div class="caption">
+                      <p>
+                  Displacement is made according to a 10° angle against
+                  vertical. Pixels going out the lower border on every
+                  iteration are going in through the upper border (Wrap
+                  option checked), giving a dotted line.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Subpassos</span>
+            </dt>
+            <dd>
+              <p>Se você especificar um valor &gt; 1, o vetor de deslocamento é computado em vários sub-passos, resultando em um maior controle do processo de deslocamento.</p>
+            </dd>
+            <dt>
+              <span class="term">Mapa de magnitude</span>
+            </dt>
+            <dd>
+              <p>
+            In addition to displacement map, you can add a Magnitude map. This
+            map should also be a grayscale image, with the same size as the
+            source image and which must be present on your screen when you
+            call the filter. This map gives more or less strength to the
+            filter on some parts of the image, according to the gray levels of
+            this magnitude map. Image areas corresponding to white parts of
+            this map will undergo all the strength of the filter. Image areas
+            corresponding to black parts of the map will be spared by the
+            filter. Intermediate gray levels will lessen the filter action on
+            corresponding areas of the image.
+            <span class="guilabel">Use magnitude map</span> must be checked
+            for that.
+          </p>
+              <div class="figure">
+                <a id="id4935"></a>
+                <p class="title">
+                  <strong>Figura 17.336. Exemplo de mapa de magnitude:</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp6.png" alt="Exemplo de mapa de magnitude:" />
+                    <div class="caption">
+                      <p>
+                  From left to right: original image, displacement map,
+                  magnitude map, after applying <span class="quote">“<span class="quote">Warp</span>”</span>
+                  filter. You can see that the black areas of the magnitude
+                  map prevent the filter from taking action.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Mais configurações avançadas</strong>
+          </p>
+          <p>Essas opções extras permitem que você adicione dois outros mapas: um mapa de gradiente e/ou um mapa de vetor.</p>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Nota]" src="images/note.png" />
+                </td>
+                <th align="left">Nota</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>Para testar essas opções sozinhas, é melhor usar uma imagem em cor sólida para todos os outros mapas.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Escala de gradiente </span>
+            </dt>
+            <dd>
+              <p>
+            Using a gradient map, (this map should also be a grayscale
+            image), the displacement of pixels depends on the direction of
+            grayscale transitions. The <span class="guilabel">Gradient scale</span>
+            option lets you set how much the grayscale variations will
+            influence the displacement of pixels. On every iteration, the
+            filter works on the whole image, not only on the red object: this
+            explains blurredness.
+          </p>
+              <div class="figure">
+                <a id="id4936"></a>
+                <p class="title">
+                  <strong>Figura 17.337. Exemplo de escala de gradiente</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp7.png" alt="Exemplo de escala de gradiente" />
+                    <div class="caption">
+                      <p>Da esquerda pra direita: Imagem original, mapa de gradiente, filtro aplicado.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            In the example above, <span class="quote">“<span class="quote">Warp</span>”</span> filter is applied with a
+            gradient map (Gradient scale = 10.0). The gradient is oblique,
+            from top left to right bottom. The part of the image corresponding
+            to the gradient is moved obliquely, 90° rotated (Rotation angle
+            90° in Advanced Options).
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Vector magnitude</span>
+            </dt>
+            <dd>
+              <p>Com esse mapa, o deslocamento depende do ângulo que você configura na caixa de entrada <span class="guilabel">Ângulo</span>. 0° é para cima. Ângulos aumentam no sentido anti-horário. O mapa de controle de <span class="emphasis"><em>vetor de magnitude</em></span> determina por quantos pixels a imagem será movida em cada interação.</p>
+              <div class="figure">
+                <a id="id4937"></a>
+                <p class="title">
+                  <strong>Figura 17.338. Vector magnitude example</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/example-map-warp8.png" alt="Vector magnitude example" />
+                    <div class="caption">
+                      <p>Da esquerda pra direita: imagem original, mapa de deslocamento, filtro aplicado.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            In the above example, <span class="quote">“<span class="quote">Warp</span>”</span> filter is applied with a
+            Vector magnitude. Gradient is vertical, from top to bottom. Vector
+            angle is 45°. The image is moved obliquely, 45° to the top left
+            corner. The image is blurred because every iteration works on the
+            whole image, and not only on the red bar.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Ângulo</span>
+            </dt>
+            <dd>
+              <p>Ângulo para o Vetor de magnitude (veja acima).</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-tile.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-map.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-render.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-tile.html">13.13. Mosaico</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-render.html">14. Filtros de renderização</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

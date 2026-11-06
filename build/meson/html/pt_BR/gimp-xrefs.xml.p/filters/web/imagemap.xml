@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-12-10 ude: adapted 'no' guides text for 'en','de'
+  2007-10-23 kost: added 'no'
+  2007-09-12 lexa: encapsulated images in figures
+  2007-05-24 ude: options section rewritten for de
+  2007-05-12 ude: added translation of new text
+  2007-05-01 Pierre :  main modifications;  new text and images created
+  2007-01-05 lexa: added de translation
+  2006-12-27 created by j.h
+-->
+<sect2 id="plug-in-imagemap">
+  <title>Image Map</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Web</secondary>
+    <tertiary>Imagem Clicável</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Image Map</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão Geral</title>
+    <para>
+      In Web sensitive images are frequently used to get some effects when
+      defined areas are enabled by the pointer. Obviously the most used effect
+      is a dynamic link to another web page when one of the sensitive areas is
+      clicked on. This <quote>filter</quote> allows you to design easily
+      sensitive areas within an image. Applications for website design have this
+      as a standard function. In <acronym>GIMP</acronym>, you can do this in a
+      similar way.
+    </para>
+    <para>Este plug-in permite projetar de forma gráfica e amigável todas as áreas que você deseja delimitar sobre sua imagem. Ele  gera a parte relevante das tags HTML que devem ser incorporada nos lugar apropriado no código da página HTML. Você pode definir algumas ações ligadas a essas áreas também.</para>
+    <para>
+      This is a complex tool which is not completely described here
+      (it works about like Web page makers offering this function). However
+      we want to describe here some of the most current handlings. If you
+      want, you can find a more complete description in Grokking the GIMP
+      with the
+      link <xref linkend="bibliography-online-grokking-gimp-imagemap"/>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Web</guisubmenu>
+        <guimenuitem>Image Map…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Image Map filter options</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/web/imagemap.png"/>
+        </imageobject>
+        <caption>
+          <para>Image map window</para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <sect4>
+      <title>A barra de menu</title>
+      <para>
+        The menu bar is similar to the main menu, only a few menus
+        or menu entries are different:
+      </para>
+      <variablelist>
+        <varlistentry>
+          <term>Arquivo</term>
+          <listitem>
+            <variablelist>
+              <varlistentry>
+                <term>Save</term>
+                <term>Save As</term>
+                <listitem>
+                  <para>Ao contrário de outros filtros, este plug-in não salva ou exporta um arquivo de imagem, mas um arquivo de texto. Portanto, você deve salvar seu trabalho em um formato de texto.</para>
+                  <tip>
+                    <para>Com a opção de <menuchoice><guimenu>Visualizar</guimenu><guimenuitem>Fonte</guimenuitem></menuchoice> você pode ver o conteúdo de arquivo de texto, antes de salva-lo. Uma vez que o arquivo gerado só faz sentido como parte de um modelo ou uma página HTML, você pode copiar o conteúdo a partir daí e cola-lo em sue destino final, sem nunca precisar da opção de salvar do plug-in.</para>
+                  </tip>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Open</term>
+                <term>Open recent</term>
+                <listitem>
+                  <para>No plug-in você pode abrir o arquivo de texto salvo. As áreas definidas em seu arquivo serão carregadas e ainda exibidas, se a imagem exibida não é a original ou não tem o mesmo tamanho, o <acronym>GIMP</acronym> irá pedir-lhe para a adaptar a escala.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Editar</term>
+          <listitem>
+            <variablelist>
+              <varlistentry>
+                <term>Editar área de informação </term>
+                <listitem>
+                  <figure>
+                    <title>Editing an image map area</title>
+                    <mediaobject>
+                      <imageobject>
+                        <imagedata format="PNG" fileref="images/filters/web/imagemap-area.png"/>
+                      </imageobject>
+                    </mediaobject>
+                  </figure>
+                  <para>Na caixa de diálogo configurações que você pode editar as informações de uma área selecionada. Esta caixa de diálogo aparecerá automaticamente sempre que você criar uma nova área.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Visão</term>
+          <listitem>
+            <para>Este menu lhe oferece funções especiais:</para>
+            <variablelist>
+              <varlistentry>
+                <term>Area List</term>
+                <listitem>
+                  <para>Aqui você pode ocultar ou mostrar a área de seleção.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Source…</term>
+                <listitem>
+                  <para>Aqui você vê os dados brutos como se fosse salvá-los para um arquivo.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Color</term>
+                <term>Gray</term>
+                <listitem>
+                  <para>Você pode selecionar o modo de imagem aqui e trabalhar com uma exibição em tons de cinza.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Mappings</term>
+          <listitem>
+            <para>Você raramente vai usar este menu, já que você pode acessar mais facilmente as ferramentas de seleção clicando nos ícones do lado esquerdo da área de trabalho.</para>
+            <variablelist>
+              <varlistentry>
+                <term>Seta</term>
+                <listitem>
+                  <para>A seta representa aqui a ferramenta Mover. Quando ativada a ferramenta está selecionada, você pode selecionar e mover uma área na imagem.</para>
+                  <para>Com um polígono, você pode usar a seta para mover um dos pontos vermelhos. Clique com o botão direito do mouse em um segmento entre dois pontos vermelhos para abrir um menu flutuante que oferece, junto com algumas outras, a possibilidade de adicionar um novo ponto. Se você clicar com o botão direito em um ponto vermelho, você pode removê-lo.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Rectangle</term>
+                <term>Circle</term>
+                <term>Polygon</term>
+                <listitem>
+                  <para>Estas ferramentas permitem que você crie várias áreas de forma: clique sobre a imagem, mova o ponteiro e clique novamente.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Edit Map Info…</term>
+                <listitem>
+                  <figure>
+                    <title>Editing the image map data</title>
+                    <mediaobject>
+                      <imageobject>
+                        <imagedata format="PNG" fileref="images/filters/web/imagemap-info.png"/>
+                      </imageobject>
+                    </mediaobject>
+                  </figure>
+                  <para>Com esta simples janela você pode inserir alguns itens, que serão gravados no arquivo de saída resultante; quer como comentários (<guilabel>Autor</guilabel>, <guilabel>Descrição</guilabel>) ou como valores de atributos das tags HTML (<guilabel>nome da Imagem</guilabel>, <guilabel>Título</guilabel>, <guilabel>URL padrão</guilabel>).</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Ferramentas</term>
+          <listitem>
+            <para>Com o Menu <quote>Ferramentas</quote> você pode criar guias e até mesmo áreas retangulares  regularmente espaçadas.</para>
+            <variablelist>
+              <varlistentry>
+                <term>Grid</term>
+                <term>Grid Settings…</term>
+                <listitem>
+                  <figure>
+                    <title>opções da Grade</title>
+                    <mediaobject>
+                      <imageobject>
+                        <imagedata format="PNG" fileref="images/filters/web/imagemap-grid.png"/>
+                      </imageobject>
+                    </mediaobject>
+                  </figure>
+                  <para>Aqui você pode ativar e desativar a grade de imagem ou configurar algumas propriedades da grade.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Use GIMP Guides…</term>
+                <term>Create Guides…</term>
+                <listitem>
+                  <para>As linhas-guia são criadas na fronteira da imagem, mas pode ser movida clicando sobre os quadrados vermelhos em cada linha algo parecido com as linhas de orientação do GIMP. Usando as guias você poderá criar retângulos ativos na imagem.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Criar guias</term>
+                <listitem>
+                  <figure>
+                    <title>Opções de Guia</title>
+                    <mediaobject>
+                      <imageobject>
+                        <imagedata format="PNG" fileref="images/filters/web/imagemap-guides-options.png"/>
+                      </imageobject>
+                      <caption>
+                        <para>As opções da guia</para>
+                      </caption>
+                    </mediaobject>
+                  </figure>
+                  <para>Em vez de criar formas geométricas para selecionar as áreas ativas que você pode usar uma série de retângulos, cada um representando uma área ativa, clicando em <quote>Criar guias</quote>. No menu flutuante você define a largura e a altura dos retângulos, o espaço entre eles, o número de linhas e colunas, e o ponto inicial superior a esquerda para a matriz. Todas as medidas estão em pixels. Se você não estiver satisfeito com o resultado, é possível ajustar cada retângulo movendo os quadrados vermelhos, como de costume.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>A Barra de Ferramentas</title>
+      <para>A maioria das entradas aqui são apenas atalhos para algumas funções já descritas. Exceções:</para>
+      <variablelist>
+        <varlistentry>
+          <term>Move Area to Front</term>
+          <term>Move Area to Bottom</term>
+          <listitem>
+            <para>
+              Here you can move an area entry to the bottom or top
+              of the area list.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>A Área de Trabalho</title>
+      <figure>
+        <title>A Área de Trabalho</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/web/imagemap-draw.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>
+        In the main area of the image map window, on the left side, you will
+        find your working area where you can draw all the shapes areas you
+        want with the relevant tools.
+      </para>
+      <para>
+        Beside the working area there are vertically displayed icons, one for
+        pointing, three for calling tools to generate various shape areas, one
+        to edit zone properties, and finally one to erase a selected zone; you
+        can call these functions from the Mappings menu too.
+      </para>
+      <caution>
+        <para>Note que as áreas não devem se sobrepor.</para>
+      </caution>
+    </sect4>
+
+    <sect4>
+      <title>A área de seleção</title>
+      <para>À direita está uma área de exibição, como uma lista de propriedades das áreas criadas. Um clique em um item da lista seleciona automaticamente a forma correspondente na área de trabalho, então você pode modificá-la.</para>
+      <para>Ao lado da tela está um conjunto vertical de ícones, sua utilização é óbvia, mas uma ajuda flutuante fornece algumas informações sobre cada função,</para>
+      <para>Infelizmente, os símbolos de seta para mover uma entrada da lista para cima ou para baixo não funcionam aqui. Mas é claro que você evitou cuidadosamentecriar áreas de sobreposição, de modo que você não precise usar essas funções de qualquer forma.</para>
+    </sect4>
+  </sect3>
+</sect2>

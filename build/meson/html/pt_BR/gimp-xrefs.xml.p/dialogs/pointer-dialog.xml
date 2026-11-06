@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-01 j.h: update to v2.8
+  2008-12-16 j.h: updated en;fr to v2.6.
+  2008-03-01 ude: renamed id (old: gimp-pointer-dialog)
+  2007-11-22 j.h: created
+-->
+<sect2 id="gimp-pointer-info-dialog">
+  <title>Diálogo de Ponteiro</title>
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Ponteiro</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Ponteiro</primary>
+  </indexterm>
+
+  <figure>
+    <title>Diálogo de ponteiro</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/pointer-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <para>Este diálogo oferece, na mesma janela, em tempo real, a posição do ponteiro do mouse, e os valores de canal do pixel apontado, no modelo de cor escolhido.</para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Pointer</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Pointer</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Opções do diálogo de <quote>Ponteiro</quote></title>
+    <variablelist>
+      <varlistentry>
+        <term>Pixels</term>
+        <listitem>
+          <para>Exibe a posição do pixel apontado em coordenadas X (horizontais) e Y (verticais), marcadas em pixels a partir da origem (canto superior esquerdo da tela de pintura).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Unidades</term>
+        <listitem>
+          <para>Exibe a distância da origem, em polegadas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Retângulo de Contorno da Seleção</term>
+        <listitem>
+          <para>Esta informação fica ativa quando existe uma seleção. X e Y são as coordenadas do canto superior esquerdo do retângulo que compreende a seleção. L e A são a largura e a altura desse retângulo.</para>
+          <para>Esta informação existe para todos os tipos de seleção, mas é mais útil para as seleções feitas com as ferramentas de seleção retangular e elíptica, uma vez que correspondem ao retângulo desenhado pela ferramenta.</para>
+          <para>A informação a respeito da seleção é exibida independente da ferramenta que está ativa.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Valores de canal</term>
+        <listitem>
+          <variablelist>
+            <para>Os valores de canal para o <link linkend="glossary-colormodel">modelo de cores</link> selecionado são exibidos abaixo. Os dois menus contém as mesmas opções, o que torna mais fácil comparar os valores de cor de um pixel particular usando modelos de cor diferentes. <quote>Hexa</quote> é a<link linkend="glossary-html-notation">notação HTML</link> da cor do pixel, em hexadecimal. As opções dos menus são (<guilabel>Pixel</guilabel> é o padrão):</para>
+            <varlistentry>
+              <term>Pixel</term>
+              <listitem>
+                <para>Os valores <link linkend="glossary-rgb">RGB</link> do canal. Esta opção exibe os valores <emphasis>Vermelho</emphasis>, <emphasis>Verde</emphasis>, <emphasis>Azul</emphasis> e <emphasis>Alfa</emphasis> do pixel como números entre 0 e 255.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>RGB</term>
+              <listitem>
+                <para>Os valores <link linkend="glossary-rgb">RGB</link> do canal.  Esta opção exibe os valores <emphasis>Vermelho</emphasis>, <emphasis>Verde</emphasis>, <emphasis>Azul</emphasis> e <emphasis>Alfa</emphasis> do pixel como porcentagens. Ela também exibe o valor  hexadecimal da cor do pixel.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>HSV</term>
+              <listitem>
+                <para>Os componentes <link linkend="glossary-hsv">HSV</link>. Esta opção exibe o valor do <emphasis>Matiz</emphasis>, em graus, bem como os valores de <emphasis>Saturação</emphasis>, <emphasis>Valor</emphasis> e <emphasis>Alfa</emphasis> do pixel, como porcentagens.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>CMYK</term>
+              <listitem>
+                <para>Os valores de canal <link linkend="glossary-cmyk">CMYK</link>. Esta opção exibe os valores <emphasis>Ciano</emphasis>, <emphasis>Magenta</emphasis>, <emphasis>Amarelo</emphasis> e <emphasis>Alfa</emphasis> do pixel, como porcentagens.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Usar amostra combinada</term>
+        <listitem>
+          <anchor id="gimp-pointer-info-sample-merged"/>
+          <para>
+            If you enable this option, sampling is not calculated only
+            from the values of the active layer, but from all visible layers.
+          </para>
+          <para>
+            For more information, see the
+            <link linkend="glossary-samplemerge">Glossary entry</link>.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

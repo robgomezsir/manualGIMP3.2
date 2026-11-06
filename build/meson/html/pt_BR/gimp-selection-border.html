@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.13. Criar borda</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-select-menu.html" title="4. O menu “Selecionar”" />
+    <link rel="prev" href="gimp-selection-grow.html" title="4.12. Aumentar" />
+    <link rel="next" href="gimp-selection-flood.html" title="4.14. Remove Holes" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.13. Criar borda</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-selection-grow.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. O menu <span class="quote">“<span class="quote">Selecionar</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-selection-flood.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-selection-border"></a>4.13. Criar borda</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id35262" class="indexterm"></a>
+      <a id="id35265" class="indexterm"></a>
+      <div class="figure">
+        <a id="id3602"></a>
+        <p class="title">
+          <strong>Figura 16.27. Exemplo de criar uma borda a partir de uma seleção</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/menus/select/border-selection-01.png" alt="Exemplo de criar uma borda a partir de uma seleção" />
+            <div class="caption">
+              <p>Uma imagem com uma seleção</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/menus/select/border-selection-02.png" alt="Exemplo de criar uma borda a partir de uma seleção" />
+            <div class="caption">
+              <p>Depois de <span class="quote">“<span class="quote">Criar Borda</span>”</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>O comando <span class="guimenuitem">Criar Borda</span> cria uma nova seleção ao longo do limite da seleção na imagem em que você está trabalhando. O limite da seleção é usado como uma forma e a nova seleção é criada ao seu redor. Você entra com a largura da borda, em pixels ou outra unidade, na janela de diálogo. Metade da nova borda ficará dentro da área selecionada originalmente e a outra metade fora dela.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3603"></a>4.13.1. Ativando o comando.</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Select</span> → <span class="guimenuitem">Border…</span>.
+    </p>
+        <p>
+      If there is no selection, this menu entry is disabled.
+    </p>
+        <p>
+        Two conditions must be respected to use this command:         
+        </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+              The image must have an alpha channel.
+            </p>
+            </li>
+            <li class="listitem">
+              <p>
+              The original image must be created with the
+              <span class="guilabel">Antialiasing</span> option checked in the selection tool
+              that is used.
+            </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+      </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3604"></a>4.13.2. Descrição da janela de diálogo <span class="quote">“<span class="quote">Criar borda</span>”</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3605"></a>
+          <p class="title">
+            <strong>Figura 16.28. A janela de diálogo <span class="quote">“<span class="quote">Criar borda</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/select/border.png" alt="A janela de diálogo “Criar borda”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Criar borda da seleção por</span>
+            </dt>
+            <dd>
+              <p>Entre com a largura da borda da seleção na caixa de diálogo. O padrão é em pixels, mas você pode escolher outras unidades no menu suspenso.</p>
+            </dd>
+            <dt>
+              <span class="term">Border Style</span>
+            </dt>
+            <dd>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="bold"><strong>Hard</strong></span>: this option does not
+                keep anti-aliasing. This can be useful in some cases.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="bold"><strong>Smooth</strong></span>: this option keeps
+                anti-aliasing. Note that <span class="quote">“<span class="quote">Smooth</span>”</span> does not create
+                any anti-aliasing. That's why anti-aliasing must be added when
+                creating the original selection. This option is the best one.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="bold"><strong>Feathered</strong></span>: this option does
+                the same things as <span class="quote">“<span class="quote">Hard</span>”</span>, but instead of the
+                resulting border being fully selected, it fades outwards. The
+                result is not very good; if you want a feathered border,
+                it's better to use one of the other modes, and then feather
+                the result. It exists for historical reasons.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <div class="figure">
+                <a id="id3606"></a>
+                <p class="title">
+                  <strong>Figura 16.29. Border Style Comparison</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/select/border-hard.png" alt="Border Style Comparison" />
+                    <div class="caption">
+                      <p>
+                  <span class="quote">“<span class="quote">Hard</span>”</span> option. Selection editor, zoom 800%
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/select/border-smooth.png" alt="Border Style Comparison" />
+                    <div class="caption">
+                      <p>
+                  <span class="quote">“<span class="quote">Smooth</span>”</span> option. Selection editor, zoom 800%
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/select/border-feathered.png" alt="Border Style Comparison" />
+                    <div class="caption">
+                      <p>
+                  <span class="quote">“<span class="quote">Feathered</span>”</span> option. Selection editor, zoom 800%
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Selected areas continue outside the image</span>
+            </dt>
+            <dd>
+              <p>Com esta seleção desabilitada, o limite da uma seleção (geralmente um retângulo) permanecerá sem modificações se ele estiver alinhado com o limite da imagem, nenhuma seleção será criada ao seu redor.</p>
+              <div class="figure">
+                <a id="id3607"></a>
+                <p class="title">
+                  <strong>Figura 16.30. 
+              Select border with and without <span class="quote">“<span class="quote">Selected areas continue 
+              outside the image</span>”</span>
+            </strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/select/border-selection-lock1.png" alt="Select border with and without “Selected areas continue outside the image”" />
+                    <div class="caption">
+                      <p>Selecionar uma borda sem (ao centro) e com (à direita) <span class="quote">“<span class="quote">Não considerar a seleção fora da imagem</span>”</span></p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/select/border-selection-lock2.png" alt="Select border with and without “Selected areas continue outside the image”" />
+                    <div class="caption">
+                      <p>Mesmas seleções preenchidas com vermelho</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-selection-grow.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-select-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-selection-flood.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-selection-grow.html">4.12. Aumentar</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-selection-flood.html">4.14. Remove Holes</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

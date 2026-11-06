@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-03-23 j.h created
+-->
+<sect2 id="gimp-export-dialog">
+  <title>Exportar arquivo</title>
+
+  <indexterm>
+    <primary>Exportar arquivo</primary>
+  </indexterm>
+
+  <para>A partir do <acronym>GIMP</acronym>-2.8, o comando de Salvar permite apenas o formato XCF. O comando Exportar é usado para gerar arquivos com a imagem em vários formatos de arquivo. Isso acontece por que nenhum outro formato de arquivo, exceto o XCF,  preserva todas as características que uma imagem do GIMP - a maior parte não preserva sequer as camadas, que são a estrutura mais básica de uma imagem no GIMP. Então uma pessoa que pensasse estar preservando seu trabalho para continuar em outra oportunidade usando  o comando <quote>Salvar</quote> estava na verdade criando uma cópia apenas para visualização de uma imagem com várias camadas, texto, etc... e teria que começar todo o projeto novamente. Com a separação entre Salvar e Exportar não há mais essa ambiguidade.</para>
+  <figure>
+    <title>Diálogo de exportar imagem</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/export-image-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          You can access this command in the main menu through
+          <menuchoice>
+            <guimenu>File</guimenu>
+            <guimenuitem>Export As…</guimenuitem>
+          </menuchoice>,
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          or from the keyboard by using the shortcut
+          <keycombo><keycap>Ctrl</keycap><keycap>Shift</keycap><keycap>E</keycap>
+          </keycombo>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+
+  <sect3>
+    <title>O diálogo de Exportar imagem</title>
+    <para>
+      In the file browser, you can edit filename and extension directly in the
+      <guilabel>Name</guilabel> field (default is <quote>Untitled.png</quote>)
+      or by selecting an existing file to override in name list. Navigate the
+      folders if you prefer a different image destination. You can also create
+      a new folder if necessary.
+    </para>
+    <formalpara>
+      <title>Selecionar tipo de arquivo</title>
+      <para>Se você optar por isso, você pode escolher um tipo de arquivo compactado para seu arquivo XCF:</para>
+    </formalpara>
+    <para>Os tipos de arquivo de imagem estão descritos em <xref linkend="gimp-using-fileformats"/>.</para>
+  </sect3>
+
+  <sect3 id="exporting-image">
+    <title>Exportando</title>
+    <para>Quando um nome de arquivo e uma pasta de destino estão escolhidos, clique no botão <guibutton>Exportar</guibutton>. Isso abre o diálogo de exportação específico para cada tipo de arquivo, por exemplo: tipo de compactação, qualidade, profundidade de cores, etc...</para>
+    <anchor id="gimp-export-confirm-dialog"/>
+    <note>
+      <para>Se o nome que você digitou já existiu, você será perguntado se deseja sobrescrever esse arquivo ou não. Se uma máscara de camada ou canal for selecionado em vez de uma camada, e o formato de exportação não suportar isso, você será perguntado para confirmação.</para>
+    </note>
+    <para>
+      If you have loaded a non-XCF file, the
+      <menuchoice>
+        <guimenu>File</guimenu>
+        <guimenuitem>Overwrite</guimenuitem>
+      </menuchoice>
+      command (followed by the file name) allows you to overwrite the
+      original file, keeping its file format.
+    </para>
+    <para>
+      If you modify an image that you already have exported before, the
+      <menuchoice>
+        <guimenu>File</guimenu>
+        <guimenuitem>Export to</guimenuitem>
+      </menuchoice>
+      command (followed by the file name) allows you to export the file
+      again in the same file format.
+    </para>
+  </sect3>
+</sect2>

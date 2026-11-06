@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.6. Diálogo de paletas</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-content.html" title="3. Diálogos relacionados ao conteúdo da imagem" />
+    <link rel="prev" href="gimp-gradient-dialog.html" title="3.5. Diálogo de degradês" />
+    <link rel="next" href="gimp-tagging.html" title="3.7. Rotulando" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.6. Diálogo de paletas</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-gradient-dialog.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Diálogos relacionados ao conteúdo da imagem</span>
+        <nav> <a accesskey="n" href="gimp-tagging.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-palette-dialog"></a>3.6. Diálogo de paletas</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id25096" class="indexterm"></a>
+      <a id="id25099" class="indexterm"></a>
+      <a id="id25102" class="indexterm"></a>
+      <p>Uma <span class="emphasis"><em>paleta</em></span> é um conjunto de cores específicas, em nenhuma ordem particular. Veja a seção sobre <a class="link" href="gimp-concepts-palettes.html" title="8. Paletas">Paletas</a> para informação básica sobre paletas e como elas podem ser criadas e usadas.</p>
+      <p>O diálogo de <span class="quote">“<span class="quote">Paletas</span>”</span> é usado para selecionar uma paleta, clicando na mesma sobre a visão em lista ou em grade. Algumas dezenas de paletas escolhidas mais ou menos ao acaso são supridas junto com o GIMP, e você pode facilmente adicionar mais que você mesmo crie ou pegue de algum lugar. O diálogo de <span class="quote">“<span class="quote">Paletas</span>”</span> também da acesso a várias funcionalidades para criar novas paletas ou manipular as que já existem.</p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>O diálogo de paletas não é o mesmo que o diálogo de <span class="quote">“<span class="quote">Mapa de cores</span>”</span>, que em versões antigas do GIMP era chamado de diálogo de Paleta indexada. Aquele é usado para manipular o mapas de cores de imagens indexadas.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-palette-activate"></a>3.6.1. Ativando o diálogo</h4>
+            </div>
+          </div>
+        </div>
+        <p>O diálogo de <span class="quote">“<span class="quote">Buffers</span>”</span> é um diálogo de encaixe;veja a  seção <a class="xref" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe">Seção 2.3, “Caixas de diálogo e de encaixe”</a> para mais informações sobre como gerenciá-lo.</p>
+        <p>Você pode acessa-lo:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          from the main menu:
+          <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Dialogs</span> → <span class="guimenuitem">Palettes</span>;
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          from the Tab menu in any dockable dialog by clicking the
+          <a class="link" href="menus.html#tab-menus" title="1.3. Menus de Abas">tab menu button</a>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+          </span> and selecting
+          <span class="guimenu">Add Tab</span> → <span class="guimenuitem">Palettes</span>.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-palette-dialog-using"></a>3.6.2. Usando o diálogo de paletas</h4>
+            </div>
+          </div>
+        </div>
+        <p>Clicar numa paleta do diálogo seleciona essa paleta, e faz aparecer o diálogo <a class="link" href="gimp-palette-dialog.html#gimp-palette-editor-dialog" title="3.6.4. Editor de Paleta">Editor de paletas</a>, que permite que você selecione as cores de frente ou de fundo do GIMP a partir da paleta escolhida simplesmente clicando nas cores. Você também pode navegar entre as cores usando as teclas-seta.</p>
+        <p>Com um clique-duplo no <span class="emphasis"><em>nome</em></span> de uma paleta (no modo de visualização de lista), você pode editar seu nome. Perceba que você só pode editar os nomes de paletas que você mesmo tenha adicionado, não das que vem junto com o GIMP. Se você editar um nome em que você não tenha permissões de alteração, ele será revertido ao nome anterior quando você pressionar Enter ou clicar em outro elemento.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo de Grade/Lista</span>
+            </dt>
+            <dd>
+              <div class="figure">
+                <a id="id3200"></a>
+                <p class="title">
+                  <strong>Figura 15.37. O diálogo de <span class="quote">“<span class="quote">Paletas</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/palettes-grid-dialog.png" alt="O diálogo de “Paletas”" />
+                    <div class="caption">
+                      <p>Visão em grade</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/dialogs/palettes-list-dialog.png" alt="O diálogo de “Paletas”" />
+                    <div class="caption">
+                      <p>Visão em lista</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>No menu de Guias, você pode escolher entre <span class="guimenuitem">Ver como grade</span> e <span class="guimenuitem">Ver como lista</span>. No modo de Grade, as paletas aparecem numa grade retangular, tornando fácil ver muitas de uma vez e encontrar a que você está buscando. No modo de Lista, as paletas ficam numa lista, com os nomes de cada uma ao lado das pré-visualizações.</p>
+              <p>O sub menu de  <span class="guilabel">Tamanho da pré-visualização</span> permite que você escolha o tamanho das células de cor.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <a id="gimp-palettes-dialog-tags"></a>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Rotulando</span>
+            </dt>
+            <dd>
+              <p>Você pode usar rótulos (tags) para reorganizar quais paletas são exibidas. Veja <a class="xref" href="gimp-tagging.html" title="3.7. Rotulando">Seção 3.7, “Rotulando”</a>.</p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Os botões do diálogo de Paletas</strong>
+          </p>
+          <p>
+        The button bar at the bottom offers the following functionality:
+      </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gtk-edit.svg" width="16" /></span>
+          </span>
+          <span class="phrase">Editar paleta ativa</span>
+        </span>
+            </dt>
+            <dd>
+              <p>Este botão abre o <a class="xref" href="gimp-palette-dialog.html#gimp-palette-editor-dialog" title="3.6.4. Editor de Paleta">Seção 3.6.4, “Editor de Paleta”</a>.</p>
+            </dd>
+            <dt>
+              <a id="palette-new"></a>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/document-new.svg" width="16" /></span>
+          </span>
+          <span class="phrase">Criar um novo modelo</span>
+        </span>
+            </dt>
+            <dd>
+              <a id="id25191" class="indexterm"></a>
+              <p>Para mais informações sobre este botão, por favor, veja <a class="xref" href="gimp-palette-dialog.html#gimp-palette-new">Nova paleta</a>.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-duplicate.svg" width="16" /></span>
+          </span>
+          <span class="phrase">Duplicar paleta</span>
+        </span>
+            </dt>
+            <dd>
+              <a id="id25204" class="indexterm"></a>
+              <p>Para mais informações sobre este botão, por favor veja <a class="xref" href="gimp-palette-dialog.html#gimp-palette-duplicate">Duplicar paleta</a>.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+          </span>
+          <span class="phrase">Remover paleta</span>
+        </span>
+            </dt>
+            <dd>
+              <a id="id25217" class="indexterm"></a>
+              <p>Para mais informações sobre este botão, por favor veja <a class="xref" href="gimp-palette-dialog.html#gimp-palette-delete">Remover paleta</a>.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/view-refresh.svg" width="16" /></span>
+          </span>
+          <span class="phrase">Atualizar paletas</span>
+        </span>
+            </dt>
+            <dd>
+              <a id="id25230" class="indexterm"></a>
+              <p>Para mais informações sobre este botão, por favor veja <a class="xref" href="gimp-palette-dialog.html#gimp-palette-refresh">Atualizar paletas</a>.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-concepts-palettes-menu"></a>3.6.3. O menu de contexto de <span class="quote">“<span class="quote">Vetores</span>”</span></h4>
+            </div>
+          </div>
+        </div>
+        <a id="id25238" class="indexterm"></a>
+        <p>
+      The <span class="quote">“<span class="quote">Palettes</span>”</span> context menu can be accessed by right-clicking
+      in the Palettes dialog, or by choosing the top item from the dialog Tab
+      menu
+      (<span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+      </span>).
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        Some of the listed menu entries are installation-dependent, which need
+        version 3 of the
+        <a class="ulink" href="https://www.python.org/" target="_top">Python interpreter</a> to be
+        installed for GIMP 3.0.
+        This includes:
+        <a class="link" href="gimp-palette-dialog.html#gimp-palette-offset">Offset Palette…</a>,
+        <a class="link" href="gimp-palette-dialog.html#gimp-palette-to-gradient">Palette to Gradient</a>,
+        <a class="link" href="gimp-palette-dialog.html#gimp-palette-to-repeat-gradient">Palette to
+        Repeating Gradient</a> and
+        <a class="link" href="gimp-palette-dialog.html#gimp-palette-sort">Sort Palette…</a>.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term"><a id="gimp-palette-edit"></a>Editar paleta</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="quote">“<span class="quote">Edit Palette</span>”</span> is an alternative way of activating
+            the
+            <a class="link" href="gimp-palette-dialog.html#gimp-palette-editor-dialog" title="3.6.4. Editor de Paleta">Palette Editor</a>:
+            it can also be activated by double-clicking on a palette in the
+            Palettes dialog, or by pressing the <span class="quote">“<span class="quote">Edit Palette</span>”</span>
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gtk-edit.svg" width="16" /></span>
+            </span>
+            button at the bottom of the dialog.
+          </p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-new"></a>Nova paleta</span>
+            </dt>
+            <dd>
+              <p><span class="quote">“<span class="quote">Nova paleta</span>”</span> cria uma nova paleta, sem título, que inicialmente não contém nenhuma cor, e abre o Editor de paletas de forma que você possa adicionar cores à paleta. O resultado será salvo automaticamente na sua pasta de paletas na área de dados pessoais do GIMP (<code class="filename">palettes</code>) quando você sair do programa. Desta forma, a nova paleta estará disponível em sessões futuras.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-import"></a>Importar paleta</span>
+            </dt>
+            <dd>
+              <a id="id25275" class="indexterm"></a>
+              <div class="figure">
+                <a id="id3201"></a>
+                <p class="title">
+                  <strong>Figura 15.38. O diálogo de importar paletas</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/palette-import-dialog.png" alt="O diálogo de importar paletas" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p><span class="quote">“<span class="quote">Importar paleta</span>”</span> permite que você crie uma nova paleta a partir das cores em um degradê, uma imagem, ou um arquivo de paleta. Escolher esta opção abre o diálogo de <span class="quote">“<span class="quote">Importar paleta</span>”</span>, que dá as seguintes opções:</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Selecionar fonte</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  You can import a palette either from any of GIMP's
+                  gradients (choosing one from the adjoining menu), or from
+                  any of the currently open images (chosen from the adjoining
+                  menu).
+                </p>
+                    <p>Há duas opções relativas à fonte em imagem que estão disponíveis apenas para imagens RGB:</p>
+                    <div class="itemizedlist">
+                      <ul class="itemizedlist" style="list-style-type: disc; ">
+                        <li class="listitem">
+                          <p>
+                      <span class="guilabel">Sample merged</span>:
+                      If you enable this option, sampling is not calculated only
+                      from the values of the active layer, but from all visible layers.
+                    </p>
+                          <p>
+                      For more information, see the
+                      <a class="link" href="glossary.html#glossary-samplemerge" title="Sample Merged">Glossary entry</a>.
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p><span class="guilabel">Somente dos pixels selecionados</span>: Como o nome descreve, os pixels com cores são tomados apenas dentro da seleção ativa na imagem, seja da camada ativa, ou da composição final, conforme a opção anterior.</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <p>
+                  You can also import palettes from GIMP's native
+                  <code class="filename">.gpl</code> format, or the following
+                  external palette formats.
+                </p>
+                    <div class="itemizedlist">
+                      <ul class="itemizedlist" style="list-style-type: disc; ">
+                        <li class="listitem">
+                          <p>
+                      Microsoft RIFF palette (<code class="filename">.riff</code>)
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      Cascading Style Sheets palette (<code class="filename">.css</code>)
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      SwatchBooker palette (<code class="filename">.sbz</code>)
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      Adobe Color palette (<code class="filename">.aco</code>)
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      Adobe Color Book (<code class="filename">.acb</code>)
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      Adobe Swatch Exchange palette (<code class="filename">.ase</code>)
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      Photoshop binary color palette (<code class="filename">.act</code>)
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p>
+                      Paint Shop Pro color palette (<code class="filename">.psp</code>)
+                    </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Nome da paleta</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Enter a name for the new palette. If the name
+                  you choose is already used by an existing palette, a unique
+                  name will be formed by appending a number (e. g., "#1").
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Número de cores</span>
+                  </dt>
+                  <dd>
+                    <p>Aqui você especifica o número de cores da paleta. O padrão é 256 por três razões: (1) os degradês do GIMP contém 256 cores no total, (2) Arquivos GIF tem no máximo 256 cores; (3) Imagens indexadas no GIMP podem conter no máximo 256 cores distintas. Você pode colocar o número de cores que desejar aqui, o GIMP vai tentar criar uma paleta espaçando o número de cores especificado na faixa de cores do degradê ou imagem de origem.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Colunas</span>
+                  </dt>
+                  <dd>
+                    <p>Aqui você especifica o número de colunas de uma paleta. Isso afeta apenas a forma como a paleta é exibida, e não tem efeito na forma como a paleta é usada.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Intervalo</span>
+                  </dt>
+                  <dd>
+                    <p>Mesmo configurando o <span class="quote">“<span class="quote">Número de cores</span>”</span> para o máximo, o número de cores não pode exceder 10000 na paleta. Imagens RGB podem ter muito mais cores. O controle de <span class="guilabel">Intervalo</span> deveria permitir agrupar cores similares em torno de uma média e forma a se ter uma paleta melhor. Esse problema não existe com imagens indexadas que tem no máximo 256 cores: o intervalo em <span class="quote">“<span class="quote">1</span>”</span> usar 256 cores da imagem (a opção de intervalo fica desligada para paletas com mais de 256 cores)</p>
+                  </dd>
+                </dl>
+              </div>
+              <p>A paleta importada será adicionada ao diálogo de Paletas, e salva automaticamente na sua pasta pessoal de <code class="filename">paletas</code> do GIMP quando você sair – desta forma ela estará disponível em sessões futuras do <acronym class="acronym">GIMP</acronym>.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-duplicate"></a>Duplicar paleta</span>
+            </dt>
+            <dd>
+              <p>Duplicar paleta cria uma nova paleta copiando a paleta que está selecionada, e abre um Editor de paletas, de forma que você possa alterar a cópia. O resultado será salvo automaticamente na sua pasta pessoal de <code class="filename">paletas</code> do GIMP quando você sair – desta forma ela estará disponível em sessões futuras do GIMP.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-merge"></a>Combinar paletas</span>
+            </dt>
+            <dd>
+              <p>Atualmente esta opção não está implementada, e a entrada do menu estará sempre insensível.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-copy-location"></a>Copiar localização da paleta</span>
+            </dt>
+            <dd>
+              <p>Este comando permite que você copie o caminho do arquivo de paletas para a área de transferência. Você pode então abrir esse arquivo num editor de textos, e edita-lo manualmente, se desejar.</p>
+            </dd>
+            <dt>
+              <span class="term">Mostrar no Gerenciador de Arquivos</span>
+            </dt>
+            <dd>
+              <a id="gimp-palette-show-in-file-manager"></a>
+              <p><span class="guilabel">Mostrar no Gerenciador de Arquivos</span> abre o local do arquivo de paleta no Gerenciador de Arquivos padrão do seu sistema.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-delete"></a>Remover paleta</span>
+            </dt>
+            <dd>
+              <p>Remover paleta apaga a paleta do diálogo de <span class="quote">“<span class="quote">Paletas</span>”</span>, e remove o arquivo em disco no qual a mesma está arquivada. Antes de agir, ele pede uma confirmação de que você realmente deseja fazer isso. Note que você não pode remover nenhuma das paletas que vem junto com o GIMP, somente as que você mesmo tenha adicionado.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-refresh"></a>Atualizar paletas</span>
+            </dt>
+            <dd>
+              <p>Atualizar paletas lê novamente todas as suas pastas de paletas, configuradas nas Preferências, e adiciona todas as novas paletas encontradas ao diálogo de Paletas. Isso é útil se você obtiver um arquivo de paletas de uma fonte externa, e gravar o arquivo diretamente em uma dessas pastas, e quiser usá-las sem precisar re-iniciar o GIMP.</p>
+            </dd>
+            <dt>
+              <span class="term">Exportar vetor</span>
+            </dt>
+            <dd>
+              <p>
+            The <span class="guisubmenu">Export as</span> submenu gives several
+            choices to export the current palette in external formats.
+            At this time, exporting to the following formats is supported:
+            <span class="guimenuitem">CSS Stylesheet</span>,
+            <span class="guimenuitem">Java map</span>,
+            <span class="guimenuitem">PHP dictionary</span>,
+            <span class="guimenuitem">Python dictionary</span>, 
+            <span class="guimenuitem">Krita .kpl</span>, and
+            <span class="guimenuitem">Text file</span>.
+            Each of these will open a dialog where you can enter a filename
+            and choose a folder where the exported file will be stored.
+          </p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-offset"></a>Deslocar paleta...</span>
+            </dt>
+            <dd>
+              <p>This command opens a dialog window.</p>
+              <p>
+            It takes the last color of the palette and moves it to the
+            beginning. In the dialog window, the <span class="guilabel">Offset</span>
+            parameter defines how many times this action will be performed.
+          </p>
+              <p>
+            If you set a negative <span class="guilabel">Offset</span>, colors
+            are moved from the first position to the end of the colors list.
+          </p>
+              <div class="figure">
+                <a id="id3202"></a>
+                <p class="title">
+                  <strong>Figura 15.39. Exemplos de <span class="quote">“<span class="quote">Deslocar paleta</span>”</span> </strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/examples/palettes-offset.png" alt="Exemplos de “Deslocar paleta”" />
+                    <div class="caption">
+                      <p>De cima para baixo: paleta original, Deslocamento = 1, Deslocamento = 2.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-to-gradient"></a>Paleta para degradê</span>
+            </dt>
+            <dd>
+              <a id="id25406" class="indexterm"></a>
+              <p>Com esse comando, todas as cores da paleta são usadas para criar um novo degradê, que fica salvo no diálogo de Degradês. O degradê criado fica com tantos segmentos quantas cores existem na paleta de origem.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-to-repeat-gradient"></a>Paleta para degradê com repetições</span>
+            </dt>
+            <dd>
+              <p>Este comando cria um degradê que pode ser repetido: a última cor do último segmento é a mesma que a primeira cor do primeiro segmento. Como no comando anterior, um novo degradê é criado e salvo no diálogo de Degradês.</p>
+              <div class="figure">
+                <a id="id3203"></a>
+                <p class="title">
+                  <strong>Figura 15.40. Exemplos de <span class="quote">“<span class="quote">Paleta para degradê com repetições</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/examples/palettes-repeat-gradient.png" alt="Exemplos de “Paleta para degradê com repetições”" />
+                    <div class="caption">
+                      <p>Alto: paleta. Abaixo: degradê criado com o comando.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-sort"></a>Ordenar paleta...</span>
+            </dt>
+            <dd>
+              <p>Este comando abre uma janela de diálogo que lhe permite ordenar as cores de uma paleta de acordo com certos critérios:</p>
+              <p>Outra maneira de ordenar uma paleta é usando as opções de ordenação da caixa de diálogo <a class="link" href="plug-in-colormap-remap.html" title="8.34. Rearranja o mapa de cores">Rearranjar Mapa de Cores</a>.</p>
+              <p>Várias configurações desta caixa de diálogo não são bem compreendidas. Agradeceríamos contribuições de qualquer pessoa que saiba como melhorar esta documentação.</p>
+              <div class="figure">
+                <a id="id3204"></a>
+                <p class="title">
+                  <strong>Figura 15.41. O diálogo de <span class="quote">“<span class="quote">Ordenar paleta</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/dialogs/palettes-sort.png" alt="O diálogo de “Ordenar paleta”" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Seleções</span>: Esta opção determina como a paleta será ordenada. Como usar isso não foi bem documentado por seu autor original. Aconselhamos a deixá-la no padrão <span class="guilabel">Tudo</span>.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Expressão de fatia</span>: Esta opção afeta como a paleta é ordenada quando <span class="guilabel">Fatia/Array</span> foi escolhido acima em <span class="guilabel">Seleções</span>. Documentação tirada do código:</p>
+                    <p>Deixando isso vazio, ou digitando <strong class="userinput"><code>:</code></strong>, seleciona todos os itens.</p>
+                    <p><strong class="userinput"><code>:4,</code></strong> ou <strong class="userinput"><code>:4</code></strong> faz uma seleção de 4 linhas a partir de todas as cores (comprimento auto-determinado).</p>
+                    <p><strong class="userinput"><code>:1,4</code></strong> seleciona as primeiras 4 cores.</p>
+                    <p><strong class="userinput"><code>:,4</code></strong> seleciona linhas de 4 cores (número de linhas auto-determinado).</p>
+                    <p><strong class="userinput"><code>:4,4</code></strong> seleciona 4 linhas de 4 cores.</p>
+                    <p><strong class="userinput"><code>4:</code></strong> seleciona uma única linha de todas as cores após 4, inclusive.</p>
+                    <p><strong class="userinput"><code>4:,4</code></strong> seleciona linhas de 4 cores, começando em 4 (número de linhas auto-determinado).</p>
+                    <p><strong class="userinput"><code>4:4,4</code></strong> seleciona 4 linhas de 4 cores (16 cores no total), começando no índice 4.</p>
+                    <p><strong class="userinput"><code>4</code></strong> é ilegal (ambíguo).</p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Channel to sort</span>: This option determines
+                based on what type of color channel the sorting will happen.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Ascending</span>: When enabled, the sorting
+                is ascending. When disabled, the sorting is descending.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Secondary Channel to sort</span>: This option
+                determines the secondary color channel for sorting in case
+                the first channel sort returns equal values.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Ascending</span>: When enabled, the sorting
+                is ascending. When disabled, the sorting is descending.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Branco</span>, usado com maior frequência</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Canal de Particionamento</span>: Esta opção também é usada para determinar como ordenar.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Quantização de Particionamento</span>: Esta opção é usada em conjunto com a anterior.</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-palette-editor-dialog"></a>3.6.4. Editor de Paleta</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id25485" class="indexterm"></a>
+        <div class="figure">
+          <a id="id3205"></a>
+          <p class="title">
+            <strong>Figura 15.42. O editor de paleta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/palette-editor-dialog.png" alt="O editor de paleta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>O editor de paleta é usado para dois propósitos principais: para escolher a cor de frente ou de fundo do GIMP, (como são mostradas na área de cores da Caixa de ferramentas), escolhendo cores da paleta, ou para modificar a paleta. Você pode ativar o editor para qualquer paleta a partir do diálogo de Paletas, mas você só pode modificar paletas que você mesmo tenha criado, não as paletas que vem instaladas com o GIMP. (Você pode, no entanto, duplicar qualquer paleta e editar a cópia recém criada.) Se você modificar a paleta, os resultados do seu trabalho serão salvos automaticamente quando você sair do GIMP.</p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3206"></a>3.6.4.1. Como ativar o editor de Paletas</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+        The Palette Editor is only accessible from the Palettes dialog: you
+        can activate it by double-clicking on a palette, or by pressing the
+        <span class="guiicon">
+          <span class="inlinemediaobject"><img src="images/stock-icons/gtk-edit.svg" width="16" /></span>
+        </span>
+        <span class="quote">“<span class="quote">Edit Palette</span>”</span> button at the bottom, or by choosing
+        <span class="quote">“<span class="quote">Edit Palette</span>”</span> from the <span class="quote">“<span class="quote">Palettes</span>”</span> Menu.
+      </p>
+          <p>O editor de Paletas é um diálogo de encaixe;veja a  seção <a class="xref" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe">Seção 2.3, “Caixas de diálogo e de encaixe”</a> para mais informações sobre como gerenciá-lo.</p>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3207"></a>3.6.4.2. Usando o editor de Paletas</h5>
+              </div>
+            </div>
+          </div>
+          <p>Se você clicar em uma caixa de cor, a cor de frente do GIMP passará a ser aquela: você pode ver isso na área de cores da Caixa de ferramentas (se ela estiver configurada para ser visível). A cor de fundo será configurada se você mantiver a tecla <span class="keycap"><strong>Ctrl</strong></span> pressionada ao clicar.</p>
+          <p>Se a paleta for uma paleta personalizada, um duplo-clique em uma cor não só seleciona a cor de frente, mas também abre um editor de cores que permite que você modifique a entrada de paleta selecionada.</p>
+          <p>Clicar com o botão direito na área da paleta abre o menu de contexto do editor de Paletas. Suas funções são as mesmas que existem nos botões na parte de baixo do diálogo.</p>
+          <p>
+        Below the palette display area, at the left, appears a text entry
+        area that shows the name of the selected color (or
+        <span class="quote">“<span class="quote">Untitled</span>”</span> if it does not have one). This information
+        has no functional significance, and is present only to serve you as
+        a memory aid.
+      </p>
+          <p>À direita do nome da cor, há uma entrada que permite que você configure o número de colunas usado para exibir a paleta. Isso afeta somente a exibição da paleta, não seu funcionamento. Se o valor for colocado em 0, um número padrão será usado.</p>
+          <p>
+        At the bottom of the dialog are a set of buttons, which mostly match
+        the entries in the Palette Editor menu, accessible by right-clicking
+        a color in the palette display area. Here are the buttons:
+      </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gtk-edit.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Editar cor</span>
+          </span>
+              </dt>
+              <dd>
+                <p>
+              For more information on this button please refer to
+              <a class="link" href="gimp-palette-dialog.html#gimp-palette-editor-edit">below</a>.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/document-new.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Nova cor da cor de Frente</span>
+          </span>
+              </dt>
+              <dd>
+                <p>Para maiores informações sobre esse botão, veja <a class="link" href="gimp-palette-dialog.html#gimp-palette-editor-new">abaixo</a></p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Remover cor</span>
+          </span>
+              </dt>
+              <dd>
+                <p>Para maiores informações sobre esse botão, veja <a class="link" href="gimp-palette-dialog.html#gimp-palette-editor-delete">abaixo</a>.</p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/zoom-out.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Diminuir visualização</span>
+          </span>
+              </dt>
+              <dd>
+                <p>Para maiores informações sobre esse botão, por favor veja <a class="link" href="gimp-palette-dialog.html#gimp-palette-editor-zoom-out">abaixo</a></p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/zoom-in.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Aumentar visualização</span>
+          </span>
+              </dt>
+              <dd>
+                <p>Para maiores informações sobre esse botão, veja <a class="link" href="gimp-palette-dialog.html#gimp-palette-editor-zoom-in">abaixo</a></p>
+              </dd>
+              <dt>
+                <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/zoom-fit-best.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Tamanho normal</span>
+          </span>
+              </dt>
+              <dd>
+                <p>Para maiores informações sobre esse botão, veja <a class="link" href="gimp-palette-dialog.html#gimp-palette-editor-zoom-all">abaixo</a></p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-palette-editor-menu"></a>3.6.5. The Palette Editor context menu</h4>
+            </div>
+          </div>
+        </div>
+        <p>O menu de contexto do editor de Paletas pode ser acessado com um clique do botão direito na área de cores do Editor de paletas, ou escolhendo-se a primeira entrada no menu de Guias. As operações que estão disponíveis correspondem aos botões que estão na parte inferior do diálogo.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term"><a id="gimp-palette-editor-edit"></a>Editar cor</span>
+            </dt>
+            <dd>
+              <p><span class="quote">“<span class="quote">Editar cor</span>”</span> faz aparecer um diálogo de edição de cores que permite que você modifique a cor selecionada na paleta. Se a paleta é uma que você não puder editar (uma das que vem com o GIMP quando é instalado), essa entrada de menu estará desabilitada.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-editor-new"></a>Adicionar cor de frente; Adicionar cor de fundo</span>
+            </dt>
+            <dd>
+              <p>Esses comandos criam uma nova entrada na paleta, usando ou a cor de Frente do GIMP (que aparece na Caixa de ferramentas), ou a cor de Fundo atual. Note que você também pode arrastar diretamente as cores tanto da Caixa de ferramentas, como a partir do Editor de cores para a paleta. Esse método é muito mais produtivo se você quer criar uma paleta com várias cores diferentes.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-editor-delete"></a>Remover cor</span>
+            </dt>
+            <dd>
+              <p><span class="quote">“<span class="quote">Remover cor</span>”</span>: Remove a cor selecionada da paleta. Se a paleta é uma que você não puder editar, este comando estará desabilitado.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-editor-zoom-out"></a>Diminuir visualização</span>
+            </dt>
+            <dd>
+              <p><span class="quote">“<span class="quote">Diminuir</span>”</span> reduz a altura das entradas de cor na visualização da paleta.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-editor-zoom-in"></a>Aumentar visualização</span>
+            </dt>
+            <dd>
+              <p><span class="quote">“<span class="quote">Aumentar</span>”</span> aumenta a altura das entradas de cor na visualização da paleta.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-editor-zoom-all"></a>Tamanho normal</span>
+            </dt>
+            <dd>
+              <p><span class="quote">“<span class="quote">Ver todas</span>”</span> ajusta o tamanho vertical das entradas de cor de forma que toda a paleta caiba na área destinada a visualização.</p>
+            </dd>
+            <dt>
+              <span class="term"><a id="gimp-palette-editor-edit-active"></a>Editar paleta ativa</span>
+            </dt>
+            <dd>
+              <p>Quando esta opção está habilitada (padrão), você pode editar uma outra paleta clicando no diálogo de <span class="quote">“<span class="quote">Paletas</span>”</span>.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-gradient-dialog.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-content.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tagging.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-gradient-dialog.html">3.5. Diálogo de degradês</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tagging.html">3.7. Rotulando</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

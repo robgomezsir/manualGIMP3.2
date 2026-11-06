@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-mantiuk-2006">
+  <title>Mantiuk 2006</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Mantiuk 2006</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Mantiuk 2006</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Mapeamento de Tons</primary>
+    <secondary>Mantiuk 2006</secondary>
+  </indexterm>
+
+  <!-- Support old (incorrect) help id for older GIMP versions -->
+  <sect3 id="gimp-filter-manituk-2006">
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do mapeamento de tons <quote>Mantiuk 2006</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/colors-retinex1.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/tone-mapping-mantiuk.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado com configurações padrão, após alteração da precisão da imagem no GIMP para ponto flutuante de 32 bit por luz linear.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro pode ser usado para adaptar uma imagem, que pode ter um alto intervalo dinâmico (HDR), para apresentações usando um baixo intervalo dinâmico. Esta operação restringe contrastes entre múltiplas frequências espaciais, produzindo luminância dentro do intervalo 0,0-1,0.</para>
+    <para>Esta abordagem de mapeamento de tons foi originalmente apresentada por Rafał Mantiuk, Karol Myszkowski, Hans-Peter Seidel. <quote>A Perceptual Framework for Contrast Processing of High Dynamic Range Images (revised and extended version)</quote>. In: ACM Transactions on Applied Perception 3, 3 (2006), pp. 286-308.</para>
+    <note>
+      <para>Este filtro é lento em imagens grandes. Para encontrar as melhores configurações para sua imagem, você poderia fazer uma pequena seleção relevante primeiro e salvá-la como pré-configuração antes de usá-la para a imagem completa.</para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Tone Mapping</guisubmenu>
+        <guimenuitem>Mantiuk 2006…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>O diálogo do filtro <quote>Mantiuk 2006</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/tone-mapping/mantiuk-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Pré-configurações</term>
+        <term>Input Type</term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Contraste</term>
+        <listitem>
+          <para>A intensidade da compressão de contraste.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Saturação</term>
+        <listitem>
+          <para>O fator global de saturação de cor.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Detail</term>
+        <listitem>
+          <para>
+            This parameter is not working and can be ignored. It will be
+            removed in the future.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+</sect2>

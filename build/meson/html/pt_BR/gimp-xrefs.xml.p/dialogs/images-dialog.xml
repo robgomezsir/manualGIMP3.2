@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-02 j.h: update to v2.8
+  2008-12-15 j.h: updated to v2.6
+  2007-09-16 j.h : updated  to v2.4
+  2006-09-03 lexa: streamlined structure to match the description of other dilogs
+  2006-04-29 made docbook compliant
+  2005-11-29 replaced informalfigures by figures by lexa
+-->
+<sect2 id="gimp-image-dialog">
+  <title>Diálogo de imagens</title>
+
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Imagens</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Imagem</primary>
+  </indexterm>
+
+  <figure>
+    <title>O diálogo de imagens</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/images-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>O diálogo de <quote>Imagens</quote> exibe uma lista de todas as imagens abertas na sua sessão do GIMP; cada uma delas é representada por uma miniatura. Este diálogo é útil quando, sem estar no modo de janela única, você tem várias imagens umas sobre as outras na sua tela. Desta forma, você pode erguer a janela com a imagem desejada para ficar por cima das demais.</para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Images</guimenuitem>
+          </menuchoice>;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Images</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      In the <guimenu>Windows</guimenu> menu, there is a list of
+      <link linkend="gimp-dockable-menu">detached windows</link> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <quote>Images</quote> dialog from the main menu:
+      <menuchoice>
+        <guimenu>Windows</guimenu>
+        <guimenuitem>Images</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Usando o diálogo de imagens</title>
+    <para>No modo de multi-janelas, no topo do diálogo, aparece uma lista flutuante com as imagens abertas se a opção <quote>Exibir seleção da imagem</quote> estiver ligada no menu de guias. </para>
+    <para>No centro, as imagens abertas aparecem, como lista ou como grade, de acordo com o modo selecionado. A imagem atual fica em destaque, com o fundo em outra cor no modo de lista, ou com uma borda no modo de grade. Com um clique-duplo no nome da imagem, você trás a janela com aquela imagem para a frente, na sua tela, ou faz com o que o GIMP ative a guia com aquela imagem no modo de janela única.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Ver como lista</term>
+        <term>Ver como grade</term>
+        <term>Preview Size</term>
+        <listitem>
+          <para>
+            In the Tab menu for the <quote>Images</quote> dialog, you can choose
+            between  <guimenuitem>View as List</guimenuitem> and
+            <guimenuitem>View as Grid</guimenuitem>.
+            In List mode, they are lined up vertically, with each row showing
+            a thumbnail of the contents of the image, its name, and its pixel
+            dimensions.
+            In Grid mode, the images are laid out in a rectangular array.
+          </para>
+          <tip>
+            <para><keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo> abre uma caixa para pesquisas por nome. Para maiores informações sobre o modo de lista, veja <xref linkend="gimp-dock-view-as-list"/>.</para>
+          </tip>
+          <para>
+            You can change the size of the image previews in the dialog using
+            the <guimenuitem>Preview Size</guimenuitem> submenu of the dialog's Tab menu.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <varlistentry>
+        <term>Botões</term>
+        <listitem>
+          <para>
+            The button bar at the bottom offers the following functionality:
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/go-top-symbolic.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Raise this image's displays</phrase>
+              </term>
+              <listitem>
+                <para>
+                  The selected image appears at the foreground of your screen. If
+                  this image has another view, this view also is raised but
+                  remains behind the original. The same option in the pop-up menu,
+                  that you get by right-clicking, is called <quote>Raise views</quote>
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Criar uma nova visualização para esta imagem</phrase>
+              </term>
+              <listitem>
+                <para>Duplica a janela ou guia da imagem selecionada.Não duplica a imagem em si, somente cria uma outra visualização da mesma imagem. Nela, você pode configurar diferentes fatores de zoom, visualização da seleção, etc...</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Remover</phrase>
+              </term>
+              <listitem>
+                <para>Este comando funciona apenas numa imagem que está aberta, mas não tem uma janela. Apesar de imagens poderem ser abertas pelo comando de Nova Janela, se  a imagem foi criada no GIMP sem uma janela (por um script, ou um comando nos terminais de script-fu ou de Python, ( tais como chamadas a <function>gimp-image-new</function> ou <function>file-png-load</function>, )ela não poderá ser fechada mesmo que todas as visualizações da mesma sejam fechadas. Nesse caso, este comando pode fecha-las. </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

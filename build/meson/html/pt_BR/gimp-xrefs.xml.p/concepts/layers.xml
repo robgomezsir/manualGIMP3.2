@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--Section History
+  2019-04-29 j.h: add Alt + click with mouse wheel
+
+-->
+<sect1 id="gimp-concepts-layers">
+  <title>Introdução a Camadas</title>
+
+  <indexterm>
+    <primary>Camadas</primary>
+  </indexterm>
+
+  <para>Você pode pensar nas camadas como uma pilha de slides. Usando camadas, você pode construir uma imagem de várias partes conceituais, cada uma das quais pode ser manipulada sem afetar qualquer outra parte da imagem. As camadas são empilhadas umas sobre as outras. A camada inferior é o plano de fundo da imagem, e os componentes em primeiro plano da imagem ficam acima dela.</para>
+  <figure>
+    <title>Uma imagem com camadas</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/layers_overview.png" format="PNG"/>
+      </imageobject>
+      <caption>
+        <para>Reverter a imagem</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/layers_example.png" format="PNG"/>
+      </imageobject>
+      <caption>
+        <para>Reverter a imagem</para>
+      </caption>
+    </mediaobject>
+  </figure>
+  <para>Não há limite para o número de camadas que uma imagem pode ter, apenas a quantidade de memória disponível no sistema. Não é incomum que usuários avançados trabalhem com imagens contendo dezenas de camadas. Você pode agrupar camadas para facilitar seu trabalho, e há muitos comandos para lidar com camadas.</para>
+  <para>
+    The organization of layers in an image is shown in the Layers dialog.
+    How it works is described
+    in detail in the <link linkend="gimp-layer-dialog">Layers Dialog</link>
+    section, but we will touch some aspects of it here, in relation to the
+    layer properties that they display.
+  </para>
+  <indexterm><primary>Drawable</primary></indexterm>
+  <para>
+    Each open image can have one or more <emphasis>active drawables</emphasis>.
+    A <quote>drawable</quote> is a <acronym>GIMP</acronym> concept that
+    includes layers, but also several other items, such as channels,
+    layer masks, and the selection mask.
+  </para>
+  <para>
+    Basically, a <quote>drawable</quote> is anything that can be drawn on with
+    painting tools. If a layer is currently active (i.e. it is selected), it
+    is shown highlighted in the Layers dialog. If only one layer is selected,
+    its name is shown in the status area of the image window.
+  </para>
+  <para>
+    To activate a layer click it. To select multiple layers, use the common
+    key modifiers <keycap>Shift</keycap> for selecting a range, and
+    <keycap>Ctrl</keycap> for adding or removing one layer from the selection.
+    If none of the layers are highlighted, it means the active drawable is
+    something else than a layer.
+  </para>
+  <para>
+    The main menu has a <link linkend="gimp-layer-menu">Layer</link> submenu
+    containing commands that affect the active layer or layers of the image.
+    The <link linkend="gimp-layer-dialog-context-menu">context menu</link> of
+    the Layers Dialog has even more commands. This menu can be accessed by
+    right-clicking on a layer.
+  </para>
+  <para>
+  There are several <link linkend="gimp-layer-types">types of layers</link>.
+  The most common is the raster layer, which is the default. Other layer types
+  are text layers, vector layers and link layers. Each of these have extra
+  properties and commands specific to their purpose.
+  </para>
+
+  <sect2 id="gimp-layer-properties">
+    <title>Propriedades das Camadas</title>
+
+    <para>Cada camada em uma imagem tem alguns atributos importantes:</para>
+
+    <variablelist>
+      <varlistentry>
+        <term>Nome</term>
+        <listitem>
+          <para>
+            Every layer has a name. This is assigned automatically when the
+            layer is created, but you can change it. You can change the name
+            of a layer either by double-clicking on it in the Layers dialog,
+            or by right-clicking there, and then selecting
+            <guimenuitem>Edit Layer Attributes</guimenuitem> in the menu
+            that appears.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Presença ou ausência de um canal Alfa</term>
+        <listitem>
+          <indexterm>
+            <primary>Camada de Fundo</primary>
+          </indexterm>
+          <indexterm>
+            <primary>Transparência</primary>
+            <secondary>Transparência da camada de fundo</secondary>
+          </indexterm>
+          <para>
+            An alpha channel encodes information about how transparent a layer
+            is at each pixel. It is visible in the Channels dialog: white is
+            complete opacity, black is complete transparency and gray levels
+            are partial transparencies.
+          </para>
+          <para>A camada de fundo é especial. Se você acabou de criar uma nova imagem, ainda tem apenas uma camada, que é uma camada de fundo. Se a imagem foi criada com um tipo de preenchimento opaco, essa camada não tem um canal Alpha. Se você adicionar uma nova camada, mesmo com um tipo de preenchimento opaco, um canal Alfa é automaticamente criado e isso se aplica a todas as camadas além da camada de fundo. Para se ter uma camada de fundo com transparência, você pode criar a sua nova imagem com a opção <quote>Preencher com</quote> igual a<quote>Transparência</quote> (nas opções avançadas do diálogo de nova imagem em Arquivo-&gt;Nova), ou você usa o comando <link linkend="gimp-layer-alpha-add">Adicionar canal alfa</link>.</para>
+          <para>Se você adicionar uma <emphasis>nova camada</emphasis>, mesmo com um tipo de preenchimento opaco, um canal Alfa é adicionado automaticamente à camada.</para>
+          <para>Todas as outras camadas exceto a camada inferior da imagem em geral tem um canal Alpha, mas você não pode ver uma representação em tons de cinza dos valores desse canal. Veja <link linkend="glossary-alpha">Alpha</link> no Glossário para obter mais informações.</para>
+          <indexterm>
+            <primary>Canal Alfa</primary>
+          </indexterm>
+          <formalpara id="alpha-channel-example">
+            <title>Exemplo de canal Alfa</title>
+            <para>
+              <figure>
+                <title>Exemplo de canal Alfa: Imagem básica</title>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-0-example.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      Original image.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-0-dialog-layers.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The image has three layers painted with pure 100% opaque
+                      Red, Green, and Blue. The current layer is the red one.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-0-dialog-channels.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      In the Channels dialog, the added Alpha channel is white because
+                      the image is not transparent since there is a 100% opaque (red)
+                      layer. As the current (red) layer is 100% opaque, there is no
+                      green and no blue so their corresponding channels are black.
+                    </para>
+                  </caption>
+                </mediaobject>
+              </figure>
+              <figure>
+                <title>Exemplo de canal Alfa: Uma camada transparente</title>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-1-example.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The left part of the first layer has been made transparent
+                      (via <xref linkend="gimp-tool-rect-select"/>, then
+                      <menuchoice><guimenu>Edit</guimenu>
+                      <guimenuitem>Clear</guimenuitem></menuchoice>).
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-1-dialog-layers.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The second layer, green, is visible.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-1-dialog-channels.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The Alpha channel is still white, since
+                      there is an opaque layer in this part of the image.
+                    </para>
+                  </caption>
+                </mediaobject>
+              </figure>
+              <figure>
+                <title>Exemplo de canal Alfa: Duas camadas transparentes</title>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-2-example.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The left part of the second layer has been made
+                      transparent.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-2-dialog-layers.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The third layer, blue, is visible through the
+                      first and second layers.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-2-dialog-channels.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The Alpha channel is still white,
+                      since there is an opaque layer in this part of the image.
+                    </para>
+                  </caption>
+                </mediaobject>
+              </figure>
+              <figure>
+                <title>Exemplo de canal Alfa: Três camadas transparentes</title>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-3a-example.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The left part of the third layer has been cleared.
+                      In this case, the Clear command works like
+                      the <link linkend="gimp-tool-eraser">Eraser</link> and uses
+                      the <link linkend="gimp-toolbox-color-area">Background
+                      color of Toolbox</link>.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-3a-dialog-layers.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The left part of the third layer is opaque, because the
+                      background layer has no Alpha channel.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-3a-dialog-channels.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The Alpha channel is still white.
+                    </para>
+                  </caption>
+                </mediaobject>
+              </figure>
+              <figure>
+                <title>Exemplo de canal Alfa: Canal Alfa adicionado ao fundo</title>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-3b-example.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      We used the
+                      <menuchoice>
+                        <guimenu>Layer</guimenu>
+                        <guimenuitem>Transparency</guimenuitem>
+                        <guisubmenu>Add Alpha Channel</guisubmenu>
+                      </menuchoice>
+                      command on the (blue) background layer.
+                      The left part of the image has become fully transparent and
+                      has the color of the page on which the image is shown.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-3b-dialog-layers.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The left part of the blue layer has become transparent.
+                    </para>
+                  </caption>
+                </mediaobject>
+                <mediaobject>
+                  <imageobject>
+                    <imagedata format="PNG" fileref="images/glossary/alpha-channel-3b-dialog-channels.png"/>
+                  </imageobject>
+                  <caption>
+                    <para>
+                      The left part of the Alpha Channel thumbnail is black
+                      (transparent) in the Channels dialog.
+                    </para>
+                  </caption>
+                </mediaobject>
+              </figure>
+            </para>
+          </formalpara>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Layer mode</term>
+        <listitem>
+          <indexterm>
+            <primary>Camada</primary>
+            <secondary>Modo</secondary>
+          </indexterm>
+          <para>
+            The layer mode is determined by the image mode (see previous
+            section), and the presence or absence of an alpha channel.
+            <acronym>GIMP</acronym> currently supports RGB, RGBA, Gray, GrayA,
+            Indexed, and IndexedA.
+          </para>
+          <para>
+            The main reason this matters is that some filters (in the
+            <guimenu>Filters</guimenu> menu) only accept a subset of layer
+            modes, and appear disabled in the menu if the active layer does
+            not have a supported mode.
+            Often you can rectify this either by changing the mode of the
+            image, or by adding or removing an alpha channel.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term><guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-visible.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> Visibilidade</term>
+        <listitem>
+          <indexterm>
+            <primary>Visibilidade</primary>
+            <secondary>Ícone</secondary>
+          </indexterm>
+          <para>
+            You can hide a layer from affecting the end result of your image
+            by clicking on the eye symbol in the Layers dialog. This is called
+            <quote>toggling the visibility</quote> of the layer. Most operations
+            on an image treat toggled-off layers as if they do not exist.
+          </para>
+          <para>
+            When you work with images containing many layers, with varying
+            opacities, you often can get a better picture of the contents of
+            the layer you want to work on by hiding some of the other layers.
+          </para>
+          <tip>
+            <para>Se você clicar segurando <emphasis>Shift</emphasis> sobre o símbolo do olho, isso fará com que todas as outras camadas, <emphasis>exceto</emphasis> a que você clicar, fiquem ocultas. </para>
+          </tip>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Camada ativa</term>
+        <listitem>
+          <indexterm>
+            <primary>Camada</primary>
+            <secondary>Ativar</secondary>
+          </indexterm>
+          <para>Normalmente, você ativa uma camada, para trabalhar nela, clicando-a na lista de camadas. Quando você tem muitas camadas, não é fácil descobrir a qual camada um elemento da imagem pertence: então, pressione <keycap>Alt</keycap> e clique com a roda do mouse neste elemento para ativar sua camada. As camadas disponíveis serão percorridas (começando pela superior) enquanto a <keycap>Alt</keycap> estiver pressionada e a camada selecionada será exibida temporariamente na barra de status.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-lock.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          Layer Lock Settings
+        </term>
+        <listitem>
+          <indexterm>
+            <primary>Camadas</primary>
+            <secondary>Lock</secondary>
+          </indexterm>
+          <para>
+            If you click to the right of the eye icon, you can select the
+            <link linkend="gimp-layer-dialog-lock-alpha-button">lock
+            settings</link> for the layer.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-effects.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          Layer Effects
+        </term>
+        <listitem>
+          <indexterm>
+            <primary>Camadas</primary>
+            <secondary>Effects</secondary>
+          </indexterm>
+          <para>
+            Directly to the left of the image thumbnail, you will see the
+            <link linkend="gimp-layer-effects">Layer Effects</link> icon if
+            that layer has effects added to it.
+          </para>
+          <para>
+            See <link linkend="gimp-using-layer-effects">Using Layer
+            Effects</link> for more details.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Tamanho e limites</term>
+        <listitem>
+          <indexterm>
+            <primary>Camada</primary>
+            <secondary>Tamanho</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Camada</primary>
+            <secondary>Limites</secondary>
+          </indexterm>
+          <para>
+            In <acronym>GIMP</acronym>, the boundaries of a layer do not
+            necessarily match the boundaries of the image that contains it.
+            When you create text, for example, each text item belongs to its
+            own separate layer, and the layer size is automatically adjusted to
+            contain the text and nothing more.
+          </para>
+          <para>
+            Also, when you create a new layer using cut-and-paste, the new
+            layer is sized just large enough to contain the pasted item. In
+            the image window, the boundaries of the currently active layer are
+            shown outlined with a black-and-yellow dashed line. When more than
+            one layer is selected, it will show an outline of the square that
+            encloses all the selected layers.
+          </para>
+          <para>
+            The main reason why this matters is that you cannot do anything to
+            a layer outside of its boundaries, unless you enabled
+            <guilabel>Expand Layers</guilabel> in the
+            <link linkend="gimp-tools-paint-options">Paint Tool Options</link>.
+            If this causes you problems, you can alter the dimensions
+            of the layer using any of several commands that you can find near
+            the bottom of the <guimenu>Layer</guimenu> menu.
+          </para>
+          <note>
+            <para>A quantidade de memória que uma camada consome é determinada por suas dimensões, e não seu conteúdo. Então, se você estiver trabalhando com imagens grandes ou imagens que contêm muitas camadas, pode ter sentido deixar as camadas com o menor tamanho possível, embora em geral isso não faça diferença para o trabalho cotidiano. Se fizer, é melhor pensar em expandir a memória da sua máquina de trabalho.</para>
+          </note>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Opacidade</term>
+        <listitem>
+          <para>A opacidade de uma camada determina a medida que permite que as cores das camadas abaixo dela na pilha de camadas apareçam. A opacidade varia de 0 a 100, onde 0 significa transparência completa, e 100 significa opacidade completa.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Modo</term>
+        <listitem>
+          <para>O modo de uma camada determina como as cores da camada são combinadas com as cores das camadas abaixo para a produção de um resultado visível. Este é um conceito suficientemente complexo e importante, para merecer uma seção própria, que se segue. Veja <xref linkend="gimp-concepts-layer-modes"/>.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Máscara de Camada</term>
+        <listitem>
+          <indexterm>
+            <primary>Máscaras</primary>
+            <secondary>Máscara de Camada</secondary>
+            <tertiary>Visão Geral</tertiary>
+          </indexterm>
+          <para>Além do canal alfa existe uma outra maneira de controlar a transparência de uma camada: adicionando uma <emphasis>máscara de camada</emphasis>, que é uma imagem em tons de cinza adicional associada à camada. Uma camada não tem uma máscara de camada de por padrão: ela deve ser especificamente adicionada. Máscaras de camada, e como trabalhar com elas, são descritas em mais detalhesna seção <link linkend="gimp-layer-mask">Máscara de Camada</link>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+</sect1>

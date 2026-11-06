@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.5. Seleção de frente</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-selection.html" title="2. Ferramentas de seleção" />
+    <link rel="prev" href="gimp-tool-free-select.html" title="2.4. Seleção Livre (Laço)" />
+    <link rel="next" href="gimp-tool-fuzzy-select.html" title="2.6. Seleção Contígua (Varinha Mágica)" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.5. Seleção de frente</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-free-select.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>2. Ferramentas de seleção</span>
+        <nav> <a accesskey="n" href="gimp-tool-fuzzy-select.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-foreground-select"></a>2.5. Seleção de frente</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id15181" class="indexterm"></a>
+      <a id="id15184" class="indexterm"></a>
+      <a id="id15187" class="indexterm"></a>
+      <p>
+    This tool lets you extract the foreground from the active layer or from a
+    selection. After the selection is made, with its
+    <a class="link" href="glossary.html#glossary-marching-ants" title="Formigas marchantes">marching ants</a>, you can
+    copy-paste or click-and-drag it to another image used as background, and,
+    inverting the selection, you can make changes in background.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2888"></a>2.5.1. Ativando a Ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir da barra de menu <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de Seleção</span> → <span class="guimenuitem">Seleção Livre</span>,</p>
+            </li>
+            <li class="listitem">
+              <p>Ao clicar no ícone da ferramenta: <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-foreground-select.svg" width="16" /></span>
+          </span> na caixa de ferramentas,</p>
+            </li>
+            <li class="listitem">
+              <p>Esta ferramenta não tem nenhum atalho, mas você pode definir um usando <span class="guimenu">Editar</span> → <span class="guisubmenu">Preferências</span> → <span class="guisubmenu">Interface</span> → <span class="guisubmenu">Configurar atalhos do teclado</span> → <span class="guisubmenu">Ferramentas</span> → <span class="guimenuitem">Seleção de Primeiro Plano</span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="tool-fg-select-usage"></a>2.5.2. Direções para uso</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Let us start with an object that is easy to distinguish from the
+      background and doesn't need to be refined.
+    </p>
+        <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Warning">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Atenção]" src="images/warning.png" />
+              </td>
+              <th align="left">Atenção</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        The foreground select tool needs a lot of memory for its processing,
+        depending on the size of the image. It is known to crash or slow down
+        when using larger images.
+      </p>
+                <p>
+        One way to improve this is to use <span class="guilabel">Matting Global</span>
+        instead of <span class="guilabel">Matting Levin</span>. The slow processing
+        speed can be improved by increasing the number of downsampled
+        <span class="guilabel">Levels</span>, at the cost of using more memory. Both of
+        these options also come with the disadvantage of being less accurate.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="procedure">
+          <ol class="procedure" type="1">
+            <li class="step">
+              <p>
+          The way it works is similar to the
+          <a class="link" href="gimp-tool-free-select.html" title="2.4. Seleção Livre (Laço)">Free Select tool</a>.
+          Roughly select the object you want to extract, with a little bit of
+          background around it.
+          To get a more accurate outline, keep the mouse button pressed while
+          moving. To use straight lines for parts of your selection, click
+          and release the button between the start and end points of the
+          straight section.
+        </p>
+              <p>
+          As soon you click to start drawing the selection, a small window pops
+          up:
+          </p>
+              <div class="mediaobject">
+                <img src="images/toolbox/FG-select-pop-up.png" />
+              </div>
+              <p>
+          Before the selection is finished, only the button to close the dialog
+          is active, allowing you to cancel and return to the original image
+          (this can also be done by pressing the <span class="keycap"><strong>Esc</strong></span> key).
+        </p>
+              <p>
+          To finish the initial selection, it needs to be closed. When the mouse
+          cursor hovers over the dot where you started the selection, it turns
+          yellow. Click this to close the selection. Instead of doing that,
+          you can also double-click to close the selection.
+        </p>
+              <div class="mediaobject">
+                <img src="images/toolbox/FG-select-select.png" />
+                <div class="caption">
+                  <p>Seleção por cor</p>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <p>
+          To create the mask from your selection, press <span class="keycap"><strong>Enter</strong></span>,
+          or double-click inside the selection:
+          </p>
+              <div class="mediaobject">
+                <img src="images/toolbox/FG-select-mask.png" />
+              </div>
+              <p>
+        </p>
+              <p>
+          The mouse pointer now changes into a Paintbrush icon with a circle.
+          The dark blue area (this color can be changed) shows the background.
+          The lighter area covers the zone you have selected as foreground and
+          a small part of background.
+          Outside the selected area, the dark blue area is called the
+          <span class="quote">“<span class="quote">Unknown pixels area</span>”</span>.
+        </p>
+              <p>
+          The options in the small window on top of the image become active:
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                A <span class="guilabel">Preview mask</span> checkbox that toggles
+                displaying a preview of the foreground extraction status.
+                The same can also be done by pressing the
+                <span class="keycap"><strong>Enter</strong></span> key.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                A <span class="guibutton">Select</span> button that will be used to
+                create the extraction after marking the foreground.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+        </p>
+            </li>
+            <li class="step">
+              <p><span class="emphasis"><em>Desenhar uma linha no primeiro plano</em></span>: usa o pincel, cujo tamanho pode ser alterado nas opções, desenhe uma linha contínua em primeiro plano selecionado repassando cores que serão mantidas para a extração. A cor usada para desenhar a linha não tem importância, não usar a mesma cor de primeiro plano é melhor. Tenha cuidado para não pintar pixels do fundo .</p>
+              <p>
+          With this one-color object, that is easy to distinguish from the
+          background, a few strokes are enough:
+          </p>
+              <div class="mediaobject">
+                <img src="images/toolbox/FG-select-draw.png" />
+              </div>
+              <p>
+        </p>
+            </li>
+            <li class="step">
+              <p>
+          <span class="emphasis"><em>Toggle the preview</em></span> button, or press
+          <span class="keycap"><strong>Enter</strong></span> to verify the result.
+          </p>
+              <div class="mediaobject">
+                <img src="images/toolbox/FG-select-result.png" />
+              </div>
+              <p>
+        </p>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+            You can draw directly on this <span class="guilabel">Preview mask</span> and
+            see the result immediately.
+          </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </li>
+            <li class="step">
+              <p>
+          When you are satisfied with the result, click the
+          <span class="guibutton">Select</span> button, or press <span class="keycap"><strong>Enter</strong></span>
+          to finalize the selection and finish the foreground selection
+          operation. You can cancel the operation by pressing
+          <span class="keycap"><strong>Esc</strong></span>.
+        </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2889"></a>2.5.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2890"></a>
+          <p class="title">
+            <strong>Figura 14.15. Opções da ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-foreground-select.png" alt="Opções da ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo, </span>
+              <span class="term">Enevoar bordas</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Veja <a class="link" href="gimp-tools-selection.html#gimp-tool-select" title="2.1. Características comuns"> Ferramentas de Seleção</a> para obter ajuda com opções que são comuns a todas essas ferramentas. Apenas as opções que são específicas para esta ferramenta são explicadas aqui.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Draw mode</span>
+            </dt>
+            <dd>
+              <p>
+            <span class="guilabel">Draw foreground</span>: when selecting with a brush,
+            what you draw will be considered part of the foreground, i.e.
+            included in the selection.
+          </p>
+              <p>
+            <span class="guilabel">Draw background</span>: when selecting with a brush,
+            what you draw will be considered part of the background, i.e. it
+            will be excluded from the selection.
+          </p>
+              <p>
+            <span class="guilabel">Draw unknown</span>: When drawing on the background,
+            outside the initial selection, it marks the drawn pixels as
+            belonging to the foreground.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Stroke width</span>
+            </dt>
+            <dd>
+              <p>
+           The size of the brush to select with.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Cor de pré-visualização</span>
+            </dt>
+            <dd>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Color</span> (default): the color of the selection
+                preview mask; the current color is shown in the color swatch.
+                You can change the color by clicking on it.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                <span class="guilabel">Grayscale</span>: allows you to see the resulting
+                mask in black and white. This preview is similar to a layer
+                mask. It can be useful in images where foreground and background
+                color are similar and difficult to distinguish.
+              </p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Engine</span>
+            </dt>
+            <dd>
+              <p>
+            This is the method that will be used to select the foreground.
+            Choices are <span class="guilabel">Matting Levin</span>, and
+            <span class="guilabel">Matting Global</span>. Note that
+            <span class="guilabel">Matting Levin</span> has been temporarily removed
+            on Windows due to crashes. When it is available, it is the default.
+          </p>
+              <p>
+            <span class="guilabel">Matting Levin</span> usually gives the best results,
+            but is slower, especially on larger images when there are large
+            unknown areas.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Levels (Matting Levin only)</span>
+            </dt>
+            <dd>
+              <p>
+            The number of downsampled levels to use. Higher numbers can
+            improve processing speed at the cost of using more memory.
+            The default is 2 levels.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Active levels (Matting Levin only)</span>
+            </dt>
+            <dd>
+              <p>
+            The number of levels to perform solving. Higher numbers can increase
+            the selection a bit at the cost of slowing down processing. Setting
+            this number higher than <span class="guilabel">Levels</span> has no effect.
+            The default is 2 active levels.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Iterations (Matting Global only)</span>
+            </dt>
+            <dd>
+              <p>
+            Higher values may improve the result at the cost of being slower.
+            The default is 2 iterations.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2891"></a>2.5.4. Refining Foreground Extraction</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      In a lot of images, distinguishing what is foreground or background can be
+      difficult. Refining the selection allows you to extract these foregrounds.
+      The procedure steps are the same as above, but, while drawing the
+      foreground, you will often toggle Preview, use Zoom (<span class="keycap"><strong>+</strong></span>
+      key), switch to <span class="guilabel">Draw background</span> to delete unwanted
+      background areas, and switch between <span class="guilabel">Grayscale</span> and
+      <span class="guilabel">Color</span> preview mode.
+    </p>
+        <div class="figure">
+          <a id="id2892"></a>
+          <p class="title">
+            <strong>Figura 14.16. <span class="quote">“<span class="quote">Draw background</span>”</span> Example</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/FG-select-draw-bg.png" alt="“Draw background” Example" />
+              <div class="caption">
+                <p>
+            On the left: drawing foreground by mistake went over the background
+            area: a part of the background will be included in the foreground
+            selection!
+          </p>
+                <p>
+            In the middle: <span class="guilabel">Draw background</span> option is
+            checked: draw on the unwanted background pixels.
+          </p>
+                <p>
+            On the right: unwanted selected pixels in the background are no
+            longer in the foreground selection.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="figure">
+          <a id="id2893"></a>
+          <p class="title">
+            <strong>Figura 14.17. <span class="quote">“<span class="quote">Draw unknown</span>”</span> Example</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/FG-select-unknown.png" alt="“Draw unknown” Example" />
+              <div class="caption">
+                <p>
+            On the left: the selection left a small part of the foreground
+            unselected, in the unknown pixels area.
+          </p>
+                <p>
+            On the right: with <span class="guilabel">Draw unknown</span> option
+            checked, draw on the unselected pixels to select them. This shows
+            that they are now selected.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-free-select.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-selection.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-fuzzy-select.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-free-select.html">2.4. Seleção Livre (Laço)</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-fuzzy-select.html">2.6. Seleção Contígua (Varinha Mágica)</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2017-03-20 j.h: update to v2.9
+  2007-08-05 ude: added new options of GIMP 2.4.
+-->
+<sect2 id="gimp-selection-border">
+  <title>Criar borda</title>
+
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Criar uma borda da seleção</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Criar borda</primary>
+  </indexterm>
+  <figure>
+    <title>Exemplo de criar uma borda a partir de uma seleção</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/menus/select/border-selection-01.png"/>
+      </imageobject>
+      <caption>
+        <para>Uma imagem com uma seleção</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/menus/select/border-selection-02.png"/>
+      </imageobject>
+      <caption>
+        <para>Depois de <quote>Criar Borda</quote></para>
+      </caption>
+    </mediaobject>
+  </figure>
+  <para>O comando <guimenuitem>Criar Borda</guimenuitem> cria uma nova seleção ao longo do limite da seleção na imagem em que você está trabalhando. O limite da seleção é usado como uma forma e a nova seleção é criada ao seu redor. Você entra com a largura da borda, em pixels ou outra unidade, na janela de diálogo. Metade da nova borda ficará dentro da área selecionada originalmente e a outra metade fora dela.</para>
+
+  <sect3>
+    <title>Ativando o comando.</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Select</guimenu>
+        <guimenuitem>Border…</guimenuitem>
+      </menuchoice>.
+    </para>
+    <para>
+      If there is no selection, this menu entry is disabled.
+    </para>
+    <!--</sect3>
+  <sect3>
+    <note>-->
+      <para>
+        Two conditions must be respected to use this command:         
+        <itemizedlist>
+          <listitem>
+            <para>
+              The image must have an alpha channel.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              The original image must be created with the
+              <guilabel>Antialiasing</guilabel> option checked in the selection tool
+              that is used.
+            </para>
+          </listitem>
+        </itemizedlist>
+      </para>
+      <!--</note>-->
+  </sect3>
+  
+  <sect3>
+    <title>Descrição da janela de diálogo <quote>Criar borda</quote></title>
+    <figure>
+      <title>A janela de diálogo <quote>Criar borda</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/select/border.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Criar borda da seleção por</term>
+        <listitem>
+          <para>Entre com a largura da borda da seleção na caixa de diálogo. O padrão é em pixels, mas você pode escolher outras unidades no menu suspenso.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Border Style</term>
+        <listitem>
+          <itemizedlist>
+            <listitem>
+              <para>
+                <emphasis role="bold">Hard</emphasis>: this option does not
+                keep anti-aliasing. This can be useful in some cases.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <emphasis role="bold">Smooth</emphasis>: this option keeps
+                anti-aliasing. Note that <quote>Smooth</quote> does not create
+                any anti-aliasing. That's why anti-aliasing must be added when
+                creating the original selection. This option is the best one.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                <emphasis role="bold">Feathered</emphasis>: this option does
+                the same things as <quote>Hard</quote>, but instead of the
+                resulting border being fully selected, it fades outwards. The
+                result is not very good; if you want a feathered border,
+                it's better to use one of the other modes, and then feather
+                the result. It exists for historical reasons.
+              </para>
+            </listitem>
+          </itemizedlist>
+          
+          <figure>
+            <title>Border Style Comparison</title>           
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/select/border-hard.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  <quote>Hard</quote> option. Selection editor, zoom 800%
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/select/border-smooth.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  <quote>Smooth</quote> option. Selection editor, zoom 800%
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/select/border-feathered.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  <quote>Feathered</quote> option. Selection editor, zoom 800%
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>             
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Selected areas continue outside the image</term>
+        <listitem>
+          <para>Com esta seleção desabilitada, o limite da uma seleção (geralmente um retângulo) permanecerá sem modificações se ele estiver alinhado com o limite da imagem, nenhuma seleção será criada ao seu redor.</para>
+          <figure>
+            <title>
+              Select border with and without <quote>Selected areas continue 
+              outside the image</quote>
+            </title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/select/border-selection-lock1.png"/>
+              </imageobject>
+              <caption>
+                <para>Selecionar uma borda sem (ao centro) e com (à direita) <quote>Não considerar a seleção fora da imagem</quote></para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/menus/select/border-selection-lock2.png"/>
+              </imageobject>
+              <caption>
+                <para>Mesmas seleções preenchidas com vermelho</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

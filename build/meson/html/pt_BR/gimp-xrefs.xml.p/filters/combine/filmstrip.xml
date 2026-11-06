@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-07-12 Added Spanish translation by AntI
+  2007-05-27 KoSt: added 'no'
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005/09/25 translated to german by axel.wernicke
+-->
+<!-- Keep this plug-in id the same as in GIMP! -->
+<sect2 id="plug-in-film">
+  <title>Filmstrip</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Combinar</secondary>
+    <tertiary>Filmstrip</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Filmstrip</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Applying example for the Filmstrip filter</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/combine-taj-filmstrip.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      Filmstrip filter lets you merge several pictures into a photographic film
+      drawing.
+    </para>
+    <note>
+      <para>Esse filtro não inverte as cores, ou seja, ele não imita negativo de filmes como aqueles usados para produzir impressões. Ao invés disso, você deve pensar que o resultado é uma imitação de um slide de filme ou de um filme de cinema.</para>
+      <para>
+        The drawing is a new separate image instance which would need to be saved separately, not a layer in any existing image.                       
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Combine</guisubmenu>
+        <guimenuitem>Filmstrip…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+
+    <sect4>
+      <title>Seleção</title>
+      <figure>
+        <title><quote>Filmstrip</quote> filter options (Selection)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/combine/film-selection.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <title>Filmstrip</title>
+        <varlistentry>
+          <term>Mudar altura para caber as imagens</term>
+          <listitem>
+            <para>Aplica a altura da imagem original para a imagem resultante.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Film height</term>
+          <listitem>
+            <para>Essa opção permite definir a altura da imagem resultante. Se as imagens originais possuirem tamanhos diferentes, elas serão redimensionadas para este tamanho.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Film color</term>
+          <listitem>
+            <para>
+              By clicking on the color button you can define the color of
+              the film (around and between pictures).
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <variablelist>
+        <title>Numeração</title>
+        <varlistentry>
+          <term>Índice inicial</term>
+          <listitem>
+            <para>Define o número inicial que será usado para as imagens.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Number font</term>
+          <listitem>
+            <para>Define a fonte dos dígitos.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Number color</term>
+          <listitem>
+            <para>
+              By clicking on the color button, you can define the font
+              color of digits.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Em cima</term>
+          <term>Embaixo</term>
+          <listitem>
+            <para>Define a posição do número.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <variablelist>
+        <title>Seleção de imagens</title>
+        <varlistentry>
+          <term>Imagens disponíveis</term>
+          <listitem>
+            <para>Mostra as imagens que podem ser usadas para a junção. As imagens são aquelas já abertas anteriormente no GIMP.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>No filme</term>
+          <listitem>
+            <para>Mostra as imagens já escolhidas para serem juntas.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Adicionar</term>
+          <listitem>
+            <para>Este botão permite ao usuário adicionar uma imagem disponível na seção <quote>no filme</quote>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Remover</term>
+          <listitem>
+            <para>
+              This button allows to bring a picture from <quote>On
+              film</quote> to <quote>Available images</quote>. After that,
+              the picture will not be used anymore in the resulting
+              document.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+    <sect4>
+      <title>Avançado</title>
+      <figure>
+        <title><quote>Filmstrip</quote> filter options (Advanced)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/combine/film-advanced.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Altura da imagem</term>
+          <listitem>
+            <para>
+              Defines the height of each picture in the resulting image.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Espaçamento das imagens</term>
+          <listitem>
+            <para>Define o espaçamento entre as figuras conforme elas serão inseridas na imagem futura.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Deslocamento dos orifícios</term>
+          <listitem>
+            <para>Define a posição do orifício a partir da borda da imagem.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Largura dos orifícios</term>
+          <listitem>
+            <para>Define a largura dos orifícios na imagem resultante.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Altura dos orifícios</term>
+          <listitem>
+            <para>Define a altura dos orifícios na imagem resultante.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Hole distance</term>
+          <listitem>
+            <para>Defines the space between holes.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Altura dos números</term>
+          <listitem>
+            <para>Define a altura dos números de início, proporcionalmente à altura das figuras.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+</sect2>

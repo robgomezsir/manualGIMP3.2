@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Apêndice A. Relatar erros e solicitar melhorias</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="prev" href="bibliography.html" title="Bibliografia" />
+    <link rel="next" href="gimp-bug-report.html" title="2. Relatando o Erro" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Apêndice A. Relatar erros e solicitar melhorias</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="bibliography.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span> </span>
+        <nav> <a accesskey="n" href="gimp-bug-report.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="appendix">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h1 class="title"><a id="gimp-introduction-bugs"></a>Apêndice A. Relatar erros e solicitar melhorias</h1>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Índice</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-introduction-bugs.html#gimp-bug-confirm">1. Certificando-se de que é um Erro</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-bug-report.html">2. Relatando o Erro</a>
+            </span>
+          </dt>
+        </dl>
+      </div>
+      <a id="id65291" class="indexterm"></a>
+      <a id="id65294" class="indexterm"></a>
+      <p>É triste dizer, mas nenhuma versão do <acronym class="acronym">GIMP</acronym> já lançada foi absolutamente perfeita. Mais triste ainda, provavelmente nenhuma versão jamais será. Apesar dos esforços para garantir que tudo funcione, um programa tão complexo como o <acronym class="acronym">GIMP</acronym> está fadado a sofrer problemas de vez em quando, ou mesmo travar.</p>
+      <p>Mas o fato de erros serem inevitáveis não significa que eles devam ser aceitos passivamente. Se você encontrar um erro no <acronym class="acronym">GIMP</acronym>, os desenvolvedores gostarão de saber sobre ele para que possam pelo menos tentar corrigi-lo.</p>
+      <p>Vamos supor, então, que você encontrou um erro, ou ao menos acha que encontrou: você tenta fazer algo, que gera como resultado algo que você não esperava. O que você deveria fazer? Como deveria relatá-lo?</p>
+      <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Tip">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Dica]" src="images/tip.png" />
+            </td>
+            <th align="left">Dica</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>O procedimento para fazer um <span class="emphasis"><em>requerimento de melhoria</em></span>; isso é, para fazer um pedido aos desenvolvedores para adicionar uma funcionalidade ausente— é o mesmo procedimento para relatar um erro.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>Assim como acontece em vários outros projetos de software livre, o <acronym class="acronym">GIMP</acronym> usa um mecanismo de relatar erros chamado <span class="emphasis"><em>GitLab</em></span>. Esse é um sistema baseado na web muito poderoso, capaz de gerenciar milhares de relatórios de erros sem perda de informação. Na verdade, o <acronym class="acronym">GIMP</acronym> compartilha a sua base de dados do GitLab com todo o projeto Gnome.</p>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-bug-confirm"></a>1. Certificando-se de que é um Erro</h2>
+            </div>
+          </div>
+        </div>
+        <p>A primeira coisa que você deverá fazer, antes de reportar o erro, é fazer um esforço para verificar que o que você está vendo realmente <span class="emphasis"><em>é</em></span> um erro. É difícil descrever um método para fazer isso que seja aplicável em todas as situações, mas ler a documentação é útil, e discutir a questão no IRC ou Discourse pode ser muito útil. Se você estiver vendo um <span class="emphasis"><em>travamento</em></span>, e não um comportamento imprevisto mais simples, as chances de ser um erro de verdade são grandes: programas bem-escritos não são desenvolvidos para travarem sob <span class="emphasis"><em>qualquer</em></span> circunstância. De qualquer forma, se você fez o esforço para decidir se é realmente um erro, mas ainda sim não tem certeza, então vá em frente e relate-o: o pior que pode acontecer é gastar um pouco do tempo da equipe de desenvolvimento.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Aliás, existem algumas coisas que são conhecidas por causar travamentos no <acronym class="acronym">GIMP</acronym> mas o trabalho de corrigi-las seria tão grande que não vale a pena. Uma delas é pedir ao <acronym class="acronym">GIMP</acronym> para fazer algo que requer muita memória, como criar uma imagem de um milhão de pixels de cada lado.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>Você também precisa verificar se está usando uma versão atualizada do <acronym class="acronym">GIMP</acronym>: relatar um erro que já foi corrigido é uma perda de tempo para todos. (<acronym class="acronym">GIMP</acronym> 1 não possui mais suporte, então se você usá-lo e encontrar erros, atualize para <acronym class="acronym">GIMP</acronym> 2 ou viva com eles.) Inclusive, se você estiver usando uma versão de desenvolvimento do <acronym class="acronym">GIMP</acronym>, certifique-se de que você pode ver o erro na última versão disponível antes de fazer o relato.</p>
+        <p>Se depois dessas considerações você ainda acreditar que tem um legitimo relatório de erro ou pedido de melhoria, então o próximo passo é ir para a lista de problemas do <acronym class="acronym">GIMP</acronym> (<a class="ulink" href="https://gitlab.gnome.org/GNOME/gimp/issues/" target="_top">https://gitlab.gnome.org/GNOME/gimp/issues/</a>), e tentar ver se mais alguém já relatou a mesma coisa.</p>
+        <div class="simplesect">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="bugzilla-find-specific-bug"></a>1.1. Encontrar um erro em específico</h3>
+              </div>
+            </div>
+          </div>
+          <p>Informe alguns termos de busca (separados por espaço), como por exemplo </p>
+          <div class="blockquote">
+            <blockquote class="blockquote">
+              <p>
+          <strong class="userinput"><code>filter crash</code></strong>
+          </p>
+            </blockquote>
+          </div>
+          <p>, na caixa de texto "Buscar ou filtrar resultados..." e aperte Enter. Por padrão, você verá apenas relatórios em aberto; você pode mudar isto clicando em "Tudo" acima do campo de busca.</p>
+          <p>O resultado é ou uma lista de relatórios de erros – tomara que não muito longa – ou uma mensagem dizendo <span class="quote">“<span class="quote">Desculpe, seu filtro não encontrou resultados</span>”</span>. Se você não encontrar um relatório de erros relacionado ao fazer isso, pode valer a pena tentar outra busca com termos distintos. Se, apesar dos seus melhores esforços, você submeter um relatório de erro e ele terminar encerrado como uma duplicata, não se chateie: isto aconteceu repetidamente ao autor desta documentação.</p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="bibliography.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center"> </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-bug-report.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="bibliography.html">Bibliografia</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-bug-report.html">2. Relatando o Erro</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

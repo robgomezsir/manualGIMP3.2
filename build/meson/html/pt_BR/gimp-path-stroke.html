@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.19. Stroke Paths</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-edit-menu.html" title="3. O menu “Editar”" />
+    <link rel="prev" href="gimp-selection-stroke.html" title="3.18. Contornar seleção" />
+    <link rel="next" href="gimp-edit-preferences.html" title="3.20. Preferences" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.19. Stroke Paths</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-selection-stroke.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. O menu <span class="quote">“<span class="quote">Editar</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-edit-preferences.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-path-stroke"></a>3.19. Stroke Paths</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id34347" class="indexterm"></a>
+      <a id="id34350" class="indexterm"></a>
+      <p>
+    The <span class="guimenuitem">Stroke Paths…</span> command strokes a path in
+    the image. There are two ways you can stroke the path, either by using
+    a paint tool, or without using one. There are various options which you
+    can use to specify how this stroke should look.
+  </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Este comando fica disponível apenas no caso de existir um vetor na sua imagem.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3559"></a>3.19.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Edit</span> → <span class="guimenuitem">Stroke Paths…</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          You can also access it by clicking on the button with the same name
+          in the <a class="link" href="gimp-path-dialog.html" title="2.3. Diálogo de vetores">Paths Dialog</a>.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3560"></a>3.19.2. Descrição da janela de diálogo</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3561"></a>
+          <p class="title">
+            <strong>Figura 16.13. A janela de diálogo de <span class="quote">“<span class="quote">Escolha o estilo do contorno</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/edit/stroke-path.png" alt="A janela de diálogo de “Escolha o estilo do contorno”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      The <span class="guilabel">Choose Stroke Style</span> dialog box allows you to
+      choose between stroking the path with the <span class="guibutton">Line</span>
+      options you specify or stroking it with a
+      <span class="guibutton">Paint tool</span>.
+    </p>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Line</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Foreground color, </span>
+              <span class="term">Background color, </span>
+              <span class="term">Textura</span>
+            </dt>
+            <dd>
+              <p>
+            Choose whether the line is drawn with the current
+            <span class="guilabel">Foreground color</span> or
+            <span class="guilabel">Background color</span> or
+            <span class="guilabel">Pattern</span>, set in the Toolbox.
+            This is distinct from the <span class="guilabel">Dash pattern</span>.
+            If you select one of the two color options with no dash pattern,
+            an unbroken line is drawn in the color set in the Toolbox.
+            If you select Pattern with no dash pattern, an unbroken line
+            is drawn with the pattern set in the Toolbox. If you select a
+            line with a dash pattern, the color or pattern is still
+            determined by the color or pattern set in the Toolbox. That is,
+            if you have a marbled pattern set in the Toolbox, and select
+            <span class="guilabel">Pattern</span> and dashed lines as
+            <span class="guilabel">Dash pattern</span>, the dashes are drawn in the
+            marbled pattern.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Anti-serrilhamento</span>
+            </dt>
+            <dd>
+              <p>
+            Curved strokes or strokes drawn at an angle may look jagged
+            or stair-stepped. The anti-aliasing option smooths them out.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Line width</span>
+            </dt>
+            <dd>
+              <p>Você pode determinar o tamanho do contorno usando a caixa de texto. A unidade de medida padrão é o pixel, mas você pode escolher outra unidade na lista em formato de botão ao lado.</p>
+            </dd>
+            <dt>
+              <a id="gimp-path-stroke-styles"></a>
+              <span class="term">Cap style</span>
+            </dt>
+            <dd>
+              <p>
+            Choose the shape of the ends of an unclosed path, which can
+            be <span class="guilabel">Butt</span>, <span class="guilabel">Round</span>
+            or <span class="guilabel">Square</span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Join style</span>
+            </dt>
+            <dd>
+              <p>
+            You can choose the shape of the path corners by
+            clicking on <span class="guilabel">Miter</span>,
+            <span class="guilabel">Round</span> or <span class="guilabel">Bevel</span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Miter limit</span>
+            </dt>
+            <dd>
+              <p>
+            When two segments of a path come together, the mitering of
+            the corner is determined by the Miter Limit. If the strokes
+            were wide, and no mitering were done, there would be pointed
+            ends sticking out at the corner. The Miter Limit setting
+            determines how the gap, formed when the outer edges of the
+            two lines are extended, will be filled. You can set it to a
+            value between 0.0 and 100.0, by using the slider or its
+            <span class="guilabel">+</span> and <span class="guilabel">-</span> buttons.
+          </p>
+              <div class="figure">
+                <a id="id3562"></a>
+                <p class="title">
+                  <strong>Figura 16.14. Exemplo de Limite dos ângulos</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/edit/stroke-path-miter.png" alt="Exemplo de Limite dos ângulos" />
+                    <div class="caption">
+                      <p>Left image: Limit=0. Right image: Limit=5.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Dash pattern</span>
+            </dt>
+            <dd>
+              <p>
+            On the pixel level, a dashed line is drawn as a series of
+            tiny boxes. You can modify the pattern of these boxes. The
+            black area with thin vertical lines represents the pixels of
+            the dash. If you click on a black pixel, you remove it from
+            the dash. If you click on a white pixel, you add it to the
+            dash. The gray areas indicate how the pattern will be
+            repeated when a dashed line is drawn.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Dash preset</span>
+            </dt>
+            <dd>
+              <p>
+            Instead of making your own dash pattern, you can choose
+            one from the drop-down box. This pattern will
+            then be displayed in the <span class="guilabel">Dash pattern</span>
+            area, so you can get an idea of how it will look.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="variablelist">
+          <p class="title">
+            <strong>Ferramenta de pintura</strong>
+          </p>
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Paint tool</span>
+            </dt>
+            <dd>
+              <p>
+            Select a paint tool to use from the drop-down box to draw the
+            stroke. The current options of the paint tool options are used
+            to draw the stroke.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Emulate brush dynamics</span>
+            </dt>
+            <dd>
+              <p>Veja <a class="link" href="gimp-tools-paint.html#gimp-tool-brush-dynamics">Dinâmica de pincéis</a></p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-selection-stroke.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-edit-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-edit-preferences.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-selection-stroke.html">3.18. Contornar seleção</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-edit-preferences.html">3.20. Preferences</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

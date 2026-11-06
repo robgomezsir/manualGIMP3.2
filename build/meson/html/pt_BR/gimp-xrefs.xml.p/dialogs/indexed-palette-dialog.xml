@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-26 j.h: no change for v2.8
+  2007-08-12 j.h: updated to v2.4 ; colormap submenu and a note added en;fr
+  2006-03-12 made docbook compliant
+  2005-11-29 replaced informalfigures by figures by lexa
+-->
+<sect2 id="gimp-indexed-palette-dialog">
+  <title>Diálogo do mapa de cores</title>
+
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Mapa de cores</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Mapa de cores</primary>
+  </indexterm>
+
+  <figure>
+    <title>Uma imagem indexada com 6 cores e seu diálogo de Mapa de cores.</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/examples/cosmos-6.png"/>
+      </imageobject>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/colormap-dialog.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>O diálogo do Mapa de cores (pode ser chamado de Paleta indexada) permite que você edite diretamente o mapa de cores de uma imagem indexada. (Se a imagem ativa estiver no modo de Tons de cinza, ou RGB, o diálogo fica vazio e não faz nada). Se você está exportando imagens indexadas para criação de um jogo clássico (vintage), ou trabalhando com pixel-art, é um bom lugar para ter controle total das cores usadas no seu trabalho.</para>
+
+  <sect3 id="gimp-indexed-palette-dialog-activate">
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Colormap</guimenuitem>
+          </menuchoice>;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Colormap</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      In the <guimenu>Windows</guimenu> menu, there is a list of
+      <link linkend="gimp-dockable-menu">detached windows</link> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <quote>Colormap</quote> dialog from the main menu:
+      <menuchoice>
+        <guimenu>Windows</guimenu>
+        <guimenuitem>Colormap</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="gimp-indexed-palette-dialog-colormaps">
+    <title>Mapas de cores e imagens indexadas</title>
+    <para>Em uma imagem indexada, cada pixel, em vez de ter diretamente o valor de uma cor (como acontece em imagens RGB e em tons de cinza), as cores são atribuídas a uma tabela, chamada <emphasis>Mapa de cores</emphasis>. O índice de cada cor nessa tabela é que é colcoado como valor dos pixels.</para>
+    <para>Para determinar a cor que deve ser exibida para cada pixel, o GIMP olha o índice no mapa de cores da imagem. Cada imagem indexada tem seu próprio mapa de cores privado. No GIMP, o maior número possível de cores num mapa de cores é 256, portanto, um Mapa de cores com o maior tamanho possível terá índices indo de 0 até 255. Para cada um deles é atribuída uma cor RGB arbitrária. Não há regras restringindo que cores podem ser atribuídas a um dado índice ou a ordem em que as mesmas aparecem: qualquer índice pode representar qualquer cor.</para>
+    <para>É importante ter em mente que as cores no mapa de cores <emphasis>são as únicas cores disponíveis</emphasis> para uma imagem indexada (embora você possa adicionar mais cores ao mapa de cores, até o limite de 256). Isso tem um efeito muito grande na maior parte das operações: por exemplo, num preenchimento com uma textura (ou qualquer outra operação na imagem), o GIMP normalmente não vai encontrar as cores exatas da textura no mapa de cores, então ele irá aproxima-las tentando usar as cores mais próximas que estiverem disponíveis. Algumas vezes isso é chamado de <link linkend="glossary-quantization">Quantização</link>. Se o mapa de cores for muito limitado, ou mal escolhido, isso pode resultar numa qualidade de imagem muito ruim. Na verdade pintar numa imagem indexada só é apropriado com o propósito de criar efeitos especiais derivados justamente dessas limitações.</para>
+    <para>O diálogo de Mapa de cores permite que você altere o mapa de cores de uma imagem, seja criando novas entradas, ou alterando as entradas existentes. Se você modificar uma cor associada com um determinado índice, você verá as alterações refletidas em toda a imagem imediatamente, conforme a cor se altera para todos os pixels da imagem que usam aquele índice. As entradas são numeradas, com 0 no canto superior esquerdo, 1 a sua direita, e assim por diante. </para>
+  </sect3>
+
+  <sect3 id="gimp-indexed-palette-dialog-using">
+    <title>Usando o diálogo do Mapa de cores</title>
+    <para>Aqui estão as operações que podem ser realizadas nesse diálogo:</para>
+    <variablelist>
+      <varlistentry>
+        <term>Clicar numa entrada de cor</term>
+        <listitem>
+          <para>Isso altera a cor de frete do GIMP para cor que você clicou, como mostrado na área de cores da Caixa de ferramentas. Como resultado, essa cor será usada para a próxima operação de pintura que você fizer.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Clicar em uma entrada de cor segurando <keycap>Ctrl</keycap></term>
+        <listitem>
+          <para>Isso configura a cor de fundo do GIMP para a cor em que você clicou com <keycap>Ctrl</keycap>, como fica demonstrado na área de cores da Caixa de ferramentas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Clique-duplo numa entrada de cor</term>
+        <listitem>
+          <para>Isso configura a cor de frente do GIMP para a cor que você clicou, mas também abre um diálogo que permite a você editar aquela cor. Você pode alterá-la para ser outra cor daqui pra frente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Índice da cor</term>
+        <listitem>
+          <para>Você pode selecionar uma entrada diferente do mapa de cores digitando seu índice aqui, ou clicando nas setinhas a direita.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>HTML notation</term>
+        <listitem>
+          <para>Essa área mostra a representação em código hexadecimal (como é usado em HTML) para a cor atribuída ao índice selecionado no mapa de cores. Você pode editar a cor diretamente aqui, em vez de usar um Editor de cores, se desejar. Veja <link linkend="glossary-html-notation">notação HTML</link>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Botões</term>
+        <listitem>
+          <para>
+            The button bar at the bottom offers the following functionality:
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gtk-edit.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Editar cor</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-indexed-palette-edit"/>
+                <para>Esse botão (no canto inferior esquerdo do diálogo) faz aparecer um Editor de cores que permite que você altere a cor da entrada atualmente selecionada no mapa de cores. O efeito é semelhante a um clique-duplo diretamente na cor, exceto que a cor de frente do GIMP não é alterada.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Delete color</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-indexed-palette-delete"/>
+                <para>
+                  This button (in the lower left corner of the dialog) allows you to
+                  delete a color which is not used in the image from the colormap.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/list-add.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase condition="tag-is-required">Adicionar cor</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-indexed-palette-add"/>
+                <para>Esse botão (no canto inferior direito do diálogo) permite que você adicione novas cores ao mapa de cores. Se você clicar nesse botão, a cor de frente atual do GIMP, como é vista na caixa de ferramentas, será adicionada ao final do mapa de cores. Se você pressionar <keycap>Ctrl</keycap> enquanto clica no botão, a cor de fundo será usada. Se o mapa de cores já tiver 256 cores, clicar nesse botão não terá efeito algum.</para>
+                <note>
+                  <para>O mapa de cores não pode conter mais de 256 entradas. Se já tiver 256 entradas, tentar adicionar uma cor não terá efeito.</para>
+                </note>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-selection.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Selecionar todos os pixels com esta cor</phrase>
+              </term>
+              <listitem>
+                <para>Este botão permite selecionar todos os pixels com esta cor. Para adicionar à seleção, use clique com <keycap>Shift</keycap>, para subtrair use clique com <keycap>Ctrl</keycap>, e para interseccionar com a seleção atual use clique com <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap></keycombo>.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <tip>
+      <para>
+        If you make a mistake, you can undo it by focusing the pointer in
+        the image whose colormap you have changed, and then pressing
+        <keycombo><keycap>Ctrl</keycap><keycap>Z</keycap></keycombo> or
+        choosing
+        <menuchoice>
+          <guimenu>Edit</guimenu>
+          <guimenuitem>Undo</guimenuitem>
+        </menuchoice>
+        in the main menu.
+      </para>
+    </tip>
+    <note>
+      <para>Se você pintar numa imagem indexada com uma cor que não está no mapa de cores, o GIMP vai usar a cor mais parecida que encontrar.</para>
+    </note>
+  </sect3>
+
+  <sect3 id="gimp-indexed-palette-dialog-submenu">
+    <title>O menu de contexto do Mapa de cores</title>
+    <para>
+      Right-clicking on a color in the Colormap selects this color and opens
+      a context menu with the following options:
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Editar cor</term>
+        <listitem>
+          <para>Esse comando abre um seletor de cores e permite que você modifique a cor.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Adicionar cor de frente</term>
+        <listitem>
+          <para>Este comando adiciona a cor selecionada na caixa de Ferramentas ao mapa de cores. Ele só é útil para duplicar uma corse for acessado ao clicar com o botão da direita no mapa de cores, uma vez que essa operação também altera a cor de frente para ser igual a cor que foi clicada, mas se o menu de contexto for acessado pelo submenu a partir do menu de guias da caixa de diálogo, ele pode adicionar cores novas. Se o mapa de cores já tiver 256 cores, esta opção permanece desabilitada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Adicionar cor de fundo</term>
+        <listitem>
+          <para>Adiciona a cor de fundo da caixa de ferramentas ao mapa de cores. Permanece desligada se o mapa de cores já tiver 256 cores.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-indexed-palette-selection-replace">
+        <term>Remover cor</term>
+        <listitem>
+          <para>Isso seleciona todos os pixels na imagem que têm o índice de paleta escolhido.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-indexed-palette-selection-add">
+        <term>Adicionar à seleção</term>
+        <listitem>
+          <para>Adiciona todos os pixels na imagem que têm o índice de paleta escolhido à seleção.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-indexed-palette-selection-subtract">
+        <term>Subtrair da seleção</term>
+        <listitem>
+          <para>Subtrai todos os pixels na imagem que têm o índice de paleta escolhido da seleção.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-indexed-palette-selection-intersect">
+        <term>Fazer intersecção com a seleção</term>
+        <listitem>
+          <para>Intersecta todos os pixels na imagem com o índice de paleta escolhido com a seleção atual.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Rearranjar mapa de cores</term>
+        <listitem>
+          <para>Rearranjar mapa de cores: Este comando está descrito em <xref linkend="plug-in-colormap-remap"/>.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

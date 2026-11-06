@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-10-01 KoSt: Added 'no'
+  2007-09-03 alex falappa: added it
+  2007-09-02 AntI: Added 'es'
+  2007-08-31 ude: created en, de
+-->
+<sect2 id="script-fu-old-photo">
+  <title>Foto antiga</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Decoração</secondary>
+    <tertiary>Foto antiga</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Foto antiga</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo do filtro <quote>Foto antiga</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/decor-taj-old-photo.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro faz ma imagem parecer como uma foto antiga: desfocada, com uma borda irregular, tonalizada em um matiz marrom, e marcada com manchas</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Decor</guisubmenu>
+        <guimenuitem>Old Photo…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de <quote>Foto antiga</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/decor/old-photo.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Desfocar</term>
+        <listitem>
+          <para>
+            If checked, a <link linkend="gimp-filter-gaussian-blur">Gaussian blur</link>
+            will be applied to the image, making it less clear.
+          </para>
+          <figure>
+            <title>Exemplo para a opção <quote>Desfocar</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/old-photo-defocus.png"/>
+              </imageobject>
+              <caption>
+                <para>Desfocar habilitado</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/old-photo-focus.png"/>
+              </imageobject>
+              <caption>
+                <para>Desfocar desabilitado</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho da borda</term>
+        <listitem>
+          <para>Quando você escolhe um tamanho de borda menor que zero, o filtro <link linkend="script-fu-fuzzy-border">Borrar borda</link> será aplicado a imagem, adicionando uma borda branca, recortada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Sépia</term>
+        <listitem>
+          <para>Se habilitado, o filtro reproduz o efeito de envelhecimento em fotografias antigas tradicionais em preto e branco, tonalizadas com sépia (tons de marrom). <footnote><para>Veja na Wikipedia <xref linkend="bibliography-online-wkpd-sepia"/>.</para></footnote> Para obter esse efeito, o filtro dessatura a imagem, reduz o brilho e contraste e modifica o balanço de cores. <footnote><para>Compare <xref linkend="gimp-tool-color-balance"/>.</para></footnote></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Matizar</term>
+        <listitem>
+          <para>Quando você habilitar esta opção, a imagem será marcada por manchas.</para>
+          <figure>
+            <title>Exemplo para a opção <quote>Matizar</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/old-photo-mottle.png"/>
+              </imageobject>
+              <caption>
+                <para>Uma imagem branca com o matizado (sem Desfocar ou Sépia)</para>
+              </caption>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Trabalhar em uma cópia</term>
+        <listitem>
+          <para>Se selecionada, o filtro criará uma nova janela contendo uma cópia da imagem com o filtro aplicado. A imagem original permanece inalterada.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.11. Opacidade da sombra projetada</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra" />
+    <link rel="prev" href="gimp-filter-vignette.html" title="6.10. Vinheta" />
+    <link rel="next" href="script-fu-perspective-shadow.html" title="6.12. Perspectiva" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.11. Opacidade da sombra projetada</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-vignette.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Filtros de luz e sombra</span>
+        <nav> <a accesskey="n" href="script-fu-perspective-shadow.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-drop-shadow"></a>6.11. Opacidade da sombra projetada</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id52464" class="indexterm"></a>
+      <a id="id52468" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4516"></a>6.11.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4517"></a>
+          <p class="title">
+            <strong>Figura 17.139. Exemplo para o filtro <span class="quote">“<span class="quote">Sombra projetada</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Exemplo para o filtro “Sombra projetada”" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/light-taj-drop-shadow-legacy.jpg" alt="Exemplo para o filtro “Sombra projetada”" />
+              <div class="caption">
+                <p><span class="quote">“<span class="quote">Sombra projetada</span>”</span> aplicada (camada de fundo branco adicionada manualmente)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Esse filtro adiciona uma sombra projetada atrás da seleção atual ou das partes que não são transparentes da imagem, se não houver uma seleção. Opcionalmente, o filtro pode redimensionar a imagem se isso for necessário para a exibição da sombra toda. Esse efeito é bastante utilizado em imagens comerciais para dar um leve efeito 3D a textos, e, também, alterando-se a cor da sombra para branco, criar um efeito de contra-luz.</p>
+        <p>Você pode escolher a cor, posição e tamanho da sombra.</p>
+        <p>Note que o filtro não adiciona uma camada de fundo para tornar a sombra visível. O fundo da sombra é transparente. O fundo branco, no exemplo acima não foi criado pelo filtro, e sim,  adicionado mais tarde para tornar a sombra visível.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4518"></a>6.11.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Light and Shadow</span> → <span class="guimenuitem">Drop Shadow (legacy)…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4519"></a>6.11.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4520"></a>
+          <p class="title">
+            <strong>Figura 17.140. Opções do filtro <span class="quote">“<span class="quote">Sombra projetada</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/light-and-shadow/drop-shadow-legacy.png" alt="Opções do filtro “Sombra projetada”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Deslocamento X, </span>
+              <span class="term">Deslocamento Y</span>
+            </dt>
+            <dd>
+              <p>A camada que contém a sombra será movida horizontalmente por X pixels e verticalmente por Y pixels. Assim, o deslocamento X e Y  determina, onde a sombra será colocada em relação à imagem original.Valores altos fazem parecer que a imagem está flutuando mais longe do fundo, e valores próximos fazem a imagem parecer estar flutuando logo acima do fundo.</p>
+              <p>Os deslocamentos podem ser negativos, levando a sombra para a esquerda da seleção se o deslocamento X for menor que 0, ou acima da mesma se o deslocamento Y for menor que 0.</p>
+              <p>Se não houver nenhuma seleção ativa, e a camada atual não tiver áreas transparentes você precisará  <span class="guilabel">Permitir redimensionamento</span> para ver qualquer efeito.</p>
+            </dd>
+            <dt>
+              <span class="term">Raio do desfocamento</span>
+            </dt>
+            <dd>
+              <p>Depois de criar a camada de sombra, uma <a class="link" href="">Desfocagem gaussiana</a> com o raio especificado é aplicada à mesma, resultando na aparência realista da sombra projetada.  Pode ser necessário ativar a opção de <span class="guilabel">Permitir redimensionamento</span>, uma vez que a desfocagem aumenta o tamanho da sombra.</p>
+            </dd>
+            <dt>
+              <span class="term">Cor</span>
+            </dt>
+            <dd>
+              <p>A sombra pode ter qualquer cor. Basta clicar no botão e selecionar uma nova cor no seletor que aparece.</p>
+              <div class="figure">
+                <a id="id4521"></a>
+                <p class="title">
+                  <strong>Figura 17.141. Exemplo de cor para <span class="quote">“<span class="quote">Sombra projetada</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/drop-shadow-color.png" alt="Exemplo de cor para “Sombra projetada”" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">Opacidade</span>
+            </dt>
+            <dd>
+              <p>Opacidade da sombra é apenas a opacidade da nova camada contendo a sombra (ver <a class="xref" href="gimp-image-combining.html#gimp-layer-properties" title="1.1. Propriedades das Camadas">Seção 1.1, “Propriedades das Camadas”</a> ). O padrão é 80%, mas você pode selecionar qualquer outro valor de 0 (totalmente transparente) a 100 (opacidade total) aqui. Depois de aplicar o filtro para uma imagem que você pode mudar a opacidade no diálogo de <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Diálogo de camadas">Camadas</a>. No caso de adicionar uma sombra branca, como um efeito de halo ou de contra-luz, mesmo a opacidade de 100% pode parecer muito fraca. Nesse caso, após aplicar o efeito, use a opção de <span class="guilabel">Curvas</span>  no menu de cores: selecione o canal Alfa, e puxe a curva para cima, num formato de <span class="quote">“<span class="quote">U</span>”</span> invertido. Isso vai diminuir a transparência das áreas desfocadas, criando um belíssimo efeito de contra-luz.</p>
+            </dd>
+            <dt>
+              <span class="term">Permitir redimensionamento</span>
+            </dt>
+            <dd>
+              <p>Se ativado, o filtro irá redimensionar a imagem, se isso for necessário para que toda a sombra apareça. O novo tamanho vai depender do tamanho da seleção ou áreas sem transparência, dos deslocamentos da sombra e do o raio de desfocagem.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-vignette.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-light-and-shadow.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-perspective-shadow.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-vignette.html">6.10. Vinheta</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-perspective-shadow.html">6.12. Perspectiva</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-31 j.h: TODO: New brush from text fails
+  2009-02-16 ude: (brief) v2.6 review/update
+  2009-01-06 j.h: Improved "mouse pointer capture"
+  2008-12-29 Created from menus/acquire.xml by j.h
+-->
+<sect2 id="gimp-file-create">
+  <title>Criar</title>
+
+  <indexterm>
+    <primary>Imagem</primary>
+    <secondary>Adquirir uma imagem</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Adquirir</primary>
+  </indexterm>
+
+  <para>
+    The commands in this submenu vary somewhat, depending upon your
+    system, since <acronym>GIMP</acronym> makes calls to system
+    functions.
+  </para>
+
+  <sect3> <!--id="gimp-file-create-activate"-->
+    <title>Ativar o submenu</title>
+    <para>
+      You can access this submenu from the main menu through
+      <menuchoice>
+        <guimenu>File</guimenu>
+        <guimenuitem>Create</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="gimp-file-create-clipboard">
+    <title>Da área de transferência</title>
+    <para>
+      When you copy a selection, it goes into the clipboard. Use
+      <menuchoice>
+            <guimenu>File</guimenu>
+            <guisubmenu>Create</guisubmenu>
+            <guimenuitem>From Clipboard</guimenuitem>
+          </menuchoice>
+      or press
+      <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>
+      to create a new image from the content in the clipboard.
+    </para>
+    <para>Este comando tem a mesma ação que o comando  <link linkend="gimp-edit-paste-as-new">Colar como nova</link>.</para>
+    <para>A tecla <keycap>Print Screen</keycap> do teclado captura a tela e coloca-a na área de transferência. Este comando tem a mesma ação que <quote>Capturar a tela inteira</quote> na janela de diálogo de <link linkend="plug-in-screenshot">Captura de tela</link>. A combinação de teclado <keycombo><keycap>Alt</keycap><keycap>Print Screen</keycap></keycombo> captura a visualização da janela ativa na tela com as suas decorações e coloca-a na área de transferência.</para>
+  </sect3>
+
+  <sect3 id="plug-in-screenshot">
+    <title>Capturas de tela</title>
+
+    <indexterm>
+      <primary>Capturas de tela</primary>
+    </indexterm>
+
+    <figure>
+      <title>The <quote>Screenshot</quote> dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/file/create/screenshot.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            The Windows version of the Screenshot Dialog, without the
+            <guilabel>Selection delay</guilabel> setting.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+
+    <note>
+      <para>
+        The Screenshot dialog may look different depending on your operating
+        system. For example, on a Linux system which implements the
+        <link linkend="glossary-xdg">XDG portal</link> specification, the
+        screenshot dialog provided by your operating system may get opened
+        instead of <acronym>GIMP</acronym>'s built-in dialog described in this
+        section.
+      </para>
+    </note>
+
+    <para>
+      The <guimenuitem>Screenshot…</guimenuitem> command opens a
+      dialog with the following options:
+    </para>
+
+    <variablelist>
+      <varlistentry>
+        <term>Shoot area</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Capturar uma única janela</term>
+              <listitem>
+                <para>
+                  The mouse pointer becomes a cross. Click in the image window
+                  you want to capture. A new image is created.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Capturar a tela inteira</term>
+              <listitem>
+                <para>Isso é útil, por exemplo, se você quiser capturar um menu flutuante. O atraso é necessário para que você tenha tempo de clicar nos menus e navegar até o ponto desejado.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Selecionar uma região da tela</term>
+              <listitem>
+                <para>O ponteiro do mouse se torna uma cruz. Clique e arraste para criar uma seleção retangular na janela que contém a imagem desejada. Esta seleção será aberta como uma nova imagem. O seu tamanho é igual ao da seleção feita.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Contents</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Include window decoration</term>
+              <listitem>
+                <para>
+                  If the
+                  <guilabel>Include window decoration</guilabel> option is
+                  unchecked, the title bar and the frame around the image
+                  will be removed.
+               </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Include mouse pointer</term>
+              <listitem>
+                <para>Se a opção <guilabel>Incluir ponteiro do mouse</guilabel>estiver marcada, então o ponteiro do mouse também é capturado. O ponteiro do mouse é capturado em uma camada separada. Assim, você pode movê-lo para outro lugar na imagem se desejar.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Atraso</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Selection delay (not available on Windows)</term>
+              <listitem>
+                <para>
+                  The seconds to let pass until you select the shoot area.
+               </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Screenshot delay</term>
+              <listitem>
+                <para>Ao fazer uma captura de tela da tela inteira, a captura acontece após esse atraso. Nos outros casos, o ponteiro do mouse se transforma em uma cruz após esse atraso.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Color Profile</term>
+        <listitem>
+          <para>
+            Select whether to <guilabel>Tag image with monitor profile</guilabel>
+            or to <guilabel>Convert image with sRGB</guilabel> to
+            <acronym>GIMP</acronym>'s built-in sRGB color space.
+            See <xref linkend="gimp-image-color-management"/> for more
+            information.
+          </para>
+          <!-- TODO: Remove once gimp bug 2457 is fixed -->
+          <note>
+            <para>
+             Due to a
+             <ulink url="https://gitlab.gnome.org/GNOME/gimp/-/issues/2457">software bug</ulink>,
+             <acronym>GIMP</acronym> may assign an incorrect color profile to
+             screenshots.
+            </para>
+          </note>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <!--TODO: somebody with scanner and/or camera should review/update this-->
+  <sect3>
+    <title>Scanner e câmera</title>
+    <!--<anchor id="twain-acquire"/>-->
+    <para>Este item está disponível no Windows e usa TWAIN. Os dispositivos de entrada de imagem aparecem na janela quando estão conectados. No Linux, é necessário instalar o plug-in de terceiros XSane, que ficará disponível no menu <menuchoice><guimenu>Arquivo</guimenu><guisubmenu>Criar</guisubmenu><guisubmenu>XSane</guisubmenu><guimenuitem>Janela do dispositivo…</guimenuitem></menuchoice>.</para>
+    <figure>
+      <title>Scanner e câmera</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/file/create/scanner.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Os tipos de dispositivos usados ​​para tirar fotos são muito variados para serem descritos aqui. Felizmente, o seu uso é bastante intuitivo. No exemplo mostrado, você pode começar a digitalizar uma imagem com um scanner ou tirar uma foto com uma webcam.</para>
+  </sect3>
+
+</sect2>

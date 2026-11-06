@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.5. Export File Formats</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. File related Dialogs" />
+    <link rel="prev" href="gimp-export-dialog.html" title="5.4. Export File" />
+    <link rel="next" href="file-aa-export.html" title="5.6. Export Image as ASCII Art" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.5. Export File Formats</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-export-dialog.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>5. File related Dialogs</span>
+        <nav> <a accesskey="n" href="file-aa-export.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="export-file-formats"></a>5.5. Export File Formats</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id25664" class="indexterm"></a>
+      <p>
+    When exporting an image, most file formats have additional options that
+    can be set. If that is the case, a new dialog opens after you have selected
+    the filename and export file format. The following pages document the
+    dialogs for export file formats in alphabetical order.
+  </p>
+      <p>
+    Be aware that not all formats support all kinds of images. In particular
+    certain formats may not be able to show transparency (like jpeg), while
+    only a few formats support exporting an animation (like webp and gif).
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-exporting-animations"></a>5.5.1. Exporting Animations</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      Some file formats supported by <acronym class="acronym">GIMP</acronym> allow you to
+      export an animation, most notably
+      <a class="link" href="file-webp-export.html" title="5.54. Export Image as WebP">webp</a> and
+      <a class="link" href="file-gif-export.html" title="5.22. Export Image as GIF">gif</a>, but also
+      <a class="link" href="file-mng-export.html" title="5.34. Export Image as MNG">mng</a>, however this last format
+      isn't supported very well by most applications.
+    </p>
+        <p>
+      There is limited support in <acronym class="acronym">GIMP</acronym> for creating
+      animations. When exporting it is assumed that each layer in your image
+      represents a frame in your animation. Exporting to animations usually
+      doesn't support layer groups, so it's best not to use those if you
+      want to make an animation.
+    </p>
+        <p>
+      You can adjust the name of a layer, by adding some parameters in
+      parenthesis, to let the animation export know how that layer needs to
+      be animated and for how long it should be shown before going to the
+      next frame. When both these things are set a name usually looks like this:
+      <span class="quote">“<span class="quote"><code class="literal">My layer name (delay in ms)(animation command)</code></span>”</span>.
+    </p>
+        <p>
+      The delay sets the amount of time the frame will be visible, e.g.
+      <code class="literal">(200 ms)</code> to set it to 200 milliseconds.
+    </p>
+        <p>
+      The animation command specifies how the frame is combined with the
+      previous one. You can only choose one animation command for each layer.
+      The available commands are:
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">replace</span>
+            </dt>
+            <dd>
+              <p>
+            The <code class="literal">(replace)</code> command means that this layer (frame)
+            will completely replace the previous one.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">combine</span>
+            </dt>
+            <dd>
+              <p>
+            The <code class="literal">(combine)</code> command means that this layer (frame)
+            will be combined with the previous one. Only the visible parts in
+            this layer will replace that of the previous layer.
+            Using <code class="literal">(combine)</code> can reduce the size of the animation
+            and may improve playback speed for large size animations.
+          </p>
+              <p>
+            You can use the
+            <a class="link" href="plug-in-optimize.html#plug-in-animationoptimize">optimize (for GIF)</a>
+            command to change your <code class="literal">(replace)</code> layers to
+            <code class="literal">(combine)</code>.
+            This adjusts the layer to only contain what is different from the
+            previous one and then sets it to <code class="literal">(replace)</code>.
+            Don't hesitate to use this, even if you plan to export to
+            a different format than GIF. This command was named at a time that
+            there were not many other animation options than GIF, but can be
+            used for any animation format that supports combining.
+          </p>
+              <p>
+            Note that you can also do the reverse and
+            <a class="link" href="plug-in-optimize.html#plug-in-animationunoptimize" title="16.4.4. Unoptimize">unoptimize</a> the
+            animation, setting each layer to <code class="literal">(replace)</code>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+      <acronym class="acronym">GIMP</acronym> has a limited
+      <a class="link" href="plug-in-animationplay.html" title="16.5. Playback">animation playback</a> ability
+      that you can use to preview your animation.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-export-dialog.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-aa-export.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-export-dialog.html">5.4. Export File</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-aa-export.html">5.6. Export Image as ASCII Art</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2009-01-11 j.h: reviewed for v2.6
+
+-->
+<sect2 id="script-fu-selection-rounded-rectangle">
+  <title>Retângulo arredondado</title>
+
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Retângulo arredondado</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Retângulo arredondado</primary>
+  </indexterm>
+
+   <figure>
+    <title>Exemplo de utilização do Retângulo arredondado em uma seleção</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/menus/select/round-rect-01.png"/>
+      </imageobject>
+      <caption>
+        <para>Uma imagem com uma seleção</para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/menus/select/round-rect-02.png"/>
+      </imageobject>
+      <caption>
+        <para>Depois de executar <quote>Retângulo arredondado</quote></para>
+      </caption>
+    </mediaobject>
+  </figure>
+  
+  <para>O comando <quote>Retângulo arredondado</quote> converte a exibição de uma seleção já existente (retangular, elíptica ou de outra forma qualquer) em uma seleção com cantos arredondados. Se a seleção não for retangular, a sua forma inicial é perdida: ela sempre é transformada no menor retângulo que poderia conter a seleção original. Em seguida, os cantos são tornados curvos, podendo ser curvos para dentro (côncavos), ou para fora (convexos).  Para fazer isto, o comando adiciona ou remove círculos dos cantos da seleção.</para>
+
+  <sect3>
+    <title>Ativando o comando.</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Select</guimenu>
+        <guimenuitem>Rounded Rectangle…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Descrição da caixa de dialogo do<quote>Retângulo arredondado</quote></title>
+    <figure>
+      <title>A caixa de diálogo do comando<quote>Retângulo arredondado</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/select/rounded-rectangle.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Raio (%)</term>
+        <listitem>
+          <para>Você pode entrar entrar com o valor do raio em raio através da caixa de entrada ou pelo controle deslizante. Este valor um percentual da altura ou dalargura da seleção atual, o que for menor.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Côncavo</term>
+        <listitem>
+          <para>Se você selecionar esta caixa, os cantos se tornarão côncavos (curvas para dentro), em vez de convexo (curvas para fora).</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

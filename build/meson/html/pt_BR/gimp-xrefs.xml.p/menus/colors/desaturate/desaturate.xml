@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2017-03-26 elle stone: update desaturate help and add new images
+  2017-01-29 desaturate moved to Colors/Desaturate, changed id to plug-in-desaturate
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-desaturate">
+  <title>Dessaturar</title>
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Dessaturar</secondary>
+    <tertiary>Dessaturar</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Dessaturar</primary>
+  </indexterm>
+  <para>Ao usar o comando <guimenuitem>Dessaturar</guimenuitem>, você pode converter todas as cores na camada ativa para as tonalidades correspondentes de cinza. Isto se diferencia da conversão da imagem para Tons de cinza em dois pontos. Primeiro, o comando só opera na camada ativa, e segundo, as cores na camada ainda são valores RGB com três componentes, com R=G=B, que produz cinza. Isto significa que você pode então pintar sobre a camada, ou em partes individuais dela, usando cores não-cinzentas.</para>
+
+  <note>
+    <para>Este comando só funciona em camadas de imagens <link linkend="glossary-rgb">RGB</link>. Se a imagem estiver no modo Tons de Cinza ou Indexada, ele não consegue fazer nada.</para>
+  </note>
+
+  <sect3>
+    <title>Ativando o Comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Desaturate</guisubmenu>
+        <guimenuitem>Desaturate…</guimenuitem>
+      </menuchoice>.
+    </para>
+   </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>O diálogo da opção <quote>Dessaturar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/menus/colors/desaturate/desaturate.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para><guilabel>Modo:</guilabel> Cinco opções são disponibilizadas para converter de colorido para preto-e-branco:</para>
+    <variablelist>
+      <varlistentry>
+        <term>Pré-configurações</term>
+        <term>Blending Options</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><link linkend="More-information-about-Luminance">Luminância</link>
+        </term>
+        <listitem>
+          <para>Os tons de cinza serão calculados usando-se <ulink url="http://brucelindbloom.com/index.html?Eqn_RGB_to_XYZ.html">sRGB linearizado</ulink> como</para>
+          <informalequation>
+            <mediaobject>
+              <textobject>
+                <phrase>Luminância = (0,22 &times; R) + (0,72 &times; G) + (0,06 &times; B)</phrase>
+              </textobject>
+            </mediaobject>
+          </informalequation>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><link linkend="More-information-about-Luma">Luma</link></term>
+        <listitem>
+          <para>Os tons de cinza serão calculados usando-se sRGB não-linearizado</para>
+          <informalequation>
+            <mediaobject>
+              <textobject>
+                <phrase>Luma = (0,22 &times; R) + (0,72 &times; G) + (0,06 &times; B)</phrase>
+              </textobject>
+            </mediaobject>
+          </informalequation>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <link linkend="More-information-about-Lightness-Average-and-Value">Luminosidade (HSL)</link></term>
+        <listitem>
+          <para>Os tons de cinza serão calculados como</para>
+          <informalequation>
+            <mediaobject>
+              <textobject>
+                <phrase>Luminosidade (HSL) = &frac12;&times; (máx(R,G,B) + mín(R,G,B))</phrase>
+              </textobject>
+            </mediaobject>
+          </informalequation>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <link linkend="More-information-about-Lightness-Average-and-Value">Média (Intensidade HSI)</link></term>
+        <listitem>
+          <para>Os tons de cinza serão calculados como</para>
+          <informalequation>
+            <mediaobject>
+              <textobject>
+                <phrase>Média (Intensidade HSI) = (R+G+B) &divide; 3</phrase>
+              </textobject>
+            </mediaobject>
+          </informalequation>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <link linkend="More-information-about-Lightness-Average-and-Value">Valor (HSV)</link></term>
+        <listitem>
+          <para>Os tons de cinza serão calculados como</para>
+          <informalequation>
+            <mediaobject>
+              <textobject>
+                <phrase>Valor (HSV) = máx(R,G,B)</phrase>
+              </textobject>
+            </mediaobject>
+          </informalequation>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <figure>
+      <title>Usando os cinco modos para converter duas imagens coloridas muito diferentes para preto-e-branco</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-original-sunflower.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-original-red-globe.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-luminance-sunflower.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Luminância</quote> aplicada</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-luminance-red-globe.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Luminância</quote> aplicada</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-luma-sunflower.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Luma</quote> aplicada.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-luma-red-globe.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Luma</quote> aplicada.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-lightness-sunflower.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Luminosidade (HSL)</quote> aplicada.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-lightness-red-globe.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Luminosidade (HSL)</quote> aplicada.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-average-sunflower.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Média (Intensidade HSI)</quote> aplicada.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-average-red-globe.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Média (Intensidade HSI)</quote> aplicada.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-value-sunflower.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Valor (HSV)</quote> aplicado.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/desaturate/colors-desaturate-value-red-globe.png"/>
+        </imageobject>
+        <caption>
+          <para><quote>Valor (HSV)</quote> aplicado.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+
+  <sect3>
+    <title>Comparação dos resultados usando-se diferentes opções para conversão de cores em preto-e-branco:</title>
+    <orderedlist>
+      <listitem>
+        <para>O grau e direção a partir dos quais os vários modos de converter uma imagem para preto-e-branco divergem de uma conversão direta de Luminância para preto-e-branco dependem de:</para>
+          <itemizedlist>
+            <listitem>
+              <para>O método de conversão que você escolher.</para>
+            </listitem>
+            <listitem>
+              <para>O espaço de cores RGB no qual a conversão é feita.</para>
+            </listitem>
+            <listitem>
+              <para>Quão saturadas as cores na imagem original são, com cores iniciais mais saturadas (como o globo vermelho e o girassol amarelo brilhante) produzindo desvios mais intensos em relação a uma conversão de Luminância direta.</para>
+            </listitem>
+            <listitem>
+              <para>Os matizes (por exemplo, amarelos vs. vermelhos) das várias cores saturadas em uma imagem também fazem diferença.</para>
+            </listitem>
+            <listitem>
+              <para>Sendo o máximo dos valores dos canais RGB para cada pixel, uma conversão por Valor HSV para preto-e-branco é sempre mais clara do que a imagem colorida original, e também mais clara do que todos os outros modos de conversão para preto-e-branco.</para>
+            </listitem>
+          </itemizedlist>
+      </listitem>
+      <listitem>
+          <para>Comparação entre o globo vermelho e o girassol amarelo:</para>
+        <itemizedlist>
+            <listitem>
+              <para>Para o globo vermelho, a Luminosidade (HSL) produz um resultado muito similar à Luminância, e Luma produz uma conversão que é muito mais escura.</para>
+            </listitem>
+            <listitem>
+              <para>Para o girassol, Luma produz um resultado muito similar à Luminância, e Luminosidade (HSL) produz uma conversão que é muito mais escura.</para>
+            </listitem>
+            <listitem>
+              <para>Observe que as partes menos saturadas de cada imagem parecem mais ou menos as mesmas, independentemente de qual método é escolhido para converter de colorido para preto-e-branco.</para>
+            </listitem>
+          </itemizedlist>
+      </listitem>
+    </orderedlist>
+  </sect3>
+
+  <sect3>
+    <title>Mais informação sobre as cinco opções para converter de colorido para preto-e-branco:</title>
+    <orderedlist>
+      <listitem id="More-information-about-Luminance">
+        <para><emphasis>Mais informação sobre Luminância:</emphasis></para>
+        <itemizedlist>
+          <listitem>
+            <para>"Luminância" é o único modo com significado físico para converter uma imagem colorida em preto-e-branco, já que a imagem em preto-e-branco resultante tem a mesma luminância relativa (reflete a mesma porcentagem de luz dos vários tons de cinza) que as cores na imagem colorida original.</para>
+          </listitem>
+          <listitem>
+            <para>Luminância deve ser calculada usando-se valores RGB linearizados.</para>
+          </listitem>
+          <listitem>
+            <para>Por conveniência, dizemos "Luminância", mas, na verdade, queremos dizer "Luminância Relativa". Para mais informação, veja <ulink url="https://en.wikipedia.org/wiki/Relative_luminance">Luminância Relativa</ulink> e <ulink url="https://en.wikipedia.org/wiki/CIE_1931_color_space#Meaning_of_X,_Y_and_Z"> Espaço de cores CIE 1931 [XYZ]</ulink>.</para>
+          </listitem>
+          <listitem>
+            <para>
+              GIMP uses hard-coded sRGB values to do Luminance
+              conversions to black and white. "Future GIMP" will support correct
+              conversions for images in other color spaces.
+            </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem id="More-information-about-Luma">
+        <para>
+          <emphasis>Mais informação sobre Luma:</emphasis>
+        </para>
+        <itemizedlist>
+          <listitem>
+            <para>
+              "Luma" is what you get if you use the formula for
+              Luminance on RGB values that haven't been properly linearized.
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              The multipliers have been properly Bradford-adapted to
+              D50, which is required for use in an ICC profile color-managed editing
+              application (at least until the next version of the ICC specs is
+              released and people figure out how to deal with the new freedom to use
+              non-D50 reference white points).
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <acronym>GIMP</acronym> uses hard-coded sRGB values to do Luma
+              conversions to black and white. "Future GIMP" will support correct
+              conversions for images in other color spaces.
+            </para>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem id="More-information-about-Lightness-Average-and-Value">
+          <para>
+            <emphasis>Mais informação sobre Luminosidade, Média e Valor:</emphasis>
+          </para>
+          <para>Os modos "Luminosidade (HSL)", "Média (Intensidade HSI)" e "Valor (HSV)" para converter uma imagem colorida para preto-e-branco usam modelos de espaços de cores que foram inventados para processamento rápido em computadores em nível de consumidor dos anos 90. Para detalhes, veja <ulink url="https://en.wikipedia.org/wiki/HSL_and_HSV">HSL e HSV</ulink>, prestando atenção em particular à seção em <ulink url="https://en.wikipedia.org/wiki/HSL_and_HSV#Disadvantages">Desvantagens</ulink>.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Caso você esteja se perguntando por que Luminosidade LAB</emphasis> não está entre as opções para conversão de imagem RGB em preto-e-branco, uma conversão apropriadamente calculada de RGB para Luminosidade LAB, e então de volta para RGB, produz exatamente o mesmo resultado que a conversão por Luminância para preto-e-branco. Eis o porquê:</para>
+        <itemizedlist>
+          <listitem>
+            <para>No espaço de cores XYZ, Y é a Luminância. Então, se você converter uma imagem colorida em RGB para XYZ, o "Y" em XYZ é o mesmo número que os valores R=G=B que você teria ao calcular Luminância RGB.</para>
+          </listitem>
+          <listitem>
+            <para>LAB é uma transformação perceptivamente uniforme de XYZ. Se você converter de RGB para XYZ e então para LAB, e definir A=B=0,0 (ou 0,5 para editores de imagem que colocam o ponto médio dos eixos A e B em 0,5 em vez de 0,0), e então converter de volta para XYZ, os valores X e Z mudarão, mas Y não.</para>
+          </listitem>
+        </itemizedlist>
+        <para>Tutoriais que produzem qualquer coisa que não Luminância Relativa ao converter uma imagem RGB em preto-e-branco usando Luminosidade LAB, muito infelizmente estão lidando com diversos erros matemáticos nas rotinas de conversão.</para>
+      </listitem>
+    </orderedlist>
+  </sect3>
+
+</sect2>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.25. Diálogo de exportar imagem</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-header-export.html" title="5.24. Export Image as Header" />
+    <link rel="next" href="file-heif-hej2-export.html" title="5.26. Export Image as HEJ2" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.25. Diálogo de exportar imagem</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-header-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-heif-hej2-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-heif-export"></a>5.25. Diálogo de exportar imagem</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id27943" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3282"></a>5.25.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>HEIF significa High Efficiency Image File Format (Formato de Arquivo de Imagem de Alta Eficiência). Também conhecido como HEIC (High Efficiency Image Coding).</p>
+        <p>
+      Twice as much information can be stored in a HEIF image as in a JPEG
+      image of the same size, resulting in a better quality. As of
+      November 2025, the only browser that supports HEIF natively is Safari.
+    </p>
+        <p>Mais informações em <a class="ulink" href="https://en.wikipedia.org/wiki/High_Efficiency_Image_File_Format" target="_top">Wikipedia</a>.</p>
+        <div class="figure">
+          <a id="id3283"></a>
+          <p class="title">
+            <strong>Figura 15.73. O diálogo de cor de Frente/Fundo</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-heif-dialog.png" alt="O diálogo de cor de Frente/Fundo" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3284"></a>5.25.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Sem perda</span>
+            </dt>
+            <dd>
+              <p>Quando marcado, a imagem será exportada com compressão sem perda. Isso criará uma imagem de maior qualidade em troca de um tamanho de arquivo maior.</p>
+            </dd>
+            <dt>
+              <span class="term">Qualidade</span>
+            </dt>
+            <dd>
+              <p>Se <span class="guilabel">Sem perda</span> não estiver marcado, este valor determina a qualidade da compressão da imagem. 100 fornece a melhor qualidade de imagem e menor compressão, enquanto 0 fornece a maior compressão e pior qualidade de imagem.</p>
+            </dd>
+            <dt>
+              <span class="term">Formatos de arquivo</span>
+            </dt>
+            <dd>
+              <p>Define qual formato de pixel a imagem exportada deve usar para sub-amostragem de cor. Existem três opções:</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">YUV420</span>
+                  </dt>
+                  <dd>
+                    <p>
+                Suitable for photographs with lossy compression. This format is
+                most compatible with other software that uses HEIF and AVIF.
+              </p>
+                  </dd>
+                  <dt>
+                    <span class="term">YUV444</span>
+                  </dt>
+                  <dd>
+                    <p>
+                When used with a high <span class="guilabel">Quality</span> setting, this
+                format exports a visually lossless image.
+              </p>
+                  </dd>
+                  <dt>
+                    <span class="term">RGB</span>
+                  </dt>
+                  <dd>
+                    <p>
+                Useful when exporting images with true lossless quality.
+              </p>
+                    <p>
+                <span class="guilabel">RGB</span> is not available when exporting
+                as HEJ2.
+              </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Profundidade de bits</span>
+            </dt>
+            <dd>
+              <p>Determina se os dados de pixel devem ser armazenados usando 8 bits, 10 bits ou 12 bits por canal de cor.</p>
+            </dd>
+            <dt>
+              <span class="term">Encoder speed</span>
+            </dt>
+            <dd>
+              <p>
+          The tradeoff between speed and compression. <span class="guilabel">Slow</span>
+          will provide a smaller filesize but takes longer to encode.
+        </p>
+            </dd>
+            <dt>
+              <span class="term">Conta gotas</span>
+            </dt>
+            <dd>
+              <p>Se marcado, o perfil de cor é incorporado na imagem exportada.</p>
+            </dd>
+            <dt>
+              <span class="term">Salvar arquivo</span>
+            </dt>
+            <dd>
+              <p>Se marcado, os metadados Exif são incorporados na imagem exportada.</p>
+            </dd>
+            <dt>
+              <span class="term">Salvar</span>
+            </dt>
+            <dd>
+              <p>Se marcado, os metadados XMP são incorporados na imagem exportada.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-header-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-heif-hej2-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-header-export.html">5.24. Export Image as Header</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-heif-hej2-export.html">5.26. Export Image as HEJ2</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

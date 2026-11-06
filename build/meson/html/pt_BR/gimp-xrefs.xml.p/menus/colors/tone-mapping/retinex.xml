@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-10-21 ude: moved here from filters/color/retinex.xml ('en','de')
+  2007-10-09: updated italian by ciampix
+  2007-10-08 lexa: applied enhancements to en from Ben and translated to de
+  2007-07-09 Added Spanish translation by AntI
+  2007-04-06 KoSt: added 'no'
+  2006-12-23 ude: added de translation
+  2005-11-26: created by julien hardelin.
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="plug-in-retinex">
+  <title>Retinex</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Mapeamento de Tons</secondary>
+    <tertiary>Retinex</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Retinex</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Mapeamento de Tons</primary>
+    <secondary>Retinex</secondary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de <quote>Retinex</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/colors-retinex1.png"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/colors-retinex2.png"/>
+        </imageobject>
+        <caption>
+          <para>Filtro <quote>Retinex</quote> aplicado. Observe novos detalhes no canto superior direito.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O Retinex melhora a renderização visual de uma imagem quando as condições de iluminação não são boas. Enquanto nosso olho consegue ver cores corretamente em luz baixa, câmeras fotogŕaficas e de vídeo não lidam bem com isso. O algoritmo MSRCR (Retinex Multi-Escala com Restauração de Cor), que está na raiz do filtro Retinex, é inspirado nos mecanismos biológicos do olho para se adaptar a estas condições. Retinex é a junção de retina + córtex.</para>
+    <para>
+      Besides digital photography, the Retinex algorithm is also used to make
+      the information in astronomical photos visible and, in medicine, detect
+      poorly visible structures in X-rays or scans.
+    </para>
+    <note>
+      <para>Este comando só funciona em imagens RGB. Se a imagem estiver em Tons de Cinza ou for Indexada, a entrada do menu é desabilitada.</para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Command</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Tone Mapping</guisubmenu>
+        <guimenuitem>Retinex…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>Retinex</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/retinex.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      These options call for notions that only mathematicians and imagery
+      engineers can understand. In actual practice, the user has to grope
+      about for the best setting. However, the following explanations should
+      help out the experienced GIMP user.
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Nível</term>
+        <listitem>
+          <para>Eis o que o autor do plug-in escreveu em seu site <xref linkend="bibliography-online-plugin-retinex"/>: <quote>Para caracterizar variações de cor e a fonte de luz, uma diferença na intensidade é feita entre as respostas do filtro (Gaussiano) em diferentes escalas. Estes parâmetros permitem que você especifique como distribuir os valores entre o valores mínimo (sigma 2,0) e máximo (sigma igual ao tamanho da imagem) da escala.</quote>.</para>
+          <variablelist>
+            <varlistentry>
+              <term>Uniforme</term>
+              <listitem>
+                <para>Uniforme tende a tratar áreas de baixa e alta intensidade igualmente.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Baixo</term>
+              <listitem>
+                <para>Como regra prática, a opção Baixo <quote>abrilhanta</quote> as áreas de baixa intensidade da imagem.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Alto</term>
+              <listitem>
+                <para>Alto tende a <quote>encobrir</quote> as áreas de menor intensidade em favor de uma melhor renderização das áreas mais claras da imagem.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Escala</term>
+        <listitem>
+          <para>Determina a profundidade da escala Retinex. O valor mínimo é 16, que resulta em filtragem grosseira, não-refinada. O valor máximo é 250. O valor ótimo e padrão é 240.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Divisão da escala</term>
+        <listitem>
+          <para>Determina o número de iterações no filtro multiescala Retinex. O valor mínimo requerido, e recomendado, é três. Usar apenas uma ou duas divisões de escala remove o aspecto multi-escala e resulta em uma filtragem Retinex de escala única. Um valor muito alto tende a introduzir ruído na figura.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Dinâmica</term>
+        <listitem>
+          <para>Como o algoritmo MSR tende a tornar a imagem mais clara, este controle deslizante lhe permite ajustar a contaminação de saturação de cor ao redor da nova média de cor. Um valor mais alto representa menos saturação de cor. Este é definitivamente o parâmetro que você deve ajustar para otimizar os resultados, porque o seu efeito é extremamente dependente da imagem.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.10. Vinheta</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra" />
+    <link rel="prev" href="gimp-filter-long-shadow.html" title="6.9. Sombra projetada" />
+    <link rel="next" href="script-fu-drop-shadow.html" title="6.11. Opacidade da sombra projetada" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.10. Vinheta</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-long-shadow.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Filtros de luz e sombra</span>
+        <nav> <a accesskey="n" href="script-fu-drop-shadow.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-vignette"></a>6.10. Vinheta</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id52312" class="indexterm"></a>
+      <a id="id52315" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4511"></a>6.10.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <p>Na fotografia, <span class="emphasis"><em>vinhetagem</em></span> é a redução do brilho da imagem em direção às bordas. Muitas vezes, é um efeito indesejado causado pelas configurações da câmera ou pelas limitações da lente. Porém, também é usado intencionalmente para chamar a atenção para o centro da imagem. O filtro <span class="quote">“<span class="quote">Vinheta</span>”</span> pode produzir esse efeito.</p>
+        <div class="figure">
+          <a id="id4512"></a>
+          <p class="title">
+            <strong>Figura 17.137. Imagens originais usadas nos exemplos</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/light-and-shadow/vignette-ex-orig.jpg" alt="Imagens originais usadas nos exemplos" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/light-and-shadow/vignette-ex-default.jpg" alt="Imagens originais usadas nos exemplos" />
+              <div class="caption">
+                <p>Filtro aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p><a id="on-canvas-controls"></a>O GIMP inclui controles na tela de pintura (padrão): dois limites com alças brancas que ficam laranjas e são ativadas quando o ponteiro do mouse passa sobre elas. A área preta (padrão) é a <span class="emphasis"><em>vinheta</em></span>. O <span class="emphasis"><em>limite externo</em></span> marca o limite da vinheta. O <span class="emphasis"><em>limite interno</em></span> marca o limite da <span class="emphasis"><em>área suave</em></span>, que não é alterada. Entre os limites externo e interno fica a <span class="emphasis"><em>área de transição</em></span>, onde a vinheta aparece progressivamente; uma linha pontilhada marca a <span class="emphasis"><em>linha do ponto médio</em></span>. </p>
+        <div class="mediaobject">
+          <img src="images/filters/examples/light-and-shadow/vignette-ex-oncanvas.jpg" />
+          <div class="caption">
+            <p>Vinheta com as opções padrão e controles na tela de pintura</p>
+          </div>
+        </div>
+        <p>A ação de clicar e arrastar é diferente nas linhas e nas alças: </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>Clique em uma linha de limite e arraste-a para mover o limite e o ponto médio (Raio e Suavidade).</p>
+            </li>
+            <li class="listitem">
+              <p>Clique em uma alça e arraste-a para mover os dois limites (Raio e Compressão).</p>
+            </li>
+            <li class="listitem">
+              <p>Clique na linha do ponto médio e arraste-a para movê-la.</p>
+            </li>
+            <li class="listitem">
+              <p>Nos três casos, pressionar <span class="keycap"><strong>Shift</strong></span> altera somente o Raio.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4513"></a>6.10.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>Este filtro está disponível no menu principal em <span class="guimenu">Filtros</span> → <span class="guisubmenu">Luz e sombra</span> → <span class="guimenuitem">Vinheta…</span>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4514"></a>6.10.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4515"></a>
+          <p class="title">
+            <strong>Figura 17.138. Opções do filtro <span class="quote">“<span class="quote">Vinheta</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/light-and-shadow/vignette-dialog.png" alt="Opções do filtro “Vinheta”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Predefinições, </span>
+              <span class="term"><span class="quote">“<span class="quote">Tipo de entrada</span>”</span>, </span>
+              <span class="term">Recorte, </span>
+              <span class="term">Opções de mesclagem, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Mesclar filtro, </span>
+              <span class="term">Visualização dividida</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Forma da vinheta</span>
+            </dt>
+            <dd>
+              <p>As seguintes formas estão disponíveis: <span class="guilabel">Círculo</span>, <span class="guilabel">Quadrado</span>, <span class="guilabel">Losango</span>, <span class="guilabel">Horizontal</span> e <span class="guilabel">Vertical</span>.</p>
+              <p><span class="guilabel">Horizontal</span>, <span class="guilabel">Vertical</span>: os limites e a linha são horizontais ou verticais.</p>
+              <p>A forma da vinheta (por exemplo, elipse ou círculo) depende da configuração <span class="guilabel">Proporção</span>.</p>
+            </dd>
+            <dt>
+              <span class="term">Raio</span>
+            </dt>
+            <dd>
+              <p>Tamanho da vinheta: até onde a vinhetagem se estende, em relação à metade da diagonal da imagem.</p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/light-and-shadow/vignette-ex-radius.jpg" />
+                <div class="caption">
+                  <p>Raio = 0,700</p>
+                </div>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Suavidade</span>
+            </dt>
+            <dd>
+              <p>Tamanho da área suave (inalterada).</p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/light-and-shadow/vignette-ex-softness.jpg" />
+                <div class="caption">
+                  <p>Suavidade = 0,100</p>
+                </div>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Gama</span>
+            </dt>
+            <dd>
+              <p>A linearidade do decaimento controla a curva de transição do centro para as bordas: define a rapidez com que o brilho diminui em direção às bordas da vinheta (o tamanho da área de transição).</p>
+              <div class="mediaobject">
+                <img src="images/filters/examples/light-and-shadow/vignette-ex-gamma.jpg" />
+                <div class="caption">
+                  <p>Gama = 1,00</p>
+                </div>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Proporção</span>
+            </dt>
+            <dd>
+              <p>A proporção tem um comportamento especial: com o valor padrão (máximo), 1,00, a vinheta é circular em uma imagem quadrada e elíptica em uma imagem retangular. Ao reduzir a proporção, essa elipse tende a se tornar um círculo.</p>
+            </dd>
+            <dt>
+              <span class="term">Compressão</span>
+            </dt>
+            <dd>
+              <p>Proporção a usar: </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>0,0 = 1:1</p>
+                  </li>
+                  <li class="listitem">
+                    <p>0,5 = 2:1</p>
+                    <div class="mediaobject">
+                      <img src="images/filters/examples/light-and-shadow/vignette-ex-squeeze05.jpg" />
+                      <div class="caption">
+                        <p>Forma de losango, proporção = 0,0 e compressão = 0,5</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="listitem">
+                    <p>1,0 = totalmente comprimida na vertical</p>
+                  </li>
+                  <li class="listitem">
+                    <p>-0,5 = 1:2</p>
+                  </li>
+                  <li class="listitem">
+                    <p>-1,0 = totalmente comprimida na horizontal</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Para usar diretamente o fator de compressão como proporção, defina Proporção como 0,0.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Centro X, </span>
+              <span class="term">Centro Y</span>
+            </dt>
+            <dd>
+              <p>Coordenadas do centro da vinheta. A origem fica no canto superior esquerdo da imagem. 1,00 corresponde à borda direita da imagem. O centro pode ser posicionado fora da imagem.</p>
+            </dd>
+            <dt>
+              <span class="term">Rotação</span>
+            </dt>
+            <dd>
+              <p>Rotação da vinheta. A vinheta mantém sua forma.</p>
+              <p>Você também pode clicar fora do limite externo e arrastar para girar a vinheta.</p>
+            </dd>
+            <dt>
+              <span class="term">Controles na tela de pintura</span>
+            </dt>
+            <dd>
+              <p>Desmarque esta opção para remover os controles da tela de pintura.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-long-shadow.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-light-and-shadow.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-drop-shadow.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-long-shadow.html">6.9. Sombra projetada</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-drop-shadow.html">6.11. Opacidade da sombra projetada</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

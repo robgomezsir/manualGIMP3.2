@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.15. Inner Glow</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra" />
+    <link rel="prev" href="gegl-bevel.html" title="6.14. Bevel" />
+    <link rel="next" href="filters-noise.html" title="7. Filtros de ruído" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.15. Inner Glow</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gegl-bevel.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Filtros de luz e sombra</span>
+        <nav> <a accesskey="n" href="filters-noise.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gegl-inner-glow"></a>6.15. Inner Glow</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id52882" class="indexterm"></a>
+      <a id="id52886" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4542"></a>6.15.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4543"></a>
+          <p class="title">
+            <strong>Figura 17.153. Applying example for the Inner Glow filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Applying example for the Inner Glow filter" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/inner-glow-taj.jpg" alt="Applying example for the Inner Glow filter" />
+              <div class="caption">
+                <p>
+            Inner Glow applied with a white color on a duplicated layer
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter replaces the contents of the layer with an inner glow over the
+      edges of the object. This filter needs a layer with alpha channel to
+      work on. It works best if you first duplicate the layer and apply the
+      inner glow on top.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4544"></a>6.15.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Light and Shadow</span> → <span class="guimenuitem">Inner Glow…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4545"></a>6.15.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4546"></a>
+          <p class="title">
+            <strong>Figura 17.154. <span class="quote">“<span class="quote">Inner Glow</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/light-and-shadow/inner-glow-dialog.png" alt="“Inner Glow” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Predefinições, </span>
+              <span class="term"><span class="quote">“<span class="quote">Tipo de entrada</span>”</span>, </span>
+              <span class="term">Recorte, </span>
+              <span class="term">Opções de mesclagem, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Mesclar filtro, </span>
+              <span class="term">Visualização dividida</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Grow shape</span>
+            </dt>
+            <dd>
+              <p>
+            The shape used to expand the shadow. Choices are
+            <span class="guilabel">Square</span>, <span class="guilabel">Circle</span> (default),
+            and <span class="guilabel">Diamond</span>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">X, </span>
+              <span class="term">Y</span>
+            </dt>
+            <dd>
+              <p>
+            These set the coordinates where the glow starts from. By changing
+            this, the glow can be made thicker on one side.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Raio do desfocamento</span>
+            </dt>
+            <dd>
+              <p>
+             This determines the size of the blur.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Grow radius</span>
+            </dt>
+            <dd>
+              <p>
+             The distance to expand the shadow before blurring, or when using
+             negative values to contract the shadow.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Opacidade</span>
+            </dt>
+            <dd>
+              <p>
+            This determines how transparent or solid the inner glow will be.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Cor</span>
+            </dt>
+            <dd>
+              <p>
+            The color to use for the glow. By default picks the current
+            foreground color, but it can be changed using either the color
+            selection button or the color picker.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Median fix for non-affected pixels on edges</span>
+            </dt>
+            <dd>
+              <p>
+            Median blur covers unaffected pixels. Setting this slider too high
+            will make it outline-like. Only slide it high enough to cover
+            thin shaped corners.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gegl-bevel.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-light-and-shadow.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-noise.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gegl-bevel.html">6.14. Bevel</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-noise.html">7. Filtros de ruído</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

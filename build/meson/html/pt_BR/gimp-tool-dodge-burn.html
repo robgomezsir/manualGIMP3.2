@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.17. Sub/Super-exposição</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-paint.html" title="3. Ferramentas de pintura" />
+    <link rel="prev" href="gimp-tool-smudge.html" title="3.16. Borrar" />
+    <link rel="next" href="gimp-tools-transform.html" title="4. Ferramentas de transformação" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.17. Sub/Super-exposição</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-smudge.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Ferramentas de pintura</span>
+        <nav> <a accesskey="n" href="gimp-tools-transform.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-dodge-burn"></a>3.17. Sub/Super-exposição</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id18392" class="indexterm"></a>
+      <a id="id18395" class="indexterm"></a>
+      <p>A ferramenta de sub-exposição e super-exposição usa o pincel ativo para clarear ou escurecer as cores da sua imagem. O modo irá determinar quais tipos de pixels serão afetados.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3022"></a>3.17.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>Existem várias formas para ativar a ferramenta:</p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagem: <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de pintura</span> → <span class="guimenuitem">Sub-exposição / Super-exposição</span>.</p>
+            </li>
+            <li class="listitem">
+              <p>Ícone da ferramenta de clonagem na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>o usando o atalho de teclado <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>D</strong></span>.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3023"></a>3.17.2. Modificadores de tecla</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">
+          <span class="keycap"><strong>Ctrl</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p>Alterar entre os tipos de clarear ou escurecer. O tipo continuará ativo até que a tecla <span class="keycap"><strong>Ctrl</strong></span> seja solta.</p>
+            </dd>
+            <dt>
+              <span class="term">
+          
+          <span class="keycap"><strong>Shift</strong></span>
+        </span>
+            </dt>
+            <dd>
+              <p><span class="keycap"><strong>Shift</strong></span> coloca a ferramenta de Sub ou Super-exposição no modo de linha reta. Pressionar <span class="keycap"><strong>Shift</strong></span> enquanto o <span class="mousebutton">Botão 1</span> estiver clicado fará com que a sub-exposição ou super-exposição aconteça em linha reta. Cliques consecutivos continuarão a se sub ou super-expor em linhas retas que se originarão a partir do fim da última linha.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3024"></a>3.17.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3025"></a>
+          <p class="title">
+            <strong>Figura 14.86. Opções da ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-dodge-burn.png" alt="Opções da ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Normally, tool options are displayed in a window attached under the
+    Toolbox as soon as you activate a tool. If they are not, you can access
+    them from the main menu through
+    <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span> which opens the option window of the selected tool.
+    The available tool options can also be accessed by double clicking
+    the corresponding tool icon in the Toolbox.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Modo, </span>
+              <span class="term">Opacidade, </span>
+              <span class="term">Pincel, </span>
+              <span class="term">Tamanho, </span>
+              <span class="term">Proporção, </span>
+              <span class="term">Ângulo, </span>
+              <span class="term">Espaçamento, </span>
+              <span class="term">Dureza, </span>
+              <span class="term">Força, </span>
+              <span class="term">Dinâmicas, </span>
+              <span class="term">Opções de dinâmicas, </span>
+              <span class="term">Aplicar espalhamento, </span>
+              <span class="term">Pincelada suave, </span>
+              <span class="term">O tamanho do pincel - curva de esmaecimento, </span>
+              <span class="term">Incremental</span>
+            </dt>
+            <dd>Veja <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-options" title="3.1.2. Opções">Opções em comum das ferramentas de pintura</a> para uma descrição das opções da ferramenta que são aplicáveis a todas as ferramentas de pintura.</dd>
+            <dt>
+              <span class="term">Borda dura</span>
+            </dt>
+            <dd>
+              <p><span class="guilabel">Pressão</span>: Pressione com mais força para tornar a pincelada menos transparente.</p>
+            </dd>
+            <dt>
+              <span class="term">Tipo</span>
+            </dt>
+            <dd>
+              <p>A sub-exposição clareia as cores.</p>
+              <p>A super-exposição escurece as cores.</p>
+            </dd>
+            <dt>
+              <span class="term">Faixa</span>
+            </dt>
+            <dd>
+              <p>Existem três modos:</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="guilabel">Sombras</span> restringe o efeito à pixels escuros.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Tons médios</span> restringe o efeito à pixels de tons medianos.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="guilabel">Tons claros</span> restringe o efeito a pixels claros.</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Exposição</span>
+            </dt>
+            <dd>
+              <p>A exposição define o quão forte será o efeito da ferramenta, conforme quanto mais ou menos exposta for a fotografia. Por padrão o valor é 50, mas pode variar de 0 a 100.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-smudge.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-paint.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tools-transform.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-smudge.html">3.16. Borrar</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tools-transform.html">4. Ferramentas de transformação</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

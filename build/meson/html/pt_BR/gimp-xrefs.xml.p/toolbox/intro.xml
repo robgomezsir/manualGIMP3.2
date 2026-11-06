@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-05-23 j.h: add mouse scroll-wheel actions
+  2012-12-08 add sliders by j.h
+-->
+<sect1 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-toolbox">
+  <title>A Caixa de ferramentas</title>
+
+  <indexterm>
+    <primary>Caixa de ferramentas</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Tool groups</secondary>
+  </indexterm>
+
+  <sect2 id="gimp-toolbox-introduction">
+    <title>Introdução</title>
+
+    <para>O <acronym>GIMP</acronym> provê uma caixa de ferramentas que tenta ser completa, de forma a permitir completar rapidamente várias tarefas básicas, tais como criar seleções ou desenhar vetores. As várias ferramentas contidas na Caixa de ferramentas do <acronym>GIMP</acronym> são discutidas em detalhes aqui.</para>
+    <para>(No caso de você estar curioso, na linguagem do <acronym>GIMP</acronym>, uma <quote>ferramenta</quote> é um meio de interagir com uma imagem que requer acesso à tela, ou seja,  ou que permita que você indique o que você deseja fazer movendo e clicando o ponteiro do mouse na imagem, ou para mostrar interativamente os resultados de mudanças realizadas. Porém, se você quiser pensar nas ferramentas como uma serra, e na imagem como um tronco de madeira, não vai lhe fazer muito mal.)</para>
+    <note>
+      <para>Veja mais em <link linkend="gimp-concepts-toolbox">Janela principal: A caixa de ferramentas</link> para ver uma visão-geral da caixa de ferramentas e dos seus componentes.</para>
+    </note>
+    <para>
+      <acronym>GIMP</acronym> has a diverse assortment of tools that let you
+      perform a large variety of tasks. The tools can be thought of as falling
+      into the following categories:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para><emphasis>Ferramentas de seleção</emphasis>, que definem ou modificam uma parte da imagem que será afetada pelas próximas ações;</para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Ferramentas de pintura</emphasis>, que inserem cores e desenhos em partes da imagem;</para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Ferramentas de transformação</emphasis>, que alteram a geometria da imagem;</para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis>Color tools</emphasis>, which alter the colors in the
+          image as a whole;
+        </para>
+      </listitem>
+
+      <listitem>
+        <para>
+          <emphasis>Other tools</emphasis>, which don't fall into the other
+          categories.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+
+  <sect2 id="gimp-toolbox-icons">
+    <title>Ícones das ferramentas</title>
+    <figure>
+      <title>Os ícones das ferramentas na caixa de ferramentas</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPEG" fileref="images/toolbox/toolbox-icons.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      Most tools can be activated by clicking on an icon in the Toolbox. By
+      default, some tools are accessible only via the menus.
+      Every tool can be activated from the <guimenu>Tools</guimenu> menu (or
+      the <guimenu>Colors</guimenu> menu for some color tools). Most tools can
+      also be activated from the keyboard using an accelerator key.
+    </para>
+    <para>
+      In the default setup, created when <acronym>GIMP</acronym> is first
+      installed, not all tools show icons in the Toolbox: some tools are
+      omitted. You can customize the set of tools that are shown in the
+      Toolbox in the
+      <link linkend="gimp-prefs-toolbox">Toolbox Preferences</link>.
+    </para>
+    <para>
+      There are two reasons you might want to do this: first, if you only
+      rarely use a tool, it might be easier to find the tools you want if the
+      distracting icon is removed; second, if you use tools that are not found
+      in the toolbox by default, you might find it convenient to have icons for
+      them easily available. In any case, you can always access any tool at any
+      time using the <guimenu>Tools</guimenu> or <guimenu>Colors</guimenu> menu
+      from the main menu.
+    </para>
+
+    <para>
+      Tool icons are grouped by default.
+      Tool groups are marked with a small dark triangle at the bottom
+      right corner of the icon. The group icon displayed is the last used tool
+      in the group. Right click on the group icon to display the list of tools
+      in the group.
+      <mediaobject>
+        <imageobject>
+       <imagedata format="JPEG" fileref="images/toolbox/toolbox-icons-grouped-selector.png"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      You can get all tools displayed by unchecking the <guilabel>Use tool
+      groups</guilabel> option in <xref linkend="gimp-prefs-toolbox"/>.
+    </para>
+
+    <para>
+      By default, the shape of the pointer changes when it is inside an image,
+      to a shape that indicates which tool is active. You can change this
+      behavior in the <guilabel>Pointers</guilabel> section of the
+      <link linkend="gimp-prefs-input-devices">Input Devices settings</link>.
+    </para>
+  </sect2>
+
+  <!-- Color and Indicator Area (id=gimp-toolbox-areas) -->
+  <xi:include href="toolbox-color-area.xml"/>
+
+  <sect2 id="gimp-tool-options-dialog">
+    <title>Opções da ferramenta</title>
+
+    <figure>
+      <title>Caixa de opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-airbrush.png"/>
+        </imageobject>
+        <caption>
+          <para>A janela de opções da ferramenta aerógrafo.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Se seu programa estiver configurado como o da maioria das pessoas, então ao ativar uma ferramenta a janela de opções da ferramenta irá aparecer abaixo da caixa de ferramentas. Se o seu programa não estiver configurado dessa forma, pelo menos deveria: é muito difícil usar as ferramentas de forma eficiente sem estar apto a alterar as suas opções. De qualquer forma, um clique-duplo no ícone de qualquer ferramenta faz a caixa de opções da ferramenta se tornar visível se estiver escondida.</para>
+    <tip>
+      <para>
+        The Tool Options appear beneath the Toolbox in the default
+        setup.  If you lose it somehow, you can get it back by creating
+        a new Tool Options dialog using
+        <menuchoice>
+          <guimenu>Windows</guimenu>
+          <guisubmenu>Dockable Dialogs</guisubmenu>
+          <guimenuitem>Tool Options</guimenuitem>
+        </menuchoice>
+        and then docking it below the Toolbox.
+      </para>
+      <para>
+        Alternatively you can double-click any tool button in the Toolbox as a
+        quick way to open the Tool Options. If it appears in a different dock
+        than the one you want, you can drag it to your preferred dock.
+      </para>
+      <para>
+        See the section on
+        <link linkend="gimp-concepts-docks">Dialogs and Docking</link> if you
+        need help moving the Tool Options.
+      </para>
+    </tip>
+    <para>Cada ferramenta tem a suas próprias opções. As escolhas que você faz nas ferramentas serão mantidas durante a sessão, até que você as altere novamente. Na verdade, as opções de ferramentas são mantidas de sessão em sessão. A persistência de uma opção de ferramenta entre os usos do programa as vezes pode causar alguma irritação: uma ferramenta se comporta de uma maneira estranha, e você não consegue imaginar o porquê, já que você não se lembra que você ativou alguma opção incomum na última vez que você a usou, há duas semanas atrás. </para>
+    <para>Na parte inferior da janela de opções de ferramentas, existem quatro botões:</para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/document-save.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase>Save Tool Preset…</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-tool-options-save"/>
+          <para>
+            This button allows you to save the settings for the current tool,
+            so that you can restore them later. It brings up the <xref linkend="gimp-tool-preset-dialog"/>
+            allowing you to give a name for the new preset. When
+            you Restore options, only saved presets for the active tool are
+            shown, so you need not worry about including the name of the tool
+            when you assign a name here.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/document-revert.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase>Restore Tool Preset…</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-tool-options-restore"/>
+          <para>
+            This button allows you to restore a previously saved preset of
+            options for the active tool. If no presets have ever been
+            saved for the active tool, the button will be disabled.
+            Otherwise, clicking it will bring up a menu showing the names of
+            all saved option sets: choosing a menu entry will apply those
+            settings.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase>Delete Tool Preset</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-tool-options-delete"/>
+          <para>Este botão permite que você remova um conjunto de opções previamente salvo para a ferramenta ativa no momento. Se nenhuma configuração foi salva anteriormente para a ferramenta ativa, então o botão ira exibir o nome da ferramenta. Caso contrário, clicar sobre o botão irá mostrar um menu com os nomes de configurações salvas: a configuração selecionada será removida.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-reset.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase>Reset to default values</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-tool-options-reset"/>
+          <para>
+            This button resets the options for the active tool to their
+            default values. If you hold the <keycap>Shift</keycap> key while
+            pressing the Reset button, the options for all tools will be
+            reset to their default values.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>
+      In addition to the commands for the above buttons, the Tool Options tab
+      menu has an extra submenu:
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Edit Tool Preset</term>
+        <listitem>
+          <anchor id="gimp-tool-options-edit"/>
+          <para>
+            This submenu shows a list of presets for the active tool that you
+            can edit. Selecting one of them will open the
+            <link linkend="gimp-tool-preset-editor-dialog">Tool Presets
+            Editor</link> with that tool preset loaded. From there you can
+            edit the preset, unless it is one of the default presets that come
+            with GIMP.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <para>
+      Below we will explain the interaction with sliders and the mouse
+      scroll-wheel.
+    </para>
+    <variablelist>
+      <varlistentry id="sliders">
+        <term>Novos controles deslizantes</term>
+        <listitem>
+          <indexterm>
+            <primary>Controles deslizantes</primary>
+          </indexterm>
+          <para>
+            You can use multiple modifiers with either
+            left-click or mouse wheel scrolling:
+          </para>
+
+          <table frame="all">
+            <title>Interaction with the Slider Widget</title>
+            <tgroup cols="2" colsep="1" rowsep="1">
+              <colspec colname="c1"/>
+              <colspec colname="c2"/>
+              <thead>
+                <row>
+                  <entry align="right"><para>Mouse / key combination</para></entry>
+                  <entry align="left">Action</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry align="right">
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/slider-interaction-under-pointer.png"/>
+                    </imageobject>
+                    <caption>
+                      <para><mousebutton>Left-click</mousebutton></para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry align="left" valign="middle">Change the value to what's under the pointer</entry>
+                </row>
+                <row>
+                  <entry align="right">
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/slider-interaction-default-increment.png"/>
+                    </imageobject>
+                    <caption>
+                      <para><mousebutton>Left-click-and-drag</mousebutton></para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry align="left" valign="middle">Change the value using the default increment</entry>
+                </row>
+                <row>
+                  <entry align="right">
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/slider-interaction-smaller-increment.png"/>
+                    </imageobject>
+                    <caption>
+                      <para><keycap>Shift</keycap> + <mousebutton>Left-click-and-drag</mousebutton>
+                      or <mousebutton>Right-click-and-drag</mousebutton></para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry align="left" valign="middle">Change the value using smaller increment</entry>
+                </row>
+                <row>
+                  <entry align="right">
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/slider-interaction-larger-increment.png"/>
+                    </imageobject>
+                    <caption>
+                      <para><keycap>Ctrl</keycap> + <mousebutton>Left-click-and-drag</mousebutton></para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry align="left" valign="middle">Change the value using larger increment</entry>
+                </row>
+                <row>
+                  <entry align="right">
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/slider-interaction-numeric-input-no-select.png"/>
+                    </imageobject>
+                    <caption>
+                      <para><mousebutton>Middle-click</mousebutton></para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry align="left" valign="middle">Enter numeric input mode,
+                  do not select the value</entry>
+                </row>
+                <row>
+                  <entry align="right">
+                  <mediaobject>
+                    <imageobject>
+                      <imagedata format="PNG" fileref="images/toolbox/slider-interaction-numeric-input-select.png"/>
+                    </imageobject>
+                    <caption>
+                      <para><mousebutton>Right-click</mousebutton></para>
+                    </caption>
+                  </mediaobject>
+                  </entry>
+                  <entry align="left" valign="middle">Enter numeric input mode,
+                  select the value</entry>
+                </row>
+                <row>
+                  <entry namest="c1" nameend="c2" align="center">Hint: Any left-click
+                  interaction enables numeric input mode.</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+
+          <para>
+            Once you have set the value approximately, you can fine-tune it
+            using the <guilabel>+</guilabel> and
+            <guilabel>-</guilabel> buttons at the right of the slider.
+          </para>
+          <para>A área do valor na área deslizante trabalha como um editor de texto: lá você pode editar o valor ou inserir diretamente um novo valor.</para>
+          <para>
+            For some options, you can drag the pointer outside the tool dialog.
+            For example with the size slider, you can get the maximum value
+            (10000) so.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <variablelist>
+      <varlistentry>
+        <term>Mouse Scroll-Wheel actions on canvas</term>
+        <listitem>
+          <indexterm>
+            <primary>Mouse Scroll-Wheel</primary>
+          </indexterm>
+          <para>
+            When using tools, you can use the mouse scroll-wheel, in
+             combination with various modifiers, to do useful things with the
+            tool options of the selected tool:
+          </para>
+          <itemizedlist>
+            <listitem>
+              <formalpara>
+                <title><keycap>Alt</keycap> + Mouse-wheel:</title>
+                <para>
+                  increase/decrease <emphasis>opacity</emphasis>
+                </para>
+              </formalpara>
+            </listitem>
+            <listitem>
+              <formalpara>
+                <title><keycombo><keycap>Shift</keycap><keycap>Primary</keycap></keycombo> + Mouse-wheel:</title>
+                <para>
+                  increase/decrease <emphasis>aspect ratio</emphasis>
+                </para>
+              </formalpara>
+             </listitem>
+              <listitem>
+                <formalpara>
+                  <title><keycombo><keycap>Shift</keycap><keycap>Alt</keycap></keycombo> + Mouse-wheel:</title>
+                  <para>
+                    increase/decrease <emphasis>angle</emphasis>
+                  </para>
+              </formalpara>
+            </listitem>
+            <listitem>
+              <formalpara>
+                 <title><keycombo><keycap>Primary</keycap><keycap>Alt</keycap></keycombo> + Mouse-wheel:</title>
+                <para>
+                   increase/decrease <emphasis>size</emphasis>
+                </para>
+              </formalpara>
+            </listitem>
+            <listitem>
+              <formalpara>
+                <title><keycombo><keycap>Shift</keycap><keycap>Primary</keycap><keycap>Alt</keycap></keycombo> + Mouse-wheel:</title>
+                <para>
+                  increase/decrease <emphasis>spacing</emphasis>
+                </para>
+              </formalpara>
+            </listitem>
+          </itemizedlist>
+          <para>
+            Note: the <keycap>Primary</keycap> modifier is usually <keycap>Ctrl</keycap> or <keycap>Cmd</keycap>, depending on
+            your platform.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+</sect1>

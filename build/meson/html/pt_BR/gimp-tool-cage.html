@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.13. Transformar</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-tools-transform.html" title="4. Ferramentas de transformação" />
+    <link rel="prev" href="gimp-tool-flip.html" title="4.12. Espelhar" />
+    <link rel="next" href="gimp-tool-warp.html" title="4.14. Transformar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.13. Transformar</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-flip.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>4. Ferramentas de transformação</span>
+        <nav> <a accesskey="n" href="gimp-tool-warp.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-cage"></a>4.13. Transformar</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id20274" class="indexterm"></a>
+      <a id="id20277" class="indexterm"></a>
+      <p>A ferramenta de Gaiola é uma ferramenta de transformação especial que permite que você selecione uma área de transformação selecionado vários pontos de âncora a mão livre, de forma parecida com o que é feito com a Seleção a mão livre (ferramenta de laço). A ferramenta não faz nada na imagem até que você confirme a transformação pressionando a tecla <span class="keycap"><strong>Enter</strong></span>.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3100"></a>4.13.1. Ativando a ferramenta</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>A partir do menu da janela de imagens, em: <span class="guimenu">Ferramentas</span> → <span class="guisubmenu">Ferramentas de transformação</span> → <span class="guimenuitem">Transformar com gaiola</span></p>
+            </li>
+            <li class="listitem">
+              <p>Ao clicar no ícone da ferramenta: <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-cage.svg" width="16" /></span>
+          </span> na caixa de ferramentas</p>
+            </li>
+            <li class="listitem">
+              <p>Usando o atalho de teclado  <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>P</strong></span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3101"></a>4.13.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3102"></a>
+          <p class="title">
+            <strong>Figura 14.126. Opções de ferramenta</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-cage.png" alt="Opções de ferramenta" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Normalmente, as opções de ferramenta aparecem numa caixa de opções sob a Caixa de ferramentas, assim que você ativa uma ferramenta. Se elas não estiverem lá, você pode fazer um clique-duplo no ícone da ferramenta, ou acessa-las em <span class="guimenu">Janelas</span> → <span class="guisubmenu">Diálogos de encaixe</span> → <span class="guimenuitem">Opções de ferramentas</span> (primeiro item no menu)  que abre a janela de opções da ferramenta selecionada.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Criar ou ajustar a gaiola</span>
+            </dt>
+            <dd>
+              <p>Ao ativar a transformação com Gaiola, esta opção está selecionada. Nesse momento você pode clicar na imagem para criar pontos de âncora ao redor da área desejada. Se você precisar adicionar mais pontos de âncora numa fase posterior, clique de volta nesta opção.</p>
+            </dd>
+            <dt>
+              <span class="term">Deformar a gaiola para deformar a imagem</span>
+            </dt>
+            <dd>
+              <p>O <acronym class="acronym">GIMP</acronym> muda para esta opção automaticamente quando os pontos de controle da gaiola estão prontos (i.e. você clica de volta em cima do primeiro ponto de âncora que criou). Você poderá agora arrastar seus pontos de âncora na imagem, e mesmo fora dela para transformar a imagem. A transformação tem efeito cada vez que você solta o botão do mouse, após mover uma âncora.</p>
+              <p>Você pode ativar mais de um ponto de âncora de uma vez segurando <span class="keycap"><strong>Shift</strong></span> pressionado enquanto clica nos pontos. Você também pode selecionar vários pontos segurando o botão do mouse pressionado enquanto desenha um retângulo ao redor dos pontos desejados.</p>
+            </dd>
+            <dt>
+              <span class="term">Preenche a posição original com uma cor</span>
+            </dt>
+            <dd>
+              <p>Se a ação de transformação resultar em áreas vazias, essas áreas serão preenchidas com uma cor se esta opção estiver selecionada. A cor utilizada é mistura das a cores que estiverem na região onde forem colocados os pontos de âncora - podendo ser inclusive a transparência</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3103"></a>4.13.3. Exemplo de uso da ferramenta de <span class="quote">“<span class="quote">Transformar com gaiola</span>”</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3104"></a>
+          <p class="title">
+            <strong>Figura 14.127. Exemplo da ferramenta de Gaiola</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/cage-1.png" alt="Exemplo da ferramenta de Gaiola" />
+              <div class="caption">A área da gaiola selecionada</div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/cage-2.png" alt="Exemplo da ferramenta de Gaiola" />
+              <div class="caption">Transformada</div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Ao clicar no ícone de gaiola na Caixa de ferramentas, a opção de gaiola é colocada em <span class="quote">“<span class="quote">Criar ou ajustar a gaiola</span>”</span>. Agora você pode desenhar as linhas de uma gaiola na imagem clicando sucessivamente ao redor da área que você deseja transformar. Clique de volta no ponto inicial para terminar a seleção. Nesse ponto o <acronym class="acronym">GIMP</acronym> faz alguns cálculos para ativar o modo de <span class="quote">“<span class="quote">Deforme a gaiola para deformar a imagem</span>”</span> que permite que você arraste os pontos na linha para deformar a gaiola e a imagem.</p>
+        <p>O ponto (ou pontos) selecionado se torna um quadrado. Arraste o ponto na imagem para transformá-la. A transformação vai ser calculada todas as vezes que você parar de arrastar um ponto. A transformação pode demorar um pouco, então seja paciente, principalmente se estiver trabalhando em imagens grandes.</p>
+        <p>Se você desejar adicionar mais pontos a linha que você já selecionou, clique de novo no botão de rádio de <span class="quote">“<span class="quote">Criar ou ajustar a gaiola</span>”</span> no diálogo de opções de ferramentas. Adicione os pontos à linha, e retorne ao modo de <span class="quote">“<span class="quote">Deformar a gaiola para deformar a imagem</span>”</span> para transformar o objeto desenhável.</p>
+        <p>Quando estiver tudo pronto, pressione a tecla <span class="keycap"><strong>Enter</strong></span> para confirmar a transformação.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-flip.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-transform.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-warp.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-flip.html">4.12. Espelhar</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-warp.html">4.14. Transformar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

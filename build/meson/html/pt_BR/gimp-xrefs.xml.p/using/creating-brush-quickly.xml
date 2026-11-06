@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+<!ENTITY % entities SYSTEM "../../../stylesheets/entities.xml">
+
+%entities;
+]>
+<sect2 id="gimp-creating-brush-quickly">
+    <title>Criando um pincel rapidamente</title>
+    <para>Há duas formas de criar um pincel facilmente:</para>
+    <orderedlist>
+      <listitem>
+        <para>Primeiro, o método super-rápido. Se você tem uma área de uma imagem que gostaria que fosse um pincel, para ser usada por uma ferramenta como o Lápis, Aerógrafo ou qualquer ferramenta de pintura: Selecione a sua área de interesse com a ferramenta de seleção retangular (ou qualquer outra), e então vá em editar-&gt;copiar (ou pressione Ctrl + C). Você poderá ver imediatamente esta cópia na primeira posição do diálogo de pincéis, com o nome de <quote>Área de transferência</quote>. Você pode usa-lo imediatamente.</para>
+        <para>Este pincel é temporário: ele desaparece quando você fecha o GIMP. Você pode torná-lo permanente clicando no botão <guibutton>Duplicar este pincel</guibutton> na parte inferior do painel de pincéis.</para>
+        <figure>
+          <title>A seleção se torna um pincel após ser copiada</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/using/select-to-brush.png"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </listitem>
+      <listitem>
+        <para>O segundo método é mais elaborado.</para>
+        <para>
+          Select
+          <menuchoice>
+            <guimenu>File</guimenu>
+            <guimenuitem>New…</guimenuitem>
+          </menuchoice> from the main menu.
+        </para>
+        <para>Defina <guilabel>Largura</guilabel> e <guilabel>Altura</guilabel>, por exemplo, para 30 pixels.</para>
+        <para>Nas <guilabel>Opções avançadas</guilabel>, defina, por exemplo, o <guilabel>Espaço de cor</guilabel> para <guilabel>Escala de cinza</guilabel> e defina <guilabel>Preencher com</guilabel> para <guilabel>Branco</guilabel>.</para>
+        <para>Amplie essa imagem com um bom fator de zoom, e use a ferramenta de lápis, com a cor preta para desenhar. </para>
+        <para>
+          Select
+          <menuchoice>
+            <guimenu>File</guimenu>
+            <guimenuitem>Export As…</guimenuitem>
+          </menuchoice> from the main menu.
+        </para>
+        <para>
+          Export the image with a <filename class="extension">.gbr</filename> extension in the
+          <filename class="directory">brushes</filename> directory located inside
+          <link linkend="gimp-concepts-setup">your personal GIMP configuration folder</link>.
+        </para>
+        <para>
+          In the <link linkend="gimp-brush-dialog">Brush Dialog</link>, click on
+          the button <guibutton>Refresh brushes</guibutton>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/view-refresh.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>.
+        </para>
+        <para>E veja seu maravilhoso pincel aparecer bem no meio dos outros pinceis. Você pode usa-lo imediatamente, sem reiniciar o GIMP.</para>
+        <figure>
+          <title>Passos para criar um pincel</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/using/create-brush1.png"/>
+            </imageobject>
+            <caption>
+              <para>Desenhe a imagem, exporte como pincel</para>
+            </caption>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/using/create-brush2.png"/>
+            </imageobject>
+            <caption>
+              <para>Atualize os pinceis</para>
+            </caption>
+          </mediaobject>
+          <mediaobject>
+            <imageobject>
+              <imagedata format="PNG" fileref="images/using/create-brush3.png"/>
+            </imageobject>
+            <caption>
+              <para>Use o pincel</para>
+            </caption>
+          </mediaobject>
+        </figure>
+      </listitem>
+    </orderedlist>
+</sect2>

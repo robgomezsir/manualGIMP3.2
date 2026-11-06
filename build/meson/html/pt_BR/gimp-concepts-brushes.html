@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5. Pincéis</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-painting.html" title="Capítulo 7. Pintando com o GIMP" />
+    <link rel="prev" href="gimp-using-paths-and-svg.html" title="4.7. Vetores e arquivos SVG" />
+    <link rel="next" href="gimp-using-animated-brushes.html" title="5.2. Creating animated brushes" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5. Pincéis</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-paths-and-svg.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 7. Pintando com o GIMP</span>
+        <nav> <a accesskey="n" href="gimp-using-animated-brushes.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-concepts-brushes"></a>5. Pincéis</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id9028" class="indexterm"></a>
+      <div class="figure">
+        <a id="id2667"></a>
+        <p class="title">
+          <strong>Figura 7.15. Exemplo de pinceladas</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/brush-examples.png" alt="Exemplo de pinceladas" />
+            <div class="caption">
+              <p>Uma série de exemplos de pinceladas pintadas usando diferentes pincéis do conjunto fornecido com o <acronym class="acronym">GIMP</acronym>. Todos foram pintadas usando a ferramenta Pincel.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    A <span class="emphasis"><em>brush</em></span>
+    is a <a class="link" href="glossary.html#glossary-bitmap" title="Bitmap">pixmap</a> or set of pixmaps used
+    for painting. <acronym class="acronym">GIMP</acronym> includes a set of
+    <a class="link" href="gimp-tools-paint.html" title="3. Ferramentas de pintura">Paint Tools</a>, which not only
+    perform operations that you would normally think of as painting, but also
+    operations such as erasing, copying, smudging, lightening or darkening,
+    etc.
+  </p>
+      <p>
+    All of the paint tools, except the ink tool, use the same set of
+    brushes. The brush pixmaps represent the marks that are made by single
+    <span class="quote">“<span class="quote">touches</span>”</span> of the brush to the image. A brush stroke, usually
+    made by moving the mouse across the image with the left mouse button held
+    down, produces a series of marks spaced along the trajectory, in a way
+    specified by the characteristics of the brush and the paint tool being
+    used.
+  </p>
+      <p>Pincéis podem ser selecionados clicando em um ícone no <a class="link" href="gimp-brush-dialog.html" title="3.2. Diálogo de pincéis">diálogo Pincéis</a>. O pincel <span class="emphasis"><em>atual</em></span> do <acronym class="acronym">GIMP</acronym> é mostrado na área Pincel/Textura/Degradê da caixa de ferramentas (se essa área estiver ativa). Clicar no símbolo do pincel é uma forma de ativar o diálogo de pincéis.</p>
+      <p>Quando você instala o <acronym class="acronym">GIMP</acronym>, ele vem com uma série de pincéis básicos, além de uns poucos bizarros que servem principalmente para lhe dar exemplos de que é possível (por exemplo, o pincel pepper ("pimentão") na ilustração). Você também pode criar novos pincéis, ou baixá-los e instalá-los, de modo que o <acronym class="acronym">GIMP</acronym> irá reconhecê-los.</p>
+      <p>O <acronym class="acronym">GIMP</acronym> pode usar vários tipos de pincéis. Todos eles, no entanto, são usados da mesma forma, e na maioria dos casos você não precisa se preocupar com as diferenças quando você pintar com eles. Esses são os tipos de pincel:</p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <span class="term">Pinceis Comuns</span>
+          </dt>
+          <dd>
+            <a id="id9058" class="indexterm"></a>
+            <p>
+          Most of the brushes supplied with <acronym class="acronym">GIMP</acronym> fall into
+          this category. They
+          are represented in the Brushes dialog by grayscale pixmaps. When you
+          paint using them, the current foreground color (as shown in the
+          Color Area of the Toolbox) is substituted for black, and the pixmap
+          shown in the Brushes dialog represents the mark that the brush makes
+          on the image.
+        </p>
+            <p>
+          To create such a brush: create a grayscale image in gray levels, where
+          black is fully visible, white is transparent, with gray levels in
+          between. Do not use transparency for these brushes. Save it with the
+          .gbr extension. Click on the Refresh button in the Brushes Dialog to
+          get it in preview without it being necessary to restart
+          <acronym class="acronym">GIMP</acronym>.
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Pincéis coloridos</span>
+          </dt>
+          <dd>
+            <a id="id9068" class="indexterm"></a>
+            <p>Pincéis nesta categoria são representados por imagens coloridas no diálogo de pincéis. Eles podem ser fotos, texto ou qualquer imagem. Quando você pinta com eles, as cores são usadas como mostradas, a cor de frente atual não entra em jogo. Para tudo o mais, eles funcionam da mesma maneira que pincéis comuns.</p>
+            <p>Para criar tal pincel, crie uma pequena imagem RGBA:</p>
+            <p>
+          Select
+          <span class="guimenu">File</span> → <span class="guimenuitem">New…</span> from the main menu.
+        </p>
+            <p>Nas <span class="guilabel">Opções Avançadas</span>, defina, por exemplo, o <span class="guilabel">Espaço de Cor</span> para <span class="guilabel">Cor RGB</span> e defina <span class="guilabel">Preencher com</span> para <span class="guilabel">Transparência</span>.</p>
+            <p>
+          Draw your image. Contrary to grayscale brushes, transparent areas here
+          will be drawn transparent.
+        </p>
+            <p>
+          Select
+          <span class="guimenu">File</span> → <span class="guimenuitem">Save…</span> from the main menu to first save your image as an
+          <code class="filename">.xcf</code> file to keep its properties.
+        </p>
+            <p>
+          Select
+          <span class="guimenu">File</span> → <span class="guimenuitem">Export As…</span> from the main menu to export the image as a brush with
+          the <code class="filename">.gbr</code> extension.
+        </p>
+            <p>
+          In the <a class="link" href="gimp-brush-dialog.html" title="3.2. Diálogo de pincéis">Brushes Dialog</a>, click on
+          the button <span class="guibutton">Refresh brushes</span>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/view-refresh.svg" width="16" /></span>
+          </span>.
+        </p>
+            <p>Seu pincel aparece entre os outros pincéis. Você pode usá-lo imediatamente, sem reiniciar o <acronym class="acronym">GIMP</acronym>.</p>
+            <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Tip">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Dica]" src="images/tip.png" />
+                  </td>
+                  <th align="left">Dica</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>Quando você faz uma cópia ou um corte em uma seleção, você vê o conteúdo da área de transferência (que é a seleção) na primeira posição no diálogo de pincéis. E você pode usá-lo dirtamente para pintura, como qualquer outro pincel.</p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="figure">
+              <a id="id2668"></a>
+              <p class="title">
+                <strong>Figura 7.16. Seleção para Pincel após Copiar ou Cortar</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/select-to-brush.png" alt="Seleção para Pincel após Copiar ou Cortar" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+          </dd>
+          <dt>
+            <span class="term">Mangueiras ou tubos de imagem</span>
+          </dt>
+          <dd>
+            <a id="id9112" class="indexterm"></a>
+            <a id="id9116" class="indexterm"></a>
+            <p>Pinceis nesta categoria podem fazer mais de um tipo de marca em uma imagem. Eles são indicados por pequenos triângulos vermelhos no canto inferior direito da miniatura do pincel na caixa de diálogo de pincéis. Eles são às vezes chamados "pincéis animados", pois as marcas mudam conforme você traça uma pincelada. Em princípio, os <span class="quote">“<span class="quote">pincéis de mangueira de imagens</span>”</span> podem ser muito sofisticados, principalmente se utilizar uma mesa digitalizadora, mudando a forma que é impressa em uma função do ângulo, da pressão e da inclinação da caneta utilizadas na pintura, etc... É possível que todas as possibilidades nunca tenham sido realmente exploradas a fundo. Os pincéis animados fornecidos com o <acronym class="acronym">GIMP</acronym> são relativamente simples (mas ainda assim muito úteis). A partir <acronym class="acronym">GIMP</acronym>-2,8, com a introdução de dinâmicas de pintura, se tornou bem mais simples personalizar muitas das coisas que só seriam possíveis com um pincel animado muito sofisticado no GIMP (por exemplo, um pincel que pode mudar de cor de acordo com a direção da pincelada e tamanho de acordo com a velocidade de pintura). No entanto, também abriu a possibilidade de se combinar um pincel animado sofisticado <span class="emphasis"><em>e</em></span> dinâmicas de pinturas personalizadas. Você pode ser um pioneiro nessa fronteira.</p>
+            <p>
+          You will find an example on how to create such brushes in
+          <a class="link" href="gimp-using-animated-brushes.html" title="5.2. Creating animated brushes">Animated brushes</a>
+        </p>
+          </dd>
+          <dt>
+            <span class="term">Pinceis paramétricos</span>
+          </dt>
+          <dd>
+            <a id="id9128" class="indexterm"></a>
+            <p>Estes são pincéis criados com o <a class="link" href="gimp-brush-dialog.html#gimp-brush-editor-dialog" title="3.2.3. Editor de pincéis">Editor de pincel</a>, que permite gerar uma grande variedade de formas de pincel usando uma interface gráfica simples. Um bom recurso de pincéis paramétricos é que eles são <span class="emphasis"><em>redimensionáveis</em></span> sem perda de qualidade. É possível, utilizando diálogo de <span class="guimenu">Preferências</span>, fazer com que teclas de atalho ou mouse ou girar a rodinha do mouse façam o pincel atual tornar-se maior ou menor. Por padrão, as ações de aumentar e diminuir o tamanho do pincel estão vinculadas respectivamente as teclas <span class="quote">“<span class="quote">]</span>”</span> e <span class="quote">“<span class="quote">[</span>”</span>. </p>
+          </dd>
+        </dl>
+      </div>
+      <p>Todas os pincéis têm um tamanho variável. Na caixa de opções de todas as ferramentas de pintura, existe uma barra para aumentar ou reduzir o tamanho do pincel ativo. Você pode fazer isso diretamente na janela da imagem se você definiu corretamente a rodinha do mouse, ou com as teclas de atalho, veja <a class="link" href="gimp-using-variable-size-brush.html" title="5.3. Mudando o tamanho do pincel">Variando o tamanho do pincel</a>.</p>
+      <p>Além do mapa de pixels do pincel, cada pincel do <acronym class="acronym">GIMP</acronym> tem uma outra propriedade importante: o <span class="emphasis"><em>Espaçamento</em></span> do pincel. Ele representa a distância entre as marcas de pincel consecutivas quando uma pincelada contínua é pintada. Cada pincel tem um valor padrão atribuído para o espaçamento, mas ele também pode ser modificado usando o diálogo de pincéis.</p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>O <acronym class="acronym">GIMP</acronym> pode usar pincéis MyPaint. Consulte <a class="xref" href="gimp-tool-mypaint-brush.html" title="3.11. Pincel">Seção 3.11, “Pincel”</a> para obter mais informações.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-using-brushes"></a>5.1. Adicionando novos pincéis</h3>
+            </div>
+          </div>
+        </div>
+        <a id="id9148" class="indexterm"></a>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Existe um método rápido para adicionar um novo pincel: <a class="xref" href="gimp-creating-brush-quickly.html" title="5.4. Criando um pincel rapidamente">Seção 5.4, “Criando um pincel rapidamente”</a>.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>Para adicionar um novo pincel, depois de criar ou baixar um, você precisa salva-lo num formato que o GIMP possa usar. O arquivo de pincel deve ser colocado no caminho de buscas de pincéis do GIMP, de forma que o GIMP possa acha-lo e mostra-lo no diálogo de pincéis. Você pode clicar no botão de <span class="guibutton">atualizar</span>, que reindexa as pastas de pincel. O GIMP usa três formatos de arquivo para pincéis:</p>
+        <div class="variablelist">
+          <a id="brushes-file-formats"></a>
+          <a id="id9157" class="indexterm"></a>
+          <dl class="variablelist">
+            <dt>
+              <a id="file-gbr-export"></a>
+              <span class="term">GBR</span>
+            </dt>
+            <dd>
+              <a id="id9163" class="indexterm"></a>
+              <a id="id9165" class="indexterm"></a>
+              <p>
+          The <code class="filename">.gbr</code> ("<span class="emphasis"><em>g</em></span>imp
+          <span class="emphasis"><em>br</em></span>ush") format is used for ordinary and
+          color brushes.  You can convert many other types of images,
+          including many brushes used by other programs, into GIMP
+          brushes by opening them in GIMP and saving them with file
+          names ending in <code class="filename">.gbr</code>.  This brings up a
+          dialog box in which you can set the default Spacing for the
+          brush.
+        </p>
+              <p>
+          A technical specification of the GBR file format can be found on
+          <a class="ulink" href="https://developer.gimp.org/core/standards/gbr/" target="_top">
+          developer.gimp.org</a>.
+        </p>
+              <div class="figure">
+                <a id="id2669"></a>
+                <p class="title">
+                  <strong>Figura 7.17. Salvar um pincel <code class="filename">.gbr</code> </strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/file-gbr-export.png" alt="Salvar um pincel .gbr" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+            <dt>
+              <span class="term">GIH</span>
+            </dt>
+            <dd>
+              <a id="id9183" class="indexterm"></a>
+              <a id="id9185" class="indexterm"></a>
+              <p>
+          The <code class="filename">.gih</code> ("<span class="emphasis"><em>g</em></span>imp
+          <span class="emphasis"><em>i</em></span>mage <span class="emphasis"><em>h</em></span>ose") format
+          is used for animated brushes.  These brushes are constructed
+          from images containing multiple layers:  each layer may
+          contain multiple brush-shapes, arranged in a grid.  When you
+          save an image as a <code class="filename">.gih</code> file, a dialog
+          comes up that allows you to describe the format of the brush.
+          See <a class="xref" href="gimp-using-animated-brushes.html" title="5.2. Creating animated brushes">Seção 5.2, “Creating animated brushes”</a> for more
+          information about the dialog.
+        </p>
+              <p>
+          A technical specification of the GIH file format can be found on
+          <a class="ulink" href="https://developer.gimp.org/core/standards/gih/" target="_top">
+          developer.gimp.org</a>.
+        </p>
+            </dd>
+            <dt>
+              <span class="term">VBR</span>
+            </dt>
+            <dd>
+              <a id="id9200" class="indexterm"></a>
+              <a id="id9202" class="indexterm"></a>
+              <p>O formato <code class="filename">.vbr</code> é usado para pincéis paramétricos, i.e., pincéis criados usando o editor de pincéis do GIMP. Não há outra forma que valha a pena de se obter arquivos nesse formato (mas você mudar seus parâmetros diretamente com um editor de textos se desejar)</p>
+            </dd>
+            <dt>
+              <span class="term">MYB</span>
+            </dt>
+            <dd>
+              <a id="id9210" class="indexterm"></a>
+              <a id="id9212" class="indexterm"></a>
+              <p>O formato <code class="filename">.myb</code> é usado para pincéis MyPaint. Consulte <a class="xref" href="gimp-tool-mypaint-brush.html" title="3.11. Pincel">Seção 3.11, “Pincel”</a> para obter mais informações.</p>
+            </dd>
+          </dl>
+        </div>
+        <p>Para tornar um pincel disponível, coloque sob uma das pastas no caminho de busca de pincéis do GIMP. Por padrão, o caminho de busca de pincéis inclui duas pastas, a pasta <code class="filename">brushes</code> do sistema, que você não deveria usar ou alterar, e a pasta <code class="filename">brushes</code> na sua pasta pessoal do GIMP. Você pode adicionar novas pastas ao caminho de busca de pincéis, usando a guia <a class="link" href="gimp-prefs-folders-data.html" title="6.27. Pastas de dados">Pastas de pincéis</a> do diálogo de Preferências. Qualquer arquivo do tipo GBR, GIH, ou VBR incluído numa dessas pastas vai aparecer na caixa de pinceis da próxima vez que você iniciar o GIMP, ou assim que você pressionar o botão de <span class="guibutton">Atualizar</span> no diálogo de pinceis.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Quando você cria um novo pincel paramétrico com o editor de pincéis, ele é salvo automaticamente na sua pasta de pincéis pessoais (a pasta tem o nome em inglês: <code class="filename">brushes</code>)</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>Há várias páginas na web com coleções de pincéis do GIMP para baixar. No lugar de suprir uma lista links que logo estaria desatualizada, a sugestão é fazer uma busca em sua página de buscas favorita  com os termos <span class="quote">“<span class="quote">GIMP brushes</span>”</span> (se você colocar em inglês devem aparecer pincéis de todo o mundo - mas pode tentar procurar por <span class="quote">“<span class="quote">pincéis do GIMP</span>”</span> também e ver o que aparece). Também há muitas coleções de pincéis de outros programas de pintura. Alguns desses pincéis podem ser convertidos facilmente em pincéis do GIMP, e alguns não poderão ser convertidos de jeito algum. Se você precisar saber, procure na Internet - e se não encontrar algo, peça ajuda a um expert. (Sugestão: pergunte no canal de IRC do GIMP, ou em algum fórum)</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-paths-and-svg.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-painting.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-animated-brushes.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-paths-and-svg.html">4.7. Vetores e arquivos <acronym class="acronym">SVG</acronym></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-animated-brushes.html">5.2. Creating animated brushes</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.48. Retinex</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. The “Colors” Menu" />
+    <link rel="prev" href="plug-in-destripe.html" title="8.47. Destripe" />
+    <link rel="next" href="gimp-colors-info-menu.html" title="8.49. The “Info” Submenu" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.48. Retinex</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-destripe.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>8. The <span class="quote">“<span class="quote">Colors</span>”</span> Menu</span>
+        <nav> <a accesskey="n" href="gimp-colors-info-menu.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-retinex"></a>8.48. Retinex</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id44256" class="indexterm"></a>
+      <a id="id44260" class="indexterm"></a>
+      <a id="id44262" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2852"></a>8.48.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2853"></a>
+          <p class="title">
+            <strong>Figure 16.207. <span class="quote">“<span class="quote">Retinex</span>”</span> example</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/colors-retinex1.png" alt="“Retinex” example" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/colors-retinex2.png" alt="“Retinex” example" />
+              <div class="caption">
+                <p>
+            <span class="quote">“<span class="quote">Retinex</span>”</span> filter applied.
+            Note new details in the upper right corner.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      Retinex improves visual rendering of an image when lighting conditions
+      are not good. While our eye can see colors correctly when light is low,
+      cameras and video cams can't manage this well. The MSRCR (MultiScale
+      Retinex with Color Restoration) algorithm, which is at the root of the
+      Retinex filter, is inspired by the eye biological mechanisms to adapt
+      itself to these conditions. Retinex stands for Retina + cortex.
+    </p>
+        <p>
+      Besides digital photography, the Retinex algorithm is also used to make
+      the information in astronomical photos visible and, in medicine, detect
+      poorly visible structures in X-rays or scans.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        This command only works on RGB images. If the image is Grayscale or
+        Indexed, the menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2854"></a>8.48.2. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Tone Mapping</span> → <span class="guimenuitem">Retinex…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2855"></a>8.48.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2856"></a>
+          <p class="title">
+            <strong>Figure 16.208. <span class="quote">“<span class="quote">Retinex</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/retinex.png" alt="“Retinex” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      These options call for notions that only mathematicians and imagery
+      engineers can understand. In actual practice, the user has to grope
+      about for the best setting. However, the following explanations should
+      help out the experienced GIMP user.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Level</span>
+            </dt>
+            <dd>
+              <p>
+            Here is what the plug-in author writes on his site
+            <a class="xref" href="bibliography.html#bibliography-online-plugin-retinex" title="A plug-in providing the Retinex algorithm for GIMP">[<abbr class="abbrev">PLUGIN-RETINEX</abbr>]</a>:
+            <span class="quote">“<span class="quote">To characterize color variations and the light source, a
+            difference in intensity is made between the (Gaussian) filter
+            responses at different scales. These parameters allow you to
+            specify how to distribute the values between the minimum scale
+            value (sigma 2.0) and the maximum (sigma equal to image size)</span>”</span>.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Uniform</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Uniform tends to treat both low and high intensity areas
+                  equally.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Low</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  As a rule of thumb, low does <span class="quote">“<span class="quote">flare up</span>”</span>
+                  the lower intensity areas on the image.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">High</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  High tends to <span class="quote">“<span class="quote">bury</span>”</span> the lower intensity
+                  areas in favor of a better rendering of the clearer areas
+                  of the image.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Scale</span>
+            </dt>
+            <dd>
+              <p>
+            Determines the depth of the Retinex scale. Minimum value is 16, a
+            value providing rough, unrefined filtering. Maximum value is 250.
+            Optimal and default value is 240.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Scale division</span>
+            </dt>
+            <dd>
+              <p>
+            Determines the number of iterations in the multiscale Retinex
+            filter. The minimum required, and the recommended value is three.
+            Only one or two scale divisions removes the multiscale aspect and
+            falls back to a single scale Retinex filtering. A value that is
+            too high tends to introduce noise in the picture.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Dynamic</span>
+            </dt>
+            <dd>
+              <p>
+            As the MSR algorithm tends to make the image lighter, this slider
+            allows you to adjust color saturation contamination around the
+            new average color. A higher value means less color saturation.
+            This is definitely the parameter you want to tweak for optimal
+            results, because its effect is extremely image-dependent.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-destripe.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-colors-info-menu.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-destripe.html">8.47. Destripe</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-colors-info-menu.html">8.49. The <span class="quote">“<span class="quote">Info</span>”</span> Submenu</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

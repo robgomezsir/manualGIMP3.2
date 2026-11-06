@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2008-07-15 KoSt: added 'no'
+  2008-04-05 Mr.Dust : added 'ko' contents
+  2007-12-26 lexa: initial version for en and de
+-->
+<sect1 id="gimp-concepts-color-management">
+  <title>Gerenciamento de cores no GIMP</title>
+
+  <indexterm>
+    <primary>Cor</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Perfil ICC</primary>
+  </indexterm>
+
+  <para>Muitos dispositivos que você usa em seu projeto ou fluxo de trabalho de fotografia, como câmeras de fotografia digital, scanners, monitores, impressoras, etc, tem suas características próprias de reprodução de cor. Se estas não forem levadas em conta durante a abertura, edição e gravação de imagens, os ajustes feito podem ser prejudiciais para as mesmas. Com o <acronym>GIMP</acronym> você pode ter resultados confiáveis para Web e impressão.</para>
+  <figure>
+    <title>Fluxo de processamento de imagens</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/using/colormanagement-workflow1.png"/>
+      </imageobject>
+      <caption>
+        <para>Fluxo de trabalho sem gerenciamento de Cores </para>
+      </caption>
+    </mediaobject>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/using/colormanagement-workflow2.png"/>
+      </imageobject>
+      <caption>
+        <para>Processamento com gerenciamento de cores</para>
+      </caption>
+    </mediaobject>
+  </figure>
+
+  <sect2>
+    <title>Problemas de um fluxo de trabalho sem gerenciamento de cores </title>
+    <para>O problema básico de manipulação de imagem, sem gerenciamento de cores é que você simplesmente não vê o que você faz. Isso afeta duas áreas distintas:</para>
+    <orderedlist>
+      <listitem>
+        <para>Há diferenças nas cores, causadas pelas características de cor diferentes de diferentes dispositivos, como câmeras, scanners, monitores ou impressoras</para>
+      </listitem>
+      <listitem>
+        <para>Existem diferenças de cores causadas pelas limitações de espaço de cores com que um dispositivo específico é capaz de lidar</para>
+      </listitem>
+    </orderedlist>
+    <para>O principal objetivo do gerenciamento de cores é para evitar tais problemas. A abordagem seguida para fazer isso implica na adição de uma descrição das características de cor de uma imagem ou dispositivos.</para>
+    <para>Estas descrições são chamados de <emphasis>perfis de cor</emphasis>. Um perfil de cor é, basicamente, uma tabela de consulta para converter a característica de cor específica de um dispositivo para um espaço de cor independente do dispositivo - o chamado <quote>espaço de trabalho</quote>. Toda a manipulação de imagens então, é feita em imagens no espaço de trabalho. Além disso o perfil de cor de um dispositivo (impressora, monitor, etc...) pode ser utilizado para simular a forma como as cores ficariam naquele dispositivo.</para>
+    <para>A criação de perfis de cor é mais frequentemente feita pelo fabricante dos próprios aparelhos. Para tornar esses perfis utilizáveis, independente do sistema operacional e da plataforma, o ICC (International Color Consortium) criou um padrão chamado de perfil ICC que descreve como os perfis de cores são armazenados em arquivos e incorporados em imagens.</para>
+  </sect2>
+
+  <sect2 id="plug-in-icc-profile-set">
+    <title>Introdução a um fluxo de trabalho de gerenciamento de cor</title>
+    <tip>
+      <para>A maioria dos parâmetros e perfis descritos aqui podem ser definidos nas preferências do <acronym>GIMP</acronym>. Consulte <xref linkend="gimp-prefs-color-management"/> para maiores detalhes.</para>
+    </tip>
+
+    <sect3 id="plug-in-icc-profile-apply">
+      <title>Entrada</title>
+      <para>A maioria das câmeras digitais incorporam um perfil de cores para arquivos de fotos sem nenhuma interação do usuário. Scanners digitais geralmente vêm com um perfil de cor, que eles também atribuem às imagens digitalizadas.</para>
+      <figure>
+        <title>Aplicando o perfil ICC</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/using/icc-apply-dialog.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Ao abrir uma imagem com um perfil de cor incorporado, o <acronym>GIMP</acronym> oferece-se para converter o arquivo para o espaço de cor RGB de trabalho. Este perfil por padrão é o <quote>sRGB</quote> e recomenda-se que todo o trabalho seja feito em nesse espaço de cor. Se, porém, você decidir manter o perfil de cor incorporado na imagem, mesmo assim ela ainda será exibida corretamente.</para>
+      <para>No caso, se por algum motivo um perfil de cor não esteja incorporado na imagem e você sabe (ou tem um bom palpite) qual ele deveria ser, você pode atribuí-lo manualmente para essa imagem.</para>
+    </sect3>
+
+    <sect3 id="gimp-concepts-cm-display">
+      <title>Visualização</title>
+      <para>Para obter os melhores resultados, você precisa de um perfil de cor para o monitor. Se um perfil de monitor for configurado, ou para todo o sistema ou na seção de Gerenciamento de Cores do diálogo Preferências do <acronym>GIMP</acronym>, as cores da imagem serão exibidas de forma mais precisa.</para>
+      <para>Um dos comandos mais importantes do <acronym>GIMP</acronym> para trabalhar com gerenciamento de cores é descrito em <xref linkend="gimp-display-filter-dialog"/>.</para>
+      <para>Se você não tem um perfil de cor para o seu monitor, você pode criá-lo usando a calibração de hardware e ferramentas de medição. Em sistemas UNIX você terá o <productname>ColorHug</productname> (http://www.hughski.com/), <productname>Argyll Color Management System</productname><xref linkend="bibliography-online-argyllcms"/> ou <productname>LProf</productname><xref linkend="bibliography-online-lprof"/> para criar perfis de cor.</para>
+
+      <sect4 id="gimp-concepts-cm-display-profiling">
+        <title>Visualizar calibração e perfis</title>
+        <indexterm>
+          <primary>Gerenciamento de cores</primary>
+        </indexterm>
+        <indexterm>
+          <primary>Perfil de cores</primary>
+        </indexterm>
+        <para>Para telas existem dois passos envolvidos. Uma é chamada a calibração e o outro é chamado de criação do perfil. Além disso, a calibração envolve geralmente duas etapas. A primeira envolve o ajuste controles externos do monitor externos, como contraste, brilho, temperatura de cor, etc, e é altamente dependente do monitor específico. Além disso, existem outros ajustes que são carregados na memória da placa de vídeo para deixar o monitor tão perto de um estado padrão quanto seja possível. Esta informação é armazenada no perfil do monitor na tag chamada <quote>vgct</quote>. Provavelmente sob o Windows ou Mac OS, o sistema operacional carrega esta informação (LUT) na placa de vídeo no processo de iniciar o computador. No Linux, no momento, você tem que que usar um programa externo, como o xcalib ou dispwin. (Se você vai fazer uma calibração visual simples usando um site como o de Norman Koren, é possível usar apenas o xgamma para carregar um valor de gama.)</para>
+        <para>O segundo passo, de criação de perfil, deriva um conjunto de regras que possibilitam ao<acronym>GIMP</acronym> traduzir os valores RGB no arquivo de imagem em cores adequadas na tela. Isso também é armazenado no perfil do monitor, e não altera os valores RGB na imagem, mas muda quais valores são enviados para a placa de vídeo (que já contém o LUT vgct).</para>
+      </sect4>
+    </sect3>
+
+    <sect3>
+      <title>Simulação de impressão</title>
+      <para>Usando o <acronym>GIMP</acronym> você pode facilmente obter uma prévia de como sua imagem será no papel. Dado um perfil de cores para a impressora, a wexibição do GIMP pode ser ligada em modo de prova eletrônica. Em tal impressão simulada, cores que não podem ser reproduzidas adequadamente, podem opcionalmente ser marcadas com uma cor cinza neutra, permitindo-lhe corrigir esses erros antes de enviar suas imagens para a impressora.</para>
+    </sect3>
+  </sect2>
+</sect1>

@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.5. Gradient Flare</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-light-and-shadow.html" title="6. Light and Shadow Filters" />
+    <link rel="prev" href="gimp-filter-lens-flare.html" title="6.4. Lens Flare" />
+    <link rel="next" href="plug-in-lighting.html" title="6.6. Lighting Effects" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.5. Gradient Flare</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-lens-flare.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>6. Light and Shadow Filters</span>
+        <nav> <a accesskey="n" href="plug-in-lighting.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-gflare"></a>6.5. Gradient Flare</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id50206" class="indexterm"></a>
+      <a id="id50210" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3207"></a>6.5.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3208"></a>
+          <p class="title">
+            <strong>Figure 17.116. Example for the Gradient Flare filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for the Gradient Flare filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/light-taj-gflare.jpg" alt="Example for the Gradient Flare filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      Gradient Flare effect reminds the effect you get when you take a
+      photograph of a blinding light source, with a halo and radiations around
+      the source.  The Gradient Flare image has three components:
+      <span class="emphasis"><em>Glow</em></span> which is the big central fireball,
+      <span class="emphasis"><em>Rays</em></span> and <span class="emphasis"><em>Second Flares</em></span>
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in indexed mode, this menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3209"></a>6.5.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Light and Shadow</span> → <span class="guimenuitem">Gradient Flare…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3210"></a>6.5.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The <span class="emphasis"><em>Settings</em></span> tab allows you to set manually the
+      parameters while the <span class="emphasis"><em>Selector</em></span> tab let you choose
+      presets in a list.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Preview</span>
+            </dt>
+            <dd>
+              <p>
+            When <span class="guilabel">Auto update preview</span> is checked,
+            parameter setting results are interactively displayed in preview
+            without modifying the image until you click on
+            <span class="guilabel">OK</span> button.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3211"></a>6.5.3.1. Settings</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id3212"></a>
+            <p class="title">
+              <strong>Figure 17.117. <span class="quote">“<span class="quote">Gradient Flare</span>”</span> filter options (Settings)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/gflare-options-1.png" alt="“Gradient Flare” filter options (Settings)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Center</span>
+              </dt>
+              <dd>
+                <p>
+              You can set the <span class="guilabel">X</span> and <span class="guilabel">Y</span>
+              (pixels) coordinates using the input box or by
+              clicking in the preview. The coordinate origin is
+              at the upper left corner.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Parameters</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Radius</span>
+                    </dt>
+                    <dd>
+                      <p>
+                  The radius of the effect. The slider limits the range of
+                  possible values, but using the input box you can enter
+                  greater values.
+                </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Rotation</span>
+                    </dt>
+                    <dd>
+                      <p>Turn the effect.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Hue rotation</span>
+                    </dt>
+                    <dd>
+                      <p>Change the tint (color) of the effect.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Vector angle</span>
+                    </dt>
+                    <dd>
+                      <p>Turn the Second flares.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Vector length</span>
+                    </dt>
+                    <dd>
+                      <p>Vary the distance applied for the Second flares.</p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Adaptive supersampling</span>
+              </dt>
+              <dd>
+                <p>
+              When enabled, adaptive supersampling, an anti-aliasing technique,
+              is used when rendering the image. See
+              <a class="xref" href="glossary.html#glossary-supersampling" title="Supersampling">
+      <span class="phrase">Supersampling</span>
+    </a> for more information.
+            </p>
+                <p>
+              Enabling this setting activates the following options that
+              can be used to adjust the supersampling.
+            </p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Max depth</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    Specifies the maximum depth for supersampling. This
+                    determines the number of samples used. Higher values
+                    may produce better results, but can potentially slow down
+                    the computation.
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Threshold</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    Specifies the lower threshold of pixel difference that stops
+                    supersampling.
+                  </p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id3213"></a>6.5.3.2. Selector</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id3214"></a>
+            <p class="title">
+              <strong>Figure 17.118. <span class="quote">“<span class="quote">Gradient Flare</span>”</span> filter options (Selector)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/gflare-options-2.png" alt="“Gradient Flare” filter options (Selector)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>
+        The Selector tab allows you to select a Gradient Flare pattern, to
+        change it and save it.
+      </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">New</span>
+              </dt>
+              <dd>
+                <p>
+              When you click on this button, you create a new Gradient Flare
+              pattern.  Give it a name of your choice.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Edit</span>
+              </dt>
+              <dd>
+                <p>
+              This button brings up the
+              <a class="link" href="plug-in-gflare.html#plug-in-gflare-editor" title="6.5.4. Gradient Flare Editor">Gradient Flare
+              Editor</a> (see below).
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Copy</span>
+              </dt>
+              <dd>
+                <p>
+              This button allows you to duplicate selected Gradient Flare
+              pattern.  You can edit the copy without altering the original.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Delete</span>
+              </dt>
+              <dd>
+                <p>
+              This button deletes the selected Gradient Flare pattern.
+            </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="plug-in-gflare-editor"></a>6.5.4. Gradient Flare Editor</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The Gradient Flare Editor is also organized in tabs:
+    </p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="plug-in-gflare-editor-general"></a>6.5.4.1. General</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id3215"></a>
+            <p class="title">
+              <strong>Figure 17.119. <span class="quote">“<span class="quote">Gradient Flare Editor</span>”</span> options (General)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/gflare-editor-1.png" alt="“Gradient Flare Editor” options (General)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Glow Paint Options</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Opacity</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    Slider and input box allows you to reduce glow opacity
+                    (0-100).
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Paint mode</span>
+                    </dt>
+                    <dd>
+                      <p>You can choose between four modes:</p>
+                      <div class="variablelist">
+                        <dl class="variablelist">
+                          <dt>
+                            <span class="term">Normal</span>
+                          </dt>
+                          <dd>
+                            <p>
+                          In this mode, the glow covers the image without
+                          taking into account what is beneath.
+                        </p>
+                          </dd>
+                          <dt>
+                            <span class="term">Addition</span>
+                          </dt>
+                          <dd>
+                            <p>
+                          Pixel RGB values of glow are added to RGB values of
+                          the corresponding pixels in the image. Colors get
+                          lighter and white areas may appear.
+                        </p>
+                          </dd>
+                          <dt>
+                            <span class="term">Overlay</span>
+                          </dt>
+                          <dd>
+                            <p>
+                          Light/Dark areas of glow enhance corresponding
+                          light/dark areas of image.
+                        </p>
+                          </dd>
+                          <dt>
+                            <span class="term">Screen</span>
+                          </dt>
+                          <dd>
+                            <p>
+                          Dark areas of image are enlightened by corresponding
+                          light areas of glow. Imagine two slides projected
+                          onto the same screen.
+                        </p>
+                          </dd>
+                        </dl>
+                      </div>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Rays Paint Options</span>
+              </dt>
+              <dd>
+                <p>
+              Options are the same as for
+              <span class="guilabel">Glow Paint Options</span>.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Second Flare Paint Options</span>
+              </dt>
+              <dd>
+                <p>
+              Options are the same as for
+              <span class="guilabel">Glow Paint Options</span>.
+            </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="plug-in-gflare-editor-glow"></a>6.5.4.2. Glow</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id3216"></a>
+            <p class="title">
+              <strong>Figure 17.120. <span class="quote">“<span class="quote">Gradient Flare Editor</span>”</span> options (Glow)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/gflare-editor-2.png" alt="“Gradient Flare Editor” options (Glow)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Gradients</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <p>
+                By clicking on the rectangular buttons, you can develop a long
+                list of gradients. <span class="quote">“<span class="quote">%</span>”</span> gradients belong to the
+                Editor.
+              </p>
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Radial gradient</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    The selected gradient is drawn radially, from center to
+                    edge.
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Angular gradient</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    The selected gradient develops around center,
+                    counter-clockwise, starting from three o'clock if the
+                    <span class="guilabel">Rotation</span> parameter is set to 0.
+                    Radial and angular gradients are combined according to the
+                    Multiply mode: light areas are enhanced and colors are
+                    mixed according to CMYK color system (that of your
+                    printer).
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Angular size gradient</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    This is a gradient of radius size which develops
+                    angularly. Radius is controlled according to gradient
+                    Luminosity: if luminosity is zero (black), the radius is
+                    0%. If luminosity is 100% (white), the radius is also
+                    100%.
+                  </p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Parameters</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Size (%)</span>
+                    </dt>
+                    <dd>
+                      <p>
+                  Sets size of glow in percent (0-200).
+                </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Rotation</span>
+                    </dt>
+                    <dd>
+                      <p>
+                  Sets the origin of the angular gradient (-180 +180).
+                </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Hue rotation</span>
+                    </dt>
+                    <dd>
+                      <p>
+                  Sets glow color, according to the HSV color wheel (-180
+                  +180). (Cf. <a class="link" href="gimp-dialogs-content.html#gimp-colorselector-triangle">The
+                  triangle color selector</a>.)
+                </p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="plug-in-gflare-editor-rays"></a>6.5.4.3. Rays</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id3217"></a>
+            <p class="title">
+              <strong>Figure 17.121. <span class="quote">“<span class="quote">Gradient Flare Editor</span>”</span> options (Rays)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/gflare-editor-3.png" alt="“Gradient Flare Editor” options (Rays)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Gradients</span>
+              </dt>
+              <dd>
+                <p>
+              The options are the same as for
+              <a class="link" href="plug-in-gflare.html#plug-in-gflare-editor-glow" title="6.5.4.2. Glow">Glow</a>.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Parameters</span>
+              </dt>
+              <dd>
+                <div class="variablelist">
+                  <p>
+                The first three options are the same as in
+                <a class="link" href="plug-in-gflare.html#plug-in-gflare-editor-glow" title="6.5.4.2. Glow">Glow</a>.
+                Two are new:
+              </p>
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term"># of Spikes</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    This option determines the number of spikes (1-300) but
+                    also their texture.
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Spike thickness</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    When spikes get wider (1-100), they look like flower
+                    petals.
+                  </p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="plug-in-gflare-editor-secondflares"></a>6.5.4.4. Second Flares</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id3218"></a>
+            <p class="title">
+              <strong>Figure 17.122. 
+          <span class="quote">“<span class="quote">Gradient Flare Editor</span>”</span> options (Second Flares)
+        </strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/gflare-editor-4.png" alt="“Gradient Flare Editor” options (Second Flares)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Gradients</span>
+              </dt>
+              <dd>
+                <p>
+              The options are the same as for
+              <a class="link" href="plug-in-gflare.html#plug-in-gflare-editor-glow" title="6.5.4.2. Glow">Glow</a>.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Parameters</span>
+              </dt>
+              <dd>
+                <p>
+              The options are the same as for
+              <a class="link" href="plug-in-gflare.html#plug-in-gflare-editor-glow" title="6.5.4.2. Glow">Glow</a>.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Shape of Second Flares</span>
+              </dt>
+              <dd>
+                <p>
+              Second flares, these satellites of the main flare, may have
+              two shapes: <span class="guilabel">Circle</span> and
+              <span class="guilabel">Polygon</span>. You can set the
+              <span class="emphasis"><em>Number</em></span> polygon sides. The option
+              accepts 1 side (!), not 2.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Random seed, </span>
+                <span class="term">New Seed</span>
+              </dt>
+              <dd>
+                <p>
+              This option controls the randomness of the filter.
+              The <span class="guilabel">Random seed</span> box lets you manually enter
+              a seed for the randomization algorithm used. You can also generate
+              a random seed by pressing the <span class="guibutton">New Seed</span>
+              button. If the same random seed is used in the same situation,
+              the filter produces exactly the same results. A different random
+              seed produces different results.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Randomize</span>
+              </dt>
+              <dd>
+                <p>
+              When you click on this button, you produce a random seed that
+              will be used by the random generator. It is each time different.
+            </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-lens-flare.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-light-and-shadow.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-lighting.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-lens-flare.html">6.4. Lens Flare</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-lighting.html">6.6. Lighting Effects</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

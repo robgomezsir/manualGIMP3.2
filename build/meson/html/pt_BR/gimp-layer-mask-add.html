@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>7.25. Add Layer Masks</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-layer-menu.html" title="7. O menu “Camada”" />
+    <link rel="prev" href="gimp-layer-mask-menu.html" title="7.24. O Submenu “Máscara”" />
+    <link rel="next" href="gimp-layer-mask-apply.html" title="7.26. Apply Layer Masks" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>7.25. Add Layer Masks</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-layer-mask-menu.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>7. O menu <span class="quote">“<span class="quote">Camada</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-layer-mask-apply.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-layer-mask-add"></a>7.25. Add Layer Masks</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id40684" class="indexterm"></a>
+      <a id="id40688" class="indexterm"></a>
+      <p>
+    The <span class="guimenuitem">Add Layer Masks…</span> command adds layer masks
+    to the selected layers. It displays a dialog in which you can set the
+    initial properties of the masks. If the layers already have a layer mask,
+    this menu entry is disabled.
+  </p>
+      <p>
+    A layer mask lets you define which parts of the layer are opaque,
+    semi-transparent or transparent.
+  </p>
+      <p>
+    See the <a class="link" href="gimp-dialogs-structure.html#gimp-layer-mask" title="2.1.4. Máscaras de camada">Layer Masks</a> section for
+    more information.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3834"></a>7.25.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Layer</span> → <span class="guisubmenu">Mask</span> → <span class="guimenuitem">Add Layer Masks…</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          From the
+          <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Diálogo de camadas">Layers Dialog</a>, you
+          can access it through the <span class="guimenuitem">Add Layer Masks…</span>
+          command of its context menu, or by clicking on the
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-layer-mask.svg" width="16" alt="Add Layer Masks…" /></span>
+          </span>
+          icon button on the bottom of that dialog.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3835"></a>7.25.2. Description of the <span class="quote">“<span class="quote">Add Layer Masks…</span>”</span> Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3836"></a>
+          <p class="title">
+            <strong>Figura 16.95. The <span class="quote">“<span class="quote">Add Layer Masks…</span>”</span> dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/layer-mask-add.png" alt="The “Add Layer Masks…” dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Inicializar máscara da camada para:</span>
+            </dt>
+            <dd>
+              <p>Este diálogo permite várias opções para o conteúdo inicial da máscara da camada:</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Branca (opacidade total)</span>
+                  </dt>
+                  <dd>
+                    <p>Com esta opção, a máscara  da camada vai tornar toda a camada totalmente opaca. Isso significa que você não vai notar nenhuma diferença na aparência da camada até você pintar sobre a máscara criada.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Preta (transparência total)</span>
+                  </dt>
+                  <dd>
+                    <p>Com esta opção, a máscara da camada vai tornar toda a camada totalmente transparente. Isto é representado na imagem por um padrão de xadrez, e você vai precisar ativar a máscara e  pintar ou preenche-la com alguma coisa para tornar alguma parte da camada visível.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Canal alfa da camada</span>
+                  </dt>
+                  <dd>
+                    <p>Com esta opção, o conteúdo do canal alfa é utilizado para preencher a máscara da camada. O próprio canal alfa não é alterado, de modo que a transparência das áreas parcialmente visíveis é incrementada, tornando a uma camada mais transparente.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Transfere o canal alfa da camada</span>
+                  </dt>
+                  <dd>
+                    <p>Esta opção define a máscara de camada como a opção anterior, mas depois redefine o canal alfa da camada para opacidade total. O efeito é o de transferir a informação de transparência do canal alfa para a máscara da camada, deixando a camada com a mesma aparência que antes. A visibilidade da camada é agora determinada somente pela máscara e não pelo canal alfa da camada. Em caso de dúvida, selecione essa opção em vez do <span class="quote">“<span class="quote">Canal alfa da camada</span>”</span>, porque ela vai deixar a aparência inalterada.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Seleção</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This option converts the current selection into a layer
+                  mask, so that selected areas are opaque, and unselected
+                  areas are transparent. If any areas are partially
+                  selected, you can click on the
+                  <a class="link" href="gimp-image-window-quick-mask-button.html" title="3. The Quick Mask">Quick Mask
+                  button</a> to help you predict what the effects will be.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Cópia em tons de cinza da camada</span>
+                  </dt>
+                  <dd>
+                    <p>Esta opção converte a própria camada em uma máscara de camada: as áreas pretas ficam transparentes e brancas ficam opacas. É particularmente útil quando você planeja adicionar novos conteúdos à camada mais tarde.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Canal</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  With this option the layer mask is initialized with a
+                  selection mask you have created before, stored in the
+                  Channels dialog. Note: that the normal RGBA channels
+                  are not part of this list, it only lists the extra
+                  channels you have created.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Inverter máscara</span>
+            </dt>
+            <dd>
+              <p>
+            If you check the <span class="guilabel">Invert mask</span> box at the
+            bottom of the dialog, the resulting mask is inverted, so that
+            transparent areas become opaque and vice versa.
+          </p>
+            </dd>
+          </dl>
+        </div>
+        <p>
+      When you click on the <span class="guibutton">Add</span> button, a thumbnail
+      of the layer mask appears to the right of the thumbnail of the layer
+      in the Layers Dialog.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-layer-mask-menu.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-layer-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-layer-mask-apply.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-layer-mask-menu.html">7.24. O Submenu <span class="quote">“<span class="quote">Máscara</span>”</span></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-layer-mask-apply.html">7.26. 
+    Apply Layer Masks
+  </a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

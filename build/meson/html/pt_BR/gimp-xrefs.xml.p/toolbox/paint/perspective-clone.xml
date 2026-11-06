@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2018-10-14 j.h: update to v2.10
+  2009-03-17 j.h: reviewed for v2.6. No change
+  2007-11-01 j.h: created
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-perspective-clone">
+  <title>Clonagem em perspectiva</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Clonagem em perspectiva</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Clonagem em perspectiva</primary>
+  </indexterm>
+
+  <para>Essa ferramenta permite clonar de acordo com a perspectiva que você quiser. Primeiro, selecione a direção das linhas de fuga da perspectiva da mesma forma que com a ferramenta de <link linkend="gimp-tool-perspective">Perspectiva</link>. E então copie a área de origem da mesma forma que com a ferramenta de <link linkend="gimp-tool-clone">Clonagem</link></para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>Existem várias formas para ativar a ferramenta:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Através do menu da janela de imagem: <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de pintura</guisubmenu><guimenuitem>Clonagem em perspectiva</guimenuitem></menuchoice>.</para>
+      </listitem>
+      <listitem>
+        <para>Ícone da ferramenta de clonagem na caixa de ferramentas</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Modificadores de tecla</title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>Pressionar <keycap>Ctrl</keycap> permite selecionar a área de origem da clonagem.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <!-- TRANSLATORS: This is about the Shift key -->
+          <keycap>Shift</keycap>
+        </term>
+        <listitem>
+          <para>Quando a origem já está selecionada e você pressiona essa tecla, aparecerá uma fina linha conectando a área clicada anteriormente à localização atual do ponteiro. Clicando novamente, enquanto continua a pressionar a tecla <keycap>Shift</keycap>, a ferramenta fará a clonagem ao longo dessa linha. É particularmente útil ao clonar a partir de uma textura.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/tool-options-perspective-clone.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo de operação</term>
+        <listitem>
+          <para>Ao usar essa ferramenta, primeiro é preciso escolher <guilabel>Modificar plano de perspectiva</guilabel>. Isso funciona como a ferramenta de <link linkend="gimp-tool-perspective">Perspectiva</link>. E então você seleciona <guilabel>Clonagem em perspectiva</guilabel> e a usa da mesma forma que a ferramenta de <link linkend="gimp-tool-clone">Clonagem</link>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Opacidade</term>
+        <term>Pincel</term>
+        <term>Tamanho</term>
+        <term>Proporção</term>
+        <term>Ângulo</term>
+        <term>Espaçamento</term>
+        <term>Dureza</term>
+        <term>Força</term>
+        <term>Dinâmicas</term>
+        <term>Opções de dinâmicas</term>
+        <term>Aplicar espalhamento</term>
+        <term>Pincelada suave</term>
+        <term>O tamanho do pincel - curva de esmaecimento</term>
+        <listitem>
+          <xi:include href="about-common-paint-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Origem</term>
+        <term>Alinhamento</term>
+        <listitem>
+          <para>Funciona da mesma forma que na ferramenta de <link linkend="gimp-tool-clone">clonagem</link>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Borda dura</term>
+        <listitem>
+          <para><guilabel>Borda firme</guilabel>: esta opção dá um contorno firme à área clonada.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Exemplo</title>
+    <figure>
+      <title>Exemplo de <quote>Clonagem em perspectiva</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/perspective-clone-ex1.png"/>
+        </imageobject>
+        <caption>
+          <para>A opção <quote>modificar plano de perspectiva</quote> está marcada. As linhas de fuga estão ativas.</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/perspective-clone-ex2.png"/>
+        </imageobject>
+        <caption>
+          <para>A opção <quote>clonagem em perspectiva</quote> está marcada. O retângulo branco foi clonado. Verá que ele vai ficando menor conforme se afasta.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

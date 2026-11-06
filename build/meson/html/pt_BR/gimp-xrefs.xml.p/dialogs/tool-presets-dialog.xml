@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--Section history
+  2012-03-29 j.h: created
+-->
+<sect2 id="gimp-tool-preset-dialog">
+  <title>Diálogo de Definições de ferramentas</title>
+
+  <indexterm>
+    <primary>Pré-definições</primary>
+    <secondary>Diálogo de definições</secondary>
+  </indexterm>
+
+  <para>A caixa de diálogo Predefinições de Ferramenta mostra uma lista de todas as predefinições de ferramenta salvas. Clicar em uma predefinição abre a ferramenta correspondente com suas predefinições salvas.</para>
+
+  <figure>
+    <title>O diálogo de Definições de ferramentas</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/tool-presets-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo a partir de: <itemizedlist>
+        <listitem>
+          <para>
+            from the main menu:
+            <menuchoice>
+              <guimenu>Windows</guimenu>
+              <guisubmenu>Dockable Dialogs</guisubmenu>
+              <guimenuitem>Tool Presets</guimenuitem>
+            </menuchoice>;
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon> and selecting
+            <menuchoice>
+              <guimenu>Add Tab</guimenu>
+              <guimenuitem>Tool Presets</guimenuitem>
+            </menuchoice>.
+          </para>
+        </listitem>
+      </itemizedlist></para>
+  </sect3>
+
+  <sect3>
+    <title>Usando o diálogo de definições de ferramentas</title>
+    <para>Este diálogo vem com uma lista de pré-definições configuradas. Cada uma delas tem um ícone representando a qual ferramenta as definições se aplicarão, e um nome.</para>
+    <para>As definições podem ser rotuladas (tagueadas), de forma que você pode trabalhar com várias delas como preferir. Veja <xref linkend="gimp-tagging"/> para ter mais informações sobre rótulos.</para>
+    <para>Ao fazer um clique-duplo num ícone de definição de ferramenta, o editor de definições de ferramenta aparece.</para>
+    <para>Clicar duas vezes no nome de uma pré-definição permite que você edite seu nome.</para>
+      <para>
+        The button bar at the bottom offers the following functionality:
+      <itemizedlist>
+        <listitem>
+          <anchor id="gimp-tool-preset-edit"/>
+          <para>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gtk-edit.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <guilabel>Edit this tool preset</guilabel>: clicking on this button
+            opens the Tool Preset Editor for the selected preset.
+            The Tool Preset Editor is described in
+              <xref linkend="gimp-tool-preset-editor-dialog"/>.
+          </para>
+        </listitem>
+        <listitem>
+          <anchor id="gimp-tool-preset-new"/>
+          <para>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <guilabel>Create a new tool preset</guilabel>: before clicking on
+            this button, you can either select an existing preset, or select a
+            tool in Toolbox, for example the Healing Tool which is not in the
+            presets list. A new preset is created at the top of the dialog and
+            the Tool Preset Editor is opened. Please see
+            <xref linkend="gimp-tool-preset-editor-dialog"/>.
+          </para>
+        </listitem>
+        <listitem>
+          <anchor id="gimp-tool-preset-save"/>
+          <para>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/document-save.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <guilabel>Save the active tool options to this preset</guilabel>:
+            this saves the current tool settings to the selected preset.
+          </para>
+        </listitem>
+        <listitem>
+          <anchor id="gimp-tool-preset-restore"/>
+          <para>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/document-revert.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <guilabel>Restore this tool preset</guilabel>: this restores the
+            tool settings to the values saved in the selected preset.
+          </para>
+        </listitem>
+        <listitem>
+          <anchor id="gimp-tool-preset-delete"/>
+          <para>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <guilabel>Delete this tool preset</guilabel>: this deletes the
+            currently selected preset. Note that this button is disabled for
+            the default presets that come with GIMP.
+          </para>
+        </listitem>
+        <listitem>
+          <anchor id="gimp-tool-preset-refresh"/>
+          <para>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/view-refresh.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <guilabel>Refresh tool presets</guilabel>: If you have added a
+            preset manually to the <guilabel>Tool Presets</guilabel> folder
+            configured in the
+            <link linkend="gimp-prefs-folders-tool-presets">Folders Preferences</link>,
+            you have to click on this button to include it in the presets list.
+          </para>
+        </listitem>
+      </itemizedlist>
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>O menu de contexto do diálogo de Definições de ferramentas</title>
+    <para>
+      Right-clicking on the Presets Dialog opens a context menu where you find
+      some commands already described with buttons: Edit tool preset, New tool
+      preset, Save tool options to preset, Restore tool preset, Refresh tool presets.
+      Additional commands are:
+      <variablelist>
+        <varlistentry>
+          <term>Duplicar vetor</term>
+          <listitem>
+            <anchor id="gimp-tool-preset-duplicate"/>
+            <para><guilabel>Duplicar definição de ferramenta</guilabel>: este comando nunca está ativo. Ele não é usado, uma vez que a própria criação de uma nova definição de ferramenta, como vimos, atua como uma duplicação de uma definição já existente.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Copiar localização da paleta</term>
+          <listitem>
+            <anchor id="gimp-tool-preset-copy-location"/>
+            <para><guilabel>Copiar localização da definição de ferramenta</guilabel>: este comando copia o caminho completo do arquivo de definição de ferramenta ativo para a área de transferência.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Mostrar no Gerenciador de Arquivos</term>
+          <listitem>
+            <anchor id="gimp-tool-preset-show-in-file-manager"/>
+            <para><guilabel>Mostrar no Gerenciador de Arquivos</guilabel> abre o local da predefinição de ferramenta no Gerenciador de Arquivos padrão do seu sistema.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </para>
+  </sect3>
+</sect2>

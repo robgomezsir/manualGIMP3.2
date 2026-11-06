@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="gimp-save-dialog">
+  <title>Salvar arquivo</title>
+  <indexterm>
+    <primary>Imagem</primary>
+    <secondary>Salvar imagem</secondary>
+    <tertiary>Salvar</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Salvar</primary>
+  </indexterm>
+
+  <para>O comando <guimenuitem>Salvar</guimenuitem> salva sua imagem no disco. Do <acronym>GIMP</acronym>-2.8 em diante, ele salva apenas imagens no formato XCF. Se você tentar salvar para outro formato, receberá uma mensagem de erro, e a partir da versão 2.8.8, um link direto para o diálogo de Exportar arquivo, que pode gravar imagens nos outros formatos. Verifique  <xref linkend="save-export-image"/>. </para>
+  <para>Se você já salvou a imagem, o arquivo com a  imagem anterior será sobre-escrito com a versão atual, automaticamente. Se você ainda não salvou a imagem nenhuma vez, o comando <guimenuitem>Salvar</guimenuitem> abre o diálogo de Salvar imagem. Note que se você abriu uma imagem que não seja do formato XCF, isso é considerado uma <quote>importação</quote> da imagem para o GIMP, e o comando Salvar vai perguntar um nome para um novo arquivo XCF para a imagem, em vez de sobre-escrever seu arquivo JPG ou PNG.</para>
+
+  <para>
+    If you quit without having saved your image,
+    <acronym>GIMP</acronym> asks you if you really want to do so.
+  </para>
+
+  <figure>
+    <title>Diálogo de Salvar imagem</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/save-image-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          You can access this command in the main menu through
+          <menuchoice>
+            <guimenu>File</guimenu>
+            <guimenuitem>Save</guimenuitem>
+          </menuchoice>,
+        </para>
+      </listitem>
+      <listitem>
+        <para>ou usando o atalho de teclado <keycombo><keycap>Ctrl</keycap><keycap>S</keycap></keycombo>.</para>
+      </listitem>
+      <listitem>
+        <para>Use <keycombo><keycap>Ctrl</keycap><keycap>Shift</keycap><keycap>S</keycap></keycombo> para salvar a imagem com um nome diferente.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>O diálogo de Salvar imagem.</title>
+    <para>
+      In the file browser, you can edit filename and extension directly in the
+      <guilabel>Name</guilabel> field (default is <quote>Untitled.xcf</quote>)
+      or by selecting an existing XCF file to override in name list. Navigate
+      the folders if you prefer a different image destination. You can also
+      create a new folder if necessary.
+    </para>
+    <formalpara>
+      <title>Selecionar tipo de arquivo</title>
+      <para>
+        If you expand this option, you can select a compressed file format for
+        your XCF file in the list.
+      </para>
+    </formalpara>
+  </sect3>
+</sect2>

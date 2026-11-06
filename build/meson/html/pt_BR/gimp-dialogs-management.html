@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4. Diálogos relacionados a gerenciamento de imagens</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="dialogs.html" title="Capítulo 15. Diálogos" />
+    <link rel="prev" href="gimp-font-dialog.html" title="3.8. Diálogo de fontes" />
+    <link rel="next" href="gimp-image-dialog.html" title="4.2. Diálogo de imagens" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4. Diálogos relacionados a gerenciamento de imagens</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-font-dialog.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 15. Diálogos</span>
+        <nav> <a accesskey="n" href="gimp-image-dialog.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-dialogs-management"></a>4. Diálogos relacionados a gerenciamento de imagens</h2>
+          </div>
+        </div>
+      </div>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-buffer-dialog"></a>4.1. Diálogo de buffers </h3>
+            </div>
+          </div>
+        </div>
+        <a id="id25751" class="indexterm"></a>
+        <a id="id25754" class="indexterm"></a>
+        <a id="id25757" class="indexterm"></a>
+        <a id="id25760" class="indexterm"></a>
+        <a id="id25763" class="indexterm"></a>
+        <a id="id25766" class="indexterm"></a>
+        <a id="id25768" class="indexterm"></a>
+        <a id="id25770" class="indexterm"></a>
+        <div class="figure">
+          <a id="id3212"></a>
+          <p class="title">
+            <strong>Figura 15.47. O diálogo de buffers, como uma lista</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/buffers-dialog.png" alt="O diálogo de buffers, como uma lista" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Buffers são um tipo de armazenamento temporário para dados de imagem, criados quando você recorta ou copia parte de um drawable (uma camada, máscara de camada, etc.). Os seguintes comandos estão disponíveis no menu <span class="guimenu">Editar</span> para salvar uma imagem em um buffer: </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Cortar com nome</span>
+            </dt>
+            <dd>
+              <p><span class="guimenu">Editar</span> → <span class="guisubmenu">Buffer</span> → <span class="guimenuitem">Cortar Nomeado…</span> Este comando recorta a parte selecionada do drawable atual (geralmente uma camada) e a coloca em um buffer. Se não houver seleção, todo o drawable será usado. Será solicitado que você dê um nome ao buffer. A imagem será removida da seleção depois disso.</p>
+            </dd>
+            <dt>
+              <span class="term">Copiar com nome</span>
+            </dt>
+            <dd>
+              <p><span class="guimenu">Editar</span> → <span class="guisubmenu">Buffer</span> → <span class="guimenuitem">Copiar Nomeado…</span> Este comando copia a parte selecionada do drawable atual (geralmente uma camada) e a coloca em um buffer. Se não houver seleção, todo o drawable será usado. Será solicitado que você dê um nome ao buffer.</p>
+            </dd>
+            <dt>
+              <span class="term">Copiar com nome</span>
+            </dt>
+            <dd>
+              <p><span class="guimenu">Editar</span> → <span class="guisubmenu">Buffer</span> → <span class="guimenuitem">Copiar Visível Nomeado…</span> Este comando copia a parte selecionada de todos os drawables visíveis e a coloca em um buffer. Se não houver seleção, toda a imagem será usada. Será solicitado que você dê um nome ao buffer.</p>
+            </dd>
+            <dt>
+              <span class="term">Colar com nome</span>
+            </dt>
+            <dd>
+              <p><span class="guimenu">Editar</span> → <span class="guisubmenu">Buffer</span> → <span class="guimenuitem">Colar Nomeado…</span> Este comando de menu abre a <span class="guilabel">Caixa de Diálogo de Buffers</span>. Para colar um buffer de fato, escolha um dos botões desta caixa de diálogo, ou o menu de contexto. Ambos serão explicados abaixo.</p>
+            </dd>
+          </dl>
+        </div>
+        <p>O diálogo de <span class="quote">“<span class="quote">Buffers</span>”</span> exibe o conteúdo de todos os buffers existentes, e permite que você trabalhe com eles de várias formas. Ele também mostra, no topo, o conteúdo do Buffer global (o que é usado para simplesmente copiar e colar), mas você não pode fazer nada com ele: só pode ver a miniatura de seus coteúdos.</p>
+        <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Caution">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Cuidado]" src="images/caution.png" />
+              </td>
+              <th align="left">Cuidado</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Buffers com nome não são salvos entre sessões do GIMP. A única forma de salvá-los é colá-los em imagens.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="gimp-buffer-dialog-activate"></a>4.1.1. Ativando o diálogo</h4>
+              </div>
+            </div>
+          </div>
+          <p>O diálogo de <span class="quote">“<span class="quote">Buffers</span>”</span> é um diálogo de encaixe;veja a  seção <a class="xref" href="gimp-concepts-docks.html" title="2.3. Caixas de diálogo e de encaixe">Seção 2.3, “Caixas de diálogo e de encaixe”</a> para mais informações sobre como gerenciá-lo.</p>
+          <p>Você pode acessa-lo:</p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>Do menu da janela de imagem, em <span class="guimenu">Cores</span> → <span class="guisubmenu">Informação</span> → <span class="guimenuitem">Histograma</span>.</p>
+              </li>
+              <li class="listitem">
+                <p>Do menu da janela de imagens em <span class="guimenu">Janelas</span> → <span class="guisubmenu">Diálogos de encaixe</span> → <span class="guimenuitem">Buffers</span>.</p>
+              </li>
+              <li class="listitem">
+                <p>
+          from the Tab menu in any dockable dialog by clicking the
+          <a class="link" href="menus.html#tab-menus" title="1.3. Menus de Abas">tab menu button</a>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+          </span> and selecting
+          <span class="guimenu">Add Tab</span> → <span class="guimenuitem">Buffers</span>.
+        </p>
+              </li>
+            </ul>
+          </div>
+          <p>
+      In the <span class="guimenu">Windows</span> menu, there is a list of
+      <a class="link" href="gimp-concepts-docks.html#gimp-dockable-menu" title="2.3.2. Menu das Abas (guias)">detached windows</a> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <span class="quote">“<span class="quote">Buffers</span>”</span> dialog from the main menu:
+      <span class="guimenu">Windows</span> → <span class="guimenuitem">Buffers</span>.
+    </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="gimp-buffer-dialog-using"></a>4.1.2. Usando o diálogo de buffers</h4>
+              </div>
+            </div>
+          </div>
+          <p>Clique em um buffer na área principal do diálogo para torná-lo o buffer ativo, isto é, o que será usado para comandos de <span class="quote">“<span class="quote">Colar</span>”</span> realizados a partir do menu de contexto, ou dos botões na parte de baixo do diálogo. Um click duplo em um buffer faz com que seu conteúdo seja colado na imagem ativa como uma seleção flutuante; Esta é uma forma rápida de executar o comando <span class="quote">“<span class="quote">Colar buffer</span>”</span></p>
+          <p>Na parte de baixo do diálogo há quatro botões. As ações dos mesmos também podem ser acessadas através do menu de Buffers, que você pode acessar pressionando o botão direito do mouse no diálogo.</p>
+          <div class="figure">
+            <a id="id3213"></a>
+            <p class="title">
+              <strong>Figura 15.48. O diálogo de Buffers (visão em grade)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/dialogs/buffers-dialog-grid.png" alt="O diálogo de Buffers (visão em grade)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>No menu de Guia para o diálogo de <span class="quote">“<span class="quote">Buffers</span>”</span>, você pode escolher entre <span class="guimenuitem">Ver como grade</span>e <span class="guimenuitem">Ver como lista</span>. No modode grade, as miniaturas dos buffers aparecem em um arranjo regularde ícones. Apenas o nome do buffer selecionado é exibido. No modo de Lista, eles são alinhados um abaixo do outro,e o nome e tamanho em pixels de cada buffer são exibidos.</p>
+          <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Tip">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Dica]" src="images/tip.png" />
+                </td>
+                <th align="left">Dica</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p><span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>F</strong></span> abre uma caixa para pesquisas por nome. Para maiores informações sobre o modo de lista, veja <a class="xref" href="gimp-concepts-docks.html#gimp-dock-view-as-list">View as List</a>.</p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <p>Você pode alterar o tamanho das pré-visualizações dos buffers, usando o submenu <span class="quote">“<span class="quote">Tamanho da pré-visualização</span>”</span> no menu de guia do diálogo.</p>
+          <div class="sect4">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h5 class="title"><a id="gimp-buffer-dialog-buttons"></a>4.1.2.1. Botões na parte de baixo</h5>
+                </div>
+              </div>
+            </div>
+            <p>
+        The button bar at the bottom offers the following functionality:
+      </p>
+            <div class="variablelist">
+              <dl class="variablelist">
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/edit-paste-symbolic.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Colar buffer</span>
+          , </span>
+                  <span class="term">
+            <span class="phrase">Colar buffer em</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-paste"></a>
+                  <p>Este comando cola o conteúdo do buffer selecionado na imagem ativa, como uma seleção flutuante. A única diferença entre esse comando e o <a class="link" href="gimp-edit-paste.html" title="3.8. Colar">Colar</a> normal é que ele usa o buffer selecionado em vez do buffer global da área de transferência.</p>
+                  <a id="gimp-buffer-paste-in-place"></a>
+                  <p>Com a tecla <span class="keycap"><strong>Shift</strong></span> pressionada, ele cola o buffer em sua localização original.</p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-paste-into-symbolic.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Colar buffer em</span>
+          , </span>
+                  <span class="term">
+            <span class="phrase">Colar Buffer na Seleção no Local</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-paste-into"></a>
+                  <p>Este comando cola o conteúdo do buffer atual dentro da seleção da imagem ativa. A única diferença entre esse comando e o <a class="link" href="gimp-edit-paste-as.html#gimp-edit-paste-into" title="3.10.6. Paste as Floating Data Into Selection">Colar em</a> normal é que ele usa o buffer selecionado em vez do buffer global da área de transferência.</p>
+                  <a id="gimp-buffer-paste-into-in-place"></a>
+                  <p>Com a tecla <span class="keycap"><strong>Shift</strong></span> pressionada, ele cola o buffer na seleção ativa em sua localização original.</p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-paste-as-new-symbolic.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Colar buffer como nova</span>
+          , </span>
+                  <span class="term">
+            
+            <span class="phrase">Colar buffer como nova</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-paste-as-new-layer"></a>
+                  <p>Este comando cria uma nova imagem, de uma única camada, com o conteúdo do buffer selecionado.  A única diferença entre esse comando e o <a class="link" href="">Colar como nova</a> normal é que ele usa o buffer selecionado em vez do buffer global da área de transferência.</p>
+                  <a id="gimp-buffer-paste-as-new-layer-in-place"></a>
+                  <p>Com a tecla <span class="keycap"><strong>Shift</strong></span> pressionada, ele cria a camada na localização original do buffer.</p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/gimp-paste-as-new-symbolic.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Colar buffer como nova</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-paste-as-new-image"></a>
+                  <p>Este comando cria uma nova imagem, de uma única camada, com o conteúdo do buffer selecionado.  A única diferença entre esse comando e o <a class="link" href="">Colar como nova</a> normal é que ele usa o buffer selecionado em vez do buffer global da área de transferência.</p>
+                </dd>
+                <dt>
+                  <span class="term">
+            <span class="guiicon">
+              <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+            </span>
+            <span class="phrase">Remover buffer</span>
+          </span>
+                </dt>
+                <dd>
+                  <a id="gimp-buffer-delete"></a>
+                  <p>Este comando apaga o buffer selecionado, sem perguntar nada. Você não pode apagar o Buffer global.</p>
+                </dd>
+              </dl>
+            </div>
+          </div>
+          <div class="sect4">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h5 class="title"><a id="gimp-buffer-dialog-menu"></a>4.1.2.2. O menu de contexto do diálogo de Definições de ferramentas</h5>
+                </div>
+              </div>
+            </div>
+            <p>Estes comandos são os mesmos disponíveis através dos botões na parte inferior da caixa de diálogo e são explicados lá.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-font-dialog.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="dialogs.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-image-dialog.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-font-dialog.html">3.8. Diálogo de fontes</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-image-dialog.html">4.2. Diálogo de imagens</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

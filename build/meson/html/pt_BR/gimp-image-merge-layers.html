@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.28. Combinar camadas visíveis</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-image-menu.html" title="6. O menu “Imagem”" />
+    <link rel="prev" href="plug-in-zealouscrop.html" title="6.27. Cortar com cuidado" />
+    <link rel="next" href="gimp-image-flatten.html" title="6.29. Achatar imagem" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.28. Combinar camadas visíveis</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-zealouscrop.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. O menu <span class="quote">“<span class="quote">Imagem</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-image-flatten.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-image-merge-layers"></a>6.28. Combinar camadas visíveis</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id38471" class="indexterm"></a>
+      <a id="id38475" class="indexterm"></a>
+      <p>O comando de <span class="guimenuitem">Combinar camadas visíveis</span> mescla todas as camadas que estão visíveis na imagem em uma única camada. As camadas visíveissão aquelas que estão indicadas no diálogo de Camadas com um ícone de <span class="quote">“<span class="quote">olho</span>”</span>.</p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Com este comando, as camadas originais irão desaparecer. Com o comando <a class="link" href="gimp-layer-new-from-visible.html" title="7.3. New from Visible">Foto do que é visto</a> , uma nova camada é criada no topo da pilha e as camadas originais continuam existindo.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3754"></a>6.28.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Image</span> → <span class="guimenuitem">Merge Visible Layers…</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+           You can also use the keyboard shortcut
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>M</strong></span>.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3755"></a>6.28.2. 
+      Description of the <span class="quote">“<span class="quote">Layers Merge Options</span>”</span> Dialog
+    </h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3756"></a>
+          <p class="title">
+            <strong>Figura 16.69. O diálogo <span class="quote">“<span class="quote">Opções de combinação de camadas</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/image/merge-visible.png" alt="O diálogo “Opções de combinação de camadas”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">A camada final, combinada, deve ser:</span>
+            </dt>
+            <dd>
+              <p>Camadas visíveis são as que estão marcadas com um ícone de <span class="quote">“<span class="quote">olho</span>”</span> no diálogo de camadas (mesmo que estejam completamente sobrepostas por outras camadas)</p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p><span class="emphasis"><em>Expandida como necessário</em></span>: A camada final é grande o suficiente para conter todas as camadas combinadas. Note que uma camada no <acronym class="acronym">GIMP</acronym> pode ser maior que a imagem.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="emphasis"><em>Cortada para o tamanho da imagem</em></span>: A camada final fica do mesmo tamanho que a imagem. Lembre-se de que camadas no <acronym class="acronym">GIMP</acronym> podem ser maiores do que a própria imagem. Todas as camadas da imagem que forem maiores que a imagem serão cortadas por esta opção.</p>
+                  </li>
+                  <li class="listitem">
+                    <p><span class="emphasis"><em>Cortada para o tamanho da camada de baixo</em></span>:  A camada final será do mesmo tamanho que a camada de baixo. Se essa camada for menor do que algumas das camadas visíveis. a camada final será cortada e ajustada para o tamanho e a posição da camada de baixo.</p>
+                  </li>
+                </ul>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Merge within active groups only</span>
+            </dt>
+            <dd>
+              <p>
+            This self-explanatory option is enabled when a
+            <a class="link" href="gimp-layer-groups.html" title="5. Grupos de camadas">layer group</a>
+            exists.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Descartar camadas invisíveis</span>
+            </dt>
+            <dd>
+              <p>Quando esta opção for marcada, as camadas que não estiverem visíveis serão removidas da pilha de camadas.</p>
+              <div class="figure">
+                <a id="id3757"></a>
+                <p class="title">
+                  <strong>Figura 16.70. Exemplo de <span class="quote">“<span class="quote">Combinar camadas visíveis</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/image/merge-visible-ex-image.png" alt="Exemplo de “Combinar camadas visíveis”" />
+                    <div class="caption">
+                      <p>Example image</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/image/merge-visible-ex1.png" alt="Exemplo de “Combinar camadas visíveis”" />
+                    <div class="caption">
+                      <p>
+                  Before applying <span class="quote">“<span class="quote">Merge visible layers</span>”</span>: Three
+                layers; two layers are visible</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/image/merge-visible-ex2.png" alt="Exemplo de “Combinar camadas visíveis”" />
+                    <div class="caption">
+                      <p>
+                  After applying <span class="quote">“<span class="quote">Merge visible layers</span>”</span> with
+                  <span class="quote">“<span class="quote">Discard invisible layers</span>”</span> unchecked
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/image/merge-visible-ex3.png" alt="Exemplo de “Combinar camadas visíveis”" />
+                    <div class="caption">
+                      <p>
+                  After applying <span class="quote">“<span class="quote">Merge visible layers</span>”</span> with
+                  <span class="quote">“<span class="quote">Discard invisible layers</span>”</span> checked</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-zealouscrop.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-image-flatten.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-zealouscrop.html">6.27. Cortar com cuidado</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-image-flatten.html">6.29. Achatar imagem </a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.55. Export Image as X BitMap</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-webp-export.html" title="5.54. Diálogo de exportar imagem" />
+    <link rel="next" href="file-xmc-export.html" title="5.56. Export Image as X11 Mouse Cursor" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.55. Export Image as X BitMap</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-webp-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-xmc-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-xbm-export"></a>5.55. Export Image as X BitMap</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id29540" class="indexterm"></a>
+      <a id="id29542" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3358"></a>5.55.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3359"></a>
+          <p class="title">
+            <strong>Figura 15.96. The XBM Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-xbm-dialog.png" alt="The XBM Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      <a class="ulink" href="https://en.wikipedia.org/wiki/X_BitMap" target="_top">X BitMap</a>
+      (XBM), is a plain text image format that was mainly used for cursors
+      and icon bitmaps in the X GUI. This format was superseded by
+      <a class="link" href="file-xpm-export.html" title="5.57. Export Image as X PixMap">X PixMap</a>.
+    </p>
+        <p>
+      This format only supports exporting as black and white monochrome
+      images. <acronym class="acronym">GIMP</acronym> only supports exporting to this from
+      8-bits per channel images.
+    </p>
+        <p>
+      Due to being stored in the form of C source files, this format can
+      take up more space than other binary formats.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3360"></a>5.55.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">X10 format bitmap</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, the image will use short integers instead of bytes
+            to write the data.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Identifier prefix</span>
+            </dt>
+            <dd>
+              <p>
+            The prefix used to write the data. This is mainly useful if you
+            intend to read this file from C source code.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Write comment</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, a comment will be added to the output file. Not all
+            image viewers are able to correctly show this image if a comment
+            is present.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Comentário</span>
+            </dt>
+            <dd>
+              <p>
+            When the above setting is enabled, you can enter your comment here.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Write hot spot values</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, hot spot values will be added. These are used in
+            icon files to set the location of the icon hot spot.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Hot spot X, </span>
+              <span class="term">Hot spot Y</span>
+            </dt>
+            <dd>
+              <p>
+            These values set the X and Y coordinate of the hot spot of the
+            mouse cursor.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Write extra mask file</span>
+            </dt>
+            <dd>
+              <p>
+            When checked, a separate mask file will be created. The mask file
+            contains the alpha channel for the XBM image.
+            This setting is only enabled when your image has an alpha channel.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Mask file extensions</span>
+            </dt>
+            <dd>
+              <p>
+            This allows you to set the suffix that will be added to the name
+            of your image. The name with suffix will be used to write the
+            mask file.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-webp-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-xmc-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-webp-export.html">5.54. Diálogo de exportar imagem</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-xmc-export.html">5.56. Export Image as X11 Mouse Cursor</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

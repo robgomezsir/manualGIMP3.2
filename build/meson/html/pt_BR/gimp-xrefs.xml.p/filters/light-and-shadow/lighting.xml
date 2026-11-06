@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-01-03 j.h: no change for v2.10
+-->
+<sect2 id="plug-in-lighting">
+  <title>Efeitos de iluminação</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Luz e sombra</secondary>
+    <tertiary>Efeitos de iluminação</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Efeitos de iluminação</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>A mesma imagem, antes e depois da aplicação do filtro de Iluminação</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/light-taj-lighting.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para> É um filtro muito poderoso, que simula uma iluminação realista, como se sua imagem fosse impressa em papel (ou pintada numa parede) e luz de várias fontes batessem sobre ela - e então fosse fotografada de novo. Você tem até opções para simular texturas diferentes do material em que a imagem estaria impressa.</para>
+    <note>
+      <para>
+        If the image is in grayscale mode or indexed mode, this menu entry
+        is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Light and Shadow</guisubmenu>
+        <guimenuitem>Lighting Effects…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro  <quote>Efeitos de iluminação</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/light-and-shadow/lighting1.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Pré-visualização</term>
+        <listitem>
+          <para>Quando a opção <guilabel>Interativa</guilabel> estiver marcada, os resultados de parametrização são exibidos em tempo real na pré-visualização, sem modificar a imagem até que você clique no botão de <guilabel>OK</guilabel>.</para>
+          <para>Se <guilabel>Interativa</guilabel> não estiver marcado, as alterações são exibidas na visualização somente quando você clicar no botão de <guibutton>Atualizar</guibutton>. Esta opção é útil em um computador lento.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <para>As demais opções são organizadas em guias:</para>
+
+    <sect4>
+      <title>Opções Gerais</title>
+      <figure>
+        <title>Opções para o filtro <quote>Iluminação</quote> (Opções Gerais)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/lighting1.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Fundo transparente</term>
+          <listitem>
+            <para>Torna a imagem a de destino transparente quando a altura do mapa de relevo é zero (a altura é zero em áreas pretas da imagem usada para mapa de relevo).</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Criar uma nova imagem</term>
+          <listitem>
+            <para>Cria uma nova imagem ao aplicar o filtro.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Antialiasing</term>
+          <listitem>
+            <para>
+              Enabling this setting allows you to remove or reduce the
+              aliasing effect that can show up on borders.
+            </para>
+            <para>
+              For more information, see
+              <link linkend="glossary-antialiasing">Anti-aliasing</link> in
+              the Glossary.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Distância</term>
+          <listitem>
+            <para>É possível definir a distância entre as fontes de luz e o centro da imagem com esse controle. A faixa de valores varia entre 0,0 e 2,0.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Configurações de Luz</title>
+      <figure>
+        <title>Opções para o filtro <quote>Iluminação</quote> (Luz)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/lighting2.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <para>
+          In this tab, you can set light parameters. With
+          <guilabel>Light&nbsp;1</guilabel> to
+          <guilabel>Light&nbsp;6</guilabel> you can create six light sources
+          and work on each of them separately.
+        </para>
+        <varlistentry>
+          <term>Tipo</term>
+          <listitem>
+            <para>O filtro oferece vários <emphasis>tipos de luz</emphasis> em uma lista flutuante:</para>
+            <variablelist>
+              <varlistentry>
+                <term>Nenhum</term>
+                <listitem>
+                  <para>
+                    This deletes the light source (light may persist).
+                  </para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Direcional</term>
+                <listitem>
+                  <para>O ponto azul está ligado ao centro da pré-visualização por uma linha que indica a direção da luz.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Puntiforme</term>
+                <listitem>
+                  <para>Exibe um ponto azul no centro da pré-visualização. Você pode clicar e arrastar para mover a luz para qualquer ponto da pré-visualização.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Spot</term>
+                <listitem>
+                  <para>
+                    Displays a blue point that cannot be moved. This light
+                    has a fixed direction.
+                  </para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Cor</term>
+          <listitem>
+            <para>Quando você clicar no botão de cor, abre-se um diálogo onde você pode selecionar a cor fonte de luz.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Intensidade</term>
+          <listitem>
+            <para>Com esta opção, você pode definir a intensidade da luz.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Posição</term>
+          <listitem>
+            <para>Determina a posição do ponto de luz de acordo com três coordenadas: coordenada X para a posição horizontal, Y para a posição vertical, Z para a distância da fonte (a luz escurece quando a distância aumenta). Os valores são de -1 a +1. Note que posicionar a fonte de luz diretamente com o mouse na pré-visualização é equivalente a mudar as coordenadas X e Y aqui.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Direção</term>
+          <listitem>
+            <para>Esta opção pode permitir que você altere a direção da fonte de luz direcional, alterando as três coordenadas  <guilabel>X</guilabel>, <guilabel>Y</guilabel> e <guilabel>Z</guilabel>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Isolar</term>
+          <listitem>
+            <para>Com esta opção, você pode decidir se todas as fontes de luz devem aparecer na pré-visualização, ou somente a fonte que você está trabalhando.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Lighting presets</term>
+          <listitem>
+            <para>Você pode salvar suas configurações para as fontes de luz com o botão <guibutton>Salvar</guibutton> e obte-las de volta mais tarde com o botão <guibutton>Abrir</guibutton>.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Propriedades do material</title>
+      <figure>
+        <title>Opções para o filtro <quote>Iluminação</quote> (Material)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/lighting3.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Como o  filtro imita o efeito de luz incidindo sobre a sua imagem como se ela estivesse pintada numa superfície, essas opções especificam como essa superfície reflete a luz que chega até ela.</para>
+      <para>As pequenas esferas, em ambas as extremidades das caixas de entrada, representam a ação de cada opção, a partir do seu mínimo (à esquerda) até o seu máximo (à direita). O texto da dica de ajuda flutuante pode ser mais útil que esses ícones.</para>
+      <variablelist>
+        <varlistentry>
+          <term>Ambient intensity</term>
+          <listitem>
+            <para>
+              This option, also known as glowing, controls the amount of the
+              original color to show where no direct light falls.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Diffuse intensity</term>
+          <listitem>
+            <para>
+              This option, also known as brightness, controls the intensity of
+              the original color to show when hit directly by a light source.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Diffuse reflectivity</term>
+          <listitem>
+            <para>
+              This option controls how intense the light from the original
+              color will be reflected.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Specular reflectivity</term>
+          <listitem>
+            <para>Esta opção controla quanto intenso será o brilho de reflexo direto da luz.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Highlight</term>
+          <listitem>
+            <para>
+              This option adjusts the polish or highlight. Higher values make
+              the highlight more focused.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Metálico</term>
+          <listitem>
+            <para>Quando esta opção estiver marcada, superfícies ganham uma aparência metálica.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Mapa de saliências (relevo)</title>
+      <figure>
+        <title>Opções para o filtro <quote>Iluminação</quote> (Mapa de saliências)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/lighting4.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <para>Nessa guia, você pode definir as opções do filtro que definem o relevo da imagem (como se a superficie sobre a qual ela estivesse impressa tivesse uma textura). Veja <xref linkend="glossary-bumpmapping"/>.</para>
+      <variablelist>
+        <varlistentry>
+          <term>Habilitar mapa de relevo</term>
+          <listitem>
+            <para>Com esta opção, as partes claras da imagem usada como mapa parecerão levantadas e partes escuras parecerão afundadas. O aspecto depende da posição da fonte de luz.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Bump map image</term>
+          <listitem>
+            <para>
+              Select a grayscale image to use as a bump map.
+              See the <link linkend="gimp-filter-bump-map">Bump Map</link>
+              filter for more information.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Curva</term>
+          <listitem>
+            <para>Esta opção define o método que vai ser utilizado na aplicação do mapa de relevo, isto é, a altura das saliências serão em função da curva especificada. Quatro tipos de curva estão disponíveis: <emphasis>linear</emphasis>, <emphasis>logarítmica</emphasis>, <emphasis>senoidal</emphasis> e <emphasis>esférica</emphasis>.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Altura máxima</term>
+          <listitem>
+            <para>Esta é a altura máxima das saliências</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4>
+      <title>Mapa de ambiente</title>
+      <figure>
+        <title>Opções para o filtro <quote>Iluminação</quote> (Mapa de ambiente)</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata format="PNG" fileref="images/filters/light-and-shadow/lighting5.png"/>
+          </imageobject>
+        </mediaobject>
+      </figure>
+      <variablelist>
+        <varlistentry>
+          <term>Habilitar mapeamento de ambiente</term>
+          <listitem>
+            <para>Esta opção faz com que sua imagem reflita o mapa de ambiente, como se estivesse dentro de uma esfera revestida por dentro com o mapa de ambiente - dai o reflexo do mapa de ambiente aparece na sua imagem. Por exemplo: uma imagem de um céu com nuvens vai fazer as nuvens aparecerem como um reflexo na imagem final, após a aplicação do filtro. Embora esse filtro do GIMP tenha opções bastante realistas de iluminação 3D, se você desejar realmente usar um mapa de ambiente, é melhor trabalhar sua imagem num programa de modelagem 3D.Quando você marcar essa caixa, a opção a seguir será ativada:</para>
+          </listitem>
+        </varlistentry>
+        <!-- FIXME: what's the effect of the environment image? -->
+        <varlistentry>
+          <term>Environment map image</term>
+          <listitem>
+            <para>
+              Select a RGB image to be used as environment map. Please note that
+              for this option to work you should load another image with
+              <acronym>GIMP</acronym> <emphasis>before</emphasis> using it.
+            </para>
+            <para>Um exemplo pode ser encontrado em <xref linkend="bibliography-online-golden-text"/>.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+</sect2>

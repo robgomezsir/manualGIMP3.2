@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.41. Diálogo de exportar imagem</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-pix-export.html" title="5.40. Export Image as Alias Pix" />
+    <link rel="next" href="file-pnm-export.html" title="5.42. Export Image as PNM, PAM, PBM, PGM, PPM" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.41. Diálogo de exportar imagem</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-pix-export.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-pnm-export.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-png-export"></a>5.41. Diálogo de exportar imagem</h3>
+          </div>
+        </div>
+      </div>
+      <a id="file-png-load"></a>
+      <a id="file-png-export-defaults"></a>
+      <a id="id28775" class="indexterm"></a>
+      <a id="id28777" class="indexterm"></a>
+      <a id="id28779" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3321"></a>5.41.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3322"></a>
+          <p class="title">
+            <strong>Figura 15.85. The PNG Export dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-png-dialog.png" alt="The PNG Export dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>O formato PNG suporta imagens indexadas. Isso usa menos cores, e apenas um byte de informação por pixel, resultando num arquivo menor. Isso é especialmente útil para salvar imagens para Web. Veja <a class="xref" href="gimp-image-convert-indexed.html" title="6.6. modo indexado">Seção 6.6, “modo indexado”</a>.</p>
+                <p>Computadores trabalham com blocos de 8 bits chamados de <span class="quote">“<span class="quote">Byte</span>”</span>. Um byte pode guardar informação sobre até 256 cores. Reduzir o número de cores para menos que 256 pode resultar em arquivos menores, mesmo assim, já que a compressão do PNG tira proveito de ter menos cores diferentes para guardar a informação  sobre a imagem — e mais, você pode obter estilos interessantes, a título de efeitos especiais, com imagens com poucas cores. O formato<span class="quote">“<span class="quote">PNG8</span>”</span>, como o GIF, usa só um bit para marcar a transparência: cada pixel pode ser opaco ou não. A especificação do PNG pode permitir níveis de  transparência em arquivos de PNG indexados, entretanto isso nunca foi implementado no GIMP.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3323"></a>5.41.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Formatos de arquivo</span>
+            </dt>
+            <dd>
+              <p>Por padrão, sua imagem PNG é exportada em um formato de pixel que se assemelha às configurações da sua imagem no <acronym class="acronym">GIMP</acronym>. Isso geralmente é o que você quer, mas quando você precisa de um formato de saída específico, pode mudar aqui para 8 ou 16 bits por canal RGB ou Escala de Cinza, com ou sem canal alfa.</p>
+            </dd>
+            <dt>
+              <span class="term">Nível de compressão</span>
+            </dt>
+            <dd>
+              <p>Uma vez que a compressão do PNG não tem perdas, a única razão para usar um fator de compressão menor que 9 é se estiver levando muito tempo para salvar um arquivo, num computador lento. Quanto a descompressão: sua velocidade não muda, independente do nível de compressão usado.</p>
+            </dd>
+            <dt>
+              <span class="term">Intervalo</span>
+            </dt>
+            <dd>
+              <p>Escolher <span class="quote">“<span class="quote">entrelaçar</span>”</span> intercala os dados da imagem dentro de um arquivo. Numa conexão lenta de internet, isso pode permitir que o conteúdo da imagem vá aparecendo progressivamente conforme ela vai baixando. Isso pode ser interessante em conexões bem lentas, por que o usuário pode interromper o download se a imagem não for do interesse dele. Isso pouco útil hoje em dia, com conexões mais rápidas à Internet.</p>
+            </dd>
+            <dt>
+              <span class="term">Salvar informações de cor dos pixels transparentes</span>
+            </dt>
+            <dd>
+              <p>Quando esta opção está marcada, os valores de cor são salvos mesmo se os pixels estiverem completamente transparentes. Mas isso é possível apenas com uma única camada, não com uma composição mesclada. Quando uma imagem de múltiplas camadas é exportada para um formato de arquivo de camada única, não há como o <acronym class="acronym">GIMP</acronym> preservar os valores de cor nos pixels transparentes.</p>
+            </dd>
+            <dt>
+              <span class="term">Metadados (editar)</span>
+            </dt>
+            <dd>
+              <p>
+        You can click the <span class="quote">“<span class="quote">(edit)</span>”</span> link to open the
+        <a class="link" href="plug-in-metadata-editor.html" title="6.39. Metadata Editor">metadata editor</a>
+        to change or add any metadata that you want to be
+        included in the image. Note: you will also still need to
+        enable the relevant metadata saving options listed below.
+      </p>
+              <p>
+        The metadata settings in the export dialog override the default values
+        set in your <a class="link" href="gimp-prefs-import-export.html#gimp-metadata-export-policies" title="Export Policies">Metadata
+        Export Preferences</a>.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar dados de EXIF</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, EXIF metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar dados XMP</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, IPTC metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar dados XMP</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, XMP metadata will be saved
+        in the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Conta gotas</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled, the color profile will be saved in
+        the exported image.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Miniatura da camada</span>
+            </dt>
+            <dd>
+              <p>
+        When this option is enabled a thumbnail will be saved
+        in the exported image as part of the EXIF metadata. This will also cause
+        certain EXIF tags to be saved, even if you have disabled saving
+        EXIF metadata.
+      </p>
+            </dd>
+            <dt>
+              <span class="term">Salvar cor de fundo</span>
+            </dt>
+            <dd>
+              <p>Se sua imagem tem muitos níveis de transparência, os programas (por exemplo navegadores antigos) que reconhecem apenas dois níveis de transparência em PNG vão usar a cor de fundo que está selecionada na caixa de ferramentas do GIMP, em vez de níveis intermediários de transparência. O Internet Explorer, até a versão 6, não reconhecia esta opção (nem as transparências).</p>
+            </dd>
+            <dt>
+              <span class="term">Salvar todos os erros</span>
+            </dt>
+            <dd>
+              <p>Arquivos PNG suportam um valor de deslocamento chamado  <span class="quote">“<span class="quote">bloco oFFs</span>”</span>, que provê dados de posicionamento. Infelizmente o suporte de PNG no <acronym class="acronym">GIMP</acronym> não funciona bem, ou pelo menos, é incompatível com outros aplicativos, e isso tem sido assim por bastante tempo. Não ligue esta opção, deixe o GIMP achatar as camadas antes de salvar, e você não vai ter problemas.</p>
+            </dd>
+            <dt>
+              <span class="term">Save resolution</span>
+            </dt>
+            <dd>
+              <p>Salva a resolução da imagem, em PPI  (Pixels por Polegada)</p>
+            </dd>
+            <dt>
+              <span class="term">Salvar hora da criação</span>
+            </dt>
+            <dd>
+              <p>A data e hora em que o arquivo foi salvo</p>
+            </dd>
+            <dt>
+              <span class="term">Salvar imagem</span>
+            </dt>
+            <dd>
+              <p>Você pode encontrar opções de <span class="emphasis"><em>combinar camadas</em></span> tanto no meu de contexto, como no menu <a class="link" href="gimp-layer-menu.html" title="7. O menu “Camada”">Camada</a> da janela de imagem.</p>
+            </dd>
+            <dt>
+              <span class="term">Save Settings</span>
+            </dt>
+            <dd>
+              <p>
+            Click to save the current settings. Later, you can use
+            <span class="guibutton">Load Saved Settings</span> to load the saved
+            settings.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-pix-export.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-pnm-export.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-pix-export.html">5.40. Export Image as Alias Pix</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-pnm-export.html">5.42. Export Image as PNM, PAM, PBM, PGM, PPM</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

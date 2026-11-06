@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.14. Bevel</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra" />
+    <link rel="prev" href="script-fu-xach-effect.html" title="6.13. Efeito Xach" />
+    <link rel="next" href="gegl-inner-glow.html" title="6.15. Inner Glow" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.14. Bevel</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-xach-effect.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Filtros de luz e sombra</span>
+        <nav> <a accesskey="n" href="gegl-inner-glow.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gegl-bevel"></a>6.14. Bevel</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id52782" class="indexterm"></a>
+      <a id="id52786" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4537"></a>6.14.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4538"></a>
+          <p class="title">
+            <strong>Figura 17.151. Applying example for the Bevel filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/gegl-bevel.png" alt="Applying example for the Bevel filter" />
+              <div class="caption">
+                <p>
+            From top to bottom, without bevel, <span class="quote">“<span class="quote">Chamfer</span>”</span> bevel,
+            and <span class="quote">“<span class="quote">Bump</span>”</span> bevel.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter adds a bevel to the layer. This filter works best when there
+      are transparent areas around a colored shape.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4539"></a>6.14.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Light and Shadow</span> → <span class="guimenuitem">Bevel…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4540"></a>6.14.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4541"></a>
+          <p class="title">
+            <strong>Figura 17.152. <span class="quote">“<span class="quote">Bevel</span>”</span> filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/light-and-shadow/bevel-dialog.png" alt="“Bevel” filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Predefinições, </span>
+              <span class="term"><span class="quote">“<span class="quote">Tipo de entrada</span>”</span>, </span>
+              <span class="term">Recorte, </span>
+              <span class="term">Opções de mesclagem, </span>
+              <span class="term">Pré-visualização, </span>
+              <span class="term">Mesclar filtro, </span>
+              <span class="term">Visualização dividida</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Bevel Type</span>
+            </dt>
+            <dd>
+              <p>
+            You can choose between the following bevel types:
+            <span class="guilabel">Chamfer</span> (the default) and
+            <span class="guilabel">Bump</span>.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Chamfer</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Simulates lighting of chamfered 3D-edges. Chamfered edges
+                  are sloped edges between two faces of an object.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Bump</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Makes a 3D effect by adding an emboss effect on top of a blur.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Blend Mode</span>
+            </dt>
+            <dd>
+              <p>
+            Several blend modes can be chosen here to adjust the effect. The
+            first one, <span class="guilabel">None</span>, is for when you intend to
+            set a blend mode for the layer in <acronym class="acronym">GIMP</acronym>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Distance Map Setting</span>
+            </dt>
+            <dd>
+              <p>
+            Only available for <span class="guilabel">Chamfer</span>. There are three
+            choices that each change the structure of the chamfer. Experiment
+            to see what works best for your image.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Euclidean</span>
+                  </dt>
+                  <dd>
+                    <p>
+        The distance is a straight line.
+      </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Manhattan</span>
+                  </dt>
+                  <dd>
+                    <p>
+        The distance is the sum of the one-dimensional distances
+        along the X and Y axes.
+      </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Chebyshev</span>
+                  </dt>
+                  <dd>
+                    <p>
+        The distance is the maximum of the one-dimensional distances
+        along the X and Y axes.
+      </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Raio</span>
+            </dt>
+            <dd>
+              <p>
+             Only available for <span class="guilabel">Bump</span>. This determines the
+             size of the softening for the bump.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Elevation</span>
+            </dt>
+            <dd>
+              <p>
+            This controls the elevation angle of the bevel.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Depth</span>
+            </dt>
+            <dd>
+              <p>
+            This controls the emboss depth; i.e. how deep and detailed the
+            bevel will be.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Light Angle</span>
+            </dt>
+            <dd>
+              <p>
+            This controls the angle of the light source illuminating and
+            shading the bevel.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-xach-effect.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-light-and-shadow.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gegl-inner-glow.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-xach-effect.html">6.13. Efeito Xach</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gegl-inner-glow.html">6.15. Inner Glow</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

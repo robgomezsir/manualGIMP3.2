@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gegl-bevel">
+  <title>Bevel</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Luz e sombra</secondary>
+    <tertiary>Bevel</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Bevel</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Applying example for the Bevel filter</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/gegl-bevel.png"/>
+        </imageobject>
+        <caption>
+          <para>
+            From top to bottom, without bevel, <quote>Chamfer</quote> bevel,
+            and <quote>Bump</quote> bevel.
+          </para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter adds a bevel to the layer. This filter works best when there
+      are transparent areas around a colored shape.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando o filtro</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Light and Shadow</guisubmenu>
+        <guimenuitem>Bevel…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title><quote>Bevel</quote> filter options</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/light-and-shadow/bevel-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term><quote>Tipo de entrada</quote></term>
+        <term>Recorte</term>
+        <term>Opções de mesclagem</term>
+        <term>Pré-visualização</term>
+        <term>Mesclar filtro</term>
+        <term>Visualização dividida</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Bevel Type</term>
+        <listitem>
+          <para>
+            You can choose between the following bevel types:
+            <guilabel>Chamfer</guilabel> (the default) and
+            <guilabel>Bump</guilabel>.
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>Chamfer</term>
+              <listitem>
+                <para>
+                  Simulates lighting of chamfered 3D-edges. Chamfered edges
+                  are sloped edges between two faces of an object.
+                </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Bump</term>
+              <listitem>
+                <para>
+                  Makes a 3D effect by adding an emboss effect on top of a blur.
+                </para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Blend Mode</term>
+        <listitem>
+          <para>
+            Several blend modes can be chosen here to adjust the effect. The
+            first one, <guilabel>None</guilabel>, is for when you intend to
+            set a blend mode for the layer in <acronym>GIMP</acronym>.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Distance Map Setting</term>
+        <listitem>
+          <para>
+            Only available for <guilabel>Chamfer</guilabel>. There are three
+            choices that each change the structure of the chamfer. Experiment
+            to see what works best for your image.
+          </para>
+          <xi:include href="../include-distance-map-metric.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio</term>
+        <listitem>
+          <para>
+             Only available for <guilabel>Bump</guilabel>. This determines the
+             size of the softening for the bump.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Elevation</term>
+        <listitem>
+          <para>
+            This controls the elevation angle of the bevel.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Depth</term>
+        <listitem>
+          <para>
+            This controls the emboss depth; i.e. how deep and detailed the
+            bevel will be.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Light Angle</term>
+        <listitem>
+          <para>
+            This controls the angle of the light source illuminating and
+            shading the bevel.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

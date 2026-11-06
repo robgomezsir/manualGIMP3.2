@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2. Creating and Using Selections</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-painting.html" title="Chapter 7. Painting with GIMP" />
+    <link rel="prev" href="gimp-painting.html" title="Chapter 7. Painting with GIMP" />
+    <link rel="next" href="gimp-using-selections-add.html" title="2.2. Adding or subtracting selections" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2. Creating and Using Selections</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-painting.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>Chapter 7. Painting with GIMP</span>
+        <nav> <a accesskey="n" href="gimp-using-selections-add.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-using-selections"></a>2. Creating and Using Selections</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id7358" class="indexterm"></a>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="gimp-using-selections-moving"></a>2.1. Moving or Resizing a Selection</h3>
+            </div>
+          </div>
+        </div>
+        <a id="id7363" class="indexterm"></a>
+        <a id="id7366" class="indexterm"></a>
+        <p>
+      Rectangular and elliptical selections have two modes. The default
+      mode has handles on the selection. These handles can be used to resize the
+      selection. Dragging from inside the selection, but not inside the handles,
+      moves the selection. If you click the selection or press the
+      <span class="keycap"><strong>Enter</strong></span> key, the handles disappear leaving only the dotted
+      selection outline (<a class="link" href="glossary.html#glossary-marching-ants" title="Marching Ants">marching ants</a>).
+      You can return to the mode with handles by clicking inside the selection again.
+    </p>
+        <p>
+      If you click-and-drag the selection without handles, you create a new
+      selection.
+      The other selection tools do not have this division in two modes.
+    </p>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1391"></a>2.1.1. 
+        Moving selections using the Rectangle and Ellipse Select tools
+      </h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        As mentioned above, the <span class="quote">“<span class="quote">Rectangle Select</span>”</span> and
+        <span class="quote">“<span class="quote">Ellipse Select</span>”</span> tools by default show a selection frame
+        with handles.
+        It is possible to change the size and location of the selection, but
+        also to move the selection including the layer contents.
+      </p>
+          <div class="sect4">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h5 class="title"><a id="id1392"></a>2.1.1.1. Moving and resizing the selection outline</h5>
+                </div>
+              </div>
+            </div>
+            <div class="figure">
+              <a id="id1393"></a>
+              <p class="title">
+                <strong>Figure 7.5. Moving the selection outline</strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/select-move-1.png" alt="Moving the selection outline" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+          Moving or resizing the selection frame, without moving the image
+          contents, can be done both with the mouse and with the keyboard.
+        </p>
+            <p>
+          To move the selection with the mouse, click inside the selection in
+          an area that doesn't show one of the handles. Then drag it with the
+          mouse towards your intended location.
+        </p>
+            <p>
+          To move the selection with the keyboard, it is currently required that
+          the mouse pointer is inside the selection frame, or it won't work.
+          Press and hold <span class="keycap"><strong>Alt</strong></span> (or
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>),
+          to move one pixel at a time. To move 25 pixels at a time add
+          the <span class="keycap"><strong>Shift</strong></span> key to the above combination.
+        </p>
+            <p>
+          To resize the selection with the mouse, place the mouse pointer in
+          the handle area where you want to resize, and then click-drag in the
+          desired direction.
+          To resize in one direction, use the middle handles; to resize two
+          neighboring directions, use the handles in one of the corners.
+        </p>
+            <p>
+          To resize using the keyboard, move the mouse pointer inside the
+          handles along the edges of the selection frame, and then use the
+          keyboard shortcuts mentioned above for moving.
+        </p>
+          </div>
+          <div class="sect4">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h5 class="title"><a id="id1394"></a>2.1.1.2. Moving the selection with the image contents</h5>
+                </div>
+              </div>
+            </div>
+            <div class="figure">
+              <a id="id1395"></a>
+              <p class="title">
+                <strong>Figure 7.6. 
+            Moving a selection and its contents, emptying the original location
+          </strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/select-move-2.png" alt="Moving a selection and its contents, emptying the original location" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+          To move the selection contents (i.e. the part of the layer inside the
+          selection), you can press
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span>
+          and click-and-drag the selection. The original location of the
+          selected part of the layer will be emptied (i.e. filled with the
+          current background color).
+        </p>
+            <p>
+          Note that this action will create a floating layer that needs to be
+          <a class="link" href="gimp-selection-float.html#anchor-floating-selection" title="4.5.4. Anchor a Floating Selection">anchored</a> to the
+          layer below, or turned into
+          <a class="link" href="gimp-layer-new.html" title="7.2. New Layer">a new layer</a>.
+        </p>
+            <div class="figure">
+              <a id="id1396"></a>
+              <p class="title">
+                <strong>Figure 7.7. 
+            Moving a selection with a copy of the layer contents
+          </strong>
+              </p>
+              <div class="figure-contents">
+                <div class="mediaobject">
+                  <img src="images/using/select-move-3.png" alt="Moving a selection with a copy of the layer contents" />
+                </div>
+              </div>
+            </div>
+            <br class="figure-break" />
+            <p>
+          To move the selection contents without changing the original, use
+          <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Alt</strong></span>
+          and click-and-drag the selection. The original location of the
+          selected part of the layer will stay the same while you move a
+          copy.
+        </p>
+            <p>
+          Note that this action will create a floating layer that needs to be
+          <a class="link" href="gimp-selection-float.html#anchor-floating-selection" title="4.5.4. Anchor a Floating Selection">anchored</a> to the
+          layer below, or turned into
+          <a class="link" href="gimp-layer-new.html" title="7.2. New Layer">a new layer</a>.
+        </p>
+            <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+              <table border="0" summary="Note">
+                <tr>
+                  <td rowspan="2" align="center" valign="top" width="25">
+                    <img alt="[Note]" src="images/note.png" />
+                  </td>
+                  <th align="left">Note</th>
+                </tr>
+                <tr>
+                  <td align="left" valign="top">
+                    <p>
+            On some systems, you must push <span class="keycap"><strong>Alt</strong></span> before
+            <span class="keycap"><strong>Shift</strong></span> or <span class="keycap"><strong>Ctrl</strong></span>. On these
+            systems, pressing <span class="keycap"><strong>Shift</strong></span> or <span class="keycap"><strong>Ctrl</strong></span>
+            first, causes GIMP to enter a mode that adds or subtracts from the
+            current selection. After doing that, the <span class="keycap"><strong>Alt</strong></span> key is
+            ineffective!
+          </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1397"></a>2.1.2. Moving using other Selection Tools</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        The other selection tools (Free Select, Fuzzy Select, By Color Select,
+        etc.) have no handles.
+        Using click-and-drag doesn't move these selections. To move their
+        contents, as with rectangular and elliptical selections, you have to
+        press the
+        <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Alt</strong></span> or
+        <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Alt</strong></span> keys
+        and then use click-and-drag.
+      </p>
+          <p>
+        If you use keyboard arrow keys instead of click-and-drag, you move
+        only the selection outline.
+      </p>
+        </div>
+        <div class="sect3">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h4 class="title"><a id="id1398"></a>2.1.3. A different method of moving a selection</h4>
+              </div>
+            </div>
+          </div>
+          <p>
+        You can also use a more roundabout method to move a selection. Make
+        the <a class="link" href="gimp-selection-float.html" title="4.5. Float">selection floating</a>.
+        Then you can move its content using the
+        <a class="link" href="gimp-tool-move.html" title="4.3. Move">Move</a> tool, emptying the
+        original location, by click-and-dragging or keyboard arrow keys.
+      </p>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-painting.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-painting.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-selections-add.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-painting.html">Chapter 7. Painting with GIMP</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-selections-add.html">2.2. Adding or subtracting selections</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

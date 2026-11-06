@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>12.9. Stain</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-decor.html" title="12. Decor Filters" />
+    <link rel="prev" href="script-fu-slide.html" title="12.8. Slide" />
+    <link rel="next" href="script-fu-carve-it.html" title="12.10. Stencil Carve" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>12.9. Stain</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-slide.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>12. Decor Filters</span>
+        <nav> <a accesskey="n" href="script-fu-carve-it.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-coffee-stain"></a>12.9. Stain</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id55914" class="indexterm"></a>
+      <a id="id55918" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3557"></a>12.9.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3558"></a>
+          <p class="title">
+            <strong>Figure 17.283. Example for the <span class="quote">“<span class="quote">Stain</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for the “Stain” filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/decor-taj-stain.jpg" alt="Example for the “Stain” filter" />
+              <div class="caption">
+                <p><span class="quote">“<span class="quote">Stain</span>”</span> applied with the gradient
+          <span class="quote">“<span class="quote">Cold Steel 2</span>”</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter adds stains to the image.
+    </p>
+        <p>
+      Every stain is created in a layer of its own. The stain layers are
+      randomly moved to let the stains spread out (at the end you may see the
+      boundary of the moved top layer). So after applying the filter you can
+      easily edit (e.g., move, scale, remove) the stains, or create
+      additional stains using the filter again.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in grayscale mode or indexed mode, this menu entry
+        is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3559"></a>12.9.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Decor</span> → <span class="guimenuitem">Stain…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3560"></a>12.9.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3561"></a>
+          <p class="title">
+            <strong>Figure 17.284. <span class="quote">“<span class="quote">Stain</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/decor/stain.png" alt="“Stain” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Number of stains to add</span>
+            </dt>
+            <dd>
+              <p>The number of stains (1-10).</p>
+            </dd>
+            <dt>
+              <span class="term">Darken only</span>
+            </dt>
+            <dd>
+              <p>
+            Since every stain is created in a layer of its own, all layers
+            have to be merged to make the appearance of the image. If
+            this option is checked, the relevant
+            <a class="link" href="gimp-concepts-layer-modes.html" title="2. Layer Modes">layer mode</a> is set
+            to <span class="quote">“<span class="quote">Darken only</span>”</span>, otherwise it is set to
+            <span class="quote">“<span class="quote">Normal</span>”</span>.
+          </p>
+              <p>
+            The layer mode determines how the pixels of the layers are
+            combined. If <span class="quote">“<span class="quote">Darken only</span>”</span> is unchecked we use
+            <span class="quote">“<span class="quote">Normal</span>”</span> mode, and every stain covers the pixels of
+            the layers below. If <span class="quote">“<span class="quote">Darken only</span>”</span> is checked,
+            stains cover the corresponding pixels of the layers below
+            them only if these pixels are lighter.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Gradient to color stains</span>
+            </dt>
+            <dd>
+              <p>The gradient that is used for created stains.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-slide.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-decor.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-carve-it.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-slide.html">12.8. Slide</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-carve-it.html">12.10. Stencil Carve</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

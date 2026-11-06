@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-28 j.h: no change for 2.8
+  2008-12-13 j.h: updated to v2.6
+  2007-10-07 j.h : v2.4 no change.
+  2007-05-27 j.h : 2 notes added
+  2006-03.18 lexa: added german translation and made docbook compliant
+  2005-11-29 replaced informalfigures by figures by lexa
+-->
+<sect2 id="gimp-undo-dialog">
+  <title>Diálogo do Histórico do desfazer</title>
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Histórico do desfazer</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Histórico do desfazer</primary>
+  </indexterm>
+
+  <figure>
+    <title>O diálogo  de Histórico do desfazer</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/undo-history-dialog.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>Este diálogo exibe uma lista das operações realizadas mais recentemente na imagem ativa, com uma pequena miniatura que tenta ilustrar as alterações realizadas por cada uma. Você pode reverter a imagem para qualquer ponto no Histórico do desfazer, simplesmente clicando na entrada desejada na lista. Para maiores informações sobre o mecanismo de desfazer do GIMP e como ele funciona, consulte <link linkend="gimp-concepts-undo">Desfazendo</link>.</para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Undo History</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Undo History</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Usando o diálogo de Histórico do desfazer</title>
+    <para>A coisa mais básica que você pode fazer é selecionar um ponto no histórico do desfazer, clicando em um ponto na lista. Você pode ir e voltar entre vários estados da imagem desta forma tanto quanto quiser, sem perder nenhuma informação nem consumir recursos (memória). Na maioria dos casos, as mudanças são bem rápidas.  No entanto, atenção <emphasis> atenção</emphasis>, se, ao colocar a imagem em algum ponto do desfazer você fizer qualquer alteração na mesma, nem que seja clicar na imagem com a ferramenta de seleção retangular, <emphasis>o histórico será perdido daquele ponto em diante</emphasis>, e você não poderá refazer os passos até o ponto em que a imagem estava quando você começou a mexer no histórico de desfazer. </para>
+    <tip>
+      <para><keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo> abre uma caixa para pesquisas por nome. Para maiores informações sobre o modo de lista, veja <xref linkend="gimp-dock-view-as-list"/>.</para>
+    </tip>
+    <para>
+      The button bar at the bottom offers the following functionality:
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/edit-undo.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase condition="tag-is-required">Desfazer</phrase>
+        </term>
+        <listitem>
+          <para>Este botão tem o mesmo efeito que selecionar <menuchoice><guimenu>Editar</guimenu><guimenuitem>Desfazer</guimenuitem></menuchoice> no menu, ou pressionar <keycombo><keycap>Ctrl</keycap><keycap>Z</keycap></keycombo>: ele reverte a imagem ao próximo estado listado no histórico do desfazer.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/edit-redo.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase condition="tag-is-required">Refazer</phrase>
+        </term>
+        <listitem>
+          <para>Este botão faz o mesmo que acionar <menuchoice><guimenu>Editar</guimenu><guimenuitem>Refazer</guimenuitem></menuchoice> no menu, ou pressionar <keycombo><keycap>Ctrl</keycap><keycap>Y</keycap></keycombo>: ele avança a imagem um passo para frente no histórico do Desfazer.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-shred.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon>
+          <phrase condition="tag-is-required">Limpar histórico do desfazer</phrase>
+        </term>
+        <listitem>
+          <anchor id="gimp-edit-undo-clear"/>
+          <para>Este botão remove todo o conteúdo do histórico do desfazer exceto o estado atual. Se você pressiona-lo, o GIMP pede confirmação de que você realmente deseja fazer isso. A única razão para fazer isso é se você estiver com muito pouca memória e precisar liberar alguma.</para>
+          <note>
+            <para>
+              In a tab, this dialog is represented by
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-undo-history.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+            </para>
+          </note>
+          <note>
+            <para>Você pode configurar o número de passos de Desfazer em <link linkend="gimp-prefs-environment">Preferências/Ambiente</link></para>
+          </note>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

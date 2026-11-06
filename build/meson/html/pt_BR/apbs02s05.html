@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.5. Enviando seus arquivos</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="apbs02.html" title="2. Fluxo de trabalho" />
+    <link rel="prev" href="apbs02s04.html" title="2.4. Criar arquivos HTML" />
+    <link rel="next" href="apbs03.html" title="3. Anexos" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.5. Enviando seus arquivos</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="apbs02s04.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>2. Fluxo de trabalho</span>
+        <nav> <a accesskey="n" href="apbs03.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="id65497"></a>2.5. Enviando seus arquivos</h3>
+          </div>
+        </div>
+      </div>
+      <p>Quando seus arquivos estiverem prontos:</p>
+      <div class="variablelist">
+        <dl class="variablelist">
+          <dt>
+            <span class="term">Você não tem uma conta GNOME</span>
+          </dt>
+          <dd>
+            <p>se você não tem uma conta GNOME, você deve encontrar um correspondente que aceite "enviar" arquivos para você; isso não será difícil se você enviar uma mensagem para a lista. Ou você envia seus arquivos xml e as imagens anexadas em um arquivo compactado, (em uma árvore reproduzindo a das pastas src e de imagens se você enviar vários arquivos para tornar a tarefa do seu correspondente mais fácil), ou você envia uma "correção" (patch) que você tem que criar.</p>
+            <p>Antes de criar uma correção, você deve obter todos os seus arquivos xml e imagens no índice. Estando na pasta gimp-help, faça <span class="command"><strong>git status</strong></span>. Se você tiver arquivos na seção Arquivos não rastreados, execute <span class="command"><strong>git add -A</strong></span>.</p>
+            <p>Então execute <span class="command"><strong>git diff --full-index --binary origine &gt; nome-do-patch</strong></span> para criar a correção.</p>
+          </dd>
+          <dt>
+            <span class="term">Você tem uma conta GNOME</span>
+          </dt>
+          <dd>
+            <p>Estando tudo bem, você sabe administrar o Git. Existem muitos tutoriais para isso na web.</p>
+            <p>Um fluxo de trabalho comum é:</p>
+            <p>- make validate-en</p>
+            <p>- git status</p>
+            <p>- git stash</p>
+            <p>- git pull</p>
+            <p>- git status</p>
+            <p>- git stash apply</p>
+            <p>- Corrija eventuais conflitos</p>
+            <p>- git add -A</p>
+            <p>- git status</p>
+            <p>- git commit -m "alguma mensagem"</p>
+            <p>- git push</p>
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="apbs02s04.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="apbs02.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="apbs03.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="apbs02s04.html">2.4. Criar arquivos HTML</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="apbs03.html">3. Anexos</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

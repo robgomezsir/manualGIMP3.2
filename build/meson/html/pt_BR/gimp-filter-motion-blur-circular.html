@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>3.10. Desfoque de Movimento Circular</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-blur.html" title="3. Filtros de desfocar" />
+    <link rel="prev" href="gimp-filter-variable-blur.html" title="3.9. Desfoque Variável" />
+    <link rel="next" href="gimp-filter-motion-blur-linear.html" title="3.11. Desfoque de Movimento Linear" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>3.10. Desfoque de Movimento Circular</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-variable-blur.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>3. Filtros de desfocar</span>
+        <nav> <a accesskey="n" href="gimp-filter-motion-blur-linear.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-motion-blur-circular"></a>3.10. Desfoque de Movimento Circular</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id48204" class="indexterm"></a>
+      <a id="id48208" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4268"></a>3.10.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4269"></a>
+          <p class="title">
+            <strong>Figura 17.31. O filtro Desfoque de Movimento Circular</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="O filtro Desfoque de Movimento Circular" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/blur-taj-circular.jpg" alt="O filtro Desfoque de Movimento Circular" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Este filtro cria um borrão circular ao redor de um centro. O centro padrão é o centro da camada ou seleção. Você pode definir o centro em algum lugar na camada e este centro é aplicado à camada ou a uma seleção caso exista.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4270"></a>3.10.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Blur</span> → <span class="guimenuitem">Circular Motion Blur…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4271"></a>3.10.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4272"></a>
+          <p class="title">
+            <strong>Figura 17.32. Opções do filtro <span class="quote">“<span class="quote">Desfoque de Movimento Circular</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/blur/circular-options.png" alt="Opções do filtro “Desfoque de Movimento Circular”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>Essas opções são descritas em <a class="xref" href="gimp-filters-common.html" title="2. Recursos comuns">Seção 2, “Recursos comuns”</a>.</p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">X do centro, </span>
+              <span class="term">Y do centro</span>
+            </dt>
+            <dd>
+              <p>Aqui, você pode definir o centro de rotação. Botões deslizantes e giratórios controlam a posição do centro de rotação nos eixos horizontal e vertical. Você também pode clicar no botão retangular com uma seta à direita e então clicar na imagem para selecionar coordenadas.</p>
+            </dd>
+            <dt>
+              <span class="term">Ângulo</span>
+            </dt>
+            <dd>
+              <p>Ângulo maior resultará em maior desfoque numa direção circular.</p>
+            </dd>
+            <dt>
+              <span class="term">Controles direto na tela de pintura</span>
+            </dt>
+            <dd>
+              <p>Esta opção (padrão) lhe permite modificar configurações de desfoque diretamente na tela, para um ajuste visual facilitado das configurações de desfoque. Ela exibe uma linha com alças em ambas as pontas para mover o centro de rotação e transformação.</p>
+              <p>Pressione a tecla <span class="keycap"><strong>Alt</strong></span> para somente mover o centro de rotação sem transformações.</p>
+              <p>Pressione a tecla <span class="keycap"><strong>Ctrl</strong></span> para rotacionar em incrementos de 15°.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-variable-blur.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-blur.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-motion-blur-linear.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-variable-blur.html">3.9. Desfoque Variável</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-motion-blur-linear.html">3.11. Desfoque de Movimento Linear</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

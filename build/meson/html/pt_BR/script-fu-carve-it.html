@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>12.10. Esculpir estêncil</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-decor.html" title="12. Filtros de decoração" />
+    <link rel="prev" href="script-fu-coffee-stain.html" title="12.9. Stain" />
+    <link rel="next" href="script-fu-sota-chrome-it.html" title="12.11. Estêncil de cromagem" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>12.10. Esculpir estêncil</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-coffee-stain.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>12. Filtros de decoração</span>
+        <nav> <a accesskey="n" href="script-fu-sota-chrome-it.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-carve-it"></a>12.10. Esculpir estêncil</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id57208" class="indexterm"></a>
+      <a id="id57212" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4822"></a>12.10.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4823"></a>
+          <p class="title">
+            <strong>Figura 17.285. Exemplo para o filtro <span class="quote">“<span class="quote">Esculpir estêncil</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_grayscale.jpg" alt="Exemplo para o filtro “Esculpir estêncil”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/decor-taj-carve-it.jpg" alt="Exemplo para o filtro “Esculpir estêncil”" />
+              <div class="caption">
+                <p>Filtro aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>Esse filtro trabalha com duas imagens: origem e alvo. A imagem de origem deve ser uma imagem em tons de cinza, contendo uma única camada e sem canal alfa (ou um objeto desenhável como uma máscara de camada ou canal).  Essa camada é usada como uma máscara de seleção para o efeito de esculpir. A imagem a ser esculpida (a imagem alvo), pode ser uma imagem RGB ou em tons de cinza, também com uma única camada. A imagem de destino deve ter o mesmo tamanho que a imagem de origem.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in RGB mode or indexed mode, this menu entry
+        is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4824"></a>12.10.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Decor</span> → <span class="guimenuitem">Stencil Carve…</span>.
+    </p>
+        <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Tip">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Dica]" src="images/tip.png" />
+              </td>
+              <th align="left">Dica</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If this command remains disabled although the image is grayscale,
+        check for an Alpha channel and delete it.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4825"></a>12.10.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4826"></a>
+          <p class="title">
+            <strong>Figura 17.286. Opções de <span class="quote">“<span class="quote">Esculpir estêncil</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/decor/carve-it.png" alt="Opções de “Esculpir estêncil”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Mask drawable</span>
+            </dt>
+            <dd>
+              <p>
+            Here you may select the target image and its layer or channel
+            which the carving effect is applied to.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Esculpir áreas em branco</span>
+            </dt>
+            <dd>
+              <p>Se selecionado (padrão), a imagem de origiem é usada como estêncil como descrito acima. Caso contrário, o <span class="emphasis"><em>negativo</em></span> da imagem de origem é usado como estêncil. Exemplo:</p>
+              <div class="figure">
+                <a id="id4827"></a>
+                <p class="title">
+                  <strong>Figura 17.287. Máscaras de relevo</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/carve-it-mask.jpg" alt="Máscaras de relevo" />
+                    <div class="caption">
+                      <p>Máscara normal</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/carve-it-invmask.jpg" alt="Máscaras de relevo" />
+                    <div class="caption">
+                      <p>Máscara invertida</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>No exemplo abaixo, a origem é uma imagem em tons de cinza. O alvo é uma imagem com uma textura de madeira.</p>
+              <p>A esquerda, <span class="guilabel">Esculpir áreas brancas</span> está habilitado. Os pixels da imagem destino correpondendo aos pixels brancos no estêncil (em volta do texto) foram esculpidos. O resultado é um texto gravado em relevo.</p>
+              <p>À direita, <span class="guilabel">Esculpir áreas brancas</span> está desligado. Os pixels da imagem de destino correspondendo aos pixels pretos no estêncil (o texto) foram esculpidos. O resultado é o texto com letras escavadas na nova imagem.</p>
+              <div class="figure">
+                <a id="id4828"></a>
+                <p class="title">
+                  <strong>Figura 17.288. Exemplo com <span class="quote">“<span class="quote">Esculpir áreas em branco</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/carve-it-normal.png" alt="Exemplo com “Esculpir áreas em branco”" />
+                    <div class="caption">
+                      <p>Áreas em branco esculpidas</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/carve-it-stencil.png" alt="Exemplo com “Esculpir áreas em branco”" />
+                    <div class="caption">
+                      <p>Estêncil</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/filters/examples/carve-it-invers.png" alt="Exemplo com “Esculpir áreas em branco”" />
+                    <div class="caption">
+                      <p>Áreas em preto esculpidas</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-coffee-stain.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-decor.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="script-fu-sota-chrome-it.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-coffee-stain.html">12.9. Stain</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="script-fu-sota-chrome-it.html">12.11. Estêncil de cromagem</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

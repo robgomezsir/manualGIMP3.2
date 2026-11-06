@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-11-15 AntI: Added "es"
+  2007-05-18 KoSt: added 'no'
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005/10/07 en;fr by julien hardelin
+  2005/09/21 created by axel.wernicke
+-->
+<sect2 id="plug-in-gfig">
+  <title>GFig</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>GFig</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>GFig</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>A mesma imagem, antes e depois de usar o GFig</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>A imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-taj-gfig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      This filter is a tool: You can create geometrical figures to add them to
+      the image.
+    </para>
+    <para>Ao utilizar este filtro, elementos inseridos na imagem serão colocados em uma nova camada. Assim, a imagem não será modificada: todas as modificações ocorrem nessa nova camada.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guimenuitem>Gfig…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="plug-in-gfig-options">
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>GFig</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/gfig.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <!-- TODO: should we eliminate the word "Preview"? -->
+    <para>A pré-visualização (com uma régua horizontal e uma vertical) no lado esquerdo da janela principal é na verdade a sua área de trabalho, onde você verá suas figuras.</para>
+    <para>Você pode adicionar e modificar figuras usando as ferramentas do GFig (<link linkend="plug-in-gfig-toolbar">Barra de ferramentas do GFig</link>) e usando as opções apropriadas (<link linkend="plug-in-gfig-mainwindow"> Janela principal do GFig</link>).</para>
+
+    <!-- FIXME: Gfig menu ("File", "Edit") is not documented -->
+<!--
+    <sect4 id="plug-in-gfig-menu">
+    </sect4>
+-->
+
+    <sect4 id="plug-in-gfig-toolbar">
+      <title>A barra de ferramentas do GFig</title>
+      <para>Na parte superior da caixa de diálogo, você pode encontrar um conjunto de ícones que representam as funções deste filtro. As dicas flutuantes que aparecem ao parar sobre cada botão ajudam bastante.</para>
+      <variablelist>
+        <title>Funções para desenhar objetos</title>
+        <para>Na parte esquerda da barra de ferramentas, você pode encontrar algumas ferramentas para desenhar objetos. Você os ativa clicando no ícone correspondente. Você pode criar os seguintes objetos (note que os <emphasis>Pontos de controle</emphasis> são criados ao mesmo tempo que o objeto):</para>
+        <varlistentry>
+          <!--terms according to tooltips-->
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-line.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Create line
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode desenhar linhas. Clique na pré-visualização para marcar o ponto de partida, em seguida, arraste o ponteiro do mouse até o ponto final. (Observe que você poderá ver as alterações na janela de imagem do GIMP enquanto desenha)</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-rectangle.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Create rectangle
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode desenhar retângulos. Clique na pré-visualização para marcar ponto de partida, em seguida, arraste o ponteiro do mouse para criar o retângulo.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-circle.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Create circle
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode desenhar círculos. Clique na pré-visualização para marcar o centro, em seguida, arraste o ponteiro do mouse até o tamanho (raio)desejado.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-ellipse.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Create ellipse
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode desenhar elipses. Clique na pré-visualização para marcar o centro, em seguida, arraste o ponteiro do mouse para obter o tamanho e a forma desejados.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-curve.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Create arc
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode desenhar arcos de círculos. Clique na pré-visualizaçãopara definir o ponto de início. Clique novamente para definir outro ponto do arco. Clique novamente para marcar o terceiro ponto - quando você soltar o botão do mouse, o ponto final do arco é colocado e um arco que passa por estes três pontos é desenhado.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-polygon.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Create regular polygon
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode criar um polígono regular. Comece com a configuração do número de lados em <guilabel>Opções de ferramenta</guilabel> à direita da pré-visualização. Em seguida, clique na pré-visualização para marcar o centro e, sem soltar o botão do mouse, arraste o ponteiro para obter o tamanho e orientação desejados.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-star.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Create star
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode criar uma estrela. Comece com a configuração do número número de pontas (Lados) nas <guilabel>Opções de ferramenta</guilabel> à direita da pré-visualização. Em seguida, clique na pré-visualização para posicionar o centro e, sem soltar o botão do mouse, arraste o ponteiro para obter o tamanho e a orientação desejados.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-spiral.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Create spiral
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode criar uma espiral. Comece com a configuração do número de voltas (Lados) e orientação das voltas nas <guilabel>Opções de ferramenta</guilabel>  à direita da pré-visualização. Em seguida, clique na pré-visualização para colocar o centro e, sem soltar o botão do mouse, arraste ponteiro para obter o tamanho desejado.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-bezier.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Create bezier curve
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode criar curvas de Bézier. Clique na pré-visualização para definir o ponto de início e os outros pontos: a curva será criada entre esses pontos. Para finalizar a curva, pressione <keycap>Shift</keycap> ao criar o último ponto.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <variablelist>
+        <title>Funções para gerenciamento de objetos</title>
+        <para>No meio da barra de ferramentas, você pode encontrar ferramentas para gerenciar objetos:</para>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-move-object.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Move an object
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode mover o objeto ativo. Para selecionar um objeto, clique em um de seus pontos de controle.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-move-point.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Move a single point
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode clicar e arrastar um dos pontos de controle do objeto. Cada um desses pontos transforma o objeto de uma forma diferente.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-copy-object.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Copy an object
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode duplicar um objeto. Clique em um ponto de controle do objeto e arraste-o para o local desejado.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-delete-object.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Delete an object
+          </term>
+          <listitem>
+            <para>Clique em um ponto de controle do objeto para excluí-lo.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-cursor-symbolic.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Select an object
+          </term>
+          <listitem>
+            <para>
+              With this tool, you can select an object to activate it. Simply
+              click on one of its control points.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <variablelist>
+        <title>Funções para organização dos objetos</title>
+        <para>À direita da barra de ferramentas, você pode encontrar ferramentas para controlar a sobreposição dos objetos (você também pode obtê-las clicando no botão de lista flutuante se os ícones não estiverem visíveis). Você tem:</para>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/go-up.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Up (Raise selected object)
+          </term>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/go-down.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Down (Lower selected object)
+          </term>
+          <listitem>
+            <para>Com esta ferramenta, você pode mover o objeto selecionado um nível para cima ou para baixo.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <!--terms according to drop-down list-->
+          <!--Raise selected object to top-->
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/go-top-symbolic.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Top (Raise selected object to top)
+          </term>
+          <!--Lower selected object to bottom-->
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/go-bottom-symbolic.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Bottom (Lower selected object to bottom)
+          </term>
+          <listitem>
+            <para>Move o objeto selecionado para o topo de todos os outros, ou para trás de todos.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <variablelist>
+        <title>Funções para exibição de objetos</title>
+        <varlistentry>
+          <!--Show previous object-->
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/go-previous-symbolic.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Back (Show previous object)
+          </term>
+          <!--Show next object-->
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/go-next-symbolic.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Forward (Show next object)
+          </term>
+          <listitem>
+            <para>Estas funções permitem exibir um único objeto de cada vez, saltando de um para outro.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gfig-show-all.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            Show all objects
+          </term>
+          <listitem>
+            <para>Esta função mostra todos os objetos novamente, depois de usar as duas funções anteriores.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <note>
+        <para>Se a sua janela é pequena demais para mostrar todos os ícones, a barra de ferramenta fornece uma lista flutuante contendo as funções que faltam.</para>
+      </note>
+    </sect4>
+
+    <sect4 id="plug-in-gfig-mainwindow">
+      <title>A janela principal do GFig</title>
+      <variablelist>
+        <varlistentry>
+          <term>Detalhes do objeto</term>
+          <listitem>
+            <para>A <guilabel>Posição XY</guilabel> mostra a posição do ponteiro, em cordenadas, em pixels,da pré-visualização (são diferentes das coordenadas na imagem)</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Opções de ferramenta</term>
+          <listitem>
+            <para>Se a ferramenta selecionada oferece opções (como o número de lados), você pode alterá-las aqui.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Contorno</term>
+          <listitem>
+            <para>Se esta opção estiver marcada, o objeto será desenhado. Estão disponíveis dois botões, para selecionar a cor e o tipo de pincel. Alterações de cor ou pincel também podem afetar objetos já existentes que estejam selecionados.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Preenchimento</term>
+          <listitem>
+            <para>Com a ajuda da lista flutuante, você poderá decidir se e como o objeto será preenchido: com uma cor, uma textura ou um degradê.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Mostrar grade</term>
+          <listitem>
+            <para>Se esta opção estiver marcada, uma grade é aplicada na pré-visualização para tornar mais fácil o posicionamento dos objetos.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Atrais para a grade</term>
+          <listitem>
+            <para>Se esta opção estiver marcada, os objetos vão se alinhar à grade.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Mostrar imagem</term>
+          <listitem>
+            <para>Quando esta opção estiver marcada, a imagem atual é exibida na pré-visualização (área de trabalho) &mdash; caso contrário, só os pontos de controle e linhas usadas como esqueleto dos objetos são mostrados.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+</sect2>

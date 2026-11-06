@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--  section history:
+  2017-02-18  Nothing to do
+-->
+<sect2 id="gimp-prefs-image-window-title">
+  <title>Image Title and Statusbar Format</title>
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Preferências</secondary>
+    <tertiary>Título &amp; estado</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Barra de título</primary>
+    <secondary>Preferências</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Barra de estado</primary>
+    <secondary>Preferências</secondary>
+  </indexterm>
+
+  <figure>
+    <title>Image Title and Statusbar Format Preferences</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/preferences/prefs-image-window-title.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>
+    This page lets you customize the text that appears in two
+    places: the title bar of an image, and the status bar.  The
+    title bar should appear above the image; however this depends
+    on cooperation from the window manager, so it is not
+    guaranteed to work in all cases.  The statusbar appears
+    underneath the image.  See the <link linkend="gimp-image-window">Image Window</link>
+    section for more information.
+  </para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>
+      The preferences dialog can be accessed from the main menu, through
+      <menuchoice>
+       <guimenu>Edit</guimenu>
+       <guimenuitem>Preferences</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Escolhendo um Formato</title>
+    <para>Você pode escolher entre vários formatos predefinidos, ou você pode criar uma de sua preferência, por escrito, escrevendo uma<emphasis>string formatada</emphasis> na área de entrada. E como funcionam as strings formatadas? Simples:  tudo que você digitar é mostrado exatamente como você digita, com exceção das <emphasis>variáveis</emphasis>, cujos nomes começam com <quote>%</quote>. As modificações são exibidas em tempo real no GIMP, então vale a pena experimentar. Aqui está uma lista das variáveis que você pode usar:</para>
+    <segmentedlist>
+      <segtitle>Variável</segtitle>
+      <segtitle>Significado</segtitle>
+      <seglistitem>
+        <seg>%f</seg>
+        <seg>Nome do arquivo da imagem, ou <quote>Sem título</quote></seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%F</seg>
+        <seg>Caminho completo para o arquivo, ou <quote>Sem título</quote></seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%p</seg>
+        <seg>Número de identificação da Imagem (você pode usa-lo para alguns comandos no console do script-fu)</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%i</seg>
+        <seg>Número da visualização, se uma imagem estiver aberta em mais de uma janela</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%t</seg>
+        <seg>Tipo da imagem (RGB, Tons de cinza, indexada)</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%z</seg>
+        <seg>Fator de ampliação como uma percentagem</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%s</seg>
+        <seg>Fator de escala da imagem original (usado para exibir o nível de zoom como uma fração com %d/%s)</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%d</seg>
+        <seg>Fator de escala da imagem vista (usado para exibir o nível de zoom como uma fração com %d/%s)</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%Dx</seg>
+        <seg>Expande para x se a imagem estiver suja, do contrário nada</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%Cx</seg>
+        <seg>Expande para x se a imagem estiver limpa, do contrário nada</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%l</seg>
+        <seg>Número de cores</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%L</seg>
+        <seg>Número de camadas (formato longo)</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%m</seg>
+        <seg>Memória usada pela imagem</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%n</seg>
+        <seg>Nome da camadas ou canal ativo</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%o</seg>
+        <seg>Conta gotas</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%P</seg>
+        <seg>Id da camada/canal ativo</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%w</seg>
+        <seg>Largura da imagem em pixels</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%W</seg>
+        <seg>Largura da imagem em unidades do mundo real</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%h</seg>
+        <seg>Altura da imagem em pixels</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%H</seg>
+        <seg>Altura da imagem em unidades do mundo real</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%u</seg>
+        <seg>Símbolo da unidade (por exemplo, px para Pixel) </seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%U</seg>
+        <seg>Abreviatura da unidade</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%x</seg>
+        <seg>Active layer width in pixels</seg>
+      </seglistitem>
+       <seglistitem>
+        <seg>%X</seg>
+        <seg>Active layer width in real-world units</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%y</seg>
+        <seg>Active layer height in pixels</seg>
+      </seglistitem>
+       <seglistitem>
+        <seg>%Y</seg>
+        <seg>Active layer height in real-world units</seg>
+      </seglistitem>
+      <seglistitem>
+        <seg>%%</seg>
+        <seg>Símbolo <quote>%</quote> literal </seg>
+      </seglistitem>
+    </segmentedlist>
+  </sect3>
+</sect2>

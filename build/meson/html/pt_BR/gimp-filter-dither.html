@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.58. Reticular</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. O menu “Cores”" />
+    <link rel="prev" href="gimp-filter-color-to-alpha.html" title="8.57. Cor para Alfa…" />
+    <link rel="next" href="gimp-filter-rgb-clip.html" title="8.59. Cortar RGB" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.58. Reticular</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-color-to-alpha.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. O menu <span class="quote">“<span class="quote">Cores</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-filter-rgb-clip.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-dither"></a>8.58. Reticular</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id46136" class="indexterm"></a>
+      <a id="id46139" class="indexterm"></a>
+      <p>Este filtro pode reduzir o número de cores numa imagem pela redução de níveis por canal (cores e alfa). Diferentes métodos de reticulação podem ser especificados para contrabalançar bandeamento induzido por quantização.</p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4162"></a>8.58.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guimenuitem">Dither…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4163"></a>8.58.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4164"></a>
+          <p class="title">
+            <strong>Figura 16.230. Diálogo do filtro Reticular</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/dither-dialog.png" alt="Diálogo do filtro Reticular" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Predefinições, </span>
+              <span class="term">Tipo de Entrada, </span>
+              <span class="term">Corte, </span>
+              <span class="term">Opções de Mistura, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Nota]" src="images/note.png" />
+                    </td>
+                    <th align="left">Nota</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-colors-menu.html#colors-common-features" title="8.1.2. Funcionalidades Comuns de Cores">Seção 8.1.2, “Funcionalidades Comuns de Cores”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Red levels, </span>
+              <span class="term">Green levels, </span>
+              <span class="term">Blue levels, </span>
+              <span class="term">Alpha levels</span>
+            </dt>
+            <dd>
+              <p>
+            These sliders allow you to set the number of levels for the
+            respective red, green, blue and alpha channels.
+          </p>
+            </dd>
+            <dt>
+              <a id="gimp-filter-dither-method"></a>
+              <span class="term">Método de reticulação</span>
+            </dt>
+            <dd>
+              <p>Aqui você pode especificar o método de reticulação a se usar.</p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Nenhum</span>
+                  </dt>
+                  <dd>
+                    <p>Nenhuma reticulação será realizada na imagem.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Floyd-Steinberg</span>
+                  </dt>
+                  <dd>
+                    <p>Este é o método de reticulação mais comumente usado e o padrão para este filtro. Para mais informações, veja <a class="ulink" href="https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering" target="_top"> Reticulação Floyd-Steinberg na Wikipedia</a>.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Bayer</span>
+                  </dt>
+                  <dd>
+                    <p>A Matriz Bayer é outro método comum de reticulação usado para reduzir o número de cores. O algoritmo é caracterizado por padrões hachurados perceptíveis no resultado. Para mais informações, veja <a class="ulink" href="https://en.wikipedia.org/wiki/Ordered_dithering" target="_top">Reticulação ordenada na Wikipedia</a>.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Random, </span>
+                    <span class="term">Random Covariant</span>
+                  </dt>
+                  <dd>
+                    <p>Estes métodos de reticulação usam aleatorização dos valores de pixel para reduzir o número de cores.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Arithmetic add, </span>
+                    <span class="term">Arithmetic add covariant, </span>
+                    <span class="term">Arithmetic xor, </span>
+                    <span class="term">Arithmetic xor covariant</span>
+                  </dt>
+                  <dd>
+                    <p>Estes métodos de reticulação são espacialmente estáveis, baseados em números mágicos e aritmética. Para mais informações, veja <a class="ulink" href="https://pippin.gimp.org/a_dither/" target="_top">uma reticulação</a>.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Blue Noise, </span>
+                    <span class="term">Blue Noise Covariant</span>
+                  </dt>
+                  <dd>
+                    <p>Estes métodos de reticulação usando o tal ruído azul foram percebidos como sendo os menos feios e distrativos. Para mais informações, veja <a class="ulink" href="https://en.wikipedia.org/wiki/Dither#Digital_photography_and_image_processing" target="_top">Reticulação em processamento de imagem na Wikipedia</a>.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Random seed, </span>
+              <span class="term">New Seed</span>
+            </dt>
+            <dd>
+              <p>
+            This option controls the randomness of the filter.
+            The <span class="guilabel">Random seed</span> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <span class="guibutton">New Seed</span>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-color-to-alpha.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-rgb-clip.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-color-to-alpha.html">8.57. Cor para Alfa…</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-rgb-clip.html">8.59. Cortar RGB</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

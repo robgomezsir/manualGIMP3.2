@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.3. Edge</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="filters-edge.html" title="8. Edge-Detect Filters" />
+    <link rel="prev" href="gimp-filter-difference-of-gaussians.html" title="8.2. Difference of Gaussians" />
+    <link rel="next" href="gimp-filter-edge-laplace.html" title="8.4. Laplace" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.3. Edge</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-difference-of-gaussians.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>8. Edge-Detect Filters</span>
+        <nav> <a accesskey="n" href="gimp-filter-edge-laplace.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-filter-edge"></a>8.3. Edge</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id52345" class="indexterm"></a>
+      <a id="id52349" class="indexterm"></a>
+      <a id="id52351" class="indexterm"></a>
+      <a id="id52353" class="indexterm"></a>
+      <a id="id52355" class="indexterm"></a>
+      <a id="id52357" class="indexterm"></a>
+      <a id="id52359" class="indexterm"></a>
+      <a id="id52361" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3327"></a>8.3.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3328"></a>
+          <p class="title">
+            <strong>Figure 17.171. Applying example for the Edge filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Applying example for the Edge filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/edge-taj-edge-sobel.jpg" alt="Applying example for the Edge filter" />
+              <div class="caption">
+                <p>Filter applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter detects edges in an image using the method selected
+      in <span class="guilabel">Algorithm</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3329"></a>8.3.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Edge-Detect</span> → <span class="guimenuitem">Edge…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3330"></a>8.3.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3331"></a>
+          <p class="title">
+            <strong>Figure 17.172. Edge filter options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/edge-detect/edge-dialog.png" alt="Edge filter options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Presets, </span>
+              <span class="term"><span class="quote">“<span class="quote">Input Type</span>”</span>, </span>
+              <span class="term">Clipping, </span>
+              <span class="term">Blending Options, </span>
+              <span class="term">Preview, </span>
+              <span class="term">Merge filter, </span>
+              <span class="term">Split view</span>
+            </dt>
+            <dd>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+    These options are described in <a class="xref" href="gimp-filters-common.html" title="2. Common Features">Section 2, “Common Features”</a>.
+  </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Algorithm</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <p>
+              The algorithm selected here, determines what method is used
+              to detect edges. The following methods are available:
+            </p>
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Sobel</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This is an alternative version of the separate
+                  <a class="link" href="gimp-filter-edge-sobel.html" title="8.6. Sobel">Sobel</a> filter.
+                  Contrary to that filter, this one has no additional settings
+                  that can be adjusted. This is the default; an example is
+                  shown at the top of the page.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Prewitt compass</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The <a class="ulink" href="https://en.wikipedia.org/wiki/Prewitt_operator" target="_top">Prewitt
+                  operator</a> is a relatively fast algorithm, that
+                  can be relatively crude for high frequency variations in
+                  an image.
+                </p>
+                    <div class="mediaobject">
+                      <img src="images/filters/examples/edge-taj-edge-prewitt.jpg" />
+                      <div class="caption">
+                        <p>
+                      Algorithm set to Prewitt compass
+                    </p>
+                      </div>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Gradient</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When using the Gradient algoritm, edges are thinner, less
+                  contrasted and more blurred than Sobel.
+                </p>
+                    <div class="mediaobject">
+                      <img src="images/filters/examples/edge-taj-edge-gradient.jpg" />
+                      <div class="caption">
+                        <p>Algorithm set to Gradient</p>
+                      </div>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Roberts</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The <a class="ulink" href="https://en.wikipedia.org/wiki/Roberts_cross" target="_top">Roberts</a>
+                  algorithm will highlight changes in intensity in a diagonal
+                  direction. However, it suffers greatly from sensitivity to
+                  noise.
+                </p>
+                    <div class="mediaobject">
+                      <img src="images/filters/examples/edge-taj-edge-roberts.jpg" />
+                      <div class="caption">
+                        <p>Algorithm set to Roberts</p>
+                      </div>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Differential</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This algorithm often causes edges to be less bright.
+                </p>
+                    <div class="mediaobject">
+                      <img src="images/filters/examples/edge-taj-edge-differential.jpg" />
+                      <div class="caption">
+                        <p>Algorithm set to Differential</p>
+                      </div>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Laplace</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This is a different implementation of the
+                  <a class="link" href="gimp-filter-edge-laplace.html" title="8.4. Laplace">Laplace</a>
+                  filter, that gives different results.
+                </p>
+                    <div class="mediaobject">
+                      <img src="images/filters/examples/edge-taj-edge-laplace.jpg" />
+                      <div class="caption">
+                        <p>Algorithm set to Laplace</p>
+                      </div>
+                    </div>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Amount</span>
+            </dt>
+            <dd>
+              <p>
+            A low value results in a black, high-contrasted image with thin
+            edges. A high value results in thick edges with low contrast and
+            many colors in dark areas.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Border behavior</span>
+            </dt>
+            <dd>
+              <p>
+            This determines where the edge detector will get adjoining pixels
+            for its calculations when it is working on the image boundaries.
+            This setting will only affect the boundaries of the result
+            (if any). <span class="guilabel">Clamp</span> is the default and
+            the best choice in general.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-difference-of-gaussians.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-edge.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-filter-edge-laplace.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-difference-of-gaussians.html">8.2. Difference of Gaussians</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-filter-edge-laplace.html">8.4. Laplace</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

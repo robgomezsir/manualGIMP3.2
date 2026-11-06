@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-03-08 alex falappa: added it translation
+  2006-07-29 lexa: patch from julien that includes suggestions by Sally
+  2006-07-17 note added about the Colormap Dialog by j.h
+  2005/10/25 created from image-mode.xml by axel.wernicke
+-->
+<sect2 id="gimp-image-convert-indexed">
+  <title>modo indexado</title>
+
+  <indexterm>
+    <primary>Imagem</primary>
+    <secondary>Converter</secondary>
+    <tertiary>Para modo indexado</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Modos</primary>
+    <secondary>Indexado</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>cores indexadas</primary>
+  </indexterm>
+
+  <para>
+    The <guimenuitem>Indexed</guimenuitem> command converts your image to
+    indexed mode. See
+    <link linkend="glossary-indexedcolors">indexed colors</link> in the
+    Glossary for more information about Indexed Color Mode.
+  </para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Image</guimenu>
+        <guisubmenu>Mode</guisubmenu>
+        <guimenuitem>Indexed…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>O diálogo <quote>Converte a imagem para cores indexadas</quote></title>
+    <para>O comando <guimenuitem>Indexado</guimenuitem> abre o diálogo <guilabel>Converte a imagem para cores indexadas</guilabel>.</para>
+    <figure>
+      <title>O diálogo <quote>Converte a imagem para cores indexadas</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/dialogs/image-mode-indexed.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Opções de mapa de cores</term>
+        <listitem>
+          <itemizedlist>
+            <listitem>
+              <para><guilabel>Gerar paleta otimizada</guilabel>: Esta opção cria a melhor paleta possível com no máximo 256 cores por padrão (suportadas no formato GIF clássico). Você pode reduzir este <emphasis>Número máximo de cores</emphasis>, embora isso possa criar efeitos indesejados (faixas de cores) em transições suaves. Entretanto, você pode diminuir os efeitos indesejados fazendo uso do reticulado.</para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Usar paleta otimizada para Web</guilabel>:  Usa uma paleta fixa, otimizada para web: nos anos 1990 havia algumas cores seguras para se colocar numa imagem na Web que não seriam alteradas pelo navegador - isso não se aplica mais hoje em dia.</para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Usar paleta preto e branco (1 Bit)</guilabel>: Esta opção gera uma imagem que usa apenas duas cores: perto e branco.</para>
+            </listitem>
+            <listitem>
+              <para><guilabel>Usar planeta personalizada</guilabel>: Este botão permite que você selecione uma paleta personalizada de uma lista. O número de cores é indicado para cada paleta. Você pode visualizar e editar essas paletas no diálogo de paletas - use esta opção com uma paleta personalizada para forçar que a imagem tenha apenas as cores que você desejar (por exemplo só 3 cores: preto, vermelho e branco)</para>
+              <para>Algumas cores da paleta podem não ser usadas se sua imagem não tiver muitas cores - elas serão removidas da imagem final se a opção <guilabel>Remover cores não utilizadas do mapa de cores</guilabel> estiver selecionada. Uma vez que a versão 2.8 do GIMP não cria novas cores automaticamente em imagens indexadas, não use esta opção se você pretende desenhar na imagem com as cores da paleta escolhida (nas versões 2.10 em diante esta restrição não existe) </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Opções de retícula</term>
+        <listitem>
+          <para>Uma vez que uma imagem indexada contém 256 cores ou menos, algumas das cores na imagem original podem não estar disponíveis na paleta final. Isso pode resultar em alguns trechos blocados ou sólidos, em áreas em que deveria haver mudanças sutis de cores. As opções de <guilabel>reticulado</guilabel> permitem que você corrija os efeitos indesejados criados pelas opções de paleta.</para>
+          <para>Um filtro de retícula tenta aproximar uma cor faltante na paleta usando grupos de pixels de cores semelhantes, que existam na paleta. Quando vistos de longe, esses pixels dão a impressão de uma nova cor. Consulte o glossário para maiores informações sobre <link linkend="glossary-dithering">reticulado</link>.</para>
+          <para>Três filtros (além de <quote>Nenhum</quote>) estão disponíveis. Não é possível prever qual resultado um dos filtros em particular vai ter na sua imagem, então você terá que tentar todos (aplicando a conversão, desfazendo e refazendo) para ver qual funciona melhor.   O filtro <quote>Posicionada</quote> é bem adaptado para animações. </para>
+          <figure>
+            <title>Exemplo: todas as cores, sem retícula</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/examples/dither1.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>Este é um exemplo com uma transição suave no modo RGB</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <figure>
+            <title>Exemplo: quatro cores, sem retícula</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/examples/dither2.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>A mesma imagem, depois de ser transformada para quatro cores indexadas, sem uso do reticulado</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <figure>
+            <title>Exemplo: Floyd-Steinberg (normal)</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/examples/dither3.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>A mesma imagem, com 4 cores indexadas e reticulado <quote>Floyd-Steinberg (normal)</quote></para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <figure>
+            <title>Exemplo: Floyd-Steinberg (perda de cores reduzida)</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/dialogs/examples/dither4.png" format="PNG"/>
+              </imageobject>
+              <caption>
+                <para>A mesma imagem, com quatro cores indexadas e reticulado <quote> Floyd-Steinberg (perda de cores reduzida)</quote>.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>
+            In a GIF image, transparency is encoded in 1 bit: transparent
+            or not transparent. To give the illusion of partial
+            transparency, you can use the <guilabel>Enable dithering of
+              transparency</guilabel> option. However, the
+            <link linkend="gimp-filter-semi-flatten">Semi-flatten</link>
+            plug-in may give you better results.
+          </para>
+          <para>
+            <guilabel>Enable dithering of text layers</guilabel>: dithering 
+            text layers will make them uneditable.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <note>
+      <para>Você pode editar a paleta de cores de uma imagem indexada usando o <link linkend="gimp-indexed-palette-dialog">Diálogo de mapa de cores</link>.</para>
+    </note>
+  </sect3>
+</sect2>

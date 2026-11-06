@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history
+  2118-10-29 j.h: update to v2.10
+  2010-02-18 ude: created
+-->
+<sect2 id="gimp-tool-gegl">
+  <title>Operação da GEGL</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Operação da GEGL</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Operação da GEGL</primary>
+  </indexterm>
+
+  <sect3>
+  <title>Visão-geral</title>
+  <para>
+    <acronym>GEGL</acronym> (<quote>Generic Graphical Library</quote>) is a
+    graph based image processing library designed to handle various image
+    processing tasks needed in <acronym>GIMP</acronym>. Most
+    <acronym>GEGL</acronym> operations have their own menu commands in
+    <acronym>GIMP</acronym>. The majority of them are filters found in the
+    Colors and Filters menus.
+  </para>
+  <para>
+    However, there are some <acronym>GEGL</acronym> operations that don't have
+    their own command. Either because the operation was not considered important
+    enough, or because the operation may still be experimental.
+  </para>
+  <para>
+    The <acronym>GEGL</acronym> Operation filter was added to give access to all
+    these operations that you can't use in another way. It enables applying
+    <acronym>GEGL</acronym> operations to the image and gives on-canvas previews
+    of the results.
+    New <acronym>GEGL</acronym> operations made by third-party developers
+    will also show up in this dialog.
+  </para>
+  </sect3>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>
+      You can get to this tool only from the main menu:
+      <menuchoice>
+        <guimenu>Tools</guimenu>
+        <guimenuitem>GEGL Operation…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Caixa de opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/gegl-operation-dialog.png"/>
+        </imageobject>
+        <caption>
+          <para>GEGL Operation with no operation selected.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Operação</term>
+        <listitem>
+          <para>Clique sobre este botão para selecionar a operação que você deseja aplicar à seleção ativa ou, caso não haja nenhuma seleção, à camada ativa.</para>
+          <para>Algumas dessas operações são muitas básicas como a <quote>color</quote> (cor)que preenche a seleção ativa ou camada com a cor especificada, enquanto operações como a <quote>fractal-explorer</quote> (Explorador de fractais) produz padrões muito complexos; assim como vários dos <link linkend="filters-render">filtros de renderização</link>.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Configurações de operação</term>
+        <listitem>
+          <para>As configurações de operação dependem da <guilabel>Operação</guilabel> escolhida:</para>
+          <figure>
+            <title>Exemplo de <quote>Configurações de operação</quote></title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/gegl-operation-box-blur.png"/>
+              </imageobject>
+              <caption>
+                <para>Operação da GEGL de <quote>gaussian-blur</quote> (Desfocagem gaussiana) selecionada.</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>Se as opções da operação da <acronym>GEGL</acronym> selecionada não forem auto-explicativas (adivinhe qual é propósito da opção <quote>cor</quote> da operação <quote>cor</quote>??) você pode procurar por uma ferramenta que não seja  da<acronym>GEGL</acronym>. Por exemplo, o filtro <link linkend="plug-in-fractalexplorer">Explorador de fractal</link> pode ter as mesmas opções da operação que o <quote>fractal-explorer</quote> da GEGL.</para>
+          <para>Ou você pode usar a incrível funcionalidade de pré-visualização em tempo real na imagem e simplesmente experimentar as diferentes opções de cada operação.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Pré-visualização</term>
+        <listitem>
+          <para>
+            If this option is checked, as it is by default, you will get an
+            on-canvas preview of the selected operation as soon as the
+            operation is finished. You will have to press the
+            <guibutton>OK</guibutton> button to actually apply the operation
+            to the image.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>The buttons</title>
+      <varlistentry>
+        <term>Restaurar</term>
+        <listitem>
+          <para>
+            Pressing this button resets the operation settings to their
+            defaults.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cancelar</term>
+        <listitem>
+          <para>
+            Clicking on this button aborts the <acronym>GEGL</acronym>
+            operation and leaves your image untouched. This is equivalent
+            to close the dialog window using the usual
+            <guibutton>Close</guibutton> button provided by your window
+            manager.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>OK</term>
+        <listitem>
+          <para>Você precisa pressionar este botão para aplicar a operação selecionada à imagem. Então a janela de diálogo será fechada.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-05-10 lexa: added warning: the filter does not work for large images
+  2005-09-19 de added by axel.wernicke
+-->
+<sect2 id="plug-in-flame">
+  <title>Chama</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Chama</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Chama</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de imagem criada como filtro Chama</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/examples/flame1.png"/>
+        </imageobject>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-taj-flame.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Com o filtro Chama, você pode criar  padrões fractais gerados aleatoriamente. Você não pode controlar os fractais como você pode com o filtro <link linkend="plug-in-ifscompose">Fractal IFS</link> filtro, mas você pode dirigir o gerador aleatório em uma determinada direção e escolher variações de um tema que você goste.</para>
+    <warning>
+      <para>
+        Unfortunately, this filter is not working properly for larger images.
+        Sadly, its developer is not around anymore, so there seems no quick
+        fix in sight.
+      </para>
+    </warning>
+    <note>
+      <para>
+        This plug-in was given to <acronym>GIMP</acronym> by Scott Draves in
+        1997. He also holds the copyright for the plug-in. A descriptive page
+        for the plug-in, provided by the author, can be found on the internet
+        <xref linkend="bibliography-online-gimp-plugin-flames"/>.
+      </para>
+    </note>
+    <note>
+      <para>
+        If the image is in grayscale mode or indexed mode, this menu entry
+        is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guisubmenu>Fractals</guisubmenu>
+        <guimenuitem>Flame…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções para o filtro <quote>Chama</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/flame.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      In the main dialog, you can set <guilabel>Rendering</guilabel> and
+      <guilabel>Camera</guilabel> parameters. The first three parameters in the
+      Render display are <guilabel>Brightness</guilabel>,
+      <guilabel>Contrast</guilabel> and <guilabel>Gamma</guilabel>. The result
+      of these options is visible in the Preview window. However, it's generally
+      better to stick to the default values, and correct the rendered image
+      later with tools in the <link linkend="gimp-colors-menu">Colors</link> menu.
+    </para>
+    <para>
+      The other three parameters affect the rendering process and
+      don't show in the preview window. <guilabel>Sample Density</guilabel>,
+      which controls the resolution of the rendered pattern, is the most
+      important of these. The Camera parameters allow you to zoom and offset
+      the flame pattern, until you're happy with what you see in the preview.
+      Flame also offers the possibility to store and load your favorite patterns.
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Editar</term>
+        <listitem>
+          <para>
+            Pressing this button brings up the Edit Flame dialog:
+          </para>
+          <figure>
+            <title>A caixa de diálogo Editar Chama</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/render/flame-edit.png"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          <para>O diálogo mostra nove janelas diferentes. O padrão apresentado no centro é o padrão atual, e os oito janelas que o rodeiam são variações aleatórias do mesmo. Ao clicar na imagem central, oito novas variações são criadas. A quantidade de diferenças entre o modelo atual e as variações podem ser ajustadas com o controle de velocidade.  Você seleciona uma variação clicando sobre a mesma, e ela substitui instantaneamente a imagem do  meio. Para escolher uma determinada personalidade ou tema para as variações, você pode escolher entre nove temas diferentes no menu <guilabel>Variação</guilabel>. Você também pode usar o botão <guibutton> Randomizar</guibutton>, que substitui o padrão atual com um novo padrão aleatório.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Abrir</term>
+        <listitem>
+          <para>Este botão abre um seletor de arquivos que permite que você abra um arquivo de configurações de Chama salvo anteriormente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Salvar</term>
+        <listitem>
+          <para>Este botão abre um diálogo de salvar arquivo, que permite que você salve o modelo e as configurações atuais do plug-in, para que você possa recriá-los mais tarde.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Renderização</title>
+      <varlistentry>
+        <term>Brilho</term>
+        <listitem>
+          <para>Controla o brilho do objeto chama.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Contraste</term>
+        <listitem>
+          <para>Controla o contraste entre as partes mais claras e as mais escuras da chama.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Gama</term>
+        <listitem>
+          <para>Define uma correção de gama para as partes com brilho intermediário.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Densidade da amostra</term>
+        <listitem>
+          <para>
+            Controls the resolution of the rendered pattern. This does not
+            have any effect on the preview. A high sample density results in
+            soft and smooth rendering (like a spider's web), whereas low density
+            rendering resembles spray or particle clouds.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Super-amostragem espacial</term>
+        <listitem>
+          <para>O que isso faz? Nem os autores do manual sabem!</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Raio do filtro espacial</term>
+        <listitem>
+          <para>O que isso faz? Nem os autores do manual sabem!</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Mapa de cores</term>
+        <listitem>
+          <para>Este menu apresenta várias opções para definir a mistura de cores no padrão da chama:</para>
+          <itemizedlist>
+            <listitem>
+              <para>O degradê atual, como mostrado na caixa de ferramentas, ou selecionado no diálogo de degradês.</para>
+            </listitem>
+            <listitem>
+              <para>Um certo número de mapas de cores pré-definidos.</para>
+            </listitem>
+            <listitem>
+              <para>As cores de imagens que estão abertas no <acronym>GIMP</acronym>.</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Câmera</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/flame2.png"/>
+        </imageobject>
+      </mediaobject>
+      <varlistentry>
+        <term>Zoom</term>
+        <listitem>
+          <para>Permite aproximar ou diminuir o desenho da chama</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>X</term>
+        <term>Y</term>
+        <listitem>
+          <para>Permite que você mova a chama na área da imagem</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

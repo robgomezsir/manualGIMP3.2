@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Chapter 8. Combining Images</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="become-a-gimp-wizard.html" title="Part II.  How do I Become a GIMP Wizard?" />
+    <link rel="prev" href="gimp-using-rectangular.html" title="10.2. Creating a Basic Shape" />
+    <link rel="next" href="gimp-concepts-layer-modes.html" title="2. Layer Modes" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Chapter 8. Combining Images</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-using-rectangular.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>Part II. 
+      How do I Become a <acronym class="acronym">GIMP</acronym> Wizard?
+    </span>
+        <nav> <a accesskey="n" href="gimp-concepts-layer-modes.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="chapter">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="gimp-image-combining"></a>Chapter 8. Combining Images</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Table of Contents</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-image-combining.html#gimp-concepts-layers">1. Introduction to Layers</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-image-combining.html#gimp-layer-properties">1.1. Layer Properties</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-concepts-layer-modes.html">2. Layer Modes</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-concepts-layer-modes.html#layer-mode-group-normal">2.1. Normal Layer Modes</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="layer-mode-group-lighten.html">2.2. Lighten Layer Modes</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="layer-mode-group-darken.html">2.3. Darken Layer Modes</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="layer-mode-group-contrast.html">2.4. Contrast Layer Modes</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="layer-mode-group-inversion.html">2.5. Inversion Layer Modes</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="layer-mode-group-hsv.html">2.6. HSV Components Layer Modes</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="layer-mode-group-lch.html">2.7. LCh Components Layer Modes</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-concepts-layer-modes-legacy.html">3. Legacy Layer Modes</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-using-layers.html">4. Creating New Layers</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-layer-groups.html">5. Layer Groups</a>
+            </span>
+          </dt>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-using-layer-effects.html">6. Layer Effects</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#id1517">6.1. Introduction</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#id1518">6.2. Terminology</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#id1519">6.3. Adding a Layer Effect to a Layer</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#id1520">6.4. Order Matters</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#gimp-using-layer-effects-dialog">6.5. The Layer Effects Dialog</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#gimp-merging-layer-effects">6.6. Merging</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#id1529">6.7. Merging and Auxiliary Other Images</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#id1530">6.8. Undo and Layer Effects</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#id1531">6.9. Copying Layer Effects</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-layer-effects.html#id1532">6.10. Persistence of Layer Effects</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-layer-types.html">7. Layer Types</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-layer-types.html#id1533">7.1. Introduction</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-layer-types.html#gimp-layer-type-text-layer">7.2. Text Layer</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-layer-types.html#gimp-layer-type-vector-layer">7.3. Vector Layer</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-layer-types.html#gimp-layer-type-link-layer">7.4. Link Layer</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-concepts-layers"></a>1. Introduction to Layers</h2>
+            </div>
+          </div>
+        </div>
+        <a id="id8900" class="indexterm"></a>
+        <p>
+    You can think of layers as a stack of slides. Using layers, you can
+    construct an image of several conceptual parts, each of which can be
+    manipulated without affecting any other part of the image. Layers are
+    stacked on top of each other. The bottom layer is the background of the
+    image, and the components in the foreground of the image come above it.
+  </p>
+        <div class="figure">
+          <a id="id1427"></a>
+          <p class="title">
+            <strong>Figure 8.1. An image with layers</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/layers_overview.png" alt="An image with layers" />
+              <div class="caption">
+                <p>Layers of the image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/dialogs/layers_example.png" alt="An image with layers" />
+              <div class="caption">
+                <p>Resulting image</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    There is no limit to the number of layers an image can have, only the
+    amount of memory available on the system. It is not uncommon for advanced
+    users to work with images containing dozens of layers. You can group layers
+    to make your work easier, and there are many commands to handle layers.
+  </p>
+        <p>
+    The organization of layers in an image is shown in the Layers dialog.
+    How it works is described
+    in detail in the <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Layers Dialog">Layers Dialog</a>
+    section, but we will touch some aspects of it here, in relation to the
+    layer properties that they display.
+  </p>
+        <a id="id8917" class="indexterm"></a>
+        <p>
+    Each open image can have one or more <span class="emphasis"><em>active drawables</em></span>.
+    A <span class="quote">“<span class="quote">drawable</span>”</span> is a <acronym class="acronym">GIMP</acronym> concept that
+    includes layers, but also several other items, such as channels,
+    layer masks, and the selection mask.
+  </p>
+        <p>
+    Basically, a <span class="quote">“<span class="quote">drawable</span>”</span> is anything that can be drawn on with
+    painting tools. If a layer is currently active (i.e. it is selected), it
+    is shown highlighted in the Layers dialog. If only one layer is selected,
+    its name is shown in the status area of the image window.
+  </p>
+        <p>
+    To activate a layer click it. To select multiple layers, use the common
+    key modifiers <span class="keycap"><strong>Shift</strong></span> for selecting a range, and
+    <span class="keycap"><strong>Ctrl</strong></span> for adding or removing one layer from the selection.
+    If none of the layers are highlighted, it means the active drawable is
+    something else than a layer.
+  </p>
+        <p>
+    The main menu has a <a class="link" href="gimp-layer-menu.html" title="7. The “Layer” Menu">Layer</a> submenu
+    containing commands that affect the active layer or layers of the image.
+    The <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog-context-menu" title="2.1.3. The Layers dialog context menu">context menu</a> of
+    the Layers Dialog has even more commands. This menu can be accessed by
+    right-clicking on a layer.
+  </p>
+        <p>
+  There are several <a class="link" href="gimp-layer-types.html" title="7. Layer Types">types of layers</a>.
+  The most common is the raster layer, which is the default. Other layer types
+  are text layers, vector layers and link layers. Each of these have extra
+  properties and commands specific to their purpose.
+  </p>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-layer-properties"></a>1.1. Layer Properties</h3>
+              </div>
+            </div>
+          </div>
+          <p>
+      Each layer in an image has a number of important attributes:
+    </p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Name</span>
+              </dt>
+              <dd>
+                <p>
+            Every layer has a name. This is assigned automatically when the
+            layer is created, but you can change it. You can change the name
+            of a layer either by double-clicking on it in the Layers dialog,
+            or by right-clicking there, and then selecting
+            <span class="guimenuitem">Edit Layer Attributes</span> in the menu
+            that appears.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">Presence or absence of an alpha channel</span>
+              </dt>
+              <dd>
+                <a id="id8945" class="indexterm"></a>
+                <a id="id8947" class="indexterm"></a>
+                <p>
+            An alpha channel encodes information about how transparent a layer
+            is at each pixel. It is visible in the Channels dialog: white is
+            complete opacity, black is complete transparency and gray levels
+            are partial transparencies.
+          </p>
+                <p>
+            The <span class="emphasis"><em>background layer</em></span> is special. If you
+            have just created a new image, it only has one layer, which
+            is the background layer. If the image has been created with an
+            opaque Fill type, this one layer has no Alpha channel. To get a
+            background layer with transparency, either create your new image
+            with a transparent Fill type, or you use the
+            <a class="link" href="gimp-layer-alpha-add.html" title="7.36. Add Alpha Channel">Add an Alpha Channel</a>
+            command.
+          </p>
+                <p>
+            If you add a <span class="emphasis"><em>new layer</em></span>, even with an opaque Fill
+            type, an Alpha channel is automatically added to the layer.
+          </p>
+                <p>
+            Every layer other than the bottom layer of an image automatically
+            has an Alpha channel, but you can't see a grayscale
+            representation of the alpha values. See
+            <a class="link" href="glossary.html#glossary-alpha" title="Alpha">Alpha</a> in Glossary for
+            more information.
+          </p>
+                <a id="id8958" class="indexterm"></a>
+                <p><a id="alpha-channel-example"></a><strong>Example for Alpha channel. </strong>
+              </p>
+                <div class="figure">
+                  <a id="id1428"></a>
+                  <p class="title">
+                    <strong>Figure 8.2. Alpha channel example: Basic image</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-0-example.png" alt="Alpha channel example: Basic image" />
+                      <div class="caption">
+                        <p>
+                      Original image.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-0-dialog-layers.png" alt="Alpha channel example: Basic image" />
+                      <div class="caption">
+                        <p>
+                      The image has three layers painted with pure 100% opaque
+                      Red, Green, and Blue. The current layer is the red one.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-0-dialog-channels.png" alt="Alpha channel example: Basic image" />
+                      <div class="caption">
+                        <p>
+                      In the Channels dialog, the added Alpha channel is white because
+                      the image is not transparent since there is a 100% opaque (red)
+                      layer. As the current (red) layer is 100% opaque, there is no
+                      green and no blue so their corresponding channels are black.
+                    </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p><br class="figure-break" />
+              </p>
+                <div class="figure">
+                  <a id="id1429"></a>
+                  <p class="title">
+                    <strong>Figure 8.3. Alpha channel example: One transparent layer</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-1-example.png" alt="Alpha channel example: One transparent layer" />
+                      <div class="caption">
+                        <p>
+                      The left part of the first layer has been made transparent
+                      (via <a class="xref" href="gimp-tool-rect-select.html" title="2.2. Rectangle Selection">Section 2.2, “Rectangle Selection”</a>, then
+                      <span class="guimenu">Edit</span> → <span class="guimenuitem">Clear</span>).
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-1-dialog-layers.png" alt="Alpha channel example: One transparent layer" />
+                      <div class="caption">
+                        <p>
+                      The second layer, green, is visible.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-1-dialog-channels.png" alt="Alpha channel example: One transparent layer" />
+                      <div class="caption">
+                        <p>
+                      The Alpha channel is still white, since
+                      there is an opaque layer in this part of the image.
+                    </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p><br class="figure-break" />
+              </p>
+                <div class="figure">
+                  <a id="id1430"></a>
+                  <p class="title">
+                    <strong>Figure 8.4. Alpha channel example: Two transparent layers</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-2-example.png" alt="Alpha channel example: Two transparent layers" />
+                      <div class="caption">
+                        <p>
+                      The left part of the second layer has been made
+                      transparent.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-2-dialog-layers.png" alt="Alpha channel example: Two transparent layers" />
+                      <div class="caption">
+                        <p>
+                      The third layer, blue, is visible through the
+                      first and second layers.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-2-dialog-channels.png" alt="Alpha channel example: Two transparent layers" />
+                      <div class="caption">
+                        <p>
+                      The Alpha channel is still white,
+                      since there is an opaque layer in this part of the image.
+                    </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p><br class="figure-break" />
+              </p>
+                <div class="figure">
+                  <a id="id1431"></a>
+                  <p class="title">
+                    <strong>Figure 8.5. Alpha channel example: Three transparent layers</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-3a-example.png" alt="Alpha channel example: Three transparent layers" />
+                      <div class="caption">
+                        <p>
+                      The left part of the third layer has been cleared.
+                      In this case, the Clear command works like
+                      the <a class="link" href="gimp-tool-eraser.html" title="3.8. Eraser">Eraser</a> and uses
+                      the <a class="link" href="gimp-tools.html#gimp-toolbox-color-area" title="1.3.1. Foreground/Background Colors Area">Background
+                      color of Toolbox</a>.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-3a-dialog-layers.png" alt="Alpha channel example: Three transparent layers" />
+                      <div class="caption">
+                        <p>
+                      The left part of the third layer is opaque, because the
+                      background layer has no Alpha channel.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-3a-dialog-channels.png" alt="Alpha channel example: Three transparent layers" />
+                      <div class="caption">
+                        <p>
+                      The Alpha channel is still white.
+                    </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p><br class="figure-break" />
+              </p>
+                <div class="figure">
+                  <a id="id1432"></a>
+                  <p class="title">
+                    <strong>Figure 8.6. 
+                  Alpha channel example: Alpha channel added to the Background
+                </strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-3b-example.png" alt="Alpha channel example: Alpha channel added to the Background" />
+                      <div class="caption">
+                        <p>
+                      We used the
+                      <span class="guimenu">Layer</span> → <span class="guimenuitem">Transparency</span> → <span class="guisubmenu">Add Alpha Channel</span>
+                      command on the (blue) background layer.
+                      The left part of the image has become fully transparent and
+                      has the color of the page on which the image is shown.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-3b-dialog-layers.png" alt="Alpha channel example: Alpha channel added to the Background" />
+                      <div class="caption">
+                        <p>
+                      The left part of the blue layer has become transparent.
+                    </p>
+                      </div>
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/glossary/alpha-channel-3b-dialog-channels.png" alt="Alpha channel example: Alpha channel added to the Background" />
+                      <div class="caption">
+                        <p>
+                      The left part of the Alpha Channel thumbnail is black
+                      (transparent) in the Channels dialog.
+                    </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p><br class="figure-break" />
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Layer mode</span>
+              </dt>
+              <dd>
+                <a id="id9056" class="indexterm"></a>
+                <p>
+            The layer mode is determined by the image mode (see previous
+            section), and the presence or absence of an alpha channel.
+            <acronym class="acronym">GIMP</acronym> currently supports RGB, RGBA, Gray, GrayA,
+            Indexed, and IndexedA.
+          </p>
+                <p>
+            The main reason this matters is that some filters (in the
+            <span class="guimenu">Filters</span> menu) only accept a subset of layer
+            modes, and appear disabled in the menu if the active layer does
+            not have a supported mode.
+            Often you can rectify this either by changing the mode of the
+            image, or by adding or removing an alpha channel.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-visible.svg" width="16" /></span>
+          </span>
+          Visibility
+        </span>
+              </dt>
+              <dd>
+                <a id="id9070" class="indexterm"></a>
+                <p>
+            You can hide a layer from affecting the end result of your image
+            by clicking on the eye symbol in the Layers dialog. This is called
+            <span class="quote">“<span class="quote">toggling the visibility</span>”</span> of the layer. Most operations
+            on an image treat toggled-off layers as if they do not exist.
+          </p>
+                <p>
+            When you work with images containing many layers, with varying
+            opacities, you often can get a better picture of the contents of
+            the layer you want to work on by hiding some of the other layers.
+          </p>
+                <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Tip">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Tip]" src="images/tip.png" />
+                      </td>
+                      <th align="left">Tip</th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+              If you <span class="emphasis"><em>Shift</em></span>-click on the eye symbol, this
+              will cause all layers <span class="emphasis"><em>except</em></span>
+              the one you click on to be hidden.
+            </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Active layer</span>
+              </dt>
+              <dd>
+                <a id="id9083" class="indexterm"></a>
+                <p>
+            Usually, you activate a layer, to work on it, clicking it in the
+            layer list. When you have a lot of layers, finding which layer an
+            element of the image belongs to is not easy: then, press
+            <span class="keycap"><strong>Alt</strong></span> and click with Mouse wheel on this element to
+            activate its layer. The available layers will be looped through
+            (starting from the upper one) while the <span class="keycap"><strong>Alt</strong></span> is
+            held and the picked layer will be temporarily displayed in the
+            status bar.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-lock.svg" width="16" /></span>
+          </span>
+          Layer Lock Settings
+        </span>
+              </dt>
+              <dd>
+                <a id="id9096" class="indexterm"></a>
+                <p>
+            If you click to the right of the eye icon, you can select the
+            <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog-lock-alpha-button">lock
+            settings</a> for the layer.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-effects.svg" width="16" /></span>
+          </span>
+          Layer Effects
+        </span>
+              </dt>
+              <dd>
+                <a id="id9108" class="indexterm"></a>
+                <p>
+            Directly to the left of the image thumbnail, you will see the
+            <a class="link" href="gimp-dialogs-structure.html#gimp-layer-effects">Layer Effects</a> icon if
+            that layer has effects added to it.
+          </p>
+                <p>
+            See <a class="link" href="gimp-using-layer-effects.html" title="6. Layer Effects">Using Layer
+            Effects</a> for more details.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">Size and boundaries</span>
+              </dt>
+              <dd>
+                <a id="id9118" class="indexterm"></a>
+                <a id="id9121" class="indexterm"></a>
+                <p>
+            In <acronym class="acronym">GIMP</acronym>, the boundaries of a layer do not
+            necessarily match the boundaries of the image that contains it.
+            When you create text, for example, each text item belongs to its
+            own separate layer, and the layer size is automatically adjusted to
+            contain the text and nothing more.
+          </p>
+                <p>
+            Also, when you create a new layer using cut-and-paste, the new
+            layer is sized just large enough to contain the pasted item. In
+            the image window, the boundaries of the currently active layer are
+            shown outlined with a black-and-yellow dashed line. When more than
+            one layer is selected, it will show an outline of the square that
+            encloses all the selected layers.
+          </p>
+                <p>
+            The main reason why this matters is that you cannot do anything to
+            a layer outside of its boundaries, unless you enabled
+            <span class="guilabel">Expand Layers</span> in the
+            <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-options" title="3.1.2. Options">Paint Tool Options</a>.
+            If this causes you problems, you can alter the dimensions
+            of the layer using any of several commands that you can find near
+            the bottom of the <span class="guimenu">Layer</span> menu.
+          </p>
+                <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Note]" src="images/note.png" />
+                      </td>
+                      <th align="left">Note</th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+              The amount of memory that a layer consumes is determined by its
+              dimensions, not its contents. So, if you are working with large
+              images or images that contain many layers, it might pay off to
+              trim layers to the minimum possible size.
+            </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Opacity</span>
+              </dt>
+              <dd>
+                <p>
+            The opacity of a layer determines the extent to which it lets
+            colors from layers beneath it in the stack show through. Opacity
+            ranges from 0 to 100, with 0 meaning complete transparency, and
+            100 meaning complete opacity.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">Mode</span>
+              </dt>
+              <dd>
+                <p>
+            The Mode of a layer determines how colors from the layer are
+            combined with colors from the underlying layers to produce a
+            visible result. This is a sufficiently complex, and sufficiently
+            important, concept to deserve a section of its own, which follows.
+            See <a class="xref" href="gimp-concepts-layer-modes.html" title="2. Layer Modes">Section 2, “Layer Modes”</a>.
+          </p>
+              </dd>
+              <dt>
+                <span class="term">Layer mask</span>
+              </dt>
+              <dd>
+                <a id="id9145" class="indexterm"></a>
+                <p>
+            In addition to the alpha channel, there is another way to control
+            the transparency of a layer: by adding a
+            <span class="emphasis"><em>layer mask</em></span>,
+            which is an extra grayscale drawable associated with the layer.
+            A layer does not have a layer mask by default: it must be added
+            specifically. Layer masks, and how to work with them, are
+            described much more extensively in the
+            <a class="link" href="gimp-dialogs-structure.html#gimp-layer-mask" title="2.1.4. Layer masks">Layer Mask</a> section.
+          </p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-using-rectangular.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="become-a-gimp-wizard.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-concepts-layer-modes.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-using-rectangular.html">10.2. Creating a Basic Shape</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-concepts-layer-modes.html">2. Layer Modes</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

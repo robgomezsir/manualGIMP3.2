@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!--Version history
+  2017-02-19 j.h : updateh
+-->
+<sect2 id="gimp-prefs-input-controllers">
+  <title>Controladores de entrada</title>
+  <indexterm>
+    <primary>Preferências</primary>
+    <secondary>Controladores de entrada</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Controladores de entrada</primary>
+  </indexterm>
+
+  <figure>
+    <title>Input Controllers Preferences</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/preferences/input-controllers.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>
+    This page lets you enable or disable an input device and configure it.
+  </para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>
+      The preferences dialog can be accessed from the main menu, through
+      <menuchoice>
+       <guimenu>Edit</guimenu>
+       <guimenuitem>Preferences</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <para>Este diálogo tem duas listas de controladores de entrada adicionais: <guilabel>Controladores Disponíveis</guilabel> à esquerda, <guilabel>Controladores Ativos</guilabel> à direita.</para>
+    <para>Um clique em um item irá destacá-lo e você pode mover o controlador de uma lista para a outra, clicando na respectiva tecla de seta. Quando você tenta mover um controlador a partir da lista de controladores ativos para os controladores disponíveis, aparece uma janela e você terá a opção de remover o controlador ou simplesmente desativá-lo.</para>
+    <para>Quando você clicar duas vezes em um controlador (tipicamente ativo) ou, alternativamente, clicar no botão Editar na parte inferior da lista, você pode configurar este controlador em uma janela de diálogo:</para>
+    <variablelist>
+      <title>Roda do mouse principal</title>
+      <para>
+        <figure>
+          <title>Roda do mouse principal</title>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/preferences/input-controllers-wheel.png" format="PNG"/>
+            </imageobject>
+          </mediaobject>
+        </figure>
+      </para>
+      <varlistentry>
+        <term>Geral</term>
+        <listitem>
+          <variablelist>
+            <varlistentry>
+              <term>Imprimir eventos deste controlador</term>
+              <listitem>
+                <!--
+                  These anchors are used in GIMP, but do not use
+                  gimphelp-ids.h, setting the strings directly.
+                  Note: gimp-controller-mouse has been removed in GIMP master.
+               -->
+              <anchor id="gimp-controller-directx-directinput"/>
+              <anchor id="gimp-controller-linux-input"/>
+              <anchor id="gimp-controller-midi"/>
+              <anchor id="gimp-controller-mouse"/>
+              <para>Esta opção deve ser marcada se você quiser uma impressão na saída padrão dos eventos gerados pelos controladores habilitados. Se você quiser ver os eventos você deve iniciar <acronym>GIMP</acronym> a partir de um terminal ou fazendo-o imprimir a saída padrão para um arquivo pelo redirecionamento shell. O principal uso desta opção é para depuração.</para>
+            </listitem>
+          </varlistentry>
+          <varlistentry>
+            <term>Ativar este controlador</term>
+            <listitem>
+              <para>Esta opção deve ser marcada se você quiser adicionar novas ações para a roda do mouse.</para>
+            </listitem>
+          </varlistentry>
+        </variablelist>
+      </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Eventos da roda do mouse</term>
+        <listitem>
+          <anchor id="gimp-controller-wheel"/>
+          <para>
+            This window shows the available scroll wheel events on the left, and
+            on the right the actions associated to that event.
+            To change or add an action to an event, either double-click or
+            press the <guibutton>Edit event</guibutton> button.
+          </para>
+          <para>
+            To remove an action, press the <guibutton>Clear event</guibutton>
+            button.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Editing the action assigned to an event</term>
+        <listitem>
+          <para>
+            After selecting an event, if you click on the
+            <guibutton>Edit</guibutton> button, or when you double-click,
+            the following dialog is opened:
+          </para>
+          <figure>
+            <title>Selecionar a ação do controlador de eventos</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/preferences/input-controllers-action.png" format="PNG"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+          <para>
+            This dialog is similar to the one for editing
+            <link linkend="gimp-help-keyboard-shortcuts">keyboard shortcuts</link>,
+            except there is no shortcut column.
+          </para>
+          <para>
+            If an action is already assigned for this event, the dialog will open
+            with that action selected; otherwise it will display the sections
+            with the available action categories. Click on an action to select it
+            and then press OK to confirm you want that action assigned to the
+            selected event.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <variablelist>
+      <title>Teclado principal</title>
+      <varlistentry>
+        <term/>
+        <listitem>
+          <anchor id="gimp-controller-keyboard"/>
+          <para>Você pode usar essa caixa de diálogo, da mesma forma que a da roda do mouse. Eventos estão relacionados com as setas do teclado, combinada ou não com teclas modificadoras.</para>
+          <figure>
+            <title>Teclado principal</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/preferences/input-controllers-keyboard.png" format="PNG"/>
+              </imageobject>
+            </mediaobject>
+          </figure>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+    <note>
+      <para>
+        An example of changing the actions assigned to events can be found in the
+        documentation for
+        <link linkend="gimp-using-variable-size-brush">Creating a variable size brush</link>.
+      </para>
+    </note>
+  </sect3>
+</sect2>

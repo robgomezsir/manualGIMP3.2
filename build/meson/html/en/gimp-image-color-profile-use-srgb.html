@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.9. Use sRGB Profile</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-image-menu.html" title="6. The “Image” Menu" />
+    <link rel="prev" href="gimp-image-color-management.html" title="6.8. “Color Management” Submenu" />
+    <link rel="next" href="gimp-image-color-profile-assign.html" title="6.10. Assign Color Profile" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.9. Use sRGB Profile</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-image-color-management.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>6. The <span class="quote">“<span class="quote">Image</span>”</span> Menu</span>
+        <nav> <a accesskey="n" href="gimp-image-color-profile-assign.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-image-color-profile-use-srgb"></a>6.9. Use sRGB Profile</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id36197" class="indexterm"></a>
+      <a id="id36201" class="indexterm"></a>
+      <a id="id36204" class="indexterm"></a>
+      <p>
+    When checked, <span class="guimenuitem">Use sRGB Profile</span>
+    assigns a GIMP built-in sRGB color space to your image.
+  </p>
+      <p>
+    Also, if you've selected to display the image's assigned ICC color profile
+    in the window title (which is the default) or status bar (see
+    <a class="link" href="gimp-prefs-image-window-title.html" title="6.23. Image Title and Statusbar Format">Image Title &amp; Statusbar
+    Format</a> preferences), checking <span class="guimenuitem">Use sRGB
+    Profile</span> will show <span class="quote">“<span class="quote">GIMP built-in sRGB</span>”</span> in
+    the title or status bar in place of the image's assigned color profile.
+  </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Note]" src="images/note.png" />
+            </td>
+            <th align="left">Note</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>For images without color profile, or that have a sRGB profile
+    <span class="guimenuitem">Use sRGB Profile</span> is disabled and checked by
+    default. For images that have a different color profile this option will be
+    enabled and unchecked. It's best to leave it that way unless you know what
+    you are doing.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2444"></a>6.9.1. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Image</span> → <span class="guisubmenu">Color Management</span> → <span class="guimenuitem">Use sRGB Profile</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2445"></a>6.9.2. Usage Notes for the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The best possible advice is to <span class="bold"><strong>never check
+      <span class="guimenuitem">Use sRGB Profile</span></strong></span> when you are using
+      a different color profile.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2446"></a>6.9.3. 
+        What does GIMP do when
+        <span class="guimenuitem">Use sRGB Profile</span> is checked?
+      </h4>
+            </div>
+          </div>
+        </div>
+        <p>
+        When you check the option to
+        <span class="guimenuitem">Use sRGB Profile</span>, GIMP does two things:
+      </p>
+        <div class="orderedlist">
+          <ol class="orderedlist" type="1">
+            <li class="listitem">
+              <p>
+            Whatever ICC profile is currently assigned to the image, is stored
+            (pending subsequent editing, Encoding, and Color Management
+            actions), but isn't used. And then a built-in GIMP sRGB profile is
+            assigned in place of the previously assigned ICC profile:
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>If the image is in Non-linear encoding,
+                the ICC profile "GIMP built-in sRGB" is assigned.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                If the image is in Linear light encoding, the ICC
+                profile "GIMP built-in Linear sRGB" is assigned.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+            You can confirm that one of GIMP's built-in sRGB color spaces has
+            been assigned by selecting <span class="guimenu">Image</span> → <span class="guimenuitem">Image Properties</span> and checking
+            the <span class="guilabel">Color Profile</span>.
+          </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2447"></a>6.9.4. 
+      When <span class="guimenuitem">Use sRGB Profile</span> is checked, what happens
+      to the image and the image appearance?
+    </h4>
+            </div>
+          </div>
+        </div>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        Assigning a new profile to an image doesn't change the image's actual
+        channel values. Assigning a new ICC profile only changes the meaning
+        of these values, which means the image appearance will change
+        (unless the original and new profile are functionally equivalent).
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+      When <span class="guimenuitem">Use sRGB Profile</span> is checked, one of GIMP's
+      built-in sRGB profiles is assigned to the image. Assigning a new ICC
+      profile to an image doesn't change the image's channel values, but it does
+      more or less drastically change the image's appearance:
+    </p>
+        <div class="orderedlist">
+          <ol class="orderedlist" type="1">
+            <li class="listitem">
+              <p>
+          If the image was already in one of GIMP's built-in color spaces (or if
+          the assigned ICC profile is a profile that is functionally equivalent
+          to the assigned GIMP built-in sRGB profile) then the image's
+          appearance will not change.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          If the image was not already in one of GIMP's built-in color spaces
+          (and is not in a color space that is functionally equivalent to the
+          assigned GIMP built-in sRGB profile), the image's appearance will
+          change more or less drastically depending on three things:
+        </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+              What GIMP <a class="link" href="gimp-image-encoding.html#gimp-image-convert-gamma">channel
+              encoding</a> — Linear light or Non-linear — the
+              image was in before the <span class="guimenuitem">Use sRGB
+              Profile</span> box was checked.
+            </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+              How far the image's originally assigned ICC profile's channel
+              encoding ("TRC") is from the GIMP channel encoding.
+            </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+              How far the image's originally assigned ICC profile's
+              Red, Green, and Blue chromaticities are from GIMP's built-in sRGB
+              chromaticities.
+            </p>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2448"></a>6.9.5. 
+      A screenshot showing an example of incorrect image appearance after
+      checking <span class="guimenuitem">Use sRGB Profile</span>
+    </h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      The image is color managed: An ICC profile is assigned to the image, and
+      that profile is being used to send the image colors to the screen. After
+      checking <span class="guimenuitem">Use sRGB Profile</span>, one of GIMP's
+      built-in sRGB profiles has been incorrectly assigned to the image, so the
+      colors look wrong.
+    </p>
+        <p>
+      In the screenshot below, the channel encoding of the original profile
+      matches the GIMP channel encoding (both are linear), but the
+      <span class="quote">“<span class="quote">LargeRGB-elle-V4-g10.icc</span>”</span> profile chromaticities don't match
+      the GIMP built-in sRGB chromaticities. So after checking
+      <span class="guimenuitem">Use sRGB Profile</span>, the tonality is correct but
+      the colors are wrong. The image is still color managed, but it's color
+      managed using the wrong ICC profile:
+    </p>
+        <div class="figure">
+          <a id="id2449"></a>
+          <p class="title">
+            <strong>Figure 16.56. A screenshot illustrating the effect of checking use sRGB.</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/base-examples/apple-banana.png" alt="A screenshot illustrating the effect of checking use sRGB." />
+              <div class="caption">
+                <p>
+            Image using LargeRGB-elle-V4-g10.icc profile.
+          </p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/menus/image/color-management/apple-banana-linear-precision-mismatched-chromaticities.png" alt="A screenshot illustrating the effect of checking use sRGB." />
+              <div class="caption">
+                <p>
+            Same image after checking <span class="guimenuitem">Use sRGB Profile</span>.
+          </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Caution">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Caution]" src="images/caution.png" />
+              </td>
+              <th align="left">Caution</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If your image's originally assigned ICC profile doesn't have the same
+        channel encoding and chromaticities as the GIMP built-in sRGB profile,
+        and you check and then immediately change your mind and uncheck
+        <span class="guimenuitem">Use sRGB Profile</span>, the originally assigned
+        ICC profile will be reassigned to your image and your image channel
+        values will be unchanged.
+      </p>
+                <p>
+        Otherwise, whether or not you can recover the originally assigned ICC
+        profile and correct colors for your image depends on what else you've
+        done between the checking and unchecking of
+        <span class="guimenuitem">Use sRGB Profile</span>.
+      </p>
+                <p>
+        Again, the best possible advice is to
+        <span class="bold"><strong>never check <span class="guimenuitem">Use sRGB
+        Profile</span></strong></span>.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-image-color-management.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-menu.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-image-color-profile-assign.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-image-color-management.html">6.8. <span class="quote">“<span class="quote">Color Management</span>”</span> Submenu</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-image-color-profile-assign.html">6.10. Assign Color Profile</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

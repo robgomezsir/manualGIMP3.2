@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-03-04 j.h: updated to v2.8
+  2012-03-02 j.h: added link to tagging
+  2008-12-13 j.h: updated en;fr to v2.6
+  2007-08-13 j.h: v2.4 revision. Open as an image added. Clipboard
+             pattern added
+  2006-04-15 lexa: docbook compliance
+  2005-11-29 replaced informalfigures by figures by lexa
+-->
+<sect2 id="gimp-pattern-dialog">
+  <title>Diálogo de texturas</title>
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Texturas</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Texturas</primary>
+    <secondary>Diálogo</secondary>
+  </indexterm>
+
+  <para>No <acronym>GIMP</acronym>, uma <emphasis>textura</emphasis> é uma imagem pequena usada para preencher áreas com cópias dela mesma colocadas lado a lado. Veja a seção sobre texturas para informação básica sobre <link linkend="gimp-concepts-patterns">Texturas</link> e como elas podem ser criadas e utilizadas.</para>
+  <para>Você pode usa-las com a ferramenta de <link linkend="gimp-tool-bucket-fill">Preenchimento</link> e de <link linkend="gimp-tool-clone">Clonar</link> e também diretamente com o comando <link linkend="gimp-edit-fill-pattern">Preencher com textura</link>.</para>
+  <para>O diálogo de <quote>Texturas</quote> é usado para selecionar uma textura, clicando-se na visão de lista ou de grade; a textura selecionada se torna visível na área de Pincel/textura/Degradê da Caixa de ferramentas (se a  mesma estiver visível). Algumas dezenas  de texturas escolhidas mais ou menos ao acaso acompanham o GIMP, e você pode facilmente adicionar texturas que você mesmo faça.</para>
+
+  <sect3 id="gimp-pattern-dialog-activate">
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          From the Toolbox, by clicking on the pattern symbol in the
+          <link linkend="gimp-toolbox-indicator-area">Brush/Pattern/Gradient area</link>
+          (if you have checked the
+          <quote>Show active brush, pattern and gradient</quote> option in the
+          <link linkend="gimp-prefs-toolbox">toolbox preferences</link>).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Patterns</guimenuitem>
+          </menuchoice>;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Patterns</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>Do diálogo de Opções de ferramenta para as ferramentas<link linkend="gimp-tool-clone">Clonar</link> e <link linkend="gimp-tool-bucket-fill">Preenchimento</link>, clicando no botão usar textura como fonte, e então na miniatura da textura, surge uma lista flutuante com funcionalidade similar ao diálogo, que permite que você escolha uma textura diretamente da lista; Se você clicar no botão com ícone de baldinho no canto inferior direito dessa lista, você abre o diálogo de texturas real. Perceba que, dependendo da configuração de suas Preferências, uma textura selecionada nessa lista pode afetar apenas a ferramenta ativa, sem modificar as outras ferramentas. Veja a seção de <link linkend="gimp-prefs-tool-options">Preferências de opções de ferramentas</link> para maiores informações.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3 id="gimp-pattern-dialog-using">
+    <title>Usando o diálogo de texturas</title>
+    <variablelist>
+      <varlistentry>
+        <term>Modo de Grade/Lista</term>
+        <listitem>
+          <para>No menu de Guias, você pode escolher entre <guimenuitem>Ver como grade</guimenuitem> e <guimenuitem>Ver como lista</guimenuitem>. No modo de Grade, as texturas aparecem numa grade retangular, tornando fácil ver muitas de uma vez e encontrar a que você está buscando. No modo de Lista, as texturas ficam numa lista, com os nomes de cada uma ao lado das miniaturas.</para>
+          <tip>
+            <para>Independente do tamanho real de uma textura, todas são mostradas do mesmo tamanho no diálogo. Isso significa que para texturas grandes, você vê apenas uma pequena parte das mesmas no diálogo, não importa se ele está no modo de grade ou de lista. Para ver a textura inteira, simplesmente clique em uma das miniaturas, e <emphasis>mantenha o botão do mouse apertado</emphasis> por um segundo.</para>
+          </tip>
+          <note>
+            <para>No menu de Guias, a opção <guilabel>Tamanho da pré-visualização</guilabel> permite que você adapte o tamanho das miniaturas de texturas a seu gosto.</para>
+          </note>
+          <figure>
+            <title>O diálogo de Texturas</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/dialogs/patterns-dialog-list.png"/>
+              </imageobject>
+              <caption>
+                <para>Visão em lista</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/dialogs/patterns-dialog-grid.png"/>
+              </imageobject>
+              <caption>
+                <para>Modo de grade</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <variablelist>
+            <varlistentry>
+              <term>Usando o diálogo de Texturas  (modo de grade)</term>
+              <listitem>
+                <para>No alto, aparece o modo da textura atualmente selecionada, e sua dimensão em pixels.</para>
+                <para>No centro, aparece a visão em grade de todas as texturas disponíveis, com a textura selecionada em destaque. Clicar em uma delas configura-a como a textura atual do GIMP, e faz com que ela apareça na opção respectiva das ferramentas que usam textura, e na Caixa de ferramentas se a área de Pincel/Textura/Degradê estiver habilitada nas preferências. Você também pode arrastar e soltar uma miniatura de textura diretamente para a janela de imagens para preencher com a textura imediatamente, sem precisar usar a ferramenta de Preenchimento.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Usando o diálogo de Texturas (visão em lista)</term>
+              <listitem>
+                <para>Nessa visão, ao contrário da grade, você vê uma lista de texturas, cada qual rotulada com seu nome e tamanho. Clicar numa linha da lista faz com que aquela textura se torne a textura ativa do GIMP, como no modo de grade.</para>
+                <para>Se você der um <emphasis>duplo-clique</emphasis> no nome de uma textura, você poderá editar seu nome. No entanto, perceba que você só pode renomear texturas que você mesmo tenha adicionado, não as que vem junto com o GIMP. Se você editar um nome que não tenha permissão de alterar, assim que você pressionar Enter ou mudar para outro campo, o nome será revertido para o nome anterior.</para>
+                <para>Tudo mais na visão em lista funciona da mesma forma que a visão de grade.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Botões</term>
+        <listitem>
+          <para>
+            The button bar at the bottom offers the following functionality:
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/gimp-duplicate.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase>Duplicar paleta</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-pattern-duplicate"/>
+                <para>Pressionar este botão faz uma cópia do padrão atual. Ele terá o mesmo nome do original com <quote>cópia</quote> adicionado a ele.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase condition="tag-is-required">Remover textura</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-pattern-delete"/>
+                <para>Pressionar este botão remove a textura da lista, e faz com que o arquivo que a representa seja apagado do disco. Note que você não pode remover nenhuma das textura que vem junto com o GIMP e estão instaladas na pasta de texturas do sistema (<filename>patterns</filename>); Você só pode remover as texturas que você adicionou em pastas onde você tenha permissão para escrever. </para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/view-refresh.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase condition="tag-is-required">Atualizar texturas</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-pattern-refresh"/>
+                <para>Pressionar este botão faz com que o <acronym>GIMP</acronym> busque todas as pastas de texturas configuradas nas suas Preferências, adicionando todas as novas texturas que encontrar à lista. Esse botão é útil quando você adiciona novas texturas a uma pasta e quer torna-las disponíveis sem precisar reiniciar o <acronym>GIMP</acronym>.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/document-open.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase condition="tag-is-required">Abrir textura como imagem</phrase>
+              </term>
+              <listitem>
+                <anchor id="gimp-pattern-open-as-image"/>
+                <para>Se você clicar nesse botão, a textura atual será aberta em uma nova janela de imagens. Assim você pode editá-la. Se você tentar exportá-la de volta, mesmo com um novo nome, é possível que você tenha um erro de <filename class="extension">Permissão negada</filename>, por que as texturas do sistema em geral ficam em pastas protegidas em que só o administrador do sistema pode escrever. Mas você pode olhar na sessão de Pastas das preferências qual a pasta de texturas da área de usuário, onde você poderá gravar as suas próprias texturas. Qualquer tipo de arquivo de imagem do GIMP pode ser usado como textura - o tipo .pat foi desenvolvido no passado especialmente para isso, mas a única coisa que ele tem a mais é que pode conter um nome de textura diferente do nome do arquivo.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+    <sect4 id="gimp-pattern-dialog-menu">
+      <title>O menu de contexto de Texturas </title>
+
+      <indexterm>
+        <primary>Texturas</primary>
+        <secondary>Menu</secondary>
+      </indexterm>
+
+      <variablelist>
+        <varlistentry>
+          <term>Visão geral</term>
+          <listitem>
+            <para>Você pode chegar no menu de contexto de canais clicando com o botão direito numa miniatura de canal. Este menu tem as mesmas opções que estão disponíveis nos botões do diálogo de canais. A única diferença é em relação as opções de transformação em seleção: cada uma tem sua própria opção de menu, enquanto que existe um único botão que se comporta de forma diferente, dependendo das teclas modificadoras que está pressionadas quando ele é clicado.</para>
+            <variablelist>
+              <varlistentry>
+                <term>Abrir textura como imagem</term>
+                <term>Remover textura</term>
+                <term>Atualizar texturas</term>
+                <listitem>
+                  <para>Veja <link linkend="gimp-path-raise">Subir vetor</link></para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Copiar localização da paleta</term>
+                <listitem>
+                  <anchor id="gimp-pattern-copy-location"/>
+                  <para><guilabel>Copiar localização da definição de ferramenta</guilabel>: este comando copia o caminho completo do arquivo de definição de ferramenta ativo para a área de transferência.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term>Mostrar no Gerenciador de Arquivos</term>
+                <listitem>
+                  <anchor id="gimp-pattern-show-in-file-manager"/>
+                  <para><guilabel>Média</guilabel>: O valor da médio do intervalo, no canal selecionado.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+  </sect3>
+
+  <sect3 id="gimp-patterns-dialog-tags">
+    <title>Rotulando</title>
+    <para>Você pode usar rótulos (tags) para reorganizar a exibição de texturas. Veja  <xref linkend="gimp-tagging"/>.</para>
+  </sect3>
+
+  <sect3 id="clipboard-pattern">
+    <title>A Textura da área de transferência</title>
+    <indexterm>
+      <primary>Textura da área de transferência</primary>
+    </indexterm>
+    <indexterm>
+      <primary>Texturas</primary>
+      <secondary>Textura da área de transferência</secondary>
+    </indexterm>
+    <para>
+      When you use the Copy or Cut command, a copy appears as a
+      new pattern as the first entry in the Patterns dialog.
+      This pattern will persist until you use the Copy (or Cut) command again.
+      It will disappear when you close GIMP.
+    </para>
+    <figure>
+      <title>Uma nova <quote>Textura de área de transferência</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/dialogs/patterns-dialog-clipboard.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <note>
+      <para>
+        You can save this clipboard pattern with
+        <menuchoice>
+          <guimenu>Edit</guimenu>
+          <guisubmenu>Paste as</guisubmenu>
+          <guimenuitem>Paste as New Pattern…</guimenuitem>
+        </menuchoice>
+        as soon as it appears in the Patterns dialog.
+        See <xref linkend="script-fu-paste-as-pattern"/>.
+      </para>
+    </note>
+  </sect3>
+</sect2>

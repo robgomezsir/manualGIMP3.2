@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>6.6. Efeitos de iluminação</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-light-and-shadow.html" title="6. Filtros de luz e sombra" />
+    <link rel="prev" href="plug-in-gflare.html" title="6.5. Clarão em degradê" />
+    <link rel="next" href="plug-in-sparkle.html" title="6.7. Cintilância" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>6.6. Efeitos de iluminação</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-gflare.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>6. Filtros de luz e sombra</span>
+        <nav> <a accesskey="n" href="plug-in-sparkle.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-lighting"></a>6.6. Efeitos de iluminação</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id51715" class="indexterm"></a>
+      <a id="id51719" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4479"></a>6.6.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4480"></a>
+          <p class="title">
+            <strong>Figura 17.123. A mesma imagem, antes e depois da aplicação do filtro de Iluminação</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="A mesma imagem, antes e depois da aplicação do filtro de Iluminação" />
+              <div class="caption">
+                <p>A imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/light-taj-lighting.jpg" alt="A mesma imagem, antes e depois da aplicação do filtro de Iluminação" />
+              <div class="caption">
+                <p>Filtro aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p> É um filtro muito poderoso, que simula uma iluminação realista, como se sua imagem fosse impressa em papel (ou pintada numa parede) e luz de várias fontes batessem sobre ela - e então fosse fotografada de novo. Você tem até opções para simular texturas diferentes do material em que a imagem estaria impressa.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        If the image is in grayscale mode or indexed mode, this menu entry
+        is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4481"></a>6.6.2. Ativando o filtro</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Light and Shadow</span> → <span class="guimenuitem">Lighting Effects…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4482"></a>6.6.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4483"></a>
+          <p class="title">
+            <strong>Figura 17.124. Opções do filtro  <span class="quote">“<span class="quote">Efeitos de iluminação</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/light-and-shadow/lighting1.png" alt="Opções do filtro “Efeitos de iluminação”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Pré-visualização</span>
+            </dt>
+            <dd>
+              <p>Quando a opção <span class="guilabel">Interativa</span> estiver marcada, os resultados de parametrização são exibidos em tempo real na pré-visualização, sem modificar a imagem até que você clique no botão de <span class="guilabel">OK</span>.</p>
+              <p>Se <span class="guilabel">Interativa</span> não estiver marcado, as alterações são exibidas na visualização somente quando você clicar no botão de <span class="guibutton">Atualizar</span>. Esta opção é útil em um computador lento.</p>
+            </dd>
+          </dl>
+        </div>
+        <p>As demais opções são organizadas em guias:</p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4484"></a>6.6.3.1. Opções Gerais</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4485"></a>
+            <p class="title">
+              <strong>Figura 17.125. Opções para o filtro <span class="quote">“<span class="quote">Iluminação</span>”</span> (Opções Gerais)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/lighting1.png" alt="Opções para o filtro “Iluminação” (Opções Gerais)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Fundo transparente</span>
+              </dt>
+              <dd>
+                <p>Torna a imagem a de destino transparente quando a altura do mapa de relevo é zero (a altura é zero em áreas pretas da imagem usada para mapa de relevo).</p>
+              </dd>
+              <dt>
+                <span class="term">Criar uma nova imagem</span>
+              </dt>
+              <dd>
+                <p>Cria uma nova imagem ao aplicar o filtro.</p>
+              </dd>
+              <dt>
+                <span class="term">Antialiasing</span>
+              </dt>
+              <dd>
+                <p>
+              Enabling this setting allows you to remove or reduce the
+              aliasing effect that can show up on borders.
+            </p>
+                <p>
+              For more information, see
+              <a class="link" href="glossary.html#glossary-antialiasing" title="Anti-aliasing">Anti-aliasing</a> in
+              the Glossary.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Distância</span>
+              </dt>
+              <dd>
+                <p>É possível definir a distância entre as fontes de luz e o centro da imagem com esse controle. A faixa de valores varia entre 0,0 e 2,0.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4486"></a>6.6.3.2. Configurações de Luz</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4487"></a>
+            <p class="title">
+              <strong>Figura 17.126. Opções para o filtro <span class="quote">“<span class="quote">Iluminação</span>”</span> (Luz)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/lighting2.png" alt="Opções para o filtro “Iluminação” (Luz)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <p>
+          In this tab, you can set light parameters. With
+          <span class="guilabel">Light 1</span> to
+          <span class="guilabel">Light 6</span> you can create six light sources
+          and work on each of them separately.
+        </p>
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Tipo</span>
+              </dt>
+              <dd>
+                <p>O filtro oferece vários <span class="emphasis"><em>tipos de luz</em></span> em uma lista flutuante:</p>
+                <div class="variablelist">
+                  <dl class="variablelist">
+                    <dt>
+                      <span class="term">Nenhum</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    This deletes the light source (light may persist).
+                  </p>
+                    </dd>
+                    <dt>
+                      <span class="term">Direcional</span>
+                    </dt>
+                    <dd>
+                      <p>O ponto azul está ligado ao centro da pré-visualização por uma linha que indica a direção da luz.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Puntiforme</span>
+                    </dt>
+                    <dd>
+                      <p>Exibe um ponto azul no centro da pré-visualização. Você pode clicar e arrastar para mover a luz para qualquer ponto da pré-visualização.</p>
+                    </dd>
+                    <dt>
+                      <span class="term">Spot</span>
+                    </dt>
+                    <dd>
+                      <p>
+                    Displays a blue point that cannot be moved. This light
+                    has a fixed direction.
+                  </p>
+                    </dd>
+                  </dl>
+                </div>
+              </dd>
+              <dt>
+                <span class="term">Cor</span>
+              </dt>
+              <dd>
+                <p>Quando você clicar no botão de cor, abre-se um diálogo onde você pode selecionar a cor fonte de luz.</p>
+              </dd>
+              <dt>
+                <span class="term">Intensidade</span>
+              </dt>
+              <dd>
+                <p>Com esta opção, você pode definir a intensidade da luz.</p>
+              </dd>
+              <dt>
+                <span class="term">Posição</span>
+              </dt>
+              <dd>
+                <p>Determina a posição do ponto de luz de acordo com três coordenadas: coordenada X para a posição horizontal, Y para a posição vertical, Z para a distância da fonte (a luz escurece quando a distância aumenta). Os valores são de -1 a +1. Note que posicionar a fonte de luz diretamente com o mouse na pré-visualização é equivalente a mudar as coordenadas X e Y aqui.</p>
+              </dd>
+              <dt>
+                <span class="term">Direção</span>
+              </dt>
+              <dd>
+                <p>Esta opção pode permitir que você altere a direção da fonte de luz direcional, alterando as três coordenadas  <span class="guilabel">X</span>, <span class="guilabel">Y</span> e <span class="guilabel">Z</span>.</p>
+              </dd>
+              <dt>
+                <span class="term">Isolar</span>
+              </dt>
+              <dd>
+                <p>Com esta opção, você pode decidir se todas as fontes de luz devem aparecer na pré-visualização, ou somente a fonte que você está trabalhando.</p>
+              </dd>
+              <dt>
+                <span class="term">Lighting presets</span>
+              </dt>
+              <dd>
+                <p>Você pode salvar suas configurações para as fontes de luz com o botão <span class="guibutton">Salvar</span> e obte-las de volta mais tarde com o botão <span class="guibutton">Abrir</span>.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4488"></a>6.6.3.3. Propriedades do material</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4489"></a>
+            <p class="title">
+              <strong>Figura 17.127. Opções para o filtro <span class="quote">“<span class="quote">Iluminação</span>”</span> (Material)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/lighting3.png" alt="Opções para o filtro “Iluminação” (Material)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Como o  filtro imita o efeito de luz incidindo sobre a sua imagem como se ela estivesse pintada numa superfície, essas opções especificam como essa superfície reflete a luz que chega até ela.</p>
+          <p>As pequenas esferas, em ambas as extremidades das caixas de entrada, representam a ação de cada opção, a partir do seu mínimo (à esquerda) até o seu máximo (à direita). O texto da dica de ajuda flutuante pode ser mais útil que esses ícones.</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Ambient intensity</span>
+              </dt>
+              <dd>
+                <p>
+              This option, also known as glowing, controls the amount of the
+              original color to show where no direct light falls.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Diffuse intensity</span>
+              </dt>
+              <dd>
+                <p>
+              This option, also known as brightness, controls the intensity of
+              the original color to show when hit directly by a light source.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Diffuse reflectivity</span>
+              </dt>
+              <dd>
+                <p>
+              This option controls how intense the light from the original
+              color will be reflected.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Specular reflectivity</span>
+              </dt>
+              <dd>
+                <p>Esta opção controla quanto intenso será o brilho de reflexo direto da luz.</p>
+              </dd>
+              <dt>
+                <span class="term">Highlight</span>
+              </dt>
+              <dd>
+                <p>
+              This option adjusts the polish or highlight. Higher values make
+              the highlight more focused.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Metálico</span>
+              </dt>
+              <dd>
+                <p>Quando esta opção estiver marcada, superfícies ganham uma aparência metálica.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4490"></a>6.6.3.4. Mapa de saliências (relevo)</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4491"></a>
+            <p class="title">
+              <strong>Figura 17.128. Opções para o filtro <span class="quote">“<span class="quote">Iluminação</span>”</span> (Mapa de saliências)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/lighting4.png" alt="Opções para o filtro “Iluminação” (Mapa de saliências)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>Nessa guia, você pode definir as opções do filtro que definem o relevo da imagem (como se a superficie sobre a qual ela estivesse impressa tivesse uma textura). Veja <a class="xref" href="glossary.html#glossary-bumpmapping" title="Mapeamento de relevo">
+      <span class="phrase">Mapeamento de relevo</span>
+    </a>.</p>
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Habilitar mapa de relevo</span>
+              </dt>
+              <dd>
+                <p>Com esta opção, as partes claras da imagem usada como mapa parecerão levantadas e partes escuras parecerão afundadas. O aspecto depende da posição da fonte de luz.</p>
+              </dd>
+              <dt>
+                <span class="term">Bump map image</span>
+              </dt>
+              <dd>
+                <p>
+              Select a grayscale image to use as a bump map.
+              See the <a class="link" href="gimp-filter-bump-map.html" title="13.2. Mapa de relevo">Bump Map</a>
+              filter for more information.
+            </p>
+              </dd>
+              <dt>
+                <span class="term">Curva</span>
+              </dt>
+              <dd>
+                <p>Esta opção define o método que vai ser utilizado na aplicação do mapa de relevo, isto é, a altura das saliências serão em função da curva especificada. Quatro tipos de curva estão disponíveis: <span class="emphasis"><em>linear</em></span>, <span class="emphasis"><em>logarítmica</em></span>, <span class="emphasis"><em>senoidal</em></span> e <span class="emphasis"><em>esférica</em></span>.</p>
+              </dd>
+              <dt>
+                <span class="term">Altura máxima</span>
+              </dt>
+              <dd>
+                <p>Esta é a altura máxima das saliências</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id4492"></a>6.6.3.5. Mapa de ambiente</h5>
+              </div>
+            </div>
+          </div>
+          <div class="figure">
+            <a id="id4493"></a>
+            <p class="title">
+              <strong>Figura 17.129. Opções para o filtro <span class="quote">“<span class="quote">Iluminação</span>”</span> (Mapa de ambiente)</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/filters/light-and-shadow/lighting5.png" alt="Opções para o filtro “Iluminação” (Mapa de ambiente)" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <div class="variablelist">
+            <dl class="variablelist">
+              <dt>
+                <span class="term">Habilitar mapeamento de ambiente</span>
+              </dt>
+              <dd>
+                <p>Esta opção faz com que sua imagem reflita o mapa de ambiente, como se estivesse dentro de uma esfera revestida por dentro com o mapa de ambiente - dai o reflexo do mapa de ambiente aparece na sua imagem. Por exemplo: uma imagem de um céu com nuvens vai fazer as nuvens aparecerem como um reflexo na imagem final, após a aplicação do filtro. Embora esse filtro do GIMP tenha opções bastante realistas de iluminação 3D, se você desejar realmente usar um mapa de ambiente, é melhor trabalhar sua imagem num programa de modelagem 3D.Quando você marcar essa caixa, a opção a seguir será ativada:</p>
+              </dd>
+              <dt>
+                <span class="term">Environment map image</span>
+              </dt>
+              <dd>
+                <p>
+              Select a RGB image to be used as environment map. Please note that
+              for this option to work you should load another image with
+              <acronym class="acronym">GIMP</acronym> <span class="emphasis"><em>before</em></span> using it.
+            </p>
+                <p>Um exemplo pode ser encontrado em <a class="xref" href="bibliography.html#bibliography-online-golden-text" title="Texto dourado">[<abbr class="abbrev">BUDIG01</abbr>]</a>.</p>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-gflare.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-light-and-shadow.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="plug-in-sparkle.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-gflare.html">6.5. Clarão em degradê</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="plug-in-sparkle.html">6.7. Cintilância</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

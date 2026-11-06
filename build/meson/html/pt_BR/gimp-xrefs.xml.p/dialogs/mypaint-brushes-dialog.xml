@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="gimp-mypaint-brush-dialog">
+  <title>Diálogo de pincéis</title>
+
+  <indexterm>
+    <primary>Editar pincel</primary>
+  </indexterm>
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Editar pincel</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Editar pincel</primary>
+    <secondary>Diálogo</secondary>
+  </indexterm>
+
+  <figure>
+    <title>O diálogo de pincéis</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/mypaint-brushes-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+  <para>O diálogo de <quote>Pincéis</quote> é usado para selecionar um pincel para ser usado com as ferramentas de pintura. Veja a seção de <link linkend="gimp-concepts-brushes">Pincéis</link> para informações básicas sobre pincéis e como eles são usados no GIMP. O diálogo também dá acesso a várias funções para manipular pincéis. Você pode selecionar um pincel clicando no mesmo na lista: ele será exibido na parte de Pincel/Textura/Degradê da caixa de ferramentas (se a mesma estiver visível). O GIMP vem com vários pincéis, diferentes um do outro, por que o tamanho, proporção e o ângulo de cada pincel podem ser ajustados nas opções de ferramenta para cada ferramenta de pintura. Você também pode criar pincéis personalizados usando o Editor de pincéis, ou exportando imagens para um formato de arquivos especial usado para pincéis do GIMP.</para>
+
+  <sect3 id="gimp-mypaint-brush-dialog-activate">
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          From the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>MyPaint Brushes</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          From the Tab menu in any dockable dialog by clicking on
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>MyPaint Brushes</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          From the Tool Options dialog for any of the
+          <link linkend="gimp-tools-paint">paint tools</link>, by
+          clicking on the MyPaint Brush icon button, you get a popup with
+          similar functionality that permits you to quickly choose a brush from
+          the list; if you click on the button present on the right bottom of
+          the popup, you open the real MyPaint brush dialog.
+        </para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/dialogs/mypaint-brushes-dialog-simple.png" format="PNG"/>
+          </imageobject>
+          <caption>
+            <para>O diálogo de <quote>Pincéis</quote> simplificado</para>
+          </caption>
+        </mediaobject>
+        <itemizedlist>
+          <para>
+            The button bar at the bottom offers the following functionality:
+          </para>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/zoom-out.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+              Smaller previews
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/zoom-in.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+              Larger previews
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-list-symbolic.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+              View as list
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-grid-symbolic.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+              View as grid
+            </para>
+          </listitem>
+          <listitem>
+            <para>
+              <guiicon>
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/stock-icons/gimp-tool-paintbrush.svg" contentwidth="16px"/>
+                  </imageobject>
+                </inlinemediaobject>
+              </guiicon>
+              Open the MyPaint brush selection dialog
+            </para>
+          </listitem>
+        </itemizedlist>
+        <para>Perceba que, dependendo das suas preferências, um pincel selecionado pela lista flutuante pode se aplicar somente à ferramenta ativa, não a todas as ferramentas. Veja a seção de <link linkend="gimp-prefs-tool-options">Preferências da caixa de ferramentas</link> para ter maiores informações.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3 id="gimp-mypaint-brush-dialog-using">
+    <title>Usando o diálogo de <quote>Pincéis</quote></title>
+
+    <sect4>
+      <title>Modos de grade/lista</title>
+      <para>No menu de giuas, você pode escolher entre <guimenuitem>Ver como grade</guimenuitem> e <guimenuitem>Ver como lista</guimenuitem>. No modo de Grade as formas de pincel ficam dispostas de forma retangular, tornando fácil ver vários de uma vez e encontrar o que você quer. No modo de lista, as formas ficam em uma lista, uma abaixo da outra, com o nome de cada pincel do lado direito.</para>
+      <para>No meu das guias, as opções de <guilabel>Tamanho da pré-visualização</guilabel> permitem que você possa adaptar o tamanho das pré-visualizações de pincel para um que seja confortável.</para>
+      <variablelist>
+        <varlistentry>
+          <term>Modo de grade</term>
+          <listitem>
+            <para>No topo da caixa de diálogo aparece uma caixa de filtro onde você pode filtrar os pincéis MyPaint mostrados com base em suas tags; e o nome do pincel atualmente selecionado.</para>
+            <para>No centro, aparece a visão em grade com todos os pincéis disponíveis, com o pincel atualmente selecionado em destaque.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Modo de lista</term>
+          <listitem>
+            <para>Em quase todos os aspectos, o diálogo se comporta da mesma forma no modo de Grade ou modo de Lista, com uma exceção:</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+
+    <sect4 id="gimp-mypaint-brush-dialog-previews">
+      <title>Pré-visualizações de pincel</title>
+      <para>Quando você clica numa pré-visualização de pincel, ele se torna o pincel atual e fica seleciona na área de pincel da Caixa de ferramentas (se ela estiver visível, conforme configurados nas preferências), e na opção de pincel nas opções de ferramenta das ferramentas de pintura. Ao fazer um click-duplo numa pré-visualização, você ativa o <link linkend="gimp-brush-editor-dialog">Editor de pincéis</link>. Você também pode clicar nos botões na parte de baixo do diálogo para realizar várias ações.</para>
+    </sect4>
+
+    <sect4 id="gimp-mypaint-brush-dialog-tags">
+      <title>Rotulando</title>
+      <para>Você pode usar rótulos (tags) para reorganizar a visualização dos pincéis. Veja <xref linkend="gimp-tagging"/>.</para>
+    </sect4>
+
+    <sect4 id="gimp-mypaint-brush-dialog-buttons">
+      <title>Botões na parte de baixo</title>
+      <para>
+        The button bar at the bottom offers the following functionality:
+      </para>
+      <variablelist>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gtk-edit.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Editar pincel</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-mypaint-brush-edit"/>
+            <anchor id="gimp-mypaint-brush-new"/>
+            <para>
+              This button is always disabled since GIMP does not support
+              editing MyPaint brushes. This is also the reason why there is
+              no create new brush button.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-duplicate.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Duplicar pincel</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-mypaint-brush-duplicate"/>
+            <para>
+              This button is always disabled.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Remover pincel</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-mypaint-brush-delete"/>
+            <para>
+              This button is always disabled.
+            </para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/view-refresh.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Atualizar pincéis</phrase>
+          </term>
+          <listitem>
+            <anchor id="gimp-mypaint-brush-refresh"/>
+            <para>
+              If you add brushes to your personal
+              <link linkend="gimp-prefs-folders-data">Brushes Folder</link>
+              or any other folder in your MyPaint brushes search path,
+              this button causes the list to be reloaded, so that the new
+              entries will be available in the dialog.
+            </para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+      <para>As funções realizadas por esses botões também estão acessíveis através do menu de contexto do diálogo, que pode ser ativado clicando-se com o botão da direita em qualquer ponto da lista ou grade de pincéis, ou escolhendo o item <guisubmenu>Menu de pincéis</guisubmenu> do meu de guias da caixa de diálogo.</para>
+    </sect4>
+
+    <sect4>
+      <title>O menu de contexto de <quote>Pincéis</quote></title>
+      <para>Clicando com o botão direito na visualização de um pincel abre um menu de contexto. A maioria dos comandos deste submenu são descritos nos Botões, exceto os seguintes.</para>
+      <variablelist>
+        <varlistentry>
+          <term>Copiar localização do degradê</term>
+          <listitem>
+            <anchor id="gimp-mypaint-brush-copy-location"/>
+            <para><guilabel>Copiar localização da definição de ferramenta</guilabel>: este comando copia o caminho completo do arquivo de definição de ferramenta ativo para a área de transferência.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry>
+          <term>Mostrar no Gerenciador de Arquivos</term>
+          <listitem>
+            <anchor id="gimp-mypaint-brush-show-in-file-manager"/>
+            <para><guilabel>Mostrar no Gerenciador de Arquivos</guilabel> abre o local do pincel MyPaint no Gerenciador de Arquivos padrão do seu sistema.</para>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+
+</sect2>

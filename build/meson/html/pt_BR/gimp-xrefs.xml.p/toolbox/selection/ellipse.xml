@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-03 j.h: update to v2.8
+  2008-03-19 JPL:  rewieved
+  2007-02-12 PP: rewieved
+  2007-10-05 lexa: reviewed de for GIMP 2.4
+  2006-03-30 lexa: added docbook compliance
+  2005-12-07 replaced <simplesect> by <sect3> by lexa
+  2005-12-01 informalfigure replaced by figure by lexa
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-ellipse-select">
+  <title>Seleção elíptica</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Seleção elíptica</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>seleção Elíptica</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Ferramenta de Seleção Eliptica</primary>
+  </indexterm>
+
+  <para>A ferramenta de seleção elíptica foi projetada para selecionar regiões circulares e elípticas de uma imagem, com alta qualidade de anti-serrilhado, se você desejar. Para obter informações sobre as seleções e como elas são usadas no GIMP veja <link linkend="gimp-concepts-selection">Seleções</link>; para obter informações sobre as características comuns a todas as ferramentas de seleção veja <link linkend="gimp-tool-select">Ferramentas de seleção</link>.</para>
+  <para>Esta ferramenta também é utilizada para a pintar um círculo ou uma elipse em uma imagem. Para renderizar uma elipse preenchida, crie uma seleção elíptica, e, em seguida, preencha-a usando a ferramenta de Preenchimento, ou simplesmente arraste uma cor diretamente para a imagem. Para criar um círculo ou só o contorno de uma elipse, a abordagem mais simples e mais flexível é criar uma seleção elíptica e então use a função de <link linkend="gimp-selection-stroke">contornar seleção</link>. Uma linha de qualidade superior, e com mais opções pode ser obtida através da criação de duas seleções elípticas com tamanhos diferentes, subtraindo-se o interior de uma a partir do exterior da outra, no entanto, isso nem sempre é fácil de acertar. O comando <menuchoice><guimenu>Seleção</guimenu><guimenuitem>Borda...</guimenuitem></menuchoice> torna isso mais fácil.</para>
+
+  <sect3>
+    <title>Ativando a Ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>da barra de menu imagem <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Seleção de ferramentas</guisubmenu><guimenuitem>Seleção Elíptica</guimenuitem></menuchoice>;</para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-ellipse-select.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas,</para>
+      </listitem>
+      <listitem>
+        <para>Ao utilizar o atalho de teclado <keycap>E</keycap>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Teclas Modificadoras</title>
+
+    <xi:include href="about-common-select-modifiers.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term><keycap>Ctrl</keycap></term>
+        <listitem>
+          <para>Pressionar a tecla <keycap>Ctrl</keycap> após o início da sua seleção, e segurando-a até terminar, faz com que o ponto de partida seja usado como o centro da elipse selecionada, em vez de um canto do retângulo que a contém.  Note que se você pressionar a tecla <keycap>Ctrl</keycap> <emphasis>antes</emphasis> de começar a fazer a seleção, a seleção resultante será subtraída da seleção existente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><keycap>Shift</keycap></term>
+        <listitem>
+          <para>Pressionar a tecla <keycap>Shift</keycap> depois de começar sua seleção, e segura-la até você terminar, restringe a seleção a um círculo. Note que, se você pressionar a tecla <keycap>Shift</keycap> <emphasis>antes</emphasis> de começar a fazer a seleção, a seleção resultante será adicionada à seleção existente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <keycombo>
+            <keycap>Ctrl</keycap>
+            <keycap>Shift</keycap>
+          </keycombo>
+        </term>
+        <listitem>
+          <para>Pressionar ambas as teclas combina os dois efeitos, fornecendo uma seleção circular centralizada no seu ponto de partida. </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3 id="tool-ellipse-select-manip">
+    <title>Manuseando a ferramenta</title>
+    <figure>
+      <title>Exemplo de Seleção Elíptica</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/ellipse-selection.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Quando esta ferramenta é selecionada, o ponteiro do mouse se torna um ícone com um círculo assim que estiver sobre a imagem. Arrastar e soltar permite que você obtenha uma elipse (ou um círculo) dentro de uma caixa retangular. Quando o botão do mouse for liberado, uma linha pontilhada (<quote>formigas marchando</quote>) define a seleção elíptica. Não é necessário ajustar a seleção com cuidado, você pode redimensioná-lo facilmente mais tarde.</para>
+    <para>Quando o ponteiro está se movendo na tela, os aspectos de ponteiro e seleção mudam. É possível alterar o tamanho da seleção usando as alças. Veja a seção <link linkend="tool-rect-select-manip">Manipulando a ferramenta</link> dentro do capítulo sobre seleção retangular.</para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-ellipse-select.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Anti-serrilhamento</term>
+        <term>Enevoar bordas</term>
+        <listitem>
+          <xi:include href="about-common-select-options.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Expandir a partir do centro</term>
+        <term>Fixa</term>
+        <term>Posição</term>
+        <term>Tamanho</term>
+        <term>Destaque</term>
+        <term>Guias</term>
+        <term>Encolher automaticamente</term>
+        <term>Amostragem combinada</term>
+        <listitem>
+          <para>Todas essas opções funcionam exatamente da mesma maneira, elas já foram descritas para a seleção retangular. Veja <xref linkend="tool-rect-select-options"/> para detalhes.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

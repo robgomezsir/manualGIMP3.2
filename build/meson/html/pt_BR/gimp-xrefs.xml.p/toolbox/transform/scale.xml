@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-05-05 j.h: update to v2.10.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-scale">
+  <title>Redimensionar</title>
+
+  <indexterm>
+    <primary>Ferramentas</primary><secondary>Redimensionar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Camada</primary><secondary>Redimensionar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seleção</primary><secondary>Redimensionar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Vetor</primary><secondary>Redimensionar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Imagem</primary><secondary>Redimensionar</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Redimensiona a Camada, Seleção ou Vetor</primary>
+  </indexterm>
+
+  <para>A ferramenta de Redimensionar é usada para mudar o tamanho de camadas, seleções ou vetores (o Objeto)</para>
+  <para>
+    When you click on your image with the <guilabel>Scale</guilabel> tool,
+    the Scale dialog is opened, allowing to change the
+    <guilabel>Width</guilabel> and <guilabel>Height</guilabel>. When the
+    <guiicon>
+      <inlinemediaobject>
+        <imageobject>
+          <imagedata fileref="images/stock-icons/gimp-vchain.svg" contentwidth="16px"/>
+        </imageobject>
+      </inlinemediaobject>
+    </guiicon>
+    chain icon is closed, adjustments to one, will adjust the other value
+    the same percentage. If you do not want this, click the chain icon to
+    disable the synchronization.
+    The default size is in pixels, which can be changed in the measurement
+    drop-down list besides the chain icon.
+  </para>
+  <para>
+    At the same time a Preview (unless disabled in the Tool Options) is
+    superimposed on the object and handles appear on the corners and borders
+    that you can click and drag to change the dimensions. At the center,
+    a square with a cross inside can be used to move the preview.
+  </para>
+
+  <sect3>
+    <title>Ativando a ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>A partir do menu da janela de imagens, em:<menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de transformação</guisubmenu><guimenuitem>Redimensionar</guimenuitem></menuchoice>,</para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-scale.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas</para>
+      </listitem>
+      <listitem>
+        <para>ou com o atalho de teclado <keycombo><keycap>Shift</keycap><keycap>S</keycap></keycombo>.</para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Teclas modificadoras (Padrões)</title>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <keycap>Shift</keycap>
+        </term>
+        <listitem>
+          <para>Se você segurar a tecla <keycap>Ctrl</keycap> pressionada, a a opção <guilabel>Manter proporção</guilabel> será ligada.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>Se você segurar a tecla <keycap>Ctrl</keycap> pressionada, a a opção <guilabel>Manter proporção</guilabel> será ligada.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+  <sect3>
+
+    <title>Opções</title>
+    <figure>
+      <title>Opções de ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-scale.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Transformar</term>
+        <term>Direção</term>
+        <term>Interpolação</term>
+        <term>Cortar</term>
+        <term>Show image preview</term>
+        <term>Guias</term>
+        <listitem>
+          <xi:include href="about-common-transform-options.xml"/>
+          <note>
+            <para>A ferramenta de Redimensionar afeta apenas a camada ativa (ou gruo de camadas, ou camadas vínculadas). Para redimensionar toda a imagem, use <link linkend="gimp-image-scale">Redimensionar imagem</link></para>
+          </note>
+          <para>Essas opções estão descritas em <link linkend="gimp-tool-transform">Opções em comum das ferramentas de transformação</link></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Manter proporção (Ctrl)</term>
+        <listitem>
+          <para>Quando você move um dos cantos da moldura de seleção, esta opção vai restringir a escala de redimensionamento de forma que a proporção de Altura/Largura da camada fique constante. Assim sua camada não vai ficar esticada ou muito alta. Ela não faz nada se você redimensionar a camada por uma das alças no meio dos lados da seleção (nas bordas) - só se redimensiona por uma das alças dos cantos. O GIMP assume que se você estica um dos lados da seleção você realmente quer deformar a imagem. Essa opção também é refletida no ícone de corrente que víncula os valores de Largura e Altura no diálogo da ferramenta.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Around center (Ctrl)</term>
+        <listitem>
+          <para>
+            When this option is enabled, you can scale from center, radially
+            if <quote>Keep aspect</quote> is checked, else vertically or
+            horizontally.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>The Scale adjustment dialog</title>
+    <figure>
+      <title>The Scale adjustment dialog</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/scale-adjust.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Width</term>
+        <term>Largura/Altura</term>
+        <listitem>
+          <para>Aqui, você pode configurar a Largura e a Altura desejadas para o objeto. A unidade de medidas padrão é o pixel. Você pode muda-la usando a lista flutuante. Esses valores são atualizados automaticamente quando você arrasta as alças na própria janela de imagens. Se o ícone de corrente ligando a largura e a altura estiver aberto, você pode modificar cada valor de forma independente.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Readjust button</term>
+        <listitem>
+          <para>
+            With this button
+            you can reset the transform handles back to the original square
+            shape, while keeping the current transformation and zoom level.
+            This enables you to create more complex transformations by making
+            the transformation in several steps.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd" [
+<!ENTITY % entities SYSTEM "../../../stylesheets/entities.xml">
+
+%entities;
+]>
+<!-- section history:
+  2012-05-28 j.h no change for 2.8
+  2008-12-26 j.h updated to v2.6
+  2007-10-07 v2.4: no change
+  2005-11-29 replaced informalfigures by figures by lexa
+  2005-05-19 created by j.h
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-template-dialog">
+  <title>Diálogo de modelos</title>
+
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Modelos</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Modelos</primary>
+  </indexterm>
+
+  <figure>
+    <title>O diálogo de modelos</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata format="PNG" fileref="images/dialogs/templates-dialog.png"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <para>Os modelos são modelos para um formato de imagem a ser criado. O GIMP lhe fornece vários modelos e permite que você crie os seus próprios. Quando você cria uma nova imagem, você pode ver a lista de modelos disponíveis, mas você não pode gerencia-la. O diálogo de <quote>Modelos</quote> permite que você gerencie todos os modelos.</para>
+
+  <sect3>
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Templates</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Templates</guimenuitem>
+          </menuchoice>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Usando o diálogo de modelos</title>
+    <para>Você pode selecionar um modelo clicando em seu ícone. Clicar com o botão da direita faz aparecer um menu local que oferece as mesmas opções que existem nos botões na parte de baixo do diálogo.</para>
+
+    <sect4>
+      <title>Modo de Grade/Lista</title>
+      <para>No menu de Guia para o diálogo de <quote>Modelos</quote>, você pode escolher entre <guimenuitem>Ver como grade</guimenuitem> e <guimenuitem>Ver como lista</guimenuitem>. No modo de grade, os modelos aparecem em um arranjo regular de ícones, muitos dos quais são idênticos (você pode alterar o ícone para um dado modelo, veja mais adiante). Apenas o nome do modelo selecionado é exibido. No modo de Lista, eles são alinhados um abaixo do outro; os ícones são os mesmos, mas os nomes de todos são exibidos.</para>
+      <para>Nesse menu de guia, a opção de Tamanho da <guilabel>pré-visualização</guilabel> permite que você altere o tamanho dos ícones.</para>
+      <tip>
+        <para>Para maiores informações sobre o modo de visão em lista, consulte <xref linkend="gimp-dock-view-as-list"/>.</para>
+      </tip>
+    </sect4>
+
+    <sect4>
+      <title>Botões na parte de baixo</title>
+      <para>
+        The button bar at the bottom offers the following functionality:
+      </para>
+      <variablelist>
+        <varlistentry id="gimp-template-image-new">
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-image.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase condition="tag-is-required">Criar uma nova imagem a partir do modelo selecionado</phrase>
+          </term>
+          <listitem>
+            <para>Clicar nesse cria automaticamente uma nova imagem com as configurações do modelo selecionado.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry id="gimp-template-new">
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/document-new.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase condition="tag-is-required">Criar um novo modelo</phrase>
+          </term>
+          <listitem>
+            <para>Clicar nesse botão faz abrir o diálogo de <link linkend="edit-template-dialog">Novo modelo</link>, que veremos abaixo.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry id="gimp-template-duplicate">
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gimp-duplicate.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase condition="tag-is-required">Duplica o modelo selecionado</phrase>
+          </term>
+          <listitem>
+            <para>Clicar nesse botão abre o diálogo de Editar modelo, que veremos agora.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry id="gimp-template-edit">
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/gtk-edit.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase condition="tag-is-required">Edita este modelo</phrase>
+          </term>
+          <listitem>
+            <para>Clicar nesse botão faz abrir o diálogo de <link linkend="edit-template-dialog">Novo modelo</link>, que veremos abaixo.</para>
+          </listitem>
+        </varlistentry>
+        <varlistentry id="gimp-template-delete">
+          <term>
+            <guiicon>
+              <inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="images/stock-icons/edit-delete.svg" contentwidth="16px"/>
+                </imageobject>
+              </inlinemediaobject>
+            </guiicon>
+            <phrase>Remove este modelo</phrase>
+          </term>
+          <listitem>
+            <para>Isso exclui o modelo selecionado após pedir confirmação.</para>
+            <tip>
+              <para>
+                Every template is stored in a <filename>templaterc</filename>
+                file in your personal <acronym>GIMP</acronym> directory.
+                If you want to restore some deleted templates, you can copy or
+                append template entries to your file from the master
+                <filename>templaterc</filename> file in the
+                <filename class="directory">etc/gimp/&gimp.api.version;</filename>
+                directory of <acronym>GIMP</acronym>'s system folder.
+              </para>
+            </tip>
+          </listitem>
+        </varlistentry>
+      </variablelist>
+    </sect4>
+  </sect3>
+  <xi:include href="edit-template-dialog.xml"/>
+</sect2>

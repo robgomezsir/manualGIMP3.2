@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-05-27 j.h fix issue #126: rearrange floating selection
+-->
+<sect2 id="gimp-selection-float">
+  <title>Flutuar</title>
+
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Flutuar seleção (comando)</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Cut and Float</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Copy and Float</secondary>
+  </indexterm>
+
+  <para>
+    The <guimenuitem>Float</guimenuitem> submenu consists of commands to convert
+    a selection into a <quote>floating selection</quote>.
+  </para>
+  <para>
+    A floating selection (sometimes called a <quote>floating layer</quote>) is
+    a type of temporary layer which is similar in function to a normal layer,
+    except that before you can resume working on any other layers in the
+    image, a floating selection must be <emphasis>anchored</emphasis>.
+    That is, you have to attach it to a normal (non-floating) layer, usually
+    the original layer (the one which was active previously), or turn it into
+    a new layer.
+  </para>
+  <important>
+    <para>Você não pode executar nenhuma operação em outras camadas enquanto a imagem tiver uma seleção flutuante. Mas você pode transformar uma seleção flutuante em uma outra camada <quote>de primeira classe</quote> usando o comando <quote>Nova camada</quote> enquanto a mesma está ativa.</para>
+  </important>
+  <para>Você pode usar várias operações para mudar a imagem na seleção flutuante. Só se pode ter uma seleção flutuante de cada vez por imagem!</para>
+  <tip>
+    <para>Se você estiver exibindo o limite das camadas usando o comando<link linkend="gimp-view-show-layer-boundary">Exibir limites de camada</link> você pode ter dificuldade de selecionar uma área precisa da imagem que você quer preservar em uma camada. Para contornar isso, você pode, por exemplo, usar a seleção retangular, transforma-la em uma seleção flutuante e depois transforma-la em  uma nova camada. Depois simplesmente remova a camada original. (Ou simplesmente use a ferramenta de cortar (estilete) com a opção de <quote>Somente camada atual</quote>).</para>
+  </tip>
+
+  <sect3>
+    <title>Activating the Submenu</title>
+    <para>
+      You can access this submenu from the main menu through
+      <menuchoice>
+        <guimenu>Select</guimenu>
+        <guimenuitem>Float</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Contents of the <quote>Float</quote> submenu</title>
+    <para>
+      The <quote>Float</quote> submenu commands are described below.
+    </para>
+    <variablelist>
+      <varlistentry>
+        <term>Cut and Float</term>
+        <listitem>
+          <para>
+            The <quote>Cut and Float</quote> command cuts the image selection
+            from the layer and converts it into a floating selection.
+          </para>
+          <itemizedlist>
+            <title>Ativando o comando.</title>
+            <listitem>
+              <para>
+                You can access this command from the main menu through
+                <menuchoice>
+                  <guimenu>Select</guimenu>
+                  <guisubmenu>Float</guisubmenu>
+                  <guimenuitem>Cut and Float</guimenuitem>
+                </menuchoice>.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                You can also use the keyboard shortcut
+                <keycombo>
+                  <keycap>Shift</keycap>
+                  <keycap>Ctrl</keycap>
+                  <keycap>L</keycap>
+                </keycombo>.
+              </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Copy and Float</term>
+        <listitem>
+          <para>
+            The <quote>Copy and Float</quote> command copies the image selection
+            from the layer and converts it into a floating selection.
+          </para>
+          <itemizedlist>
+            <title>Ativando o comando.</title>
+            <listitem>
+              <para>
+                You can access this command from the main menu through
+                <menuchoice>
+                  <guimenu>Select</guimenu>
+                  <guisubmenu>Float</guisubmenu>
+                  <guimenuitem>Copy and Float</guimenuitem>
+                </menuchoice>.
+              </para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Criando uma seleção flutuante automaticamente</title>
+    <para>Algumas operações criam seleções flutuantes automaticamente:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          The <quote>paste</quote> operations
+          <link linkend="gimp-buffer-paste">Paste Buffer</link>,
+          <link linkend="gimp-buffer-paste-in-place">Paste Buffer In Place</link>,
+          <link linkend="gimp-buffer-paste-into">Paste Buffer Into The Selection</link>,
+          <link linkend="gimp-buffer-paste-into-in-place">Paste Buffer Into The Selection In Place</link>,
+          <link linkend="gimp-edit-paste-float">Paste as Floating Data</link> or
+          <link linkend="gimp-edit-paste-float-in-place">Paste as Floating Data In Place</link> or
+          <link linkend="gimp-edit-paste-into">Paste as Floating Data Into Selection</link> or
+          <link linkend="gimp-edit-paste-into-in-place">Paste as Floating Data Into Selection In Place</link>,
+          also create a floating selection.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          In addition, all the Transform tools:
+          <link linkend="gimp-tool-unified-transform">Unified Transform</link>,
+          <link linkend="gimp-tool-rotate">Rotate</link>,
+          <link linkend="gimp-tool-scale">Scale</link>,
+          <link linkend="gimp-tool-shear">Shear</link>,
+          <link linkend="gimp-tool-flip">Flip</link>,
+          <link linkend="gimp-tool-perspective">Perspective</link>,
+          <link linkend="gimp-tool-transform-3d">3D Transform</link>,
+          and
+          <link linkend="gimp-tool-handle-transform">Handle Transform</link>,
+          create a floating selection when they are used on a selection,
+          rather than a layer. When the <guilabel>Transform</guilabel> mode is
+          <emphasis>Layer</emphasis> and a selection already exists,
+          these tools transform the selection and create a floating selection
+          with the result. If a selection does not exist, they transform the
+          current layer and do not create a floating selection. (If the
+          <guilabel>Transform</guilabel> mode is
+          <emphasis>Selection</emphasis>, they also do not create a
+          floating selection.)
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          By click-and-dragging a selection while pressing the
+          <keycombo><keycap>Ctrl</keycap><keycap>Alt</keycap></keycombo>, or
+          <keycombo><keycap>Shift</keycap><keycap>Alt</keycap></keycombo> keys
+          (see <xref linkend="gimp-using-selections-moving"/>) you also
+          automatically create a floating selection.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3 id="anchor-floating-selection">
+    <title>Ancorar uma seleção flutuante</title>
+    <para>Você pode ancorar uma seleção flutuante de várias maneiras:</para>
+    <itemizedlist>
+      <listitem>
+        <para>Você pode ancorar a seleção flutuante na camada atual. Para fazer isto, clique em qualquer lugar na imagem, exceto na seleção flutuante. Isto funde a seleção flutuante com a camada atual.</para>
+      </listitem>
+      <listitem>
+        <para>
+          Use the
+          <link linkend="gimp-layer-anchor">Anchor layer</link> command
+          (<keycombo><keycap>Ctrl</keycap><keycap>H</keycap></keycombo>).
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          By clicking on the anchor button
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-anchor.svg" contentwidth="16px"/>
+              </imageobject>
+              <textobject>
+                <phrase>Anchor the floating Layer</phrase>
+              </textobject>
+            </inlinemediaobject>
+          </guiicon>
+          of the <link linkend="gimp-layer-dialog">Layers Dialog</link>, that
+          appears when the floating selection is created,
+          instead of the default Merge layers icon.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Use the
+          <link linkend="gimp-layer-new">To New Layer</link> command (
+          <keycombo>
+            <keycap>Shift</keycap>
+            <keycap>Ctrl</keycap>
+            <keycap>N</keycap>
+          </keycombo>) to
+          turn the floating selection into a newly created layer.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+</sect2>

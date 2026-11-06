@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect1 id="gimp-using-getting-unstuck-export">
+  <title>Como corrigir problemas ao exportar imagens</title>
+
+  <sect2 id="gimp-stuck-export-jpeg-no-transparency">
+    <title>Estou exportando para uma imagem jpeg e minha área transparente ficou branca ou preta</title>
+    <para>Ao exportar imagens, você precisa estar ciente de que a maioria dos formatos de imagem tem limitações. Uma limitação das imagens jpeg é que elas não suportam transparência. Ao exportar para jpeg, o GIMP preenche as áreas transparentes com a cor de fundo, que por padrão é branca.</para>
+    <para>Para corrigir isso, você terá que escolher um formato de imagem diferente que suporte transparência, como png ou tiff.</para>
+  </sect2>
+
+  <sect2 id="gimp-stuck-export-gif-colors-changed">
+    <title>Estou exportando para uma imagem gif e as cores mudaram</title>
+    <para>Ao exportar imagens, você precisa estar ciente de que a maioria dos formatos de imagem tem limitações. Uma limitação das imagens gif é que elas suportam um máximo de 256 cores. Para gif animado, isso é 256 cores por frame; no entanto, o GIMP não suporta exportar cada frame com um conjunto diferente de 256 cores. Ao exportar para gif, o GIMP reduz o número de cores na sua imagem para 256, combinando cores mais ou menos semelhantes. Isso pode causar mudanças perceptíveis na sua imagem.</para>
+    <para>Para corrigir isso, você terá que escolher um formato de imagem diferente que suporte mais cores; ou converter sua imagem para <link linkend="gimp-image-convert-indexed">Modo Indexado</link> e ajustar manualmente quaisquer cores antes de exportar para gif.</para>
+  </sect2>
+
+</sect1>

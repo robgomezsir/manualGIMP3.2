@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>7.53. Tamanho dos limites da camada</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-layer-menu.html" title="7. O menu “Camada”" />
+    <link rel="prev" href="gimp-layer-offset.html" title="7.52. Deslocamento" />
+    <link rel="next" href="gimp-layer-resize-to-image.html" title="7.54. Layers to Image Size" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>7.53. Tamanho dos limites da camada</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-layer-offset.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>7. O menu <span class="quote">“<span class="quote">Camada</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-layer-resize-to-image.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-layer-resize"></a>7.53. Tamanho dos limites da camada</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id41807" class="indexterm"></a>
+      <a id="id41811" class="indexterm"></a>
+      <p>
+    In <acronym class="acronym">GIMP</acronym>, each layer has its own size that can be changed
+    independently of the size of the image.
+    This command changes the dimensions of a layer, but it does not
+    <a class="link" href="gimp-layer-scale.html" title="7.55. Redimensionar camada">scale</a> its contents.
+  </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      By default, painting outside the borders of a layer is ignored. You can,
+      however, enable the <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-expand-layers">Expand
+      Layers</a> setting in the <a class="link" href="gimp-tools-paint.html#gimp-tools-paint-options" title="3.1.2. Opções">Paint
+      Tool Options</a>, which will automatically extend the size of
+      the layer when painting near one of its borders up to the size of the
+      canvas.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3899"></a>7.53.1. Ativando o comando</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command from the main menu through
+          <span class="guimenu">Layer</span> → <span class="guimenuitem">Layer Boundary Size…</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          From the
+          <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Diálogo de camadas">Layers Dialog</a>, you
+          can access it through the <span class="guimenuitem">Layer Boundary Size…</span>
+          command of its context menu.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3900"></a>7.53.2. Descrição do diálogo do <span class="quote">“<span class="quote">Tamanho dos limites da camada</span>”</span></h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3901"></a>
+          <p class="title">
+            <strong>Figura 16.115. O diálogo de <span class="quote">“<span class="quote">Tamanho dos limites da camada</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/layer/boundary-size.png" alt="O diálogo de “Tamanho dos limites da camada”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Template</span>
+            </dt>
+            <dd>
+              <p>
+            This drop-down list allows you to pick a size from one of the
+            available image templates. For more information on templates
+            see <a class="link" href="gimp-file-new.html" title="2.2. Nova…">Create a New Image</a> or
+            the <a class="link" href="gimp-template-dialog.html" title="4.4. Diálogo de modelos">Templates Dialog</a>.
+          </p>
+              <p>
+            When choosing a template that has a different print resolution
+            (ppi) than your image, two new buttons will appear that ask
+            you how to adjust this.
+          </p>
+              <p>
+            <span class="guibutton">Scale template to … ppi</span> will adjust
+            the template to the ppi of the image; and
+            <span class="guibutton">Scale image to … ppi</span> will adjust
+            the image to the ppi of the template.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Tamanho da camada</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Width, </span>
+                    <span class="term">Height</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  When the dialog is displayed, the original dimensions of
+                  the active layer are shown. You can change them by using
+                  the two text boxes. If these boxes are linked together
+                  with a
+                  <span class="guiicon">
+                    <span class="inlinemediaobject"><img src="images/stock-icons/gimp-vchain.svg" width="16" /></span>
+                  </span>
+                  chain, the width-to-height ratio is automatically
+                  maintained. If you break the chain by clicking on it, you
+                  can set the dimensions independently of each other.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Unit of Measurement</span>
+                  </dt>
+                  <dd>
+                    <p>A unidade de medida padrão é o pixels. Você pode mudar isso usando o menu suspenso. Por exemplo, você pode usar uma percentagem (<span class="quote">“<span class="quote">%</span>”</span>) do tamanho atual.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Deslocamento</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">X, </span>
+                    <span class="term">Y</span>
+                  </dt>
+                  <dd>
+                    <p>Essas coordenadas são relativas à camada, não à imagem. Elas servem para mover um quadro que determina qual parte do conteúdo da camada será selecionada para a camada redimensionada. No nosso exemplo, a camada e o conteúdo têm as mesmas dimensões e, naturalmente, não há nenhum quadro para mover. Se você reduzir <span class="guilabel">Largura</span> e <span class="guilabel">Altura</span>, o quadro da camada redimensionada aparecerá na pré-visualização.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">A Preview of the layer inside the frame of the canvas</span>
+            </dt>
+            <dd>
+              <p>
+            Besides the layer dimensions, a preview represents the layer with
+            the frame of the resized layer. You can move this frame using the
+            X and Y offsets and also dragging the cross-shaped cursor
+            that appears when the mouse pointer moves over the layer area.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Center</span>
+            </dt>
+            <dd>
+              <p>
+            The <span class="guibutton">Center</span> button allows you to place the
+            frame at the center of the layer.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Preencher com</span>
+            </dt>
+            <dd>
+              <p>
+            This allows you to select how to fill the background of the layer
+            when you increase its size. The same options are available here
+            as in the <a class="link" href="gimp-file-new.html" title="2.2. Nova…">Create New Image</a>
+            Dialog.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3902"></a>7.53.3. Redimensionar camada</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Increasing the size of a layer</span>
+            </dt>
+            <dd>
+              <p>
+            You can't make the size of a layer larger than the image canvas.
+          </p>
+              <p>
+            If the layer is smaller than the image, you can enlarge the
+            <span class="guilabel">Width</span> and/or <span class="guilabel">Height</span>.
+            If you want to enlarge the layer to the size of the image, it is
+            easier to use
+            <a class="link" href="gimp-layer-resize-to-image.html" title="7.54. Layers to Image Size">Layers to Image Size</a>.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Reducing the size of a layer</span>
+            </dt>
+            <dd>
+              <p>
+            If you want to remove unused parts of a layer, you can reduce the
+            size.
+          </p>
+              <div class="figure">
+                <a id="id3903"></a>
+                <p class="title">
+                  <strong>Figura 16.116. Exemplo</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/layer/boundary-size-ex-1.png" alt="Exemplo" />
+                    <div class="caption">
+                      <p>Imagem original com duas camadas</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/layer/boundary-size-ex-2.png" alt="Exemplo" />
+                    <div class="caption">
+                      <p>As duas camadas</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id3904"></a>
+                <p class="title">
+                  <strong>Figura 16.117. Exemplo</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/layer/boundary-size-ex-3.png" alt="Exemplo" />
+                    <div class="caption">
+                      <p>A camada selecionada para redimensionamento</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/menus/layer/boundary-size-ex-4.png" alt="Exemplo" />
+                    <div class="caption">
+                      <p>
+                  The frame representing the new layer size. It has been
+                  placed at the center of the layer using the
+                  <span class="guibutton">Center</span> button.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <div class="figure">
+                <a id="id3905"></a>
+                <p class="title">
+                  <strong>Figura 16.118. Resultado</strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/menus/layer/boundary-size-ex-5.png" alt="Resultado" />
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            If the image has only one layer, it can be more convenient to use
+            the <a class="link" href="gimp-tool-crop.html" title="4.4. Cortar">Crop tool</a>.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-layer-offset.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-layer-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-layer-resize-to-image.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-layer-offset.html">7.52. Deslocamento</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-layer-resize-to-image.html">7.54. Layers to Image Size</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

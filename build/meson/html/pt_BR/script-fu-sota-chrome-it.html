@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>12.11. Estêncil de cromagem</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="filters-decor.html" title="12. Filtros de decoração" />
+    <link rel="prev" href="script-fu-carve-it.html" title="12.10. Esculpir estêncil" />
+    <link rel="next" href="filters-map.html" title="13. Filtros de mapeamento" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>12.11. Estêncil de cromagem</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="script-fu-carve-it.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>12. Filtros de decoração</span>
+        <nav> <a accesskey="n" href="filters-map.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="script-fu-sota-chrome-it"></a>12.11. Estêncil de cromagem</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id57289" class="indexterm"></a>
+      <a id="id57293" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4829"></a>12.11.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="script-fu-sota-chrome-it-example"></a>
+          <p class="title">
+            <strong>Figura 17.289. Exemplo do filtro <span class="quote">“<span class="quote">Estêncil de cromagem</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_grayscale.jpg" alt="Exemplo do filtro “Estêncil de cromagem”" />
+              <div class="caption">
+                <p>Imagem original</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/decor/taj-chrome-it.jpg" alt="Exemplo do filtro “Estêncil de cromagem”" />
+              <div class="caption">
+                <p>Filtro aplicado</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      This filter provides a chrome effect. The source image must be an image
+      containing a single layer. This layer is used as mask (<span class="quote">“<span class="quote">stencil</span>”</span>) for
+      the chrome effect.
+    </p>
+        <p>
+      The filter creates a new image with the chrome effect applied to the
+      source image or, if a selection exists, to the selection of the source
+      image (a nice background is added too). If no environment map image is
+      specified, a copy of the source image will be used.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4830"></a>12.11.2. Activating the Filter</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This filter is found in the main menu under
+      <span class="guimenu">Filters</span> → <span class="guisubmenu">Decor</span> → <span class="guimenuitem">Stencil Chrome…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4831"></a>12.11.3. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id4832"></a>
+          <p class="title">
+            <strong>Figura 17.290. Opções de  <span class="quote">“<span class="quote">Estêncil de cromagem</span>”</span></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/decor/chrome-it.png" alt="Opções de “Estêncil de cromagem”" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Saturação de cromo, </span>
+              <span class="term">Luminosidade de cromo</span>
+            </dt>
+            <dd>
+              <p>Use esta opção para controlar como a <a class="link" href="gimp-tool-hue-saturation.html" title="8.5. Matiz-Saturação">saturação e a luminosidade </a> da camada <span class="quote">“<span class="quote">Cromar</span>”</span> são ajustadas. Valores negativos diminuem a saturação e a luminosidade respectivamente.</p>
+            </dd>
+            <dt>
+              <span class="term">Fator de cromo</span>
+            </dt>
+            <dd>
+              <p>Este fator permite que você ajuste deslocamentos, raio de desfocagem e tamanho do pincel usados para construir as camadas de <span class="quote">“<span class="quote">Cromar</span>”</span> e <span class="quote">“<span class="quote">Cor de destaque</span>”</span> (e também da camada de <span class="quote">“<span class="quote">Sombra projetada</span>”</span>)</p>
+              <p>Mude com cautela, diminuir este valor pode tornar o efeito de cromagem pior. O valor padrão de 0,75 parece ser uma boa escolha.</p>
+            </dd>
+            <dt>
+              <span class="term">Mapa de ambiente</span>
+            </dt>
+            <dd>
+              <p>
+            The environment map is an image that is added as some kind of
+            <span class="quote">“<span class="quote">noise</span>”</span> to the source. If no image is selected here,
+            the source image will be used.
+          </p>
+              <p>
+            The effect is best to see if you use a simple map with some obvious
+            shapes:
+          </p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-env-example.png" />
+                <div class="caption">
+                  <p>Usando um mapa de ambiente simples</p>
+                </div>
+              </div>
+              <p>
+            The size of the environment map image doesn't matter, it is scaled
+            to the size of the source image.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Equilíbrio de reflexos</span>
+            </dt>
+            <dd>
+              <p>Esta cor é usada para modificar o <a class="link" href="gimp-tool-color-balance.html" title="8.2. Equilíbrio de Cores">balanço de cor</a> da camada <span class="quote">“<span class="quote">Cor de destaque</span>”</span>: a quantidade de vermelho, verde e azul é aumentada de acordo com os valores correspondentes da cor escolhida aqui.</p>
+              <p>Evite cores com valores de vermelho, verde ou azul &gt; 230.</p>
+            </dd>
+            <dt>
+              <span class="term">Equilíbrio de cromo</span>
+            </dt>
+            <dd>
+              <p>O mesmo que acima, mas modifica o <a class="link" href="gimp-tool-color-balance.html" title="8.2. Equilíbrio de Cores">equilíbrio de cores</a> da camada <span class="quote">“<span class="quote">Cromar</span>”</span>.</p>
+            </dd>
+            <dt>
+              <span class="term">Cromar áreas em branco</span>
+            </dt>
+            <dd>
+              <p>Se habilitado (isso é o padrão), a imagem de origem é usada como máscara. Caso contrário, o negativo da imagem de origem será usado.</p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id4833"></a>12.11.4. Como criar o efeito de cromo</h4>
+            </div>
+          </div>
+        </div>
+        <p>A seção seguinte prove uma descrição breve e simplificada de como o script (esse filtro é criado como um script-fu) cria o efeito de cromo.</p>
+        <p>
+      If you apply the filter to your source images and then look at the
+      <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Diálogo de camadas">Layers Dialog</a> of the resulting
+      image, you will see that there are two main layers which make up the
+      chrome effect: the <span class="quote">“<span class="quote">Chrome</span>”</span> layer and the
+      <span class="quote">“<span class="quote">Highlight</span>”</span> layer. These layers are created as follows:
+    </p>
+        <div class="procedure">
+          <ol class="procedure" type="1">
+            <li class="step">
+              <p>O script constrói uma camada simplificada e desfocada a partir da imagem de origem (ou da imagem invertida se <span class="guilabel">Cromar áreas em branco</span> estiver desligado).</p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step1.png" />
+              </div>
+              <p>O <span class="guilabel">Fator de cromo</span> controla a aparência desta camada.</p>
+            </li>
+            <li class="step">
+              <p>O mapa de ambiente (redimensionado) é desfocado e mesclado com a imagem acima, com opacidade de 50%. (Você consegue ver o gato no <a class="link" href="script-fu-sota-chrome-it.html#script-fu-sota-chrome-it-example" title="Figura 17.289. Exemplo do filtro “Estêncil de cromagem”">exemplo da introdução</a>?)</p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step2.png" />
+                <div class="caption">
+                  <p>Mesclando o mapa de ambiente</p>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <p>O brilho (valor) da camada é baseado de acordo com uma curva spline de intensidades.</p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step3.png" />
+                <div class="caption">
+                  <p>Modificando a curva de intensidade</p>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <p>Uma máscara de camada é adicionada, e inicializada com a imagem de origem (o <span class="quote">“<span class="quote">Estêncil de cromagem</span>”</span>). Essa é a camada <span class="quote">“<span class="quote">Cromar </span>”</span>antes do passo final.</p>
+              <p>A camada <span class="quote">“<span class="quote">Cor de destaque</span>”</span> é uma cópia da camada <span class="quote">“<span class="quote">Cromar</span>”</span> onde a máscara de camada é contornada com um pincel branco.</p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step4.png" />
+                <div class="caption">
+                  <p>Base para Cromar e Cor de destaque</p>
+                </div>
+              </div>
+            </li>
+            <li class="step">
+              <p>Para ambas as camadas, o balanço de cor é modificado (de acordo com o <span class="guilabel">Equilíbrio de reflexo</span> e o <span class="guilabel">Equilíbrio de cromo</span>), aumentando a quantidade de vermelho, verde e azul com ênfase nas partes claras.</p>
+              <p>Adicionalmente, a saturação e a luminosidade da camada <span class="quote">“<span class="quote">Cromar</span>”</span> são modificados (controlados pelos ajustes <span class="guilabel">Saturação do cromo</span> e <span class="guilabel">Luminosidade do cromo</span>).</p>
+              <div class="mediaobject">
+                <img src="images/filters/decor/chrome-it-step5.png" />
+                <div class="caption">
+                  <p>Camadas Cromar e Cor de destaque</p>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <p>Agora, adicione uma sombra projetada e uma camada de fundo, e você obterá a <a class="link" href="script-fu-sota-chrome-it.html#script-fu-sota-chrome-it-example" title="Figura 17.289. Exemplo do filtro “Estêncil de cromagem”">Imagem de exemplo</a> para o filtro <span class="quote">“<span class="quote">Estêncil de cromagem</span>”</span>.</p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="script-fu-carve-it.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="filters-decor.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="filters-map.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="script-fu-carve-it.html">12.10. Esculpir estêncil</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="filters-map.html">13. Filtros de mapeamento</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

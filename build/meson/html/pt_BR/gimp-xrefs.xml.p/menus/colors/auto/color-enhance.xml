@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 id="gimp-filter-color-enhance">
+  <title>Equilíbrio de Cores</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Equilíbrio de cores</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Equilíbrio de Cores</primary>
+  </indexterm>
+
+  <para>O comando <guimenuitem>Equilíbrio de Cores</guimenuitem> estica o intervalo de Croma das cores na camada ao máximo possível, sem alterar Matiz e Luminosidade. Isto é feito convertendo-se os valores para o <ulink url="https://en.wikipedia.org/wiki/CIELAB_color_space#CIEHLC_cylindrical_model">espaço de cores CIE LCh</ulink>, e então esticando-se o intervalo de Croma para ser tão largo quanto possível, e finalmente convertendo-se as cores de volta ao seu espaço de cores nativo.</para>
+  <note>
+    <para>Este comando não funciona em imagens em Tons de Cinza. Se a imagem estiver em Tons de Cinza, a entrada do menu estará desativada.</para>
+  </note>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guisubmenu>Auto</guisubmenu>
+        <guimenuitem>Color Enhance</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Exemplo de <quote>Equilíbrio de Cores</quote></title>
+    <figure>
+      <title>Imagem original</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/auto/alice.png"/>
+        </imageobject>
+        <caption>
+          <para>A camada ativa e seus histogramas Vermelho, Verde e Azul antes do <quote>Equilíbrio de Cores</quote>.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <figure>
+      <title>Comando aplicado</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/auto/color-enhance.png"/>
+        </imageobject>
+        <caption>
+          <para>A camada ativa e seus histogramas Vermelho, Verde e Azul após o <quote>Equilíbrio de Cores</quote>. O resultado pode não ser sempre o que você espera.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+  </sect3>
+</sect2>

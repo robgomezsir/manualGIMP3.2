@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2. Modos de Camada</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-image-combining.html" title="Capítulo 8. Combinando imagens" />
+    <link rel="prev" href="gimp-image-combining.html" title="Capítulo 8. Combinando imagens" />
+    <link rel="next" href="layer-mode-group-lighten.html" title="2.2. Modos de Camada" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2. Modos de Camada</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-image-combining.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Capítulo 8. Combinando imagens</span>
+        <nav> <a accesskey="n" href="layer-mode-group-lighten.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-concepts-layer-modes"></a>2. Modos de Camada</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id10439" class="indexterm"></a>
+      <a id="id10442" class="indexterm"></a>
+      <a id="id10444" class="indexterm"></a>
+      <a id="id10447" class="indexterm"></a>
+      <a id="id10449" class="indexterm"></a>
+      <a id="id10451" class="indexterm"></a>
+      <p>
+    <acronym class="acronym">GIMP</acronym> has a wide variety of layer modes, split up in seven
+    groups: <a class="link" href="gimp-concepts-layer-modes.html#layer-mode-group-normal" title="2.1. Modos de Camada">Normal</a>,
+    <a class="link" href="layer-mode-group-lighten.html" title="2.2. Modos de Camada">Lighten</a>,
+    <a class="link" href="layer-mode-group-darken.html" title="2.3. Modos de Camada">Darken</a>,
+    <a class="link" href="layer-mode-group-contrast.html" title="2.4. Modos de Camada">Contrast</a>,
+    <a class="link" href="layer-mode-group-inversion.html" title="2.5. Combinando modos de camadas">Inversion</a>,
+    <a class="link" href="layer-mode-group-hsv.html" title="2.6. Modos de Camada de Componentes HSV">HSV components</a>, and
+    <a class="link" href="layer-mode-group-lch.html" title="2.7. Modos de Camada de Componentes LCh">LCh components</a>.
+    In addition to these layer modes, there are also the so-called
+    <a class="link" href="gimp-concepts-layer-modes-legacy.html" title="3. Modos de Camada">legacy layer modes</a>,
+    which were used before <acronym class="acronym">GIMP</acronym> 2.10.
+  </p>
+      <p>
+    These legacy layer modes are still available, both for backwards
+    compatibility with saved images from older GIMP versions, and also for
+    specific effects, or for compatibility with other image formats, e.g.
+    Photoshop PSD. In general, they are not used when creating new images.
+  </p>
+      <p>O <acronym class="acronym">GIMP</acronym> possui 21 modos de camada. Modos de camada também são chamados de <span class="quote">“<span class="quote">modos de mistura</span>”</span>. Selecionar um modo de camada vai alterar a aparência da camada ou da imagem, com base no que está visível abaixo dessa camada . Se existe apenas uma camada, o modo de camada em geral não tem nenhum efeito (exceto para o modo <span class="quote">“<span class="quote">Dissolver</span>”</span>). Portanto, deve haver pelo menos duas camadas, para que a imagem seja capaz de utilizar modos de camada.</p>
+      <p>
+    In addition to the generic layer modes, there is one more layer mode called
+    <span class="quote">“<span class="quote">Pass through</span>”</span>, which is only available for
+    <a class="link" href="gimp-layer-groups.html" title="5. Grupos de camadas">group layers</a>.
+  </p>
+      <p>
+    <span class="guilabel">Pass through</span> mode, is less a blending mode in and of
+    itself than an instruction for the group as a whole: it indicates that
+    layers inside the group are to be rendered in combination with other layers
+    below the group, instead of being rendered separately from them.
+  </p>
+      <p>
+    For more details about <span class="guilabel">Pass through</span>, see
+    <a class="xref" href="glossary.html#glossary-pass-through" title="Pass through">
+      <span class="phrase">Pass through</span>
+    </a> in the Glossary.
+  </p>
+      <p>Você pode definir o modo de camada no menu de <span class="guilabel">Modo</span> no diálogo de Camadas. O <acronym class="acronym">GIMP</acronym> utiliza o modo de camada para determinar como combinar cada pixel na camada superior com o elemento de imagem no mesmo local na camada inferior.</p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Nota]" src="images/note.png" />
+            </td>
+            <th align="left">Nota</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>Há uma lista flutuante no diálogo de <span class="quote">“<span class="quote">opções de ferramentas</span>”</span> que contém os modos que afetam as ferramentas de pintura de forma semelhante aos modos de camada. Você pode usar os mesmos modos de pintura que estão disponíveis para as camadas, e ainda há dois modos adicionais apenas para as ferramentas de pintura. Veja <a class="xref" href="gimp-tools-brush.html" title="3.3. Ferramentas de pincel (lápis, pincel, aerógrafo)">Seção 3.3, “Ferramentas de pincel (lápis, pincel, aerógrafo)”</a>.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>Modos de camada permitem mudanças de cor complexas na imagem. Muitas vezes eles são usados com uma nova camada que atua como um tipo de máscara. Por exemplo, se você colocar uma camada branca sólida sobre uma imagem e definir o modo de camada dessa nova camada para <span class="quote">“<span class="quote">Saturação</span>”</span>, as camadas subjacentes visíveis aparecerão em tons de cinza.</p>
+      <div class="figure">
+        <a id="id2694"></a>
+        <p class="title">
+          <strong>Figura 8.7. Imagens (máscaras) para exemplos de modos de camada</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/duck_orig.png" alt="Imagens (máscaras) para exemplos de modos de camada" />
+            <div class="caption">
+              <p>Camada de Fundo</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/using/original-layer-modes-mask.png" alt="Imagens (máscaras) para exemplos de modos de camada" />
+            <div class="caption">
+              <p>Modos das Camadas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>Os exemplos abaixo mostram os efeitos de cada um dos modos.</p>
+      <p>Uma vez que os resultados de cada modo variam muito, dependendo das cores das camadas, essas imagens só podem dar uma idéia geral de como funcionam os modos. Você é encorajado a experimentá-los. Você pode começar com duas camadas similares, onde uma é cópia da outra, mas modificando-a ligeiramente (deixe a desfocada, movida, girada, redimensionada, inverta a cor, etc) e veja o que acontece em vários dos modos de camada.</p>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="layer-mode-group-normal"></a>2.1. Modos de Camada</h3>
+            </div>
+          </div>
+        </div>
+        <p>O grupo <span class="quote">“<span class="quote">Normal</span>”</span> é um tanto improprio. A maioria dos modos, exceto <span class="quote">“<span class="quote">Normal</span>”</span>, são modos de <span class="emphasis"><em>cancelamento</em></span>.</p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <a id="layer-mode-normal"></a>
+              <span class="term">Normal</span>
+            </dt>
+            <dd>
+              <a id="id10510" class="indexterm"></a>
+              <div class="figure">
+                <a id="id2695"></a>
+                <p class="title">
+                  <strong>Figura 8.8. Exemplo para o modo de camada <span class="quote">“<span class="quote">Normal</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-normal-50.jpg" alt="Exemplo para o modo de camada “Normal”" />
+                    <div class="caption">
+                      <p>A camada superior está com 50% de Opacidade.</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-normal-100.jpg" alt="Exemplo para o modo de camada “Normal”" />
+                    <div class="caption">
+                      <p>Com 100% de opacidade apenas a camada superior é mostrada quando a combinação é feita no modo <span class="quote">“<span class="quote">Normal</span>”</span>. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>O modo <span class="guilabel">Normal</span> é o modo da camada padrão. A camada em cima cobre as camadas abaixo dela. Se você quer ver qualquer coisa abaixo da camada superior quando você usar este modo, a camada deve ter algumas áreas transparentes.</p>
+            </dd>
+            <dt>
+              <a id="layer-mode-dissolve"></a>
+              <span class="term">Dissolver</span>
+            </dt>
+            <dd>
+              <a id="id10531" class="indexterm"></a>
+              <a id="id10534" class="indexterm"></a>
+              <div class="figure">
+                <a id="id2696"></a>
+                <p class="title">
+                  <strong>Figura 8.9. Exemplo para o modo de camada <span class="quote">“<span class="quote">Dissolver</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-dissolve-50.jpg" alt="Exemplo para o modo de camada “Dissolver”" />
+                    <div class="caption">
+                      <p>A camada superior está com 50% de Opacidade. O efeito de <span class="quote">“<span class="quote">Dissolver</span>”</span> é visível em todos os lugares, exceto em áreas completamente transparentes.</p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-dissolve-100.jpg" alt="Exemplo para o modo de camada “Dissolver”" />
+                    <div class="caption">
+                      <p>Com 100% de opacidade apenas a camada superior é mostrada quando se está usando o modo <span class="quote">“<span class="quote">dissolver</span>”</span>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>O modo <span class="guilabel">Dissolver</span> dissolve a camada superior na camada abaixo dela pelo desenho de um padrão aleatório de pixels em áreas de transparência parcial. É útil como um modo de camada, mas geralmente também é útil como um modo de pintura.</p>
+            </dd>
+            <dt>
+              <a id="layer-mode-color-erase"></a>
+              <span class="term">Pincéis coloridos</span>
+            </dt>
+            <dd>
+              <a id="id10555" class="indexterm"></a>
+              <a id="id10558" class="indexterm"></a>
+              <div class="figure">
+                <a id="id2697"></a>
+                <p class="title">
+                  <strong>Figura 8.10. Exemplo para o modo de camada <span class="quote">“<span class="quote">Cor</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-color-erase.png" alt="Exemplo para o modo de camada “Cor”" />
+                    <div class="caption">
+                      <p>Camada superior em 100% de opacidade usando o modo <span class="quote">“<span class="quote">Apagar Cor</span>”</span>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>O modo <span class="guilabel">Apagar Cor</span> apaga as cores da camada superior da camada inferior. Pixels pretos na camada superior tornam essas partes na camada inferior transparentes, enquanto pixels brancos não têm efeito. Tudo o que está entre eles remove essas cores específicas da camada inferior, deixando os outros componentes de cor intactos.</p>
+            </dd>
+            <dt>
+              <a id="layer-mode-erase"></a>
+              <span class="term">Apagar</span>
+            </dt>
+            <dd>
+              <a id="id10573" class="indexterm"></a>
+              <a id="id10576" class="indexterm"></a>
+              <div class="figure">
+                <a id="id2698"></a>
+                <p class="title">
+                  <strong>Figura 8.11. Exemplo para o modo de camada <span class="quote">“<span class="quote">valor</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-erase.png" alt="Exemplo para o modo de camada “valor”" />
+                    <div class="caption">
+                      <p>Camada superior em 100% de opacidade usando o modo <span class="quote">“<span class="quote">Apagar</span>”</span>. As partes brancas aqui são transparentes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>O modo <span class="guilabel">Cor</span> usa o matiz e a saturação da camada superior e o valor da camada inferior para formar a imagem resultante.</p>
+            </dd>
+            <dt>
+              <a id="layer-mode-merge"></a>
+              <span class="term">Mesclar</span>
+            </dt>
+            <dd>
+              <a id="id10591" class="indexterm"></a>
+              <a id="id10594" class="indexterm"></a>
+              <div class="figure">
+                <a id="id2699"></a>
+                <p class="title">
+                  <strong>Figura 8.12. Exemplo para o modo de camada <span class="quote">“<span class="quote">Sub-exposição</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-merge.jpg" alt="Exemplo para o modo de camada “Sub-exposição”" />
+                    <div class="caption">
+                      <p>Camada superior em 100% de opacidade usando o modo <span class="quote">“<span class="quote">Mesclar</span>”</span>.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            <span class="guilabel">Merge</span>
+            mode sums opacity values during blending and can yield 100% opacity
+            in cases where Normal does not, like when blending cut-and-pasted
+            content with soft edges whose opacities are mutually exclusive from
+            each other.
+          </p>
+              <p>
+            This mode is commutative if (but <span class="emphasis"><em>only if</em></span>)
+            the total opacity between both layers is 100% or less.
+            Otherwise, especially for content that already has 100% opacity,
+            Merge yields the same result as Normal.
+          </p>
+            </dd>
+            <dt>
+              <a id="layer-mode-split"></a>
+              <span class="term">Dividir</span>
+            </dt>
+            <dd>
+              <a id="id10611" class="indexterm"></a>
+              <a id="id10614" class="indexterm"></a>
+              <div class="figure">
+                <a id="id2700"></a>
+                <p class="title">
+                  <strong>Figura 8.13. Exemplo para o modo de camada <span class="quote">“<span class="quote">Luz suave</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-split.png" alt="Exemplo para o modo de camada “Luz suave”" />
+                    <div class="caption">
+                      <p>Camada superior em 100% de opacidade usando o modo <span class="quote">“<span class="quote">Dividir</span>”</span>. As partes brancas aqui são transparentes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            <span class="guilabel">Split</span>
+            mode is the inverse of Merge: it subtracts the top layer's opacity
+            from the bottom layer. This can yield full transparency in cases
+            where Erase does not, like if erasing a value of 50% opacity from
+            a layer containing 50% opacity.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-image-combining.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-combining.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="layer-mode-group-lighten.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-image-combining.html">Capítulo 8. Combinando imagens</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="layer-mode-group-lighten.html">2.2. Modos de Camada</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

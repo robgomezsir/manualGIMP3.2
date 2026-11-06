@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2015-12-27 j.h rewrite auto-shrink 
+  2008-03-19 JPL rewiewed & modified en
+  2006-06-12 changed Ctrl+Shift section by j.h
+  2005-12-06 replaced simplesect by sect3 by lexa
+  2005-12-06 replaced informalfigure by figure by lexa
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-tool-rect-select">
+  <title>Seleção Retangular</title>
+  <indexterm>
+    <primary>Ferramentas</primary>
+    <secondary>Seleção Retangular</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Seleção</primary>
+    <secondary>Seleção retangular</secondary>
+  </indexterm>
+
+  <para>A ferramenta de seleção retangular é projetada para selecionar regiões retangulares da camada ativa: é a mais básica das ferramentas de seleção, mas muito comumente utilizada. Para obter informações sobre as seleções e como elas são usadas no GIMP veja, <link linkend="gimp-concepts-selection">Seleções</link> para obter informações sobre as características comuns a todas as ferramentas de seleção veja <link linkend="gimp-tool-select">Ferramentas de seleção</link>.</para>
+  <para>Esta ferramenta também é utilizada para a desenhar um retângulo em uma imagem. Para renderizar um retângulo preenchido, crie uma seleção retangular, e, em seguida, preencha-o usando a <link linkend="gimp-tool-bucket-fill">ferramenta de Preenchimento</link>. Para criar um contorno retangular, a abordagem mais simples e mais flexível é criar uma seleção retangular e, em seguida, <link linkend="gimp-selection-stroke">contorná-la</link>.</para>
+
+  <sect3>
+    <title>Ativando a Ferramenta</title>
+    <para>
+      There are different possibilities to activate the tool:
+    </para>
+    <itemizedlist>
+      <listitem>
+        <para>a partir da barra menu <menuchoice><guimenu>Ferramentas</guimenu><guisubmenu>Ferramentas de Seleção</guisubmenu><guimenuitem>Seleção Retangular</guimenuitem></menuchoice>,</para>
+      </listitem>
+      <listitem>
+        <para>Ao clicar no ícone da ferramenta: <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-tool-rect-select.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> na caixa de ferramentas,</para>
+      </listitem>
+      <listitem>
+        <para>
+          By pressing the <keycap>R</keycap> keyboard shortcut.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </sect3>
+
+  <sect3>
+    <title>Teclas Modificadoras</title>
+    <xi:include href="about-common-select-modifiers.xml"/>
+    <variablelist>
+      <varlistentry>
+        <term>
+          <keycap>Ctrl</keycap>
+        </term>
+        <listitem>
+          <para>Pressionar a tecla <keycap>Ctrl</keycap> após o início da sua seleção, e segura-la pressionada até você terminar, faz com que o ponto de partida seja usado como o centro do retângulo selecionado, em vez de um canto. Note que, se você pressionar a tecla <keycap>Ctrl</keycap> antes de começar a fazer a seleção, a seleção resultante será subtraída da seleção existente. O cursor se transforma no símbolo <guiicon><inlinegraphic fileref="images/toolbox/cursor-select-rect-minus.png"/></guiicon></para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <keycap>Shift</keycap>
+        </term>
+        <listitem>
+          <para>Se você pressionar a tecla <keycap>Shift</keycap> <emphasis>antes</emphasis> de iniciar a seleção, a seleção resultante será adicionada à já existente. O cursor se transforma  <guiicon><inlinegraphic fileref="images/toolbox/cursor-select-rect-plus.png"/></guiicon></para>
+          <para>Pressionar a tecla <keycap>Shift</keycap> <emphasis>depois</emphasis> de começar sua seleção, inverte a opção <guilabel>fixa</guilabel>, e mantendo-a pressionada, vai restringir a seleção a um quadrado, se é sua primeira seleção. Se estiver alterando uma seleção, e no menu fixa estiver selecionada a opção <guilabel>Proporção</guilabel>, sua alteração irá respeitar a proporção da seleção anterior.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>
+          <keycombo>
+            <keycap>Ctrl</keycap>
+            <keycap>Shift</keycap>
+          </keycombo>
+        </term>
+        <listitem>
+          <para>Pressionar ambas as teclas depois de iniciar sua seleção combina os dois efeitos, dando-lhe uma seleção quadrada centrada no ponto inicial. Repare que pressionar essas teclas antes de iniciar a sua seleção cria uma intersecção da seleção resultante com a existente e o ponteiro do mouse se modifica de acordo: <guiicon><inlinegraphic fileref="images/toolbox/cursor-select-rect-intersect.png"/></guiicon></para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3 id="tool-rect-select-manip">
+    <title>Manipulação de ferramentas</title>
+    <figure>
+      <title>Exemplo de seleção retangular</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/rectangle-selection.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Quando esta ferramenta é selecionada, o ponteiro do mouse é exibido assim: <guiicon><inlinegraphic fileref="images/toolbox/cross-pt.png"/></guiicon> assim que ele estiver sobre a imagem. Um arrastar e soltar permite obter uma forma retangular (ou quadrada). Quando você soltar o botão do mouse, uma linha pontilhada (<quote>formigas marchando</quote>) define a seleção. Não é necessário ajustar a seleção com cuidado, você pode redimensioná-la depois facilmente.</para>
+    <para>Quando o ponteiro está se movendo na tela, os aspectos do ponteiro de seleção modificam:</para>
+    <para>- fora da seleção que parece anteriormente, permite criar uma nova seleção, mas irá apagar a existente se esta não for combinada com uma tecla modificadora para adicionar ou subtrair outra seleção conforme descrito acima.</para>
+    <para>- Na seleção, em suas  partes periféricas, o ponteiro do mouse se transforma em várias formas quando passa por cima das áreas retangulares sensíveis e claramente marcadas. Esses <emphasis>identificadores</emphasis> permitem que você redimensione a seleção. Nos cantos de seleção o ponteiro modifica a forma de acordo com o contexto, por exemplo, no canto direito abaixo torna-se: <guiicon><inlinegraphic fileref="images/toolbox/corner-pt.png"/></guiicon>. Então, clicando e arrastando estas áreas, você pode ampliar ou diminuir o tamanho da seleção. Sobre as partes medianas das bordas da seleção, sejam laterais, abaixo ou acima, o ponteiro modifica sua forma apropriadamente de acordo com o contexto. Por exemplo, quando o ponteiro do mouse está sobre o meio do lado direito, o ponteiro parece: <guiicon><inlinegraphic fileref="images/toolbox/side-pt.png"/></guiicon>. Então você pode clicar e arrastar para ampliar ou diminuir o tamanho da seleção movendo o limite escolhido.</para>
+    <para>- No interior da area central da seleção o ponteiro do mouse parece o usual para manipulação de objetos, ou seja: <guiicon><inlinegraphic fileref="images/toolbox/pointer.png"/></guiicon>. Então você pode mover toda a seleção clicando e arrastando.</para>
+    <para>Além disso, se você não tiver desmarcado a opção <guilabel>Destaque</guilabel>, o seu trabalho será mais fácil, porque o que está fora da seleção será mais escuro do que o que está na seleção, e então a seleção aparece destacada.</para>
+    <tip>
+      <para>Se você usar as setas do teclado você pode mover a seleção ou modificar seu tamanho com passo de um pixel. Se você usá-las em combinação com <keycap>Shift</keycap> você pode movê-la em passos de 25 pixels.</para>
+    </tip>
+    <figure>
+      <title>Áreas sensíveis da seleção</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/toolbox/select-area.png" format="PNG"/>
+        </imageobject>
+        <caption>
+          <para>Exibição de todos os ponteiros possíveis em função de sua localização em relação à área da seleção</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Depois de criar e modificar a seleção, você vai ter que sair deste modo de edição (e fixar todas as mudanças). Você pode fazer isso com um único clique dentro da seleção ou pressionando a tecla <keycap>Enter</keycap>. Ou você pode simplesmente usar uma ferramenta que não seja de seleção e, por exemplo, preencher ou pintar a seleção.</para>
+  </sect3>
+
+  <sect3 id="tool-rect-select-options">
+    <title>Opções</title>
+    <figure>
+      <title>Opções da ferramenta</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/toolbox/tool-options-rectangle-select.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+
+    <xi:include href="../about-common-options-display.xml"/>
+
+    <variablelist>
+      <varlistentry>
+        <term>Modo</term>
+        <term>Anti-serrilhamento</term>
+        <term>Enevoar bordas</term>
+        <listitem>
+          <xi:include href="about-common-select-options.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Cantos arredondados</term>
+        <listitem>
+          <para>Se você ativar esta opção, aparece um controle deslizante. Você pode usar isso para ajustar o raio que é usado para arredondar os cantos da seleção.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Expandir a partir do centro</term>
+        <listitem>
+          <para>Se você ativar esta opção, a seleção é iniciada pressionando o botão do mouse que é usado como centro da área selecionada.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Fixa</term>
+        <listitem>
+          <para>Este menu permite-lhe a opção de restringir a forma do retângulo de várias maneiras.</para>
+          <variablelist>
+            <varlistentry>
+              <term>Proporção</term>
+              <listitem>
+                <para>Esta opção permite que você crie e redimensione a seleção, mantendo a proporção fixa conforme descrita na  caixa de entrada logo abaixo: você pode escrever a proporção lá e apertar <keycap>Enter</keycap>. Por padrão, a proporção é de 1:1 (portanto, temos um quadrado) mas ela pode ser alterada. Com os dois pequenos botões de paisagem e de imagens ícones, você pode inverter essa relação.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Largura</term>
+              <listitem>
+                <para>Com esta opção você pode manter fixa a largura da seleção.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Altura</term>
+              <listitem>
+                <para>Com esta opção você pode fixar a altura da seleção.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Tamanho</term>
+              <listitem>
+                <para>Com esta opção você pode manter fixas a altura e a largura da seleção: a ferramenta passa simplesmente a <quote>Carimbar</quote> retângulos do mesmo tamanho.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Posição</term>
+        <listitem>
+          <para>Estes dois campos de texto contém as coordenadas horizontais e verticais atuais do canto superior esquerdo da seleção. Você pode usar esses campos para ajustar a posição de seleção com precisão.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Tamanho</term>
+        <listitem>
+          <para>Estes dois campos de texto contém a altura e a largura da seleção. Você pode usar esses campos para ajustar o tamanho da seleção com precisão.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Destaque</term>
+        <listitem>
+          <para>Se você ativar esta opção, a área selecionada é realçada com uma máscara em torno para tornar a seleção visual muito mais fácil.</para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="composition-guides">
+        <term>Guias</term>
+        <listitem>
+          <indexterm>
+            <primary>Guias</primary>
+            <secondary>Guias de seleção</secondary>
+          </indexterm>
+          <indexterm>
+            <primary>Guias de composição</primary>
+          </indexterm>
+          <para>Com este menu, você pode selecionar o tipo de guias que são mostradas dentro da seleção para tornar a criação de uma seleção mais fácil, respeitando <emphasis>regras de composição fotográficas</emphasis>.</para>
+          <para>Seis opções estão disponíveis: <itemizedlist>
+              <listitem>
+                <para>Sem Guias</para>
+              </listitem>
+              <listitem>
+                <para>Linha central</para>
+              </listitem>
+              <listitem>
+                <para>Regra dos terços</para>
+              </listitem>
+              <listitem>
+                <para>Regra de quintos</para>
+              </listitem>
+              <listitem>
+                <para>Seções áureas</para>
+              </listitem>
+              <listitem>
+                <para>Linhas diagonais</para>
+              </listitem>
+            </itemizedlist></para>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry>
+        <term>Encolher automaticamente</term>
+        <listitem>
+          <para>A caixa <guilabel>Encolher automaticamente</guilabel> a seleção fará a redução automatica da seleção até o formato retangular disponível mais próximo na camada de imagem. O algoritmo para encontrar a melhor retângulo para encolher é inteligente, o que neste caso significa que às vezes faz coisas surpreendentemente sofisticadas, e às vezes faz coisas surpreendentemente estranhas. Em qualquer caso, se a região que você deseja selecionar tem um limite de cor sólida, a redução automática sempre a achará corretamente. Note-se que a seleção resultante não precisa ter a mesma forma ou proporção que a que foi encolhida.</para>
+          <figure>
+            <title>Encolher automaticamente</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/autoshrink-1.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  Image with two distinct elements selected
+                </para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/toolbox/autoshrink-2.png"/>
+              </imageobject>
+              <caption>
+                <para>Encolher automaticamente</para>
+              </caption>
+            </mediaobject>
+          </figure>             
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Amostragem combinada</term>
+        <listitem>
+          <para>Se <guilabel>Amostragem combinada</guilabel> também estiver ativa, a função de Encolher automaticamente irá utilizar a informação de pixels da tela visível da imagem, ao invés de apenas a camada ativa. Para mais informações sobre Amostra combinada, consulte a expressão no glossário, em <link linkend="glossary-samplemerge">Amostra Combinada</link>.</para>
+          <para>
+            For more information, see the
+            <link linkend="glossary-samplemerge">Glossary entry</link>.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

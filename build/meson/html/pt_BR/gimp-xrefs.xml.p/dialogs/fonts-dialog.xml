@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2012-05-25 j.h: no change for 2.8
+  2008-12-15 j.h: updated to v2.6
+  2007-09-03 j.h : reviewed for v2.4. No change.
+-->
+<sect2 id="gimp-font-dialog">
+  <title>Diálogo de fontes</title>
+
+  <indexterm>
+    <primary>Diálogos</primary>
+    <secondary>Fontes</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Fontes</primary>
+    <secondary>Diálogo</secondary>
+  </indexterm>
+
+  <figure>
+    <title>O diálogo de fontes</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/dialogs/fonts-dialog.png" format="PNG"/>
+      </imageobject>
+    </mediaobject>
+  </figure>
+
+  <para>O diálogo de <quote>Fontes</quote> é usado para selecionar fontes para a <link linkend="gimp-tool-text">ferramenta de Texto</link>. Ele também permite que você atualize a lista de fontes disponíveis, se você adicionar novas fontes enquanto o GIMP está em execução.</para>
+
+  <sect3 id="gimp-font-dialog-activate">
+    <title>Ativando o diálogo</title>
+    <para>O diálogo de <quote>Buffers</quote> é um diálogo de encaixe;veja a  seção <xref linkend="gimp-concepts-docks"/> para mais informações sobre como gerenciá-lo.</para>
+    <para>Você pode acessa-lo:</para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          from the main menu:
+          <menuchoice>
+            <guimenu>Windows</guimenu>
+            <guisubmenu>Dockable Dialogs</guisubmenu>
+            <guimenuitem>Fonts</guimenuitem>
+          </menuchoice>;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          from the Tab menu in any dockable dialog by clicking the
+          <link linkend="tab-menus">tab menu button</link>
+          <guiicon>
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/stock-icons/gimp-menu-left.svg" contentwidth="16px"/>
+              </imageobject>
+            </inlinemediaobject>
+          </guiicon> and selecting
+          <menuchoice>
+            <guimenu>Add Tab</guimenu>
+            <guimenuitem>Fonts</guimenuitem>
+          </menuchoice>,
+        </para>
+      </listitem>
+      <listitem>
+        <para>Das opções de ferramenta para  a ferramenta de Texto. Se você clicar no botão de <quote>Fonte</quote>, um seletor de fontes surgirá. No canto inferior direito desse seletor há um botão que, se for pressionado, faz aparecer o diálogo de <quote>Fontes</quote>.</para>
+      </listitem>
+    </itemizedlist>
+    <para>
+      In the <guimenu>Windows</guimenu> menu, there is a list of
+      <link linkend="gimp-dockable-menu">detached windows</link> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <quote>Fonts</quote> dialog from the main menu:
+      <menuchoice>
+        <guimenu>Windows</guimenu>
+        <guimenuitem>Fonts</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3 id="gimp-font-dialog-using">
+    <title>Usando o diálogo de fontes</title>
+    <para>A coisa mais básica que você pode fazer nesse diálogo é selecionar uma fonte ao clicar nela: essa fonte será usada pela ferramenta de texto. Se ao invés de clicar e soltar, você mantiver o botão esquerdo do mouse pressionado com o ponteiro posicionado sobre o exemplo de uso da fonte (<quote>Aa</quote>), aparecerá uma janela mostrando um exemplo de texto maior. </para>
+    <variablelist>
+      <varlistentry>
+        <term>Modo de Grade/Lista</term>
+        <listitem>
+          <figure>
+            <title>O diálogo de fontes</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/dialogs/fonts-grid-dialog.png"/>
+              </imageobject>
+              <caption>
+                <para>Diálogo no modo de Grade</para>
+              </caption>
+            </mediaobject>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/dialogs/fonts-dialog.png"/>
+              </imageobject>
+              <caption>
+                <para>Diálogo no modo de Lista</para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <tip>
+            <para><keycombo><keycap>Ctrl</keycap><keycap>F</keycap></keycombo> abre uma caixa para pesquisas por nome. Para maiores informações sobre o modo de lista, veja <xref linkend="gimp-dock-view-as-list"/>.</para>
+          </tip>
+          <para>No menu de Guia para o diálogo de <quote>Fontes</quote>, você pode escolher entre <guimenuitem>Ver como grade</guimenuitem>e <guimenuitem>Ver como lista</guimenuitem>. No modode grade, os modelos aparecem em um arranjo regularde ícones com exemplo de cada fonte. Apenas o nome da fonte selecionada é exibido. No modo de Lista, elas são alinhadas uma abaixo da outra, e o nome completo de cada fonte é exibido.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry id="gimp-font-refresh">
+        <term>Botões</term>
+        <listitem>
+          <para>
+            The button bar at the bottom offers the following functionality:
+          </para>
+          <variablelist>
+            <varlistentry>
+              <term>
+                <guiicon>
+                  <inlinemediaobject>
+                    <imageobject>
+                      <imagedata fileref="images/stock-icons/view-refresh.svg" contentwidth="16px"/>
+                    </imageobject>
+                  </inlinemediaobject>
+                </guiicon>
+                <phrase condition="tag-is-required">Atualizar lista de fontes</phrase>
+              </term>
+              <listitem>
+                <para>Pressionar esse botão na parte de baixo do diálogo faz com que a lista de fontes do sistema seja atualizada. Isso pode ser útil se você adicionar novas fontes enquanto o GIMP estiver em execução, e quiser que elas sejam acessíveis pela ferramenta de Texto. Você também pode fazer a lista de fontes ser atualizada clicando com o botão direito na lista de fontes do diálogo e escolhendo a opção <quote>Atualizar a lista de fontes</quote> no menu que aparece. (Na verdade, é a única opção deste menu)</para>
+                <tip>
+                  <para>Você pode alterar o tamanho das pré-visualizações de fonte no diálogo usando as opções de <quote>Tamanho da pré-visualização</quote> no menu de guias da caixa de diálogo.</para>
+                </tip>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

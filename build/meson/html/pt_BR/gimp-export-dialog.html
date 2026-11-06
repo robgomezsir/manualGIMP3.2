@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.4. Exportar arquivo</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="gimp-save-dialog.html" title="5.3. Salvar arquivo" />
+    <link rel="next" href="export-file-formats.html" title="5.5. Exportar arquivo" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.4. Exportar arquivo</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-save-dialog.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="export-file-formats.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-export-dialog"></a>5.4. Exportar arquivo</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id26806" class="indexterm"></a>
+      <p>A partir do <acronym class="acronym">GIMP</acronym>-2.8, o comando de Salvar permite apenas o formato XCF. O comando Exportar é usado para gerar arquivos com a imagem em vários formatos de arquivo. Isso acontece por que nenhum outro formato de arquivo, exceto o XCF,  preserva todas as características que uma imagem do GIMP - a maior parte não preserva sequer as camadas, que são a estrutura mais básica de uma imagem no GIMP. Então uma pessoa que pensasse estar preservando seu trabalho para continuar em outra oportunidade usando  o comando <span class="quote">“<span class="quote">Salvar</span>”</span> estava na verdade criando uma cópia apenas para visualização de uma imagem com várias camadas, texto, etc... e teria que começar todo o projeto novamente. Com a separação entre Salvar e Exportar não há mais essa ambiguidade.</p>
+      <div class="figure">
+        <a id="id3238"></a>
+        <p class="title">
+          <strong>Figura 15.61. Diálogo de exportar imagem</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/dialogs/export-image-dialog.png" alt="Diálogo de exportar imagem" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3239"></a>5.4.1. Ativando o diálogo</h4>
+            </div>
+          </div>
+        </div>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          You can access this command in the main menu through
+          <span class="guimenu">File</span> → <span class="guimenuitem">Export As…</span>,
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          or from the keyboard by using the shortcut
+          <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>E</strong></span>.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3240"></a>5.4.2. O diálogo de Exportar imagem</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      In the file browser, you can edit filename and extension directly in the
+      <span class="guilabel">Name</span> field (default is <span class="quote">“<span class="quote">Untitled.png</span>”</span>)
+      or by selecting an existing file to override in name list. Navigate the
+      folders if you prefer a different image destination. You can also create
+      a new folder if necessary.
+    </p>
+        <p><strong>Selecionar tipo de arquivo. </strong>Se você optar por isso, você pode escolher um tipo de arquivo compactado para seu arquivo XCF:</p>
+        <p>Os tipos de arquivo de imagem estão descritos em <a class="xref" href="gimp-images-out.html#gimp-using-fileformats" title="1. Arquivos">Seção 1, “Arquivos”</a>.</p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="exporting-image"></a>5.4.3. Exportando</h4>
+            </div>
+          </div>
+        </div>
+        <p>Quando um nome de arquivo e uma pasta de destino estão escolhidos, clique no botão <span class="guibutton">Exportar</span>. Isso abre o diálogo de exportação específico para cada tipo de arquivo, por exemplo: tipo de compactação, qualidade, profundidade de cores, etc...</p>
+        <a id="gimp-export-confirm-dialog"></a>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>Se o nome que você digitou já existiu, você será perguntado se deseja sobrescrever esse arquivo ou não. Se uma máscara de camada ou canal for selecionado em vez de uma camada, e o formato de exportação não suportar isso, você será perguntado para confirmação.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <p>
+      If you have loaded a non-XCF file, the
+      <span class="guimenu">File</span> → <span class="guimenuitem">Overwrite</span>
+      command (followed by the file name) allows you to overwrite the
+      original file, keeping its file format.
+    </p>
+        <p>
+      If you modify an image that you already have exported before, the
+      <span class="guimenu">File</span> → <span class="guimenuitem">Export to</span>
+      command (followed by the file name) allows you to export the file
+      again in the same file format.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-save-dialog.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="export-file-formats.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-save-dialog.html">5.3. Salvar arquivo</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="export-file-formats.html">5.5. Exportar arquivo</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

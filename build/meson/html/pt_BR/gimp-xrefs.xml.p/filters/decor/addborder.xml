@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2007-10-01 KoSt: Added 'no'
+  2007-09-02 AntI: Added 'es'
+  2007-08-30 alex falappa: added it
+  2007-08-22 j.h: translated to fr
+  2007-08-19 ude: created en, de
+-->
+<sect2 id="script-fu-addborder">
+  <title>Adicionar borda</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Adicionar borda</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Adicionar borda</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo para o filtro <quote>Adicionar borda</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPEG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/decor-taj-addborder.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filtro aplicado</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Este filtro faz exatamente o que o nome diz: ele adiciona uma borda à imagem. Você pode especificar a espessura da borda bem como sua cor. Os quatro lados da borda são coloridos em tons diferentes, de forma que a imagem pareça levantada.</para>
+    <para>A imagem será aumentada em tamanho igual ao tamanho das bordas: elas não serão pintadas por cima da imagem</para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Decor</guisubmenu>
+        <guimenuitem>Add Border…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de <quote>Adicionar borda</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/decor/addborder.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Tamanho X da borda</term>
+        <term>Tamanho Y da borda</term>
+        <listitem>
+          <para>
+            Here you can select the thickness of the added border, in pixels.
+            X size (left and right) and Y size (top and bottom) may be
+            different. Maximum is 250 pixels.
+          </para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Cor da borda</term>
+        <listitem>
+          <para>Ao clicar neste botão, surge um diálogo de seleção de cores, que permite que você escolha uma cor <quote>média</quote> para a borda (veja abaixo, <guilabel>Influência da iluminação na cor</guilabel>).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Influência da iluminação na cor</term>
+        <listitem>
+          <para>Esta opção faz com que os lados da borda sejam coloridos em tons diferentes e assim, faz parecer que a imagem está levantada (como um botão em relevo). A cor real para cada lado da borda é calculado para cada componente de cor (vermelho, verde e azul <footnote><para>Veja <link linkend="gimp-concepts-image-types">tipos de imagem</link> ou  <xref linkend="glossary-rgb"/>.</para></footnote>) a partir da cor <quote>média</quote> especificada em <guilabel>Cor da borda</guilabel> como se segue: (valores resultantes menores que 0 ficam como 0, e valores maiores que 255, ficam sendo 255)</para>
+          <itemizedlist>
+            <listitem>
+              <para>Tom da parte de cima = Cor da borda + influência</para>
+            </listitem>
+            <listitem>
+              <para>Tom da direita = Cor da borda  -  metade da influência</para>
+            </listitem>
+            <listitem>
+              <para>Tom de baixo = Cor da borda - influência</para>
+            </listitem>
+            <listitem>
+              <para>Tom da esquerda = Cor da borda + metade da influência</para>
+            </listitem>
+          </itemizedlist>
+          <figure>
+            <title>Exemplos de influência</title>
+            <mediaobject>
+              <imageobject>
+                <imagedata format="PNG" fileref="images/filters/examples/addborder-delta.png"/>
+              </imageobject>
+              <caption>
+                <para>
+                  <quote>Add Border</quote> filter applied with
+                  <guilabel>Delta value on color</guilabel> 25, then with 75, 125, 175,
+                  and 225.
+                </para>
+              </caption>
+            </mediaobject>
+          </figure>
+          <para>Exemplo: a cor padrão é azul (38,31,207), a influência padrão é 25. Então as cores da borda serão: topo: (38,31,207) + (25,25,25) = (63,56,232), direita: (38,31,207) + (-13,-13,-13) = (25,18,194), etc.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Allow resizing</term>
+        <listitem>
+          <para>
+            By default, the image size is increased by twice the specified border
+            size to create the border in this additional space. If your image
+            already has the intended final size, disable this option.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>4.13. Cage Transform</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-tools-transform.html" title="4. Transform Tools" />
+    <link rel="prev" href="gimp-tool-flip.html" title="4.12. Flip" />
+    <link rel="next" href="gimp-tool-warp.html" title="4.14. Warp Transform" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>4.13. Cage Transform</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-tool-flip.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>4. Transform Tools</span>
+        <nav> <a accesskey="n" href="gimp-tool-warp.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-tool-cage"></a>4.13. Cage Transform</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id19101" class="indexterm"></a>
+      <a id="id19104" class="indexterm"></a>
+      <p>
+    The Cage tool is a special transforming tool allowing you to select the
+    transforming area by setting anchor points by free hand drawing similar
+    to the way you do it with the Free Select tool. The tool adds
+    nothing to the image until you confirm the transformation by pressing the
+    <span class="keycap"><strong>Enter</strong></span> key.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1840"></a>4.13.1. Activating the Tool</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      There are different possibilities to activate the tool:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the main menu:
+          <span class="guimenu">Tools</span> → <span class="guisubmenu">Transform Tools</span> → <span class="guimenuitem">Cage Transform</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By clicking the tool icon
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-cage.svg" width="16" /></span>
+          </span>
+          in the Toolbox.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          By pressing the
+          <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>G</strong></span>
+          keyboard shortcut.
+        </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1841"></a>4.13.2. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1842"></a>
+          <p class="title">
+            <strong>Figure 14.127. Tool Options Dialog</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/tool-options-cage.png" alt="Tool Options Dialog" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      Normally, tool options are displayed in a window attached under the
+      Toolbox as soon as you activate a tool. If they are not, you can access
+      them from the main menu through
+      <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Windows</span> → <span class="guimenuitem">Tool Options</span>
+      which opens the option window of the selected tool.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Create or adjust the cage</span>
+            </dt>
+            <dd>
+              <p>
+            When activating the Cage Tool this option is selected. You can now
+            click in the image to make anchor points around the desired area.
+            If you need to add anchor points at a later stage, you click on
+            this option.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Deform the cage to deform the image</span>
+            </dt>
+            <dd>
+              <p>
+            <acronym class="acronym">GIMP</acronym> switch to this option automatically when the
+            cage outline is finished. Now you are able to drag the anchor points
+            around in the image and even outside it to transform the picture.
+            The transforming starts when you release the mouse button.
+          </p>
+              <p>
+            You can activate more than one anchor point by holding down the
+            <span class="keycap"><strong>Shift</strong></span> key while clicking on the points. You can
+            also select more points by holding down the mouse button while
+            drawing a rectangle around the desired points.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Fill the original position of the cage with a color</span>
+            </dt>
+            <dd>
+              <p>
+            If the transforming action results in empty areas these areas will
+            be filled with color if this option is checked. It looks like the
+            color is picked from the start pixel of the cage line.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id1843"></a>4.13.3. Using the <span class="quote">“<span class="quote">Cage Transform</span>”</span> tool</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1844"></a>
+          <p class="title">
+            <strong>Figure 14.128. Cage Transform Tool example</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/toolbox/cage-1.png" alt="Cage Transform Tool example" />
+              <div class="caption">The cage area selected</div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/toolbox/cage-2.png" alt="Cage Transform Tool example" />
+              <div class="caption">Transformed</div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      When clicking on the cage icon in the toolbox the cage option is set to
+      <span class="quote">“<span class="quote">Create or adjust the cage</span>”</span>. You are now able to draw a cage
+      outline in the image by successively clicking around the area you want to
+      transform. Click on the starting point to finish the selection.
+      <acronym class="acronym">GIMP</acronym> will then do some mathematics and activate the
+      <span class="quote">“<span class="quote">Deform the cage to deform the image</span>”</span> to allow you to drag
+      the points on the line to deform the cage and the image.
+    </p>
+        <p>
+      The selected point(s) turns to a square. Drag the points around in the
+      image to transform it. The transforming will occur every time you release
+      the press on the mouse button. The transforming may take some time so be
+      patient especially when working with large images.
+    </p>
+        <p>
+      If you desire to add more points to the line you have to select the
+      <span class="quote">“<span class="quote">Create or adjust the cage</span>”</span> in the tool options dialog.
+      Put the points on the line and switch back to the <span class="quote">“<span class="quote">Deform the cage
+      to deform the image</span>”</span> to transform the image or layer.
+    </p>
+        <p>
+      When the work is done, press the <span class="keycap"><strong>Enter</strong></span> key to confirm it.
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-tool-flip.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-tools-transform.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-warp.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-tool-flip.html">4.12. Flip</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-warp.html">4.14. Warp Transform</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

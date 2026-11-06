@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<appendix id="tone-mapping-tutorial">
+  <title>Mapeamento de tons e Recuperação de sombras usando os recursos do GIMP: <menuchoice><guimenu>Cores</guimenu><guimenuitem>Exposição</guimenuitem></menuchoice></title>
+
+  <para>Este tutorial foi retirado de www.gimp.org/tutorials e foi criado por Elle Stone. Ele é apresentado aqui para traduções.</para>
+
+  <para>Um problema muito comum de edição é como clarear sombras e tons médios de uma imagem mantendo os detalhes de tons claros, uma tarefa algumas vezes referida como “recuperação de sombras” e, de maneira mais geral, como “mapeamento de tons”. Este tutorial passo-a-passo lhe mostrará como usar a operação Exposição em ponto flutuante de grande profundidade de bits do GIMP para adicionar uma ou mais paradas de compensação de exposição positiva às sombras e tons médios de uma imagem enquanto os detalhes de tons claros são mantidos.</para>
+
+
+  <sect1 id="tone-mapping-introduction">
+    <title>Operação Exposição em ponto flutuante de grande profundidade de bits do GIMP: muito melhor do que Curvas para clarear sombras e tons médios de uma imagem sem estourar os tons claros</title>
+    <para>Um problema muito comum de edição é como clarear sombras e tons médios de uma imagem sem estourar os tons claros, muito frequentemente encontrado ao lidar com fotografias de cenas iluminadas diretamente por luz solar. Algoritmos pré-prontos para completar esta tarefa são geralmente referidos como algoritmos de “recuperação de sombras”. Na verdade, estes algoritmos são algoritmos de mapeamento de tons com propósito especial, que algumas vezes funcionam muito bem, outras vezes nem tanto, a depender do algoritmo, da imagem e de suas intenções artísticas para a imagem.</para>
+    <para>Este tutorial passo-a-passo lhe mostrará como usar a operação Exposição de ponto flutuante irrestrito do GIMP para recuperar a informação de sombras—isto é, adicionar uma ou mais paradas de compensação de exposição positiva às sombras e tons médios de uma imagem—sem estourar ou indevidamente comprimir os tons claros da imagem. Este procedimento é completamente “ajustável manualmente” usando máscaras e camadas, e é o mais próximo que você conseguiria de edição de imagem não-destrutiva usando GIMP em grande profundidade de bits.</para>
+
+    <para><emphasis role="bold">Figura 1:</emphasis> linhas de energia ao meio-dia</para>
+    <para>Antes e depois do mapeamento de tons (ou “recuperação de sombras”) usando a operação Exposição em ponto flutuante de grande profundidade de bits do GIMP.</para>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/tutorials/tone-mapping/before-auto-stretch-contrast.jpg" format="JPG"/>
+      </imageobject>
+    </mediaobject>
+    <para>
+      <emphasis>Arquivo bruto interpolado por referência a cena.</emphasis>
+    </para>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/tutorials/tone-mapping/power-lines.jpg" format="JPG"/>
+      </imageobject>
+    </mediaobject>
+    <para>
+        <emphasis>Após o mapeamento de tons/recuperação de sombras usando Níveis irrestritos do GIMP.</emphasis>
+      </para>
+    <para>O GIMP de grande profundidade de bits é o meu editor de imagem primário, e tenho usado o procedimento descrito abaixo pelos últimos anos como meu jeito “corriqueiro” de modificar tonalidade de imagens. O mesmo procedimento geral pode ser usado tanto para escurecer quanto clarear regiões de uma imagem, novamente controlando o efeito usando uma máscara de camada. Isto não é exatamente não-destrutivo porque em algum momento você precisará criar uma camada “Nova a partir do visível”. Mas, diferente do uso de Curvas, utilizar a operação Exposição em ponto flutuante de grande profundidade de bits do GIMP não corta valores dos canais RGB e permite-lhe um ajuste preciso dos resultados por ajustes sucessivos da máscara de camada até você estar satisfeito com a tonalidade resultante.</para>
+  </sect1>
+
+  <sect1 id="tone-mapping-example">
+    <title>Um exemplo passo-a-passo mostrando como recuperar a informação de sombras usando o ponto flutuante de grande profundidade de bits do GIMP para a operação<menuchoice><guimenu>Cores</guimenu><guimenuitem>Exposição…</guimenuitem></menuchoice></title>
+    <para>
+      <emphasis role="bold">Figura 2</emphasis>
+    </para>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="images/tutorials/tone-mapping/tree-exposed-for-sky-ground-is-dark.jpg" format="JPG"/>
+      </imageobject>
+    </mediaobject>
+    <para>Usando operação Exposição de grande profundidade de bits do GIMP para iluminar o chão em uma parada sem estourar porções do céu.</para>
+    <itemizedlist>
+      <listitem>
+        <para><emphasis>Esquerda</emphasis>: A imagem original, um arquivo bruto de câmera interpolado que foi deliberadamente subexposto em câmera para evitar estourar o céu. Pode não parecer o caso, mas esta imagem já está muito próxima de possuir valores de canais RGB fora da gama no céu, e um simples Esticamento Automático de Contraste não irá clarear a imagem de forma alguma.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis>Direita</emphasis>: A mesma imagem após usar a operação Exposição de grande profundidade de bits do GIMP em precisão linear de 32 bits em ponto flutuante para adicionar uma parada de compensação de exposição positiva. Uma máscara de tons de cinza invertida foi utilizada para impedir os tons claros de estourarem.</para>
+      </listitem>
+     </itemizedlist>
+    <para>Este exemplo passo-a-passo providencia uma amostra de imagem e é dividido em cinco passos, começando com o download da imagem. Passos 3, 4 e 5 descrevem o procedimento em si.</para>
+    <procedure>
+      <step>
+        <para><emphasis role="bold">Baixe</emphasis><ulink url="https://www.gimp.org/tutorials/Tone_Mapping_Using_GIMP_Levels/tree.png"> tree.png</ulink>, que é uma imagem sRGB de números inteiros em 16 bits. O GIMP de grande profundidade de bits de fato é um editor de imagens “somente sRGB”, então o melhor é nem tentar editar em outros espaços de trabalho RGB.</para>
+      </step>
+      <step>
+        <para><emphasis role="bold">Abra a tree.png no GIMP e atribua o perfil embutido sRGB (as cores da imagem não mudarão em nada). Então, converta a imagem para precisão linear de ponto flutuante em 32 bits.</emphasis>: Selecione <menuchoice><guimenu>Imagem</guimenu><guisubmenu>Codificação</guisubmenu><guimenuitem>Ponto flutuante de 32 bits</guimenuitem></menuchoice>, e na janela de<guilabel>Conversão de codificação</guilabel>, selecione <guilabel>Luz linear</guilabel> (isto garantirá que o modo de mistura de cores Normal produzirá resultados radiometricamente corretos).</para>
+      </step>
+      <step>
+        <para>Faça uma cópia da camada “tree.png” através de <menuchoice><guimenu>Camada</guimenu><guimenuitem>Nova Camada…</guimenuitem></menuchoice> ou <menuchoice><guimenu>Camada</guimenu><guimenuitem>Nova a partir do visível</guimenuitem></menuchoice>, e nomeie-a “comp exposição +1 parada”. Então, use <menuchoice><guimenu>Cores</guimenu><guimenuitem> Exposição…</guimenuitem></menuchoice> para adicionar uma parada de compensação de exposição positiva. A Figura 3 abaixo mostra as configurações apropriadas para a janela da operação Exposição, e a Figura 4 mostra o resultado:</para>
+        <para><emphasis role="bold">Figura 3</emphasis></para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/add-one-stop-positive-exposure-compensation.png" format="JPG"/>
+            </imageobject>
+        </mediaobject>
+        <para>
+          <emphasis>Usando a operação Exposição para adicionar uma parada de compensação de exposição positiva.</emphasis>
+        </para>
+        <para>Ao usar a operação Exposição para adicionar uma parada de compensação de exposição positiva, certifique-se de que a imagem realmente está com precisão de ponto flutuante, porque precisão de números inteiros limitará os tons claros.</para>
+        <para>
+          <emphasis role="bold">Figura 4</emphasis>
+        </para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/1-stop-positive-exposure-compensation-added.jpg" format="JPG"/>
+            </imageobject>
+        </mediaobject>
+        <para>Em precisão de ponto flutuante, a operação Exposição do GIMP é irrestrita. Isto significa que você pode utilizar a operação Exposição para adicionar compensação de exposição positiva sem estourar os tons claros.</para>
+        <para>Perceba os valores dos canais RGB para os quatro pontos de amostragem: a informação do canal que teria sido cortada pelo uso de precisão de número inteiro está codificada usando valores de canais que são maiores do que 1,0 em ponto flutuante.</para>
+        <para>A imagem na Figura 4 claramente tem tons claros “estourados” no céu. Mas os tons claros não estão realmente estourados (isto é, cortados para 1,0 em um ou mais canais). Em vez disso, a informação de tom claro ainda está lá, mas os valores de canais RGB estão fora do intervalo do <ulink url="https://ninedegreesbelow.com/photography/display-referred-scene-referred.html"> valor de exibição em canal </ulink> RGB de 0,0f a 1,0f. O diálogo de pontos de amostragem na Figura 4 acima mostra quatro pontos de amostragem que possuem valores de canais RGB maiores do que 1,0. Como mostrado na Figura 5 abaixo, adicionar uma máscara permite recuperar estes tons claros trazendo-os de volta para o intervalo de exibição.</para>
+        <para>Se você utilizou precisão de número inteiro em vez de ponto flutuante, os tons claros realmente seriam estourados: Os pontos de amostragem teriam valores de canal máximos de 255, 65535 ou 4294967295, dependendo da profundidade de bits. E aplicar uma máscara somente “recuperaria” uma grande área de cinza, com ausência total de detalhes (teste pessoalmente e veja o que acontece).</para>
+      </step>
+      <step>
+        <para><emphasis role="bold">Adicione uma máscara de camada de tons de cinza invertida</emphasis>: Clique com o botão direito na camada e selecione <menuchoice><guimenu>Camada</guimenu><guisubmenu>Máscara</guisubmenu><guimenuitem>Adicionar máscaras de camada…</guimenuitem></menuchoice>, e quando o diálogo <guilabel>Adicionar Máscara de Camada</guilabel> aparecer, escolha <guilabel>Cópia em tons de cinza da camada</guilabel> e marque a opção <guilabel>Inverter máscara</guilabel>.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/add-inverse-grayscale-mask.png" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <para>Como mostrado na Figura 5 abaixo, a esta altura os tons claros serão trazidos de volta para o intervalo de exibição, o que significa que todos os valores de canais RGB estão entre 0,0f e 1,0f. Mas a imagem provavelmente parecerá um pouco estranha (meio enevoada e achatada), e dependendo da imagem, os tons claros mais brilhantes podem até ter borrões escuros — não se preocupe! Isto é temporário.</para>
+        <para>
+          <emphasis role="bold">Figura 5</emphasis>
+        </para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/inverse-grayscale-mask-added.jpg" format="JPG"/>
+            </imageobject>
+         </mediaobject>
+        <para>Resultado de adicionar uma máscara de camada de tons de cinza invertida para trazer os tons claros de volta ao intervalo de exibição.</para>
+        <para>Adicionar uma máscara de camada de tons de cinza invertida traz os tons claros de volta ao intervalo de exibição, mas a esta altura a maioria das imagens parecerá achatada e enevoada, e algumas imagens terão borrões escuros nos tons claros. O próximo passo — “Esticamento Automático de Contraste” realizado na máscara — cuidará deste problema.</para>
+      </step>
+      <step>
+        <para><emphasis role="bold">Clique na máscara de camada para selecioná-la para edição, e então selecione <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar Contraste…</guimenuitem></menuchoice></emphasis>: <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/tutorials/tone-mapping/auto-stretch-contrast-mask.png" format="JPG"/>
+            </imageobject>
+          </mediaobject></para>
+        <para><emphasis>“Manter Cores” deve ser marcado (embora isso não importe de fato para imagens em tons de cinza, como máscaras de camada).</emphasis>
+        </para>
+        <para>A <emphasis role="bold">Figura 6</emphasis> abaixo mostra o resultado final: <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/tutorials/tone-mapping/gegl-exposure-mask-auto-stretched.jpg" format="JPG"/>
+            </imageobject>
+          </mediaobject></para>
+        <para><emphasis>Fazer <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar Contraste…</guimenuitem></menuchoice> na máscara de camada remove o aspecto “enevoado”, deixando uma imagem lindamente clareada com tons claros intactos.</emphasis>
+        </para>
+        <para><menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar Contraste…</guimenuitem></menuchoice> na máscara é necessário porque, da mesma forma que a camada da imagem possui valores de canais RGB fora da gama, a máscara de tons de cinza invertida também contém valores de tons de cinza fora da gama. <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice>traz todos os valores da máscara de tons de cinza de volta para o intervalo de exibição, permitindo que a máscara compense proporcionalmente os valores de canais RGB da camada que de outra forma estariam fora da gama, mascarando mais os tons claros e pouco/não de todo mascarando as sombras e tons médios da imagem.</para>
+        <para>
+          <emphasis role="small">Note que um dos pontos de amostragem ainda possui um valor de canal RGB azul que está ligeiramente fora da gama. O jeito mais fácil de lidar com isso é usando <menuchoice><guimenu>Cores</guimenu><guimenuitem>Níveis…</guimenuitem></menuchoice> e arrastando o <link linkend="gimp-tool-levels">triângulo do seletor do meio</link> para fazer um ajuste de Gama de 0,45 na máscara, não na camada da imagem de fato. Você pode fazer este ajuste de Gama ou na máscara inteira (funciona bem, menos esforço), ou apenas nas sombras da máscara (que correspondem aos tons claros da camada). Neste último caso, você carregaria a máscara como uma seleção, inverteria a seleção, e então faria o ajuste de gama. Ou, se os valores de canal fora da gama estiverem apenas ligeiramente fora da gama, faça uma camada “Nova a partir do visível" e então use <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice> no resultado para trazer o resto dos valores de canais de volta para a gama.</emphasis>
+        </para>
+        <para>Este é o procedimento completo para usar a operação Exposição para adicionar uma parada de compensação de exposição positiva às sombras sem estourar os tons claros. Agora, você pode ou fazer ajustes finos à máscara ou simplesmente criar uma camada “Nova a partir do visível” e continuar editando a sua imagem lindamente clareada. Dependendo da imagem e também de suas intenções artísticas para ela, a máscara pode não precisar de ajuste fino. Mas muito frequentemente você quererá modificar a distribuição de tons resultante por meio de uma correção de gama, ou talvez uma operação Curvas na máscara, ou então pintando diretamente sobre a máscara. E algumas vezes você desejará borrar a máscara para <link linkend="restore-micro-contrast">restaurar o micro contraste</link>.</para>
+      </step>
+    </procedure>
+  </sect1>
+
+  <sect1 id="tone-mapping-notes">
+    <title>Notas de uso</title>
+    <orderedlist>
+      <listitem><!--1-->
+        <para>Dependendo de suas intenções artísticas particulares para uma imagem, algumas imagens são mais prováveis do que outras para se beneficiarem de serem mapeadas por tom usando a operação Exposição de ponto flutuante. Seus ganhos podem variar, mas tipicamente o procedimento descrito nesta página funciona melhor para fotografias de cenas com uma diferença de tons pronunciada entre tons claros e sombras, como numa típica foto de dia ensolarado de “céu e chão”.</para>
+      </listitem>
+      <listitem><!--2-->
+        <para><emphasis role="bold">Para adicionar apenas uma parada de compensação de exposição positiva, o procedimento descrito nesta página funciona muito bem</emphasis>. Dependendo da imagem, você pode querer borrar a máscara usando um algoritmo de desfoque que respeite bordas e/ou ajustar a máscara usando a operação Exposição, Curvas, etc. Mas somente modifique a máscara após utilizar o Esticamento automático de contraste na máscara. Do contrário, os resultados podem ser imprevisíveis: <ulink url="https://ninedegreesbelow.com/photography/unbounded-srgb-levels-gamma-slider.html"> Ajustes na gama produzem resultados estranhos quando realizados em valores fora da gama</ulink>, e Curvas irão sumariamente cortar valores fora da gama.</para>
+      </listitem>
+      <listitem>
+        <para><emphasis role="bold">Para adicionar mais de uma parada de compensação de exposição, você pode usar uma ou mais camadas de compensação de exposição positiva</emphasis>. De qualquer forma, a máscara de camada necessitará de ajuste cuidadoso que é bastante específico para cada imagem e para o seu resultado pretendido. A figura 7 mostra um exemplo de uso de duas camadas de compensação de exposição para adicionar duas paradas e meia de compensação de exposição às sombra e tons médios de uma imagem:</para>
+        <para>Usando os Níveis irrestritos de ponto flutuante do GIMP mais máscaras de camada para adicionar duas paradas de compensação de exposição positiva às sombras e tons médios de uma fotografia de um caminhão num pomar de maçãs que foi tirada sob um brilho solar intenso.</para>
+        <para><emphasis role="bold">Figura 7</emphasis></para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/apple-orchard-truck-from-camera.jpg" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <para><emphasis>Imagem da câmera, subexposta para evitar estourar os tons claros.</emphasis>
+        </para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/apple-orchard-truck-tone-mapped-with-Exposur.jpg" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <para><emphasis>Após o mapeamento de tons/recuperação de sombras usando a operação Exposição de grande profundidade de bits em ponto flutuante do GIMP.</emphasis>
+        </para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/truck-tone-mapped-using-gegl-mantuik.jpg" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <para><emphasis>Para comparação, o mapeamento de tons Mantuik usando as configurações padrão da GEGL.</emphasis>
+        </para>
+        <para>Usando a operação Exposição em ponto flutuante do GIMP mais máscaras de camada para adicionar duas paradas e meia de compensação de exposição positiva às sombras e tons médios de uma fotografia de “sol brilhante” de um caminhão num pomar.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/orchard-truck-layer-stack.jpg" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <para><emphasis>Uma captura de tela da pilha de camadas que usei para mapear os tons da fotografia do caminhão num pomar de maçãs. O mapeamento de tons manual dar-lhe-á controle completo sobre a imagem resultante. O mantuik e outros algoritmos de mapeamento de tons “automágicos“ demandam muito poder de processamento, são imprevisíveis e geralmente produzem resultados que não parecem naturais.</emphasis>
+        </para>
+      </listitem>
+
+      <listitem><!--4-->
+        <para>Antes de usar a operação Exposição para adicionar compensação de exposição positiva, <emphasis>a camada base já deveria estar estendida para o seu intervalo dinâmico máximo</emphasis>. O jeito mais fácil de esticar a camada base para o seu intervalo dinâmico máximo é fazendo <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar Contraste…</guimenuitem></menuchoice> e se certificar de que <guilabel>Manter cores</guilabel> está ativado.</para>
+        <para>Se você nunca usou um editor de imagens de ponto flutuante irrestrito antes, <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice> pode produzir um resultado inesperado: a imagem pode na verdade acabar com um intervalo dinâmico severamente reduzido, apresentando sombras mais claras ou tons claros mais escuros, ou ambos:</para>
+        <para>Antes e depois de usar <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice> na camada base, além da imagem final depois do mapeamento de tons utilizando <menuchoice><guimenu>Cores</guimenu><guimenuitem>Exposição…</guimenuitem></menuchoice>:</para>
+        <para><emphasis role="bold">Figura 8</emphasis></para>
+        <para>1. Imagem obtida da câmera</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/before-auto-stretch-contrast.jpg" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <para>2. Depois de usar <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice>.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/after-auto-stretch-contrast.jpg" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <para>3. Imagem final das “Linhas de energia”.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/power-lines.jpg" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <orderedlist>
+          <listitem>
+            <para>Este arquivo bruto interpolado por referência a cena do processador PhotoFlow (o qual providencia ao GIMP um plug-in para abertura fácil de arquivos brutos) possui valores de canais RGB fora do intervalo de exibição que serão trazidos de volta para o intervalo por meio de <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice>.</para>
+          </listitem>
+          <listitem>
+            <para>Depois de usar <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice>, as sombras ficam mais claras e tons claros ficam mais escuros porque o intervalo dinâmico foi comprimido para se encaixar no intervalo de exibição. Parece que uma etapa de edição deu errado! Mas, na verdade, isto é necessário.</para>
+          </listitem>
+          <listitem>
+            <para>Aqui está a imagem “Linhas de energia” final após o mapeamento de tons do arquivo bruto interpolado por referência a cena usando o procedimento descrito neste tutorial.</para>
+          </listitem>
+        </orderedlist>
+        <para>Como capturado pelo arquivo bruto, essa figura de linhas de energia seguindo para o horizonte é um resultado típico de tirar uma fotografia ao meio-dia num dia de sol forte: o céu e nuvens pareceram muito bons direto da câmera, mas o chão estava muito escuro. Então, a imagem poderia se beneficiar de um mapeamento de tons para melhorar as sombras e tons médios. O primeiro passo é selecionar <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice> para trazer quaisquer valores de canal menores do que 0,0f ou maiores do que 1.0f de volta para o intervalo de exibição de 0,0f a 1,0f em ponto flutuante.</para>
+        <para>Fazer <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice> para trazer os valores de canal de volta para o intervalo de exibição não parece exatamente uma etapa de edição na direção certa para mapear os tons desta imagem em particular! Mas, de fato, é. Usar <menuchoice><guimenu>Cores</guimenu><guimenuitem>Exposição…</guimenuitem></menuchoice> para adicionar a compensação de exposição positiva às sombras e tons médios não funcionará se a imagem possuir valores de canal que estejam fora do intervalo de exibição.</para>
+      </listitem>
+      <listitem><!--5-->
+        <para><emphasis role="bold">Dispensando informações “inúteis” de sombras e tons claros:</emphasis> algumas vezes, arquivos brutos interpolados de fotografias de cenas com alto intervalo dinâmico acabam apresentando pixels dispersos de tons claros e sombras que essencialmente não contêm informação útil. A coisa mais fácil a fazer com tais pixels é usar a operação Exposição para definir os pontos de preto e branco desejados, e então cortar a informação resultante fora da gama do canal.</para>
+        <itemizedlist mark="bullet">
+          <listitem>
+            <para><emphasis role="bold">Informação inútil de tons claros:</emphasis> para a imagem “Linhas de energia” mostrada na Figura 8 acima, depois de aplicar <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice>, míseros 48 pixels ocuparam quase metade do intervalo de tons (ver o histograma à direita). Uma pequena investigação com a ferramenta Limiar do GIMP revelou que todos os 48 pixels são os valores de pico de brilhos especulares nos isolantes cerâmicos no poste de energia no plano frontal.</para>
+            <mediaobject>
+              <imageobject>
+                <imagedata fileref="images/tutorials/tone-mapping/histogram-specular-highlights.png" format="JPG"/>
+              </imageobject>
+            </mediaobject>
+            <para>Em casos onde quase metade do histograma é ocupado por uma pitada de brilhos especulares, cortar os pixels é geralmente a melhor e mais fácil solução. Para a imagem “Linhas de energia”, os 48 pixels em questão carregavam, essencialmente, zero informação. Use <menuchoice><guimenu>Cores</guimenu><guimenuitem>Exposição…</guimenuitem></menuchoice> para subir o ponto branco, e então <menuchoice><guimenu>Cores</guimenu><guimenuitem>Cortar RGB…</guimenuitem></menuchoice> para de fato cortar a informação de canal nos brilhos (desta vez, certificando-se de que a opção <guilabel>Cortar valores de pixel altos</guilabel> esteja marcada).</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="bold">Informação inútil de sombras:</emphasis> alguns processadores de arquivos brutos podem gerar imagens com valores de canal negativos. E edições anteriores usando a grande profundidade de bits do GIMP podem ter produzido valores de canal negativos. Se fazer <menuchoice><guimenu>Cores</guimenu><guisubmenu>Automático</guisubmenu><guimenuitem>Esticar contraste…</guimenuitem></menuchoice> na sua camada de imagem base, torna-rá sua imagem muito mais clara nas sombras, o problema são valores de canais RGB negativos. Uma solução é utilizar <menuchoice><guimenu>Cores</guimenu><guimenuitem>Exposição…</guimenuitem></menuchoice> para mover o ponto preto para onde você quer que ele esteja, e então cortar os valores de canal negativos. Aqui estão dois jeitos de cortar valores de canal negativos:</para>
+            <itemizedlist mark="opencircle">
+              <listitem>
+                <para>Use <menuchoice><guimenu>Cores</guimenu><guimenuitem>Cortar RGB…</guimenuitem></menuchoice>, certificando-se de desmarcar a opção <guilabel>Cortar valores de pixel altos</guilabel>.</para>
+              </listitem>
+              <listitem>
+                <para>Ou então, crie uma camada de preto sólido acima da sua camada de imagem base, defina o modo de mistura como “Somente clarear”, e faça uma camada “Nova a partir do visível”.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem id="restore-micro-contrast"><!--6-->
+        <para><emphasis role="bold">Borrando a máscara para restaurar micro contraste:</emphasis> colocar uma máscara invertida em uma camada que é usada para adicionar compensação de exposição positiva necessariamente achata ligeiramente o micro contraste. Dependendo de suas intenções artísticas para a imagem, você pode querer borrar a máscara para restaurar micro contraste. O problema é como borrar a máscara sem introduzir “halos” em volta das bordas de objetos na imagem. Desfoques Gaussianos com raios pequenos produzem halos pequenos mas angustiantemente óbvios em volta de bordas escuras. Um Desfoque gaussiano de raio grande funciona mas igualmente com frequência produz um halo óbvio e grande separando as porções mais claras e escuras da imagem. Para muitas imagens, uma melhor solução é borrar a máscara usando um filtro que respeite bordas, como o filtro de suavização bilateral do G'MIC para GIMP:</para>
+        <para>Adicionando compensação de exposição com e sem suavização bilateral da máscara.</para>
+        <para><emphasis role="bold">Figura 9</emphasis></para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/without-bilateral-smoothing-of-mask.jpg" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <para><emphasis>Sem aplicar suavização bilateral à máscara, o micro contraste é achatado.</emphasis>
+        </para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/tutorials/tone-mapping/with-bilateral-smoothing-of-mask.jpg" format="JPG"/>
+          </imageobject>
+        </mediaobject>
+        <para><emphasis>Após aplicar suavização bilateral à máscara, o micro contraste é restaurado.</emphasis>
+        </para>
+        <para>Adicionar compensação de exposição combinada com uma máscara de tons de cinza invertida realmente achata o micro contraste, o que pode ou não ser desejável dependendo de suas intenções artísticas para a imagem. Para restaurar o micro contraste, tente usar um desfoque que respeite as bordas, como o filtro de suavização bilateral do G’MIC. O G’MIC para GIMP não funciona em máscaras de camada. Uma forma de contornar isso é transformar a máscara sem desfoque em uma seleção, salvar a seleção como um canal e, em seguida, arrastar o canal para a pilha de camadas para desfocar.</para>
+      </listitem>
+      <listitem><!--7-->
+        <para>Um componente essencial do procedimento para usar a operação Exposição para adicionar compensação de exposição positiva a imagens com sombras e tons médios escuros precisa ser explicitamente mencionado: não apenas a operação Exposição em grande profundidade de bits do GIMP é irrestrita para a precisão em ponto flutuante — <ulink url="https://gitlab.gnome.org/GNOME/gimp/-/issues/595">máscaras de camada também são irrestritas</ulink>.</para>
+        <para>Se as máscaras em tons de cinza invertidas fossem sumariamente cortadas (como é o caso ao editar com precisão de inteiro), então o procedimento descrito neste tutorial não funcionaria.</para>
+      </listitem>
+    </orderedlist>
+  </sect1>
+  <sect1 id="tone-mapping-conclusion">
+    <title>Conclusão</title>
+    <para>As fotografias tiradas sob a luz direta de sol forte normalmente são de cenas de alta faixa dinâmica, e o arquivo de câmera resultante geralmente requer mapeamento de tons cuidadoso para produzir uma imagem final satisfatória. A operação Exposição em ponto flutuante de grande profundidade de bits do GIMP fornece uma ferramenta muito útil para lidar com este tipo de imagem e, claro, é igualmente útil para qualquer imagem onde o objetivo é aumentar as sombras e os meios-tons sem estourar os tons claros.</para>
+    <para>A operação Exposição em ponto flutuante de grande profundidade de bits do GIMP combinada com uma máscara de camada adequada também pode ser usada para escurecer partes da imagem, seja movendo o seletor deslizante superior esquerdo de valor para a direita (escurece a imagem aumentando o contraste e também aumenta a saturação; requer mascaramento cuidadoso para evitar a produção de regiões de preto sólido), ou movendo o seletor deslizante inferior direito de valor para a esquerda (escurece a imagem diminuindo o contraste, útil para tirar a ênfase de partes da imagem).</para>
+    <para>Este é um tutorial específico para o GIMP. No entanto, a mesma técnica pode ser empregada usando o processador bruto PhotoFlow e possivelmente outros editores de imagem que permitem o processamento de ponto flutuante de 32 bits usando valores de canais RGB irrestritos. O interessante de usar essa técnica no PhotoFlow é que o PhotoFlow usa nós, o que permite a edição completamente não-destrutiva da máscara de tons de cinza invertida que é usada para recuperar o detalhe de tons claros após a aplicação de compensação de exposição positiva para aumentar a tonalidade das sombras e tons médios (mesmo se você fechar e reabrir a imagem, se você salvar o arquivo PFI da imagem).</para>
+    <para>
+      <subscript>O tutorial original do qual este foi adaptado pode ser e é reproduzido por cortesia de Elle Stone</subscript>
+    </para>
+    <para>
+      <subscript>Tutorial GIMP - Mapeamento de tons usando Níveis do GIMP (texto e imagens) por Elle Stone é licenciado sob uma Licença Creative Commons Atribuição-Compartilhamento Igual 3.0 Não-Adaptada.</subscript>
+    </para>
+  </sect1>
+</appendix>

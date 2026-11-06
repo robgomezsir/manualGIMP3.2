@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2.2. Channels Dialog</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-dialogs-structure.html" title="2. Image Structure Related Dialogs" />
+    <link rel="prev" href="gimp-dialogs-structure.html" title="2. Image Structure Related Dialogs" />
+    <link rel="next" href="gimp-path-dialog.html" title="2.3. Paths Dialog" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2.2. Channels Dialog</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-dialogs-structure.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>2. Image Structure Related Dialogs</span>
+        <nav> <a accesskey="n" href="gimp-path-dialog.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-channel-dialog"></a>2.2. Channels Dialog</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id21029" class="indexterm"></a>
+      <a id="id21032" class="indexterm"></a>
+      <div class="figure">
+        <a id="id1890"></a>
+        <p class="title">
+          <strong>Figure 15.6. The Channels dialog</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/dialogs/channels-dialog.png" alt="The Channels dialog" />
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    The Channels dialog is the main interface to edit, modify and manage your
+    channels. Channels have a double usage. This is why the dialog is divided
+    into two parts: the first part for color channels and the second part for
+    <a class="link" href="gimp-channel-dialog.html#gimp-channel-mask" title="2.2.4. Selection masks">selection masks</a>.
+  </p>
+      <p>
+    <span class="emphasis"><em>Color channels</em></span> apply to the image and not to a
+    specific layer. Basically, three primary colors are necessary to render
+    all the wide range of natural colors. As other digital software,
+    <acronym class="acronym">GIMP</acronym> uses Red, Green, and Blue as primary colors. The
+    first and primary channels display the <span class="guilabel">Red</span>,
+    <span class="guilabel">Green</span>, and <span class="guilabel">Blue</span> values of each
+    pixel in your image.
+  </p>
+      <p>
+    Next to the channel name is a thumbnail displaying a grayscale
+    representation of each channel, where white is 100% and black is
+    0% of the primary color. Alternatively, if your image is not a colored but
+    a Grayscale image, there is only one primary channel called
+    <span class="guilabel">Gray</span>. For an Indexed image with a fixed number of
+    known colors there is also only one primary channel called
+    <span class="guilabel">Indexed</span>.
+  </p>
+      <p>
+    Then there is an optional channel called <span class="guilabel">Alpha</span>. This
+    channel displays transparency values of each pixel in your image
+    (See <a class="link" href="glossary.html#glossary-alpha-channel" title="Alpha Channel">Alpha Channel</a> in
+    Glossary). In front of this channel is a thumbnail displaying a grayscale
+    representation of the transparency where white is opaque and visible, and
+    black is transparent and invisible. If you create your image without
+    transparency then the Alpha channel is not present, but you can add it
+    from the <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Layers Dialog">Layers Dialog</a> context
+    menu.
+    Also, if you have more than one layer in your image,
+    <acronym class="acronym">GIMP</acronym> automatically creates an Alpha channel.
+  </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Note]" src="images/note.png" />
+            </td>
+            <th align="left">Note</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>GIMP doesn't support CMYK or YUV color models.</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="figure">
+        <a id="id1891"></a>
+        <p class="title">
+          <strong>Figure 15.7. Representation of an image with channels</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/dialogs/wilber-channels-red.png" alt="Representation of an image with channels" />
+            <div class="caption">
+              <p>Red channel</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/dialogs/wilber-channels-green.png" alt="Representation of an image with channels" />
+            <div class="caption">
+              <p>Green channel</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/dialogs/wilber-channels-blue.png" alt="Representation of an image with channels" />
+            <div class="caption">
+              <p>Blue channel</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/dialogs/wilber-channels-alpha.png" alt="Representation of an image with channels" />
+            <div class="caption">
+              <p>Alpha channel</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/dialogs/wilber-channels-combined.png" alt="Representation of an image with channels" />
+            <div class="caption">
+              <p>All channels</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    The right image is decomposed in three color channels (red, green, and
+    blue) and the Alpha channel for transparency. On the right image the
+    transparency is displayed as a gray checkerboard. In the color channel
+    white is always white because all the colors are present and black is
+    black. The red hat is visible in the red channel but quite invisible in
+    the other channels. This is the same for plain green and blue which are
+    visible only in their own channels and invisible in others.
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-channel-dialog-calling"></a>2.2.1. Activating the Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      This dialog is a dockable dialog; see the
+      section <a class="xref" href="gimp-concepts-docks.html" title="2.3. Dialogs and Docking">Section 2.3, “Dialogs and Docking”</a> for help on manipulating
+      it.
+    </p>
+        <p>
+      You can access it:
+    </p>
+        <div class="itemizedlist">
+          <ul class="itemizedlist" style="list-style-type: disc; ">
+            <li class="listitem">
+              <p>
+          From the main menu through
+          <span class="guimenu">Windows</span> → <span class="guisubmenu">Dockable Dialogs</span> → <span class="guimenuitem">Channels</span>.
+        </p>
+            </li>
+            <li class="listitem">
+              <p>
+          From the Tab menu in any dockable dialog by clicking on
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-menu-left.svg" width="16" /></span>
+          </span> and selecting
+          <span class="guimenu">Add Tab</span> → <span class="guimenuitem">Channels</span>.
+        </p>
+            </li>
+          </ul>
+        </div>
+        <p>
+      In the <span class="guimenu">Windows</span> menu, there is a list of
+      <a class="link" href="gimp-concepts-docks.html#gimp-dockable-menu" title="2.3.2. Tab Menu">detached windows</a> which exists
+      only if at least one dialog remains open. In this case, you can raise
+      the <span class="quote">“<span class="quote">Channels</span>”</span> dialog from the main menu:
+      <span class="guimenu">Windows</span> → <span class="guimenuitem">Channels</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-channel-dialog-using"></a>2.2.2. Using the Channels Dialog</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <a id="gimp-channel-dialog-using-overview"></a>
+              <span class="term">Overview</span>
+            </dt>
+            <dd>
+              <p>
+            The Channels Dialog consists of a list of color channels and the
+            optional Alpha channel.
+            Below that is a list of selection mask channels.
+            A right-click in a channel list entry opens the
+            <a class="link" href="gimp-channel-dialog.html#gimp-channel-menu" title="2.2.3. Channels Context Menu">channel context menu</a>.
+          </p>
+              <p>
+            The color channels are always organized in the same order. They
+            cannot be removed. You can only change their visibility and
+            select or unselect them. By default, all of these channels are
+            visible and selected.
+          </p>
+              <p>
+            To select a channel, click on a color channel in the list.
+            This toggles the selection of the channel, meaning a selected
+            channel will become unselected and vice versa.
+            The selected color channels appear highlighted in the dialog.
+          </p>
+              <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Caution">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Caution]" src="images/caution.png" />
+                    </td>
+                    <th align="left">Caution</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+              Unselecting one of the color channels red, blue, or green has
+              severe consequences. For instance if you disable the blue channel,
+              all pixels from now on added to the image will not have a blue
+              component, and so a white pixel will have the yellow complementary
+              color.
+            </p>
+                      <p>
+              Making one of the color channels invisible does not influence how
+              tools work and only changes what is currently displayed on your
+              screen. For example, a brush will continue to paint as usual, and
+              the eraser will change the alpha value of pixels also when the
+              alpha channel is set to be not visible.
+            </p>
+                      <p>
+              The selected color channels define which parts of a tool's action
+              are applied to the layer. For example, the eraser will not change
+              your image if the alpha channel is not selected.
+            </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                <table border="0" summary="Note">
+                  <tr>
+                    <td rowspan="2" align="center" valign="top" width="25">
+                      <img alt="[Note]" src="images/note.png" />
+                    </td>
+                    <th align="left">Note</th>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top">
+                      <p>
+              The duplicate and selection commands documented below can also
+              be used on the color channels. However, this only works when
+              accessing the command from the right-click context menu, and
+              only for one channel at a time.
+            </p>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Selecting multiple channels</span>
+            </dt>
+            <dd>
+              <p>
+            <acronym class="acronym">GIMP</acronym> allows you to select multiple selection mask
+            channels and perform actions on them. You can e.g. move them to a
+            different location in the channels stack, and convert them to
+            selections.
+            Selecting multiple channels is done by using the mouse and
+            <span class="keycap"><strong>Shift</strong></span> key, for adding a range of channels, or
+            <span class="keycap"><strong>Ctrl</strong></span> key, for adding or removing the clicked
+            channel.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Channel list header</span>
+            </dt>
+            <dd>
+              <p>
+            Directly above the list of selection masks is the header bar. On
+            the left you see the icons that identify the visibility and lock
+            columns. In the middle a text label will tell you how many channels
+            are currently selected if it is more than one.
+          </p>
+            </dd>
+            <dt>
+              <a id="gimp-channel-dialog-using-attributes"></a>
+              <span class="term">
+            
+            <a id="gimp-channel-linked"></a>
+          <span class="phrase">Channel attributes</span>
+        </span>
+            </dt>
+            <dd>
+              <p>
+            Every channel is shown in the list with its own attributes, which are
+            very similar to the <a class="link" href="gimp-dialogs-structure.html#gimp-layer-attributes">layer
+            attributes</a>:
+          </p>
+              <div class="variablelist">
+                <a id="channel-attributes"></a>
+                <dl class="variablelist">
+                  <dt>
+                    <a id="gimp-channel-visible"></a>
+                    <span class="term">
+                <span class="guiicon">
+                <span class="inlinemediaobject"><img src="images/stock-icons/gimp-visible.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Channel visibility</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  By default, all color channels are visible, and color mask
+                  channels are invisible.
+                  Clicking on the eye-symbol, or the empty space if the channel
+                  is not visible, will toggle the visibility of the channel.
+                  <span class="keycap"><strong>Shift</strong></span>-clicking on the icon causes
+                  all <span class="emphasis"><em>other</em></span> channels to be hidden.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-channel-dialog-using-locks"></a>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-lock.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Channel lock attributes</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  Each selection mask channel has lock attributes. If one of its
+                  attributes is set, the respective lock icon will show up in front
+                  of the thumbnail.
+                </p>
+                    <p>
+                  When multiple attributes are set, a double lock icon will
+                  show here. Clicking in this column allows you to change
+                  these attributes.
+                </p>
+                    <div class="variablelist">
+                      <dl class="variablelist">
+                        <dt>
+                          <a id="gimp-channel-lock-pixels"></a>
+                          <span class="term">
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-lock-content.svg" width="16" /></span>
+                      </span>
+                      <span class="phrase">Lock pixels</span>
+                    </span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This icon shows when <span class="quote">“<span class="quote">lock pixels</span>”</span> is
+                        enabled for the current channel. When this is enabled,
+                        the channel is locked for any action that changes
+                        pixels, meaning there will be no changes done to this
+                        channel.
+                      </p>
+                        </dd>
+                        <dt>
+                          <a id="gimp-channel-lock-position"></a>
+                          <span class="term">
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-lock-position.svg" width="16" /></span>
+                      </span>
+                      <span class="phrase">Lock position and size</span>
+                    </span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This icon shows when <span class="quote">“<span class="quote">lock position and size</span>”</span>
+                        is enabled for the current channel. When this is enabled,
+                        the channel is locked for any action that changes its
+                        position or size.
+                      </p>
+                        </dd>
+                        <dt>
+                          <a id="gimp-channel-lock-visibility"></a>
+                          <span class="term">
+                      <span class="guiicon">
+                        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-lock-visibility.svg" width="16" /></span>
+                      </span>
+                      <span class="phrase">Lock visibility</span>
+                    </span>
+                        </dt>
+                        <dd>
+                          <p>
+                        This toggle button controls the <span class="quote">“<span class="quote">Lock</span>”</span>
+                        setting for the visibility of the channel. If this is
+                        enabled, the channel visibility cannot be changed until
+                        you disable the lock.
+                      </p>
+                        </dd>
+                      </dl>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Thumbnail</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  A small preview icon represents the effect of the channel. This
+                  preview can be enlarged by holding down the left mouse button
+                  on it.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Channel name</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  The name of the channel, which must be unique within the image.
+                  Double-clicking on the name of a selection mask channel will
+                  allow you to edit it. The names of the primary channels (Red,
+                  Green, Blue, Alpha) can not be changed.
+                  Double-clicking on the preview icon will open a dialog where
+                  you can set all channel attributes.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <a id="gimp-channel-dialog-using-managing"></a>
+              <span class="term">Managing channels</span>
+            </dt>
+            <dd>
+              <a id="id21210" class="indexterm"></a>
+              <a id="id21213" class="indexterm"></a>
+              <a id="id21216" class="indexterm"></a>
+              <a id="id21219" class="indexterm"></a>
+              <a id="id21222" class="indexterm"></a>
+              <a id="id21225" class="indexterm"></a>
+              <p>
+            The button bar at the bottom offers the following functionality:
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <a id="gimp-channel-new"></a>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/document-new.svg" width="16" /></span>
+                </span>
+                <span class="phrase">New Channel</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This creates a new channel. A dialog will open where you can set
+                  the <span class="guilabel">Channel name</span>, the
+                  <span class="guilabel">Color tag</span>, the
+                  <a class="link" href="gimp-channel-dialog.html#channel-attributes">channel attributes</a> and
+                  <a class="link" href="gimp-channel-dialog.html#gimp-channel-dialog-using-locks">lock attributes</a>,
+                  and finally the <span class="guilabel">Opacity</span> and color used for
+                  the mask in the image window. A click on the color button
+                  displays the GIMP color selector where you can change the mask
+                  color.
+                </p>
+                    <p>
+                  If you press the <span class="keycap"><strong>Shift</strong></span> key while clicking the
+                  <span class="guibutton">New Channel</span> button, the New Channel
+                  dialog will not be opened. Instead the new channel will be
+                  created with the same settings as used previously.
+                  This new channel is a selection mask applied over the image.
+                  See for more details
+                  <a class="link" href="gimp-channel-dialog.html#gimp-channel-mask" title="2.2.4. Selection masks">Selection Mask</a>.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-channel-raise"></a>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/go-up.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Raise Channels</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <a id="gimp-channel-raise-to-top"></a>
+                    <p>
+                  This moves the selected channels up in the list.
+                  Press the <span class="keycap"><strong>Shift</strong></span> key to move the selected
+                  channels to the top of the list.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-channel-lower"></a>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/go-down.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Lower Channels</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <a id="gimp-channel-lower-to-bottom"></a>
+                    <p>
+                  This moves selected channels down in the list.
+                  Press the <span class="keycap"><strong>Shift</strong></span> key to move the selected
+                  channels to the bottom of the list.
+                </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-channel-duplicate"></a>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-duplicate.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Duplicate Channels</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This creates a copy of the selected channels. The name
+                  of the new channels is suffixed with a number.
+                </p>
+                    <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+                      <table border="0" summary="Tip">
+                        <tr>
+                          <td rowspan="2" align="center" valign="top" width="25">
+                            <img alt="[Tip]" src="images/tip.png" />
+                          </td>
+                          <th align="left">Tip</th>
+                        </tr>
+                        <tr>
+                          <td align="left" valign="top">
+                            <p>
+                    You can also duplicate color channels or the Alpha channel.
+                    It's an easy way to keep a copy of them and to use them later
+                    as a selection in an image.
+                    Note that you can only duplicate one color channel at a
+                    time, and only using the right-click context menu.
+                  </p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </dd>
+                  <dt>
+                    <a id="gimp-channel-selection-replace"></a>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-selection.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Replace the Selection with Selected Channels</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This transforms the selected channels to become a selection. By
+                  default the selection derived from channels replaces the
+                  active selection. You can change this by using control keys.
+                </p>
+                    <div class="itemizedlist">
+                      <ul class="itemizedlist" style="list-style-type: disc; ">
+                        <li class="listitem">
+                          <p><a id="gimp-channel-selection-add"></a>
+                      <span class="keycap"><strong>Shift</strong></span>:
+                      the selection derived from a channel is added to the
+                      active selection. The final selection is merged from both.
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p><a id="gimp-channel-selection-subtract"></a>
+                      <span class="keycap"><strong>Ctrl</strong></span>:
+                      the final selection is the subtraction of the selection
+                      derived from a channel from the active selection.
+                    </p>
+                        </li>
+                        <li class="listitem">
+                          <p><a id="gimp-channel-selection-intersect"></a>
+                      <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Ctrl</strong></span>:
+                      the final selection is the intersection of the selection
+                      derived from a channel with the active one. Only the
+                      selected parts common to both are kept.
+                    </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </dd>
+                  <dt>
+                    <a id="gimp-channel-delete"></a>
+                    <span class="term">
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/edit-delete.svg" width="16" /></span>
+                </span>
+                <span class="phrase">Delete Channels</span>
+              </span>
+                  </dt>
+                  <dd>
+                    <p>
+                  This deletes the selected channels.
+                </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-channel-menu"></a>2.2.3. Channels Context Menu</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id21313" class="indexterm"></a>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Overview</span>
+            </dt>
+            <dd>
+              <p>
+          You can get the Channels context menu by right clicking on a channel.
+          Several of the operations on channels are also available through
+          buttons at the bottom of the channels list. Those operations are
+          documented <a class="link" href="gimp-channel-dialog.html#gimp-channel-edit">there</a>.
+        </p>
+              <p>
+          These commands, except <span class="guilabel">Edit Channel Attributes…</span>,
+          also work when multiple channels are selected.
+        </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <a id="gimp-channel-edit"></a>
+                    <span class="term">Edit Channel Attributes…</span>
+                  </dt>
+                  <dd>
+                    <p>
+                Only available for selection masks. Here you can change the
+                <span class="guilabel">Channel name</span>, the
+                <span class="guilabel">Color tag</span>, the
+                <a class="link" href="gimp-channel-dialog.html#channel-attributes">channel attributes</a> and
+                <a class="link" href="gimp-channel-dialog.html#gimp-channel-dialog-using-locks">lock attributes</a>,
+                and finally the <span class="guilabel">Opacity</span> and color used for
+                the mask in the image window. A click on the color button
+                displays the GIMP color selector where you can change the mask
+                color.
+              </p>
+                  </dd>
+                  <dt>
+                    <a id="gimp-channel-color-tag"></a>
+                    <span class="term">Color Tags</span>
+                  </dt>
+                  <dd>
+                    <p>
+                Only available for selection masks. This allows you to assign
+                a color tag to one or more selected channels. If you have a lot
+                of channels this can make it easier to identify them by giving
+                related channels the same color tag.
+                To remove the color tag choose <span class="guilabel">None</span>.
+              </p>
+                  </dd>
+                  <dt>
+                    <span class="term">New Channel…, </span>
+                    <span class="term">Raise Channels, </span>
+                    <span class="term">Lower Channels, </span>
+                    <span class="term">Duplicate Channels, </span>
+                    <span class="term">Delete Channels</span>
+                  </dt>
+                  <dd>
+                    <p>
+                See
+                <a class="link" href="gimp-channel-dialog.html#gimp-channel-edit">Managing channels</a>.
+              </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Channels to Selection</span>
+                  </dt>
+                  <dd>
+                    <p>
+                The selection derived from the selected channels replaces the
+                previously active selection.
+              </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Add Channels to Selection</span>
+                  </dt>
+                  <dd>
+                    <p>
+                The selection derived from the selected channels is added to the
+                active selection. The final selection is merged from both.
+              </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Subtract Channels from Selection</span>
+                  </dt>
+                  <dd>
+                    <p>
+                The final selection is the subtraction of the selection
+                derived from the selected channels from the active selection.
+              </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Intersect Channels with Selection</span>
+                  </dt>
+                  <dd>
+                    <p>
+                The final selection is the intersection of the selection
+                derived from the selected channels with the active one. Only the
+                selected parts common to both are kept.
+              </p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-channel-mask"></a>2.2.4. Selection masks</h4>
+            </div>
+          </div>
+        </div>
+        <a id="dialogs-selection-masks"></a>
+        <a id="id21367" class="indexterm"></a>
+        <a id="id21370" class="indexterm"></a>
+        <a id="id21373" class="indexterm"></a>
+        <a id="id21376" class="indexterm"></a>
+        <a id="id21379" class="indexterm"></a>
+        <div class="figure">
+          <a id="id1892"></a>
+          <p class="title">
+            <strong>Figure 15.8. A selection composed out of channels.</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/channel-masks-example-dialog.png" alt="A selection composed out of channels." />
+            </div>
+            <div class="mediaobject">
+              <img src="images/dialogs/channel-masks-example-example.png" alt="A selection composed out of channels." />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    Channels can be used to save and restore your selections.
+    In the Channels dialog you can see a thumbnail representing the selection.
+    Selection Masks are a graphical way to build selections into a gray level
+    channel where white pixels are selected and black pixels are not selected.
+    Therefore gray pixels are partially selected. You can think of them as
+    feathering the selection, a smooth transition between selected and not
+    selected. This is important to avoid the ugly pixelization effect when you
+    fill the selection or when you erase its content after isolating a subject
+    from background.
+  </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Creating Selection Masks</span>
+            </dt>
+            <dd>
+              <p>
+          There are several ways to initialize a selection mask.
+          </p>
+              <div class="itemizedlist">
+                <ul class="itemizedlist" style="list-style-type: disc; ">
+                  <li class="listitem">
+                    <p>
+                From the main menu
+                <span class="guimenu">Select</span> → <span class="guimenuitem">Save to Channel</span>
+                if there is an active selection.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                In the image window the bottom-left
+                <span class="guiicon">
+                  <span class="inlinemediaobject"><img src="images/stock-icons/gimp-quick-mask-off-symbolic.svg" width="16" /></span>
+                </span>
+                button creates a
+                <a class="link" href="gimp-channel-dialog.html#gimp-quick-mask" title="2.2.5. Quick Mask">Quick Mask</a>; the content
+                will be initialized with the active selection.
+              </p>
+                  </li>
+                  <li class="listitem">
+                    <p>
+                From the Channels dialog, when you click on the
+                <span class="guilabel">New channel</span> button or from the context
+                menu. When created, this Selection mask appears in the
+                Channels dialog, named <span class="quote">“<span class="quote">Selection maskcopy</span>”</span> with
+                a queuing number. You can change this by using the context
+                menu that you get by right-clicking on the channel.
+              </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+        </p>
+            </dd>
+          </dl>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id1893"></a>2.2.4.1. Using Selection Masks</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      Once the channel is initialized, selected (highlighted in blue), visible
+      (eye-icon in the dialog), and displayed as you want (color and opacity
+      attributes), you can start to work with all the paint tools. The colors
+      used are important. If you paint with some color other than white, gray,
+      or black, the color Value (luminosity) will be used to define a gray
+      (medium, light, or dark). When your mask is painted, you can transform
+      it to a selection by clicking on the
+      <span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-selection.svg" width="16" /></span>
+      </span>
+      button (<a class="link" href="gimp-channel-dialog.html#gimp-channel-selection-replace">Channel to
+      Selection</a>) or from the
+      <a class="link" href="gimp-channel-dialog.html#gimp-channel-menu" title="2.2.3. Channels Context Menu">context menu</a>.
+    </p>
+          <p>
+      You can work in selection masks not only with the paint tool but also
+      with other tools. For instance, you can use the selection tools to fill
+      areas uniformly with gradients or patterns. By adding many selection
+      masks in your list you can easily compose very complex selections. One
+      can say that a selection mask is to a selection as a layer is to an
+      image.
+    </p>
+          <div class="caution" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Caution">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Caution]" src="images/caution.png" />
+                </td>
+                <th align="left">Caution</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        As long as a selection mask is activated you are working in the mask
+        and not in the image. To work in the image you have to deactivate all
+        selection masks. Don't forget also to stop displaying masks in the
+        image by removing the eye icon. Check also that all RGB and Alpha
+        channels are activated and displayed in the image.
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-quick-mask"></a>2.2.5. Quick Mask</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id1894"></a>
+          <p class="title">
+            <strong>Figure 15.9. Dialog Quick Mask</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/channel-quickmask.png" alt="Dialog Quick Mask" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+    A <span class="guilabel">Quick Mask</span> is a
+    <a class="link" href="gimp-channel-dialog.html#gimp-channel-mask" title="2.2.4. Selection masks">Selection Mask</a>
+    intended to be used temporarily to paint a selection. Temporarily means
+    that, unlike a normal selection mask, it will be deleted from the
+    channel list after its transformation to selection. The
+    <a class="link" href="gimp-tools-selection.html" title="2. Selection Tools">selection tools</a>
+    sometimes show their limits when they have to be used for doing complex
+    drawing selection, as progressive. In this case, using the Quick Mask is a
+    good idea which can give very good results.
+  </p>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id1895"></a>2.2.5.1. Activating the Dialog</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      The Quick Mask can be activated in different ways:
+    </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>
+          From the main menu:
+          <span class="guimenu">Select</span> → <span class="guimenuitem">Toggle Quick Mask</span>.
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          By clicking the bottom-left
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-quick-mask-off-symbolic.svg" width="16" /></span>
+          </span>
+          button highlighted in the screenshot.
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          By using the
+          <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>Q</strong></span>
+          shortcut.
+        </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id1896"></a>2.2.5.2. Creating a Quick Mask</h5>
+              </div>
+            </div>
+          </div>
+          <p>
+      To initialize a <span class="guilabel">Quick Mask</span>,
+      click the bottom-left
+      <span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-quick-mask-off-symbolic.svg" width="16" /></span>
+      </span>
+      button in the image window. If a selection was
+      active in your image, then its content appears unchanged while the
+      border is covered with a translucent red color. If no selection was
+      active then all the image is covered with a translucent red color.
+      Another click on the bottom-left button will deactivate the quick mask.
+    </p>
+          <p>
+      From the Channels dialog you can double click on the name or the
+      thumbnail to edit the <span class="guilabel">QMask</span> attributes. Then you
+      can change the <span class="guilabel">Opacity</span> and its filling color. At
+      every moment you can hide the mask by clicking on the eye icon
+      <span class="guiicon">
+        <span class="inlinemediaobject"><img src="images/stock-icons/gimp-visible.svg" width="16" /></span>
+      </span>
+      in front of the <span class="guilabel">QMask</span>.
+    </p>
+          <p>
+      The mask is coded in gray tones, so you must use white or gray to
+      decrease the area limited by the mask and black to increase it. The area
+      painted in light or dark gray will be transition areas for the selection
+      like feathering. When your mask is ready, click again on the bottom-left
+      button in the image window and the quick mask will be removed from the
+      channel list and converted to a selection.
+    </p>
+          <p>
+      Quick mask's purpose is to paint a selection and its transitions with
+      the paint tools without worrying about managing selection masks. It's a
+      good way to isolate a subject in a picture because once the selection is
+      made you only have to remove its content (or inverse if the subject is
+      in the selection).
+    </p>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id1897"></a>2.2.5.3. Using Quick Mask with a gradient</h5>
+              </div>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/dialogs/channel-masks-gradient-1.png" />
+            <div class="caption">
+              <p>
+          Screenshot of the image window with activated Quick Mask. As long as
+          the Quick Mask is activated, all operations are done on it. A
+          gradient from black (left) to white (right) has been applied to the
+          mask.
+        </p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/dialogs/channel-masks-gradient-2.png" />
+            <div class="caption">
+              <p>
+          The Quick Mask is now disabled. The selection occupies the right half
+          part of the image (<a class="link" href="glossary.html#glossary-marching-ants" title="Marching Ants">marching
+          ants</a>) because the limit of the selection is at the middle of
+          the gradient.
+        </p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/dialogs/channel-masks-gradient-3.png" />
+            <div class="caption">
+              <p>
+          A stroke is now added during the enabled selection. Weird! The
+          gradient, although not visible, remains active all over the image,
+          in selected and non selected areas!
+        </p>
+            </div>
+          </div>
+          <p>
+      After the Quick Mask Button is pressed, the command generates a
+      temporary 8-bit (0-255) channel, on which the progressive selection
+      work is stored. If a selection is already present the mask is
+      initialized with the content of the selection. Once Quick Mask has been
+      activated, the image is covered by a red semi-transparent veil. This
+      one represents the non-selected pixels. Any
+      <a class="link" href="gimp-tools-paint.html" title="3. Paint Tools">paint tool</a>
+      can be used to create the selection on the Quick Mask. They should use
+      only grayscale color, conforming the channel properties, white enabling
+      to define the future selected place. The selection will be displayed as
+      soon as the Quick Mask will be toggled but its temporary channel will
+      not be available anymore.
+    </p>
+          <div class="tip" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Tip">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Tip]" src="images/tip.png" />
+                </td>
+                <th align="left">Tip</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        To save in a channel the selection done with the Quick Mask select in
+        the main menu
+        <span class="guimenu">Select</span> → <span class="guimenuitem">Save to Channel</span>.
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="sect4">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h5 class="title"><a id="id1898"></a>2.2.5.4. Usage</h5>
+              </div>
+            </div>
+          </div>
+          <div class="procedure">
+            <ol class="procedure" type="1">
+              <li class="step">
+                <p>
+          <a class="link" href="gimp-file-open.html" title="2.4. Open…">Open</a> an image or begin a
+          <a class="link" href="gimp-file-new.html" title="2.2. New…">new document</a>.
+        </p>
+              </li>
+              <li class="step">
+                <p>
+          Activate the Quick Mask using the left-bottom button in the image
+          window. If a selection is present the mask is initialized with the
+          content of the selection.
+        </p>
+              </li>
+              <li class="step">
+                <p>
+          Choose a <a class="link" href="gimp-tools-paint.html" title="3. Paint Tools">drawing tool</a>
+          and use it with grayscale colors on the Quick Mask.
+        </p>
+              </li>
+              <li class="step">
+                <p>
+          Deactivate the Quick Mask using the left-bottom button in the image
+          window.
+        </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-dialogs-structure.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-structure.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-path-dialog.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-dialogs-structure.html">2. Image Structure Related Dialogs</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-path-dialog.html">2.3. Paths Dialog</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

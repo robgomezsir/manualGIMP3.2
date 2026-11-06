@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.53. Smooth Palette</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. The “Colors” Menu" />
+    <link rel="prev" href="plug-in-borderaverage.html" title="8.52. Border Average" />
+    <link rel="next" href="gimp-tool-threshold.html" title="8.54. Threshold" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.53. Smooth Palette</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="plug-in-borderaverage.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>8. The <span class="quote">“<span class="quote">Colors</span>”</span> Menu</span>
+        <nav> <a accesskey="n" href="gimp-tool-threshold.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="plug-in-smooth-palette"></a>8.53. Smooth Palette</h3>
+          </div>
+        </div>
+      </div>
+      <a id="id44497" class="indexterm"></a>
+      <a id="id44500" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2873"></a>8.53.1. Overview</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2874"></a>
+          <p class="title">
+            <strong>Figure 16.216. Example for the <span class="quote">“<span class="quote">Smooth Palette</span>”</span> filter</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/filters/examples/taj_orig.jpg" alt="Example for the “Smooth Palette” filter" />
+              <div class="caption">
+                <p>Original image</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/filters/examples/color-taj-smoothpalette.jpg" alt="Example for the “Smooth Palette” filter" />
+              <div class="caption">
+                <p>Filter <span class="quote">“<span class="quote">Smooth Palette</span>”</span> applied</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>
+      It creates a striped palette from colors in active layer or selection.
+      The main purpose of this filter is to create color-maps to be used with
+      the <a class="link" href="plug-in-flame.html" title="14.2. Flame">Flame</a> filter.
+    </p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Note]" src="images/note.png" />
+              </td>
+              <th align="left">Note</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        This command only works on RGB images. If the image is Grayscale or
+        Indexed, the menu entry is disabled.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2875"></a>8.53.2. Activating the Command</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this command from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guisubmenu">Info</span> → <span class="guimenuitem">Smooth Palette…</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id2876"></a>8.53.3. Options</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id2877"></a>
+          <p class="title">
+            <strong>Figure 16.217. <span class="quote">“<span class="quote">Smooth Palette</span>”</span> options</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/info/smoothpalette.png" alt="“Smooth Palette” options" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Width, </span>
+              <span class="term">Height</span>
+            </dt>
+            <dd>
+              <p>
+            You can set palette dimensions for <span class="guilabel">Width</span> and
+            <span class="guilabel">Height</span>. Dimensions are linked when the chain
+            is not broken. You can also select the unit.
+          </p>
+            </dd>
+            <dt>
+              <span class="term">Search depth</span>
+            </dt>
+            <dd>
+              <p>
+            Increasing Search depth (1 - 1024) will result in more shades in
+            the palette.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="plug-in-borderaverage.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-tool-threshold.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="plug-in-borderaverage.html">8.52. Border Average</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-tool-threshold.html">8.54. Threshold</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

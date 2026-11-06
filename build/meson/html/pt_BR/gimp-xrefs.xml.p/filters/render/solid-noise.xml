@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2019-03-10 j.h: update to v2.10
+-->
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-noise-solid">
+  <title>Ruído sólido</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Renderizar</secondary>
+    <tertiary>Ruído sólido</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Ruído sólido</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão geral</title>
+    <figure>
+      <title>Exemplo de ruído sólido com turbulência</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/render-taj-solidnoise.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>
+      Solid Noise is a great texture maker. Note that this noise is
+      always gray, even if you applied it to a very colorful image (it
+      doesn't matter what the original image looks like -- this filter
+      completely overwrites any existing background in the layer it is
+      applied to). This is also a good tool to create displacement maps for
+      the <link linkend="gimp-tool-warp">Warp transform</link> tool or for the
+      <link linkend="gimp-filter-bump-map">Bump Map</link> filter. With the
+      "turbulence" setting active, the results look quite a bit like real
+      clouds.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Render</guisubmenu>
+        <guisubmenu>Noise</guisubmenu>
+        <guimenuitem>Solid Noise…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções de filtro <quote>Ruído sólido</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/render/solid_noise-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Presets</term>
+        <term><quote>Input Type</quote></term>
+        <term>Clipping</term>
+        <term>Blending Options</term>
+        <term>Pré-visualização</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="../about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Tamanho X</term>
+        <term>Tamanho Y</term>
+        <listitem>
+          <para>Estas controlam o tamanho e proporção das formas de ruído nas direções X (horizontal) e Y (vertical) (intervalo de 0,1 a 16,0).</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Detalhe</term>
+        <listitem>
+          <para>Controla a quantidade de detalhes na textura do ruído. Valores mais altos resultam em um nível maior de detalhes, e o ruído parece ser feito de spray ou pequenas partículas, o que o torna muito nítido e <quote>duro</quote>. Valores menores geram texturas mais suaves e nubladas.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Ladrilhável</term>
+        <listitem>
+          <para>Se você marcar esta opção, você terá uma textura de ruído que se encaixa lado a lado consigo mesmo, de forma imperceptível, como ladrilhos. Por exemplo, você pode usá-la como plano de fundo em uma página HTML, se estiver fazendo uma página em 1995, para o Geocities,  e as bordas da mesma não serão percebidas nas emendas. A imagem resultante também pode ser salva como uma textura do GIMP.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Turbulento</term>
+        <listitem>
+          <para>Se você marcar esta opção, você vai ter efeitos muito interessantes, muitas vezes algo que se parece muito com o óleo sobre a água, ou nuvens de fumaça, ou tecido vivo, ou uma mancha de Rorschach.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Semente aleatória</term>
+        <term>Nova semente</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+</sect2>

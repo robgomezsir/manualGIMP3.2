@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect2 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<!-- section history:
+  2010-04-21 liangtai: created initial version
+-->
+<sect2 id="script-fu-weave">
+  <title>Traçar</title>
+
+  <indexterm>
+    <primary>Filtros</primary>
+    <secondary>Artísticos</secondary>
+    <tertiary>Traçar</tertiary>
+  </indexterm>
+  <indexterm>
+    <primary>Traçar</primary>
+  </indexterm>
+
+  <sect3>
+    <title>Visão-geral</title>
+    <figure>
+      <title>Exemplo de traçar</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/taj_orig.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Imagem original</para>
+        </caption>
+      </mediaobject>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/artistic-taj-weave.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Filter applied</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>O comando <guimenuitem>traçar</guimenuitem> é um script de Script-Fu que cria uma nova camada preenchida com um efeito de traçado e adiciona essa camada à imagem através de uma sobreposição ou mapa de relevo. O resultado da imagem irá parecer como se tivesse sido impresso em fitas traçadas de papel, fitas de madeira, ou bambu cortado.</para>
+    <para>Esse filtro adiciona uma camada no modo <quote>multiplicar</quote> acima da camada na qual você ativou o comando. A textura de traçado é criada em tons de cinza.</para>
+    <note>
+      <para>
+        If the image is in indexed mode, this menu entry is disabled.
+      </para>
+    </note>
+  </sect3>
+
+  <sect3>
+    <title>Activating the Filter</title>
+    <para>
+      This filter is found in the main menu under
+      <menuchoice>
+        <guimenu>Filters</guimenu>
+        <guisubmenu>Artistic</guisubmenu>
+        <guimenuitem>Weave…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Opções do filtro <quote>traçar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/filters/artistic/weave.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>Para produzir uma textura de faixa grossa, aumente o espaçamento das faixas e/ou diminua a largura das faixas.</para>
+    <para>Para fitas muito tensionadas, diminua a profundidade da sombra.</para>
+    <variablelist>
+      <varlistentry>
+        <term>Largura das faixas</term>
+        <listitem>
+          <para>Com essa opção você pode definir a largura da fita em pixel com valores entre 0,0 e 256,0. Por padrão estão definidos 30,0 pixels.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Espaçamento das faixas</term>
+        <listitem>
+          <para>Com essa opção você pode definir a distancia à faixa vizinha ou o tamanho do quadrado preto em valores de pixel entre 0,0 e 256,0. Por padrão estão definidos 10 pixels.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Escuridão da sombra</term>
+        <listitem>
+          <para>Com essa opção você pode definir a escuridão das faixas finas através de uma porcentagem. Valores menores mostram faixas mais claras. O valor padrão definido é 75,0%.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Profundidade da sombra</term>
+        <listitem>
+          <para>Com essa opção você pode definir o nível de escuridão da sombra nas sobreposições em valores de porcentagem. Valores mais altos mostram fitas mais onduladas, enquanto que valores menores mostram uma superfície mais planas. O efeito, de fato, é limitado pela <guilabel>escuridão da sombra</guilabel>. O valor padrão é de 75%.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Comprimento dos fios</term>
+        <listitem>
+          <para>Com essa opção você pode definir a regularidade da textura de faixa. Se esse valor é menor que o valor de largura de faixas e o dobro do valor de espaçamento de faixas, então a superfície das faixas tornam-se picotadas. O valor é definido em pixel em uma quantidade entre 0,0 a 256,0. O valor padrão é de 200,0.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Densidade de fios</term>
+        <listitem>
+          <para>Com essa opção você pode definir a densidade das pequenas fibras paralelas presentes na superfície da faixa. Aumente esse valor para aumentar a quantidade de fios. O valor padrão é de 50%.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term>Intensidade de fios</term>
+        <listitem>
+          <para>Com essa opção você pode definir a opacidade da textura da faixa. Pequenos valores mostram fios vagos. Para retirar os fios defina o valor em 0,0%. O valor padrão é de 100,0%.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect3>
+
+  <sect3>
+    <title>Outra utilidade</title>
+    <figure>
+      <title>Adicionando laços entrelaçados usando a textura <quote>trançar</quote></title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="JPG" fileref="images/filters/examples/artistic-weave-as-lattice.jpg"/>
+        </imageobject>
+        <caption>
+          <para>Estreite a largura das faixas, aumente espaçamento das faixas, e preencha com a textura de <quote>madeira</quote>.</para>
+        </caption>
+      </mediaobject>
+    </figure>
+    <para>Essa textura pode ser entrelaçada de forma que você possa ver a imagem original através dos buracos da malha. Crie uma nova camada transparente acima da camada ativa para fazer o entrelaçamento, e aplique este filtro. Selecione um quadrado preto regular na camada da textura usando a ferramenta de <link linkend="gimp-tool-by-color-select">Seleção por cores</link>.</para>
+  </sect3>
+</sect2>

@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>2. Layer Modes</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="GNU Image Manipulation Program" />
+    <link rel="up" href="gimp-image-combining.html" title="Chapter 8. Combining Images" />
+    <link rel="prev" href="gimp-image-combining.html" title="Chapter 8. Combining Images" />
+    <link rel="next" href="layer-mode-group-lighten.html" title="2.2. Lighten Layer Modes" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>2. Layer Modes</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-image-combining.html">
+            <img src="images/prev.png" alt="Prev" />
+          </a>
+        </nav>
+        <span>Chapter 8. Combining Images</span>
+        <nav> <a accesskey="n" href="layer-mode-group-lighten.html"><img src="images/next.png" alt="Next" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect1">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title" style="clear: both"><a id="gimp-concepts-layer-modes"></a>2. Layer Modes</h2>
+          </div>
+        </div>
+      </div>
+      <a id="id9154" class="indexterm"></a>
+      <a id="id9157" class="indexterm"></a>
+      <a id="id9159" class="indexterm"></a>
+      <a id="id9162" class="indexterm"></a>
+      <a id="id9164" class="indexterm"></a>
+      <a id="id9166" class="indexterm"></a>
+      <p>
+    <acronym class="acronym">GIMP</acronym> has a wide variety of layer modes, split up in seven
+    groups: <a class="link" href="gimp-concepts-layer-modes.html#layer-mode-group-normal" title="2.1. Normal Layer Modes">Normal</a>,
+    <a class="link" href="layer-mode-group-lighten.html" title="2.2. Lighten Layer Modes">Lighten</a>,
+    <a class="link" href="layer-mode-group-darken.html" title="2.3. Darken Layer Modes">Darken</a>,
+    <a class="link" href="layer-mode-group-contrast.html" title="2.4. Contrast Layer Modes">Contrast</a>,
+    <a class="link" href="layer-mode-group-inversion.html" title="2.5. Inversion Layer Modes">Inversion</a>,
+    <a class="link" href="layer-mode-group-hsv.html" title="2.6. HSV Components Layer Modes">HSV components</a>, and
+    <a class="link" href="layer-mode-group-lch.html" title="2.7. LCh Components Layer Modes">LCh components</a>.
+    In addition to these layer modes, there are also the so-called
+    <a class="link" href="gimp-concepts-layer-modes-legacy.html" title="3. Legacy Layer Modes">legacy layer modes</a>,
+    which were used before <acronym class="acronym">GIMP</acronym> 2.10.
+  </p>
+      <p>
+    These legacy layer modes are still available, both for backwards
+    compatibility with saved images from older GIMP versions, and also for
+    specific effects, or for compatibility with other image formats, e.g.
+    Photoshop PSD. In general, they are not used when creating new images.
+  </p>
+      <p>
+    Layer modes are also called <span class="quote">“<span class="quote">blending modes</span>”</span>. Selecting a layer
+    mode changes the appearance of the layer or image, based on the layer or
+    layers beneath it.
+    Each layer in an image can have a different layer mode. The effects of these
+    layer modes are cumulative. However, setting the mode to anything but Normal
+    for the bottom layer of any layer group and the bottom layer of the image
+    has no effect.
+  </p>
+      <p>
+    In addition to the generic layer modes, there is one more layer mode called
+    <span class="quote">“<span class="quote">Pass through</span>”</span>, which is only available for
+    <a class="link" href="gimp-layer-groups.html" title="5. Layer Groups">group layers</a>.
+  </p>
+      <p>
+    <span class="guilabel">Pass through</span> mode, is less a blending mode in and of
+    itself than an instruction for the group as a whole: it indicates that
+    layers inside the group are to be rendered in combination with other layers
+    below the group, instead of being rendered separately from them.
+  </p>
+      <p>
+    For more details about <span class="guilabel">Pass through</span>, see
+    <a class="xref" href="glossary.html#glossary-pass-through" title="Pass through">
+      <span class="phrase">Pass through</span>
+    </a> in the Glossary.
+  </p>
+      <p>
+    You can set the layer mode in the <span class="guilabel">Mode</span> drop-down menu
+    at the top of the <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Layers Dialog">Layers Dialog</a>.
+    <acronym class="acronym">GIMP</acronym> uses the layer mode to determine how to combine
+    each pixel in the top layer with the pixel in the same location in the
+    layer below it.
+  </p>
+      <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+        <table border="0" summary="Note">
+          <tr>
+            <td rowspan="2" align="center" valign="top" width="25">
+              <img alt="[Note]" src="images/note.png" />
+            </td>
+            <th align="left">Note</th>
+          </tr>
+          <tr>
+            <td align="left" valign="top">
+              <p>
+      When the active tool is a painting tool, there is a drop-down list in the
+      Tool Options which contains modes that affect the painting tools in a
+      similar way to the layer modes. You can use all of the same modes for
+      painting that are available for layers, and there are additional modes
+      just for the painting tools. See
+      <a class="xref" href="gimp-tools-paint.html#gimp-paint-mode-examples" title="3.1.3. Paint Mode Examples">Section 3.1.3, “Paint Mode Examples”</a>.
+    </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <p>
+    Layer modes permit complex color changes in the image. They are often used
+    with a new layer which acts as a kind of mask.
+    For example, if you put a solid white layer over an image and set the layer
+    mode of the new layer to <span class="quote">“<span class="quote">HSV Saturation</span>”</span>, the underlying
+    visible layers will appear in shades of gray.
+  </p>
+      <div class="figure">
+        <a id="id1433"></a>
+        <p class="title">
+          <strong>Figure 8.7. Images used for the layer mode examples</strong>
+        </p>
+        <div class="figure-contents">
+          <div class="mediaobject">
+            <img src="images/using/duck_orig.png" alt="Images used for the layer mode examples" />
+            <div class="caption">
+              <p>Background image (bottom layer)</p>
+            </div>
+          </div>
+          <div class="mediaobject">
+            <img src="images/using/original-layer-modes-mask.png" alt="Images used for the layer mode examples" />
+            <div class="caption">
+              <p>Mask (top layer)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br class="figure-break" />
+      <p>
+    The examples below show the effects of each of the layer modes. Each
+    example will also describe the effect of the layer mode.
+  </p>
+      <p>
+    Since the results of each mode vary greatly depending upon the colors on
+    the layers, these images can only give you a general idea of how the modes
+    work. You are encouraged to try them out yourself. You might start with
+    two similar layers, where one is a copy of the other, but slightly
+    modified (by being blurred, moved, rotated, scaled, color-inverted, etc.),
+    and see what happens when you change the layer mode of the top layer.
+  </p>
+      <div class="sect2">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h3 class="title"><a id="layer-mode-group-normal"></a>2.1. Normal Layer Modes</h3>
+            </div>
+          </div>
+        </div>
+        <p>
+      The <span class="quote">“<span class="quote">Normal</span>”</span> group is a bit of a misnomer. Most of the
+      modes besides <span class="quote">“<span class="quote">Normal</span>”</span> are
+      <span class="emphasis"><em>cancellation</em></span> modes.
+    </p>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <a id="layer-mode-normal"></a>
+              <span class="term">Normal</span>
+            </dt>
+            <dd>
+              <a id="id9223" class="indexterm"></a>
+              <div class="figure">
+                <a id="id1434"></a>
+                <p class="title">
+                  <strong>Figure 8.8. Example for layer mode <span class="quote">“<span class="quote">Normal</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-normal-50.jpg" alt="Example for layer mode “Normal”" />
+                    <div class="caption">
+                      <p>
+                  Top layer is at 50% Opacity.
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-normal-100.jpg" alt="Example for layer mode “Normal”" />
+                    <div class="caption">
+                      <p>
+                  With 100% opacity for the top layer, only the upper layer is
+                  shown when blending with <span class="quote">“<span class="quote">Normal</span>”</span>, except for
+                  the transparent areas.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            <span class="guilabel">Normal</span>
+            mode is the default layer mode. The layer on top covers the layers
+            below it. If you want to see anything below the top layer when you
+            use this mode, the layer must have some transparent areas.
+          </p>
+            </dd>
+            <dt>
+              <a id="layer-mode-dissolve"></a>
+              <span class="term">Dissolve</span>
+            </dt>
+            <dd>
+              <a id="id9244" class="indexterm"></a>
+              <a id="id9247" class="indexterm"></a>
+              <div class="figure">
+                <a id="id1435"></a>
+                <p class="title">
+                  <strong>Figure 8.9. Example for layer mode <span class="quote">“<span class="quote">Dissolve</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-dissolve-50.jpg" alt="Example for layer mode “Dissolve”" />
+                    <div class="caption">
+                      <p>
+                  Top layer is at 50% Opacity. The effect of
+                  <span class="quote">“<span class="quote">Dissolve</span>”</span> is visible everywhere, except in areas
+                  that are completely transparent.
+                </p>
+                    </div>
+                  </div>
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-dissolve-100.jpg" alt="Example for layer mode “Dissolve”" />
+                    <div class="caption">
+                      <p>
+                  With 100% opacity of the top layer, only some edges that are
+                  semi transparent are affected by <span class="quote">“<span class="quote">Dissolve</span>”</span>.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            <span class="guilabel">Dissolve</span>
+            mode dissolves the upper layer into the layer beneath it by drawing
+            a random pattern of pixels in areas of partial transparency. This is
+            especially visible along the edges within an image. It can be useful
+            as a layer mode, but it is also often used as a painting mode.
+          </p>
+            </dd>
+            <dt>
+              <a id="layer-mode-color-erase"></a>
+              <span class="term">Color Erase</span>
+            </dt>
+            <dd>
+              <a id="id9268" class="indexterm"></a>
+              <a id="id9271" class="indexterm"></a>
+              <div class="figure">
+                <a id="id1436"></a>
+                <p class="title">
+                  <strong>Figure 8.10. Example for layer mode <span class="quote">“<span class="quote">Color Erase</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-color-erase.png" alt="Example for layer mode “Color Erase”" />
+                    <div class="caption">
+                      <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Color Erase</span>”</span>
+                  mode.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            <span class="guilabel">Color Erase</span>
+            mode erases the colors in the upper layer from the lower layer.
+            Black pixels in the upper layer make those parts in the bottom layer
+            transparent, while white pixels have no effect. Anything in between
+            removes those specific colors from the bottom layer, leaving the
+            other color components intact.
+          </p>
+            </dd>
+            <dt>
+              <a id="layer-mode-erase"></a>
+              <span class="term">Erase</span>
+            </dt>
+            <dd>
+              <a id="id9286" class="indexterm"></a>
+              <a id="id9289" class="indexterm"></a>
+              <div class="figure">
+                <a id="id1437"></a>
+                <p class="title">
+                  <strong>Figure 8.11. Example for layer mode <span class="quote">“<span class="quote">Erase</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-erase.png" alt="Example for layer mode “Erase”" />
+                    <div class="caption">
+                      <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Erase</span>”</span> mode.
+                  The white parts here are transparent.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            <span class="guilabel">Erase</span>
+            mode erases any non transparent area of the upper layer from the
+            lower layer, making those parts in the bottom layer transparent.
+          </p>
+            </dd>
+            <dt>
+              <a id="layer-mode-merge"></a>
+              <span class="term">Merge</span>
+            </dt>
+            <dd>
+              <a id="id9304" class="indexterm"></a>
+              <a id="id9307" class="indexterm"></a>
+              <div class="figure">
+                <a id="id1438"></a>
+                <p class="title">
+                  <strong>Figure 8.12. Example for layer mode <span class="quote">“<span class="quote">Merge</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-merge.jpg" alt="Example for layer mode “Merge”" />
+                    <div class="caption">
+                      <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Merge</span>”</span> mode.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            <span class="guilabel">Merge</span>
+            mode sums opacity values during blending and can yield 100% opacity
+            in cases where Normal does not, like when blending cut-and-pasted
+            content with soft edges whose opacities are mutually exclusive from
+            each other.
+          </p>
+              <p>
+            This mode is commutative if (but <span class="emphasis"><em>only if</em></span>)
+            the total opacity between both layers is 100% or less.
+            Otherwise, especially for content that already has 100% opacity,
+            Merge yields the same result as Normal.
+          </p>
+            </dd>
+            <dt>
+              <a id="layer-mode-split"></a>
+              <span class="term">Split</span>
+            </dt>
+            <dd>
+              <a id="id9324" class="indexterm"></a>
+              <a id="id9327" class="indexterm"></a>
+              <div class="figure">
+                <a id="id1439"></a>
+                <p class="title">
+                  <strong>Figure 8.13. Example for layer mode <span class="quote">“<span class="quote">Split</span>”</span></strong>
+                </p>
+                <div class="figure-contents">
+                  <div class="mediaobject">
+                    <img src="images/using/default-layer-mode-split.png" alt="Example for layer mode “Split”" />
+                    <div class="caption">
+                      <p>
+                  Top layer at 100% opacity using <span class="quote">“<span class="quote">Split</span>”</span> mode.
+                  The white parts here are transparent.
+                </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br class="figure-break" />
+              <p>
+            <span class="guilabel">Split</span>
+            mode is the inverse of Merge: it subtracts the top layer's opacity
+            from the bottom layer. This can yield full transparency in cases
+            where Erase does not, like if erasing a value of 50% opacity from
+            a layer containing 50% opacity.
+          </p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-image-combining.html"><img src="images/prev.png" alt="Prev" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-image-combining.html">
+              <img src="images/up.png" alt="Up" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="layer-mode-group-lighten.html"><img src="images/next.png" alt="Next" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-image-combining.html">Chapter 8. Combining Images</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Home" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="layer-mode-group-lighten.html">2.2. Lighten Layer Modes</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

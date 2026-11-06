@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.docbook.org/xml/4.5/docbookx.dtd">
+<sect2 xmlns:xi="http://www.w3.org/2001/XInclude" id="gimp-filter-dither">
+  <title>Reticular</title>
+
+  <indexterm>
+    <primary>Cores</primary>
+    <secondary>Reticular</secondary>
+  </indexterm>
+  <indexterm>
+    <primary>Reticular</primary>
+  </indexterm>
+
+  <para>Este filtro pode reduzir o número de cores numa imagem pela redução de níveis por canal (cores e alfa). Diferentes métodos de reticulação podem ser especificados para contrabalançar bandeamento induzido por quantização.</para>
+
+  <sect3>
+    <title>Ativando o comando</title>
+    <para>
+      You can access this command from the main menu through
+      <menuchoice>
+        <guimenu>Colors</guimenu>
+        <guimenuitem>Dither…</guimenuitem>
+      </menuchoice>.
+    </para>
+  </sect3>
+
+  <sect3>
+    <title>Opções</title>
+    <figure>
+      <title>Diálogo do filtro Reticular</title>
+      <mediaobject>
+        <imageobject>
+          <imagedata format="PNG" fileref="images/menus/colors/dither-dialog.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <variablelist>
+      <varlistentry>
+        <term>Predefinições</term>
+        <term>Tipo de Entrada</term>
+        <term>Corte</term>
+        <term>Opções de Mistura</term>
+        <term>Preview</term>
+        <term>Merge filter</term>
+        <term>Split view</term>
+        <listitem>
+          <xi:include href="about-common-features.xml"/>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Red levels</term>
+        <term>Green levels</term>
+        <term>Blue levels</term>
+        <term>Alpha levels</term>
+        <listitem>
+          <para>
+            These sliders allow you to set the number of levels for the
+            respective red, green, blue and alpha channels.
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gimp-filter-dither-method">
+        <term>Método de reticulação</term>
+        <listitem>
+          <para>Aqui você pode especificar o método de reticulação a se usar.</para>
+          <variablelist>
+            <varlistentry>
+              <term>Nenhum</term>
+              <listitem>
+                <para>Nenhuma reticulação será realizada na imagem.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Floyd-Steinberg</term>
+              <listitem>
+                <para>Este é o método de reticulação mais comumente usado e o padrão para este filtro. Para mais informações, veja <ulink url="https://en.wikipedia.org/wiki/Floyd%E2%80%93Steinberg_dithering"> Reticulação Floyd-Steinberg na Wikipedia</ulink>.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Bayer</term>
+              <listitem>
+                <para>A Matriz Bayer é outro método comum de reticulação usado para reduzir o número de cores. O algoritmo é caracterizado por padrões hachurados perceptíveis no resultado. Para mais informações, veja <ulink url="https://en.wikipedia.org/wiki/Ordered_dithering">Reticulação ordenada na Wikipedia</ulink>.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Random</term>
+              <term>Random Covariant</term>
+              <listitem>
+                <para>Estes métodos de reticulação usam aleatorização dos valores de pixel para reduzir o número de cores.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Arithmetic add</term>
+              <term>Arithmetic add covariant</term>
+              <term>Arithmetic xor</term>
+              <term>Arithmetic xor covariant</term>
+              <listitem>
+                <para>Estes métodos de reticulação são espacialmente estáveis, baseados em números mágicos e aritmética. Para mais informações, veja <ulink url="https://pippin.gimp.org/a_dither/">uma reticulação</ulink>.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term>Blue Noise</term>
+              <term>Blue Noise Covariant</term>
+              <listitem>
+                <para>Estes métodos de reticulação usando o tal ruído azul foram percebidos como sendo os menos feios e distrativos. Para mais informações, veja <ulink url="https://en.wikipedia.org/wiki/Dither#Digital_photography_and_image_processing">Reticulação em processamento de imagem na Wikipedia</ulink>.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry>
+        <term>Random seed</term>
+        <term>New Seed</term>
+        <listitem>
+          <para>
+            This option controls the randomness of the filter.
+            The <guilabel>Random seed</guilabel> box lets you manually enter
+            a seed for the randomization algorithm used. You can also generate
+            a random seed by pressing the <guibutton>New Seed</guibutton>
+            button. If the same random seed is used in the same situation,
+            the filter produces exactly the same results. A different random
+            seed produces different results.
+          </para>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+  </sect3>
+
+</sect2>

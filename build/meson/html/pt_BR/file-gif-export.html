@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>5.22. Diálogo de exportar imagem</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-dialogs-file.html" title="5. Diálogos relacionados a estrutura da imagem" />
+    <link rel="prev" href="file-gbr-export-dialog.html" title="5.21. Export Image as Brush" />
+    <link rel="next" href="file-gih-export-dialog.html" title="5.23. Export Image as Brush Pipe" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>5.22. Diálogo de exportar imagem</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="file-gbr-export-dialog.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>5. Diálogos relacionados a estrutura da imagem</span>
+        <nav> <a accesskey="n" href="file-gih-export-dialog.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="file-gif-export"></a>5.22. Diálogo de exportar imagem</h3>
+          </div>
+        </div>
+      </div>
+      <a id="file-gif-load"></a>
+      <a id="id27827" class="indexterm"></a>
+      <a id="id27829" class="indexterm"></a>
+      <a id="id27831" class="indexterm"></a>
+      <a id="id27833" class="indexterm"></a>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3277"></a>5.22.1. Visão geral</h4>
+            </div>
+          </div>
+        </div>
+        <div class="figure">
+          <a id="id3278"></a>
+          <p class="title">
+            <strong>Figura 15.72. O diálogo de fontes</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/dialogs/export-gif-dialog.png" alt="O diálogo de fontes" />
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Warning">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Atenção]" src="images/warning.png" />
+              </td>
+              <th align="left">Atenção</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>
+        The GIF file format does not support some basic image
+        properties such as <span class="emphasis"><em>partial transparency</em></span> and
+        <span class="emphasis"><em>print resolution</em></span>.
+      </p>
+                <p>
+        <acronym class="acronym">GIMP</acronym> also only supports exporting with a maximum of
+        256 colors. For best results, set your image to
+        <a class="link" href="gimp-image-convert-indexed.html" title="6.6. modo indexado">indexed mode</a> when you
+        intend to export to GIF.
+        If you care for these properties, use a different file format like
+        <a class="link" href="file-png-export.html" title="5.41. Diálogo de exportar imagem">PNG</a>.
+      </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3279"></a>5.22.2. Opções</h4>
+            </div>
+          </div>
+        </div>
+        <div class="variablelist">
+          <dl class="variablelist">
+            <dt>
+              <span class="term">Opções</span>
+            </dt>
+            <dd>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Intervalo</span>
+                  </dt>
+                  <dd>
+                    <p>Escolher <span class="quote">“<span class="quote">entrelaçar</span>”</span> intercala os dados da imagem dentro de um arquivo. Numa conexão lenta de internet, isso pode permitir que o conteúdo da imagem vá aparecendo progressivamente conforme ela vai baixando. Isso pode ser interessante em conexões bem lentas, por que o usuário pode interromper o download se a imagem não for do interesse dele. Isso pouco útil hoje em dia, com conexões mais rápidas à Internet.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Salvar imagem</span>
+                  </dt>
+                  <dd>
+                    <p>Comentários de GIF suportam apenas caracteres ASCII de 7 bits. Se você usar um caractere fora dessa faixa (tal como qualquer letra acentuada, ou ce-cedilha em português), o <acronym class="acronym">GIMP</acronym> vai exportar essa imagem sem o comentário, e informa-lo que o comentário não foi salvo.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+            <dt>
+              <span class="term">Opções avançadas</span>
+            </dt>
+            <dd>
+              <a id="id27868" class="indexterm"></a>
+              <p>
+            When working on an animation, the name of the layer can be used
+            to specify certain parameters. For more details see
+            <a class="link" href="export-file-formats.html#gimp-exporting-animations" title="5.5.1. Exporting Animations">exporting animations</a>.
+          </p>
+              <p>
+            Note: exporting a GIF animation does not support layer groups.
+          </p>
+              <div class="variablelist">
+                <dl class="variablelist">
+                  <dt>
+                    <span class="term">Navegação</span>
+                  </dt>
+                  <dd>
+                    <p>Quando esta opção está marcada, a imagem será exportada como uma animação. Note que esta opção será desabilitada (e as opções de animação não serão visíveis) se a imagem tiver apenas uma camada.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Número de cores</span>
+                  </dt>
+                  <dd>
+                    <p>Você pode definir quantas vezes a animação repetirá antes de parar. Este valor é ignorado se <span class="guilabel">Repetir para sempre</span> estiver marcado.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Repetir indefinidamente</span>
+                  </dt>
+                  <dd>
+                    <p>Quando esta opção está selecionada, a animação se repetirá indefinidamente, até sair da tela.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Atraso entre os quadros onde não for especificado</span>
+                  </dt>
+                  <dd>
+                    <p>
+                  You can set the delay, in milliseconds, between frames
+                  if it has not been set before. In this case, you can
+                  modify every delay in the Layers dialog. Note that some
+                  operating systems and applications may override with a
+                  lower frame rate due to computer speed, performance, or
+                  other technical limitations.
+                </p>
+                  </dd>
+                  <dt>
+                    <span class="term">Disposição do quadro onde não for especificado</span>
+                  </dt>
+                  <dd>
+                    <p>Se você não configurar isso para cada camada, você pode escolher como as camadas serão sobrepostas. Em cada camada, você pode colocar no começo do nome da mesma as opções <span class="quote">“<span class="quote">(combine)</span>”</span> (combinar)  ou <span class="quote">“<span class="quote">(replace)</span>”</span> (substituir) - desse jeito, em inglês e entre parênteses.Aqui, há três opções para todos os outros quadros:</p>
+                    <div class="itemizedlist">
+                      <ul class="itemizedlist" style="list-style-type: opencircle; ">
+                        <li class="listitem" style="list-style-type: circle">
+                          <p><span class="guilabel">Não importa</span> Você pode usar esta opção se todas as suas camadas forem opacas e ocuparem a imagem toda. Cada quadro vai sobrepor o que existia antes.</p>
+                        </li>
+                        <li class="listitem" style="list-style-type: circle">
+                          <p><span class="guilabel">Camadas cumulativa (combinar)</span>: os quadros anteriores não serão apagados quando um novo for exibido.</p>
+                        </li>
+                        <li class="listitem" style="list-style-type: circle">
+                          <p><span class="guilabel">Um quadro por camada (substituir)</span>: as camadas anteriores serão apagadas antes de se exibir uma nova camada.</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </dd>
+                  <dt>
+                    <span class="term">Usar o atraso acima para todas as camadas</span>
+                  </dt>
+                  <dd>
+                    <p>O valor <span class="guilabel">Atraso entre quadros quando não especificado</span> será usado para todos os quadros.</p>
+                  </dd>
+                  <dt>
+                    <span class="term">Usar a disposição acima para todas as camadas</span>
+                  </dt>
+                  <dd>
+                    <p>O valor <span class="guilabel">Descartar quadro quando não especificado</span> será usado para todos os quadros.</p>
+                  </dd>
+                </dl>
+              </div>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="file-gbr-export-dialog.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-dialogs-file.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="file-gih-export-dialog.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="file-gbr-export-dialog.html">5.21. Export Image as Brush</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="file-gih-export-dialog.html">5.23. Export Image as Brush Pipe</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

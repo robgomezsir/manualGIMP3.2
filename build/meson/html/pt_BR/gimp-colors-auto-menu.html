@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>8.15. O submenu “Automático”</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="gimp-colors-menu.html" title="8. O menu “Cores”" />
+    <link rel="prev" href="gimp-filter-invert-value.html" title="8.14. Inverter Valor" />
+    <link rel="next" href="gimp-layer-equalize.html" title="8.16. Equalizar" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>8.15. O submenu <span class="quote">“<span class="quote">Automático</span>”</span></div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-filter-invert-value.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>8. O menu <span class="quote">“<span class="quote">Cores</span>”</span></span>
+        <nav> <a accesskey="n" href="gimp-layer-equalize.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="sect2">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h3 class="title"><a id="gimp-colors-auto-menu"></a>8.15. O submenu <span class="quote">“<span class="quote">Automático</span>”</span></h3>
+          </div>
+        </div>
+      </div>
+      <a id="id43475" class="indexterm"></a>
+      <p>
+    The <span class="guimenuitem">Auto</span> submenu contains operations which
+    automatically adjust the distribution of colors in the active layer,
+    without requiring any input from the user. Several of these operations
+    are actually implemented as plug-ins.
+  </p>
+      <p>
+    </p>
+      <div class="itemizedlist">
+        <ul class="itemizedlist" style="list-style-type: disc; ">
+          <li class="listitem">
+            <p>
+          <a class="xref" href="gimp-layer-equalize.html" title="8.16. Equalizar">Seção 8.16, “Equalizar”</a>
+        </p>
+          </li>
+          <li class="listitem">
+            <p>
+          <a class="xref" href="gimp-layer-white-balance.html" title="8.17. Equilíbrio de branco">Seção 8.17, “Equilíbrio de branco”</a>
+        </p>
+          </li>
+          <li class="listitem">
+            <p>
+          <a class="xref" href="gimp-filter-stretch-contrast.html" title="8.18. Esticar Contraste">Seção 8.18, “Esticar Contraste”</a>
+        </p>
+          </li>
+          <li class="listitem">
+            <p>
+          <a class="xref" href="gimp-filter-stretch-contrast-hsv.html" title="8.19. Esticar Contraste HSV">Seção 8.19, “Esticar Contraste HSV”</a>
+        </p>
+          </li>
+          <li class="listitem">
+            <p>
+          <a class="xref" href="gimp-filter-color-enhance.html" title="8.20. Equilíbrio de Cores">Seção 8.20, “Equilíbrio de Cores”</a>
+        </p>
+          </li>
+        </ul>
+      </div>
+      <p>
+  </p>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="id3970"></a>8.15.1. Ativando o submenu</h4>
+            </div>
+          </div>
+        </div>
+        <p>
+      You can access this submenu from the main menu through
+      <span class="guimenu">Colors</span> → <span class="guimenuitem">Auto</span>.
+    </p>
+      </div>
+      <div class="sect3">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h4 class="title"><a id="gimp-color-stretch-commands"></a>8.15.2. Esticamento Automático das Cores</h4>
+            </div>
+          </div>
+        </div>
+        <a id="id43504" class="indexterm"></a>
+        <p>O <acronym class="acronym">GIMP</acronym> tem vários comandos automáticos para esticar as colunas de histograma para os canais de cor da camada ativa. Ao puxar os pixels claros para a direita e os pixels escuros para a esquerda, eles tornam os pixels claros mais claros e os pixels escuros mais escuros, o que aumenta o contraste na camada.</p>
+        <p>Alguns dos comandos esticam os três canais de cor por igual, de forma que os matizes não são alterados. Outros comandos modificam cada um dos canais separadamente, o que altera os matizes.</p>
+        <p>A forma como o esticamento é feito varia com os diferentes comandos e os resultados parecem diferentes. Não é fácil prever exatamente o que cada comando fará. Se você souber exatamente o que está fazendo, você pode conseguir os mesmos resultados, e ainda mais, com a ferramenta <a class="link" href="gimp-tool-levels.html" title="8.10. Níveis">Níveis</a>.</p>
+        <p>Aqui estão os exemplos dos resultados desses comandos, todos juntos em uma única página, de forma que você possa compara-los mais facilmente. O comando mais apropriado depende da sua imagem, então você pode experimentar com cada um deles para achar qual é mais apropriado para ela.</p>
+        <p>
+      </p>
+        <div class="figure">
+          <a id="id3971"></a>
+          <p class="title">
+            <strong>Figura 16.145. A camada original e seus histogramas</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/auto/alice.png" alt="A camada original e seus histogramas" />
+              <div class="caption">
+                <p>Esta camada não tem nenhum pixel nem muito claro, nem muito escuro, então ela é uma boa candidata ao uso desses comandos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><br class="figure-break" />
+    </p>
+        <p>
+      </p>
+        <div class="figure">
+          <a id="id3972"></a>
+          <p class="title">
+            <strong>Figura 16.146. O comando <a class="link" href="gimp-layer-equalize.html" title="8.16. Equalizar">Equalizar</a></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/auto/equalize.png" alt="O comando Equalizar" />
+              <div class="caption">
+                <p>Exemplo de <span class="quote">“<span class="quote">Equalizar</span>”</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><br class="figure-break" />
+    </p>
+        <p>
+      </p>
+        <div class="figure">
+          <a id="id3973"></a>
+          <p class="title">
+            <strong>Figura 16.147. O comando <a class="link" href="gimp-layer-white-balance.html" title="8.17. Equilíbrio de branco">Equilíbrio de branco</a></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/auto/white-balance.png" alt="O comando Equilíbrio de branco" />
+              <div class="caption">
+                <p>Exemplo de <span class="quote">“<span class="quote">Equilíbrio de branco</span>”</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><br class="figure-break" />
+    </p>
+        <p>
+      </p>
+        <div class="figure">
+          <a id="id3974"></a>
+          <p class="title">
+            <strong>Figura 16.148. O comando <a class="link" href="gimp-filter-stretch-contrast.html" title="8.18. Esticar Contraste">Esticar Contraste</a></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/auto/c-stretch.png" alt="O comando Esticar Contraste" />
+              <div class="caption">
+                <p>Exemplo de <span class="quote">“<span class="quote">Esticar contraste</span>”</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><br class="figure-break" />
+    </p>
+        <p>
+      </p>
+        <div class="figure">
+          <a id="id3975"></a>
+          <p class="title">
+            <strong>Figura 16.149. O comando <a class="link" href="gimp-filter-stretch-contrast-hsv.html" title="8.19. Esticar Contraste HSV">Esticar contraste HSV</a></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/auto/stretch-hsv.png" alt="O comando Esticar contraste HSV" />
+              <div class="caption">
+                <p>Exemplo de <span class="quote">“<span class="quote">Esticar Contraste HSV</span>”</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><br class="figure-break" />
+    </p>
+        <p>
+      </p>
+        <div class="figure">
+          <a id="id3976"></a>
+          <p class="title">
+            <strong>Figura 16.150. O comando <a class="link" href="gimp-filter-color-enhance.html" title="8.20. Equilíbrio de Cores">Realce de Cor</a></strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/menus/colors/auto/color-enhance.png" alt="O comando Realce de Cor" />
+              <div class="caption">
+                <p>Exemplo de <span class="quote">“<span class="quote">Realce de cor</span>”</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p><br class="figure-break" />
+    </p>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-filter-invert-value.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="gimp-colors-menu.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-layer-equalize.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-filter-invert-value.html">8.14. Inverter Valor</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-layer-equalize.html">8.16. Equalizar</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>

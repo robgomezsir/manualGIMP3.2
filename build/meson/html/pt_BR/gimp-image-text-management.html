@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Capítulo 9. Gerenciamento de textos</title>
+    <link rel="stylesheet" href="gimp-help-plain.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-screen.css" type="text/css" />
+    <link rel="stylesheet" href="gimp-help-custom.css" type="text/css" />
+    <meta name="generator" content="DocBook XSL Stylesheets Vsnapshot" />
+    <link rel="home" href="index.html" title="Programa de Manipulação de Imagens GNU" />
+    <link rel="up" href="become-a-gimp-wizard.html" title="Parte II. Como posso me tornar um mestre no GIMP?" />
+    <link rel="prev" href="gimp-layer-types.html" title="7. Layer Types" />
+    <link rel="next" href="gimp-using-text.html" title="2. Texto" />
+  </head>
+  <body>
+    <header class="navheader">
+      <div>Capítulo 9. Gerenciamento de textos</div>
+      <div class="navheadersub">
+        <nav>
+          <a accesskey="p" href="gimp-layer-types.html">
+            <img src="images/prev.png" alt="Anterior" />
+          </a>
+        </nav>
+        <span>Parte II. Como posso me tornar um mestre no <acronym class="acronym">GIMP</acronym>?</span>
+        <nav> <a accesskey="n" href="gimp-using-text.html"><img src="images/next.png" alt="Próxima" /></a></nav>
+      </div>
+      <hr />
+    </header>
+    <div class="chapter">
+      <div class="titlepage">
+        <div>
+          <div>
+            <h2 class="title"><a id="gimp-image-text-management"></a>Capítulo 9. Gerenciamento de textos</h2>
+          </div>
+        </div>
+      </div>
+      <div class="toc">
+        <p>
+          <strong>Índice</strong>
+        </p>
+        <dl class="toc">
+          <dt>
+            <span class="sect1">
+              <a href="gimp-image-text-management.html#gimp-text-management">1. Gerenciamento de Texto</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-image-text-management.html#text-area">1.1. Texto</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-image-text-management.html#managing-text-layer">1.2. Gerenciando a camada de texto</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-image-text-management.html#gimp-text-toolbox">1.3. A caixa de ferramentas</a>
+                </span>
+              </dt>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-image-text-management.html#text-context-menu">1.4. Menu de contexto</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+          <dt>
+            <span class="sect1">
+              <a href="gimp-using-text.html">2. Texto</a>
+            </span>
+          </dt>
+          <dd>
+            <dl>
+              <dt>
+                <span class="sect2">
+                  <a href="gimp-using-text.html#gimp-using-fonts">2.1. Adicionando fontes</a>
+                </span>
+              </dt>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <div class="sect1">
+        <div class="titlepage">
+          <div>
+            <div>
+              <h2 class="title" style="clear: both"><a id="gimp-text-management"></a>1. Gerenciamento de Texto</h2>
+            </div>
+          </div>
+        </div>
+        <a id="id12351" class="indexterm"></a>
+        <p>
+    Text is managed with the Text tool. This tool creates a new layer containing
+    the text, above the current layer in the Layers dialog, with the size of the
+    text box. Its name is the beginning of the text.
+  </p>
+        <div class="figure">
+          <a id="id2795"></a>
+          <p class="title">
+            <strong>Figura 9.1. Exemplo de um item de texto</strong>
+          </p>
+          <div class="figure-contents">
+            <div class="mediaobject">
+              <img src="images/using/text-example.png" alt="Exemplo de um item de texto" />
+              <div class="caption">
+                <p>Exemplo de um item de texto, mostrando o limite da camada de texto. (Fonte: Utopia Bold)</p>
+              </div>
+            </div>
+            <div class="mediaobject">
+              <img src="images/using/text-example-2.png" alt="Exemplo de um item de texto" />
+              <div class="caption">
+                <p>
+          The Layers dialog, with the text layer above the layer which was
+          current.
+        </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br class="figure-break" />
+        <p>O texto pode ser editado diretamente na tela. Uma caixa de ferramenta de texto, que aparece acima da caixa de texto sobre a tela, permite que você altere rapidamente algumas características do texto.</p>
+        <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+          <table border="0" summary="Note">
+            <tr>
+              <td rowspan="2" align="center" valign="top" width="25">
+                <img alt="[Nota]" src="images/note.png" />
+              </td>
+              <th align="left">Nota</th>
+            </tr>
+            <tr>
+              <td align="left" valign="top">
+                <p>As configurações que você altera nesta caixa de diálogo na tela se aplicam apenas às partes do texto selecionadas, ou a qualquer novo texto que você digitar após a posição atual do cursor.</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="mediaobject">
+          <img src="images/using/text-toolbar.png" />
+          <div class="caption">
+            <p>
+        When you click on the canvas with the Text tool, an empty text box
+        appears with a semi-transparent dialog above it. The empty text
+        box is where your text will appear when you start typing.
+      </p>
+          </div>
+        </div>
+        <p>As opções da ferramenta de texto estão descritas em <a class="xref" href="gimp-tool-text.html" title="5.3. Texto">Seção 5.3, “Texto”</a>.</p>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="text-area"></a>1.1. Texto</h3>
+              </div>
+            </div>
+          </div>
+          <a id="id12378" class="indexterm"></a>
+          <p>
+      To enter text start typing. The text box will enlarge gradually.
+      Press <span class="keycap"><strong>Enter</strong></span> to add a new line.
+    </p>
+          <p>
+      You can also <span class="bold"><strong>enlarge the text box</strong></span> by
+      click-and-dragging, as you do with selections. While dragging, the size
+      of the text area will be shown in the
+      <a class="link" href="gimp-image-window.html#gimp-image-window-status-bar">status bar</a> at the
+      bottom of the image window.
+    </p>
+          <p>
+      </p>
+          <div class="mediaobject">
+            <img src="images/toolbox/text-area-size.png" />
+          </div>
+          <p>
+    </p>
+          <p>
+      To <span class="bold"><strong>edit text properties</strong></span> first select the
+      part you want to change by click-and-dragging, or by using
+      <span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>arrow keys</strong></span>.
+      Then use the options of the <a class="xref" href="gimp-image-text-management.html#gimp-text-toolbox" title="1.3. A caixa de ferramentas">Seção 1.3, “A caixa de ferramentas”</a> to
+      change the selected text.
+    </p>
+          <p>Em vez de usar a edição de texto na tela de pintura, você pode usar o editor de texto descrito em <a class="xref" href="gimp-tool-text.html#gimp-text-editor-dialog" title="5.3.3. Editor de texto">Seção 5.3.3, “Editor de texto”</a>.</p>
+          <p>
+      To <span class="bold"><strong>move the text</strong></span> on the image use
+      the <a class="link" href="gimp-tool-move.html" title="4.3. Mover">Move Tool</a>.
+      Note that by default you must click on a visible part of the text to
+      move the text layer.
+    </p>
+          <p>Você pode <span class="bold"><strong>editar o texto mais tarde</strong></span>, se a camada de texto ainda existir e não tiver sido modificada por outra ferramenta (veja abaixo): torne a camada de texto ativa no <a class="link" href="gimp-dialogs-structure.html#gimp-layer-dialog" title="2.1. Diálogo de camadas">diálogo de Camadas</a>, selecione a ferramenta Texto e clique sobre o texto na janela de imagem.</p>
+          <div class="sect3">
+            <div class="titlepage">
+              <div>
+                <div>
+                  <h4 class="title"><a id="entering-unicode-characters"></a>1.1.1. Entering Unicode Characters</h4>
+                </div>
+              </div>
+            </div>
+            <a id="id12406" class="indexterm"></a>
+            <a id="id12409" class="indexterm"></a>
+            <p>
+        It can be useful to enter characters that are not easily available on
+        your keyboard. How you enter these Unicode characters depends on your
+        Operating System.
+      </p>
+            <div class="variablelist">
+              <dl class="variablelist">
+                <dt>
+                  <span class="term">Linux</span>
+                </dt>
+                <dd>
+                  <p>
+              You can enter Unicode characters with the keyboard shortcut
+              <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Shift</strong></span>+<span class="keycap"><strong>U</strong></span>
+              followed by the hexadecimal number of the desired character and
+              then pressing <span class="keycap"><strong>Enter</strong></span>.
+            </p>
+                </dd>
+                <dt>
+                  <span class="term">macOS</span>
+                </dt>
+                <dd>
+                  <p>
+              Use the Character Viewer, shortcut
+              <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Cmd</strong></span>+<span class="keycap"><strong>Space</strong></span>
+              to find and insert symbols, or enable the Unicode Hex Input
+              keyboard in Keyboard settings. With the Unicode Hex Input active,
+              hold the <span class="keycap"><strong>Option</strong></span> key and type the character's
+              hexadecimal code to insert it.
+            </p>
+                </dd>
+                <dt>
+                  <span class="term">Windows</span>
+                </dt>
+                <dd>
+                  <p>
+              If you know the number of the character, you can
+              enter that character by pressing and holding the left
+              <span class="keycap"><strong>Alt</strong></span> followed by the number using the numbers on
+              the keypad, and then releasing the <span class="keycap"><strong>Alt</strong></span> key.
+              This only works for a limited set of characters.
+            </p>
+                  <p>
+              Alternatively you can select a character or emoji by opening a
+              dialog using the shortcut
+              <span class="keycap"><strong>Windows-key</strong></span>+<span class="keycap"><strong>.</strong></span>.
+              By default emojis are shown, but you can change that to symbols
+              using the tabs at the top, and then further select a category
+              with the tabs at the bottom.
+            </p>
+                  <p>
+              The third option is by opening the
+              <span class="productname">Character Map</span>™ application that
+              is part of Windows and select the desired character from there.
+            </p>
+                </dd>
+              </dl>
+            </div>
+            <p>Claro, este recurso é mais útil para inserir caracteres especiais (até mesmo exóticos), desde que os glifos necessários para esses caracteres sejam fornecidos pela fonte selecionada — poucas fontes suportam Klingon. ;-)</p>
+            <div class="mediaobject">
+              <img src="images/using/enter-unicode-char4.png" />
+              <div class="caption">
+                <p>Unicode 0x47 (<span class="quote">“<span class="quote">G</span>”</span>), 0x2665, 0x0271, 0x03C0</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="managing-text-layer"></a>1.2. Gerenciando a camada de texto</h3>
+              </div>
+            </div>
+          </div>
+          <a id="id12452" class="indexterm"></a>
+          <p>Você pode operar em uma camada de texto da mesma forma que qualquer outra camada, mas isso muitas vezes significa abrir mão da capacidade de editar o texto, sem perder os resultados de seu trabalho.</p>
+          <p>Compreender algumas das idiossincrasias sobre manipulação de texto, podem ajudar a compreender que uma camada de texto contém mais informação do que os dados de pixel que você vê: ela também contém uma representação do texto em um formato de editor de texto. Você pode ver isso na janela do editor de texto que aparece enquanto você estiver usando a ferramenta Texto. Toda vez que você alterar o texto, a camada da imagem é redesenhada para refletir as alterações.</p>
+          <p>Agora suponha que você crie uma camada de texto, e em seguida opere sobre ela, de alguma forma que não envolva a ferramenta Texto: gire-a, por exemplo. Suponha que você, em seguida, volte e tente editá-lo usando a ferramenta Texto. Assim que você editar o texto, a ferramenta de texto irá redesenhar a camada, acabando com os resultados das operações que você realizou anteriormente.</p>
+          <p>Como esse perigo não é óbvio, a ferramenta de texto tenta protegê-lo dele. Se você operar em uma camada de texto, e depois tentar editar o texto, aparece uma mensagem avisando que suas alterações serão desfeitas, e lhe oferece três opções:</p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>editar o texto mesmo assim;</p>
+              </li>
+              <li class="listitem">
+                <p>cancelar;</p>
+              </li>
+              <li class="listitem">
+                <p>criar uma nova camada de texto com o mesmo texto que a camada existente, deixando a camada existente inalterada.</p>
+              </li>
+            </ul>
+          </div>
+          <div class="figure">
+            <a id="id2796"></a>
+            <p class="title">
+              <strong>Figura 9.2. Warning about losing modifications</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/using/text-warning.png" alt="Warning about losing modifications" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="gimp-text-toolbox"></a>1.3. A caixa de ferramentas</h3>
+              </div>
+            </div>
+          </div>
+          <a id="id12472" class="indexterm"></a>
+          <div class="figure">
+            <a id="id2797"></a>
+            <p class="title">
+              <strong>Figura 9.3. A caixa de ferramentas</strong>
+            </p>
+            <div class="figure-contents">
+              <div class="mediaobject">
+                <img src="images/using/text-toolbar.png" alt="A caixa de ferramentas" />
+              </div>
+            </div>
+          </div>
+          <br class="figure-break" />
+          <p>
+      An on-canvas text toolbar appears when you click on the canvas with
+      the Text Tool, right above the location where you type your text.
+      It allows you to change most common text settings directly on canvas.
+      The toolbar can be moved to a different position if it is in the way.
+    </p>
+          <p>
+      Besides the usual text formatting features like font family, size,
+      style and text color, you get control over baseline offset and kerning.
+    </p>
+          <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+            <table border="0" summary="Note">
+              <tr>
+                <td rowspan="2" align="center" valign="top" width="25">
+                  <img alt="[Nota]" src="images/note.png" />
+                </td>
+                <th align="left">Nota</th>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <p>
+        Beware that all the settings on this toolbar only work on the currently
+        selected text. That way you can use different styles for different
+        parts of your text.
+      </p>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <p>
+          The
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-tool-move.svg" width="16" /></span>
+          </span>
+          icon on the left side shows the area on the toolbar that you can
+          grab to drag the toolbar to a different location.
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          When the toolbar has been moved from its original location, it can
+          be restored to that location by using the
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/gimp-reset.svg" width="16" /></span>
+          </span>
+          icon on the top right side of the toolbar. This icon is only visible
+          if the toolbar has been moved.
+        </p>
+              </li>
+              <li class="listitem">
+                <p><span class="bold"><strong>Alterar fonte do texto selecionado</strong></span>: assim que você começar a editar o nome da fonte padrão, uma lista suspensa aparece, permitindo que você selecione uma fonte.</p>
+              </li>
+              <li class="listitem">
+                <p>
+          <span class="bold"><strong>Change size of selected text</strong></span>:
+          changes the font size of the selected text. The unit drop-down
+          next to it can be used to change the type of unit used for the
+          text size.
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          <span class="guiicon">
+            <span class="inlinemediaobject"><img src="images/stock-icons/edit-clear.svg" width="16" /></span>
+          </span>
+          <span class="bold"><strong>Clear style of selected text</strong></span>:
+          use this to remove all text styling that was applied to the
+          selected text.
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          <span class="bold"><strong>Bold, Italic, Underline,
+          Strikethrough</strong></span>: toggles the markup for the selected text.
+        </p>
+                <p>
+          While editing, shortcut keys can be used for
+          Bold (<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>B</strong></span>),
+          Italic (<span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>I</strong></span>)
+          and
+          Underline <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>U</strong></span>.
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          <span class="bold"><strong>Change baseline of selected text</strong></span>:
+          <span class="quote">“<span class="quote">In European typography and penmanship, baseline is the line
+          upon which most letters "sit" and below which descenders extend</span>”</span>
+          (Wikipedia). In HTML, there are several kinds of baselines
+          (alphabetic, ideographic, bottom…). Here, consider that baseline
+          is "bottom" and determines the place for descenders. The default
+          baseline "0" gives place for descenders. You can use it to
+          increase space between two lines only, while <span class="quote">“<span class="quote">Adjust line
+          spacing</span>”</span> in tool options increases space between all lines.
+        </p>
+                <p>
+          </p>
+                <div class="figure">
+                  <a id="id2798"></a>
+                  <p class="title">
+                    <strong>Figura 9.4. Linha de Base Padrão</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-default-baseline.png" alt="Linha de Base Padrão" />
+                      <div class="caption">
+                        <p>Linha de base padrão marcada com uma linha vermelha.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p><br class="figure-break" />
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          <span class="bold"><strong>Change kerning of selected text</strong></span>:
+          <span class="quote">“<span class="quote">In typography, kerning… is the process of adjusting the spacing
+          between characters in a proportional font.</span>”</span> (Wikipedia).
+          You can use this setting to adjust letter spacing of a selected
+          part of text.
+        </p>
+                <p>Vamos olhar para um texto selecionado (zoomx800 para ver pixels):</p>
+                <div class="figure">
+                  <a id="id2799"></a>
+                  <p class="title">
+                    <strong>Figura 9.5. Exemplo de um item de texto</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-selected-example.png" alt="Exemplo de um item de texto" />
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-selected-dialog.png" alt="Exemplo de um item de texto" />
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>Podemos ver que a fonte Sans é uma fonte proporcional: as larguras das letras são diferentes, e o glifo <span class="quote">“<span class="quote">T</span>”</span> vem sobre o <span class="quote">“<span class="quote">e</span>”</span>. As larguras das letras são marcadas com linhas verticais finas e as bordas esquerdas da largura das letras cobrem as letras anteriores por um pixel. Agora definimos <span class="quote">“<span class="quote">Alterar espaçamento entre caracteres do texto selecionado</span>”</span> para 2 pixels:</p>
+                <div class="figure">
+                  <a id="id2800"></a>
+                  <p class="title">
+                    <strong>Figura 9.6. Exemplo de um item de texto</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-kerning-example.png" alt="Exemplo de um item de texto" />
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-kerning-dialog.png" alt="Exemplo de um item de texto" />
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>
+          Blank spaces, 2 pixels wide, are added between all selected
+          characters and letter widths are preserved. If no text is
+          selected, a blank space is added at the location of the cursor
+          between two characters.
+        </p>
+                <p>Aqui está uma comparação com a opção <span class="guilabel">Ajustar espaçamento entre letras</span> da <a class="link" href="gimp-tool-text.html" title="5.3. Texto">Ferramenta de Texto</a>:</p>
+                <div class="figure">
+                  <a id="id2801"></a>
+                  <p class="title">
+                    <strong>Figura 9.7. Exemplo de um item de texto</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-spacing-example.png" alt="Exemplo de um item de texto" />
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-selected-dialog.png" alt="Exemplo de um item de texto" />
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>A opção se aplica a todo o texto, não apenas ao texto selecionado. Espaços em branco são adicionados dentro das larguras das letras e as larguras das letras não são respeitadas.</p>
+              </li>
+              <li class="listitem">
+                <p>Use <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>F</strong></span> para abrir o campo de pesquisa na lista. Um item deve ser selecionado para este comando ser eficaz.</p>
+              </li>
+              <li class="listitem">
+                <p><span class="bold"><strong>Alterar cor do texto selecionado</strong></span>: este comando abre uma caixa de diálogo de cores onde você escolhe uma cor para o texto selecionado.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sect2">
+          <div class="titlepage">
+            <div>
+              <div>
+                <h3 class="title"><a id="text-context-menu"></a>1.4. Menu de contexto</h3>
+              </div>
+            </div>
+          </div>
+          <a id="id12579" class="indexterm"></a>
+          <p>
+      The context menu can be brought up by right-clicking on text.
+      It is somewhat different from that of the Text Editor dialog.
+    </p>
+          <p>
+      The context menu offers the following options:
+    </p>
+          <div class="itemizedlist">
+            <ul class="itemizedlist" style="list-style-type: disc; ">
+              <li class="listitem">
+                <a id="gimp-text-tool-cut"></a>
+                <a id="gimp-text-tool-copy"></a>
+                <a id="gimp-text-tool-paste"></a>
+                <a id="gimp-text-tool-delete"></a>
+                <p>
+          <span class="guilabel">Cut</span>, <span class="guilabel">Copy</span>,
+          <span class="guilabel">Paste</span>, <span class="guilabel">Delete</span>: these commands work
+          with selected text. Except for <span class="guilabel">Paste</span>, they are disabled
+          as long as no text is selected. <span class="guilabel">Paste</span> is enabled when
+          the clipboard contains text.
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          <span class="guilabel">Paste unformatted text</span>: paste text from the
+          clipboard without any markup.
+        </p>
+              </li>
+              <li class="listitem">
+                <p>
+          <span class="guilabel">Restore On-Canvas Editor Position</span>: changes the
+          position of the On-Canvas Editor to its original location. This is
+          disabled when it already is in the original location.
+        </p>
+              </li>
+              <li class="listitem">
+                <a id="gimp-text-tool-open-text-file"></a>
+                <p>
+          <span class="guilabel">Open text file…</span>: this command opens a file
+          dialog where you can select a text file. The contents of this file
+          will be opened in the current text layer.
+        </p>
+              </li>
+              <li class="listitem">
+                <a id="gimp-text-tool-clear"></a>
+                <p><span class="guilabel">Limpar</span>: este comando exclui todo o texto, selecionado ou não.</p>
+              </li>
+              <li class="listitem">
+                <p><a id="gimp-text-tool-text-to-path"></a>
+          <span class="guilabel">Text to Path</span>: this command creates a
+          path from the outlines of the current text. The result is not
+          evident. You have to open the Paths dialog and make path visible.
+          Then select the Path tool and click on the text. Every letter
+          is  now surrounded with a path component. So you can modify
+          the shape of letters by moving path control points.
+        </p>
+                <p>Este comando é similar ao <span class="guimenu">Camada</span> → <span class="guisubmenu">Texto para vetor</span>.</p>
+                <div class="figure">
+                  <a id="id2802"></a>
+                  <p class="title">
+                    <strong>Figura 9.8. Texto para caminho aplicado</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-to-path1.png" alt="Texto para caminho aplicado" />
+                      <div class="caption">
+                        <p>Nada aparece.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <div class="figure">
+                  <a id="id2803"></a>
+                  <p class="title">
+                    <strong>Figura 9.9. Caminho tornado visível</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-to-path2.png" alt="Caminho tornado visível" />
+                      <div class="caption">
+                        <p>Caminho tornado visível na guia Caminhos. O caminho aparece como uma borda vermelha ao redor do texto.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <div class="figure">
+                  <a id="id2804"></a>
+                  <p class="title">
+                    <strong>Figura 9.10. Ferramenta Caminhos ativada</strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-to-path3.png" alt="Ferramenta Caminhos ativada" />
+                      <div class="caption">
+                        <p>Ferramenta Caminhos ativada; clique no caminho.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+              </li>
+              <li class="listitem">
+                <p><a id="gimp-text-tool-text-along-path"></a><span class="guilabel">Texto ao longo do vetor</span>: <a id="id12639" class="indexterm"></a></p>
+                <p>
+          This option is enabled only if a
+          <a class="link" href="gimp-using-paths.html" title="4. Vetores">path</a> exists. When your
+          text is created, then create or import a path and make it active.
+          If you create your path before the text, the path becomes
+          invisible and you have to make it visible in the Paths dialog.
+        </p>
+                <p>
+          The <span class="guilabel">Text along path</span> command is also available
+          from the <span class="guimenuitem">Layer</span> menu in the main menu.
+        </p>
+                <p>
+          The commands <span class="guimenuitem">Text to Path</span>, <span class="guimenuitem">Text
+          along Path</span>, and <span class="guimenuitem">Rasterize</span>
+          only appear in the <span class="guimenuitem">Layer</span> menu when a text
+          layer is selected.
+        </p>
+                <p>
+          Select the <span class="guimenuitem">Text along Path</span> option. The
+          text is wrapped along the path. Letters are represented with their
+          outline. Each of them is a component of the new path that
+          appears in the <a class="link" href="gimp-path-dialog.html" title="2.3. Diálogo de vetores">Paths
+          dialog</a>.
+        </p>
+                <div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+                  <table border="0" summary="Note">
+                    <tr>
+                      <td rowspan="2" align="center" valign="top" width="25">
+                        <img alt="[Nota]" src="images/note.png" />
+                      </td>
+                      <th align="left">Nota</th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top">
+                        <p>
+            You can change the direction that the text is wrapped around the
+            path by <a class="link" href="gimp-tool-path.html#gimp-path-path-tool-reverse-stroke">reversing
+            the stroke direction</a> when editing the path with the
+            <a class="link" href="gimp-tool-path.html" title="5.2. Vetores">Path Tool</a>.
+            In the same way you can change at which anchor
+            <a class="link" href="gimp-tool-path.html#gimp-path-path-tool-shift-start">stroking starts</a>.
+          </p>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="figure">
+                  <a id="id2805"></a>
+                  <p class="title">
+                    <strong>Figura 9.11. Exemplo de <span class="quote">“<span class="quote">Texto ao longo de vetor</span>”</span></strong>
+                  </p>
+                  <div class="figure-contents">
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-along-path.png" alt="Exemplo de “Texto ao longo de vetor”" />
+                    </div>
+                    <div class="mediaobject">
+                      <img src="images/toolbox/text-path.png" alt="Exemplo de “Texto ao longo de vetor”" />
+                    </div>
+                  </div>
+                </div>
+                <br class="figure-break" />
+                <p>Ao converter um item de texto em uma seleção ou um caminho, você pode preenchê-lo, contornar os contornos, transformá-lo ou, geralmente, aplicar toda a gama de ferramentas do GIMP para obter efeitos interessantes.</p>
+              </li>
+              <li class="listitem">
+                <a id="gimp-text-tool-direction-ltr"></a>
+                <a id="gimp-text-tool-direction-rtl"></a>
+                <a id="gimp-text-tool-direction-ttb-rtl"></a>
+                <a id="gimp-text-tool-direction-ttb-rtl-upright"></a>
+                <a id="gimp-text-tool-direction-ttb-ltr"></a>
+                <a id="gimp-text-tool-direction-ttb-ltr-upright"></a>
+                <p>
+          <span class="guilabel">From left to right</span>,
+          <span class="guilabel">From right to left</span>,
+          <span class="guilabel">Vertical, right to left (mixed orientation)</span>,
+          <span class="guilabel">Vertical, right to left (upright orientation)</span>,
+          <span class="guilabel">Vertical, left to right (mixed orientation)</span>,
+          <span class="guilabel">Vertical, left to right (upright orientation)</span>:
+          These commands let you adjust the writing direction of the text.
+        </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navfooter">
+      <hr />
+      <table width="100%" summary="Navigation footer">
+        <tr>
+          <td width="40%" align="left"><a accesskey="p" href="gimp-layer-types.html"><img src="images/prev.png" alt="Anterior" /></a> </td>
+          <td width="20%" align="center">
+            <a accesskey="u" href="become-a-gimp-wizard.html">
+              <img src="images/up.png" alt="Acima" />
+            </a>
+          </td>
+          <td width="40%" align="right"> <a accesskey="n" href="gimp-using-text.html"><img src="images/next.png" alt="Próxima" /></a></td>
+        </tr>
+        <tr>
+          <td width="40%" align="left" valign="top"><a accesskey="p" href="gimp-layer-types.html">7. Layer Types</a> </td>
+          <td width="20%" align="center">
+            <a accesskey="h" href="index.html">
+              <img src="images/home.png" alt="Principal" />
+            </a>
+          </td>
+          <td width="40%" align="right" valign="top"> <a accesskey="n" href="gimp-using-text.html">2. Texto</a></td>
+        </tr>
+      </table>
+      <a href="https://gitlab.gnome.org/GNOME/gimp/issues" class="reportbug">Report a bug in GIMP</a>
+      <a href="https://gitlab.gnome.org/GNOME/gimp-help/issues" class="reportbug">
+      Report a documentation error
+    </a>
+    </div>
+  </body>
+</html>
